@@ -1,0 +1,54 @@
+# Product Vision
+
+RateLtd is a branded, full-capability local operator console built from the existing Ink/TypeScript TUI harness.
+
+The target product is not a small CLI. It is a repo-agnostic terminal command center for:
+
+- coding
+- editing
+- command execution
+- filesystem management
+- Git workflows
+- GitHub workflows
+- diffs
+- logs
+- diagnostics
+- clipboard intake
+- agent-assisted repo operations
+- Codex handoff and implementation workflows
+
+## Foundation
+
+RateLtd uses:
+
+- TypeScript
+- Node.js
+- Ink
+- React
+- pnpm
+- termcn UI components
+- direct file-write 
+- direct command execution 
+- logged operational history 
+
+## Product Taxonomy
+
+| Display Name | Role |
+| --- | --- |
+| LauncherLtd | Workspace launcher, file tree, target repo selector |
+| RateLtd | Dashboard and operational overview |
+| EditorLtd | Editor surface and Monaco/external editor bridge |
+| CommanderLtd | PowerShell, package script, command, and workflow runner |
+| DifferLtd | Git diff, split diff, patch review, and writer review flow |
+| LoggerLtd | Logs, sessions, command history, telemetry, debug trail |
+| PreferLtd | Settings, preferences, profiles, themes, and safety configuration |
+| HelpLtd | Help, shortcuts, screen guide, troubleshooting, and docs viewer |
+
+## Design Intent
+
+RateLtd should make the provided mockups real by using termcn UI components for app shell, panels, menus, file trees, diffs, data grids, alerts, command palette, modals, notifications, and terminal output.
+
+The UI should remain terminal-native, keyboard-driven, readable at multiple terminal widths, and safe for powerful local operations.
+
+The implementation plan should expand the feature into the architecture, services, state, UI surfaces, command flows, safety controls, validation, and documentation needed to make it work realistically.
+

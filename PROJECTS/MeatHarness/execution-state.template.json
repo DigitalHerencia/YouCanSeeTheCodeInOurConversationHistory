@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "source_kind": "execution_state",
+  "project": {
+    "name": "MeatHarness",
+    "repository": "DigitalHerencia/MeatHarness",
+    "primary_stack": [
+      "Node.js",
+      "TypeScript",
+      "Ink",
+      "React",
+      "pnpm"
+    ]
+  },
+  "turn_index": 0,
+  "last_updated": null,
+  "active_goal": "Initialize ChatGPT Project alignment sources for MeatHarness.",
+  "operating_mode": "repo_alignment",
+  "tasks": [
+    {
+      "id": "MH-0001",
+      "title": "Use project instructions as operating charter",
+      "status": "todo",
+      "priority": "high",
+      "acceptance_criteria": [
+        "Assistant follows TUI/Ink/TypeScript expertise requirements.",
+        "Assistant inspects repo files before making repo-specific claims.",
+        "Assistant keeps responses implementation-focused."
+      ],
+      "file_targets": [
+        "PROJECT_INSTRUCTIONS.md",
+        "meatharness-ai-contract.yaml",
+        "execution-state.template.json",
+        "ink-tui-cheatsheet.md"
+      ],
+      "notes": []
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DEC-0001",
+      "summary": "Use a static JSON source as the execution layer and replace its contents after substantial work turns.",
+      "status": "accepted",
+      "rationale": "ChatGPT Project Sources are not automatically mutable during a chat turn, so the assistant must provide an updated replacement JSON object when state changes."
+    }
+  ],
+  "blockers": [],
+  "assumptions": [
+    {
+      "id": "ASM-0001",
+      "summary": "The assistant has access to the connected GitHub repo when repo-specific work is requested.",
+      "risk": "If connector access is unavailable, the user must paste/upload files or reconnect the repo."
+    }
+  ],
+  "verified_facts": [
+    {
+      "id": "FACT-0001",
+      "summary": "The repo is `DigitalHerencia/MeatHarness` and is a private GitHub repository."
+    },
+    {
+      "id": "FACT-0002",
+      "summary": "The repo contains TypeScript/Ink-oriented anchors including `src/cli.ts`, `src/app.tsx`, state files, component screens, utilities, `package.json`, `pnpm-lock.yaml`, and `.agent-logs/events.jsonl`."
+    }
+  ],
+  "file_targets": [],
+  "validation": {
+    "commands_run": [],
+    "commands_to_run_next": [],
+    "status": "not_run",
+    "notes": [
+      "Read `package.json` before naming exact validation scripts."
+    ]
+  },
+  "risks": [],
+  "next_actions": [
+    {
+      "id": "NEXT-0001",
+      "summary": "Upload these files as ChatGPT Project Sources and paste `PROJECT_INSTRUCTIONS.md` into the Project Instructions field."
+    },
+    {
+      "id": "NEXT-0002",
+      "summary": "On first repo-work turn, inspect `package.json`, `src/cli.ts`, `src/app.tsx`, and `src/state/useMeatHarnessController.ts`."
+    }
+  ]
+}
