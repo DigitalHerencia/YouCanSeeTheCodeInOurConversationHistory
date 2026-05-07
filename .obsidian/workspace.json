@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OBSIDIAN/Contracts.md",
+                "file": "00 ZETTELKASTEN/untitled.000.capture.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,31 +52,17 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Contracts"
+              "title": "untitled.000.capture"
             }
           },
           {
-            "id": "2fd936d84fb48684",
+            "id": "e72a12978a9522ec",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Untitled 2.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Untitled 2"
+              "title": "New tab"
             }
           }
         ],
@@ -216,13 +202,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled 2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Untitled 2"
+              "title": "Outline"
             }
           }
         ],
@@ -263,46 +248,46 @@
       "obsidian42-text-transporter:Text Transporter": false
     }
   },
-  "active": "2fd936d84fb48684",
+  "active": "e72a12978a9522ec",
   "lastOpenFiles": [
-    "_OPS/devnotes-bootstrap-pass2.ps1",
-    "OBSIDIAN/Contracts.md",
+    "00 ZETTELKASTEN/untitled.000.capture.md",
+    "90 OBSIDIAN/Contracts/obsidian.documentation.file-types.md",
+    "20 DOCUMENTATION/ChatGPT Docs/ChatGPT agent.md",
+    "30 DEEP RESEARCH/Building Viable AI Video Workflow Products Without Sora-Style Failure Modes.md",
     "Untitled 2.md",
-    "Untitled 1.md",
-    "Untitled.md",
-    "OBSIDIAN/OpenAPI Specification v3.2.0.md",
-    "File Types for Documentation.md",
-    "PROJECTS/Vouch/Vouch Messaging.md",
-    "PROJECTS/RateLtd/08 - Decisions and Risks.md",
-    "PROJECTS/Vouch/How the Machine Becomes Trustworthy.md",
-    "PROJECTS/Vouch/Gas Pump Analogy.md",
-    "PROJECTS/RateLtd/07 - Codex Work Packages.md",
-    "PROJECTS/RateLtd/06 - Task Matrix.md",
-    "PROJECTS/RateLtd/04 - Module Specifications.md",
-    "PROJECTS/RateLtd/03 - Architecture Plan.md",
-    "PROJECTS/RateLtd/02 - Feature Inventory.md",
-    "PROJECTS/RateLtd/01 - Product Vision.md",
-    "REGRETS, CIGARETTES, & NUERAL NETS/Now That's What I Call Dev Ops.md",
-    "PROJECTS/Vouch/What Next.md",
+    "10 PROJECTS/MeatHarness/60 EXECUTION/meatharness.execution-state.template.json",
+    "10 PROJECTS/MeatHarness/20 CONTRACTS/meatharness.ai.contract.yaml",
+    "10 PROJECTS/MeatHarness/70 RESEARCH/meatharness.ink-tui.cheatsheet.md",
+    "10 PROJECTS/MeatHarness/60 EXECUTION/meatharness.execution.implementation-plan.md",
+    "10 PROJECTS/MeatHarness/50 AGENT OPS/meatharness.project.instructions.md",
+    "10 PROJECTS/MeatHarness/00 PROJECT MAP/meatharness.project.packet.md",
+    "10 PROJECTS/CtrlPlus/60 EXECUTION/ctrlplus.execution.wrap-catalog-visualizer-refactor.md",
+    "10 PROJECTS/CtrlPlus/60 EXECUTION/ctrlplus.execution.refactor.md",
+    "10 PROJECTS/CtrlPlus/50 AGENT OPS/ctrlplus.codex.visualizer-generation-pipeline.spec.md",
+    "10 PROJECTS/CtrlPlus/50 AGENT OPS/ctrlplus.codex.wrap-visualizer-migration.spec.md",
+    "10 PROJECTS/CtrlPlus/30 ARCHITECTURE/ctrlplus.architecture.server-first-blueprint.md",
+    "10 PROJECTS/CtrlPlus/20 CONTRACTS/architecture/ctrlplus.architecture.boundaries.contract.md",
+    "10 PROJECTS/CtrlPlus/30 ARCHITECTURE/ctrlplus.architecture.target-directory-tree.md",
+    "10 PROJECTS/CtrlPlus/30 ARCHITECTURE/ctrlplus.architecture.core-principles.md",
+    "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.overview.legacy.md",
+    "10 PROJECTS/Vouch/20 CONTRACTS/payments/vouch.payments.stripe-setup-guide.legacy.md",
+    "10 PROJECTS/Vouch/30 ARCHITECTURE/vouch.routes.implementation-matrix.legacy.md",
+    "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.pricing.legacy.md",
+    "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.prd.legacy.md",
+    "10 PROJECTS/Vouch/50 AGENT OPS/vouch.codex.dev-prompts.legacy.md",
+    "10 PROJECTS/Vouch/90 ARCHIVE/legacy/vouch.blueprints.legacy.md",
+    "10 PROJECTS/Vouch/90 ARCHIVE/legacy/vouch.backend.inventory.legacy.md",
+    "10 PROJECTS/Vouch/90 ARCHIVE/legacy",
+    "10 PROJECTS/Vouch/60 EXECUTION/vouch.execution.what-next.md",
+    "_OPS/devnotes-bootstrap-pass2.ps1",
     "PROJECTS/Vouch/Legacy",
     "DevNotes.base",
-    "PROJECTS/RateLtd/05 - Integration Plan.md",
-    "PROJECTS/RateLtd/00 - RateLtd Index.md",
-    "PROJECTS/CtrlPlus/Architecture Recommended Target Directory Tree.md",
-    "PROJECTS/RateLtd/Comprehensive Scope.md",
-    "PROJECTS/RateLtd/00 - RateLtd Index 1.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
-    "DOCUMENTATION/GitHub Docs/Awesp,e Github 05-02-26.md",
-    "REGRETS, CIGARETTES, & NUERAL NETS/Creative Co-Creation and Branching.md",
     "DOCUMENTATION",
     "OBSIDIAN/OB-Templates",
     "PROJECTS/RateLtd",
     "PROJECTS/MeatHarness/meatharness-ai-contract.yaml",
-    "PROJECTS/MeatHarness/execution-state.template.json",
-    "DOCUMENTATION/GitHub Docs",
-    "PROJECTS",
-    "DOCUMENTATION/ChatGPT Docs",
     "DOCUMENTATION/HuggingFace Docs/target.png",
     "DOCUMENTATION/HuggingFace Docs/reference.png",
     "DOCUMENTATION/HuggingFace Docs/output.png",
