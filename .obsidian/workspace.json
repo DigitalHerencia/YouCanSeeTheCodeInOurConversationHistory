@@ -265,6 +265,7 @@
   },
   "active": "e72a12978a9522ec",
   "lastOpenFiles": [
+    "_OPS/devnotes-bootstrap-pass3a.ps1",
     "10 PROJECTS/RateLtd/40 FEATURES/rateltd.features.inventory.md",
     "10 PROJECTS/RateLtd/60 EXECUTION/rateltd.decisions-and-risks.md",
     "10 PROJECTS/Vouch/90 ARCHIVE/legacy/vouch.blueprints.legacy.md",
@@ -293,7 +294,6 @@
     "10 PROJECTS/Vouch/30 ARCHITECTURE/vouch.routes.implementation-matrix.legacy.md",
     "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.pricing.legacy.md",
     "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.prd.legacy.md",
-    "10 PROJECTS/Vouch/50 AGENT OPS/vouch.codex.dev-prompts.legacy.md",
     "10 PROJECTS/Vouch/90 ARCHIVE/legacy",
     "_OPS/devnotes-bootstrap-pass2.ps1",
     "PROJECTS/Vouch/Legacy",
