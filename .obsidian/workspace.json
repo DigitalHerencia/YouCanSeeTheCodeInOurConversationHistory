@@ -59,10 +59,24 @@
             "id": "e72a12978a9522ec",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "10 PROJECTS/RateLtd/30 ARCHITECTURE/rateltd.architecture.plan.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "rateltd.architecture.plan"
             }
           }
         ],
@@ -202,12 +216,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "10 PROJECTS/RateLtd/30 ARCHITECTURE/rateltd.architecture.plan.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of rateltd.architecture.plan"
             }
           }
         ],
@@ -250,8 +265,12 @@
   },
   "active": "e72a12978a9522ec",
   "lastOpenFiles": [
-    "00 ZETTELKASTEN/untitled.000.capture.md",
+    "10 PROJECTS/RateLtd/40 FEATURES/rateltd.features.inventory.md",
+    "10 PROJECTS/RateLtd/60 EXECUTION/rateltd.decisions-and-risks.md",
+    "10 PROJECTS/Vouch/90 ARCHIVE/legacy/vouch.blueprints.legacy.md",
+    "DevNotes.base",
     "90 OBSIDIAN/Contracts/obsidian.documentation.file-types.md",
+    "00 ZETTELKASTEN/untitled.000.capture.md",
     "20 DOCUMENTATION/ChatGPT Docs/ChatGPT agent.md",
     "30 DEEP RESEARCH/Building Viable AI Video Workflow Products Without Sora-Style Failure Modes.md",
     "Untitled 2.md",
@@ -275,13 +294,9 @@
     "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.pricing.legacy.md",
     "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.prd.legacy.md",
     "10 PROJECTS/Vouch/50 AGENT OPS/vouch.codex.dev-prompts.legacy.md",
-    "10 PROJECTS/Vouch/90 ARCHIVE/legacy/vouch.blueprints.legacy.md",
-    "10 PROJECTS/Vouch/90 ARCHIVE/legacy/vouch.backend.inventory.legacy.md",
     "10 PROJECTS/Vouch/90 ARCHIVE/legacy",
-    "10 PROJECTS/Vouch/60 EXECUTION/vouch.execution.what-next.md",
     "_OPS/devnotes-bootstrap-pass2.ps1",
     "PROJECTS/Vouch/Legacy",
-    "DevNotes.base",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "DOCUMENTATION",
