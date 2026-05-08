@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "22023c6c30831a3e",
+        "id": "c325793b01717854",
         "type": "tabs",
         "children": [
           {
-            "id": "f61d8efc850e6309",
+            "id": "3a17003028bed762",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled 1.md",
+                "file": "10 PROJECTS/RateLtd/20 CONTRACTS/product/rateltd.product.protocol-completeness.contract.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,59 +28,10 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Untitled 1"
-            }
-          },
-          {
-            "id": "dc16e27249735084",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00 ZETTELKASTEN/untitled.000.capture.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "untitled.000.capture"
-            }
-          },
-          {
-            "id": "e72a12978a9522ec",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "10 PROJECTS/RateLtd/30 ARCHITECTURE/rateltd.architecture.plan.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "rateltd.architecture.plan"
+              "title": "rateltd.product.protocol-completeness.contract"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -92,6 +43,7 @@
       {
         "id": "29638fda63730726",
         "type": "tabs",
+        "dimension": 72.92682926829268,
         "children": [
           {
             "id": "196f6ed94d57a4c6",
@@ -100,7 +52,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -112,7 +64,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#status",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -134,10 +86,27 @@
             }
           }
         ]
+      },
+      {
+        "id": "0e9350b34ffbac9b",
+        "type": "tabs",
+        "dimension": 27.073170731707318,
+        "children": [
+          {
+            "id": "9719aadfd95a6d60",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 371.5
+    "width": 457.5
   },
   "right": {
     "id": "acf9b2ce38860566",
@@ -154,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PROJECTS/RateLtd/03 - Architecture Plan.md",
+                "file": "10 PROJECTS/RateLtd/20 CONTRACTS/product/rateltd.product.protocol-completeness.contract.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -164,7 +133,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 03 - Architecture Plan"
+              "title": "Backlinks for rateltd.product.protocol-completeness.contract"
             }
           },
           {
@@ -173,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PROJECTS/RateLtd/Comprehensive Scope.md",
+                "file": "10 PROJECTS/RateLtd/20 CONTRACTS/product/rateltd.product.protocol-completeness.contract.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Comprehensive Scope"
+              "title": "Outgoing links from rateltd.product.protocol-completeness.contract"
             }
           },
           {
@@ -216,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10 PROJECTS/RateLtd/30 ARCHITECTURE/rateltd.architecture.plan.md",
-                "followCursor": false,
+                "file": "10 PROJECTS/RateLtd/20 CONTRACTS/product/rateltd.product.protocol-completeness.contract.md",
+                "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of rateltd.architecture.plan"
+              "title": "Outline of rateltd.product.protocol-completeness.contract"
             }
           }
         ],
@@ -247,7 +216,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.5
+    "width": 325.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -263,46 +232,46 @@
       "obsidian42-text-transporter:Text Transporter": false
     }
   },
-  "active": "e72a12978a9522ec",
+  "active": "3a17003028bed762",
   "lastOpenFiles": [
-    "_OPS/devnotes-bootstrap-pass3c-fix.ps1",
-    "10 PROJECTS/CodependentCoding/00 PROJECT MAP/codependentcoding.project.map.md",
-    "10 PROJECTS/BorderPulse/00 PROJECT MAP/borderpulse.project.map.md",
-    "10 PROJECTS/MeatHarness/00 PROJECT MAP/meatharness.project.map.md",
-    "10 PROJECTS/CtrlPlus/00 PROJECT MAP/ctrlplus.project.map.md",
-    "10 PROJECTS/Vouch/00 PROJECT MAP/vouch.project.map.md",
-    "10 PROJECTS/projects.map.md",
+    "00 ZETTELKASTEN/untitled.003.capture.md",
+    "10 PROJECTS/RateLtd/20 CONTRACTS/product/rateltd.product.protocol-completeness.contract.md",
+    "10 PROJECTS/RateLtd/50 AGENT OPS/rateltd.agent-ops.inference-efficiency-engineering.standard.md",
+    "10 PROJECTS/RateLtd/20 CONTRACTS/product/rateltd.product.local-operations-console.contract.md",
+    "10 PROJECTS/RateLtd/20 CONTRACTS/product/rateltd.product.local-context-protocol.contract.md",
+    "10 PROJECTS/RateLtd/10 PRODUCT/rateltd.product.local-operations-console.contract.md",
+    "10 PROJECTS/RateLtd/00 PROJECT MAP/rateltd.project.map.md",
+    "10 PROJECTS/RateLtd/40 FEATURES/rateltd.features.inventory.md",
+    "10 PROJECTS/RateLtd/10 PRODUCT/rateltd.product.vision.md",
+    "10 PROJECTS/RateLtd/10 PRODUCT/rateltd.product.comprehensive-scope.md",
+    "rateltd.product.local-context-protocol.contract.md",
+    "90 OBSIDIAN/Workflows/obsidian.cli.workflow.md",
+    "90 OBSIDIAN/Workflows/obsidian.zettelkasten.amoeba-workflow.md",
+    "90 OBSIDIAN/Scripts/promote-selection-to-note.js",
+    "90 OBSIDIAN/Scripts",
+    "10 PROJECTS/RateLtd/30 ARCHITECTURE/rateltd.architecture.plan.md",
+    "00 ZETTELKASTEN/untitled.004.capture.md",
+    "00 ZETTELKASTEN/untitled.000.capture.md",
+    "devnotes.home.md",
+    "DevNotes.base",
+    "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.doctrine.md",
+    "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.messaging.md",
+    "10 PROJECTS/RateLtd/50 AGENT OPS/rateltd.codex.prompts.md",
+    "10 PROJECTS/RateLtd/50 AGENT OPS/rateltd.codex.work-packages.md",
+    "10 PROJECTS/RateLtd/20 CONTRACTS/rateltd.modules.specifications.contract.md",
     "90 OBSIDIAN/obsidian.system.map.md",
-    "50 REGRETS, CIGARETTES, & NEURAL NETS/regrets-cigarettes-neural-nets.map.md",
-    "40 TECH STACK/tech-stack.map.md",
-    "30 DEEP RESEARCH/deep-research.map.md",
-    "20 DOCUMENTATION/documentation.map.md",
-    "00 ZETTELKASTEN/zettelkasten.map.md",
+    "90 OBSIDIAN/OpenAPI Specification v3.2.0.md",
+    "90 OBSIDIAN/OB-Templates/Contracts/lifecycle.contract.md",
+    "90 OBSIDIAN/OB-Templates/Contracts/authz.contract.md",
+    "_OPS/devnotes-normalize-properties-pass1.ps1",
+    "_OPS/devnotes-bootstrap-pass3c-fix.ps1",
     "_OPS/devnotes-bootstrap-pass3c.ps1",
-    "90 OBSIDIAN/OB-Templates/Contracts/handoff.contract.md",
-    "90 OBSIDIAN/OB-Templates/Contracts/verification-checklist.contract.md",
-    "90 OBSIDIAN/OB-Templates/Contracts/work-package.contract.md",
-    "90 OBSIDIAN/OB-Templates/Contracts/codex-rules.contract.md",
-    "90 OBSIDIAN/OB-Templates/Contracts/test-contract.contract.md",
-    "90 OBSIDIAN/OB-Templates/Contracts/copy-contract.contract.md",
-    "90 OBSIDIAN/OB-Templates/Contracts/ui-contract.contract.md",
-    "90 OBSIDIAN/OB-Templates/Contracts/integration-contract.contract.md",
-    "90 OBSIDIAN/OB-Templates/Contracts/webhook-contract.contract.md",
-    "90 OBSIDIAN/OB-Templates/Contracts/event-contract.contract.md",
-    "90 OBSIDIAN/OB-Templates/Contracts/api-contract.contract.md",
-    "90 OBSIDIAN/OB-Templates/Contracts/data-model.contract.md",
-    "90 OBSIDIAN/OB-Templates/Contracts/module-spec.contract.md",
     "_OPS/devnotes-bootstrap-pass3b.ps1",
     "_OPS/devnotes-bootstrap-pass3a.ps1",
-    "DevNotes.base",
     "10 PROJECTS/MeatHarness/60 EXECUTION/meatharness.execution-state.template.json",
     "10 PROJECTS/MeatHarness/20 CONTRACTS/meatharness.ai.contract.yaml",
-    "10 PROJECTS/Vouch/90 ARCHIVE/legacy",
-    "_OPS/devnotes-bootstrap-pass2.ps1",
-    "PROJECTS/Vouch/Legacy",
     "Untitled 1.canvas",
     "Untitled.canvas",
-    "DOCUMENTATION",
     "DOCUMENTATION/HuggingFace Docs/target.png",
     "DOCUMENTATION/HuggingFace Docs/reference.png",
     "DOCUMENTATION/HuggingFace Docs/output.png",

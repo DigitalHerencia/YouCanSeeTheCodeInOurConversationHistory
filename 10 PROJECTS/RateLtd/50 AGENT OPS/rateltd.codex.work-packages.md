@@ -403,3 +403,28 @@ Prepare RateLtd for regular local use.
 ### Done When
 
 - RateLtd can be run, tested, iterated, and shipped safely.
+
+
+---
+
+Yes. Best move: **copy MeatHarness → RateLtd, then run Codex in ordered high-yield patches**, not one mega-prompt. The docs already say RateLtd is an Ink/TypeScript TUI expanded from the existing harness, with termcn wrapped locally, PowerShell/Monaco/git-split-diffs as adapters, and no direct Monaco-in-Ink fantasy.
+
+## Codex Rate-Limit Strategy
+
+Use **one 5-hour limit** as:
+
+1. **Inventory + migration spine**
+    
+2. **Brand + shell + screen registry**
+    
+3. **termcn wrapper layer**
+    
+4. **functional CommanderLtd / LoggerLtd / DifferLtd / EditorLtd foundations**
+    
+5. **PowerShell provider + validation hardening**
+    
+
+Do **not** ask Codex to “build the whole dream app” in one shot. That wastes tokens. Feed it these prompts sequentially.
+
+---
+

@@ -1,19 +1,40 @@
 {
-  "choices": [],
-  "inputPrompt": "single-line",
+  "choices": [
+    {
+      "id": "8aaf80ab-29cd-413c-ac1f-320bcfabfd40",
+      "name": "Promote selected block to canonical note",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "Promote selected block to canonical note",
+        "id": "238d6095-b8e7-4b5c-961d-b3168581e0bc",
+        "commands": [
+          {
+            "name": "promote-selection-to-note",
+            "type": "UserScript",
+            "id": "15dd26c3-4a80-4cd2-8e14-0b2b02c211f3",
+            "path": "90 OBSIDIAN/Scripts/promote-selection-to-note.js",
+            "settings": {}
+          }
+        ]
+      }
+    }
+  ],
+  "inputPrompt": "multi-line",
   "persistInputPromptDrafts": true,
   "useSelectionAsCaptureValue": true,
   "devMode": false,
-  "templateFolderPath": "",
+  "templateFolderPath": "90 OBSIDIAN/Scripts",
   "announceUpdates": "major",
   "version": "2.12.0",
   "globalVariables": {},
-  "onePageInputEnabled": false,
+  "onePageInputEnabled": true,
   "disableOnlineFeatures": true,
-  "enableRibbonIcon": false,
+  "enableRibbonIcon": true,
   "showCaptureNotification": true,
-  "showInputCancellationNotification": false,
-  "enableTemplatePropertyTypes": false,
+  "showInputCancellationNotification": true,
+  "enableTemplatePropertyTypes": true,
   "dateAliases": {
     "t": "today",
     "tm": "tomorrow",

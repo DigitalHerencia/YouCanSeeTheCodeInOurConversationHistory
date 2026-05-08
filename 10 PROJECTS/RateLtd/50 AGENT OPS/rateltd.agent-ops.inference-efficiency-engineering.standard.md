@@ -1,0 +1,219 @@
+---
+
+title: RateLtd Inference Efficiency Engineering Standard  
+type: standard  
+scope: project  
+project: RateLtd  
+domain: agent-ops  
+artifact: inference-efficiency-engineering  
+kind: standard  
+namespace: rateltd.agent-ops.inference-efficiency-engineering.standard  
+status: active  
+authority: source-of-truth  
+parent: [[rateltd.project.map]]  
+depends_on:
+- [[rateltd.product.local-context-protocol.contract]]  
+- [[rateltd.product.local-operations-console.contract]]  
+supersedes: []  
+tags:
+- projects/rateltd  
+- domains/agent-ops
+- types/standard
+- status/active
+- rateltd/codex
+- rateltd/inference  
+created: 2026-05-07  
+updated: 2026-05-07 
+
+---
+
+# RateLtd Inference Efficiency Engineering Standard
+
+## Core Concept
+
+The working discipline is **inference-constrained product orchestration**.
+
+Most engineering assumes labor is abundant and compute is cheap enough to treat iteration casually. That assumption breaks under agentic development when implementation power is rate-limited.
+
+When Codex or another agentic coding system is constrained, inference becomes a scarce production resource.
+
+Tokens become capital.
+
+Context becomes bandwidth.
+
+Model turns become execution windows.
+
+## Problem Statement
+
+Under rate-limited agentic development, the limiting factor is no longer imagination or technical possibility.
+
+The limiting factor becomes allocation efficiency.
+
+The key question is:
+
+> Where should scarce inference be spent to create the greatest realized product value?
+
+## Operating Purpose
+
+The purpose is not simply to plan software.
+
+The purpose is to optimize the conversion of limited model execution into durable product state.
+
+Put another way:
+
+> Maximize realized implementation per unit of scarce inference.
+
+## Required Behaviors
+
+This discipline requires:
+
+- reducing ambiguity before prompts are sent
+    
+- tightening scope to visible truth
+    
+- eliminating speculative architecture
+    
+- defining canonical contracts in advance
+    
+- auditing actual state against intended state
+    
+- sending Codex only the highest-leverage delta
+    
+
+Every one of these steps increases output quality while decreasing wasted execution.
+
+## Capital Allocation Model
+
+This is capital allocation, except the capital is inference.
+
+Useful framings:
+
+- token economics for product execution
+    
+- inference yield optimization
+    
+- rate-limit-aware systems design
+    
+- inference efficiency engineering
+    
+
+The cleanest phrase is:
+
+> inference efficiency engineering
+
+## Standard
+
+The purpose is simple:
+
+> convert scarce model turns into maximum meaningful progress.
+
+Not motion.
+
+Progress.
+
+Not lines of code.
+
+Product truth.
+
+Not complexity.
+
+Alignment.
+
+## Why This Matters
+
+This process is the disciplined orchestration of scarce inference toward the highest-value implementation outcome.
+
+That is why the work matters before Codex writes another line.
+
+Every contract, audit, scope reduction, and handoff increases the yield of every future turn.
+
+## RateLtd Implication
+
+RateLtd is justified because it increases inference yield.
+
+It reduces wasted model loops by:
+
+- making repo state visible
+    
+- reducing manual command friction
+    
+- turning repeated operations into macros
+    
+- preserving outputs as reusable context
+    
+- formatting handoffs for ChatGPT
+    
+- letting Codex receive smaller, sharper deltas
+    
+
+## Non-Negotiable Rule
+
+Do not spend scarce inference on unclear work.
+
+Clarify the contract first.
+
+Audit visible state second.
+
+Send the agent only the highest-leverage delta third.
+
+## Failure Modes
+
+|Failure|Cause|Required Handling|
+|---|---|---|
+|Codex burns tokens on ambiguity|Prompt lacks contract or visible state|Define source-of-truth note before execution|
+|Agent implements wrong surface|UI contract was not declared|Create screen contract before implementation prompt|
+|Work produces motion but not progress|Scope rewards file count instead of product truth|Reframe acceptance around durable product state|
+|Rate limit punishes iteration|Too many speculative prompts|Pre-audit repo and send only high-leverage delta|
+|Context packet is noisy|Handoff includes irrelevant state|Sanitize, summarize, and target the next decision/action|
+
+## Acceptance Criteria
+
+-  Work packages reduce ambiguity before agent execution.
+    
+-  Agent prompts target the highest-leverage delta.
+    
+-  Contracts are declared before implementation when possible.
+    
+-  Actual repo state is audited against intended product state.
+    
+-  Codex is not spent on speculative, ornamental, or poorly bounded work.
+    
+-  The system optimizes for product truth rather than token-consuming motion.
+    
+
+## Verification Checklist
+
+-  Namespace is correct.
+    
+-  Scope is explicit.
+    
+-  Domain boundary is clear.
+    
+-  Rules are testable.
+    
+-  Forbidden behavior is documented.
+    
+-  Dependencies are linked.
+    
+-  Implementation references can be added after repo audit.
+    
+-  This standard does not duplicate another active source-of-truth note.
+    
+
+## Open Questions
+
+- Should RateLtd score actions by inference leverage?
+    
+- Should handoff packets include “recommended next prompt” for ChatGPT/Codex?
+    
+- Should work-package templates include explicit inference-risk sections?
+    
+
+## Changelog
+
+|Date|Change|Reason|
+|---|---|---|
+|2026-05-07|Created|Converted inference-constrained product orchestration doctrine into RateLtd agent-ops standard|
+
+---
+
