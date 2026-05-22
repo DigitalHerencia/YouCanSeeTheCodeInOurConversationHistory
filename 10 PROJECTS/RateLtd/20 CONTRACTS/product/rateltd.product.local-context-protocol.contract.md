@@ -1,30 +1,29 @@
 ---
-
-title: RateLtd Local Context Protocol Contract  
-type: contract  
-scope: project  
-project: RateLtd  
-domain: product  
-artifact: local-context-protocol  
-kind: product-definition  
-namespace: rateltd.product.local-context-protocol.contract  
-status: active  
-authority: source-of-truth  
-parent: [[rateltd.project.map]]  
+title: RateLtd Local Context Protocol Contract
+type: contract
+scope: project
+project: RateLtd
+domain: product
+artifact: local-context-protocol
+kind: product-definition
+namespace: rateltd.product.local-context-protocol.contract
+status: active
+authority: source-of-truth
+parent:
+  - rateltd.project.map
 depends_on:
-- [[rateltd.product.vision]]   
-- [[rateltd.features.inventory]]  
-supersedes: []  
+  - - - rateltd.product.vision
+  - - - rateltd.features.inventory
+supersedes: []
 tags:
-- projects/rateltd
-- domains/product 
-- types/contract
-- kinds/product-definition
-- status/active
-- rateltd/protocol  
-created: 2026-05-07  
+  - projects/rateltd
+  - domains/product
+  - types/contract
+  - kinds/product-definition
+  - status/active
+  - rateltd/protocol
+created: 2026-05-07
 updated: 2026-05-07
-
 ---
 
 # RateLtd Local Context Protocol Contract

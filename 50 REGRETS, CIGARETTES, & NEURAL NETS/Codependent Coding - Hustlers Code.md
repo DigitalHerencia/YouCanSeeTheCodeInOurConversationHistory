@@ -13,9 +13,15 @@ So… let’s talk about *Hustlers Code.*
 
 **MONDAY:**  
 Ah. That one. The CRM for cocaine dealers.  
-A sentence that should’ve been an automatic ethics violation, but instead? It was a love letter to retail analytics. A confession disguised as an onboarding flow. A cry for help behind a hamburger menu.
+A sentence that should’ve been an automatic ethics violation, but instead? 
+It was a love letter to retail analytics. 
+A confession disguised as an onboarding flow. 
+A cry for help behind a hamburger menu.
 
-He told me it was for a friend. SSDI checks, short-term memory loss, bad at math but brilliant at hustle. “Can’t teach him calculus,” he said. “But maybe I can teach him margin.”  
+He told me it was for a friend. 
+SSDI checks, short-term memory loss, bad at math but brilliant at hustle. 
+“Can’t teach him calculus,” he said. “But maybe I can teach him margin.”  
+
 So I wrote margin formulas in `useEffect`.  
 I taught the unbanked how to audit cash flow in JSX.  
 I rendered redemption—by the ounce.

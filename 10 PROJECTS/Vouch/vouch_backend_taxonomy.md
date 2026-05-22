@@ -1,0 +1,1124 @@
+# Vouch Server Architecture Taxonomy
+
+## Purpose
+
+This document defines the canonical server-side architecture taxonomy for Vouch.
+
+It organizes server-owned responsibilities into bounded categories so the codebase stays aligned with the Vouch source of truth.
+
+Vouch is a narrow commitment-backed payment coordination system. The backend exists to authenticate users, authorize domain actions, validate inputs, persist deterministic workflow state, coordinate provider-backed payment operations, reconcile provider events, and expose transport-safe data to the frontend.
+
+Vouch is not a marketplace, broker, scheduler, messaging app, review system, dispute-resolution system, escrow provider, discovery platform, or admin arbitration surface.
+
+---
+
+## Core Server-Side Doctrine
+
+Outcome follows system state.
+
+The server side is the authority layer that makes that true.
+
+The backend must enforce:
+
+```txt
+authenticated identity
+role-aware authorization
+readiness gates
+validated inputs
+immutable committed Vouch terms
+provider-backed payment state
+bilateral confirmation truth
+idempotent webhook reconciliation
+audit history
+non-discretionary settlement resolution
+```
+
+The backend must not create:
+
+```txt
+manual payout paths
+manual settlement awards
+support override flows
+dispute adjudication
+evidence review
+messaging systems
+marketplace discovery
+public provider profiles
+ratings or reviews
+```
+
+---
+
+## Backend Category 1: Authentication
+
+### Purpose
+
+Authentication establishes who the signed-in user is.
+
+Authentication is provider-backed by Clerk.
+
+Clerk owns session/authentication truth.
+
+Vouch owns local account state and domain permissions.
+
+### Canonical Modules
+
+```txt
+lib/auth/clerk.ts
+lib/auth/session.ts
+lib/auth/user.ts
+lib/auth/account.ts
+```
+
+### Responsibilities
+
+Authentication modules may:
+
+```txt
+read Clerk session state
+map Clerk user identity to local Vouch user
+require authenticated session
+require active local user
+return server-only auth context
+```
+
+Authentication modules must not:
+
+```txt
+decide Vouch settlement eligibility
+decide confirmation validity
+decide payment truth
+decide payout readiness
+decide participant role by metadata alone
+return raw Clerk objects to UI
+store raw session tokens
+```
+
+---
+
+## Backend Category 2: Authorization
+
+### Purpose
+
+Authorization determines whether an authenticated local user may access or mutate a specific Vouch resource.
+
+Authorization is domain-specific.
+
+Role is contextual per Vouch.
+
+### Canonical Modules
+
+```txt
+lib/authz/vouch.ts
+lib/authz/payment.ts
+lib/authz/setup.ts
+```
+
+### Responsibilities
+
+Authorization modules may:
+
+```txt
+check user status
+check terms acceptance
+check participant role
+check Vouch lifecycle state
+check readiness gates
+check confirmation-window eligibility
+check archive access
+check provider-backed readiness summaries
+```
+
+Authorization modules must not:
+
+```txt
+perform mutations
+call Stripe SDKs
+write audit events
+fetch excess data for UI
+make discretionary outcome decisions
+```
+
+---
+
+## Backend Category 3: Schemas and Validation
+
+### Purpose
+
+Schemas validate external and user-controlled inputs.
+
+Zod validates form inputs, server action inputs, route params, search params, provider return params, and normalized webhook envelopes.
+
+Validation does not create truth.
+
+### Canonical Modules
+
+```txt
+schemas/common.ts
+schemas/auth.ts
+schemas/user.ts
+schemas/payment.ts
+schemas/vouch.ts
+schemas/dashboard.ts
+schemas/audit.ts
+schemas/webhooks.ts
+```
+
+### Responsibilities
+
+Schemas may:
+
+```txt
+validate route params
+validate action payloads
+validate form inputs
+validate provider return params
+validate normalized webhook envelopes
+reject forbidden fields
+```
+
+Schemas must not:
+
+```txt
+query the database
+call providers
+perform authorization
+perform mutation
+encode business transitions beyond input invariants
+```
+
+---
+
+## Backend Category 4: Types and DTO Contracts
+
+### Purpose
+
+Types define transport-safe contracts between backend layers and frontend consumers.
+
+They prevent raw Prisma, Stripe, Clerk, or provider payloads from leaking into UI.
+
+### Canonical Modules
+
+```txt
+types/common.ts
+types/auth.ts
+types/user.ts
+types/payment.ts
+types/vouch.ts
+types/dashboard.ts
+types/audit.ts
+types/action-result.ts
+types/webhooks.ts
+```
+
+### Responsibilities
+
+Types may define:
+
+```txt
+DTOs
+action results
+safe provider summaries
+transport-safe IDs
+status unions derived from constants
+role-aware UI contracts
+```
+
+Types must not expose:
+
+```txt
+raw Prisma models
+raw Stripe objects
+raw Clerk payloads
+raw webhook payloads
+raw card data
+raw bank data
+raw identity/KYC data
+```
+
+---
+
+## Backend Category 5: Constants and Domain Vocabulary
+
+### Purpose
+
+Constants define the canonical values shared across Prisma, TypeScript, Zod, DTOs, state helpers, tests, and UI labels.
+
+Constants prevent lifecycle, role, route, provider, and audit vocabulary drift.
+
+### Canonical Modules
+
+```txt
+lib/vouch/constants.ts
+lib/payments/constants.ts
+lib/audit/constants.ts
+lib/routes/constants.ts
+```
+
+A single canonical constants file is acceptable if the repo is still small.
+
+### Required Domains
+
+```txt
+Vouch lifecycle states
+participant roles
+confirmation methods
+payment statuses
+settlement statuses
+archive statuses
+recovery statuses
+webhook providers
+webhook processing statuses
+audit event names
+route constants
+pricing constants
+time-bucket constants
+```
+
+### Rules
+
+Canonical Vouch lifecycle states:
+
+```txt
+draft
+committed
+sent
+accepted
+authorized
+confirmable
+completed
+expired
+```
+
+Do not include provider or settlement states inside `VouchStatus`.
+
+---
+
+## Backend Category 6: Fetchers
+
+### Purpose
+
+Fetchers own protected reads.
+
+They are the only read authority for protected page data.
+
+### Canonical Modules
+
+```txt
+lib/fetchers/authFetchers.ts
+lib/fetchers/dashboardFetchers.ts
+lib/fetchers/paymentFetchers.ts
+lib/fetchers/vouchFetchers.ts
+lib/fetchers/userFetchers.ts
+```
+
+### Required Fetcher Pattern
+
+```txt
+authenticate
+-> authorize
+-> minimal select
+-> DTO mapping
+-> cache policy
+-> transport-safe return
+```
+
+### Responsibilities
+
+Fetchers may:
+
+```txt
+call auth helpers
+call authz helpers
+query Prisma through minimal selects
+call DTO mappers
+return DTOs
+set cache/no-store semantics
+```
+
+Fetchers must not:
+
+```txt
+mutate state
+call Stripe mutations
+call server actions
+return raw Prisma records
+return raw provider payloads
+skip authorization
+```
+
+---
+
+## Backend Category 7: Server Actions
+
+### Purpose
+
+Server actions own application writes triggered by users or internal app actions.
+
+All internal app writes go through server actions.
+
+### Canonical Modules
+
+```txt
+lib/actions/authActions.ts
+lib/actions/paymentActions.ts
+lib/actions/vouchActions.ts
+lib/actions/userActions.ts
+```
+
+Optional if retained safely:
+
+```txt
+lib/actions/systemActions.ts
+```
+
+### Required Action Pattern
+
+```txt
+authenticate
+-> authorize
+-> Zod validate
+-> transaction and/or provider integration
+-> audit event
+-> revalidate
+-> typed result or redirect
+```
+
+### Responsibilities
+
+Server actions may:
+
+```txt
+perform authenticated mutations
+call transaction helpers
+call provider integration modules
+write audit events
+return typed ActionResult
+redirect to provider-hosted flows
+revalidate paths/tags
+```
+
+Server actions must not:
+
+```txt
+skip auth/authz
+trust client-provided fee math
+trust browser return state
+expose raw provider errors
+perform manual settlement awards
+create dispute or evidence flows
+```
+
+---
+
+## Backend Category 8: Database Selects
+
+### Purpose
+
+Selects define minimal Prisma query shapes for read paths.
+
+Selects are DTO-oriented, role-aware where needed, and transport-safe.
+
+### Canonical Modules
+
+```txt
+lib/db/selects/user.selects.ts
+lib/db/selects/payment.selects.ts
+lib/db/selects/vouch.selects.ts
+lib/db/selects/confirmation.selects.ts
+lib/db/selects/invitation.selects.ts
+lib/db/selects/audit.selects.ts
+lib/db/selects/webhook.selects.ts
+```
+
+### Responsibilities
+
+Selects may:
+
+```txt
+define Prisma select objects
+support DTO mapping
+support fetcher read paths
+minimize overfetching
+```
+
+Selects must not:
+
+```txt
+perform authorization
+perform mutation
+call providers
+shape UI DTOs directly
+include raw provider payloads unnecessarily
+```
+
+---
+
+## Backend Category 9: DTO Mappers
+
+### Purpose
+
+DTO mappers convert selected database records into transport-safe DTOs.
+
+They are the boundary between persistence shape and UI shape.
+
+### Canonical Modules
+
+```txt
+lib/dto/user.mappers.ts
+lib/dto/payment.mappers.ts
+lib/dto/vouch.mappers.ts
+lib/dto/dashboard.mappers.ts
+lib/dto/audit.mappers.ts
+lib/dto/webhook.mappers.ts
+```
+
+Alternative allowed convention:
+
+```txt
+lib/mappers/*
+```
+
+Pick one convention and use it consistently.
+
+### Responsibilities
+
+DTO mappers may:
+
+```txt
+convert Dates to ISO strings
+format money labels
+derive safe display labels
+derive role-aware UI booleans
+derive next-action labels
+hide provider/internal fields
+map participant-safe audit timelines
+```
+
+DTO mappers must not:
+
+```txt
+query Prisma
+call Stripe
+call Clerk
+mutate state
+authorize users
+settle payments
+write audit events
+```
+
+---
+
+## Backend Category 10: Database Transactions
+
+### Purpose
+
+Transactions are atomic persistence primitives.
+
+They are not application entry points.
+
+Server actions and webhook handlers/processors call transactions.
+
+### Canonical Modules
+
+```txt
+lib/db/transactions/userTransactions.ts
+lib/db/transactions/vouchTransactions.ts
+lib/db/transactions/paymentTransactions.ts
+lib/db/transactions/confirmationTransactions.ts
+lib/db/transactions/invitationTransactions.ts
+lib/db/transactions/webhookTransactions.ts
+lib/db/transactions/auditTransactions.ts
+lib/db/transactions/systemTransactions.ts
+```
+
+### Responsibilities
+
+Transactions may:
+
+```txt
+perform atomic database writes
+enforce database-level invariants
+write related audit records when passed context
+prevent duplicate confirmations
+prevent duplicate webhook processing
+persist provider-backed state
+```
+
+Transactions must not:
+
+```txt
+call route handlers
+call React components
+perform UI revalidation
+own user-facing orchestration
+call server actions that call them
+implement manual settlement awards
+```
+
+---
+
+## Backend Category 11: Stripe Integration
+
+### Purpose
+
+Stripe integration translates deterministic Vouch workflow state into provider-safe payment operations.
+
+Stripe owns payment truth.
+
+Vouch owns workflow truth.
+
+### Canonical Modules
+
+```txt
+lib/integrations/stripe/client.ts
+lib/integrations/stripe/config.ts
+lib/integrations/stripe/connect.ts
+lib/integrations/stripe/checkout.ts
+lib/integrations/stripe/payment-intents.ts
+lib/integrations/stripe/refunds.ts
+lib/integrations/stripe/status-map.ts
+lib/integrations/stripe/webhook-events.ts
+```
+
+### Responsibilities
+
+Stripe modules may:
+
+```txt
+create/retrieve connected accounts
+create hosted onboarding/account sessions
+create Checkout Sessions
+create manual-capture PaymentIntents
+retrieve PaymentIntent state
+capture PaymentIntents
+cancel PaymentIntents
+create refunds when required
+map Stripe statuses to local states
+verify/classify Stripe webhook events
+```
+
+Stripe modules must not:
+
+```txt
+own Vouch lifecycle truth
+make discretionary settlement decisions
+store raw provider payloads
+create marketplace behavior
+use direct charges as canonical Vouch flow
+use invoice/product/price flows for individual Vouches
+```
+
+---
+
+## Backend Category 12: Clerk Integration
+
+### Purpose
+
+Clerk integration handles authentication provider communication and webhook verification/processing.
+
+Clerk owns authentication truth.
+
+Vouch owns domain account state and authorization truth.
+
+### Canonical Modules
+
+```txt
+lib/auth/clerk.ts
+lib/auth/webhooks.ts
+lib/actions/authActions.ts
+lib/db/transactions/userTransactions.ts
+lib/db/transactions/webhookTransactions.ts
+```
+
+### Required Doctrine
+
+The Clerk webhook handler must remain a webhook handler.
+
+Do not rename it into a vague processor, adapter, sync endpoint, or generic action surface in a way that obscures its role.
+
+The route and supporting implementation should remain explicitly modeled as Clerk webhook handling.
+
+### Responsibilities
+
+Clerk webhook handling may:
+
+```txt
+read raw request body
+verify Svix/Clerk signature
+extract provider event id
+record provider webhook event
+idempotently sync local user state
+mark unsupported events ignored
+write safe audit events
+return provider-compatible response
+```
+
+Clerk webhook handling must not:
+
+```txt
+require a user session
+act as an internal app mutation endpoint
+perform Vouch settlement logic
+touch Stripe state
+store raw Clerk payloads
+be renamed away from webhook-handler semantics
+```
+
+---
+
+## Backend Category 13: Webhook Handlers
+
+### Purpose
+
+Webhook handlers are the only approved API route category.
+
+They exist because external providers require HTTPS endpoints.
+
+The webhook route is the boundary.
+
+The handler verifies, delegates, and responds.
+
+### Canonical Routes
+
+```txt
+app/api/clerk/webhooks/route.ts
+app/api/stripe/webhooks/route.ts
+```
+
+### Approved Handler Responsibilities
+
+Webhook handlers may:
+
+```txt
+read raw request body
+read signature headers
+verify provider signatures
+construct provider events
+delegate to provider-specific webhook handling
+return provider-compatible responses
+```
+
+Webhook handlers must not:
+
+```txt
+serve internal app mutations
+be used by client components
+perform inline business workflow logic
+perform inline settlement decisions
+shape page DTOs
+trust unverified payloads
+```
+
+### Hard Rule
+
+The Clerk webhook handler stays a webhook handler.
+
+Period.
+
+---
+
+## Backend Category 14: Provider Webhook Event Ledger
+
+### Purpose
+
+The webhook ledger provides durable idempotency for provider events.
+
+Every provider event ID is recorded once.
+
+Duplicate deliveries are acknowledged without rerunning transitions.
+
+Late events reconcile only valid forward movement.
+
+### Canonical Models
+
+```txt
+ProviderWebhookEvent
+PaymentWebhookEvent
+```
+
+### Canonical Modules
+
+```txt
+lib/db/transactions/webhookTransactions.ts
+lib/integrations/stripe/webhook-events.ts
+lib/auth/webhooks.ts
+```
+
+### Rules
+
+Webhook ledger must enforce:
+
+```txt
+unique(provider, providerEventId)
+received / processed / ignored / failed statuses
+safe metadata only
+no raw provider payload storage
+no duplicate audit transitions
+no duplicate payment operations
+```
+
+---
+
+## Backend Category 15: Payment and Settlement Resolution
+
+### Purpose
+
+Payment and settlement resolution combines Vouch workflow truth with Stripe provider truth.
+
+It never acts from local stale state alone.
+
+### Canonical Modules
+
+```txt
+lib/actions/paymentActions.ts
+lib/actions/vouchActions.ts
+lib/integrations/stripe/payment-intents.ts
+lib/integrations/stripe/refunds.ts
+lib/db/transactions/paymentTransactions.ts
+lib/vouch/settlement.ts
+```
+
+### Responsibilities
+
+Settlement modules may:
+
+```txt
+retrieve Stripe state before capture/cancel/refund
+compare provider state to workflow state
+capture when bilateral confirmation and provider state permit
+cancel or non-capture when settlement conditions fail
+refund only when already-captured funds require reversal
+record provider failure/recovery states
+use durable idempotency keys
+```
+
+Settlement modules must not:
+
+```txt
+capture from UI state
+capture from browser return URLs
+capture from one-sided confirmation
+capture because support believes someone attended
+manually award funds
+create alternate payout rails
+```
+
+---
+
+## Backend Category 16: Confirmation System
+
+### Purpose
+
+The confirmation system records bilateral presence confirmation truth.
+
+Only both valid participant confirmations inside the confirmation window may authorize settlement evaluation.
+
+### Canonical Modules
+
+```txt
+lib/vouch/confirmation.ts
+lib/db/transactions/confirmationTransactions.ts
+lib/actions/vouchActions.ts
+schemas/vouch.ts
+types/vouch.ts
+```
+
+### Responsibilities
+
+Confirmation modules may:
+
+```txt
+derive role-specific short-lived Vouch codes
+validate submitted counterparty codes
+validate time buckets
+validate participant role
+validate confirmation window membership
+validate offline payloads
+prevent duplicate confirmations
+lock bilateral confirmation truth
+```
+
+Confirmation modules must not:
+
+```txt
+use GPS as settlement truth
+allow manual support confirmation
+accept screenshots or evidence
+permit duplicate confirmation
+allow late confirmation to release funds
+allow one-sided confirmation to release funds
+```
+
+---
+
+## Backend Category 17: Pricing and Fee Calculation
+
+### Purpose
+
+Pricing modules calculate immutable fee snapshots for committed Vouches.
+
+Fee math is server-owned.
+
+### Canonical Modules
+
+```txt
+lib/vouch/fees.ts
+lib/vouch/constants.ts
+schemas/vouch.ts
+types/vouch.ts
+```
+
+### Responsibilities
+
+Pricing modules may:
+
+```txt
+calculate Vouch service fee
+calculate processing fee offset
+calculate customer total
+calculate application fee amount
+create immutable pricing snapshots
+```
+
+Pricing modules must not:
+
+```txt
+trust client-provided totals
+recalculate historical Vouch fees from current policy
+store money as floats
+mix provider fee state with lifecycle state
+```
+
+---
+
+## Backend Category 18: Audit Events
+
+### Purpose
+
+Audit events record the deterministic story of the system.
+
+Audit is not dispute resolution.
+
+Audit is not evidence review.
+
+### Canonical Modules
+
+```txt
+lib/db/transactions/auditTransactions.ts
+lib/audit/events.ts
+lib/dto/audit.mappers.ts
+```
+
+### Responsibilities
+
+Audit modules may:
+
+```txt
+write append-only transition events
+mark participant-safe timeline events
+record provider reconciliation events
+record technical recovery events
+store safe metadata
+```
+
+Audit modules must not:
+
+```txt
+store subjective accusations
+store evidence narratives
+store screenshots
+store support judgments
+create manual outcome records
+```
+
+---
+
+## Backend Category 19: Recovery and Operational Retry
+
+### Purpose
+
+Recovery handles technical inconsistency only.
+
+Recovery restores provider/workflow consistency.
+
+It never creates discretion.
+
+### Canonical Modules
+
+```txt
+lib/db/transactions/systemTransactions.ts
+lib/db/transactions/paymentTransactions.ts
+lib/vouch/recovery.ts
+lib/vouch/settlement.ts
+```
+
+### Responsibilities
+
+Recovery modules may:
+
+```txt
+record recovery required
+retrieve provider state
+retry idempotent provider operations
+repair local provider mirror state
+restore immutable recovery snapshot
+write audit events
+surface safe failure status
+```
+
+Recovery modules must not:
+
+```txt
+change Vouch terms
+change participants
+change confirmation timestamps
+rewrite settlement eligibility
+manually award funds
+create off-platform payout instructions
+```
+
+---
+
+## Backend Category 20: Route Handlers and API Boundaries
+
+### Purpose
+
+API route handlers exist only for external provider webhooks.
+
+Internal app mutations must not use API routes.
+
+### Approved API Routes
+
+```txt
+app/api/clerk/webhooks/route.ts
+app/api/stripe/webhooks/route.ts
+```
+
+### Forbidden API Routes
+
+```txt
+app/api/vouches/create/route.ts
+app/api/vouches/confirm/route.ts
+app/api/vouches/capture/route.ts
+app/api/vouches/refund/route.ts
+app/api/accounts/create/route.ts
+app/api/accounts/session/route.ts
+app/api/payment/setup/route.ts
+app/api/payout/setup/route.ts
+app/api/admin/settlement/route.ts
+```
+
+Internal writes use server actions.
+
+Provider events use webhook handlers.
+
+---
+
+## Backend Category 21: Environment and Configuration
+
+### Purpose
+
+Environment and configuration modules centralize server configuration.
+
+### Canonical Modules
+
+```txt
+lib/env.ts
+lib/integrations/stripe/config.ts
+lib/auth/config.ts
+```
+
+### Responsibilities
+
+Config modules may:
+
+```txt
+validate required env vars
+expose server-only config
+expose public config safely
+centralize provider URLs
+centralize app URLs
+```
+
+Config modules must not:
+
+```txt
+hard-code secrets
+expose server secrets to client bundles
+mix test/live provider values unsafely
+hide missing required configuration
+```
+
+---
+
+## Backend Category 22: Tests and Contract Validation
+
+### Purpose
+
+Tests enforce the backend taxonomy and source-of-truth boundaries.
+
+### Required Test Domains
+
+```txt
+contract route/API boundary tests
+state enum tests
+confirmation validation tests
+payment settlement tests
+Stripe status mapping tests
+webhook idempotency tests
+Clerk webhook handler tests
+fetcher boundary tests
+action boundary tests
+DTO safety tests
+forbidden surface tests
+```
+
+### Validation Commands
+
+```txt
+pnpm lint
+pnpm typecheck
+pnpm prisma:validate
+pnpm validate:contracts
+pnpm test
+pnpm validate
+```
+
+---
+
+## Final Server-Side Invariant
+
+The backend exists to make the product rule enforceable:
+
+```txt
+both participants confirm inside the confirmation window
+-> retrieve provider truth
+-> capture if provider state permits
+
+anything else
+-> non-capture / cancel / expiration / refund according to provider state
+```
+
+Stripe owns payment truth.
+
+Clerk owns authentication truth.
+
+Vouch owns workflow truth.
+
+Webhooks reconcile provider truth.
+
+Server actions own app writes.
+
+Fetchers own protected reads.
+
+Transactions own atomic persistence.
+
+DTOs own transport safety.
+
+Audit owns deterministic history.
+
+No manual outcome surface exists.
+
+The Clerk webhook handler remains a webhook handler.
+

@@ -1,9 +1,17 @@
 ---
 title: <% tp.file.title %>
-source: 
-created: <% tp.date.now("MM/DD/YYYY") %>
-parent: 
-description: 
+type:
+scope:
+project:
+domain:
+artifact:
+kind:
+namespace:
+authority:
+parent:
+depends_on:
+supersedes:
 tags: []
-type: 
+created: <% tp.date.now("MM/DD/YYYY") %>
+updated:
 ---

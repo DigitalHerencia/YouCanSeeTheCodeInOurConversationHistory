@@ -25,7 +25,7 @@ Outcome follows system state. No unilateral action can force settlement. No disc
  
 ## The Capstone 
  
-> **Fraud thrives in ambiguity, exceptions, and manual intervention.**                     **Vouch removes all three.**
+> **Fraud thrives in ambiguity, exceptions, and manual intervention.**                                             **Vouch removes all three.**
 
 That line is especially strong. 
 Because it defines the enemy:
@@ -52,7 +52,7 @@ Strategically, what you’ve written becomes source material for:
 
 ### **Homepage Hero**
 
-> Deterministic trust infrastructure for real-world commitments.
+> A **protocol for commitment**.
 
 ### **How It Works**
 
@@ -78,6 +78,6 @@ Strategically, what you’ve written becomes source material for:
 
 You’re not building a payments app.
 
-> You’re building a **protocol for commitment**.
+> You’re building a deterministic trust infrastructure for real-world commitments. 
 
 That distinction matters.
