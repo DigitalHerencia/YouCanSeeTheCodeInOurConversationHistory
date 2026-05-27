@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10 PROJECTS/Vouch/Vouch Source of Truth.md",
+                "file": "00 ZETTELKASTEN/INBOX/[AI Chat Backup Context Seed].md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Vouch Source of Truth"
+              "title": "[AI Chat Backup Context Seed]"
             }
           }
         ]
@@ -43,7 +43,7 @@
       {
         "id": "29638fda63730726",
         "type": "tabs",
-        "dimension": 72.92682926829268,
+        "dimension": 34.756097560975604,
         "children": [
           {
             "id": "196f6ed94d57a4c6",
@@ -90,7 +90,7 @@
       {
         "id": "0e9350b34ffbac9b",
         "type": "tabs",
-        "dimension": 27.073170731707318,
+        "dimension": 65.2439024390244,
         "children": [
           {
             "id": "9719aadfd95a6d60",
@@ -106,7 +106,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 457.5
+    "width": 568.5
   },
   "right": {
     "id": "acf9b2ce38860566",
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10 PROJECTS/Vouch/Vouch Source of Truth.md",
+                "file": "_OPS/Court Gesture.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Vouch Source of Truth"
+              "title": "Outline of Court Gesture"
             }
           }
         ],
@@ -216,7 +216,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 325.5
+    "width": 325.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -233,10 +234,17 @@
       "obsidian42-text-transporter:Text Transporter": false
     }
   },
-  "active": "196f6ed94d57a4c6",
+  "active": "04d840fde1b040d1",
   "lastOpenFiles": [
-    "Untitled.md",
+    "00 ZETTELKASTEN/INBOX/2-2 Final Project Part I Milestone One - Self-Assessment.pdf",
+    "00 ZETTELKASTEN/untitled.002.capture.md",
+    "00 ZETTELKASTEN/untitled.001.capture.md",
+    "00 ZETTELKASTEN/untitled.000.capture.md",
+    "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.trust-model.md",
+    "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.doctrine.md",
+    "_OPS/Court Gesture.md",
     "10 PROJECTS/Vouch/Vouch Source of Truth.md",
+    "Untitled.md",
     "50 REGRETS, CIGARETTES, & NEURAL NETS/December 31, 2026.md",
     "50 REGRETS, CIGARETTES, & NEURAL NETS/Maximum Pettiness Per Syllable.md",
     "50 REGRETS, CIGARETTES, & NEURAL NETS/Tinder Dev Roast Mode.md",
@@ -248,19 +256,12 @@
     "00 ZETTELKASTEN/untitled.005.capture.md",
     "README.md",
     "00 ZETTELKASTEN/untitled.007.capture.md",
-    "00 ZETTELKASTEN/untitled.000.capture.md",
     "PROJECT_SOURCE.md",
-    "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.doctrine.md",
     "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.messaging.md",
-    "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.trust-model.md",
     "10 PROJECTS/Vouch/00 PROJECT MAP/vouch.project.map.md",
     "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.gas-pump-analogy.md",
     "10 PROJECTS/Vouch/30 ARCHITECTURE/vouch.routes.implementation-matrix.legacy.md",
     "00 ZETTELKASTEN/untitled.006.capture.md",
-    "00 ZETTELKASTEN/untitled.004.capture.md",
-    "00 ZETTELKASTEN/untitled.003.capture.md",
-    "00 ZETTELKASTEN/untitled.002.capture.md",
-    "00 ZETTELKASTEN/untitled.001.capture.md",
     "90 OBSIDIAN/Scripts/promote-selection-to-note.js",
     "90 OBSIDIAN/Scripts",
     "DevNotes.base",
