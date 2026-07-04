@@ -4,17 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "ca11f65653679026",
+        "id": "b31ab2cd036ab2cd",
         "type": "tabs",
         "children": [
           {
-            "id": "04d840fde1b040d1",
+            "id": "1c80aa9d80e2b24c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "10 PROJECTS/RateLtd/00 PROJECT MAP/rateltd.project.map.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "rateltd.project.map"
             }
           }
         ]
@@ -29,7 +43,7 @@
       {
         "id": "29638fda63730726",
         "type": "tabs",
-        "dimension": 34.756097560975604,
+        "dimension": 40.95354523227384,
         "children": [
           {
             "id": "196f6ed94d57a4c6",
@@ -76,7 +90,7 @@
       {
         "id": "0e9350b34ffbac9b",
         "type": "tabs",
-        "dimension": 65.2439024390244,
+        "dimension": 59.04645476772616,
         "children": [
           {
             "id": "9719aadfd95a6d60",
@@ -92,7 +106,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 919.5
+    "width": 350.5
   },
   "right": {
     "id": "acf9b2ce38860566",
@@ -171,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_OPS/Court Gesture.md",
+                "file": "10 PROJECTS/RateLtd/00 PROJECT MAP/rateltd.project.map.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Court Gesture"
+              "title": "Outline of rateltd.project.map"
             }
           }
         ],
@@ -202,8 +216,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 325.5,
-    "collapsed": true
+    "width": 325.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -220,8 +233,21 @@
       "obsidian42-text-transporter:Text Transporter": false
     }
   },
-  "active": "04d840fde1b040d1",
+  "active": "1c80aa9d80e2b24c",
   "lastOpenFiles": [
+    "00 ZETTELKASTEN/untitled.005.capture.md",
+    "50 REGRETS, CIGARETTES, & NEURAL NETS/Maximum Pettiness Per Syllable.md",
+    "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.messaging.md",
+    "Introducing Ooga.md",
+    "50 REGRETS, CIGARETTES, & NEURAL NETS/Now That's What I Call Dev Ops.md",
+    "README.md",
+    "AGENTS.md",
+    "DevNotes.base",
+    "devnotes.home.md",
+    "50 REGRETS, CIGARETTES, & NEURAL NETS/Q1 2026 Devfluencer Campaign Plan.md",
+    "00 ZETTELKASTEN/10 CHAT ARCHIVE/chat.archive.outcome.first.product.design.d26465e4.md",
+    "00 ZETTELKASTEN/10 CHAT ARCHIVE/chat.archive.ai.insights.and.snark.f27d8044.md",
+    "10 PROJECTS/Vouch/10 PRODUCT/vouch.product.doctrine.md",
     "00 ZETTELKASTEN/20 SOURCE INDEX/inbox.source.motion.in.limine.dominguez.1.md",
     "00 ZETTELKASTEN/20 SOURCE INDEX/inbox.source.may.27.nm.preliminary.hearing.prep.and.strategy.md",
     "00 ZETTELKASTEN/20 SOURCE INDEX/inbox.source.landingpagetemplate.md",
@@ -239,25 +265,12 @@
     "00 ZETTELKASTEN/INBOX/[AI Chat Backup Context Seed].md",
     "_OPS/manifests/devnotes-part2-empty-folders-2026-05-27.csv",
     "_OPS/manifests/devnotes-part2-migration-2026-05-27.csv",
-    "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/[AI Chat Backup Context Seed].md",
-    "00 ZETTELKASTEN/20 SOURCE INDEX/inbox.source.ai.chat.backup.context.seed.md",
-    "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/Untitled-1.md",
-    "00 ZETTELKASTEN/20 SOURCE INDEX/inbox.source.untitled.1.md",
     "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/Texas Bondsman Reporting Statement.pdf",
-    "00 ZETTELKASTEN/20 SOURCE INDEX/inbox.source.texas.bondsman.reporting.statement.md",
     "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/Response To Petition For Order Of Protection.pdf",
-    "00 ZETTELKASTEN/20 SOURCE INDEX/inbox.source.response.to.petition.for.order.of.protection.md",
     "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/Receipt-2554-0521.pdf",
-    "00 ZETTELKASTEN/20 SOURCE INDEX/inbox.source.receipt.2554.0521.md",
     "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/NoteGPT_TRANSCRIPT_I Studied 1,460 Onboarding Flows. Here's What I Found.txt",
-    "00 ZETTELKASTEN/20 SOURCE INDEX/inbox.source.notegpt.transcript.i.studied.1.460.onboarding.flows.here.s.what.i.found.md",
     "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/nm-oag-search-seizure-manual.pdf",
-    "00 ZETTELKASTEN/20 SOURCE INDEX/inbox.source.nm.oag.search.seizure.manual.md",
     "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/NM Pretrial Services Statement.pdf",
-    "00 ZETTELKASTEN/20 SOURCE INDEX/inbox.source.nm.pretrial.services.statement.md",
-    "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/NM Drug Case Motion Packet.pdf",
-    "00 ZETTELKASTEN/20 SOURCE INDEX/inbox.source.nm.drug.case.motion.packet.md",
-    "00 ZETTELKASTEN/20 SOURCE INDEX/inbox.source.motion.to.suppress.evidence.dominguez.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "DOCUMENTATION/HuggingFace Docs/target.png",
