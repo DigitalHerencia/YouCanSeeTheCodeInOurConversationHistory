@@ -8,20 +8,6 @@ tags: []
 type:
   - system
 ---
-([Past chat](https://chatgpt.com/c/69fa5004-f568-83e8-8fed-4491eaa56e9d "TUI Integration Strategy"))([Past chat](https://chatgpt.com/c/69fae44f-dcc8-83e8-b78e-c8ab98426f7d "Codex Prep for Stripe"))([Gmail](https://mail.google.com/mail/#all/19ddfc58bc7cc43e "Codex Product Update: GPT-5.5 and more ways to work with Codex"))([Gmail](https://mail.google.com/mail/#all/19dc225d3e8e1bcc "Introducing GPT-5.5"))([Gmail](https://mail.google.com/mail/#all/19d45c94a9b5f21e "OpenAI Dev News: GPT-5.4, Plugins in Codex, and other fun things"))([Gmail](https://mail.google.com/mail/#all/19d8e072981d11cb "Dart launches Custom Agents🚀"))([Gmail](https://mail.google.com/mail/#all/19d450f732f61af7 "Dart Update: Agent comments, cover images, and dictation polish"))([Gmail](https://mail.google.com/mail/#all/19cd40bb8a060461 "Agent workspaces, GitHub copilot, and fullscreen chat"))([Gmail](https://mail.google.com/mail/#all/19b23645022e38ec "[Task Update] Lunchtime tutorials with action prompts"))([Gmail](https://mail.google.com/mail/#all/19b203ff80abc1ab "Getting the most out of Notion AI"))([Files](file://my_files/file_000000003d3c722f8653d899c4090d76 "Pasted markdown.md"))([Files](file://my_files/file_00000000268071f78a377659996a6461 "codebase-export-2026-04-25 (1).md"))([Files](file://my_files/file_00000000505071f7a3c23892640c447d "codebase-export-2026-04-25.md"))
-
-Yeah, I get exactly what you mean.
-
-You’re asking for  For your work, Obsidian should become less “notes app” and more **personal product/engineering knowledge base**.
-
-A good organizing principle:
-
-> **Every file should either capture intent, define a contract, explain a decision, guide execution, record state, or preserve reusable knowledge.**
-
-Modern documentation practice also supports this split: Diátaxis separates docs into tutorials, how-to guides, reference, and explanation; ADR practice separates durable decisions from general docs; OpenAPI formalizes machine-readable API contracts; GitHub community files establish common repo-level documentation conventions. ([diataxis.fr](https://diataxis.fr/?utm_source=chatgpt.com "Diátaxis"))
-
-## The main file types you commonly generate
-
 ### 1. Product / business intent files
 
 These explain **what the product is and why it exists**.

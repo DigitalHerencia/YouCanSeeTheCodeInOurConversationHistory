@@ -39,7 +39,7 @@ JSON     = execution state and logs
 - Obsidian properties
 - project maps
 - contract templates
-- Dataview dashboards
+- DataView dashboards
 - PowerShell automation
 - tracked agent operation logs
 
