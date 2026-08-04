@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00 ZETTELKASTEN/untitled.001.capture.md",
+                "file": "devnotes.home.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "untitled.001.capture"
+              "title": "devnotes.home"
             }
           }
         ]
@@ -218,7 +218,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 334.5
+    "width": 334.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -237,15 +238,16 @@
   },
   "active": "d2044718128c8bbb",
   "lastOpenFiles": [
+    "DevNotes.base",
+    "AGENTS.md",
+    "00 ZETTELKASTEN/untitled.001.capture.md",
     "devnotes.home.md",
     "README.md",
-    "AGENTS.md",
     "90 OBSIDIAN/Contracts/obsidian.contracts.note-types.md",
     "90 OBSIDIAN/Contracts/obsidian.contracts.property-schema.md",
     "90 OBSIDIAN/Contracts/obsidian.contracts.naming-standard.md",
     "90 OBSIDIAN/obsidian.system.map.md",
     "90 OBSIDIAN/Contracts/obsidian.documentation.file-types.md",
-    "DevNotes.base",
     "30 DEEP RESEARCH/deep-research-report.md",
     "00 ZETTELKASTEN/20 SOURCE INDEX/inbox.source.3.2.final.project.part.i.self.assessment.investigation.md",
     "00 ZETTELKASTEN/untitled.000.capture.md",
@@ -262,7 +264,6 @@
     "90 OBSIDIAN/Templates/authz.contract.md",
     "90 OBSIDIAN/Templates/event-contract.contract.md",
     "90 OBSIDIAN/Templates/copy-contract.contract.md",
-    "90 OBSIDIAN/Templates/product-definition.contract.md",
     "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/court-gesture.data.json",
     "_OPS/manifests/devnotes-part2-empty-folders-2026-05-27.csv",
     "_OPS/manifests/devnotes-part2-migration-2026-05-27.csv",
