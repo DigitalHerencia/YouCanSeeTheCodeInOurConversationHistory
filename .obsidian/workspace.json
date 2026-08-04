@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "devnotes.home.md",
+                "file": "00 ZETTELKASTEN/zettelkasten.map.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "devnotes.home"
+              "title": "zettelkasten.map"
             }
           }
         ]
@@ -223,7 +223,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "quickadd:QuickAdd": false,
       "graph:Open graph view": false,
       "switcher:Open quick switcher": false,
       "canvas:Create new canvas": false,
@@ -238,19 +237,21 @@
   },
   "active": "d2044718128c8bbb",
   "lastOpenFiles": [
+    "90 OBSIDIAN/obsidian.system.map.md",
+    "00 ZETTELKASTEN/untitled.000.capture.md",
+    "devnotes.home.md",
     "DevNotes.base",
+    "90 OBSIDIAN/Templates/obsidian.durable-note.template.md",
+    "90 OBSIDIAN/Templates/obsidian.capture.template.md",
     "AGENTS.md",
     "00 ZETTELKASTEN/untitled.001.capture.md",
-    "devnotes.home.md",
     "README.md",
     "90 OBSIDIAN/Contracts/obsidian.contracts.note-types.md",
     "90 OBSIDIAN/Contracts/obsidian.contracts.property-schema.md",
     "90 OBSIDIAN/Contracts/obsidian.contracts.naming-standard.md",
-    "90 OBSIDIAN/obsidian.system.map.md",
     "90 OBSIDIAN/Contracts/obsidian.documentation.file-types.md",
     "30 DEEP RESEARCH/deep-research-report.md",
     "00 ZETTELKASTEN/20 SOURCE INDEX/inbox.source.3.2.final.project.part.i.self.assessment.investigation.md",
-    "00 ZETTELKASTEN/untitled.000.capture.md",
     "00 ZETTELKASTEN/INBOX/Nellie Ortiz.md",
     "00 ZETTELKASTEN/INBOX/Court Gesture.md",
     "90 OBSIDIAN/Templates/acceptance-gates.contract.md",
@@ -262,8 +263,6 @@
     "90 OBSIDIAN/OB-Templates/Chat Archive Thread.md",
     "90 OBSIDIAN/OB-Templates/Inbox Source Note.md",
     "90 OBSIDIAN/Templates/authz.contract.md",
-    "90 OBSIDIAN/Templates/event-contract.contract.md",
-    "90 OBSIDIAN/Templates/copy-contract.contract.md",
     "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/court-gesture.data.json",
     "_OPS/manifests/devnotes-part2-empty-folders-2026-05-27.csv",
     "_OPS/manifests/devnotes-part2-migration-2026-05-27.csv",
