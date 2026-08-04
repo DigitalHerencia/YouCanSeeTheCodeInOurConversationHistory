@@ -1,0 +1,1420 @@
+You are not dealing with eleven unrelated weaknesses. They collapse into one question:
+
+
+
+> \*\*Which layer owns which decision, and how does the repository prevent another layer from stealing it?\*\*
+
+
+
+Your architecture already names most of the layers. The next step is making their responsibilities boring, mechanical, and testable.
+
+
+
+\# 1. ESLint rules, contract validation, and boundary tests?
+
+
+
+\*\*Yes—but each catches a different class of bullshit.\*\*
+
+
+
+| Enforcement                 | What it should catch                                       |
+
+| --------------------------- | ---------------------------------------------------------- |
+
+| ESLint                      | Forbidden imports and obvious file-level violations        |
+
+| Dependency graph validation | Illegal layer dependencies, circular imports               |
+
+| Contract validator          | Governance documents contradicting schema/routes/config    |
+
+| Unit tests                  | Pure policies, mappers, calculations, transitions          |
+
+| Integration tests           | Prisma constraints, transactions, RLS, webhook concurrency |
+
+| E2E tests                   | Actual user journeys                                       |
+
+| CI                          | Runs the same canonical validation command every time      |
+
+
+
+Start with existing tools before inventing custom ESLint rules. `no-restricted-imports` can enforce most boundaries; Dependency Cruiser can enforce path-to-path dependency rules and circularity. Write custom ESLint AST rules only for conventions normal import rules cannot express. ESLint explicitly supports project-specific custom rules, while Dependency Cruiser is designed to validate user-defined architectural dependency rules. (\[ESLint]\[1])
+
+
+
+Your first rules should be:
+
+
+
+```text
+
+app/\*\*                  cannot import Prisma or Stripe
+
+features/\*\*             cannot import Prisma, Stripe, Clerk server helpers
+
+components/\*\*           cannot import fetchers, actions, Prisma, Stripe
+
+lib/db/\*\*               cannot import Next navigation/cache or UI
+
+lib/authz/\*\*            cannot import Prisma, Clerk, Next, Stripe
+
+lib/integrations/\*\*     cannot import features/components/app
+
+process.env             allowed only in config/\*\*
+
+"use server"            allowed only in action adapter files
+
+```
+
+
+
+Your current contract validator only establishes that required files exist and parse. It does not prove that the code obeys them.
+
+
+
+I would split validation like this:
+
+
+
+```text
+
+pnpm validate:fast
+
+&#x20; format
+
+&#x20; lint
+
+&#x20; typecheck
+
+&#x20; architecture boundaries
+
+&#x20; unit tests
+
+
+
+pnpm validate:ci
+
+&#x20; validate:fast
+
+&#x20; Prisma validate
+
+&#x20; migration/database integration tests
+
+&#x20; contract semantics
+
+&#x20; production build
+
+&#x20; selected E2E smoke tests
+
+```
+
+
+
+Then GitHub Actions calls \*\*one command\*\*—`pnpm validate:ci`—instead of maintaining a second handwritten definition of validation. Vouch currently defines contract and Prisma validation in `package.json`, but CI runs neither.
+
+
+
+\---
+
+
+
+\# 2. Stripe integration and race conditions
+
+
+
+This is legitimately hard. It is not “you forgot a Stripe function.” It is distributed-systems work.
+
+
+
+You need to handle \*\*three different races\*\*.
+
+
+
+\## Outgoing duplicate requests
+
+
+
+Your application calls Stripe, times out, and cannot tell whether Stripe performed the operation.
+
+
+
+Use the same stable idempotency key whenever retrying the \*\*same logical operation\*\*:
+
+
+
+```text
+
+vouch:{vouchId}:create-fee-checkout
+
+vouch:{vouchId}:create-authorization
+
+vouch:{vouchId}:capture
+
+vouch:{vouchId}:cancel
+
+```
+
+
+
+Do not generate a new random key for each retry. Stripe stores the first result for an idempotency key so the operation can be retried without accidentally performing it twice. (\[Stripe Docs]\[2])
+
+
+
+Vouch already does this reasonably well for capture and cancellation.
+
+
+
+\## Duplicate and concurrent webhook deliveries
+
+
+
+Stripe can deliver the same event more than once. It can also produce separate events representing the same underlying object change. Stripe recommends recording processed event IDs and, where necessary, using the object ID plus event type to identify semantic duplicates. (\[Stripe Docs]\[3])
+
+
+
+Use a durable \*\*webhook inbox\*\*:
+
+
+
+```text
+
+WebhookEvent
+
+&#x20; provider
+
+&#x20; eventId              unique with provider
+
+&#x20; eventType
+
+&#x20; objectId
+
+&#x20; connectedAccountId
+
+&#x20; livemode
+
+&#x20; status
+
+&#x20; receivedAt
+
+&#x20; lockedAt
+
+&#x20; processedAt
+
+&#x20; attemptCount
+
+&#x20; nextAttemptAt
+
+&#x20; lastError
+
+```
+
+
+
+Processing becomes:
+
+
+
+```text
+
+1\. Verify the raw payload signature.
+
+2\. Insert the event using a unique provider/event ID.
+
+3\. If it already exists, return 200.
+
+4\. Atomically claim it by setting lockedAt.
+
+5\. Process it.
+
+6\. Mark it processed.
+
+7\. On failure, release or expire the lease and schedule retry.
+
+```
+
+
+
+Your existing webhook ledger is fundamentally the correct idea. The defect is that its stale-processing test uses `receivedAt` rather than a lock timestamp.
+
+
+
+\## Out-of-order events
+
+
+
+Stripe does not guarantee event delivery order. A later state can arrive before an earlier state. Stripe recommends making handlers order-independent and retrieving related provider objects when necessary. (\[Stripe Docs]\[4])
+
+
+
+Therefore, treat a webhook as:
+
+
+
+> \*\*A notification that provider state may have changed.\*\*
+
+
+
+Not:
+
+
+
+> \*\*An unquestionable command to move from state A to state B.\*\*
+
+
+
+For important payment transitions:
+
+
+
+```text
+
+event arrives
+
+&#x20; → identify PaymentIntent and connected account
+
+&#x20; → retrieve current PaymentIntent from Stripe
+
+&#x20; → upsert the provider mirror
+
+&#x20; → evaluate whether domain state may transition
+
+&#x20; → conditionally update local state
+
+```
+
+
+
+For Connect direct charges, the event’s top-level `account` identifies the connected account, and subsequent API reads for the object must use that connected-account scope. (\[Stripe Docs]\[5])
+
+
+
+\## The unavoidable Stripe/DB gap
+
+
+
+You cannot create one ACID transaction across PostgreSQL and Stripe.
+
+
+
+Use a recoverable sequence:
+
+
+
+```text
+
+1\. Persist a local pending operation and stable idempotency key.
+
+2\. Commit.
+
+3\. Call Stripe.
+
+4\. Persist the Stripe result.
+
+5\. Let webhooks reconcile if step 4 fails.
+
+```
+
+
+
+Possible outcomes:
+
+
+
+\* Database succeeds; Stripe fails → retry the operation.
+
+\* Stripe succeeds; database update fails → webhook reconciliation repairs local state.
+
+\* Both succeed → normal completion.
+
+\* Request repeats → idempotency prevents duplicate provider operations.
+
+
+
+That is why your workflows, provider mirrors, retries, and webhooks exist. The answer is not eliminating eventual consistency; it is making eventual consistency explicit and recoverable.
+
+
+
+\---
+
+
+
+\# 3. Selects, DTO mappers, transactions, fetchers, and actions
+
+
+
+Here is the clean mental model.
+
+
+
+| Layer                  | The one question it answers                                  |
+
+| ---------------------- | ------------------------------------------------------------ |
+
+| \*\*Select\*\*             | Which database fields do I retrieve?                         |
+
+| \*\*Query\*\*              | How do I read this persistence record?                       |
+
+| \*\*DTO mapper\*\*         | How does persistence data become application data?           |
+
+| \*\*Fetcher\*\*            | What authorized read does this screen/use case require?      |
+
+| \*\*Command\*\*            | How is this database mutation performed?                     |
+
+| \*\*Transaction helper\*\* | Which database changes must succeed atomically?              |
+
+| \*\*Workflow\*\*           | In what sequence do database and provider operations happen? |
+
+| \*\*Action\*\*             | How does Next.js receive and return this mutation?           |
+
+
+
+\## Read path
+
+
+
+```text
+
+Route
+
+&#x20; → Feature
+
+&#x20;   → Fetcher
+
+&#x20;     → requireActor()
+
+&#x20;     → authorized query
+
+&#x20;     → select
+
+&#x20;     → DTO mapper
+
+&#x20;   → DTO
+
+&#x20; → Components
+
+```
+
+
+
+A select is not an authorization mechanism. A mapper is not a query. A fetcher should not return a Prisma-generated type.
+
+
+
+\## Write path
+
+
+
+```text
+
+Form
+
+&#x20; → Server Action
+
+&#x20;   → parse transport input
+
+&#x20;   → requireActor()
+
+&#x20;   → workflow or command
+
+&#x20;     → authorize
+
+&#x20;     → enforce domain invariant
+
+&#x20;     → transaction
+
+&#x20;     → provider operation when required
+
+&#x20;     → audit
+
+&#x20;   → updateTag/revalidate/redirect
+
+```
+
+
+
+\## Transactions
+
+
+
+A transaction helper should:
+
+
+
+\* Accept a transaction client.
+
+\* Perform atomic persistence operations.
+
+\* Enforce database-adjacent invariants.
+
+\* Return a persistence result.
+
+
+
+It should \*\*not\*\*:
+
+
+
+\* Read Clerk sessions.
+
+\* Parse `FormData`.
+
+\* Call `redirect`.
+
+\* Call `revalidatePath`.
+
+\* Render user-facing error messages.
+
+\* Hold a database transaction open while waiting for Stripe.
+
+
+
+Your existing confirmation transaction is conceptually close, although it currently contains some domain-state checks as well as mutation mechanics.
+
+
+
+\## Fetchers versus actions
+
+
+
+Your statement is almost right:
+
+
+
+> Fetchers are read-only. Actions perform mutations.
+
+
+
+But actions are not necessarily CRUD.
+
+
+
+CRUD says:
+
+
+
+```text
+
+create row
+
+update row
+
+delete row
+
+```
+
+
+
+A domain command says:
+
+
+
+```text
+
+confirm presence
+
+claim authorization
+
+capture commitment
+
+archive completed Vouch
+
+```
+
+
+
+Keep CRUD vocabulary inside the data layer. Expose \*\*user intent\*\* from actions.
+
+
+
+\---
+
+
+
+\# 4. Authentication and authorization helpers
+
+
+
+The muddiness comes from combining four separate concepts.
+
+
+
+\## Authentication
+
+
+
+\*\*Who is making the request?\*\*
+
+
+
+```text
+
+Clerk session
+
+&#x20; → local User
+
+&#x20; → Actor
+
+```
+
+
+
+Recommended API:
+
+
+
+```text
+
+getOptionalActor()
+
+requireActor()
+
+```
+
+
+
+An `Actor` can contain:
+
+
+
+```text
+
+userId
+
+clerkUserId
+
+status
+
+organizationId
+
+membershipId
+
+roleIds
+
+permissionKeys
+
+```
+
+
+
+\## Authorization
+
+
+
+\*\*May this actor perform this operation?\*\*
+
+
+
+```text
+
+authorize(actor, {
+
+&#x20; action: "vouch.confirm",
+
+&#x20; resource: vouch,
+
+})
+
+```
+
+
+
+Authorization should be pure wherever possible: input facts in, allow/deny decision out.
+
+
+
+\## Readiness
+
+
+
+\*\*Does the actor have the external prerequisites?\*\*
+
+
+
+Examples:
+
+
+
+\* Stripe onboarding complete
+
+\* Charges enabled
+
+\* Payouts enabled
+
+\* Account active
+
+
+
+Readiness is not authorization. A merchant might be authorized to create Vouches in principle but temporarily unable because Stripe onboarding is incomplete.
+
+
+
+\## Domain invariants
+
+
+
+\*\*Is this operation legal in the current workflow state?\*\*
+
+
+
+Examples:
+
+
+
+\* Confirmation window is open.
+
+\* Actor has not already confirmed.
+
+\* Payment is still capturable.
+
+\* Vouch has not expired.
+
+
+
+That belongs in the domain/workflow layer, not in generic authz.
+
+
+
+A cleaner layout is:
+
+
+
+```text
+
+lib/auth/
+
+&#x20; clerk-session.ts
+
+&#x20; actor.ts
+
+
+
+lib/authz/
+
+&#x20; authorize.ts
+
+&#x20; capabilities.ts
+
+&#x20; policies/
+
+&#x20;   vouch.policy.ts
+
+
+
+lib/readiness/
+
+&#x20; stripe-readiness.ts
+
+
+
+domain/vouch/
+
+&#x20; invariants.ts
+
+&#x20; transitions.ts
+
+```
+
+
+
+Vouch’s current authorization is mostly relationship-based: merchant/customer participation plus lifecycle checks. That is completely valid for Vouch. It just should not be described as a generalized RBAC system.
+
+
+
+For your reusable SaaS architecture, authorization should generally be:
+
+
+
+```text
+
+RBAC capability
+
+&#x20; AND tenant membership
+
+&#x20; AND resource relationship
+
+&#x20; AND workflow invariant
+
+```
+
+
+
+Example:
+
+
+
+```text
+
+membership grants "invoice.approve"
+
+AND invoice.organizationId matches actor.organizationId
+
+AND actor is assigned to the account
+
+AND invoice.status is "pending"
+
+```
+
+
+
+\---
+
+
+
+\# 5. PostgreSQL RLS
+
+
+
+You learned about it at the appropriate moment. You should \*\*not\*\* bolt it onto Vouch tomorrow merely because it sounds secure.
+
+
+
+RLS is most valuable when you have a real tenant boundary:
+
+
+
+```text
+
+Organization
+
+&#x20; → Membership
+
+&#x20; → Project
+
+&#x20; → Invoice
+
+&#x20; → Customer
+
+&#x20; → every tenant-owned record has organizationId
+
+```
+
+
+
+PostgreSQL RLS applies row-level policies to reads and writes. When RLS is enabled and no applicable policy permits access, PostgreSQL uses default deny. But superusers, `BYPASSRLS` roles, and normally table owners bypass those policies unless `FORCE ROW LEVEL SECURITY` is used. (\[PostgreSQL]\[6])
+
+
+
+A practical SaaS model is:
+
+
+
+```text
+
+Application authorization
+
+&#x20; → determines intended access
+
+
+
+RLS
+
+&#x20; → prevents accidental cross-tenant access even if a query is improperly scoped
+
+```
+
+
+
+Implementation shape:
+
+
+
+```text
+
+BEGIN
+
+&#x20; SET LOCAL app.organization\_id = 'org\_123';
+
+&#x20; SET LOCAL app.user\_id = 'user\_456';
+
+
+
+&#x20; -- Prisma queries execute inside this same transaction.
+
+COMMIT
+
+```
+
+
+
+Policy conceptually:
+
+
+
+```sql
+
+USING (
+
+&#x20; organization\_id =
+
+&#x20; current\_setting('app.organization\_id', true)
+
+)
+
+```
+
+
+
+Important rules:
+
+
+
+\* The normal application role must not own the tables or have `BYPASSRLS`.
+
+\* Tenant context must be transaction-local because pooled connections are reused.
+
+\* Background jobs and webhooks need an explicit system-access design.
+
+\* Cross-tenant administrative operations need a separate intentional role.
+
+\* Integration tests must prove that Tenant A cannot read or write Tenant B’s records.
+
+
+
+For Vouch specifically, participant scoping may remain the correct model. For a multi-tenant template, add RLS after the organization/membership model is stable—not before.
+
+
+
+\---
+
+
+
+\# 6. Stripe workflows
+
+
+
+Using workflows was not the mistake.
+
+
+
+Stripe documentation necessarily shows multi-step provider processes. Your application needs a layer that coordinates those processes.
+
+
+
+The mistake was allowing one workflow module to become:
+
+
+
+```text
+
+controller
+
+\+ auth
+
+\+ authorization
+
+\+ validation
+
+\+ persistence
+
+\+ state machine
+
+\+ Stripe integration
+
+\+ retry manager
+
+\+ audit service
+
+\+ cache invalidator
+
+```
+
+
+
+Your current `workflows.ts` does nearly all of those things.
+
+
+
+Keep workflows, but organize them by use case:
+
+
+
+```text
+
+application/vouches/workflows/
+
+&#x20; create-vouch.workflow.ts
+
+&#x20; create-customer-authorization.workflow.ts
+
+&#x20; claim-vouch.workflow.ts
+
+&#x20; confirm-presence.workflow.ts
+
+&#x20; capture-vouch.workflow.ts
+
+&#x20; archive-vouch.workflow.ts
+
+```
+
+
+
+Each workflow should coordinate smaller pieces:
+
+
+
+```text
+
+policy
+
+domain transition
+
+database command
+
+Stripe operation
+
+audit command
+
+cache invalidation result
+
+```
+
+
+
+The workflow knows \*\*sequence\*\*. It should not contain every implementation detail.
+
+
+
+\---
+
+
+
+\# 7. Root-level configuration
+
+
+
+The goal is not more config. The goal is \*\*one source of truth per concern\*\*.
+
+
+
+```text
+
+package.json
+
+&#x20; canonical commands and package versions
+
+
+
+tsconfig.json
+
+&#x20; compiler strictness and aliases
+
+
+
+eslint.config.mjs
+
+&#x20; correctness and architectural imports
+
+
+
+prettier.config.mjs
+
+&#x20; formatting only
+
+
+
+next.config.ts
+
+&#x20; Next runtime/build/security configuration
+
+
+
+config/env.server.ts
+
+config/env.client.ts
+
+&#x20; typed environment contracts
+
+
+
+prisma.config.ts
+
+prisma/schema.prisma
+
+&#x20; migrations and data model
+
+
+
+vitest.config.ts
+
+&#x20; unit/contract testing
+
+
+
+playwright.config.ts
+
+&#x20; browser testing
+
+
+
+dependency-cruiser.config.mjs
+
+&#x20; dependency graph rules
+
+
+
+scripts/validate-contracts.mjs
+
+&#x20; semantic governance checks
+
+
+
+.github/workflows/ci.yml
+
+&#x20; invokes canonical package scripts
+
+
+
+AGENTS.md
+
+context/\*\*
+
+.agents/\*\*
+
+&#x20; human/agent governance
+
+```
+
+
+
+Root configs should not duplicate each other.
+
+
+
+Examples:
+
+
+
+\* ESLint does not format.
+
+\* Prettier does not enforce architecture.
+
+\* CI does not redefine the validation sequence.
+
+\* `next.config.ts` does not validate every environment variable.
+
+\* `package.json` does not contain a 400-character Windows-only process supervisor.
+
+
+
+Your current `dev` command starts PowerShell, ngrok, Stripe CLI, and Next.js together. That is useful for your workstation but unsuitable as Playwright’s portable test-server command.
+
+
+
+Split it:
+
+
+
+```text
+
+dev              Next only
+
+dev:stripe       Stripe listener
+
+dev:clerk        ngrok
+
+dev:full         local orchestration
+
+test:e2e:server  deterministic server with no tunnels
+
+```
+
+
+
+\---
+
+
+
+\# 8. Data modeling
+
+
+
+You already understand the basic syntax. The next level is modeling \*\*truth and invariants\*\*.
+
+
+
+For each entity, answer:
+
+
+
+1\. Who owns it?
+
+2\. What is its tenant boundary?
+
+3\. What is its lifecycle?
+
+4\. Which facts are canonical?
+
+5\. Which facts are provider mirrors?
+
+6\. What must be unique?
+
+7\. What must never be null together?
+
+8\. Which queries must be fast?
+
+9\. What happens when related records are deleted?
+
+10\. Which transitions must be auditable?
+
+
+
+A useful classification:
+
+
+
+```text
+
+Domain entities
+
+&#x20; Organization
+
+&#x20; Membership
+
+&#x20; Vouch
+
+&#x20; Customer
+
+
+
+Provider mirrors
+
+&#x20; StripeAccount
+
+&#x20; PaymentIntentRecord
+
+&#x20; ChargeRecord
+
+&#x20; RefundRecord
+
+
+
+Operational entities
+
+&#x20; WebhookEvent
+
+&#x20; Retry
+
+&#x20; AuditEvent
+
+&#x20; OutboxEvent
+
+&#x20; RecoverySnapshot
+
+```
+
+
+
+The database should enforce cheap, universal invariants:
+
+
+
+\* Primary and foreign keys
+
+\* Unique external IDs
+
+\* Tenant ownership
+
+\* Appropriate nullability
+
+\* Check constraints
+
+\* Uniqueness of memberships or claims
+
+\* Optimistic concurrency/version columns where needed
+
+
+
+Application code should enforce contextual business rules that require broader knowledge.
+
+
+
+Do not add an enum merely because TypeScript likes autocomplete. Use an enum when the set is genuinely controlled and changing it is a deliberate migration. Do not store derivable or obsolete “security” fields just because they once belonged to an earlier workflow.
+
+
+
+\---
+
+
+
+\# 9. Caching and ISR
+
+
+
+For Vouch:
+
+
+
+> \*\*Default fresh, selectively cache.\*\*
+
+
+
+Do not cache:
+
+
+
+\* Authentication state
+
+\* Authorization decisions
+
+\* Stripe readiness
+
+\* Payment status used for decisions
+
+\* Confirmation eligibility
+
+\* Time-window calculations
+
+\* User-specific operational dashboards unless the cache key and invalidation model are unquestionably correct
+
+
+
+Good cache candidates:
+
+
+
+\* Marketing pages
+
+\* FAQ
+
+\* Legal documents
+
+\* Pricing copy
+
+\* Public reference data
+
+\* Expensive noncritical aggregates
+
+\* Shared catalog data
+
+
+
+With Next.js 16 Cache Components:
+
+
+
+```text
+
+"use cache" + cacheLife
+
+&#x20; cache the function/component
+
+
+
+cacheTag
+
+&#x20; associate data with logical resources
+
+
+
+updateTag
+
+&#x20; immediate read-your-writes from a Server Action
+
+
+
+revalidateTag(tag, "max")
+
+&#x20; stale-while-revalidate for content that may be briefly stale
+
+
+
+revalidatePath
+
+&#x20; invalidate a route/layout surface
+
+```
+
+
+
+`updateTag` is specifically intended for Server Action read-your-writes behavior. `revalidateTag(tag, "max")` uses stale-while-revalidate and is better for content where brief staleness is acceptable. (\[Next.js]\[7])
+
+
+
+Practical policy:
+
+
+
+```text
+
+Public content
+
+&#x20; cache aggressively
+
+
+
+Shared reference data
+
+&#x20; cache with tags
+
+
+
+Authenticated CRUD
+
+&#x20; dynamic by default
+
+&#x20; optionally cache stable reads
+
+&#x20; use updateTag after writes
+
+
+
+Payment and authorization workflows
+
+&#x20; never make critical decisions from stale cached data
+
+```
+
+
+
+\*\*Cache the brochure. Do not cache whether somebody is allowed to capture money.\*\*
+
+
+
+\---
+
+
+
+\# Order I would attack this
+
+
+
+1\. \*\*Repair the webhook lease and add concurrency tests.\*\*
+
+2\. \*\*Define the select → query → mapper → fetcher and command → transaction → workflow → action taxonomy.\*\*
+
+3\. \*\*Split authentication, authorization, readiness, and workflow invariants.\*\*
+
+4\. \*\*Add architectural import rules and dependency graph validation.\*\*
+
+5\. \*\*Make CI call one canonical validation command.\*\*
+
+6\. \*\*Split the giant Vouch workflow by use case.\*\*
+
+7\. \*\*Introduce real organization/membership/capability RBAC in the reusable template.\*\*
+
+8\. \*\*Add RLS only after tenant ownership is modeled and tested.\*\*
+
+9\. \*\*Add selective caching last.\*\*
+
+
+
+The good news is that you were not randomly stacking patterns. You had correctly identified most of the necessary machinery. The missing piece was a precise ownership model that tells each piece \*\*what it is allowed to know\*\*.
+
+
+
+\[1]: https://eslint.org/docs/latest/extend/custom-rules?utm\_source=chatgpt.com "Custom Rules - ESLint - Pluggable JavaScript Linter"
+
+\[2]: https://docs.stripe.com/api/idempotent\_requests?...=\&utm\_source=chatgpt.com "Idempotent requests | Stripe API Reference"
+
+\[3]: https://docs.stripe.com/webhooks?lang=node\&locale=en-GB\&utm\_source=chatgpt.com "Receive Stripe events in your webhook endpoint | Stripe Documentation"
+
+\[4]: https://docs.stripe.com/webhooks?lang=node\&utm\_source=chatgpt.com "Receive Stripe events in your webhook endpoint | Stripe Documentation"
+
+\[5]: https://docs.stripe.com/connect/webhooks?utm\_source=chatgpt.com "Connect webhooks | Stripe Documentation"
+
+\[6]: https://www.postgresql.org/docs/17/ddl-rowsecurity.html?utm\_source=chatgpt.com "PostgreSQL: Documentation: 17: 5.9. Row Security Policies"
+
+\[7]: https://nextjs.org/docs/app/api-reference/functions/revalidateTag?utm\_source=chatgpt.com "Functions: revalidateTag | Next.js"
+
+
+
