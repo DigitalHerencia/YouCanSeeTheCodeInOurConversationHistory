@@ -31,7 +31,7 @@ type: "system"
 
 ## Related
 
-- [[AGENTS]]
+- [[20 DOCUMENTATION/HuggingFace Docs/AGENTS]]
 - [[Grdio Instructions]]
 - [[Docker Spaces · Hugging Face]]
 

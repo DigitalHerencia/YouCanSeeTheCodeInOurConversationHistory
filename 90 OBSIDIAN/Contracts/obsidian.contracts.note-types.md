@@ -18,16 +18,17 @@ tags:
   - obsidian/note-types
   - status/active
 ---
-
 # Obsidian Contract Note Types
 
 ## Contract
 
-A source-of-truth rule document. Contracts define what must be true, what must not happen, and how work is judged.
+A durable rule document.
+
+Contracts define what must be true, what must not happen, and how work is judged.
 
 ## Map
 
-A navigation note. Maps gather links, dashboards, and summaries for a project, domain, or workflow.
+A navigation note that gathers links and summaries for a vault area, project, domain, or topic.
 
 ## Workflow
 
@@ -35,33 +36,74 @@ A repeatable operating procedure.
 
 ## Reference
 
-Stable supporting knowledge. Reference notes explain tools, APIs, libraries, standards, or concepts.
+Stable supporting knowledge about a tool, standard, concept, API, library, or external source.
 
 ## Research
 
-Exploratory or investigative material. Research notes may become contracts later.
+Exploratory or investigative material.
 
-## Work Package
+Research may later produce contracts, references, or project decisions.
 
-A bounded implementation job for Codex, ChatGPT, or a human operator.
+## Writing
 
-## Handoff
+Essays, articles, personal writing, drafts, and other authored material.
 
-A state-transfer note that lets the next operator resume work without re-discovery.
+## Execution
+
+Current work state such as plans, task notes, progress records, decision logs, or implementation status.
+
+## Template
+
+A reusable starting structure for creating another note.
 
 ## Dashboard
 
-A Dataview-powered operating surface.
+A note that presents generated or queried information as an operating view.
+
+## Standard
+
+A vault-wide or project-wide convention governing how information is structured or handled.
 
 ## Legacy
 
-A preserved note that may still contain useful information but is no longer the active source of truth.
+Preserved material that may still contain useful information but is no longer authoritative.
+
+## Capture
+
+Raw or unfinished material that has not yet been classified as a durable note.
+
+## Source Document
+
+A primary context document that defines the purpose, boundaries, or operating context of a vault or project.
+
+## Work Package
+
+A bounded implementation or maintenance task for ChatGPT, Codex, or the user.
+
+## Handoff
+
+A state-transfer note containing enough context for work to continue without rediscovery.
+
+## Checklist
+
+A repeatable list of verification or completion items.
+
+## Schema
+
+A structured definition of properties, fields, allowed values, or document shape.
 
 ## Rule
 
 Do not force every note to become a contract.
 
-Contracts are for durable truth.
-Zettelkasten notes are for growth.
-Research notes are for discovery.
-Work packages are for execution.
+Use:
+
+- contracts for durable rules
+- maps for navigation
+- workflows for repeatable procedures
+- references for stable knowledge
+- research for investigation
+- execution notes for active work
+- captures for unfinished material
+- templates for reusable structure
+- legacy notes for preserved non-authoritative material

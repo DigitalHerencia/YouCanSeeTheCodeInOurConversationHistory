@@ -11,7 +11,7 @@ tags:
 ---
 ## Related
 
-- [[AGENTS]]
+- [[20 DOCUMENTATION/HuggingFace Docs/AGENTS]]
 - [[Spaces Configuration Reference]]
 
 ## Type
@@ -30,7 +30,7 @@ type: "system"
 
 ## Related
 
-- [[AGENTS]]
+- [[20 DOCUMENTATION/HuggingFace Docs/AGENTS]]
 - [[Spaces Configuration Reference]]
 
 ## Type
