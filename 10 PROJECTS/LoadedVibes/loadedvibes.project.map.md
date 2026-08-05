@@ -12,6 +12,8 @@ authority: source-of-truth
 parent: "[[devnotes.projects.map]]"
 depends_on:
   - "[[loadedvibes.project.source-document]]"
+  - "[[loadedvibes.vibes-template.audit.research]]"
+  - "[[loadedvibes.generator-roadmap.execution]]"
 supersedes: []
 tags:
   - projects/loaded-vibes
@@ -27,10 +29,16 @@ updated: 2026-08-05
 
 - [[loadedvibes.project.source-document]] — authoritative definition of the Loaded Vibes CLI initializer, scaffolding generator, canonical output, and project boundaries.
 
+## Research and Execution
+
+- [[loadedvibes.vibes-template.audit.research]] — assessment of the completed Vibes starter, generator taxonomy, recommended evolution, support envelope, and principal risks.
+- [[loadedvibes.generator-roadmap.execution]] — remaining work from canonical-template freeze through packaging and Codependent Coding handoff.
+
+## Upstream Engineering System
+
+- [[hipsterstack.engineering-system.definition.source-document]] — reusable architecture, conventions, trust boundaries, and enforcement model encoded by the generator.
+- [[hipsterstack.patterns.catalog.map]] — detailed implementation-pattern collection.
+
 ## Downstream System
 
 - [[codependentcoding.project.source-document]] — applies product-specific intent and specifications to the generated golden prototype.
-
-## Primary Source Material
-
-The project definition identifies the completed Vibes starter-template work as the current source material for the canonical generated application. That material should be evaluated and promoted separately; it was not moved or edited as part of creating this project.
