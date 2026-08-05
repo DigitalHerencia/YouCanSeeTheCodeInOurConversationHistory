@@ -1,0 +1,578 @@
+---
+title: Loaded Vibes Vibes Template Audit
+type: research
+scope: project
+project: Loaded Vibes
+domain: generator
+artifact: vibes-template-audit
+kind: research
+namespace: loadedvibes.vibes-template.audit.research
+status: review
+authority: derived
+parent: "[[loadedvibes.project.map]]"
+depends_on:
+  - "[[loadedvibes.project.source-document]]"
+  - "[[hipsterstack.engineering-system.definition.source-document]]"
+supersedes: []
+tags:
+  - projects/loaded-vibes
+  - research/generator
+  - templates/vibes
+  - status/review
+created: 2026-08-04
+updated: 2026-08-05
+---
+
+# What You Actually Built
+
+After inspecting the repository at commit `19e2008`, the correct description is:
+
+> **Vibes is an opinionated, production-oriented Next.js SaaS starter template and reference architecture.**
+
+More precisely, it is currently:
+
+- a **single-template repository**
+- containing a **runnable starter application**
+- with **embedded architectural governance**
+- machine-enforced **architecture and security contracts**
+- optional/reference subsystems
+- a reusable presentation catalog
+- credential-free validation gates
+
+It is **not yet**:
+
+- a published CLI package
+- an interactive project initializer
+- a dynamic scaffolding generator
+- a multi-template generator platform
+- a composable preset system
+
+That is not a criticism. It means you already built the expensive part: the **canonical generated output**.
+
+The repository explicitly describes itself as a runnable App Router SaaS starter, with product-specific examples isolated as non-authoritative reference implementations. Its stack and architecture already embody the Hipster Stack: Next.js, Clerk, Prisma, Neon, custom RBAC, RLS, Stripe, shadcn-compatible primitives, Zod, Vitest, Playwright, and pinned pnpm tooling.
+
+---
+
+# The Taxonomy You Should Use
+
+## 1. Vibes today: starter template
+
+A starter template is a complete repository intended to be copied, cloned, forked, or instantiated as the starting point for a new application.
+
+```text
+Vibes repository
+      │
+      │ copy / clone / template expansion
+      ▼
+New SaaS repository
+```
+
+The source repository and generated project are structurally similar.
+
+This is different from a generator because there is no execution engine making decisions yet.
+
+The current transformation is approximately:
+
+```text
+template tree → copied project tree
+```
+
+Not yet:
+
+```text
+user answers
+    ↓
+configuration model
+    ↓
+dependency resolution
+    ↓
+conditional modules
+    ↓
+rendered project
+```
+
+## 2. Loaded Vibes target: interactive project initializer
+
+The intended end-user command is an interactive CLI project initializer backed by a composable scaffolding generator.
+
+A technically complete description:
+
+> A package-manager-executable CLI that collects project configuration, resolves a compatible feature graph, composes a base template with optional modules, renders project-specific files, installs dependencies, and validates the generated repository.
+
+Possible package usage:
+
+```powershell
+pnpm dlx create-vibes@latest my-app
+```
+
+That command invokes a project initializer. Internally, the initializer uses a generator. The generator consumes templates and modules.
+
+---
+
+# System Layers
+
+```text
+pnpm dlx create-vibes my-app
+  → CLI application
+  → project initializer
+  → scaffolding generator
+    ├─ base template
+    └─ optional modules
+  → generated SaaS repository
+```
+
+| Term | Role |
+|---|---|
+| `pnpm dlx` | Downloads and temporarily executes the npm package |
+| CLI | Human-facing command interface |
+| Project initializer | Owns the complete create-project workflow |
+| Generator | Computes and writes the output |
+| Template | Files used as generation inputs |
+| Module | Optional, composable unit of project functionality |
+| Template engine | Renders genuinely parameterized text files |
+| Preset | Named configuration selecting a compatible module set |
+| Starter | Runnable application shape users receive |
+| Reference implementation | Non-canonical example showing a concrete use |
+
+---
+
+# What Vibes Already Gets Right
+
+## Canonical architecture
+
+The strongest part of Vibes is not its dependency list. It is the architectural contract:
+
+```text
+Pages select.
+Layouts and shells frame.
+Features orchestrate.
+Blocks assemble.
+Components render.
+Primitives control low-level UI behavior.
+Fetchers read.
+Actions write.
+Auth identifies.
+Authz authorizes.
+Schemas validate.
+DTOs transport safe data.
+Transactions persist atomically.
+Webhooks reconcile provider events.
+```
+
+That gives generated repositories an enforceable architectural identity.
+
+## Separation of canonical and non-canonical material
+
+Vibes distinguishes the canonical application architecture, governance, tests, validation, and reusable presentation from product-specific reference implementations.
+
+A concrete product implementation must not silently become the generic generator’s domain model.
+
+## Credential-free generation target
+
+The repository can execute substantial validation without live provider credentials. This is critical because generated-project tests cannot assume Neon, Clerk, Stripe, and deployment infrastructure have already been configured.
+
+The clean-clone gate includes generation, Prisma validation, formatting, linting, type generation, TypeScript, contracts, unit tests, contract tests, and a production build.
+
+## Explicit optionality
+
+Stripe Connect is already treated as a separable reference module, with removal validation proving that core production behavior survives after its runtime files are removed.
+
+This is a useful precursor to modular generation:
+
+```text
+core SaaS
+  + optional Stripe Connect capability
+```
+
+## Architecture enforcement
+
+The repository contains human-readable context, ADRs, machine-readable contracts, architecture validators, contract tests, security tests, and generated-output validation.
+
+The future generator can enforce architecture at three moments:
+
+```text
+Generation time
+  Reject incompatible configurations
+
+Validation time
+  Detect illegal repository structure and imports
+
+Development time
+  Guide humans and agents through governance
+```
+
+---
+
+# What Vibes Does Not Yet Contain
+
+The current repository has no executable CLI package or generator runtime. Its scripts operate and validate the starter itself.
+
+The current architecture is:
+
+```text
+DigitalHerencia/Vibes
+└── runnable starter application
+```
+
+The desired Loaded Vibes architecture is:
+
+```text
+Loaded Vibes
+├── generator implementation
+├── canonical project template
+├── optional generation modules
+├── compatibility rules
+├── generator test fixtures
+└── generated-output test matrix
+```
+
+The CLI product and generated product have different responsibilities, dependencies, release cycles, and tests. Prompts should not simply be added to the current application root and mislabeled as a generator.
+
+---
+
+# Recommended Repository Architecture
+
+A pnpm workspace monorepo is appropriate once the generator, template source, optional modules, fixtures, and test matrix become distinct maintained products.
+
+```text
+loaded-vibes/
+├── apps/
+│   └── fixture-catalog/
+├── packages/
+│   ├── create-vibes/
+│   │   └── src/
+│   │       ├── cli.ts
+│   │       ├── commands/
+│   │       ├── prompts/
+│   │       ├── config/
+│   │       ├── resolver/
+│   │       ├── generator/
+│   │       └── lifecycle/
+│   ├── generator-core/
+│   ├── template-core/
+│   │   └── template/
+│   └── modules/
+│       ├── clerk/
+│       ├── tenancy/
+│       ├── postgres-rls/
+│       ├── stripe-billing/
+│       ├── stripe-connect/
+│       ├── presentation-catalog/
+│       └── agent-governance/
+├── fixtures/
+│   ├── minimal/
+│   ├── standard/
+│   └── full/
+├── tests/
+│   ├── cli/
+│   ├── generation/
+│   ├── compatibility/
+│   └── snapshots/
+└── pnpm-workspace.yaml
+```
+
+The exact structure remains a design decision, but the separation of generator runtime, canonical output, optional capabilities, generation contracts, and output verification is necessary.
+
+---
+
+# Do Not Template Everything
+
+Most application files should remain literal files.
+
+Use three transformation classes.
+
+## Literal copy
+
+Ordinary TypeScript, tests, components, validators, and architecture scripts should remain ordinary files that can be compiled and reviewed directly.
+
+## Structured transformation
+
+Structured files such as `package.json`, `tsconfig.json`, `.env.example`, and workspace manifests should be changed through deterministic object-level merges rather than arbitrary string replacement.
+
+## Textual rendering
+
+Template rendering should be reserved for genuinely parameterized files such as package names, application titles, README fragments, and generated documentation.
+
+```text
+source file
+  ├─ literal copy
+  ├─ structured merge
+  └─ textual render
+```
+
+The generator manifest should declare which operation applies to each input.
+
+---
+
+# Generation Modules
+
+A module owns a complete capability contribution rather than merely copying a folder when a checkbox is selected.
+
+A module may define:
+
+- requirements, implications, and conflicts;
+- file contributions;
+- dependencies and scripts;
+- environment variables;
+- structured transforms;
+- validation contributions;
+- documentation fragments.
+
+Example:
+
+```text
+stripe-connect
+├── requires
+│   ├── stripe-billing
+│   ├── tenancy
+│   └── database
+├── contributes
+│   ├── integration files
+│   ├── webhook route
+│   ├── Prisma models
+│   ├── environment variables
+│   ├── tests
+│   ├── dependencies
+│   └── documentation
+└── validates
+    ├── provider scoping
+    ├── removable-module contract
+    └── build success
+```
+
+This is the difference between conditional file copying and composable generation.
+
+---
+
+# Dependency Resolution
+
+Generator options are not independent booleans.
+
+```text
+Stripe Connect
+  ├─ requires Stripe core
+  ├─ requires tenancy
+  ├─ requires database
+  └─ requires webhook infrastructure
+
+PostgreSQL RLS
+  ├─ requires database tenancy
+  ├─ requires runtime tenant context
+  └─ requires restricted runtime role
+
+Custom RBAC
+  ├─ requires local users
+  └─ requires tenant memberships
+```
+
+The configuration lifecycle should be:
+
+```text
+raw answers
+  → normalized configuration
+  → dependency closure
+  → compatibility validation
+  → ordered module plan
+  → file, dependency, and transform plan
+  → generation
+```
+
+Prompts produce configuration. They do not directly perform file operations. This separation enables interactive and non-interactive use, presets, config files, and reproducible tests.
+
+---
+
+# CLI Surface
+
+Fixed architectural opinions are not prompts.
+
+Do not ask whether to use App Router, TypeScript, strict mode, Zod, DTO boundaries, fetchers, or protected architectural imports when those are defining invariants of the product.
+
+Good supported variations may include:
+
+- tenant-aware versus explicitly supported single-tenant output;
+- subscription billing or no billing;
+- Stripe Connect or no Connect;
+- example domain versus empty domain shell;
+- presentation catalog inclusion;
+- agent governance inclusion;
+- Git initialization;
+- dependency installation.
+
+Presets should absorb common configurations rather than exposing an uncontrolled questionnaire.
+
+---
+
+# Presets and Support Envelope
+
+A bounded initial set is preferable to infinite customization.
+
+## Minimal
+
+A possible minimal preset includes framework, TypeScript, presentation primitives, environment validation, tests, CI, and architecture governance without identity, database, or billing.
+
+## Standard
+
+A possible standard preset adds Clerk, Neon and Prisma, local users, organizations and memberships, custom RBAC, RLS, Stripe subscriptions, and the webhook ledger.
+
+## Full
+
+A possible full preset adds Stripe Connect, presentation catalog, expanded reference architecture, release validation, and agent governance.
+
+The exact presets remain unresolved. Their purpose is to define a support envelope that can actually be tested.
+
+---
+
+# Generated-Output Testing
+
+The generator requires two separate test layers.
+
+## Generator tests
+
+- prompt and flag normalization;
+- configuration schema validation;
+- dependency closure;
+- conflict detection;
+- file-collision behavior;
+- manifest merging;
+- deterministic output;
+- failure cleanup.
+
+## Generated-project tests
+
+Representative fixtures must be generated, installed, and validated using the generated project’s own quality gates.
+
+```text
+generator source
+  → generator unit and resolver tests
+  → generated fixtures
+    → format
+    → lint
+    → typecheck
+    → contract tests
+    → production build
+    → security validation
+```
+
+The existing Vibes validation suite is the primary acceptance contract for generated output.
+
+---
+
+# Staged Evolution
+
+The correct progression is:
+
+```text
+Stage 1
+Canonical static template
+
+Stage 2
+CLI that copies and personalizes the canonical template
+
+Stage 3
+A bounded set of tested presets
+
+Stage 4
+A small number of dependency-aware modules
+
+Stage 5
+Only then consider extension or plugin systems
+```
+
+Vibes completed the canonical-template stage.
+
+## First initializer
+
+The smallest legitimate initializer should:
+
+1. validate the destination;
+2. copy the canonical template;
+3. rename the package and generic metadata;
+4. remove template-only workbench artifacts;
+5. optionally initialize Git;
+6. optionally install dependencies;
+7. run credential-free validation.
+
+It should not begin with a general module framework.
+
+## Variability inventory
+
+Before conditional generation, every template path should be classified as:
+
+- core;
+- optional;
+- reference;
+- workbench-only;
+- generated metadata.
+
+## First optional module
+
+Stripe Connect is a strong first module candidate because it is already separated, has visible dependencies, affects several artifact types, and has a removal contract.
+
+---
+
+# Principal Risks
+
+## Template-source divergence
+
+The canonical template source, generated fixtures, and actively developed starter must not become three independently maintained copies.
+
+The preferred model is one runnable, testable canonical template source that the initializer directly copies or mechanically transforms.
+
+## Upgrade expectations
+
+Repository creation and repository upgrades are separate products.
+
+```text
+create-vibes
+  creates a repository once
+
+versioned codemods
+  perform narrow migrations
+
+shared packages
+  deliver selected reusable runtime behavior
+```
+
+The first generator should not promise arbitrary upgrades of modified consumer repositories.
+
+## Configuration explosion
+
+Binary switches grow the theoretical combination count exponentially. Supported presets and bounded custom combinations are necessary to keep the test matrix credible.
+
+## Premature abstraction
+
+The generator should prove reliable copying, personalization, Windows path behavior, cleanup, and output validation before generalizing every subsystem into modules.
+
+---
+
+# Consolidated Findings from Related Captures
+
+The prior template and repository-remodel notes reinforce these conclusions:
+
+- the existing architecture is directionally strong and should be normalized rather than redesigned;
+- Vibes is best treated as the canonical generated output and reference architecture;
+- reusable architecture must be separated from Vouch-specific domain material;
+- the platform kernel includes identity, actor resolution, organizations and memberships, capability RBAC, optional RLS, typed environment configuration, Prisma and Neon, audit, errors, observability, rate limiting, email, uploads, caching, tests, CI, and agent governance;
+- canonical read and write pipelines must remain mechanically enforceable;
+- optional billing and Connect capabilities must have explicit dependencies and removal behavior;
+- the generator design must precede broad generator implementation.
+
+---
+
+# Verdict
+
+Vibes is a high-assurance canonical SaaS starter, not yet a scaffolding generator.
+
+Its key assets are:
+
+- a validated output target;
+- strong architectural boundaries;
+- provider and security isolation;
+- optional-subsystem precedent;
+- machine-readable governance;
+- reusable presentation taxonomy;
+- credential-free acceptance gates.
+
+The next Loaded Vibes milestone is a thin, separate initializer around the canonical template, followed by a bounded preset and module system.
+
+> Build Loaded Vibes as an interactive, package-manager-executable project initializer backed by a deterministic scaffolding generator. Preserve Vibes as the canonical runnable template source, separate generator runtime from generated application code, model optional capabilities as dependency-aware generation modules, and validate representative generated fixtures using the template’s existing credential-free architecture, contract, security, and production-build gates.
