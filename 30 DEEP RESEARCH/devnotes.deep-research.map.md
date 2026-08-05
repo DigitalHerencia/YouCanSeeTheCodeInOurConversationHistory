@@ -3,8 +3,8 @@ title: Deep Research Map
 type: map
 scope: vault
 project:
-domain: vault
-artifact: index
+domain: deep-research
+artifact: map
 kind: map
 namespace: devnotes.deep-research.map
 status: active
@@ -12,11 +12,15 @@ authority: reference
 parent:
 depends_on:
   - "[[obsidian.contracts.naming-standard]]"
+  - "[[obsidian.contracts.property-schema]]"
+  - "[[obsidian.contracts.note-types]]"
 supersedes: []
 tags:
   - maps/vault
   - research
   - status/active
+created:
+updated: 2026-08-04
 ---
 
 # Deep Research Map
@@ -26,6 +30,7 @@ tags:
 ~~~dataview
 LIST
 FROM "30 DEEP RESEARCH"
+WHERE file.name != this.file.name
 SORT file.name ASC
 ~~~
 
@@ -34,6 +39,7 @@ SORT file.name ASC
 ~~~dataview
 TABLE file.mtime AS Modified
 FROM "30 DEEP RESEARCH"
+WHERE file.name != this.file.name
 SORT file.mtime DESC
 LIMIT 20
 ~~~
