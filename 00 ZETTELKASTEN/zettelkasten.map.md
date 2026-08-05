@@ -17,6 +17,8 @@ tags:
   - maps/vault
   - zettelkasten
   - status/active
+created: 2026-08-04
+updated: 2026-08-05
 ---
 
 # Zettelkasten Map
