@@ -6,6 +6,20 @@ Its purpose is simple:
 
 > Bring useful material into the DevNotes ChatGPT project, organize it according to a consistent system, save it to the connected GitHub repository, and synchronize it to the local Obsidian vault.
 
+## Canonical engineering knowledge
+
+`DigitalHerencia/DevNotes` is the permanent canonical repository for the **Codependent Coding™ Knowledge System** and its reusable Loaded Vibes™ WebApp Architecture / Hipster Stack™ engineering doctrine.
+
+The hierarchy is:
+
+```text
+Codependent Coding™ Knowledge System
+  → defines and governs Loaded Vibes™ WebApp Architecture
+  → organizes and structures Hipster Stack™ TechStack
+```
+
+The canonical entrypoint is `40 TECH STACK/codependentcoding.knowledge-system.map.md`. Product repositories may contain operational derivatives, but reusable doctrine is owned here.
+
 ## How DevNotes Works
 
 The operating flow is:
@@ -37,27 +51,16 @@ Obsidian is the local reading, writing, linking, and navigation environment.
 DevNotes contains:
 
 - project source-of-truth notes
-    
 - product and architecture contracts
-    
 - technical references
-    
 - research reports
-    
 - active execution notes
-    
 - agent work packages
-    
 - documentation clippings
-    
 - raw captures
-    
 - personal and technical writing
-    
 - vault standards and templates
-    
 - operational scripts and logs
-    
 
 ## Vault Structure
 
@@ -95,7 +98,7 @@ Long-form research, investigations, comparisons, and analytical reports.
 
 ### `40 TECH STACK`
 
-Reusable technical knowledge about tools, frameworks, libraries, services, and implementation patterns.
+Reusable technical knowledge about tools, frameworks, libraries, services, implementation patterns, and the canonical Codependent Coding™ Knowledge System.
 
 ### `50 REGRETS, CIGARETTES, & NEURAL NETS`
 
@@ -109,7 +112,7 @@ This contains DevNotes standards, contracts, maps, templates, and workflows.
 
 ### `_OPS`
 
-Automation scripts, maintenance tools, migration utilities, and generated operational reports.
+Automation scripts, maintenance tools, migration utilities, and generated operational reports. Migration snapshots stored here are provenance evidence, not competing active knowledge hierarchies.
 
 ### `.agent-logs`
 
@@ -128,13 +131,9 @@ DevNotes is governed by three contracts:
 Together they define:
 
 - how durable notes are named
-    
 - what properties they contain
-    
 - how notes are classified
-    
 - how authority and lifecycle are represented
-    
 
 ## Naming Standard
 
@@ -261,6 +260,8 @@ The connected GitHub repository is:
 DigitalHerencia/DevNotes
 ```
 
+It is also the canonical repository for the Codependent Coding™ Knowledge System and reusable engineering doctrine. The canonical map is `40 TECH STACK/codependentcoding.knowledge-system.map.md`.
+
 ChatGPT may create, update, rename, move, or delete notes in that repository when instructed by the user.
 
 The local Obsidian vault is updated by synchronizing the Git repository.
@@ -270,23 +271,14 @@ The local Obsidian vault is updated by synchronizing the Git repository.
 DevNotes follows these principles:
 
 - preserve the numbered top-level folder structure
-    
 - use dot-notation filenames for durable notes
-    
 - keep raw capture separate from durable knowledge
-    
 - keep source-of-truth material clearly identified
-    
 - preserve internal relationships with wikilinks
-    
 - avoid unnecessary duplication
-    
 - avoid inventing new systems when the existing contracts already apply
-    
 - make the smallest change that satisfies the task
-    
 - keep the vault understandable for one person
-    
 
 ## File Format Roles
 

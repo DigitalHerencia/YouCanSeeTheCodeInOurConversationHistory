@@ -12,22 +12,27 @@ authority: source-of-truth
 parent: "[[devnotes.projects.map]]"
 depends_on:
   - "[[codependentcoding.project.source-document]]"
+  - "[[codependentcoding.knowledge-system.map]]"
 supersedes: []
 tags:
   - projects/codependent-coding
   - maps/project
   - status/active
 created: 2026-08-05
-updated: 2026-08-05
+updated: 2026-08-08
 ---
 
 # Codependent Coding Project Map
 
 ## Project Definition
 
-- [[codependentcoding.project.source-document]] — authoritative definition of the refreshed Codependent Coding project, its boundaries, governance model, and relationship to Loaded Vibes.
+- [[codependentcoding.project.source-document]] — authoritative definition of the Codependent Coding software product, its boundaries, governance model, and relationship to Loaded Vibes.
 
-## Upstream Dependency
+## Canonical Knowledge Dependency
+
+- [[codependentcoding.knowledge-system.map]] — canonical reusable engineering Knowledge System in DevNotes. The software-product repository may consume operational derivatives but does not own this canon.
+
+## Upstream Product Dependency
 
 - [[loadedvibes.project.source-document]] — generates the canonical SaaS repository that Codependent Coding transforms into a product-specific MVP.
 
@@ -41,4 +46,4 @@ updated: 2026-08-05
 - [[codependentcoding.teams.reference]]
 - [[codependentcoding.ticketing.reference]]
 
-These notes predate the refreshed project definition and remain supporting material until they are deliberately reconciled, promoted, superseded, or archived.
+These notes predate the refreshed product definition and remain supporting material until they are deliberately reconciled, promoted, superseded, or archived.
