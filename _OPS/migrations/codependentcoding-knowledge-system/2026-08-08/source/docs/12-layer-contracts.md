@@ -33,7 +33,7 @@ Every layer defines ownership, knowledge, callers/callees, input/output trust, v
 
 `✓` may import/call; `A` adapter-only; `—` forbidden.
 
-| From \\ To | Present. | Fetcher | Action | Workflow | Authz | DB | Integration | Framework |
+| From \ To | Present. | Fetcher | Action | Workflow | Authz | DB | Integration | Framework |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | Route | ✓ | A | A | — | — | — | — | ✓ |
 | Feature | ✓ | ✓ | action reference | — | — | — | — | — |
