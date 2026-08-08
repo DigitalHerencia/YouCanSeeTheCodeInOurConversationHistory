@@ -77,6 +77,6 @@ Codependent Coding™ Knowledge System
 ## Migration and provenance
 
 - [Migration manifest](../_OPS/migrations/codependentcoding-knowledge-system/2026-08-08/migration-manifest.md)
-- [Exact source snapshot](../_OPS/migrations/codependentcoding-knowledge-system/2026-08-08/source/README.md)
+- [Source snapshot](../_OPS/migrations/codependentcoding-knowledge-system/2026-08-08/source/README.md)
 
-The `_OPS` snapshot is immutable migration evidence and preserves the complete former repository topology. Reusable doctrine is navigated through the canonical DevNotes owners above, not through a second active copied hierarchy.
+The `_OPS` snapshot is content-preserving migration evidence and preserves all 52 former repository paths and their topology. Reusable doctrine is navigated through the canonical DevNotes owners above, not through a second active copied hierarchy.
