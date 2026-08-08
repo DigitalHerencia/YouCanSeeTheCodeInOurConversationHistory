@@ -12,6 +12,7 @@ authority: source-of-truth
 parent: "[[codependentcoding.project.map]]"
 depends_on:
   - "[[loadedvibes.project.source-document]]"
+  - "[[codependentcoding.knowledge-system.definition.source-document]]"
 supersedes: []
 tags:
   - projects/codependent-coding
@@ -19,7 +20,7 @@ tags:
   - spec-driven-development
   - status/active
 created: 2026-08-05
-updated: 2026-08-05
+updated: 2026-08-08
 ---
 
 # Codependent Coding
@@ -28,9 +29,15 @@ updated: 2026-08-05
 
 Codependent Coding is the spec-driven AI engineering system that turns natural-language product and feature intent into governed implementation inside a Loaded Vibes-generated SaaS application.
 
-It combines the operating ideas of specification-driven development and reusable agent capabilities: human-readable context, machine-readable contracts, execution state, Codex plugins, skills, custom agents, instructions, and prompts.
+It combines the operating ideas of specification-driven development and reusable agent capabilities: human-readable context, machine-readable contracts, execution state, Codex plugins, skills, custom agents, instructions, prompts, and current appropriate agent/tool integrations.
 
 Its role is to take the canonical golden prototype produced by [[loadedvibes.project.source-document]] and transform it into a product-specific MVP without requiring the agent to rediscover the repository, architecture, boundaries, or implementation patterns.
+
+## Knowledge source of truth
+
+The reusable engineering system that governs Codependent Coding is the [[codependentcoding.knowledge-system.definition.source-document]] in `DigitalHerencia/DevNotes`.
+
+The GitHub repository `DigitalHerencia/CodependentCoding` is the software-product repository, not the canonical home of the Codependent Coding™ Knowledge System. Any operational copies of reusable doctrine in that product repository must identify DevNotes provenance and must not become an undocumented competing source of truth.
 
 ## Product Definition
 
@@ -47,7 +54,11 @@ Agent work packages and implementation
         ↓
 Validation and quality gates
         ↓
-Product-specific MVP
+Convergence / remaining-work detection
+        ↓
+Handoff
+        ↓
+Validated product-specific MVP
 ```
 
 The system is intended to reduce ambiguity rather than encourage architectural invention. Agents work within the structure, conventions, and canonical patterns already encoded by Loaded Vibes and defined by the reusable engineering source of truth in `40 TECH STACK`.
@@ -64,7 +75,7 @@ The recurring documentation set is:
 - technical requirements
 - architecture
 - design
-- authentication
+- authentication and authorization
 
 These documents preserve human intent and project-level decisions.
 
@@ -96,38 +107,19 @@ Specifications are not required to be identical across every generated product. 
 
 ## Machine-Readable Agent Model
 
-The standard `.agents` layer contains two directories.
+The standard `.agents` layer contains durable contracts and mutable execution state.
 
 ### Contracts
 
-YAML contracts define durable machine-readable constraints:
-
-- `product`
-- `architecture`
-- `validation`
+YAML contracts define durable machine-readable constraints, including product, architecture, validation, and other deterministic subsets required by the current Knowledge System.
 
 ### Execution
 
-JSON execution records preserve active agent state:
-
-- `decisions`
-- `progress`
-- `handoff`
-
-The contracts define what must remain true. The execution records describe what has been decided, what has been completed, and what another agent needs to continue without rediscovery.
+Execution records preserve active agent state such as decisions, progress, and handoff. They remain operational and cannot silently override canonical doctrine.
 
 ## Agent Capability Layer
 
-Codependent Coding is expected to package the reusable capabilities needed to work correctly inside the generated application, including:
-
-- Codex plugins
-- reusable skills
-- custom agents
-- repository instructions
-- prompts
-- specification translation workflows
-- contract-aware execution workflows
-- validation and quality-gate integration
+Codependent Coding is expected to package the reusable capabilities needed to work correctly inside the generated application, including skills, agents, instructions, prompts, specification translation workflows, contract-aware execution workflows, validation integration, and appropriate current tool/plugin/MCP mechanisms where they improve the governed workflow.
 
 These capabilities should teach the agent how to apply product-specific changes to known extension points rather than how to rebuild the base application.
 
@@ -138,13 +130,13 @@ Loaded Vibes owns the deterministic starting state.
 Codependent Coding owns the deterministic transformation of that starting state into a product-specific application.
 
 ```text
-Engineering source of truth
+Codependent Coding™ Knowledge System in DevNotes
         ↓
 Loaded Vibes generator
         ↓
 Golden prototype repository
         ↓
-Codependent Coding
+Codependent Coding software product
         ↓
 Product-specific MVP
 ```
@@ -159,33 +151,25 @@ Codependent Coding may assume the generated repository already contains the cano
 - Reuse established SaaS patterns instead of rebuilding foundational infrastructure.
 - Preserve decisions, progress, and handoff state across agent runs.
 - Run validation and quality gates before accepting implementation work.
-- Reduce prototype-to-MVP delivery from days or weeks to hours, with an aspirational target of less than one hour for suitable products, including resource provisioning where supported.
+- Detect completion versus remaining work and produce a useful handoff state.
+- Reduce prototype-to-MVP delivery time while preserving architecture, security, validation, and evidence requirements.
 
 ## Non-Goals
 
 Codependent Coding does not own:
 
-- generation of the baseline SaaS repository
-- definition of the reusable engineering system itself
-- unrestricted agent improvisation
-- product decisions the user has not supplied
-- replacement of project-specific specifications with a universal fixed feature list
+- generation of the baseline SaaS repository;
+- canonical ownership of the reusable engineering Knowledge System;
+- unrestricted agent improvisation;
+- product decisions the user has not supplied;
+- replacement of project-specific specifications with a universal fixed feature list.
 
 ## Current State
 
-The project definition is active, but the implementation is not yet formalized.
+The product definition is active. The canonical reusable Knowledge System has been migrated into DevNotes. Repurposing or implementing the `DigitalHerencia/CodependentCoding` product repository is a separate downstream operation and is not performed by this migration.
 
-Existing notes in this project folder contain earlier material about development cycles, mental models, procedures, teams, and ticketing. They remain preserved as supporting material until they are deliberately reconciled with this source-of-truth definition.
+Existing notes in this project folder contain earlier material about development cycles, mental models, procedures, teams, and ticketing. They remain preserved as supporting material until deliberately reconciled, promoted, superseded, or archived.
 
 ## Open Decisions
 
-The transcript does not yet settle:
-
-- the final repository and package structure
-- the exact plugin and skill interfaces
-- the natural-language-to-specification translation pipeline
-- the work-package and pull-request execution protocol
-- the provider provisioning mechanism
-- the exact division of validation responsibilities among lint rules, contract validators, tests, and review tooling
-
-These decisions should be resolved without changing the core project boundary defined here.
+The final product implementation may still need to resolve details such as repository/package structure, exact skill/agent interfaces, natural-language-to-spec translation mechanics, work-package/PR execution protocol, provisioning mechanisms, and division of validation responsibilities. Those decisions must remain subordinate to the product boundary and canonical Knowledge System rather than reopening them.
