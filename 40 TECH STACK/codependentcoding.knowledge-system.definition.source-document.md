@@ -112,15 +112,19 @@ The reusable deterministic subsets migrated from the former Knowledge System rep
 - `codependentcoding.contracts.validation.contract.yaml`
 - `codependentcoding.contracts.execution.contract.yaml`
 
+The stable aliases preserve the original contract payloads so later product packaging can derive from a known source. Source-relative `owner` path strings inside the migrated payloads are provenance identifiers from the former repository, not new DevNotes path authority; the active human owners are the DevNotes notes linked in this map and the migration manifest records the source-to-owner disposition. Product-local operational derivatives must rewrite package-local pointers deliberately while retaining DevNotes provenance.
+
 These contracts support the Markdown doctrine. They do not replace it.
 
 ## Migration provenance
 
-The complete 2026-08-08 source repository snapshot is retained byte-for-byte under:
+The complete 2026-08-08 source repository content is retained under:
 
 `_OPS/migrations/codependentcoding-knowledge-system/2026-08-08/source/`
 
-The snapshot preserves the original repository topology so its relative links and internal reading order remain reconstructable. It is migration evidence, not a parallel active note hierarchy.
+The snapshot preserves all 52 tracked source paths and the original repository topology so its relative links and reading order remain reconstructable. GitHub text writes normalized the terminal newline on some Markdown files; validation therefore distinguishes content preservation from byte identity. Machine contracts and operational YAML copied through Git objects retain exact source blob identities, and the one material text-escaping delta discovered during validation was repaired before merge.
+
+The snapshot is migration evidence, not a parallel active note hierarchy.
 
 The source-to-destination disposition for every tracked source artifact is recorded in:
 
