@@ -1,3 +1,28 @@
+---
+title: CtrlPlus Codebase Implementation Audit
+type: research
+scope: project
+project: CtrlPlus
+domain: codebase
+artifact: implementation-audit
+kind: research
+namespace: ctrlplus.codebase.implementation-audit.research
+status: active
+authority: reference
+parent: "[[devnotes.deep-research.map]]"
+depends_on:
+  - "[[obsidian.contracts.naming-standard]]"
+  - "[[obsidian.contracts.property-schema]]"
+  - "[[obsidian.contracts.note-types]]"
+supersedes: []
+tags:
+  - research
+  - ctrlplus
+  - codebase
+created:
+updated: 2026-08-08
+---
+
 ## Related
 
 - [[Building Viable AI Video Workflow Products Without Sora-Style Failure Modes]]
