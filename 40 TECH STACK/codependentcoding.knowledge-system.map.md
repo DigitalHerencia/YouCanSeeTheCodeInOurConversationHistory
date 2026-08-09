@@ -13,6 +13,7 @@ parent: "[[tech-stack.map]]"
 depends_on:
   - "[[codependentcoding.knowledge-system.definition.source-document]]"
   - "[[hipsterstack.patterns.catalog.map]]"
+  - "[[codependentcoding.manifest.map]]"
 supersedes: []
 tags:
   - tech-stack/codependent-coding
@@ -28,7 +29,9 @@ updated: 2026-08-08
 
 ## Authority
 
-[[codependentcoding.knowledge-system.definition.source-document]] is the canonical entrypoint for the reusable engineering system. `DigitalHerencia/DevNotes` is the permanent canonical repository.
+[[codependentcoding.knowledge-system.definition.source-document]] remains the existing DevNotes integration entrypoint for the reusable engineering system. `DigitalHerencia/DevNotes` is the permanent canonical repository.
+
+The complete Obsidian-native corpus imported from `DigitalHerencia/CodependentCoding` is separately navigated through [[codependentcoding.manifest.map]]. Their substantive reconciliation is intentionally outside this housekeeping pass.
 
 ## Hierarchy
 
@@ -40,12 +43,18 @@ Codependent Coding™ Knowledge System
 
 ## System owners
 
-- [[codependentcoding.knowledge-system.definition.source-document]] — identity, scope, hierarchy, source-of-truth rule, and migration provenance.
+- [[codependentcoding.knowledge-system.definition.source-document]] — existing integration note for identity, scope, hierarchy, source-of-truth rule, and migration provenance.
 - [[hipsterstack.engineering-system.definition.source-document]] — integrated architecture and implementation system.
 - [[tech-stack.map]] — vault-wide technical knowledge index.
 - [[web-development.knowledge-modeling.ontology-taxonomy.reference]] — ontology/taxonomy and adjacent knowledge modeling.
 - [[software-development.system-architecture.terminology.reference]] — terminology and conceptual vocabulary.
 - [[software-development.engineering-practice.descriptive-model.reference]] — evidence and engineering-practice model.
+
+## Complete source corpus
+
+- [[codependentcoding.manifest.map]] — complete 52-note Obsidian-native corpus map in `60 CODEPENDENT CODING`.
+- [[codependentcoding.docs.system-map.map]] — imported system map.
+- [[codependentcoding.patterns.catalog.map]] — imported Codependent Coding pattern catalog.
 
 ## Pattern system
 
@@ -79,4 +88,4 @@ Codependent Coding™ Knowledge System
 - [Migration manifest](../_OPS/migrations/codependentcoding-knowledge-system/2026-08-08/migration-manifest.md)
 - [Source snapshot](../_OPS/migrations/codependentcoding-knowledge-system/2026-08-08/source/README.md)
 
-The `_OPS` snapshot is content-preserving migration evidence and preserves all 52 former repository paths and their topology. Reusable doctrine is navigated through the canonical DevNotes owners above, not through a second active copied hierarchy.
+The `_OPS` snapshot remains historical migration/provenance evidence. The active Obsidian-native copy of the 52-source corpus now lives in `60 CODEPENDENT CODING` and is navigated through [[codependentcoding.manifest.map]].
