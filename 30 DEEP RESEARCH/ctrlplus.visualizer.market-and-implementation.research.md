@@ -1,3 +1,28 @@
+---
+title: CtrlPlus Visualizer Market and Implementation Research
+type: research
+scope: project
+project: CtrlPlus
+domain: visualizer
+artifact: market-and-implementation
+kind: research
+namespace: ctrlplus.visualizer.market-and-implementation.research
+status: active
+authority: reference
+parent: "[[devnotes.deep-research.map]]"
+depends_on:
+  - "[[obsidian.contracts.naming-standard]]"
+  - "[[obsidian.contracts.property-schema]]"
+  - "[[obsidian.contracts.note-types]]"
+supersedes: []
+tags:
+  - research
+  - ctrlplus
+  - visualizer
+created:
+updated: 2026-08-08
+---
+
 ## Related
 
 - [[deep-research-report]]
@@ -227,7 +252,7 @@ You asked specifically for free examples of vehicle wrap digital assets for deve
 - **entity["organization","ambientCG","cc0 texture library"]**: all assets are CC0, usable commercially without attribution. citeturn11search0
 - **entity["organization","Poly Haven","cc0 texture library"]**: all textures/models/HDRIs are CC0. citeturn11search1
 
-These libraries have materials that map closely to common wrap patterns (carbon fiber, brushed metal, leather-like textures, etc.), and often provide complete PBR sets (color/normal/roughness), which becomes valuable if you move to a more physically-based shader instead of a pure 2D blend. citeturn11search2turn11search1
+These libraries have materials that map closely to common wrap patterns (carbon fiber, brushed metal, etc.), and often provide complete PBR sets (color/normal/roughness), which becomes valuable if you move to a more physically-based shader instead of a pure 2D blend. citeturn11search2turn11search1
 
 ### Free vehicle photos for template mode and demo uploads
 
