@@ -18,7 +18,7 @@ Codependent Coding™ Knowledge System
   → organizes and structures Hipster Stack™ TechStack
 ```
 
-The canonical entrypoint is `40 TECH STACK/codependentcoding.knowledge-system.map.md`. Product repositories may contain operational derivatives, but reusable doctrine is owned here.
+The complete Obsidian-native Codependent Coding corpus is indexed by `60 CODEPENDENT CODING/codependentcoding.manifest.map.md`. The existing `40 TECH STACK/codependentcoding.knowledge-system.map.md` remains the reusable technical integration map while the two knowledge sets are deliberately reconciled.
 
 ## How DevNotes Works
 
@@ -71,6 +71,7 @@ DevNotes contains:
 30 DEEP RESEARCH
 40 TECH STACK
 50 REGRETS, CIGARETTES, & NEURAL NETS
+60 CODEPENDENT CODING
 90 OBSIDIAN
 _OPS
 .agent-logs
@@ -98,11 +99,15 @@ Long-form research, investigations, comparisons, and analytical reports.
 
 ### `40 TECH STACK`
 
-Reusable technical knowledge about tools, frameworks, libraries, services, implementation patterns, and the canonical Codependent Coding™ Knowledge System.
+Reusable technical knowledge about tools, frameworks, libraries, services, implementation patterns, and existing Knowledge System integration/reference artifacts.
 
 ### `50 REGRETS, CIGARETTES, & NEURAL NETS`
 
 Essays, personal writing, creative work, and authored commentary.
+
+### `60 CODEPENDENT CODING`
+
+The complete Obsidian-native Codependent Coding™ Knowledge System corpus migrated from `DigitalHerencia/CodependentCoding`, including doctrine, architecture, contracts, patterns, governance, provenance, and maps.
 
 ### `90 OBSIDIAN`
 
@@ -260,7 +265,7 @@ The connected GitHub repository is:
 DigitalHerencia/DevNotes
 ```
 
-It is also the canonical repository for the Codependent Coding™ Knowledge System and reusable engineering doctrine. The canonical map is `40 TECH STACK/codependentcoding.knowledge-system.map.md`.
+It is also the canonical repository for the Codependent Coding™ Knowledge System and reusable engineering doctrine. The complete imported corpus is indexed by `60 CODEPENDENT CODING/codependentcoding.manifest.map.md`; the Tech Stack integration map remains `40 TECH STACK/codependentcoding.knowledge-system.map.md`.
 
 ChatGPT may create, update, rename, move, or delete notes in that repository when instructed by the user.
 
