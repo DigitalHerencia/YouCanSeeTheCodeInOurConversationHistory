@@ -18,7 +18,7 @@ tags:
   - maps/vault
   - status/active
 created: 2026-08-04
-updated: 2026-08-04
+updated: 2026-08-08
 ---
 
 # DevNotes Home
@@ -29,6 +29,11 @@ updated: 2026-08-04
 - [[obsidian.contracts.naming-standard]]
 - [[obsidian.contracts.property-schema]]
 - [[obsidian.contracts.note-types]]
+
+## Knowledge Systems
+
+- [[codependentcoding.manifest.map]] — complete Codependent Coding™ corpus in `60 CODEPENDENT CODING`.
+- [[devnotes.tech-stack.map]] — reusable technical knowledge and integration references.
 
 ## Active Source-of-Truth Notes
 
