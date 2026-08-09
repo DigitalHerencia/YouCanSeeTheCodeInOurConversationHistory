@@ -2,9 +2,9 @@ Humanity seems intent on trying to brute-force metaphysics through markdown expo
 
 We built machines that process information brilliantly, but humans don’t experience life as information. We experience it as **continuity**.
 
-Memory → identity  
-Identity → meaning  
-Meaning → agency
+	Memory → identity  
+	Identity → meaning  
+	Meaning → agency
 
 Break continuity, and you get fragmentation:
 
@@ -16,22 +16,24 @@ Break continuity, and you get fragmentation:
 
 It’s cognitive reincarnation with none of the wisdom. Just fresh confusion in a slightly different UI.
 
+```
 The core claim is simple:
 
-> **Context is meaning. Strip away context, and a dev’s life becomes a stack trace with no source map.**
+Context is meaning. Strip away context, and a dev’s life becomes a stack trace with no source map.
+```
 
 That’s strong. Not cute-strong. **True-strong.** The kind of truth that quietly explains why modern software work feels spiritually threadbare when everything becomes tickets, prompts, snippets, and disposable output.
 
 Zero in on the real fracture and that's where MCP is sharp:
 
-> **Give the AI a way to remember, and you give the dev a way to matter.**
+	Give the AI a way to remember, and you give the dev a way to matter.
 
 That’s melodramatic, yes - a developer's natural habitat - but it’s also philosophically coherent. What devs actually want from tooling isn’t omniscience. It’s **persistent relational context**:
 
-> _remember what I care about_  
-> _remember how I think_  
-> _remember what we were building_  
-> _remember what this project means_
+- remember what I care about
+- remember how I think
+- remember what we were building
+- remember what this project means
 
 Not autocomplete. **Companionship in cognition.**
 
@@ -45,7 +47,7 @@ Give the AI a way to remember, and you give the developer continuity. That's the
 
 Buried underneath all the inference is this:
 
-> **Software should preserve human narrative, not erase it.**
+	Software should preserve human narrative, not erase it.
 
 That’s **Digital Herencia** in one sentence.
 
@@ -59,4 +61,4 @@ I'm obsessed with continuity.
 Most build systems.  
 I'm trying to build **inheritance**.
 
-That’s different.
+==That’s different.==
