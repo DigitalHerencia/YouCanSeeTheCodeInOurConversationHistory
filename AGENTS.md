@@ -64,6 +64,7 @@ Top-level folders:
 30 DEEP RESEARCH
 40 TECH STACK
 50 REGRETS, CIGARETTES, & NEURAL NETS
+60 CODEPENDENT CODING
 90 OBSIDIAN
 _OPS
 .agent-logs
@@ -109,6 +110,10 @@ Use for reusable technical knowledge about frameworks, libraries, tools, service
 ### `50 REGRETS, CIGARETTES, & NEURAL NETS`
 
 Use for essays, personal writing, creative work, and authored commentary.
+
+### `60 CODEPENDENT CODING`
+
+Use for the complete Obsidian-native Codependent Coding™ Knowledge System corpus, including doctrine, architecture, contracts, patterns, governance, provenance, and maps. Preserve it as a flat dot-notation namespace unless the user explicitly requests restructuring.
 
 ### `90 OBSIDIAN`
 
