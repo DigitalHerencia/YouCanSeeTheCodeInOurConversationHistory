@@ -17,6 +17,8 @@ tags:
   - obsidian/contracts
   - obsidian/note-types
   - status/active
+created:
+updated: 2026-08-08
 ---
 # Obsidian Contract Note Types
 
