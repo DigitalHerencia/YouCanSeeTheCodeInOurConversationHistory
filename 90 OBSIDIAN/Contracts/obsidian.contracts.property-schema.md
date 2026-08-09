@@ -17,6 +17,8 @@ tags:
   - obsidian/contracts
   - obsidian/properties
   - status/active
+created:
+updated: 2026-08-08
 ---
 # Obsidian Contract Property Schema
 
