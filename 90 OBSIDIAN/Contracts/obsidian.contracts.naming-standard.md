@@ -16,6 +16,8 @@ tags:
   - obsidian/contracts
   - obsidian/naming
   - status/active
+created:
+updated: 2026-08-08
 ---
 # Obsidian Contract Naming Standard
 
@@ -64,6 +66,7 @@ Top-level folders:
 30 DEEP RESEARCH
 40 TECH STACK
 50 REGRETS, CIGARETTES, & NEURAL NETS
+60 CODEPENDENT CODING
 90 OBSIDIAN
 _OPS
 .agent-logs
