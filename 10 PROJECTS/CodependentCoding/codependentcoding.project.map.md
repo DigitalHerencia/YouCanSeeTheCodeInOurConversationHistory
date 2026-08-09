@@ -13,6 +13,7 @@ parent: "[[devnotes.projects.map]]"
 depends_on:
   - "[[codependentcoding.project.source-document]]"
   - "[[codependentcoding.knowledge-system.map]]"
+  - "[[codependentcoding.manifest.map]]"
 supersedes: []
 tags:
   - projects/codependent-coding
@@ -30,7 +31,10 @@ updated: 2026-08-08
 
 ## Canonical Knowledge Dependency
 
-- [[codependentcoding.knowledge-system.map]] — canonical reusable engineering Knowledge System in DevNotes. The software-product repository may consume operational derivatives but does not own this canon.
+- [[codependentcoding.manifest.map]] — complete Obsidian-native 52-note Codependent Coding Knowledge System corpus in `60 CODEPENDENT CODING`.
+- [[codependentcoding.knowledge-system.map]] — existing reusable engineering integration/navigation map in `40 TECH STACK`.
+
+The relationship between these two knowledge sets is intentionally left for deliberate reconciliation; this project map only keeps navigation current.
 
 ## Upstream Product Dependency
 
