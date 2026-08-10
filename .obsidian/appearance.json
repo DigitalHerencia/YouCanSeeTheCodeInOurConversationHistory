@@ -1,8 +1,8 @@
 {
   "theme": "obsidian",
-  "accentColor": "",
+  "accentColor": "#ff0000",
   "interfaceFontFamily": "CodeNewRoman Nerd Font",
   "textFontFamily": "Terminess Nerd Font",
   "monospaceFontFamily": "Monoid Nerd Font Mono",
-  "cssTheme": "ITS Theme"
+  "cssTheme": "Obsidianite"
 }

@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "50 REGRETS, CIGARETTES, & NEURAL NETS/I met a founder today.md",
-                "mode": "source",
+                "file": "README.md",
+                "mode": "preview",
                 "source": false,
                 "backlinks": true,
                 "backlinkOpts": {
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "I met a founder today"
+              "title": "README"
             }
           }
         ]
@@ -218,7 +218,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 334.5
+    "width": 334.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -234,8 +235,21 @@
       "obsidian42-text-transporter:Text Transporter": false
     }
   },
-  "active": "4d39625d9ee10dcc",
+  "active": "196f6ed94d57a4c6",
   "lastOpenFiles": [
+    "10 PROJECTS/LoadedVibes/00 PROJECT MAP",
+    "10 PROJECTS/LoadedVibes/10 PRODUCT",
+    "devnotes.home.md",
+    "DevNotes.base",
+    "AGENTS.md",
+    "60 CODEPENDENT CODING/codependentcoding.patterns.webhook-processor.reference.md",
+    "60 CODEPENDENT CODING/codependentcoding.patterns.transaction-helper.reference.md",
+    "60 CODEPENDENT CODING/codependentcoding.provenance.synthesis-decisions.reference.md",
+    "60 CODEPENDENT CODING/codependentcoding.readme.source-document.md",
+    "60 CODEPENDENT CODING/codependentcoding.patterns.data-contract-patterns.reference.md",
+    "60 CODEPENDENT CODING/codependentcoding.docs.validation-conformance.contract.md",
+    "60 CODEPENDENT CODING/codependentcoding.agents.contracts.architecture.contract.md",
+    "50 REGRETS, CIGARETTES, & NEURAL NETS/I met a founder today.md",
     "50 REGRETS, CIGARETTES, & NEURAL NETS/Possessed by a Product Roadmap.md",
     "50 REGRETS, CIGARETTES, & NEURAL NETS/The Stupid Lesson.md",
     "40 TECH STACK/software-development.engineering-practice.stupid-lesson.reference.md",
@@ -251,27 +265,14 @@
     "10 PROJECTS/devnotes.projects.map.md",
     "10 PROJECTS/Vouch/vouch.source-of-truth.legacy.md",
     "10 PROJECTS/Vouch/vouch.pages.taxonomy.legacy.md",
-    "10 PROJECTS/Vouch/vouch.frontend.implementation-matrix.legacy.md",
-    "10 PROJECTS/Vouch/vouch.frontend.codex-prompts.legacy.md",
-    "10 PROJECTS/Vouch/vouch.backend.taxonomy.legacy.md",
-    "10 PROJECTS/Vouch/vouch.backend.implementation-matrix.legacy.md",
-    "10 PROJECTS/Vouch/vouch.backend.engineering-prompts.legacy.md",
-    "10 PROJECTS/Vouch/60 EXECUTION/vouch.execution.pawned.legacy.md",
-    "10 PROJECTS/CodependentCoding/codependentcoding.ticketing.reference.md",
-    "10 PROJECTS/CodependentCoding/codependentcoding.teams.reference.md",
-    "10 PROJECTS/CodependentCoding/codependentcoding.procedures.workflow.md",
-    "10 PROJECTS/CodependentCoding/codependentcoding.mermaid-chart.reference.md",
-    "10 PROJECTS/CodependentCoding/codependentcoding.mental-model.reference.md",
     "10 PROJECTS/CodependentCoding",
     "10 PROJECTS/BorderPulse",
-    "DevNotes.base",
     "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/court-gesture.data.json",
     "_OPS/manifests/devnotes-part2-empty-folders-2026-05-27.csv",
     "_OPS/manifests/devnotes-part2-migration-2026-05-27.csv",
     "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/Texas Bondsman Reporting Statement.pdf",
     "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/Response To Petition For Order Of Protection.pdf",
     "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/Receipt-2554-0521.pdf",
-    "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/NoteGPT_TRANSCRIPT_I Studied 1,460 Onboarding Flows. Here's What I Found.txt",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "DOCUMENTATION/HuggingFace Docs/target.png",
