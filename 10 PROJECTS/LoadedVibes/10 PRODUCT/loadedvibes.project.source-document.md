@@ -1,0 +1,361 @@
+---
+title: Loaded Vibes Project Definition
+type: source-document
+scope: project
+project: Loaded Vibes
+domain: project
+artifact: definition
+kind: source-document
+namespace: loadedvibes.project.source-document
+status: active
+authority: source-of-truth
+parent: "[[loadedvibes.project.map]]"
+depends_on:
+  - "[[hipsterstack.engineering-system.definition.source-document]]"
+  - "[[loadedvibes.generator.configuration.contract]]"
+  - "[[loadedvibes.generator.one-template.contract]]"
+supersedes: []
+tags:
+  - projects/loaded-vibes
+  - project-initializer
+  - web-development
+  - status/active
+created: 2026-08-05
+updated: 2026-08-09
+---
+
+# Loaded Vibes
+
+## Definition
+
+> **Loaded Vibes is an opinionated project initializer for modern TypeScript web applications built the way I build software.**
+
+Loaded Vibes exists to stop rebuilding the same foundational application architecture for every new product.
+
+It is not a consumer-facing startup wizard and it is not a choose-your-stack product. The intended user already understands the underlying technologies and wants a deterministic way to generate the established application foundation, configure the product-specific surface, and begin real product work immediately.
+
+The primary external repository is [DigitalHerencia/LoadedVibes](https://github.com/DigitalHerencia/LoadedVibes).
+
+## Product Center of Gravity
+
+The product should behave like a serious modern web-development tool combining characteristics of a project initializer, a CLI scaffolder, and a visual configuration workbench.
+
+The useful analogies are the execution ergonomics of tools such as T3, shadcn CLI, and TanStack tooling, but Loaded Vibes is explicitly based on the Hipster Stack and the canonical application architecture maintained in DevNotes.
+
+The user should not be asked to reconsider decisions already settled by doctrine.
+
+Loaded Vibes converts those decisions into executable starting state.
+
+## Product Model
+
+```text
+DevNotes
+  canonical engineering knowledge
+        │
+        ▼
+Loaded Vibes
+  one maximal white-label template
+  one configuration contract
+  one deterministic production engine
+        │
+        ├── Web configurator
+        ├── CLI
+        └── loadedvibes.json
+        │
+        ▼
+Generated white-label application
+        │
+        ▼
+Codependent Coding
+  adaptive product-specific implementation
+```
+
+Loaded Vibes owns the deterministic production step between reusable engineering knowledge and adaptive product development.
+
+## Primary User
+
+The primary user is a developer who already knows what Next.js, Prisma, Clerk, Stripe, PostgreSQL, RLS, Server Actions, Vercel, shadcn, and related tools are.
+
+The value proposition is not education about those technologies. It is eliminating repeated setup, architecture decisions, provider boundaries, application plumbing, and white-label cleanup.
+
+## Fixed Foundation
+
+The following are defining parts of Loaded Vibes rather than product-choice prompts:
+
+- TypeScript
+- Next.js App Router
+- React Server Components by default
+- pnpm
+- Zod
+- Prisma
+- Neon/PostgreSQL
+- Clerk identity
+- local application users
+- Organizations and Memberships
+- custom capability RBAC
+- PostgreSQL RLS where tenant isolation requires it
+- Fetchers
+- Server Actions
+- Workflows
+- Transactions
+- Integration Adapters
+- Webhook processors
+- DTO mappers and Selects
+- shadcn primitives
+- Vercel deployment assumptions
+- route → feature → block/component layering
+- auth/authz boundary
+- server-operations boundary
+
+These are the platform kernel.
+
+The generator encodes them so the user does not have to decide them again.
+
+See [[loadedvibes.generator.configuration.contract]].
+
+## Configurable Product Surface
+
+Configuration is intentionally narrower than the fixed foundation.
+
+### Project
+
+- name
+- directory
+- package name
+- description
+- Git initialization
+- dependency installation
+
+### Product shape
+
+Supported starting shapes may include:
+
+- B2B SaaS
+- Client Portal
+- Marketplace / Platform
+- Internal Tool
+- Bare Golden App
+
+These are starting configurations over one application architecture, not separate architectures or independent template families.
+
+### Product capabilities
+
+Candidate capability switches include:
+
+- Organizations
+- Invitations
+- Onboarding
+- Billing
+- Stripe Connect
+- Marketing
+- Sample Domain
+- Presentation Catalog
+- Agent Governance
+
+A capability may be exposed only when Loaded Vibes can compose or remove it correctly and deterministically.
+
+### Product identity
+
+- product name
+- product description
+- brand name
+- bounded domain vocabulary
+
+A future domain-vocabulary layer may allow replacement of generic resource language such as `Project/Projects` with product terms such as `Shipment/Shipments` or `Campaign/Campaigns` without pretending the generator has invented the product domain.
+
+### Visual direction
+
+Keep visual configuration bounded and semantic:
+
+- color family
+- radius
+- density
+- navigation treatment
+- typography treatment
+
+Loaded Vibes itself remains dark-only. Generated applications may support their own semantic theme capability.
+
+## Interface Model
+
+### CLI
+
+The CLI is the primary execution surface.
+
+Examples:
+
+```text
+loaded-vibes create control-plus
+loaded-vibes create control-plus --config loadedvibes.json
+loaded-vibes explain
+loaded-vibes doctor
+loaded-vibes add marketing
+loaded-vibes add stripe-connect
+```
+
+Interactive CLI usage and config-file usage must resolve to the same configuration model and production engine.
+
+### Web
+
+The web application is primarily a visual recipe builder and configuration workbench.
+
+It should be a development tool rather than a marketing product with a configurator hidden inside it.
+
+The target balance is approximately:
+
+```text
+20% explanation
+80% tool
+```
+
+The homepage may move almost immediately into configuration. The web experience should produce configuration that can be handed directly to the CLI.
+
+The web app does not need accounts, project-management SaaS, or a hosted factory backend for the MVP.
+
+## Product Vocabulary
+
+Avoid language that implies foundational architecture is being chosen.
+
+Do not use:
+
+- Choose your stack
+- Choose your architecture
+
+Prefer:
+
+- Configure your project
+- Golden Foundation
+- Product Shape
+- Capabilities
+- Product Identity
+- Visual Direction
+- Generated Output
+
+The vocabulary should communicate that one approved application architecture is being configured rather than reinvented.
+
+## Generated Repository Is the Payoff
+
+The success metric is not whether the configurator is delightful in isolation.
+
+The success metric is:
+
+> **How much repetitive work is unnecessary after generation?**
+
+A generated repository should feel close to a project that has already received substantial foundational engineering work.
+
+It should contain the expected application routes, presentation layers, features, server operations, schemas, types, Prisma infrastructure, provider boundaries, context, agent guidance, validation, and deployment setup.
+
+The application UI itself should look like a product, not developer documentation.
+
+Architectural facts such as runtime mode, write boundaries, authz rules, and data ownership belong in places such as:
+
+- `loaded-vibes explain`
+- `context/`
+- `AGENTS.md`
+- `README.md`
+
+They should not appear as decorative runtime labels in the generated product UI.
+
+## One Maximal Template
+
+Loaded Vibes uses one maximal white-label application as its canonical source.
+
+```text
+ONE MAXIMAL WHITE-LABEL TEMPLATE
+        │
+        ├── all canonical Hipster Stack patterns
+        ├── all supported route surfaces
+        ├── all supported integrations
+        ├── all provider boundaries
+        ├── all reusable application infrastructure
+        └── agent context at the places coding agents work
+                    │
+                    ▼
+          Loaded Vibes generator
+                    │
+             removes / retains
+                    │
+                    ▼
+        GENERATED WHITE-LABEL APP
+```
+
+The first design task is therefore the superset repository, not a generalized module system.
+
+See [[loadedvibes.generator.one-template.contract]] and [[loadedvibes.template.maximal-white-label.reference]].
+
+## Relationship to DevNotes
+
+DevNotes is the knowledge plane.
+
+It contains the canonical explanation of the Hipster Stack, patterns, architecture, and engineering doctrine that Loaded Vibes encodes.
+
+Loaded Vibes should not duplicate DevNotes as a general knowledge repository. It ships only the context needed to understand and safely adapt the generated application.
+
+## Relationship to Codependent Coding
+
+Loaded Vibes and Codependent Coding have different responsibilities.
+
+Loaded Vibes says:
+
+> Here is how this part of the white-label application is meant to work.
+
+Codependent Coding says:
+
+> Given the requested product intent, here is what the coding agent should turn this part into.
+
+Loaded Vibes generates the known-good application foundation. Codependent Coding performs adaptive product-specific build work on the generated repository.
+
+## Goals
+
+- eliminate repeated setup for the application architecture used across projects;
+- produce deterministic and understandable generated repositories;
+- encode fixed Hipster Stack decisions rather than re-asking them;
+- support a bounded, useful configuration surface;
+- make the CLI the reliable production interface;
+- make the web app a visual representation of the same configuration system;
+- generate a product-like application rather than an architecture demo;
+- keep the generated repository predictable for human and agent development;
+- reduce time from project creation to meaningful product implementation.
+
+## Non-Goals
+
+Loaded Vibes does not own:
+
+- arbitrary technology selection;
+- multiple unrelated application architectures;
+- consumer-style startup ideation;
+- a hosted project-management product;
+- product-specific MVP implementation after generation;
+- architectural invention by the generator;
+- replacement of DevNotes engineering knowledge;
+- replacement of Codependent Coding's adaptive specification and execution system.
+
+## Current Implementation State
+
+As verified against the repository on 2026-08-09, LoadedVibes currently has the relevant monorepo foundations, including:
+
+```text
+apps/web
+packages/cli
+packages/core
+packages/recipes
+packages/schema
+templates/golden
+templates/modules
+context
+```
+
+That is the current implementation state, not the target architecture.
+
+The active target removes the old recipe/module-source model, makes the template singular and self-contained, and removes dependence on a separate Vibes repository.
+
+See [[loadedvibes.repository.target-architecture.reference]].
+
+## Decision Test
+
+For every proposed Loaded Vibes feature, ask:
+
+> **Does this remove repetitive work from the way the target applications are actually built?**
+
+If yes, it may belong.
+
+If it exists only because generator products conventionally have it, it does not justify itself.

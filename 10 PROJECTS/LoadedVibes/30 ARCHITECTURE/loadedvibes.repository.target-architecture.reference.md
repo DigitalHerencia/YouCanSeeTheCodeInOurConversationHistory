@@ -1,0 +1,387 @@
+---
+title: Loaded Vibes Repository Target Architecture
+type: reference
+scope: project
+project: Loaded Vibes
+domain: repository
+artifact: target-architecture
+kind: reference
+namespace: loadedvibes.repository.target-architecture.reference
+status: active
+authority: working-note
+parent: "[[loadedvibes.project.map]]"
+depends_on:
+  - "[[loadedvibes.project.source-document]]"
+  - "[[loadedvibes.generator.configuration.contract]]"
+  - "[[loadedvibes.generator.one-template.contract]]"
+  - "[[loadedvibes.template.maximal-white-label.reference]]"
+supersedes: []
+tags:
+  - projects/loaded-vibes
+  - architecture/repository
+  - generator
+  - status/active
+created: 2026-08-09
+updated: 2026-08-09
+---
+
+# Loaded Vibes Repository Target Architecture
+
+## Status
+
+This note describes the target repository architecture agreed on 2026-08-09.
+
+It is not a claim that the repository has already been transformed to this state.
+
+The current repository still contains:
+
+```text
+apps/web
+packages/cli
+packages/core
+packages/recipes
+packages/schema
+templates/golden
+templates/modules
+context
+```
+
+The target deliberately simplifies that structure.
+
+## Target Root
+
+```text
+LoadedVibes/
+├── apps/
+│   └── web/
+├── packages/
+│   ├── schema/
+│   ├── core/
+│   └── cli/
+├── template/
+├── docs/
+├── context/
+├── scripts/
+├── .agents/
+├── .github/
+├── AGENTS.md
+├── README.md
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── LICENSE
+├── package.json
+├── pnpm-workspace.yaml
+├── pnpm-lock.yaml
+├── eslint.config.mjs
+├── prettier.config.mjs
+├── tsconfig.json
+├── .node-version
+├── .gitattributes
+├── .gitignore
+└── .prettierignore
+```
+
+## Website
+
+The web application is the Loaded Vibes website, configurator, and documentation renderer.
+
+```text
+apps/web/
+├── app/
+│   ├── layout.tsx
+│   ├── globals.css
+│   ├── not-found.tsx
+│   ├── (site)/
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── configure/
+│   │   └── page.tsx
+│   └── docs/
+│       └── [[...slug]]/
+│           └── page.tsx
+├── components/
+│   ├── site/
+│   ├── configurator/
+│   │   ├── configurator.tsx
+│   │   ├── configurator-shell.tsx
+│   │   ├── configurator-nav.tsx
+│   │   ├── sections/
+│   │   ├── recipe-summary.tsx
+│   │   ├── generation-plan.tsx
+│   │   └── cli-command.tsx
+│   ├── docs/
+│   └── ui/
+├── lib/
+│   ├── configurator/
+│   └── docs/
+└── public/
+```
+
+### Website surfaces
+
+```text
+/             developer-oriented landing
+/configure    visual configuration workbench
+/docs/*       end-user documentation
+```
+
+No user accounts, project-management dashboard, or hosted factory backend are required for the MVP.
+
+## Schema Package
+
+`packages/schema` defines the versioned `loadedvibes.json` contract.
+
+Target concerns include:
+
+```text
+packages/schema/src/
+├── config.ts
+├── integrations.ts
+├── route-groups.ts
+├── routes.ts
+├── infrastructure.ts
+├── tooling.ts
+└── index.ts
+```
+
+It defines configuration shape rather than generator side effects.
+
+## Core Package
+
+`packages/core` is the deterministic production engine.
+
+```text
+packages/core/src/
+├── catalog/
+│   ├── integrations.ts
+│   ├── route-groups.ts
+│   ├── routes.ts
+│   ├── infrastructure.ts
+│   ├── tooling.ts
+│   └── file-ownership.ts
+├── config/
+│   ├── defaults.ts
+│   ├── normalize.ts
+│   ├── dependencies.ts
+│   └── resolve.ts
+├── generator/
+│   ├── plan.ts
+│   ├── materialize.ts
+│   ├── prune.ts
+│   ├── transforms.ts
+│   └── manifest.ts
+├── lifecycle/
+│   ├── install.ts
+│   ├── prisma.ts
+│   └── git.ts
+├── commands/
+│   ├── create.ts
+│   ├── add.ts
+│   ├── explain.ts
+│   └── doctor.ts
+├── project/
+│   ├── load.ts
+│   └── state.ts
+├── browser.ts
+├── errors.ts
+└── index.ts
+```
+
+This package is shared by the website and CLI.
+
+## CLI Package
+
+`packages/cli` is the terminal interface.
+
+```text
+packages/cli/src/
+├── cli.ts
+├── commands/
+│   ├── create.ts
+│   ├── add.ts
+│   ├── explain.ts
+│   └── doctor.ts
+├── prompts/
+└── output/
+```
+
+The CLI delegates production behavior to `packages/core`.
+
+## Canonical Template
+
+The target uses singular:
+
+```text
+template/
+```
+
+The maximal application lives here directly and remains runnable and understandable as ordinary application code.
+
+See [[loadedvibes.template.maximal-white-label.reference]].
+
+## End-User Documentation
+
+`docs/` is the canonical end-user documentation source.
+
+Target areas:
+
+```text
+docs/
+├── index.md
+├── getting-started.md
+├── concepts/
+├── configuration/
+├── cli/
+├── integrations/
+└── troubleshooting.md
+```
+
+`apps/web/app/docs/[[...slug]]` renders these files.
+
+Do not maintain a separate web-only copy of documentation.
+
+## Maintainer Context
+
+Root `context/` contains documentation about Loaded Vibes for maintainers and coding agents working on the Loaded Vibes repository.
+
+```text
+context/
+├── AGENTS.md
+├── README.md
+└── docs/
+    ├── product.md
+    ├── architecture.md
+    ├── configuration-model.md
+    ├── generator.md
+    ├── template.md
+    └── release.md
+```
+
+This is distinct from end-user documentation.
+
+## Generated-Application Context
+
+`template/context/` is context shipped inside generated projects.
+
+Its audience is the developer or coding agent adapting the generated application.
+
+It should contain the subset of architecture knowledge necessary to preserve boundaries during implementation.
+
+This is distinct from root `context/`.
+
+## Three Documentation Audiences
+
+```text
+docs/
+  FOR Loaded Vibes users
+
+context/
+  ABOUT Loaded Vibes for maintainers and agents
+
+template/context/
+  ABOUT the generated application for its developers and agents
+```
+
+These are different responsibilities, not duplicate documentation stores.
+
+## Agent Context
+
+The target repository may maintain root `.agents/` for Loaded Vibes repository operations.
+
+The maximal application may maintain `template/.agents/` for base architecture contracts shipped into generated repositories.
+
+Directory-scoped `AGENTS.md` files inside the template provide local implementation guidance where coding agents actually work.
+
+This is intentionally narrower than the full Codependent Coding system.
+
+## Tooling and Repository Operations
+
+Target tooling includes bounded scripts such as:
+
+```text
+scripts/template-manifest.mjs
+scripts/package-smoke.mjs
+scripts/release-check.mjs
+```
+
+Root GitHub workflows support the Loaded Vibes repository itself.
+
+The template's `.github/workflows` belongs to generated applications and is part of the maximal application source.
+
+## Current-to-Target Cleanup
+
+| Current | Target |
+|---|---|
+| `apps/web` | Keep; split `/`, `/configure`, and `/docs` |
+| `packages/schema` | Keep; redefine around technical configuration |
+| `packages/core` | Keep as the production engine |
+| `packages/cli` | Keep as the thin terminal adapter |
+| `packages/recipes` | Absorb useful logic, then remove |
+| `templates/golden` | Move into singular `template/` |
+| `templates/modules` | Merge supported source into maximal template, then remove |
+| Vibes sync machinery | Remove |
+| Vibes provenance | Replace with Loaded Vibes generation provenance |
+| root `context` | Keep and simplify around maintainer context |
+| root `docs/` | Add as the canonical user documentation source |
+
+## Vibes Relationship
+
+Loaded Vibes must become self-contained.
+
+Remove the active concepts of:
+
+```text
+Vibes upstream
+Vibes repository revision
+sync from Vibes
+archive Vibes
+Vibes source repository
+Vibes-derived at generation time
+```
+
+The resulting relationship is:
+
+```text
+                    DevNotes
+                 KNOWLEDGE PLANE
+                       │
+                       ▼
+
+                 Loaded Vibes
+        DETERMINISTIC PRODUCTION ENGINE
+
+      ┌─────────────────────────────┐
+      │ template/                   │
+      │ ONE maximal white-label app│
+      └──────────────┬──────────────┘
+                     │
+               configuration
+                     │
+       ┌─────────────┼──────────────┐
+       │             │              │
+       ▼             ▼              ▼
+   Web UI           CLI      loadedvibes.json
+       │             │              │
+       └─────────────┴──────────────┘
+                     │
+                     ▼
+              packages/core
+                     │
+              resolve + plan
+              prune + transform
+                     │
+                     ▼
+             GENERATED REPO
+                     │
+                     ▼
+            Codependent Coding
+             ADAPTIVE BUILD WORK
+```
+
+## Architecture Constraint
+
+Do not reorganize the internals of the maximal application merely for aesthetic cleanliness.
+
+If the application architecture is correct and coherent, preserve it mostly intact while moving it into `template/`.
+
+Cleanup effort belongs primarily around the generator repository, configuration model, source ownership, and interface boundaries.
