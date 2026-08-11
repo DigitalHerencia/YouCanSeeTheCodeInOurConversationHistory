@@ -9,7 +9,7 @@ kind: map
 namespace: devnotes.deep-research.map
 status: active
 authority: reference
-parent:
+parent: "[[devnotes.home]]"
 depends_on:
   - "[[obsidian.contracts.naming-standard]]"
   - "[[obsidian.contracts.property-schema]]"
@@ -20,7 +20,7 @@ tags:
   - research
   - status/active
 created:
-updated: 2026-08-04
+updated: 2026-08-11
 ---
 
 # Deep Research Map
