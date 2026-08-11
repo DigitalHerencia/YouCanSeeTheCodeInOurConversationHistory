@@ -9,7 +9,7 @@ kind: map
 namespace: devnotes.tech-stack.map
 status: active
 authority: reference
-parent:
+parent: "[[devnotes.home]]"
 depends_on:
   - "[[obsidian.contracts.naming-standard]]"
 supersedes: []
@@ -18,7 +18,7 @@ tags:
   - tech-stack
   - status/active
 created: 2026-05-07
-updated: 2026-08-08
+updated: 2026-08-11
 ---
 
 # Tech Stack Map
