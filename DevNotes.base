@@ -52,6 +52,32 @@ views:
         direction: ASC
 
   - type: table
+    name: Link Health
+    filters:
+      or:
+        - 'file.backlinks.length == 0'
+        - 'file.links.length == 0'
+    order:
+      - file.name
+      - project
+      - domain
+      - type
+      - status
+      - authority
+      - parent
+      - depends_on
+      - tags
+      - formula.backlink_count
+      - formula.outgoing_link_count
+    sort:
+      - property: formula.backlink_count
+        direction: ASC
+      - property: formula.outgoing_link_count
+        direction: ASC
+      - property: file.name
+        direction: ASC
+
+  - type: table
     name: Source of Truth
     filters:
       and:
