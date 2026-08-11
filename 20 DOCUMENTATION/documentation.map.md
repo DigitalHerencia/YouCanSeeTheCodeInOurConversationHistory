@@ -9,7 +9,7 @@ kind: map
 namespace: devnotes.documentation.map
 status: active
 authority: reference
-parent:
+parent: "[[devnotes.home]]"
 depends_on:
   - "[[obsidian.contracts.naming-standard]]"
 supersedes: []
@@ -17,6 +17,8 @@ tags:
   - maps/vault
   - documentation
   - status/active
+created:
+updated: 2026-08-11
 ---
 
 # Documentation Map
