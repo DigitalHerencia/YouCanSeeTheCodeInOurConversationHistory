@@ -14,8 +14,8 @@ depends_on: []
 supersedes: []
 tags:
   - status/draft
-created: 2026-08-04
-updated: 2026-08-04
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 ---
 
 # obsidian.durable-note.template
