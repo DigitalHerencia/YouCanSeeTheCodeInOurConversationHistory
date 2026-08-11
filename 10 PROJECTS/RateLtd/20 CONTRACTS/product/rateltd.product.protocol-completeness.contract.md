@@ -1,32 +1,27 @@
 ---
-
-title: RateLtd Protocol Completeness Contract  
-type: contract  
-scope: project  
-project: RateLtd  
-domain: product  
-artifact: protocol-completeness  
-kind: product-definition  
-namespace: rateltd.product.protocol-completeness.contract  
-status: active  
-authority: source-of-truth  
-parent: [[rateltd.project.map]]  
+title: RateLtd Protocol Completeness Contract
+type: contract
+scope: project
+project: RateLtd
+domain: product
+artifact: protocol-completeness
+kind: contract
+namespace: rateltd.product.protocol-completeness.contract
+status: active
+authority: source-of-truth
+parent: "[[rateltd.project.map]]"
 depends_on:
-- [[rateltd.product.local-context-protocol.contract]]
-- [[rateltd.product.local-operations-console.contract]]
-- [[rateltd.agent-ops.inference-efficiency-engineering.standard]]  
-supersedes: []  
+  - "[[rateltd.product.local-context-protocol.contract]]"
+  - "[[rateltd.product.local-operations-console.contract]]"
+  - "[[rateltd.agent-ops.inference-efficiency-engineering.standard]]"
+supersedes: []
 tags:
-- projects/rateltd
-- domains/product
-- types/contract
-- kinds/product-definition
-- status/active
-- rateltd/protocol  
-created: 2026-05-07  
-updated: 2026-05-07
-
-
+  - projects/rateltd
+  - contracts/product
+  - rateltd/protocol
+  - status/active
+created: 2026-05-07
+updated: 2026-08-11
 ---
 
 # RateLtd Protocol Completeness Contract
