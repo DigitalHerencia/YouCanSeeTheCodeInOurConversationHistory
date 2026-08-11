@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "90 OBSIDIAN/Contracts/obsidian.contracts.property-schema.md",
                 "mode": "preview",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "obsidian.contracts.property-schema"
             }
           }
         ]
@@ -218,8 +218,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 334.5,
-    "collapsed": true
+    "width": 334.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -235,8 +234,12 @@
       "obsidian42-text-transporter:Text Transporter": false
     }
   },
-  "active": "196f6ed94d57a4c6",
+  "active": "4d39625d9ee10dcc",
   "lastOpenFiles": [
+    "README.md",
+    "00 ZETTELKASTEN/deep-research-report (1).md",
+    "00 ZETTELKASTEN/O-Outline.md",
+    "00 ZETTELKASTEN/Codependent Coding™ Engineering Doctrine and Reference System.md",
     "10 PROJECTS/LoadedVibes/00 PROJECT MAP",
     "10 PROJECTS/LoadedVibes/10 PRODUCT",
     "devnotes.home.md",
@@ -262,9 +265,6 @@
     "40 TECH STACK/tech-stack.map.md",
     "20 DOCUMENTATION/ChatGPT Docs/ChatGPT agent.md",
     "40 TECH STACK/web-development.knowledge-modeling.ontology-taxonomy.reference.md",
-    "10 PROJECTS/devnotes.projects.map.md",
-    "10 PROJECTS/Vouch/vouch.source-of-truth.legacy.md",
-    "10 PROJECTS/Vouch/vouch.pages.taxonomy.legacy.md",
     "10 PROJECTS/CodependentCoding",
     "10 PROJECTS/BorderPulse",
     "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/court-gesture.data.json",
@@ -272,7 +272,6 @@
     "_OPS/manifests/devnotes-part2-migration-2026-05-27.csv",
     "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/Texas Bondsman Reporting Statement.pdf",
     "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/Response To Petition For Order Of Protection.pdf",
-    "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/Receipt-2554-0521.pdf",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "DOCUMENTATION/HuggingFace Docs/target.png",
