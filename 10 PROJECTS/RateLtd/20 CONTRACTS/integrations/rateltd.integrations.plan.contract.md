@@ -1,3 +1,25 @@
+---
+title: RateLtd Integration Plan
+type: contract
+scope: project
+project: RateLtd
+domain: integrations
+artifact: plan
+kind: contract
+namespace: rateltd.integrations.plan.contract
+status: active
+authority: source-of-truth
+parent: "[[rateltd.project.map]]"
+depends_on: []
+supersedes: []
+tags:
+  - projects/rateltd
+  - contracts/integrations
+  - status/active
+created:
+updated: 2026-08-11
+---
+
 # Integration Plan
 
 RateLtd should use external projects aggressively but safely. The integration strategy is adapter-first: use external code as packages, providers, references, or wrappers instead of blindly copying large systems into the core TUI.
