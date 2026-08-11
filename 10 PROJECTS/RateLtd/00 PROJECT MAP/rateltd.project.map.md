@@ -1,5 +1,8 @@
 ---
 title: RateLtd Project Map
+aliases:
+  - MeatHarness
+  - MeatHarness Ink
 type: map
 scope: project
 project: RateLtd
