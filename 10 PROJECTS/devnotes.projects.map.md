@@ -9,7 +9,7 @@ kind: map
 namespace: devnotes.projects.map
 status: active
 authority: source-of-truth
-parent:
+parent: "[[devnotes.home]]"
 depends_on:
   - "[[obsidian.contracts.naming-standard]]"
   - "[[obsidian.contracts.property-schema]]"
@@ -19,7 +19,7 @@ tags:
   - maps/vault
   - status/active
 created: 2026-08-04
-updated: 2026-08-04
+updated: 2026-08-11
 ---
 
 # Projects Map
