@@ -9,7 +9,7 @@ kind: map
 namespace: devnotes.zettelkasten.map
 status: active
 authority: reference
-parent:
+parent: "[[devnotes.home]]"
 depends_on:
   - "[[obsidian.contracts.naming-standard]]"
 supersedes: []
@@ -18,7 +18,7 @@ tags:
   - zettelkasten
   - status/active
 created: 2026-08-04
-updated: 2026-08-05
+updated: 2026-08-11
 ---
 
 # Zettelkasten Map
