@@ -1,3 +1,25 @@
+---
+title: RateLtd Architecture Plan
+type: reference
+scope: project
+project: RateLtd
+domain: architecture
+artifact: plan
+kind: reference
+namespace: rateltd.architecture.plan
+status: active
+authority: working-note
+parent: "[[rateltd.project.map]]"
+depends_on: []
+supersedes: []
+tags:
+  - projects/rateltd
+  - architecture/plan
+  - status/active
+created:
+updated: 2026-08-11
+---
+
 # Architecture Plan
 
 RateLtd should keep the existing TypeScript/Ink harness disciplined while expanding into a full local operator console.
