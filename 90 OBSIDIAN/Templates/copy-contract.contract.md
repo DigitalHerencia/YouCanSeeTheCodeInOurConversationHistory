@@ -5,7 +5,7 @@ scope: project
 project:
 domain:
 artifact:
-kind: copy-contract
+kind: contract
 namespace:
 status: draft
 authority: source-of-truth
