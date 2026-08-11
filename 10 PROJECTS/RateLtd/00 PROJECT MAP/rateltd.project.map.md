@@ -1,43 +1,69 @@
+---
+title: RateLtd Project Map
+type: map
+scope: project
+project: RateLtd
+domain: project
+artifact: map
+kind: map
+namespace: rateltd.project.map
+status: active
+authority: source-of-truth
+parent: "[[devnotes.projects.map]]"
+depends_on:
+  - "[[rateltd.product.vision]]"
+  - "[[rateltd.product.local-context-protocol.contract]]"
+  - "[[rateltd.product.local-operations-console.contract]]"
+  - "[[rateltd.product.protocol-completeness.contract]]"
+supersedes: []
+tags:
+  - projects/rateltd
+  - maps/project
+  - status/active
+created:
+updated: 2026-08-11
+---
+
 # RateLtd Index
 
 RateLtd is the renamed and expanded version of the existing MeatHarness Ink/TypeScript TUI. The product direction is a repo-agnostic local operator console for coding, editing, command execution, filesystem work, Git/GitHub workflows, logs, diagnostics, and agent-assisted implementation.
 
 ## Core Documents
 
-- [[01 - Product Vision]]
-- [[02 - Feature Inventory]]
-- [[03 - Architecture Plan]]
-- [[04 - Module Specifications]]
-- [[05 - Integration Plan]]
-- [[06 - Task Matrix]]
-- [[07 - Codex Work Packages]]
-- [[08 - Decisions and Risks]]
+- [[rateltd.product.vision]]
+- [[rateltd.features.inventory]]
+- [[rateltd.architecture.plan]]
+- [[rateltd.modules.specifications.contract]]
+- [[rateltd.integrations.plan.contract]]
+- [[rateltd.execution.task-matrix]]
+- [[rateltd.codex.work-packages]]
+- [[rateltd.decisions-and-risks]]
 
 ## Product Modules
 
-- [[04 - Module Specifications#LauncherLtd]]
-- [[04 - Module Specifications#RateLtd Dashboard]]
-- [[04 - Module Specifications#EditorLtd]]
-- [[04 - Module Specifications#CommanderLtd]]
-- [[04 - Module Specifications#DifferLtd]]
-- [[04 - Module Specifications#LoggerLtd]]
-- [[04 - Module Specifications#PreferLtd]]
-- [[04 - Module Specifications#HelpLtd]]
+- [[rateltd.modules.specifications.contract#LauncherLtd]]
+- [[rateltd.modules.specifications.contract#RateLtd Dashboard]]
+- [[rateltd.modules.specifications.contract#EditorLtd]]
+- [[rateltd.modules.specifications.contract#CommanderLtd]]
+- [[rateltd.modules.specifications.contract#DifferLtd]]
+- [[rateltd.modules.specifications.contract#LoggerLtd]]
+- [[rateltd.modules.specifications.contract#PreferLtd]]
+- [[rateltd.modules.specifications.contract#HelpLtd]]
 
 ## Integration Areas
 
-- [[05 - Integration Plan#termcn]]
-- [[05 - Integration Plan#PowerShell]]
-- [[05 - Integration Plan#Monaco]]
-- [[05 - Integration Plan#git-split-diffs]]
-- [[05 - Integration Plan#GitHub]]
-- [[05 - Integration Plan#Local Repo Scavenging]]
+- [[rateltd.integrations.plan.contract#termcn]]
+- [[rateltd.integrations.plan.contract#PowerShell]]
+- [[rateltd.integrations.plan.contract#Monaco]]
+- [[rateltd.integrations.plan.contract#git-split-diffs]]
+- [[rateltd.integrations.plan.contract#GitHub]]
+- [[rateltd.integrations.plan.contract#Local Repo Scavenging]]
 
 ## Execution Tracking
 
-- [[06 - Task Matrix]]
-- [[07 - Codex Work Packages]]
-- [[08 - Decisions and Risks]]
+- [[rateltd.execution.task-matrix]]
+- [[rateltd.codex.work-packages]]
+- [[rateltd.decisions-and-risks]]
 
 ## Naming Rule
 
