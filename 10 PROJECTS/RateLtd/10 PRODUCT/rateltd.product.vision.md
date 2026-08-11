@@ -1,3 +1,25 @@
+---
+title: RateLtd Product Vision
+type: source-document
+scope: project
+project: RateLtd
+domain: product
+artifact: vision
+kind: source-document
+namespace: rateltd.product.vision
+status: active
+authority: source-of-truth
+parent: "[[rateltd.project.map]]"
+depends_on: []
+supersedes: []
+tags:
+  - projects/rateltd
+  - product/vision
+  - status/active
+created:
+updated: 2026-08-11
+---
+
 # Product Vision
 
 RateLtd is a branded, full-capability local operator console built from the existing Ink/TypeScript TUI harness.
