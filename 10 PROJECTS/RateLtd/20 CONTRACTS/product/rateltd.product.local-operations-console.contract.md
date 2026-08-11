@@ -1,30 +1,26 @@
 ---
-
-title: RateLtd Local Operations Console Contract  
-type: contract  
-scope: project  
-project: RateLtd  
-domain: product  
-artifact: local-operations-console  
-kind: product-definition  
-namespace: rateltd.product.local-operations-console.contract  
-status: active  
-authority: source-of-truth  
-parent: [[rateltd.project.map]]  
+title: RateLtd Local Operations Console Contract
+type: contract
+scope: project
+project: RateLtd
+domain: product
+artifact: local-operations-console
+kind: contract
+namespace: rateltd.product.local-operations-console.contract
+status: active
+authority: source-of-truth
+parent: "[[rateltd.project.map]]"
 depends_on:
-- [[rateltd.product.local-context-protocol.contract]]   
-- [[rateltd.product.vision]]  
-supersedes: []  
-tags:  
-- projects/rateltd
-- domains/product
-- types/contract
-- kinds/product-definition
-- status/active
-- rateltd/tui  
-created: 2026-05-07  
-updated: 2026-05-07
-
+  - "[[rateltd.product.local-context-protocol.contract]]"
+  - "[[rateltd.product.vision]]"
+supersedes: []
+tags:
+  - projects/rateltd
+  - contracts/product
+  - rateltd/tui
+  - status/active
+created: 2026-05-07
+updated: 2026-08-11
 ---
 
 # RateLtd Local Operations Console Contract
