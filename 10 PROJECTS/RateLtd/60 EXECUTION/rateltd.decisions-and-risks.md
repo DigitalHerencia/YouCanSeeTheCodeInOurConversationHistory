@@ -1,3 +1,25 @@
+---
+title: RateLtd Decisions and Risks
+type: execution
+scope: project
+project: RateLtd
+domain: project
+artifact: decisions-and-risks
+kind: execution
+namespace: rateltd.decisions-and-risks
+status: active
+authority: working-note
+parent: "[[rateltd.project.map]]"
+depends_on: []
+supersedes: []
+tags:
+  - projects/rateltd
+  - execution/decisions
+  - status/active
+created:
+updated: 2026-08-11
+---
+
 # Decisions and Risks
 
 ## Decisions
