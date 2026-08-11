@@ -1,3 +1,25 @@
+---
+title: RateLtd Module Specifications
+type: contract
+scope: project
+project: RateLtd
+domain: modules
+artifact: specifications
+kind: contract
+namespace: rateltd.modules.specifications.contract
+status: active
+authority: source-of-truth
+parent: "[[rateltd.project.map]]"
+depends_on: []
+supersedes: []
+tags:
+  - projects/rateltd
+  - contracts/modules
+  - status/active
+created:
+updated: 2026-08-11
+---
+
 # Module Specifications
 
 ## LauncherLtd
