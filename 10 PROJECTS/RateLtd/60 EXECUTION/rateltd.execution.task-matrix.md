@@ -1,3 +1,25 @@
+---
+title: RateLtd Task Matrix
+type: execution
+scope: project
+project: RateLtd
+domain: execution
+artifact: task-matrix
+kind: execution
+namespace: rateltd.execution.task-matrix
+status: active
+authority: working-note
+parent: "[[rateltd.project.map]]"
+depends_on: []
+supersedes: []
+tags:
+  - projects/rateltd
+  - execution/tasks
+  - status/active
+created:
+updated: 2026-08-11
+---
+
 # Task Matrix
 
 ## Phase 0 - Documentation Extraction
