@@ -5,7 +5,7 @@ scope: project
 project:
 domain:
 artifact:
-kind: integration-contract
+kind: contract
 namespace:
 status: draft
 authority: source-of-truth
@@ -94,7 +94,6 @@ This document is a contract. It defines source-of-truth rules that implementatio
 ## Security
 
 - 
-
 
 ## Dependencies
 
