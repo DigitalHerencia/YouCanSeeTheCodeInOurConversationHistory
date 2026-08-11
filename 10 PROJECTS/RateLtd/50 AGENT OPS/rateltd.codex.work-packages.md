@@ -1,3 +1,25 @@
+---
+title: RateLtd Codex Work Packages
+type: work-package
+scope: project
+project: RateLtd
+domain: codex
+artifact: work-packages
+kind: work-package
+namespace: rateltd.codex.work-packages
+status: active
+authority: working-note
+parent: "[[rateltd.project.map]]"
+depends_on: []
+supersedes: []
+tags:
+  - projects/rateltd
+  - agent-ops/work-packages
+  - status/active
+created:
+updated: 2026-08-11
+---
+
 # Codex Work Packages
 
 Use these packages as ordered Codex prompts. Each package should preserve existing behavior unless the task explicitly migrates it.
