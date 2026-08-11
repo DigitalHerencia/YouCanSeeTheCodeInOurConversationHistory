@@ -9,7 +9,7 @@ kind: map
 namespace: devnotes.regrets-cigarettes-neural-nets.map
 status: active
 authority: reference
-parent:
+parent: "[[devnotes.home]]"
 depends_on:
   - "[[obsidian.contracts.naming-standard]]"
 supersedes: []
@@ -17,6 +17,8 @@ tags:
   - maps/vault
   - writing
   - status/active
+created:
+updated: 2026-08-11
 ---
 
 # Regrets, Cigarettes, & Neural Nets Map
