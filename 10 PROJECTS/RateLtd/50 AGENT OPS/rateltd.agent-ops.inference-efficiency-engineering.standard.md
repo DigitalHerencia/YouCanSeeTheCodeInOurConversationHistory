@@ -1,30 +1,26 @@
 ---
-
-title: RateLtd Inference Efficiency Engineering Standard  
-type: standard  
-scope: project  
-project: RateLtd  
-domain: agent-ops  
-artifact: inference-efficiency-engineering  
-kind: standard  
-namespace: rateltd.agent-ops.inference-efficiency-engineering.standard  
-status: active  
-authority: source-of-truth  
-parent: [[rateltd.project.map]]  
+title: RateLtd Inference Efficiency Engineering Standard
+type: standard
+scope: project
+project: RateLtd
+domain: agent-ops
+artifact: inference-efficiency-engineering
+kind: standard
+namespace: rateltd.agent-ops.inference-efficiency-engineering.standard
+status: active
+authority: source-of-truth
+parent: "[[rateltd.project.map]]"
 depends_on:
-- [[rateltd.product.local-context-protocol.contract]]  
-- [[rateltd.product.local-operations-console.contract]]  
-supersedes: []  
+  - "[[rateltd.product.local-context-protocol.contract]]"
+  - "[[rateltd.product.local-operations-console.contract]]"
+supersedes: []
 tags:
-- projects/rateltd  
-- domains/agent-ops
-- types/standard
-- status/active
-- rateltd/codex
-- rateltd/inference  
-created: 2026-05-07  
-updated: 2026-05-07 
-
+  - projects/rateltd
+  - rateltd/codex
+  - rateltd/inference
+  - status/active
+created: 2026-05-07
+updated: 2026-08-11
 ---
 
 # RateLtd Inference Efficiency Engineering Standard
