@@ -7,6 +7,6 @@
   "templater-obsidian",
   "obsidian-linter",
   "note-refactor-obsidian",
-  "quickadd",
-  "obsidian42-text-transporter"
+  "obsidian42-text-transporter",
+  "obsidian-git"
 ]

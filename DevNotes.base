@@ -1,12 +1,10 @@
 filters:
   and:
-    - 'file.ext == "md"'
-    - 'file.hasProperty("namespace")'
-
+    - file.ext == "md"
+    - file.hasProperty("namespace")
 formulas:
-  backlink_count: 'file.backlinks.length'
-  outgoing_link_count: 'file.links.length'
-
+  backlink_count: file.backlinks.length
+  outgoing_link_count: file.links.length
 properties:
   file.name:
     displayName: Note
@@ -32,7 +30,6 @@ properties:
     displayName: Backlinks
   formula.outgoing_link_count:
     displayName: Outgoing Links
-
 views:
   - type: table
     name: Knowledge Index
@@ -41,22 +38,16 @@ views:
       - project
       - domain
       - type
-      - kind
-      - status
-      - authority
-      - tags
       - formula.backlink_count
       - formula.outgoing_link_count
-    sort:
-      - property: file.name
-        direction: ASC
-
+      - tags
+    sort: []
   - type: table
     name: Link Health
     filters:
       or:
-        - 'file.backlinks.length == 0'
-        - 'file.links.length == 0'
+        - file.backlinks.length == 0
+        - file.links.length == 0
     order:
       - file.name
       - project
@@ -76,12 +67,11 @@ views:
         direction: ASC
       - property: file.name
         direction: ASC
-
   - type: table
     name: Source of Truth
     filters:
       and:
-        - 'authority == "source-of-truth"'
+        - authority == "source-of-truth"
     order:
       - file.name
       - project
@@ -96,12 +86,11 @@ views:
         direction: ASC
       - property: file.name
         direction: ASC
-
   - type: table
     name: Maps
     filters:
       and:
-        - 'type == "map"'
+        - type == "map"
     order:
       - file.name
       - project

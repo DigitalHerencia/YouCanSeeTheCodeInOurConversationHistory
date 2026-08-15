@@ -4,34 +4,41 @@
     "type": "split",
     "children": [
       {
-        "id": "4c64bf63b34bcf8f",
+        "id": "fabaf5393ef4a114",
         "type": "tabs",
         "children": [
           {
-            "id": "4d39625d9ee10dcc",
+            "id": "2585973ce2fa6bf0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "90 OBSIDIAN/Contracts/obsidian.contracts.property-schema.md",
-                "mode": "preview",
+                "file": "00 ZETTELKASTEN/Unique Templates Is An Oxymoron.md",
+                "mode": "source",
                 "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
+                "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "obsidian.contracts.property-schema"
+              "title": "Unique Templates Is An Oxymoron"
+            }
+          },
+          {
+            "id": "877e7eca11d989d8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00 ZETTELKASTEN/Papa's Got A Brand New Bag.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "Papa's Got A Brand New Bag"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -43,7 +50,7 @@
       {
         "id": "29638fda63730726",
         "type": "tabs",
-        "dimension": 62.8361858190709,
+        "dimension": 59.512195121951216,
         "children": [
           {
             "id": "196f6ed94d57a4c6",
@@ -61,41 +68,25 @@
             }
           },
           {
-            "id": "eafe27c69d770b76",
+            "id": "129d925824af078b",
             "type": "leaf",
             "state": {
-              "type": "search",
-              "state": {
-                "query": "",
-                "matchingCase": false,
-                "explainSearch": false,
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-search",
-              "title": "Search"
-            }
-          },
-          {
-            "id": "c16710c07a02aaa1",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
+              "type": "git-view",
               "state": {},
-              "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
-        "id": "0e9350b34ffbac9b",
+        "id": "35e269d79bdcab6c",
         "type": "tabs",
-        "dimension": 37.163814180929094,
+        "dimension": 40.487804878048784,
         "children": [
           {
-            "id": "9719aadfd95a6d60",
+            "id": "4d39625d9ee10dcc",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -108,7 +99,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 346.5
+    "width": 383.1000061035156
   },
   "right": {
     "id": "acf9b2ce38860566",
@@ -120,19 +111,34 @@
         "dimension": 52.54629629629628,
         "children": [
           {
-            "id": "f3cef0cfa56c42d1",
+            "id": "13cb2fd133d667d4",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "00 ZETTELKASTEN/Papa's Got A Brand New Bag.md",
+                "followCursor": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "dc321928b52a2770",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CanonicalPattern.001.TheGoldenFetcher.md",
+                "file": "60 CODEPENDENT CODING/codependentcoding.docs.layer-contracts.contract.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
               "title": "Backlinks"
@@ -144,7 +150,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CanonicalPattern.001.TheGoldenFetcher.md",
+                "file": "60 CODEPENDENT CODING/codependentcoding.docs.layer-contracts.contract.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -153,7 +159,7 @@
             }
           },
           {
-            "id": "6a717812dc4cc7e1",
+            "id": "e0c80d4558d94a89",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -168,7 +174,7 @@
             }
           },
           {
-            "id": "07302fbd29a6719d",
+            "id": "52ef5e8c46e7315c",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -180,24 +186,8 @@
               "icon": "lucide-archive",
               "title": "All properties"
             }
-          },
-          {
-            "id": "13cb2fd133d667d4",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "CanonicalPattern.001.TheGoldenFetcher.md",
-                "followCursor": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "Outline"
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       },
       {
         "id": "aadd6cd9948ee03c",
@@ -218,53 +208,51 @@
       }
     ],
     "direction": "horizontal",
-    "width": 334.5
+    "width": 395.9000244140625
   },
   "left-ribbon": {
     "hiddenItems": {
-      "graph:Open graph view": false,
-      "switcher:Open quick switcher": false,
       "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
       "bases:Create new base": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "templater-obsidian:Templater": false,
-      "obsidian42-text-transporter:Text Transporter": false
+      "obsidian42-text-transporter:Text Transporter": false,
+      "graph:Open graph view": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4d39625d9ee10dcc",
+  "active": "13cb2fd133d667d4",
   "lastOpenFiles": [
-    "README.md",
-    "00 ZETTELKASTEN/deep-research-report (1).md",
-    "00 ZETTELKASTEN/O-Outline.md",
-    "00 ZETTELKASTEN/Codependent Coding™ Engineering Doctrine and Reference System.md",
+    "00 ZETTELKASTEN/The Maximal Template™ Backlog.md",
+    "00 ZETTELKASTEN/Papa's Got A Brand New Bag.md",
+    "00 ZETTELKASTEN/Unique Templates Is An Oxymoron.md",
+    "00 ZETTELKASTEN/The Maximal Template™ Demo Website Copy.md",
+    "00 ZETTELKASTEN/The Maximal Template™ Canonical Architecture.md",
+    "00 ZETTELKASTEN/The Maximal Template™ Demo Doctrine.md",
+    "devnotes.home.md",
+    "50 REGRETS, CIGARETTES, & NEURAL NETS/The Stupid Lesson.md",
+    "The Maximal Template™.md",
+    "10 PROJECTS/CodependentCoding/codependentcoding.project.source-document.md",
+    "10 PROJECTS/LoadedVibes/10 PRODUCT/loadedvibes.project.source-document.md",
+    "60 CODEPENDENT CODING/codependentcoding.docs.validation-conformance.contract.md",
+    "60 CODEPENDENT CODING/codependentcoding.docs.reference-implementations.reference.md",
+    "60 CODEPENDENT CODING/codependentcoding.docs.agent-execution.execution.md",
+    "60 CODEPENDENT CODING/codependentcoding.agents.contracts.ontology.contract.md",
+    "60 CODEPENDENT CODING/codependentcoding.docs.knowledge-system-definition.source-document.md",
+    "10 PROJECTS/CodependentCoding/codependentcoding.project.map.md",
+    "40 TECH STACK/hipsterstack.patterns.application-workflow.reference.md",
+    "40 TECH STACK/codependentcoding.knowledge-system.definition.source-document.md",
+    "60 CODEPENDENT CODING/codependentcoding.docs.system-map.map.md",
+    "60 CODEPENDENT CODING/codependentcoding.docs.knowledge-modeling.reference.md",
+    "60 CODEPENDENT CODING/codependentcoding.docs.hipster-stack-tech.map.md",
+    "60 CODEPENDENT CODING/codependentcoding.docs.terminology-nomenclature.reference.md",
+    "60 CODEPENDENT CODING/codependentcoding.docs.loaded-vibes-architecture.source-document.md",
+    "60 CODEPENDENT CODING/codependentcoding.docs.layer-contracts.contract.md",
+    "DevNotes.base",
+    "60 CODEPENDENT CODING/codependentcoding.agents.contracts.product.contract.md",
     "10 PROJECTS/LoadedVibes/00 PROJECT MAP",
     "10 PROJECTS/LoadedVibes/10 PRODUCT",
-    "devnotes.home.md",
-    "DevNotes.base",
-    "AGENTS.md",
-    "60 CODEPENDENT CODING/codependentcoding.patterns.webhook-processor.reference.md",
-    "60 CODEPENDENT CODING/codependentcoding.patterns.transaction-helper.reference.md",
-    "60 CODEPENDENT CODING/codependentcoding.provenance.synthesis-decisions.reference.md",
-    "60 CODEPENDENT CODING/codependentcoding.readme.source-document.md",
-    "60 CODEPENDENT CODING/codependentcoding.patterns.data-contract-patterns.reference.md",
-    "60 CODEPENDENT CODING/codependentcoding.docs.validation-conformance.contract.md",
-    "60 CODEPENDENT CODING/codependentcoding.agents.contracts.architecture.contract.md",
-    "50 REGRETS, CIGARETTES, & NEURAL NETS/I met a founder today.md",
-    "50 REGRETS, CIGARETTES, & NEURAL NETS/Possessed by a Product Roadmap.md",
-    "50 REGRETS, CIGARETTES, & NEURAL NETS/The Stupid Lesson.md",
-    "40 TECH STACK/software-development.engineering-practice.stupid-lesson.reference.md",
-    "40 TECH STACK/hipsterstack.patterns.catalog.map.md",
-    "00 ZETTELKASTEN/Project-Template.md",
-    "40 TECH STACK/software-development.engineering-practice.descriptive-model.reference.md",
-    "00 ZETTELKASTEN/Repo-Remodel.md",
-    "00 ZETTELKASTEN/Vibes Audit.md",
-    "00 ZETTELKASTEN/TechStack.md",
-    "40 TECH STACK/tech-stack.map.md",
-    "20 DOCUMENTATION/ChatGPT Docs/ChatGPT agent.md",
-    "40 TECH STACK/web-development.knowledge-modeling.ontology-taxonomy.reference.md",
     "10 PROJECTS/CodependentCoding",
     "10 PROJECTS/BorderPulse",
     "00 ZETTELKASTEN/90 ARCHIVE/imports/2026-05-27/INBOX/court-gesture.data.json",
