@@ -4,41 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "17bdeb0d84c6348a",
+        "id": "c101ae1a742d89a0",
         "type": "tabs",
         "children": [
           {
-            "id": "c2384065ea7a7b6c",
+            "id": "f33b7489d2ea8c51",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00 ZETTELKASTEN/codependent-coding-execution-task-notes/01-codependent-coding-webapp-architecture/codependentcoding.contradiction-reconciliation.work-package.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "codependentcoding.contradiction-reconciliation.work-package"
-            }
-          },
-          {
-            "id": "8f48946f663f58e6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00 ZETTELKASTEN/codependent-coding-execution-task-notes/01-codependent-coding-webapp-architecture/codependentcoding.ambiguity-closure.work-package.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "codependentcoding.ambiguity-closure.work-package"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -76,6 +55,16 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "e25265cc27840765",
+            "type": "leaf",
+            "state": {
+              "type": "pm-dashboard",
+              "state": {},
+              "icon": "chart-gantt",
+              "title": "Projects"
+            }
           }
         ],
         "currentTab": 1
@@ -99,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 809.5
+    "width": 324.70001220703125
   },
   "right": {
     "id": "acf9b2ce38860566",
@@ -116,7 +105,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00 ZETTELKASTEN/codependent-coding-execution-task-notes/01-codependent-coding-webapp-architecture/codependentcoding.ambiguity-closure.work-package.md",
+                "file": "90 OBSIDIAN/Templates/obsidian.durable-note.template.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -131,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "60 CODEPENDENT CODING/codependentcoding.docs.layer-contracts.contract.md",
+                "file": "90 OBSIDIAN/Templates/obsidian.durable-note.template.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "60 CODEPENDENT CODING/codependentcoding.docs.layer-contracts.contract.md",
+                "file": "90 OBSIDIAN/Templates/obsidian.durable-note.template.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -174,7 +163,7 @@
             }
           },
           {
-            "id": "52ef5e8c46e7315c",
+            "id": "9f32a4027d4d54c7",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -208,7 +197,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 315.9000244140625,
+    "width": 414.2999267578125,
     "collapsed": true
   },
   "left-ribbon": {
@@ -223,14 +212,19 @@
       "obsidian42-text-transporter:Text Transporter": false,
       "graph:Open graph view": false,
       "obsidian-git:Open Git source control": false,
-      "workspaces:Manage workspace layouts": false
+      "bases:Create new base": false,
+      "markdown-importer:Open format converter": false,
+      "project-manager:Project manager": false
     }
   },
   "active": "129d925824af078b",
   "lastOpenFiles": [
+    "Projects",
+    "DevNotes.base",
+    "90 OBSIDIAN/Templates/obsidian.durable-note.template.md",
+    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/01-codependent-coding-webapp-architecture/codependentcoding.ambiguity-closure.work-package.md",
     "00 ZETTELKASTEN/codependent-coding-execution-task-notes/01-codependent-coding-webapp-architecture/Codependent Coding Board.md",
     "00 ZETTELKASTEN/codependent-coding-execution-task-notes/01-codependent-coding-webapp-architecture/codependentcoding.contradiction-reconciliation.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/01-codependent-coding-webapp-architecture/codependentcoding.ambiguity-closure.work-package.md",
     "00 ZETTELKASTEN/codependent-coding-execution-task-notes/01-codependent-coding-webapp-architecture/Untitled Kanban.md",
     "00 ZETTELKASTEN/Obsidian Docs/Obsidian Kanban Plugin.md",
     "Untitled Kanban.md",
@@ -252,8 +246,6 @@
     "00 ZETTELKASTEN/codependent-coding-execution-task-notes/05-devnotes-knowledge-system/devnotes.project-folder-realignment.work-package.md",
     "00 ZETTELKASTEN/codependent-coding-execution-task-notes/05-devnotes-knowledge-system/devnotes.obsidian-task-kanban-system.work-package.md",
     "00 ZETTELKASTEN/codependent-coding-execution-task-notes/05-devnotes-knowledge-system/devnotes.execution.tasks.map.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/05-devnotes-knowledge-system/devnotes.execution.kanban.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/05-devnotes-knowledge-system/devnotes.deprecate-old-knowledge-system.work-package.md",
     "00 ZETTELKASTEN/codependent-coding-execution-task-notes/06-public-website-and-documentation",
     "00 ZETTELKASTEN/codependent-coding-execution-task-notes/05-devnotes-knowledge-system",
     "00 ZETTELKASTEN/codependent-coding-execution-task-notes/04-loaded-vibes-codex-plugin",
@@ -263,7 +255,6 @@
     "00 ZETTELKASTEN/codependent-coding-execution-task-notes",
     "codependent-coding-execution-task-notes/codependent-coding-execution-task-notes/05-devnotes-knowledge-system",
     "codependent-coding-execution-task-notes/codependent-coding-execution-task-notes/01-codependent-coding-webapp-architecture",
-    "codependent-coding-execution-task-notes/codependent-coding-execution-task-notes/02-the-maximal-template",
     "Pasted image 20260815231425.png",
     "Untitled 1.canvas",
     "Untitled.canvas",

@@ -1,6 +1,6 @@
 {
   "theme": "obsidian",
-  "accentColor": "",
+  "accentColor": "#525252",
   "interfaceFontFamily": "CodeNewRoman Nerd Font",
   "textFontFamily": "Terminess Nerd Font",
   "monospaceFontFamily": "Monoid Nerd Font Mono",
@@ -9,5 +9,5 @@
   "showRibbon": true,
   "showViewHeader": false,
   "nativeMenus": false,
-  "baseFontSize": 15
+  "baseFontSize": 16
 }

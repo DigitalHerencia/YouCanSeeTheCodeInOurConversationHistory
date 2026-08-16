@@ -7,7 +7,6 @@
   "templater-obsidian",
   "obsidian-linter",
   "note-refactor-obsidian",
-  "obsidian42-text-transporter",
   "obsidian-git",
-  "obsidian-kanban"
+  "project-manager"
 ]

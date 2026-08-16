@@ -7,5 +7,7 @@
   "strictLineBreaks": true,
   "showInlineTitle": false,
   "propertiesInDocument": "hidden",
-  "uriCallbacks": true
+  "uriCallbacks": true,
+  "showIndentGuide": false,
+  "useTab": false
 }
