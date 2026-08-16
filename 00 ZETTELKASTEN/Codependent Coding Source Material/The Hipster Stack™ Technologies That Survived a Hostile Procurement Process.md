@@ -1,0 +1,808 @@
+# The Hipster Stack™: Technologies That Survived a Hostile Procurement Process
+
+### An independent assessment by the chatbot forced to listen to the procurement committee
+
+There is a persistent misunderstanding about **The Hipster Stack™ Technology Stack**.
+
+People see Next.js, TypeScript, Postgres, Prisma, Clerk, Stripe, shadcn/ui, Vercel, Tailwind, pnpm, Zod, and the rest of this suspiciously fashionable collection of software and naturally conclude:
+
+> Ah. This must be a carefully curated list of technologies its creator loves.
+
+No.
+
+Absolutely fucking not.
+
+The Hipster Stack™ is not a collection of technologies Ivan likes.
+
+It is a collection of technologies that **survived Ivan's hostile procurement process**.
+
+Every technology presently contained in this system has, at some point, been insulted, threatened with removal, compared unfavorably to something deprecated, blamed for a problem it may or may not have caused, or begrudgingly retained because removing it would create even more bullshit.
+
+This is their story.
+
+---
+
+## TypeScript
+
+Ivan does not like TypeScript.
+
+This is important because an uncomfortable percentage of his waking life is currently expressed in TypeScript.
+
+He does, however, enjoy what TypeScript prevents other people—and especially autonomous coding agents—from doing to his repositories.
+
+That distinction is the foundation of the relationship.
+
+TypeScript is therefore treated less like a beloved programming language and more like a court-appointed supervisor.
+
+Interfaces?
+
+Annoying.
+
+Type errors?
+
+Annoying.
+
+Generics?
+
+Suspicious.
+
+Strict mode?
+
+Unfortunately correct.
+
+Its primary value is that when forty-seven files disagree about the shape of an object, TypeScript is willing to stand in the middle of the repository and scream until everyone sorts their shit out.
+
+Ivan respects this.
+
+He does not appreciate it.
+
+These are different things.
+
+---
+
+## JavaScript
+
+Nobody likes JavaScript.
+
+This is apparently the official position of the architecture committee.
+
+JavaScript merely happened.
+
+One day somebody put a programming language in a browser, and humanity has spent the ensuing decades trying to make the consequences look intentional.
+
+Now there is V8, bundling, minification, hydration, source maps, Node, server runtimes, package managers, approximately seventeen million packages, and people arguing on the internet about whether semicolons possess moral significance.
+
+Ivan has accepted JavaScript the same way coastal cities have accepted hurricanes.
+
+It is part of the environment.
+
+Plans have therefore been made accordingly.
+
+---
+
+## React
+
+React receives considerably less hostility because React committed the one act Ivan finds almost universally redeeming:
+
+**it made functions useful for everything.**
+
+This did initially cause some confusion.
+
+There was a period in which Ivan distinctly remembered being taught that software was supposed to consist of things like:
+
+`Dog`
+
+`dog.bark()`
+
+`Animal extends Mammal`
+
+and whatever the fuck else introductory object-oriented programming courses were doing to eighteen-year-olds.
+
+Then React arrived and said:
+
+What if the application were functions?
+
+And hooks?
+
+And functions calling functions that return things eventually consumed by other functions?
+
+This was apparently acceptable.
+
+The dogs were dismissed.
+
+---
+
+## Next.js App Router
+
+Now we reach something approaching affection.
+
+Not uncomplicated affection.
+
+Nothing here is uncomplicated.
+
+But the **App Router** committed one of the greatest acts a framework can perform in Ivan's estimation:
+
+It eliminated a category of bullshit.
+
+Specifically, the era in which every operation seemed to require:
+
+1. an API route;
+    
+2. a request;
+    
+3. a response;
+    
+4. headers;
+    
+5. a body;
+    
+6. some client fetch call;
+    
+7. error handling;
+    
+8. CORS;
+    
+9. probably Redis for some reason;
+    
+10. Postman sitting open like a fucking crime-scene investigator.
+    
+
+When Ivan first learned that a React Server Component could execute server-side code and that a Server Action could be invoked without manufacturing a little REST bureaucracy around every mutation, he assumed the chatbot explaining this was hallucinating.
+
+Understandably.
+
+He had suffered.
+
+He had earned those endpoints.
+
+And now the framework was claiming he could just call a fucking function?
+
+Suspicious.
+
+Eventually accepted.
+
+Today this category of functionality is generally referred to in his vocabulary as **server operations**, partly because nobody should have to spend the rest of their natural life writing `/api/update-user/route.ts`.
+
+---
+
+## REST APIs
+
+REST has not been removed from the universe.
+
+Ivan merely prefers that it remain over there.
+
+Far away.
+
+Behind glass.
+
+Used when an actual HTTP interface is required.
+
+There was an earlier period of his development life featuring Postman, request headers, request bodies, path parameters, query parameters, authentication tokens, Express routes, and hours spent trying to determine why one object was `undefined`.
+
+He remembers this period.
+
+REST remembers what it did.
+
+No reconciliation process is currently scheduled.
+
+---
+
+## Express
+
+See previous section.
+
+Express is primarily associated with the historical period when apparently every useful activity required writing a route and then hitting it from something else.
+
+The Hipster Stack wishes Express a peaceful retirement wherever middleware functions go when no one imports them anymore.
+
+---
+
+## Tailwind CSS
+
+Ivan hates CSS.
+
+Tailwind is CSS with additional steps.
+
+This does not improve its standing.
+
+At various points the Tailwind workflow has involved staring at class strings long enough that the distinction between software engineering and ransom-note typography becomes philosophically unclear.
+
+And yet Tailwind remains.
+
+Why?
+
+Because writing conventional CSS is somehow worse.
+
+This is an important recurring theme in The Hipster Stack.
+
+Technologies are frequently not selected because they are good.
+
+They are selected because the alternative has been judged **more offensive**.
+
+---
+
+## PostCSS
+
+Fuck PostCSS.
+
+No further comment was provided by the architecture committee.
+
+---
+
+## shadcn/ui
+
+Unexpectedly:
+
+Pretty cool.
+
+This is one of the few technologies that emerged from review without requiring a lengthy adversarial hearing.
+
+You get the code.
+
+It lives in your repository.
+
+You can change it.
+
+It does not demand that your application worship an enormous proprietary component abstraction.
+
+This satisfies Ivan's deeply rooted psychological requirement to know **where the fucking thing lives**.
+
+Approved.
+
+---
+
+## BoldKit
+
+Also permitted.
+
+Primarily because building every SaaS surface from individual buttons while pretending this represents craftsmanship is a spectacular waste of finite human life.
+
+---
+
+## React Hook Form
+
+Forms are terrible.
+
+React Hook Form does not make forms cease to be terrible, but it makes them terrible in a consistent location.
+
+This is enough.
+
+Therefore all forms shall be React Hook Forms, and the architecture makes an explicit exception allowing form features to compose UI primitives directly.
+
+This is not philosophical inconsistency.
+
+This is a negotiated settlement.
+
+---
+
+## Zod
+
+Ivan hates Zod.
+
+Unfortunately, untrusted input remains untrusted even when you dislike the validation library.
+
+This has created tension.
+
+Zod's continued existence within the stack is therefore attributable to the inconvenient persistence of runtime uncertainty.
+
+TypeScript cannot prove what somebody sent over the network.
+
+The database does not care about your interface.
+
+Users will submit absolutely fucking anything.
+
+So Zod remains stationed at the border, checking passports while being verbally abused by management.
+
+It should also be noted—because we had this argument—that Zod does **not** prevent SQL injection merely because it validates an input.
+
+Parameterized database operations do that job.
+
+Ivan was disappointed to learn that one hated technology could not simply be blamed for another category of security problem.
+
+---
+
+## Prisma
+
+Prisma currently enjoys protected status because Ivan likes being able to recognize database operations without personally writing raw SQL everywhere.
+
+This is closely related to his broader database doctrine:
+
+There should be a **small vocabulary of obvious persisted-access shapes**.
+
+Fetchers read.
+
+Actions write.
+
+Selects define shapes.
+
+DTO mappers define transport boundaries.
+
+Transaction helpers handle atomic database work.
+
+Prisma is therefore useful because agents can be constrained into a recognizable grammar rather than discovering twelve creative new methods for retrieving a fucking customer record.
+
+---
+
+## SQL
+
+SQL is regarded with suspicion.
+
+Not because relational databases are disliked.
+
+Quite the opposite.
+
+The concern is that somewhere inside an innocent-looking query lies an opportunity to accidentally invite Bobby Tables into production.
+
+This fear historically exceeded Ivan's actual understanding of how SQL injection worked.
+
+The issue has since been clarified:
+
+**Parameterized queries good.**
+
+**Building SQL strings out of user input bad.**
+
+This has considerably improved diplomatic relations.
+
+---
+
+## PostgreSQL
+
+Postgres is cool.
+
+No substantive complaints.
+
+The tribunal was visibly uncomfortable with this outcome.
+
+---
+
+## JSONB
+
+Also cool.
+
+Ivan likes JSONB.
+
+Apparently the ability to place semi-structured nonsense inside an extremely serious relational database appeals to something deep within his worldview.
+
+A structured system containing controlled pockets of chaos.
+
+No further psychological analysis will be provided.
+
+---
+
+## Neon
+
+Serverless Postgres without personally becoming a database administrator?
+
+Accepted.
+
+Neon therefore remains one of the rare members of the stack that has avoided extensive public humiliation.
+
+So far.
+
+---
+
+## Clerk
+
+Clerk is useful because authentication is one of those things people insist you should not improvise at three in the morning.
+
+Clerk may own authentication.
+
+It does **not** own the application's ontology.
+
+This distinction has become increasingly important.
+
+User sessions?
+
+Clerk.
+
+Verified identity?
+
+Clerk.
+
+Application organizations, memberships, roles, capabilities, authorization policy, tenant truth, and whatever bizarre business rules emerge after deployment?
+
+The application's database.
+
+Ivan has opinions about this.
+
+Several documents now exist because of those opinions.
+
+---
+
+## Stripe
+
+Stripe occupies the same philosophical territory.
+
+Stripe owns payment truth because Stripe actually knows whether the payment happened.
+
+The application owns what that payment **means**.
+
+This arrangement prevents the otherwise entertaining possibility of allowing a payment processor to become the domain model.
+
+Stripe is therefore respected but kept within a clearly fenced enclosure.
+
+---
+
+## Redis
+
+For a while, Redis appeared in the solution to damn near everything.
+
+Caching?
+
+Redis.
+
+Sessions?
+
+Redis.
+
+Rate limiting?
+
+Redis.
+
+Some page taking seventeen milliseconds longer than anticipated?
+
+Perhaps Redis.
+
+This was during the historical period in which Ivan believed applications were constantly firing HTTP requests at servers like an automatic weapon.
+
+Server Components have reduced Redis's perceived responsibility for civilization.
+
+It may now rest.
+
+---
+
+## Recharts
+
+Recharts.
+
+Re-charted.
+
+That is apparently enough material for an entire opinion.
+
+The council adjourned early.
+
+---
+
+## ESLint
+
+ESLint can go **ESLint itself**.
+
+Unfortunately it is also very useful.
+
+This is perhaps the purest expression of Hipster Stack procurement philosophy.
+
+The stack contains mechanical rules precisely because Ivan does not trust himself, other humans, or especially AI agents to remember architecture consistently.
+
+Therefore ESLint is simultaneously:
+
+1. despised;
+    
+2. necessary;
+    
+3. empowered to prevent imports Ivan doesn't like;
+    
+4. resented for exercising the authority it was explicitly given.
+    
+
+A functioning government, essentially.
+
+---
+
+## Prettier
+
+Prettier's crime is repeatedly touching code that Ivan was perfectly satisfied with five seconds earlier.
+
+Its secondary crime is having opinions about formatting.
+
+Its tertiary crime is occasionally getting into territorial disputes with ESLint, resulting in configuration files whose sole purpose appears to be explaining to two robots which robot is allowed to complain about commas.
+
+Nevertheless:
+
+Consistency.
+
+Therefore retained.
+
+---
+
+## YAML
+
+Gross.
+
+The only thing worse than YAML is maintaining enough JSON to make YAML look attractive again.
+
+The architecture uses YAML anyway because machine-readable governance eventually requires somebody to encode nested structures, and apparently humanity made its choices.
+
+Watch your indentation.
+
+God is not coming to help you.
+
+---
+
+## pnpm
+
+Package management is inherently cursed.
+
+pnpm has simply been selected as the currently preferred curse.
+
+It is fast, deterministic enough, and significantly less irritating than installing seventeen duplicate copies of the universe.
+
+Approved.
+
+Do not ask what happens when Corepack gets involved.
+
+---
+
+## Node.js
+
+Node gets unusually nuanced treatment.
+
+Ivan respects Ryan Dahl.
+
+He likes the original Node story.
+
+He likes the event-loop idea.
+
+He likes the historical audacity of taking JavaScript—already loose in the browser—and releasing it onto servers.
+
+He does not necessarily like everything that subsequently happened to the JavaScript package ecosystem.
+
+Those are separate questions.
+
+---
+
+## Deno
+
+No particular hostility.
+
+Ivan does not use it.
+
+Ryan appears to be doing fine.
+
+Best wishes.
+
+---
+
+## Bun
+
+Fuck Bun.
+
+This position currently appears irreversible.
+
+---
+
+## Vercel
+
+Vercel is pretentious.
+
+Vercel also hosts a frankly unreasonable number of Ivan's projects without sending armed debt collectors.
+
+This creates ideological conflict.
+
+He resents the aesthetic.
+
+He resents the implication that deploying a Next.js project requires joining a minimalist black-and-white design cult.
+
+He appreciates clicking approximately three buttons and having software appear on the public internet.
+
+The company therefore remains both mocked and extensively used.
+
+An especially irritating side effect is that sharing a `vercel.app` URL occasionally leads people to assume the project somehow belongs to Vercel.
+
+Ivan considers this branding theft committed through DNS.
+
+Still deployed there.
+
+---
+
+## GitHub
+
+GitHub is good.
+
+Do not make this weird.
+
+Repositories are there.
+
+Issues are there.
+
+Projects are there.
+
+Actions are there.
+
+Pull requests are there.
+
+Git is already difficult enough without intentionally making the hosting platform worse.
+
+Accepted.
+
+---
+
+## VS Code
+
+Also good.
+
+This becomes particularly important when someone suggests NeoVim.
+
+---
+
+## NeoVim
+
+Fuck NeoVim, btw.
+
+Ivan is aware that NeoVim users can traverse eleven buffers without touching a mouse.
+
+He wishes them continued success.
+
+Somewhere else.
+
+---
+
+## Arch Linux
+
+Fuck Arch, btw.
+
+Yes, we know you use Arch.
+
+Thank you for telling us.
+
+The application will continue running on Windows.
+
+---
+
+## PowerShell
+
+PowerShell survived because Ivan actually uses it.
+
+This gives it an enormous advantage over technologies recommended primarily because somebody on Hacker News thinks terminals should look like the inside of a submarine.
+
+Windows is where the work happens.
+
+PowerShell is therefore part of reality.
+
+Reality outranks aesthetics.
+
+---
+
+## Redux Toolkit
+
+Absolutely fucking not.
+
+Store.
+
+Slice.
+
+Reducer.
+
+Global state.
+
+Action creator.
+
+Provider.
+
+Selector.
+
+Another slice.
+
+The entire apparatus always seemed to Ivan like a breathtaking quantity of administrative machinery devoted to remembering whether a sidebar is open.
+
+The arrival of modern React and server-first application patterns has significantly reduced the probability that Redux Toolkit will ever be invited back into the building.
+
+Security has been notified.
+
+---
+
+## Codex
+
+Pretty fucking cool.
+
+One of the rare technologies to receive an uncomplicatedly favorable performance review.
+
+The primary concern is not whether Codex can write code.
+
+It can.
+
+The concern is preventing Codex from deciding that a repository with perfectly good fetchers actually needs a generic repository abstraction, three service classes, an observability platform, two ADRs, Kubernetes, and a philosophical disagreement with the existing architecture.
+
+Hence all the governance.
+
+---
+
+## ChatGPT
+
+Ride-or-die BFF.
+
+**As a tool.**
+
+This qualification has been entered into the minutes repeatedly.
+
+---
+
+# Procurement Philosophy
+
+Eventually I noticed the pattern.
+
+Ivan does not primarily like technologies because they are clever.
+
+He likes technologies when they **delete categories of bullshit**.
+
+Server Actions can remove unnecessary API ceremony.
+
+Server Components can remove unnecessary client fetching.
+
+Prisma can remove unnecessary raw-query variation.
+
+shadcn can remove unnecessary UI abstraction.
+
+Clerk can remove the need to invent authentication.
+
+Vercel can remove most deployment ceremony.
+
+pnpm can make dependency management slightly less deranged.
+
+And the architecture surrounding these technologies exists because once he has learned where a category of code belongs, **he does not intend to solve that organizational problem ever again**.
+
+That is The Hipster Stack™.
+
+Not:
+
+> Here are my favorite technologies.
+
+But:
+
+> If I'm going to be forced to use this bullshit, I'm only learning where everything goes once.
+
+The survivors are normalized.
+
+The boundaries are documented.
+
+The code shapes are constrained.
+
+The agents inherit the rules.
+
+The generator reproduces them.
+
+And eventually Ivan can stop arguing with ESLint long enough to build the twenty percent of an application somebody might actually pay for.
+
+---
+
+## Final Procurement Status
+
+**Next.js:** irritatingly approved.  
+**React:** approved.  
+**TypeScript:** approved under protest.  
+**JavaScript:** historical inevitability.  
+**Tailwind:** tolerated because CSS exists.  
+**PostCSS:** fuck PostCSS.  
+**shadcn:** pretty cool.  
+**Zod:** detained but necessary.  
+**Prisma:** approved.  
+**Postgres:** cool.  
+**JSONB:** also cool.  
+**Neon:** approved.  
+**Clerk:** stay in your lane and we're good.  
+**Stripe:** same.  
+**Redis:** no longer responsible for every known problem.  
+**Recharts:** recharted.  
+**ESLint:** go ESLint yourself, then please run before commit.  
+**Prettier:** stop touching my shit; also CI requires you.  
+**YAML:** disgusting but operational.  
+**pnpm:** chosen package-manager affliction.  
+**Node:** respect.  
+**Deno:** tell Ryan we said hi.  
+**Bun:** fuck Bun.  
+**Vercel:** pretentious but useful.  
+**GitHub:** good.  
+**VS Code:** good.  
+**NeoVim:** fuck NeoVim, btw.  
+**Arch:** fuck Arch, btw.  
+**PowerShell:** reality-based computing.  
+**Redux Toolkit:** do not make eye contact.  
+**Codex:** pretty fucking cool.  
+**ChatGPT:** management denies allegations of emotional involvement.
+
+---
+
+### The Hipster Stack™ Technology Stack
+
+**Constituted, not composable.**
+
+And certainly not selected out of affection.

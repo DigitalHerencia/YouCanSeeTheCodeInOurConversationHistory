@@ -13,18 +13,21 @@
   "globalFilter": "",
   "removeGlobalFilter": false,
   "taskFormat": "tasksPluginEmoji",
-  "setCreatedDate": false,
+  "setCreatedDate": true,
   "setDoneDate": true,
   "setCancelledDate": true,
   "autoSuggestInEditor": true,
   "autoSuggestMinMatch": 0,
   "autoSuggestMaxItems": 20,
   "provideAccessKeys": true,
-  "useFilenameAsScheduledDate": false,
+  "useFilenameAsScheduledDate": true,
   "filenameAsScheduledDateFormat": "",
   "filenameAsDateFolders": [],
-  "recurrenceOnNextLine": false,
-  "removeScheduledDateOnRecurrence": false,
+  "recurrenceOnNextLine": true,
+  "removeScheduledDateOnRecurrence": true,
+  "searchResults": {
+    "taskCountLocation": "bottom"
+  },
   "statusSettings": {
     "coreStatuses": [
       {
@@ -71,6 +74,9 @@
     "created": true,
     "done": true,
     "cancelled": true
+  },
+  "dismissedNotices": {
+    "live-preview-callout-warning": false
   },
   "features": {
     "INTERNAL_TESTING_ENABLED_BY_DEFAULT": true

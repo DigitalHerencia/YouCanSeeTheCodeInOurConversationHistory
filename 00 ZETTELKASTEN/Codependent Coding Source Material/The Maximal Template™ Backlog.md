@@ -8,7 +8,7 @@ Make `themaximaltemplate.vercel.app` an impressive, completely explorable demons
 
 It does **not** need production-grade tenant security internally before we finish it.
 
-## P0 — Fix the application navigation and route integrity
+- [ ] ## P0 — Fix the application navigation and route integrity
 
 **Actual finding:** `tenant-shell.tsx` still contains:
 

@@ -6,5 +6,6 @@
   "showLineNumber": false,
   "strictLineBreaks": true,
   "showInlineTitle": false,
-  "propertiesInDocument": "hidden"
+  "propertiesInDocument": "hidden",
+  "uriCallbacks": true
 }
