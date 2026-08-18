@@ -18,7 +18,7 @@ tags:
   - obsidian/properties
   - status/active
 created:
-updated: 2026-08-08
+updated: 2026-08-18
 ---
 # Obsidian Contract Property Schema
 
@@ -88,11 +88,12 @@ work-package
 handoff
 checklist
 schema
+simple
 ```
 
 The `type` property identifies the broad note class.
 
-The `kind` property identifies the specific document shape. It may match `type`.
+The `kind` property identifies the specific document shape. It may match `type`. `simple` is reserved for first-class Codependent Coding Simple records representing one real source file; their architectural class is recorded separately in `simple_type`.
 
 ## Standard Scope Values
 
@@ -104,7 +105,10 @@ feature
 module
 operation
 reference
+file
 ```
+
+`file` is used when the durable note represents one specific source file rather than a broader module or operation.
 
 ## Standard Status Values
 
@@ -128,6 +132,12 @@ derived
 legacy
 archive
 ```
+
+## Type-Specific Extensions
+
+Durable note types may add properties needed for their actual function. Type-specific properties do not replace the required vault properties above.
+
+For Codependent Coding Simple records, relationship and implementation properties are intentionally allowed because they drive Graph View, backlinks, Dataview analysis, architecture validation, canonicalization, and generation readiness. The controlling Simple templates define those extensions.
 
 ## Example
 
