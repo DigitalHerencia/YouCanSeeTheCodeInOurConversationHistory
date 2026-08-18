@@ -4,36 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "7983fff656cf9803",
+        "id": "159c28e267edab58",
         "type": "tabs",
         "children": [
           {
-            "id": "bf669cc49b57543f",
+            "id": "1321102ba984224d",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          },
-          {
-            "id": "c84f9ac423e04b39",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "devnotes.home.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
               "icon": "lucide-file",
-              "title": "devnotes.home"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -72,7 +56,8 @@
               "title": "Projects"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "35e269d79bdcab6c",
@@ -93,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 467.1000061035156
+    "width": 375.1000061035156
   },
   "right": {
     "id": "acf9b2ce38860566",
@@ -124,7 +109,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "devnotes.home.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -184,7 +168,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 288.3369140625
+    "width": 288.3369140625,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -202,44 +187,44 @@
       "switcher:Open quick switcher": false
     }
   },
-  "active": "c84f9ac423e04b39",
+  "active": "1321102ba984224d",
   "lastOpenFiles": [
+    "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks/define-the-simple-knowledge-model-and-obsidian-relationship-.md",
+    "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks/codependentcoding.umbrella-product-reconciliation.work-package.md",
+    "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks/reconcile-codependent-coding-as-the-umbrella-product.md",
+    "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation.md",
+    "70 TODO/New Project.md",
+    "70 TODO/New Project_tasks/codependentcoding.execution.program.map.md",
+    "70 TODO/New Project_tasks/codependentcoding.execution.program.kanban.md",
+    "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks/codependentcoding.database-simple-vertical-slice.work-package.md",
+    "60 CODEPENDENT CODING/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Cycles.Reference.md",
+    "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks/codependentcoding.web-first-constitutor-generation-engine.work-package.md",
+    "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks/codependentcoding.source-intake-canonicalization-pipeline.work-package.md",
+    "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks/codependentcoding.single-app-context-utility-consolidation.work-package.md",
+    "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks/codependentcoding.simples-three-view-workbench.work-package.md",
+    "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks/codependentcoding.simple-knowledge-model.work-package.md",
+    "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks/codependentcoding.simple-catalog-composition-constraints.work-package.md",
+    "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks/codependentcoding.maximal-template-simple-by-simple-execution.work-package.md",
+    "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks/codependentcoding.maximal-template-hardening-generation-classification.work-package.md",
+    "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks",
+    "devnotes.home.md",
     "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/app/configure/page.tsx.md",
     "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/The Codependent Coding™ WebApp Architecture — Canonical Workflow Constitution Correction.md",
-    "devnotes.home.md",
     "60 CODEPENDENT CODING/60.CODEPENDENTCODING.Docs.Hipster-Stack-Tech.Map.md",
     "Untitled.md",
     "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/codependentcoding.webapp-architecture.master.source-document.md",
     "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/app/layout.tsx.md",
     "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/app/page.tsx.md",
     "60 CODEPENDENT CODING/10.PROJECTS.LOADEDVIBES/10.LOADEDVIBES.Vibes-Template.Audit.Research.md",
-    "60 CODEPENDENT CODING/10.PROJECTS.LOADEDVIBES/10.LOADEDVIBES.Project.Source-Document.md",
-    "60 CODEPENDENT CODING/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Cycles.Reference.md",
-    "90 OBSIDIAN/Contracts/obsidian.contracts.naming-standard.md",
-    "README.md",
     "DevNotes.base",
-    "60 CODEPENDENT CODING/Source Mirror/codependentcoding.webapp-architecture.master.source-document.md.md",
-    "60 CODEPENDENT CODING/40 TECH STACK/40.TECHSTACK.Contracts.Architecture.Contract.md",
     "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/Untitled.base",
     "90 OBSIDIAN/Ops/Import-CodependentCodingSourceMirror.ps1",
     "90 OBSIDIAN/Ops/Unconfirmed 975090.crdownload",
     "90 OBSIDIAN/Ops",
     "90 OBSIDIAN/Opd",
     "90 OBSIDIAN/New folder",
-    "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/Constituter.md",
-    "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/Codependent Coding™ Website Design & Content Specification.md",
-    "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/Papa's Got A Brand New Bag.md",
-    "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/conceptual frameworks of limited domains.md",
-    "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/The Maximal Template™ Canonical Architecture.md",
-    "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/Ontologies.md",
-    "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/Loaded Vibes™ Codex Plugin — Current State Workup.md",
-    "50 REGRETS, CIGARETTES, & NEURAL NETS/50.BLOG.The_Speed_of_Absurdity_&_The_Sophisticated_Stupidity_Principle.md",
-    "50 REGRETS, CIGARETTES, & NEURAL NETS/50.BLOG.Chatgpt_Called_Me_An_Engineer.md",
-    "90 OBSIDIAN/Templates/data-model.contract.md",
-    "90 OBSIDIAN/Templates/acceptance-gates.contract.md",
     "70 TODO/New Project_tasks",
     "70 TODO/70.TODO.CODEPENDENTCODING.1_tasks",
-    "70 TODO",
     "Pasted image 20260815231425.png",
     "Untitled 1.canvas",
     "Untitled.canvas",

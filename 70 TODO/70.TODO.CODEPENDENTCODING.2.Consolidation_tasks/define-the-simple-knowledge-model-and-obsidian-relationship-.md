@@ -15,7 +15,7 @@ tags: ["codependent-coding", "consolidation"]
 subtaskIds: []
 dependencies: ["i42wstxptn680fly", "512mrcv0rfcvsz91"]
 createdAt: "2026-08-18T18:23:00.000Z"
-updatedAt: "2026-08-18T18:23:00.000Z"
+updatedAt: "2026-08-18T18:56:50.180Z"
 ---
 
 # Define the Simple knowledge model and Obsidian relationship semantics

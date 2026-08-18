@@ -15,7 +15,7 @@ tags: ["codependent-coding", "consolidation"]
 subtaskIds: []
 dependencies: []
 createdAt: "2026-08-18T18:23:00.000Z"
-updatedAt: "2026-08-18T18:23:00.000Z"
+updatedAt: "2026-08-18T18:57:14.251Z"
 ---
 
 # Reconcile Codependent Coding as the umbrella product
