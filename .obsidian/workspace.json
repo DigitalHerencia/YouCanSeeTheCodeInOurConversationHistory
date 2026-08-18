@@ -4,40 +4,36 @@
     "type": "split",
     "children": [
       {
-        "id": "952a62b09d744fca",
+        "id": "7983fff656cf9803",
         "type": "tabs",
         "children": [
           {
-            "id": "174c56af5178140b",
+            "id": "bf669cc49b57543f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "60 CODEPENDENT CODING/40 TECH STACK/40.TECHSTACK.Contracts.Architecture.Contract.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "40.TECHSTACK.Contracts.Architecture.Contract"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           },
           {
-            "id": "f793dfc164116b56",
+            "id": "c84f9ac423e04b39",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00 ZETTELKASTEN/The Codependent Coding WebApp Architecture/Codependent Coding™ Website Design & Content Specification.md",
+                "file": "devnotes.home.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Codependent Coding™ Website Design & Content Specification"
+              "title": "devnotes.home"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -97,7 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 730.2999877929688
+    "width": 467.1000061035156
   },
   "right": {
     "id": "acf9b2ce38860566",
@@ -113,7 +109,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "60 CODEPENDENT CODING/40 TECH STACK/40.TECHSTACK.Contracts.Architecture.Contract.md",
+                "file": "10 PROJECTS/10.PROJECTS.CTRLPLUS/10.PROJECTS.CTRLPLUS.Architecture.Server-First-Blueprint.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -128,13 +124,14 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "devnotes.home.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
               "title": "Backlinks"
@@ -182,12 +179,12 @@
               "title": "All properties"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 288.3369140625,
-    "collapsed": true
+    "width": 288.3369140625
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -205,10 +202,25 @@
       "switcher:Open quick switcher": false
     }
   },
-  "active": "174c56af5178140b",
+  "active": "c84f9ac423e04b39",
   "lastOpenFiles": [
-    "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/Untitled.base",
+    "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/app/configure/page.tsx.md",
+    "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/The Codependent Coding™ WebApp Architecture — Canonical Workflow Constitution Correction.md",
     "devnotes.home.md",
+    "60 CODEPENDENT CODING/60.CODEPENDENTCODING.Docs.Hipster-Stack-Tech.Map.md",
+    "Untitled.md",
+    "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/codependentcoding.webapp-architecture.master.source-document.md",
+    "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/app/layout.tsx.md",
+    "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/app/page.tsx.md",
+    "60 CODEPENDENT CODING/10.PROJECTS.LOADEDVIBES/10.LOADEDVIBES.Vibes-Template.Audit.Research.md",
+    "60 CODEPENDENT CODING/10.PROJECTS.LOADEDVIBES/10.LOADEDVIBES.Project.Source-Document.md",
+    "60 CODEPENDENT CODING/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Cycles.Reference.md",
+    "90 OBSIDIAN/Contracts/obsidian.contracts.naming-standard.md",
+    "README.md",
+    "DevNotes.base",
+    "60 CODEPENDENT CODING/Source Mirror/codependentcoding.webapp-architecture.master.source-document.md.md",
+    "60 CODEPENDENT CODING/40 TECH STACK/40.TECHSTACK.Contracts.Architecture.Contract.md",
+    "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/Untitled.base",
     "90 OBSIDIAN/Ops/Import-CodependentCodingSourceMirror.ps1",
     "90 OBSIDIAN/Ops/Unconfirmed 975090.crdownload",
     "90 OBSIDIAN/Ops",
@@ -216,9 +228,7 @@
     "90 OBSIDIAN/New folder",
     "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/Constituter.md",
     "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/Codependent Coding™ Website Design & Content Specification.md",
-    "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/codependentcoding.webapp-architecture.master.source-document.md",
     "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/Papa's Got A Brand New Bag.md",
-    "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/The Codependent Coding™ WebApp Architecture — Canonical Workflow Constitution Correction.md",
     "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/conceptual frameworks of limited domains.md",
     "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/The Maximal Template™ Canonical Architecture.md",
     "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/Ontologies.md",
@@ -227,20 +237,8 @@
     "50 REGRETS, CIGARETTES, & NEURAL NETS/50.BLOG.Chatgpt_Called_Me_An_Engineer.md",
     "90 OBSIDIAN/Templates/data-model.contract.md",
     "90 OBSIDIAN/Templates/acceptance-gates.contract.md",
-    "90 OBSIDIAN/obsidian.system.map.md",
-    "90 OBSIDIAN/Contracts/obsidian.contracts.property-schema.md",
-    "90 OBSIDIAN/Contracts/obsidian.contracts.naming-standard.md",
-    "90 OBSIDIAN/Contracts/obsidian.contracts.note-types.md",
-    "README.md",
-    "10 PROJECTS/10.PROJECTS.LOADEDVIBES/10.LOADEDVIBES.Project.Source-Document.md",
-    "10 PROJECTS/10.PROJECTS.LOADEDVIBES/10.LOADEDVIBES.Generator.One-Template.Contract.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Teams.Reference.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Procedures.Workflow.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Project.Map.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Mental-Model.Reference.md",
     "70 TODO/New Project_tasks",
     "70 TODO/70.TODO.CODEPENDENTCODING.1_tasks",
-    "DevNotes.base",
     "70 TODO",
     "Pasted image 20260815231425.png",
     "Untitled 1.canvas",
