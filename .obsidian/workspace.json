@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "90 OBSIDIAN/Templates/product-definition.contract.md",
+                "file": "devnotes.home.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "product-definition.contract"
+              "title": "devnotes.home"
             }
           }
         ]
@@ -190,7 +190,7 @@
       "switcher:Open quick switcher": false
     }
   },
-  "active": "129d925824af078b",
+  "active": "196f6ed94d57a4c6",
   "lastOpenFiles": [
     "90 OBSIDIAN/Templates/data-model.contract.md",
     "90 OBSIDIAN/Templates/acceptance-gates.contract.md",
