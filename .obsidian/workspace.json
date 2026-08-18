@@ -8,13 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1321102ba984224d",
+            "id": "2f4c39d759b33e55",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/app/layout.tsx.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "layout.tsx"
             }
           }
         ]
@@ -56,8 +61,7 @@
               "title": "Projects"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "35e269d79bdcab6c",
@@ -109,6 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/app/layout.tsx.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -187,8 +192,15 @@
       "switcher:Open quick switcher": false
     }
   },
-  "active": "1321102ba984224d",
+  "active": "2f4c39d759b33e55",
   "lastOpenFiles": [
+    "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/TheHipsterStack.DemoSite.Base.base",
+    "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/TheHipsterStack.DemoSite.Map.md",
+    "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/app/base.css.md",
+    "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/features/constituter/constituter-controls.tsx.md",
+    "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/Untitled.md",
+    "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/app/docs/[[...slug]]/page.tsx.md",
+    "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/app/configure/page.tsx.md",
     "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks/define-the-simple-knowledge-model-and-obsidian-relationship-.md",
     "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks/codependentcoding.umbrella-product-reconciliation.work-package.md",
     "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks/reconcile-codependent-coding-as-the-umbrella-product.md",
@@ -208,14 +220,7 @@
     "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks/codependentcoding.maximal-template-hardening-generation-classification.work-package.md",
     "70 TODO/70.TODO.CODEPENDENTCODING.2.Consolidation_tasks",
     "devnotes.home.md",
-    "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/app/configure/page.tsx.md",
     "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/The Codependent Coding™ WebApp Architecture — Canonical Workflow Constitution Correction.md",
-    "60 CODEPENDENT CODING/60.CODEPENDENTCODING.Docs.Hipster-Stack-Tech.Map.md",
-    "Untitled.md",
-    "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/codependentcoding.webapp-architecture.master.source-document.md",
-    "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/app/layout.tsx.md",
-    "60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/app/page.tsx.md",
-    "60 CODEPENDENT CODING/10.PROJECTS.LOADEDVIBES/10.LOADEDVIBES.Vibes-Template.Audit.Research.md",
     "DevNotes.base",
     "60 CODEPENDENT CODING/The Codependent Coding WebApp Architecture/Untitled.base",
     "90 OBSIDIAN/Ops/Import-CodependentCodingSourceMirror.ps1",
@@ -224,7 +229,6 @@
     "90 OBSIDIAN/Opd",
     "90 OBSIDIAN/New folder",
     "70 TODO/New Project_tasks",
-    "70 TODO/70.TODO.CODEPENDENTCODING.1_tasks",
     "Pasted image 20260815231425.png",
     "Untitled 1.canvas",
     "Untitled.canvas",
