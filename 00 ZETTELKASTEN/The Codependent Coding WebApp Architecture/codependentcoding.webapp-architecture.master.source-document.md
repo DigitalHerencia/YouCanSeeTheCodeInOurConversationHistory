@@ -25,6 +25,7 @@ updated: 2026-08-15
 
 # The Codependent Coding™ WebApp Architecture
 
+> [!IMPORTAT]
 > **Authoritative architecture, composition, generation, domain-library, and agent-tooling reference.**
 
 **Edition:** 2026.08  
@@ -45,7 +46,7 @@ It unifies five tightly related but non-interchangeable parts:
 | **The Hipster Stack™ Technology Stack**         | The concrete technology stack plus deterministic constitution/generation system and CLI that turns a normalized application definition into a project.                                   |
 | **The Maximal Template™ Domain Library**        | The single runnable superset application containing every supported implementation that may be retained, removed, or transformed during generation.                                      |
 | **Simples™ and Ontologies™**                    | The normalized building-block catalog and the nine default application-definition starting points used to configure the maximal template.                                                |
-| **The Loaded Vibes™ Coding Agent Plugin**       | The Codex-oriented architecture-enforcement and software-operations layer: governance, agents, skills, instructions, prompts, validators, smoke tests, and developer-environment assets. |
+| **The Loaded Vibes™ Codex Plugin**              | The Codex-oriented architecture-enforcement and software-operations layer: governance, agents, skills, instructions, prompts, validators, smoke tests, and developer-environment assets. |
 
 The generated standalone application is the **Ordinary Object™**: a white-label project produced from a normalized and validated application definition. It contains no runtime dependency on the generator and no requirement to remain connected to a hosted control plane.
 

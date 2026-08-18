@@ -1,6 +1,6 @@
 # The Constituter™
 
-The Constituter is the stateless web application used to configure an `Ontology` or build a custom `Ordinary Object` from supported `Simples`from The Maximal Template™.
+The Constituter is the stateless web application used to configure an `Ontology` or build a custom `Arrangement` from supported `Simples`from The Maximal Template™.
 
 It is an adapter over the same configuration semantics used by the CLI and portable config file.
 
@@ -379,7 +379,7 @@ All nine `Ontologies` inherit from a common application foundation that is the s
     ├── Error / Loading States
     └── Common Tenant Infrastructure
 
-The customized transformed master template that is generated based on the user's configuration of one of the default starter specifications is called the `Ordinary Object`
+The customized transformed master template that is generated based on the user's configuration of one of the default starter specifications is called `The Arrangement™`
 
 So the generator model becomes:
 
@@ -397,9 +397,9 @@ So the generator model becomes:
             ↓
     Resolved Application Definition
             ↓
-    Ordinary Object™
+    The Arrangement™
 
-The generated standalone application is The **Ordinary Object™**: a white-label project produced from a normalized and validated application definition. It contains no runtime dependency on the generator and no requirement to remain connected to a hosted control plane.
+The generated standalone application is ****`The Arrangement™`****: a white-label project produced from a normalized and validated application definition. It contains no runtime dependency on the generator and no requirement to remain connected to a hosted control plane.
 
 ### The Architecture Classifier
 
@@ -467,7 +467,6 @@ SHARED COMPILE-TIME CONTRACT?
 
 | Term                   | Canonical meaning                                                                    |
 | ---------------------- | ------------------------------------------------------------------------------------ |
-| **Generation Plan**    | Dependency-closed resolved authority for materialization and preview.                |
 | Tenant **Routes**      | Authenticated URL/HTTP boundary.                                                     |
 | Public Routes          | Static public content is `(public)`, not the marketing business domain.              |
 | Static Pages           | Static pages may compose blocks directly; they do not require empty features.        |
@@ -491,17 +490,17 @@ SHARED COMPILE-TIME CONTRACT?
 | **Integration**        | Provider-specific external-service mechanics.                                        |
 | **Webhook**            | Provider HTTP request boundary and reconciliation lifecycle.                         |
 ### Branded Products
-
-| Brand                                       | Product Description                                                                                                                                                                      |
-| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Codependent Coding™ WebApp Architecture** | The governing architecture and documentation system. It defines responsibilities, boundaries, invariants, composition, security posture, and implementation grammar.                     |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Hipster Stack™ Technology Stack**         | The concrete technology stack plus deterministic constitution/generation system and CLI that turns a normalized application definition into a project.                                   |
 | **Maximal Template™ Domain Library**        | The single runnable superset application containing every supported implementation that may be retained, removed, or transformed during generation.                                      |
+| **The Anthimeria™**                         | Stateless web configuration workbench over the shared Application Definition and resolver.                                                                                               |
 | **Loaded Vibes™** Codex Plugin              | The Codex-oriented architecture-enforcement and software-operations layer: governance, agents, skills, instructions, prompts, validators, smoke tests, and developer-environment assets. |
 | The Vibes Visual System™                    | Dark industrial technical system with restrained cyan/teal signal, not rainbow/cartoon neo-brutalism.                                                                                    |
 | **Simples™**                                | A maximal domain library of normalized supported building blocks.                                                                                                                        |
 | **Ontology™**                               | One of nine default normalized starter application definitions/presets.                                                                                                                  |
-| **The Constituter™**                        | Stateless web configuration workbench over the shared Application Definition and resolver.                                                                                               |
-| BusinessLogic Blocks™                       | Domain/business logic workflow orchestration boundary.                                                                                                                                   |
-| PureUI Presentation Layer™                  | Pure reusable UI composition orchestration boundary.                                                                                                                                     |
-| **Ordinary Object™**                        | Generated standalone white-label application.                                                                                                                                            |
+| **BusinessLogic Blocks™**                   | Domain/business logic workflow orchestration boundary.                                                                                                                                   |
+| **PureUI Presentation Layer™**              | Pure reusable UI composition orchestration boundary.                                                                                                                                     |
+| The Arrangement™                            | Generated standalone white-label application.                                                                                                                                            |
+| The Virgule™                                | Dependency-closed resolved authority for materialization and preview.                                                                                                                    |
+

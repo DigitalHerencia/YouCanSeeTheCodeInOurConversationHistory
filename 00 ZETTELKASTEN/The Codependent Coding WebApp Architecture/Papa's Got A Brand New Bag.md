@@ -19,7 +19,7 @@ The specification is completely customizable using the web app workspace. The ex
 
 ### The Maximal Template™ Domain Library. 
 
-I standardized the default SaaS definitions and functionally decomposed them into modules. I'm branding the modules as libraries called `Simples`. The library from the hipster stack website will be repurposed for this and the existing content folded in.
+I standardized the default SaaS definitions and functionally decomposed them into modules. I'm branding the modules as libraries called `Simples.` The library from the hipster stack website will be repurposed for this and the existing content folded in.
 
 The libraries are the source of truth for master template. All of the code for every possible configuration of `Simples` from the 9 `Ontologies` are contained in one repository. The generator transforms this codebase when it initializes a new project.  
 
