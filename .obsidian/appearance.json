@@ -1,13 +1,13 @@
 {
   "theme": "obsidian",
   "accentColor": "#525252",
-  "interfaceFontFamily": "CodeNewRoman Nerd Font",
-  "textFontFamily": "Terminess Nerd Font",
-  "monospaceFontFamily": "Monoid Nerd Font Mono",
+  "interfaceFontFamily": "CodeNewRoman Nerd Font,Terminess Nerd Font,Terminess Nerd Font Mono,Terminess Nerd Font Propo",
+  "textFontFamily": "CodeNewRoman Nerd Font,CodeNewRoman Nerd Font Mono,CodeNewRoman Nerd Font Propo",
+  "monospaceFontFamily": "Monoid Nerd Font Mono,3270 Nerd Font Mono,Monoid Nerd Font",
   "cssTheme": "Obsidianite",
   "baseFontSizeAction": true,
-  "showRibbon": true,
+  "showRibbon": false,
   "showViewHeader": false,
   "nativeMenus": false,
-  "baseFontSize": 16
+  "baseFontSize": 21
 }

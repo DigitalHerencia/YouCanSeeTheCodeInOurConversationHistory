@@ -1,0 +1,69 @@
+---
+pm-task: true
+projectId: "aujyaujimsy9s0iz"
+parentId:
+id: "xuytjrbmmsy9z1dx"
+title: "maximal-template.showroom-verification.work-package"
+type: "task"
+status: "todo"
+priority: "medium"
+start: "2026-08-18"
+due: ""
+progress: 0
+assignees: []
+tags: []
+subtaskIds: []
+dependencies: []
+createdAt: "2026-08-18T06:21:56.805Z"
+updatedAt: "2026-08-18T06:21:56.805Z"
+---
+
+# Run the Full Signed-Out Showroom Verification Pass
+
+**Priority:** P0  
+**Phase:** Showroom  
+**Task status:** Backlog
+
+## Outcome
+
+Prove that the public demo is frictionless, navigable, responsive, truthful, and free of accidental auth/security failures.
+
+## Why This Exists
+
+Source-level checks did not catch the `/users` navigation defect, so the showroom requires real route/browser verification.
+
+## Execution Checklist
+
+- [ ] Crawl every public and application route while signed out.
+- [ ] Exercise every header/sidebar/mobile navigation link.
+- [ ] Exercise non-destructive interactive controls and demo mutation behavior.
+- [ ] Verify no public flow unexpectedly redirects into Clerk.
+- [ ] Check desktop and mobile layouts.
+- [ ] Check browser console for errors/warnings that indicate broken behavior.
+- [ ] Verify loading, empty, error, and populated states.
+- [ ] Check architecture/security claims against observed showroom behavior.
+- [ ] Run formatting, lint, typecheck, architecture validation, and production build as required by the repo.
+- [ ] Record exact evidence and unresolved defects.
+
+## Acceptance Criteria
+
+- [ ] One URL provides complete signed-out exploration.
+- [ ] All intended routes and controls work in supported viewports.
+- [ ] No visible security claim exceeds verified behavior.
+- [ ] Required static/build checks have fresh evidence.
+
+## Dependencies
+
+- None recorded.
+
+## Source Basis
+
+- `The Maximal Template™ Backlog.md`
+
+## Execution Notes
+
+- Verify current repository/vault state before editing; this note is a planning baseline derived from the current corpus, not a claim that the task is still untouched.
+- Preserve unrelated work and existing provenance.
+- Do not mark acceptance criteria complete without fresh evidence appropriate to the task.
+
+Project: [[New Project|New Project]]

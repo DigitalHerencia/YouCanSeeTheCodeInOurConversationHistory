@@ -2,12 +2,16 @@
   "alwaysUpdateLinks": true,
   "showUnsupportedFiles": true,
   "promptDelete": false,
-  "readableLineLength": true,
+  "readableLineLength": false,
   "showLineNumber": false,
   "strictLineBreaks": true,
   "showInlineTitle": false,
-  "propertiesInDocument": "hidden",
+  "propertiesInDocument": "visible",
   "uriCallbacks": true,
   "showIndentGuide": false,
-  "useTab": false
+  "useTab": true,
+  "tabSize": 2,
+  "openBehavior": "file:devnotes.home.md",
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./"
 }

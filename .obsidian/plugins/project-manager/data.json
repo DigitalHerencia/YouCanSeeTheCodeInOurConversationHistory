@@ -1,6 +1,6 @@
 {
-  "projectsFolder": "Projects",
-  "defaultView": "table",
+  "projectsFolder": "70 TODO",
+  "defaultView": "kanban",
   "ganttGranularity": "week",
   "ganttWeekLabel": "weekNumber",
   "statuses": [

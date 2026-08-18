@@ -4,17 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "c101ae1a742d89a0",
+        "id": "952a62b09d744fca",
         "type": "tabs",
         "children": [
           {
-            "id": "f33b7489d2ea8c51",
+            "id": "174c56af5178140b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "90 OBSIDIAN/Templates/product-definition.contract.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "product-definition.contract"
             }
           }
         ]
@@ -29,7 +34,7 @@
       {
         "id": "29638fda63730726",
         "type": "tabs",
-        "dimension": 59.512195121951216,
+        "dimension": 38.048780487804876,
         "children": [
           {
             "id": "196f6ed94d57a4c6",
@@ -47,16 +52,6 @@
             }
           },
           {
-            "id": "129d925824af078b",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
-            }
-          },
-          {
             "id": "e25265cc27840765",
             "type": "leaf",
             "state": {
@@ -66,29 +61,28 @@
               "title": "Projects"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "35e269d79bdcab6c",
         "type": "tabs",
-        "dimension": 40.487804878048784,
+        "dimension": 61.951219512195124,
         "children": [
           {
-            "id": "4d39625d9ee10dcc",
+            "id": "129d925824af078b",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "git-view",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 324.70001220703125
+    "width": 632.7000122070312
   },
   "right": {
     "id": "acf9b2ce38860566",
@@ -97,7 +91,6 @@
       {
         "id": "3d269e6f29009fbe",
         "type": "tabs",
-        "dimension": 52.54629629629628,
         "children": [
           {
             "id": "13cb2fd133d667d4",
@@ -105,7 +98,6 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "90 OBSIDIAN/Templates/obsidian.durable-note.template.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -120,7 +112,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "90 OBSIDIAN/Templates/obsidian.durable-note.template.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +130,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "90 OBSIDIAN/Templates/obsidian.durable-note.template.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -176,85 +166,68 @@
               "title": "All properties"
             }
           }
-        ]
-      },
-      {
-        "id": "aadd6cd9948ee03c",
-        "type": "tabs",
-        "dimension": 47.45370370370372,
-        "children": [
-          {
-            "id": "83ab2f2f39744b92",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
-            }
-          }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 414.2999267578125,
+    "width": 288.3369140625,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-kanban:Create new board": true,
       "command-palette:Open command palette": false,
       "canvas:Create new canvas": false,
       "templates:Insert template": true,
       "zk-prefixer:Create new unique note": false,
       "table-editor-obsidian:Advanced Tables Toolbar": true,
       "templater-obsidian:Templater": true,
-      "obsidian42-text-transporter:Text Transporter": false,
       "graph:Open graph view": false,
       "obsidian-git:Open Git source control": false,
       "bases:Create new base": false,
       "markdown-importer:Open format converter": false,
-      "project-manager:Project manager": false
+      "project-manager:Project manager": false,
+      "switcher:Open quick switcher": false
     }
   },
   "active": "129d925824af078b",
   "lastOpenFiles": [
-    "Projects",
+    "90 OBSIDIAN/Templates/data-model.contract.md",
+    "90 OBSIDIAN/Templates/acceptance-gates.contract.md",
+    "90 OBSIDIAN/obsidian.system.map.md",
+    "90 OBSIDIAN/Contracts/obsidian.contracts.property-schema.md",
+    "90 OBSIDIAN/Contracts/obsidian.contracts.naming-standard.md",
+    "90 OBSIDIAN/Contracts/obsidian.contracts.note-types.md",
+    "README.md",
+    "10 PROJECTS/10.PROJECTS.LOADEDVIBES/10.LOADEDVIBES.Project.Source-Document.md",
+    "10 PROJECTS/10.PROJECTS.LOADEDVIBES/10.LOADEDVIBES.Generator.One-Template.Contract.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Teams.Reference.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Procedures.Workflow.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Project.Map.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Mental-Model.Reference.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Dev-Cycles.Source-Document.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Cycles.Reference.md",
+    "70 TODO/New Project_tasks/maximal-template.golden-template-conformance.work-package.md",
+    "70 TODO/New Project_tasks/maximal-template.production-integrations.work-package.md",
+    "70 TODO/New Project_tasks/hipster-stack.ontology-presets.work-package.md",
+    "70 TODO/New Project_tasks/devnotes.obsidian-task-kanban-system.work-package.md",
+    "70 TODO/New Project_tasks/devnotes.execution.tasks.map.md",
+    "70 TODO/New Project_tasks/devnotes.deprecate-old-knowledge-system.work-package.md",
+    "70 TODO/New Project_tasks/codependentcoding.execution.program.map.md",
+    "70 TODO/New Project_tasks/codependentcoding.execution.program.kanban.md",
+    "70 TODO/70.TODO.CODEPENDENTCODING.1_tasks/codependentcoding.execution.tasks.map.md",
+    "70 TODO/70.TODO.CODEPENDENTCODING.1_tasks/codependentcoding.execution.kanban.md",
+    "70 TODO/70.TODO.CODEPENDENTCODING.1_tasks/codependentcoding.determinism-conformance-test.work-package.md",
+    "70 TODO/New Project_tasks",
+    "70 TODO/70.TODO.CODEPENDENTCODING.1_tasks",
     "DevNotes.base",
-    "90 OBSIDIAN/Templates/obsidian.durable-note.template.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/01-codependent-coding-webapp-architecture/codependentcoding.ambiguity-closure.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/01-codependent-coding-webapp-architecture/Codependent Coding Board.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/01-codependent-coding-webapp-architecture/codependentcoding.contradiction-reconciliation.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/01-codependent-coding-webapp-architecture/Untitled Kanban.md",
-    "00 ZETTELKASTEN/Obsidian Docs/Obsidian Kanban Plugin.md",
-    "Untitled Kanban.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/06-public-website-and-documentation/website-docs.visual-system-consistency.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/06-public-website-and-documentation/website-docs.site-product-topology-navigation.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/06-public-website-and-documentation/website-docs.public-docs-information-architecture.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/06-public-website-and-documentation/website-docs.public-content-verification.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/06-public-website-and-documentation/website-docs.maximal-template-library-docs.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/06-public-website-and-documentation/website-docs.loaded-vibes-public-docs.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/06-public-website-and-documentation/website-docs.landing-page-polish.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/06-public-website-and-documentation/website-docs.hipster-stack-procurement-generator-docs.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/06-public-website-and-documentation/website-docs.execution.tasks.map.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/06-public-website-and-documentation/website-docs.execution.kanban.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/06-public-website-and-documentation/website-docs.cultural-provenance-callouts.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/05-devnotes-knowledge-system/devnotes.zettelkasten-cleanup.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/05-devnotes-knowledge-system/devnotes.vault-links-tags-properties.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/05-devnotes-knowledge-system/devnotes.promote-newest-zettelkasten-sources.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/05-devnotes-knowledge-system/devnotes.provenance-preservation.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/05-devnotes-knowledge-system/devnotes.project-folder-realignment.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/05-devnotes-knowledge-system/devnotes.obsidian-task-kanban-system.work-package.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/05-devnotes-knowledge-system/devnotes.execution.tasks.map.md",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/06-public-website-and-documentation",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/05-devnotes-knowledge-system",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/04-loaded-vibes-codex-plugin",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/03-hipster-stack-and-constituter",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/02-the-maximal-template",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes/01-codependent-coding-webapp-architecture",
-    "00 ZETTELKASTEN/codependent-coding-execution-task-notes",
-    "codependent-coding-execution-task-notes/codependent-coding-execution-task-notes/05-devnotes-knowledge-system",
-    "codependent-coding-execution-task-notes/codependent-coding-execution-task-notes/01-codependent-coding-webapp-architecture",
+    "70 TODO",
+    "10 PROJECTS/10.PROJECTS.VOUCH",
+    "10 PROJECTS/10.PROJECTS.RATELTD",
+    "10 PROJECTS/10.PROJECTS.LOADEDVIBES",
+    "10 PROJECTS/10.PROJECTS.CTRLPLUS",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING",
+    "10 PROJECTS/10.PROJECTS.CHATGPT",
     "Pasted image 20260815231425.png",
     "Untitled 1.canvas",
     "Untitled.canvas",

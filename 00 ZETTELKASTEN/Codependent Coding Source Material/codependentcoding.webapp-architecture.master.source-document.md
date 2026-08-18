@@ -39,13 +39,13 @@ The **Codependent Coding™ WebApp Architecture** is the umbrella system for def
 
 It unifies five tightly related but non-interchangeable parts:
 
-| Part | Role |
-|---|---|
-| **The Codependent Coding™ WebApp Architecture** | The governing architecture and documentation system. It defines responsibilities, boundaries, invariants, composition, security posture, and implementation grammar. |
-| **The Hipster Stack™ Technology Stack** | The concrete technology stack plus deterministic constitution/generation system and CLI that turns a normalized application definition into a project. |
-| **The Maximal Template™ Domain Library** | The single runnable superset application containing every supported implementation that may be retained, removed, or transformed during generation. |
-| **Simples™ and Ontologies™** | The normalized building-block catalog and the nine default application-definition starting points used to configure the maximal template. |
-| **The Loaded Vibes™ Coding Agent Plugin** | The Codex-oriented architecture-enforcement and software-operations layer: governance, agents, skills, instructions, prompts, validators, smoke tests, and developer-environment assets. |
+| Part                                            | Role                                                                                                                                                                                     |
+| ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **The Codependent Coding™ WebApp Architecture** | The governing architecture and documentation system. It defines responsibilities, boundaries, invariants, composition, security posture, and implementation grammar.                     |
+| **The Hipster Stack™ Technology Stack**         | The concrete technology stack plus deterministic constitution/generation system and CLI that turns a normalized application definition into a project.                                   |
+| **The Maximal Template™ Domain Library**        | The single runnable superset application containing every supported implementation that may be retained, removed, or transformed during generation.                                      |
+| **Simples™ and Ontologies™**                    | The normalized building-block catalog and the nine default application-definition starting points used to configure the maximal template.                                                |
+| **The Loaded Vibes™ Coding Agent Plugin**       | The Codex-oriented architecture-enforcement and software-operations layer: governance, agents, skills, instructions, prompts, validators, smoke tests, and developer-environment assets. |
 
 The generated standalone application is the **Ordinary Object™**: a white-label project produced from a normalized and validated application definition. It contains no runtime dependency on the generator and no requirement to remain connected to a hosted control plane.
 
@@ -2639,38 +2639,38 @@ This single note is the master synthesis. The public docs may later split it int
 
 # 37. Glossary
 
-| Term | Canonical meaning |
-|---|---|
-| **Codependent Coding™ WebApp Architecture** | Umbrella architecture and documentation system. |
-| **Hipster Stack™ Technology Stack** | Concrete technology foundation plus constitution/generation engine, CLI, shared schema/resolver, and web workbench. |
-| **Maximal Template™ Domain Library** | One runnable superset application containing all supported generated material. |
-| **Simple™** | A normalized supported building block from the maximal domain library. |
-| **Ontology™** | One of nine default normalized starter application definitions/presets. |
-| **The Constituter™** | Stateless web configuration workbench over the shared Application Definition and resolver. |
-| **Application Definition** | Normalized statement of user intent before/through resolution. |
-| **Generation Plan** | Dependency-closed resolved authority for materialization and preview. |
-| **Ordinary Object™** | Generated standalone white-label application. |
-| **Loaded Vibes™** | Codex coding-agent plugin that operationalizes and enforces the architecture. |
-| **Route** | URL/HTTP boundary. |
-| **Feature** | Application capability orchestration boundary. |
-| **Client Feature** | Deliberate browser-only orchestration companion. |
-| **Block** | Pure reusable UI composition. |
-| **Primitive** | Lowest-level UI component. |
-| **Fetcher** | Read-only persisted application data operation. |
-| **Action** | Ordinary persisted CRUD mutation boundary. |
-| **Workflow** | Remaining domain/business logic after more precise categories are excluded. |
-| **Transaction Helper** | Atomic database persistence helper preserving multi-write invariants. |
-| **Select** | Precise Prisma projection. |
-| **DTO Mapper** | Persistence/domain → transport-safe mapping function. |
-| **Schema** | Runtime boundary validation contract. |
-| **Authentication** | Establishes verified identity/session. |
-| **Authorization** | Decides permitted operation/resource/context. |
-| **Tenant** | Architectural isolation concept. |
-| **Organization** | Canonical application-owned tenant entity in the default model. |
-| **Membership** | Contextual relationship connecting a User to an Organization and business authority. |
-| **RLS** | PostgreSQL row-level containment layer. |
-| **Integration** | Provider-specific external-service mechanics. |
-| **Webhook** | Provider HTTP request boundary and reconciliation lifecycle. |
+| Term                                        | Canonical meaning                                                                                                   |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Codependent Coding™ WebApp Architecture** | Umbrella architecture and documentation system.                                                                     |
+| **Hipster Stack™ Technology Stack**         | Concrete technology foundation plus constitution/generation engine, CLI, shared schema/resolver, and web workbench. |
+| **Maximal Template™ Domain Library**        | One runnable superset application containing all supported generated material.                                      |
+| **Simple™**                                 | A normalized supported building block from the maximal domain library.                                              |
+| **Ontology™**                               | One of nine default normalized starter application definitions/presets.                                             |
+| **The Constituter™**                        | Stateless web configuration workbench over the shared Application Definition and resolver.                          |
+| **Application Definition**                  | Normalized statement of user intent before/through resolution.                                                      |
+| **Generation Plan**                         | Dependency-closed resolved authority for materialization and preview.                                               |
+| **Ordinary Object™**                        | Generated standalone white-label application.                                                                       |
+| **Loaded Vibes™**                           | Codex coding-agent plugin that operationalizes and enforces the architecture.                                       |
+| **Route**                                   | URL/HTTP boundary.                                                                                                  |
+| **Feature**                                 | Application capability orchestration boundary.                                                                      |
+| **Client Feature**                          | Deliberate browser-only orchestration companion.                                                                    |
+| **Block**                                   | Pure reusable UI composition.                                                                                       |
+| **Primitive**                               | Lowest-level UI component.                                                                                          |
+| **Fetcher**                                 | Read-only persisted application data operation.                                                                     |
+| **Action**                                  | Ordinary persisted CRUD mutation boundary.                                                                          |
+| **Workflow**                                | Remaining domain/business logic after more precise categories are excluded.                                         |
+| **Transaction Helper**                      | Atomic database persistence helper preserving multi-write invariants.                                               |
+| **Select**                                  | Precise Prisma projection.                                                                                          |
+| **DTO Mapper**                              | Persistence/domain → transport-safe mapping function.                                                               |
+| **Schema**                                  | Runtime boundary validation contract.                                                                               |
+| **Authentication**                          | Establishes verified identity/session.                                                                              |
+| **Authorization**                           | Decides permitted operation/resource/context.                                                                       |
+| **Tenant**                                  | Architectural isolation concept.                                                                                    |
+| **Organization**                            | Canonical application-owned tenant entity in the default model.                                                     |
+| **Membership**                              | Contextual relationship connecting a User to an Organization and business authority.                                |
+| **RLS**                                     | PostgreSQL row-level containment layer.                                                                             |
+| **Integration**                             | Provider-specific external-service mechanics.                                                                       |
+| **Webhook**                                 | Provider HTTP request boundary and reconciliation lifecycle.                                                        |
 
 ---
 
@@ -2759,28 +2759,28 @@ inspect reality
 
 This master source intentionally corrects several conflicts and weak examples in earlier material.
 
-| Area | Resolution |
-|---|---|
-| Umbrella identity | Codependent Coding™ WebApp Architecture is the controlling umbrella. |
-| Generator | Hipster Stack™ owns technology/generation/CLI semantics. |
-| Template | Maximal Template™ is one supported superset application. |
-| Building blocks | `Simples™` is presentation/configuration vocabulary over supported library elements, not proof of independent package composability. |
-| Presets | Nine starter recipes are `Ontologies™`. |
-| Generated app | Generated transformed project is the `Ordinary Object™`. |
-| Agent product | Loaded Vibes™ is the Codex coding-agent plugin in the newest direction. |
-| Public routes | Static public content is `(public)`, not the marketing business domain. |
-| Static pages | Static pages may compose blocks directly; they do not require empty features. |
-| Forms | RHF form features are an explicit feature → UI primitive exception. |
-| Normal features | Normal features consume blocks rather than raw UI primitives. |
-| Clerk tenancy | Clerk establishes identity; application owns Organization/Membership/roles by default. |
-| Actions | Actions are ordinary CRUD mutation boundaries; do not turn them into generic services or provider buckets. |
-| Workflows | Remaining domain logic; no mandatory workflow layer for trivial CRUD. |
-| Transactions | DB-only atomicity; no provider/network I/O inside. |
-| SOLID | Applied through real architecture boundaries; no abstraction-for-abstraction's-sake. |
-| Clean Code | No arbitrary line-count rule; comments and error handling are boundary/context aware. |
-| Config | Web, CLI, and config file share one resolver; no decorative toggles. |
-| Visual system | Dark industrial technical system with restrained cyan/teal signal, not rainbow/cartoon neo-brutalism. |
-| Conformance | Executed evidence is required for “passed” claims. |
+| Area              | Resolution                                                                                                                           |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Umbrella identity | Codependent Coding™ WebApp Architecture is the controlling umbrella.                                                                 |
+| Generator         | Hipster Stack™ owns technology/generation/CLI semantics.                                                                             |
+| Template          | Maximal Template™ is one supported superset application.                                                                             |
+| Building blocks   | `Simples™` is presentation/configuration vocabulary over supported library elements, not proof of independent package composability. |
+| Presets           | Nine starter recipes are `Ontologies™`.                                                                                              |
+| Generated app     | Generated transformed project is the `Ordinary Object™`.                                                                             |
+| Agent product     | Loaded Vibes™ is the Codex coding-agent plugin in the newest direction.                                                              |
+| Public routes     | Static public content is `(public)`, not the marketing business domain.                                                              |
+| Static pages      | Static pages may compose blocks directly; they do not require empty features.                                                        |
+| Forms             | RHF form features are an explicit feature → UI primitive exception.                                                                  |
+| Normal features   | Normal features consume blocks rather than raw UI primitives.                                                                        |
+| Clerk tenancy     | Clerk establishes identity; application owns Organization/Membership/roles by default.                                               |
+| Actions           | Actions are ordinary CRUD mutation boundaries; do not turn them into generic services or provider buckets.                           |
+| Workflows         | Remaining domain logic; no mandatory workflow layer for trivial CRUD.                                                                |
+| Transactions      | DB-only atomicity; no provider/network I/O inside.                                                                                   |
+| SOLID             | Applied through real architecture boundaries; no abstraction-for-abstraction's-sake.                                                 |
+| Clean Code        | No arbitrary line-count rule; comments and error handling are boundary/context aware.                                                |
+| Config            | Web, CLI, and config file share one resolver; no decorative toggles.                                                                 |
+| Visual system     | Dark industrial technical system with restrained cyan/teal signal, not rainbow/cartoon neo-brutalism.                                |
+| Conformance       | Executed evidence is required for “passed” claims.                                                                                   |
 
 ---
 
