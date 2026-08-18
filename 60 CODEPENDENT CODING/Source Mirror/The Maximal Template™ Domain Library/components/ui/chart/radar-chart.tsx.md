@@ -1,0 +1,191 @@
+---
+title: 'The Maximal Template™ Domain Library\components\ui\chart\radar-chart.tsx'
+type: source-document
+scope: project
+project: 'Codependent Coding'
+domain: source
+artifact: 'The Maximal Template™ Domain Library\components\ui\chart\radar-chart.tsx'
+kind: source-document
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.components.ui.chart.radar-chart.tsx'
+status: active
+authority: reference
+parent:
+depends_on: []
+supersedes: []
+tags:
+  - projects/codependent-coding
+  - source/mirror
+  - source/the-maximal-template-domain-library
+created: 2026-08-18
+updated: 2026-08-18
+source_path: 'The Maximal Template™ Domain Library\components\ui\chart\radar-chart.tsx'
+source_file: 'radar-chart.tsx'
+source_sha256: '4cb47b245f5c24e6491dea1d588a96df1c2e98fb27ad40b5616115e50c1f167a'
+generated: true
+---
+
+# `radar-chart.tsx`
+
+> [!info] Generated source mirror
+> Original path: `The Maximal Template™ Domain Library\components\ui\chart\radar-chart.tsx`
+> SHA-256: `4cb47b245f5c24e6491dea1d588a96df1c2e98fb27ad40b5616115e50c1f167a`
+
+```tsx
+import * as React from "react";
+import { cn } from "@/lib/utils";
+import {
+  Radar,
+  RadarChart as RechartsRadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+} from "recharts";
+import { ChartContainer } from "./container";
+import { ChartEmpty } from "./empty";
+import { ChartTooltip, ChartTooltipContent } from "./tooltip";
+import { ChartLegend, ChartLegendContent } from "./legend";
+import type { ChartConfig } from "./types";
+
+export interface RadarChartData {
+  subject: string;
+  [key: string]: number | string;
+}
+
+export interface RadarChartProps extends React.HTMLAttributes<HTMLDivElement> {
+  data: RadarChartData[];
+  dataKeys: string[];
+  config: ChartConfig;
+  variant?: "default" | "filled" | "outlined";
+  showLegend?: boolean;
+  showGrid?: boolean;
+  showTooltip?: boolean;
+  fillOpacity?: number;
+  animated?: boolean;
+  emptyState?: React.ReactNode;
+}
+
+const RadarChartComponent = React.forwardRef<HTMLDivElement, RadarChartProps>(
+  (
+    {
+      data,
+      dataKeys,
+      config,
+      variant = "default",
+      showLegend = true,
+      showGrid = true,
+      showTooltip = true,
+      fillOpacity = 0.6,
+      animated = true,
+      emptyState,
+      className,
+      ...props
+    },
+    ref,
+  ) => {
+    if (!data || data.length === 0 || !dataKeys || dataKeys.length === 0) {
+      return (
+        <ChartEmpty
+          ref={ref}
+          message={emptyState}
+          className={className}
+          {...props}
+        />
+      );
+    }
+
+    const getRadarProps = (index: number, key: string) => {
+      const baseColor =
+        config[key]?.color || `hsl(var(--chart-${(index % 5) + 1}))`;
+
+      switch (variant) {
+        case "outlined":
+          return {
+            fill: "transparent",
+            fillOpacity: 0,
+            stroke: baseColor,
+            strokeWidth: 3,
+          };
+        case "filled":
+          return {
+            fill: baseColor,
+            fillOpacity: fillOpacity,
+            stroke: "hsl(var(--foreground))",
+            strokeWidth: 3,
+          };
+        default:
+          return {
+            fill: baseColor,
+            fillOpacity: fillOpacity,
+            stroke: "hsl(var(--foreground))",
+            strokeWidth: 3,
+          };
+      }
+    };
+
+    return (
+      <ChartContainer
+        ref={ref}
+        config={config}
+        className={cn("aspect-square max-h-[300px]", className)}
+        {...props}
+      >
+        <RechartsRadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+          {showGrid && (
+            <PolarGrid
+              stroke="hsl(var(--foreground))"
+              strokeWidth={2}
+              strokeDasharray="none"
+            />
+          )}
+          <PolarAngleAxis
+            dataKey="subject"
+            tick={{
+              fill: "hsl(var(--foreground))",
+              fontWeight: 700,
+              fontSize: 12,
+            }}
+            stroke="hsl(var(--foreground))"
+            strokeWidth={2}
+          />
+          <PolarRadiusAxis
+            angle={90}
+            domain={[0, "dataMax"]}
+            tick={{
+              fill: "hsl(var(--muted-foreground))",
+              fontSize: 10,
+            }}
+            axisLine={false}
+          />
+          {showTooltip && (
+            <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+          )}
+          {dataKeys.map((key, index) => (
+            <Radar
+              key={key}
+              name={
+                typeof config[key]?.label === "string" ? config[key].label : key
+              }
+              dataKey={key}
+              {...getRadarProps(index, key)}
+              isAnimationActive={animated}
+              animationDuration={400}
+              dot={{
+                r: 4,
+                fill:
+                  config[key]?.color || `hsl(var(--chart-${(index % 5) + 1}))`,
+                stroke: "hsl(var(--foreground))",
+                strokeWidth: 2,
+              }}
+            />
+          ))}
+          {showLegend && <ChartLegend content={<ChartLegendContent />} />}
+        </RechartsRadarChart>
+      </ChartContainer>
+    );
+  },
+);
+RadarChartComponent.displayName = "RadarChart";
+
+export { RadarChartComponent as RadarChart };
+
+```
