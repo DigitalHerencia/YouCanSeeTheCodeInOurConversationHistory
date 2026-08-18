@@ -18,7 +18,7 @@ tags:
   - obsidian/note-types
   - status/active
 created:
-updated: 2026-08-08
+updated: 2026-08-18
 ---
 # Obsidian Contract Note Types
 
@@ -94,6 +94,24 @@ A repeatable list of verification or completion items.
 
 A structured definition of properties, fields, allowed values, or document shape.
 
+## Simple
+
+A first-class Codependent Coding knowledge record representing exactly one real source file.
+
+A Simple note is not merely prose documentation about a file. It is the knowledge representation of that file and may contain:
+
+- the canonical Codependent Coding architectural contract;
+- source identity and canonical path;
+- direct relationships to other Simples;
+- required, permitted, conditional, and prohibited composition rules;
+- derived backlinks and Dataview analysis;
+- canonicalization, demo, hardening, and generation-readiness state;
+- the public-demo golden prototype;
+- the hardened golden prototype;
+- validation, test, security, and provenance evidence.
+
+The architectural class of the represented file is recorded in `simple_type` rather than by inventing a new vault note type for every code responsibility.
+
 ## Rule
 
 Do not force every note to become a contract.
@@ -108,4 +126,5 @@ Use:
 - execution notes for active work
 - captures for unfinished material
 - templates for reusable structure
+- simples for one-file Codependent Coding knowledge records
 - legacy notes for preserved non-authoritative material
