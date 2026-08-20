@@ -6,21 +6,36 @@ Its purpose is simple:
 
 > [!TIP]
 > Bring useful material into the DevNotes ChatGPT project, organize it according to a consistent system, save it to the connected GitHub repository, and synchronize it to the local Obsidian vault.
-> 
 
 ## Canonical engineering knowledge
 
-`DigitalHerencia/DevNotes` is the permanent canonical repository for the **Codependent Coding™ Knowledge System** and its reusable Loaded Vibes™ WebApp Architecture / Hipster Stack™ engineering doctrine.
+`DigitalHerencia/DevNotes` is the permanent canonical repository for the **Codependent Coding™ Knowledge System** and the active **Codependent Coding™ WebApp Architecture** project material.
 
-The hierarchy is:
+The current ownership model is:
 
 ```text
-Codependent Coding™ Knowledge System
-  → defines and governs Loaded Vibes™ WebApp Architecture
-  → organizes and structures Hipster Stack™ TechStack
+60 CODEPENDENT CODING
+  → canonical flat Codependent Coding™ knowledge-system corpus
+
+10 PROJECTS/10.PROJECTS.CODEPENDENTCODING
+  → active Codependent Coding™ project workspace
+    → WebApp Architecture
+    → Simples™
+    → Source Mirror
+    → project execution/context
 ```
 
-The complete Obsidian-native Codependent Coding corpus is indexed by `60 CODEPENDENT CODING/codependentcoding.manifest.map.md`. The existing `40 TECH STACK/codependentcoding.knowledge-system.map.md` remains the reusable technical integration map while the two knowledge sets are deliberately reconciled.
+Within the active architecture, the conceptual hierarchy is:
+
+```text
+The Codependent Coding™ WebApp Architecture
+  → governs The Hipster Stack™ Technology Stack
+  → governs The Maximal Template™ Domain Library
+  → defines Simples™ and Ontologies™
+  → integrates The Loaded Vibes™ Codex Plugin
+```
+
+The canonical flat knowledge-system corpus remains indexed by `60 CODEPENDENT CODING/60.CODEPENDENTCODING.Manifest.Map.md`. Active project architecture, Simples, and source-mirror material belong under `10 PROJECTS/10.PROJECTS.CODEPENDENTCODING` and should not be moved back into `60 CODEPENDENT CODING` merely to match older repository layouts.
 
 ## How DevNotes Works
 
@@ -68,9 +83,10 @@ DevNotes contains:
 10 PROJECTS
 20 DOCUMENTATION
 30 DEEP RESEARCH
-40 TECH STACK
+40 ARCHIVE
 50 REGRETS, CIGARETTES, & NEURAL NETS
 60 CODEPENDENT CODING
+70 TODO
 90 OBSIDIAN
 _OPS
 .agent-logs
@@ -86,7 +102,9 @@ This includes conversation extracts, ideas, fragments, and notes that have not y
 
 Knowledge owned by a specific project.
 
-This includes product definitions, contracts, architecture, features, execution notes, research, agent instructions, and legal material.
+This includes product definitions, contracts, architecture, features, execution notes, research, agent instructions, legal material, project-specific source mirrors, and project-owned operational knowledge.
+
+`10 PROJECTS/10.PROJECTS.CODEPENDENTCODING` is the active Codependent Coding project workspace. Its current architecture, Simples, and source mirror belong here.
 
 ### `20 DOCUMENTATION`
 
@@ -98,15 +116,21 @@ Long-form research, investigations, comparisons, and analytical reports.
 
 ### `40 ARCHIVE`
 
-Deprecated technical knowledge about tools, frameworks, libraries, services, implementation patterns, and existing Knowledge System integration/reference artifacts.
+Preserved deprecated, superseded, or historical material. Notes stored here must not silently retain active source-of-truth authority; if archived material is still useful, link to it as historical/reference evidence.
 
-### `50 CIGARETTES, REGRETS, & NEURAL NETS`
+### `50 REGRETS, CIGARETTES, & NEURAL NETS`
 
 Essays, personal writing, creative work, and authored commentary.
 
 ### `60 CODEPENDENT CODING`
 
-The complete Obsidian-native Codependent Coding™ Knowledge System corpus migrated from `DigitalHerencia/CodependentCoding`, including doctrine, architecture, contracts, patterns, governance, provenance, and maps.
+The canonical flat Obsidian-native Codependent Coding™ Knowledge System corpus migrated from `DigitalHerencia/CodependentCoding`, including doctrine, architecture, contracts, patterns, governance, provenance, and maps.
+
+This folder is a durable knowledge corpus, not the active project workspace or source mirror.
+
+### `70 TODO`
+
+Cross-project and project-linked task/work-package material that has not yet been completed or retired.
 
 ### `90 OBSIDIAN`
 
@@ -182,6 +206,7 @@ work-package
 handoff
 checklist
 schema
+simple
 ```
 
 Not every note is a contract.
@@ -244,7 +269,7 @@ archived
 legacy
 ```
 
-This prevents raw captures, research, and old notes from being mistaken for active source-of-truth material.
+This prevents raw captures, research, archived material, and old notes from being mistaken for active source-of-truth material.
 
 ## Capture and Promotion
 
@@ -264,7 +289,7 @@ The connected GitHub repository is:
 DigitalHerencia/DevNotes
 ```
 
-It is also the canonical repository for the Codependent Coding™ Knowledge System and reusable engineering doctrine. The complete imported corpus is indexed by `60 CODEPENDENT CODING/codependentcoding.manifest.map.md`; the Tech Stack integration map remains `40 TECH STACK/codependentcoding.knowledge-system.map.md`.
+It is the canonical repository for the Codependent Coding™ knowledge corpus and the active Codependent Coding project knowledge. The flat imported corpus is indexed by `60 CODEPENDENT CODING/60.CODEPENDENTCODING.Manifest.Map.md`; current project architecture, Simples, and source-mirror material live under `10 PROJECTS/10.PROJECTS.CODEPENDENTCODING`.
 
 ChatGPT may create, update, rename, move, or delete notes in that repository when instructed by the user.
 
@@ -279,6 +304,9 @@ DevNotes follows these principles:
 - keep raw capture separate from durable knowledge
 - keep source-of-truth material clearly identified
 - preserve internal relationships with wikilinks
+- keep project-owned operational/source material with its project
+- preserve the flat `60 CODEPENDENT CODING` knowledge corpus unless explicitly restructuring it
+- treat `40 ARCHIVE` as non-authoritative historical storage
 - avoid unnecessary duplication
 - avoid inventing new systems when the existing contracts already apply
 - make the smallest change that satisfies the task
