@@ -20,10 +20,10 @@ tags:
   - hipster-stack
   - maximal-template
   - simples
-  - constituter
+  - anthimeria
   - status/active
 created: 2026-08-15
-updated: 2026-08-15
+updated: 2026-08-20
 ---
 
 # Canonical Workflow Constitution Correction
@@ -31,7 +31,7 @@ updated: 2026-08-15
 > **Workflows do not merely contain the business logic left over after other responsibilities have been classified. A workflow is the named constitution through which existing server operations and helpers are arranged into reusable application logic.**
 
 **Status:** Canonical correction  
-**Applies to:** The Codependent Coding™ WebApp Architecture, The Hipster Stack™ Technology Stack, The Maximal Template™ Domain Library, Simples™, Ontologies™, The Constituter™, Ordinary Objects™, and Loaded Vibes™ architecture enforcement.
+**Applies to:** The Codependent Coding™ WebApp Architecture, The Hipster Stack™ Technology Stack, The Maximal Template™ Domain Library, Simples™, Ontologies™, The Anthimeria™ Workbench, The Virgule™ Application Definition, The Arrangement™ Generated Artifact, and Loaded Vibes™ architecture enforcement.
 
 ---
 
@@ -51,7 +51,7 @@ The corrected architecture gives workflows a positive responsibility:
 
 > **A workflow is a reusable constitution of application logic formed by arranging existing server operations and helpers into a coherent behavioral capability.**
 
-This correction supersedes prior definitions of workflows as merely “remaining domain logic” or a residual business-logic category. The existing master architecture currently contains that older residual definition and should be updated accordingly.
+This correction supersedes prior definitions of workflows as merely “remaining domain logic” or a residual business-logic category. The master architecture has since incorporated this corrected definition; quoted older classifiers in this note remain as supersession evidence.
 
 ---
 
@@ -517,13 +517,13 @@ owned generator artifacts
 configuration properties
 ```
 
-The workflow can therefore participate in the same normalized configuration model used by The Constituter™ and Hipster Stack™ generator.
+The workflow can therefore participate in the same normalized Virgule configuration model used by The Anthimeria™ Workbench and Hipster Stack™ generator.
 
 ---
 
-# 13. Constituter Implications
+# 13. Anthimeria Implications
 
-The corrected workflow definition provides the missing configurable abstraction for the logic side of The Constituter™.
+The corrected workflow definition provides the missing configurable abstraction for the logic side of The Anthimeria™ Workbench.
 
 Presentation can already be configured through normalized relationships such as:
 
@@ -549,7 +549,7 @@ workflow
 server operations + helpers
 ```
 
-This allows The Constituter to expose meaningful behavioral choices rather than arbitrary source-file toggles.
+This allows Anthimeria to expose meaningful behavioral choices rather than arbitrary source-file toggles.
 
 For example, a user should not ordinarily configure:
 
@@ -650,7 +650,7 @@ The following rules are normative.
 12. **Network/provider operations remain outside database transactions.**
 13. **A workflow is created only when a meaningful reusable behavioral constitution exists.**
 14. **Trivial CRUD does not require a ceremonial workflow.**
-15. **Workflow dependency closure must be machine-resolvable when the workflow is exposed through The Constituter or generator.**
+15. **Workflow dependency closure must be machine-resolvable when the workflow is exposed through Anthimeria or the generator.**
 16. **Removing a workflow does not imply removing a constituent that remains required elsewhere.**
 17. **A selectable workflow must correspond to a real supported implementation in The Maximal Template.**
 18. **Features may use workflows as reusable units of application logic.**
@@ -816,7 +816,7 @@ A workflow **is**:
 - an arrangement of existing server operations and helpers;
 - dependency-resolvable;
 - selectable when supported by the Maximal Template;
-- configurable through The Constituter where appropriate;
+- configurable through Anthimeria where appropriate;
 - reusable by features;
 - removable without implying that its still-required constituents cease to exist.
 

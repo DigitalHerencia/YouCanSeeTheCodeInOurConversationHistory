@@ -20,7 +20,7 @@ tags:
   - architecture/source-viewer
   - status/review
 created: 2026-08-18
-updated: 2026-08-19
+updated: 2026-08-20
 ---
 
 # Simple Workbench Contract
@@ -46,9 +46,9 @@ Keep the useful page shell/visual language. Replace the static content model.
 
 The catch-all Docs route is already thin: it maps route slug → documentation source → renderer. Preserve the idea that the route is an adapter, not the knowledge owner.
 
-### Current Constituter
+### Current implementation under the superseded Constituter name
 
-The existing Constituter already proves a useful workspace pattern: controls on one side, resolved/normalized output on the other. Reuse the interaction grammar where it helps; do not make the per-Simple workbench a second full application configurator.
+The existing implementation still named Constituter already proves a useful workspace pattern: controls on one side, resolved/normalized output on the other. Reuse the interaction grammar where it helps; do not make the per-Simple workbench a second full Anthimeria application configurator.
 
 ### Codebase Context Utility reuse boundary
 
@@ -224,7 +224,7 @@ precise Select
 DTO Mapper
 ```
 
-Therefore the `[Public Showroom | Hardened Template]` control is a real **source-view consequence**. It is not a Constituter backend-security toggle.
+Therefore the `[Public Showroom | Hardened Template]` control is a real **source-view consequence**. It is not an Anthimeria backend-security toggle.
 
 ### Hard rule
 
@@ -337,7 +337,7 @@ A Monaco wrapper is a UI/infrastructure primitive. It does not own Simple domain
 
 ## 13. Non-Goals
 
-- Do not build the whole Constituter now.
+- Do not build the whole Anthimeria Workbench now.
 - Do not generate application ZIPs now.
 - Do not convert the entire Simple catalog before the Database slice proves the model.
 - Do not rebuild Codebase Context Utility feature-for-feature.
@@ -351,7 +351,7 @@ A Monaco wrapper is a UI/infrastructure primitive. It does not own Simple domain
 - [[libraries.ts|current library registry]]
 - [[library-detail.tsx|current library detail]]
 - [[codependentcoding.source.the-hipster-stack-technology-stack.apps.web.app.docs.-.slug-.page.tsx|current Docs route]]
-- [[constituter.tsx|current Constituter]]
+- [[constituter.tsx|current implementation under the superseded Constituter source name]]
 - [[codependentcoding.simples.database.map]]
 - [[codependentcoding.fetchers.projects.simple]]
 

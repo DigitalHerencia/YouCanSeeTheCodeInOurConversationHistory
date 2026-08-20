@@ -72,7 +72,7 @@ Ontologically Esoteric Mereologically Simple
 - **Background:** Transparent
 - **Case:** All caps
 
-### The Constituter™
+### The Anthimeria™ Workbench
 
 - **Font:** Copperplate Gothic Bold
 - **Color:** White or `#2f7a8d`
@@ -122,7 +122,7 @@ A Data Cartel
 
 ## Page Background Images
 
-### The Constituter™ and Simples™
+### The Anthimeria™ Workbench and Simples™
 
 Use:
 
@@ -184,9 +184,9 @@ We've already checked.
 
 Esoteric by design.
 
-**No Ordinary Objects™**
+**The Arrangement™ Generated Artifact**
 
-## The Constituter™ Copy
+## The Anthimeria™ Workbench Copy
 
 > No, Simples™ cannot be composed "Hipster-Wise".
 

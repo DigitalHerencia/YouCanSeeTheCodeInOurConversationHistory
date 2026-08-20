@@ -21,7 +21,7 @@ tags:
   - database/neon
   - status/review
 created: 2026-08-18
-updated: 2026-08-19
+updated: 2026-08-20
 simple_type: database
 layer: database-runtime
 source_path: lib/db/client.ts
@@ -125,7 +125,7 @@ The database client is the server-only Prisma runtime boundary backed by the Neo
 
 ### Generation Disposition
 
-**Invariant.** Backend database runtime wiring is derived/fixed architecture, not a Constituter checkbox.
+**Invariant.** Backend database runtime wiring is derived/fixed architecture, not an Anthimeria checkbox.
 
 ## Implementation
 

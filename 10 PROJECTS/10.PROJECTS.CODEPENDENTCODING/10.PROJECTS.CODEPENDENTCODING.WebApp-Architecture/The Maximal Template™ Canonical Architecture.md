@@ -19,7 +19,7 @@ At the top level:
   - `auth/` — Clerk authentication and server-side identity/session helpers.
   - `authz/` — application-owned RBAC/ABAC roles, permissions, resources, and policies.
   - `integrations/` — provider-specific external-service code, organized by provider; Clerk, Neon, and Prisma are intentionally excluded because they belong to `auth`, `db`, and Prisma's own root lifecycle respectively.
-  - `workflows/` — remaining domain/business logic that is not a read, CRUD write, DB helper, auth/authz concern, integration, webhook, constant, or utility. Domains stay shallow and flat.
+  - `workflows/` — named reusable orchestration boundaries that constitute application logic from existing server operations and helpers. Constituents retain their own responsibilities; domains stay shallow and flat.
   - `cache/`, `constants/`, and `utils/` contain exactly those reusable helper categories.
 - `prisma/` owns Prisma's native schema, migrations, and seed lifecycle.
 - `generated/` contains generated Prisma artifacts when configured separately.
@@ -125,7 +125,7 @@ Clerk/authentication?              -> lib/auth/
 RBAC/ABAC/authorization?           -> lib/authz/
 Provider-specific external code?   -> lib/integrations/{provider}/
 Webhook HTTP handler?              -> app/api/{provider}/.../route.ts
-Remaining domain logic?            -> lib/workflows/{domain}/
+Reusable application-logic orchestration? -> lib/workflows/{domain}/
 Constant?                          -> lib/constants/
 Utility?                           -> lib/utils/
 Application orchestration?         -> features/

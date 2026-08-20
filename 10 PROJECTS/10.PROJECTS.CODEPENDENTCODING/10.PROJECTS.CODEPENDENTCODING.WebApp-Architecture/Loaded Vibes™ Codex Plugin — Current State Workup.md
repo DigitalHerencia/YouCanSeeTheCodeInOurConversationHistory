@@ -582,7 +582,7 @@ repository inspection
 
 Those are almost exactly the capability categories your _current_ canonical architecture says Loaded Vibes should eventually provide: context collection, planning, scoped execution, code/architecture/security review, validation selection, PR/commit preparation, handoff, mechanical architecture validators, smoke tests, and developer-environment assets.
 
-And your newer project definition has already clarified that the plugin should be a **Codex plugin purpose-built for an Ordinary Object™, carrying governance, agents, skills, instructions, prompts, validation scripts, smoke tests, and developer-environment assets** rather than reviving the old Spec-Kit-ish development product.
+And the current project definition has clarified that the plugin should be a **Codex plugin purpose-built for The Arrangement™ Generated Artifact, carrying governance, agents, skills, instructions, prompts, validation scripts, smoke tests, and developer-environment assets** rather than reviving the old Spec-Kit-ish development product.
 
 That's the big unlock.
 

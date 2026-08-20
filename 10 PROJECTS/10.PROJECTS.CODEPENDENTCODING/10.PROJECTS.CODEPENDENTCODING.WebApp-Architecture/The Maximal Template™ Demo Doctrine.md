@@ -936,7 +936,9 @@ RLS
 
 # 23. Workflows
 
-`lib/workflows/` owns remaining business/domain logic only after more specific categories have been excluded.
+`lib/workflows/` owns named reusable orchestration boundaries that constitute application logic by arranging existing server operations and helpers according to meaningful behavioral rules, sequencing, conditions, dependencies, and invariants.
+
+Workflow constituents retain their original ownership: fetchers remain fetchers, actions remain actions, transactions remain transactions, authorization remains authorization, and provider mechanics remain integration-owned. Workflows own the behavioral arrangement, do not become a generic service layer, and are not required for trivial CRUD.
 
 A workflow is **not**:
 
@@ -1286,7 +1288,7 @@ Provider-specific external behavior?
 Webhook HTTP lifecycle?
     → app/api/{provider}/.../route.ts
 
-Remaining business/domain logic?
+Reusable orchestration of application logic?
     → lib/workflows/{domain}/
 
 Cache concern?
@@ -1404,7 +1406,7 @@ If it is provider-specific, it belongs to that integration.
 
 If it handles a webhook request, it belongs in the API route.
 
-If it contains remaining domain logic, it is a workflow.
+If it arranges existing server operations and helpers into named reusable application behavior, it is a workflow.
 
 If it only presents UI, it is a primitive or block.
 

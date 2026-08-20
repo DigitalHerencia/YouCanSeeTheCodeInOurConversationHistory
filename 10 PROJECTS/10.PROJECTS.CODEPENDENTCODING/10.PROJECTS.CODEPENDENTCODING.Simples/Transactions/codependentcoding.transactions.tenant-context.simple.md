@@ -20,7 +20,7 @@ tags:
   - security/rls
   - status/review
 created: 2026-08-18
-updated: 2026-08-19
+updated: 2026-08-20
 simple_type: transaction
 layer: tenant-context-resolution
 source_path: lib/db/transactions/tenant-context.tx.ts
@@ -117,7 +117,7 @@ Clerk answers **who the user is**. The application database answers **which orga
 
 ### Generation Disposition
 
-**Invariant foundation with a replaceable membership-selection policy.** The Constituter does not expose tenant isolation as a checkbox.
+**Invariant foundation with a replaceable membership-selection policy.** Anthimeria does not expose tenant isolation as a checkbox.
 
 ## Implementation
 

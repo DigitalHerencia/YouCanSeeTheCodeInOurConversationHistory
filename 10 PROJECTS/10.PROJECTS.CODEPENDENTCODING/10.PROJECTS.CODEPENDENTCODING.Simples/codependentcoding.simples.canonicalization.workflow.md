@@ -20,7 +20,7 @@ tags:
   - knowledge/reconciliation
   - status/review
 created: 2026-08-18
-updated: 2026-08-18
+updated: 2026-08-20
 ---
 # Simple Canonicalization Workflow
 
@@ -155,7 +155,7 @@ prohibited
 architectural nonsense / invalid composition
 ```
 
-This is the knowledge layer that can later become architecture validation and Constituter dependency rules.
+This is the knowledge layer that can later become architecture validation and Anthimeria dependency rules.
 
 ## 7. Establish the Public Demo Golden Prototype
 

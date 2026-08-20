@@ -20,7 +20,7 @@ tags:
   - loaded-vibes
   - status/active
 created: 2026-08-15
-updated: 2026-08-15
+updated: 2026-08-20
 ---
 
 # The Codependent Coding™ WebApp Architecture
@@ -43,18 +43,18 @@ It unifies five tightly related but non-interchangeable parts:
 | Part                                            | Role                                                                                                                                                                                     |
 | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **The Codependent Coding™ WebApp Architecture** | The governing architecture and documentation system. It defines responsibilities, boundaries, invariants, composition, security posture, and implementation grammar.                     |
-| **The Hipster Stack™ Technology Stack**         | The concrete technology stack plus deterministic constitution/generation system and CLI that turns a normalized application definition into a project.                                   |
+| **The Hipster Stack™ Technology Stack**         | The concrete technology stack plus deterministic constitution/generation system and CLI that consumes a dependency-closed Virgule against The Maximal Template.                          |
 | **The Maximal Template™ Domain Library**        | The single runnable superset application containing every supported implementation that may be retained, removed, or transformed during generation.                                      |
 | **Simples™ and Ontologies™**                    | The normalized building-block catalog and the nine default application-definition starting points used to configure the maximal template.                                                |
 | **The Loaded Vibes™ Codex Plugin**              | The Codex-oriented architecture-enforcement and software-operations layer: governance, agents, skills, instructions, prompts, validators, smoke tests, and developer-environment assets. |
 
-The generated standalone application is the **Ordinary Object™**: a white-label project produced from a normalized and validated application definition. It contains no runtime dependency on the generator and no requirement to remain connected to a hosted control plane.
+The generated standalone application is **The Arrangement™ Generated Artifact**: a white-label project produced when The Hipster Stack consumes a dependency-closed **Virgule™ Application Definition** against The Maximal Template. It contains no runtime dependency on the generator and no requirement to remain connected to a hosted control plane.
 
 The architecture is deliberately opinionated. It does not ask each project, developer, or coding agent to rediscover where reads, writes, workflows, policies, provider code, transactions, forms, presentation, routes, or webhooks belong. Responsibility is classified by **what code does**.
 
 ### Governing sentence
 
-> **Routes own URL and HTTP boundaries. Features orchestrate application capabilities. Components render. Fetchers read persisted data. Actions own ordinary CRUD mutation boundaries. Schemas validate runtime input. Workflows own remaining domain logic. Transactions preserve atomic database invariants. Authentication establishes identity. Authorization decides access. Integrations own provider mechanics. Webhooks own provider HTTP request lifecycles.**
+> **Routes own URL and HTTP boundaries. Features orchestrate application capabilities. Components render. Fetchers read persisted data. Actions own ordinary CRUD mutation boundaries. Schemas validate runtime input. Workflows constitute reusable application logic from server operations and helpers. Transactions preserve atomic database invariants. Authentication establishes identity. Authorization decides access. Integrations own provider mechanics. Webhooks own provider HTTP request lifecycles.**
 
 ### Governing structural rule
 
@@ -83,8 +83,9 @@ This document adopts the newest explicit product direction:
 - **The Maximal Template™ Domain Library** is the single superset implementation source.
 - **Simples™** are the normalized supported building blocks exposed from the maximal template.
 - **Ontologies™** are the nine default normalized SaaS starting specifications.
-- **The Constituter™** is the web configuration workbench.
-- **Ordinary Object™** is the generated standalone application.
+- **The Anthimeria™ Workbench** is the web configuration workbench.
+- **The Virgule™ Application Definition** is the portable recipe configured in Anthimeria and progressed through draft, normalized, validated, and dependency-closed states.
+- **The Arrangement™ Generated Artifact** is the generated standalone application.
 - **Loaded Vibes™** is the architecture-aware Codex coding-agent plugin.
 
 Older documents that assign these names different product roles are historical implementation evidence only where they conflict with this direction.
@@ -123,9 +124,9 @@ flowchart TD
     C["The Maximal Template™ Domain Library<br/>one runnable superset application"]
     D["Ontologies™<br/>9 starter application definitions"]
     E["Simples™<br/>normalized supported building blocks"]
-    F["The Constituter™<br/>stateless configuration workbench"]
-    G["Generation Plan<br/>normalized + validated + dependency-closed"]
-    H["Ordinary Object™<br/>generated standalone white-label application"]
+    F["The Anthimeria™ Workbench<br/>stateless configuration workbench"]
+    G["The Virgule™ Application Definition<br/>draft → normalized → validated → dependency-closed"]
+    H["The Arrangement™ Generated Artifact<br/>standalone white-label application"]
     I["Loaded Vibes™ Coding Agent Plugin<br/>Codex governance + enforcement + execution support"]
 
     A --> B
@@ -135,9 +136,9 @@ flowchart TD
     D --> F
     E --> F
     F --> G
-    B --> G
-    C --> G
-    G --> H
+    G --> B
+    C --> B
+    B --> H
     I --> H
 ```
 
@@ -177,7 +178,7 @@ The following invariants are architecture-level defaults.
 4. **Pure presentation owns no persisted reads/writes, authorization, provider SDKs, or business workflows.**
 5. **All persisted application reads live in fetchers.**
 6. **Ordinary persisted CRUD writes live behind actions.**
-7. **Remaining domain/business logic lives in workflows only after more precise categories are excluded.**
+7. **Workflows constitute named reusable application logic by arranging existing server operations and helpers; their constituents retain their original responsibilities.**
 8. **Database selects, DTO mappers, and atomic transaction helpers live under the DB responsibility.**
 9. **Authentication and authorization remain separate.**
 10. **Application tenancy is application-owned unless explicitly changed by a later accepted decision.**
@@ -256,7 +257,7 @@ Two deliberate exceptions are defined later:
 | Authentication | `lib/auth/` | Clerk and app-facing identity/session helpers. |
 | Authorization | `lib/authz/` | RBAC, ABAC, resource policy, tenant/resource decisions. |
 | Provider behavior | `lib/integrations/{provider}/` | Provider-specific client/mechanics/adapters. |
-| Remaining domain logic | `lib/workflows/{domain}/` | Domain logic that is not better classified elsewhere. |
+| Reusable application-logic orchestration | `lib/workflows/{domain}/` | Constitute named behavior from existing server operations and helpers; do not wrap trivial CRUD ceremonially. |
 | Cache | `lib/cache/` | Tags, lifetimes, invalidation and related infrastructure. |
 | Constant | `lib/constants/` | Stable shared constants. |
 | Generic utility | `lib/utils/` | True generic utility only. |
@@ -545,7 +546,9 @@ Provider-specific mechanics do not become actions merely because a button initia
 
 ## 8.2 Workflow contract
 
-`lib/workflows/{domain}/` owns remaining domain logic after more precise categories have been excluded.
+`lib/workflows/{domain}/` owns named reusable orchestration boundaries that constitute application logic by arranging existing server operations and helpers according to meaningful behavioral rules, sequencing, conditions, dependencies, and invariants.
+
+The capabilities used by a workflow retain their architectural identity and ownership: a fetcher remains a fetcher, an action remains an action, a transaction remains a transaction, authorization remains authorization, and provider mechanics remain integration-owned. A workflow owns their behavioral arrangement; it does not absorb their implementations or become a generic service layer.
 
 Examples:
 
@@ -1001,8 +1004,14 @@ PROVIDER-SPECIFIC EXTERNAL BEHAVIOR?
 WEBHOOK HTTP LIFECYCLE?
     app/api/{provider}/.../route.ts
 
-REMAINING DOMAIN / BUSINESS LOGIC?
+REUSABLE ORCHESTRATION OF APPLICATION LOGIC?
     lib/workflows/{domain}/
+
+    Does it arrange server operations, helpers, rules,
+    sequencing, conditions, or effects into a named behavior?
+
+        YES → workflow
+        NO  → use the capability's precise owning responsibility
 
 CACHE CONCERN?
     lib/cache/
@@ -1061,7 +1070,7 @@ Architecture-aligned examples:
 - Add a new hero variation in the grouped hero block catalog without changing route or database responsibilities.
 - Add a new CRM workflow helper without converting `crmActions` into a domain-service monolith.
 - Add a provider under `lib/integrations/{provider}` without importing its SDK across pages and features.
-- Add a new Ontology preset by seeding the same Application Definition model rather than creating a second generator.
+- Add a new Ontology preset by seeding the same Virgule Application Definition model rather than creating a second generator.
 - Add a new supported Simple by extending the generator's ownership/dependency catalog and maximal template, not by adding a decorative toggle.
 
 OCP does **not** mean every internal module needs a plugin interface. The architecture prefers concrete code until a real variation point exists.
@@ -1087,7 +1096,7 @@ Architecture-aligned examples:
 - A block receives a narrow presentation DTO, not a giant Prisma record.
 - A feature receives only the fields its orchestration needs.
 - A fetcher uses a precise select rather than hydrating every relation.
-- The Constituter exposes only configuration properties the generator can actually honor.
+- The Anthimeria Workbench exposes only configuration properties the generator can actually honor.
 - A provider helper returns an application-useful result rather than leaking the entire provider SDK response everywhere.
 
 The select → mapper → DTO pipeline is a concrete ISP mechanism in this architecture.
@@ -1228,7 +1237,7 @@ It is not generator source code.
 
 It is not a package marketplace.
 
-It is the application-source inventory from which Ordinary Objects are constituted.
+It is the application-source inventory from which Arrangements are generated.
 
 ## 18.2 Hard boundary
 
@@ -1252,9 +1261,9 @@ The template may contain application-owned:
 The template must not contain generator-only:
 
 - retain/remove ownership catalogs;
-- Constituter state;
+- Anthimeria session/UI state;
 - CLI implementation;
-- generation planner internals;
+- dependency-resolution and materialization internals;
 - generator-specific transform metadata that has no application runtime/development purpose.
 
 ## 18.3 Maximal means supported
@@ -1535,7 +1544,7 @@ A domain appearing here does not automatically make it a default Ontology or sup
 
 # 21. Ontologies™: The Nine Default Starter Specifications
 
-An Ontology is a preset over the same normalized Application Definition.
+An Ontology is a preset over the same normalized Virgule Application Definition.
 
 ## 21.1 Ontology catalog
 
@@ -1579,7 +1588,7 @@ shared foundation
 + selected optional capabilities
 + selected presentation variants
 + required dependencies
-= resolved application definition
+= normalized and validated Virgule
 ```
 
 ## 21.3 CRM example
@@ -1622,11 +1631,11 @@ All other Ontologies follow the same architectural grammar.
 
 ---
 
-# 22. The Constituter™ Configuration Workbench
+# 22. The Anthimeria™ Workbench
 
 ## 22.1 Role
 
-The Constituter is the stateless web application used to configure an Ontology or build a custom Application Definition from supported Simples.
+The Anthimeria Workbench is the stateless web application used to configure an Ontology or build a custom Virgule Application Definition from supported Simples.
 
 It is an adapter over the same configuration semantics used by the CLI and portable config file.
 
@@ -1636,20 +1645,20 @@ It does not own a second rules engine.
 
 ```mermaid
 flowchart LR
-    WEB["The Constituter™"] --> SCHEMA["One runtime Application Definition schema"]
+    WEB["The Anthimeria™ Workbench"] --> SCHEMA["One runtime Virgule Application Definition schema"]
     CLI["CLI"] --> SCHEMA
     FILE["hipsterstack.json"] --> SCHEMA
     SCHEMA --> RES["Normalize + resolve"]
-    RES --> PLAN["Generation Plan"]
-    PLAN --> PREVIEW["Inspectable Constituter result"]
-    PLAN --> FS["Filesystem materialization"]
+    RES --> VIRGULE["Dependency-closed Virgule™"]
+    VIRGULE --> PREVIEW["Inspectable Anthimeria result"]
+    VIRGULE --> FS["Filesystem materialization"]
 ```
 
 ## 22.3 Canonical configuration entities
 
 The normalized configuration domain includes:
 
-- Application Definition
+- Virgule Application Definition / Recipe
 - Preset / Ontology
 - Property
 - Provider
@@ -1662,7 +1671,7 @@ The normalized configuration domain includes:
 - Route Surface
 - Artifact Set
 - Artifact
-- Generation Plan
+- Virgule lifecycle state: draft, normalized, validated, dependency-closed
 
 ## 22.4 Property mechanisms
 
@@ -1742,7 +1751,7 @@ flowchart TD
     D --> F["Recompute affected routes/features/artifacts"]
     E --> F
     F --> G["Validate normalized definition"]
-    G --> H["Update Generation Plan + explanation"]
+    G --> H["Update Virgule state + explanation"]
 ```
 
 The UI may:
@@ -1756,7 +1765,7 @@ The UI may:
 
 ## 22.7 Workbench presentation
 
-The Constituter uses a dense two-panel developer-workbench model:
+The Anthimeria Workbench uses a dense two-panel developer-workbench model:
 
 - **left:** schema-backed controls and dependency-aware configuration;
 - **right:** resolved configuration, generation consequences, required artifacts/providers, and portable output.
@@ -1779,7 +1788,7 @@ No hidden web-only defaults are permitted.
 
 The Hipster Stack is the concrete technology and deterministic project constitution/generation system implementing this architecture.
 
-It turns a resolved Application Definition into an Ordinary Object.
+It consumes a dependency-closed Virgule against The Maximal Template to produce an Arrangement.
 
 ## 23.2 Fixed technical foundation
 
@@ -1819,7 +1828,7 @@ flowchart TD
     C --> D["Apply explicit overrides"]
     D --> E["Resolve dependencies + conflicts"]
     E --> F["Resolve providers/resources/routes/artifacts"]
-    F --> G["Review Generation Plan"]
+    F --> G["Review dependency-closed Virgule"]
     G --> H["Safe destination check"]
     H --> I["Materialize Maximal Template"]
     I --> J["Retain / remove / transform owned artifacts"]
@@ -1831,7 +1840,7 @@ flowchart TD
     N -- Yes --> O["git init / initial state"]
     N -- No --> P["Concise handoff"]
     O --> P
-    P --> Q["Ordinary Object™"]
+    P --> Q["The Arrangement™"]
 ```
 
 ## 23.4 One-template rule
@@ -1865,11 +1874,11 @@ The CLI owns:
 
 It delegates configuration meaning and generation mechanics to shared schema/resolution code.
 
-## 23.6 CLI and Constituter parity
+## 23.6 CLI and Anthimeria parity
 
 ```text
 CLI ─────────────┐
-Constituter ─────┼──> one configuration schema / resolver / generation plan
+Anthimeria ──────┼──> one Virgule schema / resolver / dependency-closure model
 config file ─────┘
 ```
 
@@ -1877,9 +1886,9 @@ No adapter gets a hidden dependency graph, separate defaulting logic, or diverge
 
 ---
 
-# 24. The Ordinary Object™ Generated-Project Contract
+# 24. The Arrangement™ Generated-Artifact Contract
 
-An Ordinary Object is the finished generated application.
+The Arrangement is the finished generated application.
 
 It should be:
 
@@ -1903,7 +1912,7 @@ generator metadata          generated application
 ------------------          ---------------------
 ownership catalog     ─X→   no
 pruning rules         ─X→   no
-Constituter state     ─X→   no
+Anthimeria UI state   ─X→   no
 CLI implementation    ─X→   no
 
 app code               →    yes
@@ -1921,7 +1930,7 @@ portable provenance    →    yes, when intentionally part of handoff
 
 ## 25.1 Role
 
-Loaded Vibes is the architecture-aware Codex plugin purpose-built to work with Ordinary Objects and other repositories that explicitly adopt the Codependent Coding WebApp Architecture.
+Loaded Vibes is the architecture-aware Codex plugin purpose-built to work with Arrangements and other repositories that explicitly adopt the Codependent Coding WebApp Architecture.
 
 Its purpose is not to invent architecture. Its purpose is to make the architecture **operational for coding agents**.
 
@@ -2013,7 +2022,7 @@ Mechanical validators should enforce stable rules that can be checked reliably, 
 - provider SDK imports outside provider-owned/auth/db boundaries;
 - client modules importing server-only operations incorrectly;
 - malformed expected project structure;
-- missing required architecture files in an Ordinary Object.
+- missing required architecture files in an Arrangement.
 
 Validators must report actual evidence. They must not claim semantic guarantees they cannot mechanically establish.
 
@@ -2148,7 +2157,7 @@ Recommended use:
 | Asset | Role |
 |---|---|
 | Digital Herencia Banner | Full-width branded lower-page / ecosystem banner treatment |
-| Digital Herencia Desert BG | Bottom-anchored background art for Simples / Constituter / docs section breaks |
+| Digital Herencia Desert BG | Bottom-anchored background art for Simples / Anthimeria / docs section breaks |
 | Digital Herencia White Logo | Parent-brand/footer/credits mark on dark surfaces |
 | Hipster Stack Crown | Hero/identity art for technology/generator surface |
 | Hipster Stack Logo White | Dark-surface wordmark |
@@ -2162,7 +2171,7 @@ The artwork establishes atmosphere; it does not control technical semantics.
 
 The visual system is configured through semantic tokens rather than arbitrary per-component colors.
 
-The Constituter may expose normalized theme controls that deterministically transform the supported `globals.css`/Tailwind theme layer.
+The Anthimeria Workbench may expose normalized theme controls that deterministically transform the supported `globals.css`/Tailwind theme layer.
 
 Supported dimensions may include:
 
@@ -2182,7 +2191,7 @@ Supported dimensions may include:
 
 The Maximal Template source includes the canonical token bridge required by the supported Tailwind/shadcn configuration. Generated output should not invent a second styling system.
 
-A dark-only Ordinary Object should remove or lock light-mode choices rather than retaining a fake option.
+A dark-only Arrangement should remove or lock light-mode choices rather than retaining a fake option.
 
 ---
 
@@ -2191,7 +2200,7 @@ A dark-only Ordinary Object should remove or lock light-mode choices rather than
 The exact tree scales with the generated configuration, but the architectural shape remains:
 
 ```text
-ordinary-object/
+arrangement/
 │
 ├── app/
 │   ├── (public)/
@@ -2391,7 +2400,7 @@ The architecture does not require running every possible check for every tiny ch
 
 A generator conformance check should establish that:
 
-- the same Application Definition resolves identically regardless of adapter;
+- the same Virgule Application Definition resolves identically regardless of adapter;
 - dependency/conflict resolution is deterministic;
 - invalid combinations are rejected or normalized;
 - selected Simples retain their dependencies;
@@ -2416,7 +2425,7 @@ A completion claim requires executed evidence or a clearly labeled inspection-on
 - Keep provider secrets server-only.
 - Never expose secret values through generated client code.
 - `.env.example` documents names/shape, not credentials.
-- Generator/Constituter does not collect production provider secrets merely to scaffold a project.
+- The Hipster Stack/Anthimeria does not collect production provider secrets merely to scaffold a project.
 
 ## 32.2 Migrations
 
@@ -2472,8 +2481,8 @@ A robust architecture distinguishes facts by authority.
 | Application entitlement interpretation | Application domain |
 | File/media provider truth | Relevant storage/media provider, interpreted by application |
 | Architectural requirements | This canonical architecture + repository-local adopted contracts |
-| Configuration intent | Normalized Application Definition |
-| Resolved generated output plan | Generation Plan |
+| Configuration intent | Virgule Application Definition |
+| Resolved generation authority | Dependency-closed Virgule Application Definition |
 | Repository change history | Git / GitHub |
 | Deployment result | Deployment platform plus post-deployment verification |
 | Actual implementation | Current repository state |
@@ -2529,7 +2538,7 @@ As observed on 2026-08-15, the current public generator repository is `DigitalHe
 Current source-of-truth repository documents already describe:
 
 - one shared application-definition schema;
-- deterministic resolver / Generation Plan;
+- deterministic resolver / then-named Generation Plan implementation;
 - one `template/`;
 - `apps/web`;
 - `packages/cli`;
@@ -2537,7 +2546,7 @@ Current source-of-truth repository documents already describe:
 - `packages/schema`;
 - `/libraries/*` Simples;
 - `/docs/*`;
-- `/configure` Constituter;
+- `/configure` then-named Constituter implementation;
 - target `hipster-stack` CLI naming.
 
 Some older prose inside the live repository still reflects earlier product-role assignments. The newest direction in this source controls product identity.
@@ -2591,14 +2600,14 @@ Docs
 │   ├── CLI
 │   ├── hipsterstack.json
 │   ├── Generation Lifecycle
-│   └── The Constituter
+│   └── The Anthimeria Workbench
 │
 ├── Maximal Template
 │   ├── Domain Library
 │   ├── Simples
 │   ├── Ontologies
 │   ├── Directory Structure
-│   └── Ordinary Object
+│   └── The Arrangement
 │
 ├── Patterns
 │   ├── Fetchers
@@ -2647,10 +2656,9 @@ This single note is the master synthesis. The public docs may later split it int
 | **Maximal Template™ Domain Library**        | One runnable superset application containing all supported generated material.                                      |
 | **Simple™**                                 | A normalized supported building block from the maximal domain library.                                              |
 | **Ontology™**                               | One of nine default normalized starter application definitions/presets.                                             |
-| **The Constituter™**                        | Stateless web configuration workbench over the shared Application Definition and resolver.                          |
-| **Application Definition**                  | Normalized statement of user intent before/through resolution.                                                      |
-| **Generation Plan**                         | Dependency-closed resolved authority for materialization and preview.                                               |
-| **Ordinary Object™**                        | Generated standalone white-label application.                                                                       |
+| **The Anthimeria™ Workbench**               | Stateless web configuration workbench over the shared Virgule model and resolver.                                   |
+| **The Virgule™ Application Definition**     | Portable recipe and statement of user intent through draft, normalized, validated, and dependency-closed states.   |
+| **The Arrangement™ Generated Artifact**     | Generated standalone white-label application produced from a dependency-closed Virgule and The Maximal Template.   |
 | **Loaded Vibes™**                           | Codex coding-agent plugin that operationalizes and enforces the architecture.                                       |
 | **Route**                                   | URL/HTTP boundary.                                                                                                  |
 | **Feature**                                 | Application capability orchestration boundary.                                                                      |
@@ -2659,7 +2667,7 @@ This single note is the master synthesis. The public docs may later split it int
 | **Primitive**                               | Lowest-level UI component.                                                                                          |
 | **Fetcher**                                 | Read-only persisted application data operation.                                                                     |
 | **Action**                                  | Ordinary persisted CRUD mutation boundary.                                                                          |
-| **Workflow**                                | Remaining domain/business logic after more precise categories are excluded.                                         |
+| **Workflow**                                | Named reusable orchestration boundary that constitutes application logic from existing server operations/helpers.   |
 | **Transaction Helper**                      | Atomic database persistence helper preserving multi-write invariants.                                               |
 | **Select**                                  | Precise Prisma projection.                                                                                          |
 | **DTO Mapper**                              | Persistence/domain → transport-safe mapping function.                                                               |
@@ -2734,13 +2742,14 @@ Never hide a provider HTTP webhook route in `lib/`.
 
 ```text
 Ontology + user choices
-→ Application Definition
+→ Virgule Application Definition
 → normalize
+→ validate
 → resolve dependencies/conflicts
-→ Generation Plan
-→ Maximal Template
+→ dependency-closed Virgule
+→ Hipster Stack + Maximal Template
 → retain/remove/transform
-→ Ordinary Object
+→ Arrangement
 ```
 
 ## 38.6 Agent workflow
@@ -2767,7 +2776,7 @@ This master source intentionally corrects several conflicts and weak examples in
 | Template          | Maximal Template™ is one supported superset application.                                                                             |
 | Building blocks   | `Simples™` is presentation/configuration vocabulary over supported library elements, not proof of independent package composability. |
 | Presets           | Nine starter recipes are `Ontologies™`.                                                                                              |
-| Generated app     | Generated transformed project is the `Ordinary Object™`.                                                                             |
+| Generated app     | Generated transformed project is `The Arrangement™ Generated Artifact`.                                                              |
 | Agent product     | Loaded Vibes™ is the Codex coding-agent plugin in the newest direction.                                                              |
 | Public routes     | Static public content is `(public)`, not the marketing business domain.                                                              |
 | Static pages      | Static pages may compose blocks directly; they do not require empty features.                                                        |
@@ -2775,7 +2784,7 @@ This master source intentionally corrects several conflicts and weak examples in
 | Normal features   | Normal features consume blocks rather than raw UI primitives.                                                                        |
 | Clerk tenancy     | Clerk establishes identity; application owns Organization/Membership/roles by default.                                               |
 | Actions           | Actions are ordinary CRUD mutation boundaries; do not turn them into generic services or provider buckets.                           |
-| Workflows         | Remaining domain logic; no mandatory workflow layer for trivial CRUD.                                                                |
+| Workflows         | Named reusable application-logic constitutions; constituents retain ownership and trivial CRUD needs no ceremony.                    |
 | Transactions      | DB-only atomicity; no provider/network I/O inside.                                                                                   |
 | SOLID             | Applied through real architecture boundaries; no abstraction-for-abstraction's-sake.                                                 |
 | Clean Code        | No arbitrary line-count rule; comments and error handling are boundary/context aware.                                                |
@@ -2813,11 +2822,11 @@ If it exists because a provider exists, it belongs to the provider integration u
 
 If it handles a provider HTTP request, it is a route handler.
 
-If it contains remaining domain logic, it is a workflow.
+If it arranges existing server operations and helpers into named reusable application behavior, it is a workflow.
 
-If it configures the application, it resolves through the one Application Definition.
+If it configures the application, it resolves through the one Virgule Application Definition.
 
-If it generates the project, it operates from the one Maximal Template and one Generation Plan.
+If it generates the project, The Hipster Stack consumes one dependency-closed Virgule against the one Maximal Template to produce The Arrangement.
 
 If it is selectable, it must have a real supported generation effect.
 
@@ -2833,7 +2842,7 @@ This synthesis was constructed from the current supplied and connected materials
 
 ## User-authored / supplied architecture sources
 
-- `Papa's Got A Brand New Bag(2).md` — newest controlling product direction, naming, Ontologies, Simples, Constituter, generator, Loaded Vibes plugin, SOLID/Clean Code source examples, component/theme catalogs.
+- `Papa's Got A Brand New Bag(2).md` — historical user-authored source for the then-current product direction, naming, Ontologies, Simples, Constituter, generator, Loaded Vibes plugin, SOLID/Clean Code source examples, component/theme catalogs; current branded vocabulary is governed by `CODEPENDENTCODING.TERMINOLOGY.md`.
 - `The Maximal Template™ Canonical Architecture(2).md` — canonical file classifier, application profiles, placement rules, feature composition, server/application structure, and directory tree.
 - `The Maximal Template™ Demo Doctrine(2).md` — refined public-route, form-feature, tenancy, RLS, public-demo, naming, and visual-language rules.
 - `The-Codependent-Coding-WebApp-Architecture(1).pdf` — prior 33-page standalone architecture edition used as a consolidation baseline, not as controlling source where later materials refine it.
@@ -2851,7 +2860,7 @@ This synthesis was constructed from the current supplied and connected materials
 - `context/docs/web.md`
 - repository structure at `master`
 
-These establish current generator configuration semantics, Generation Plan model, one-template ownership, CLI target vocabulary, Constituter/Simples web surfaces, and visual contract. Product-role statements that conflict with the newer explicit direction were treated as transitional.
+These establish current generator configuration semantics, the then-named Generation Plan implementation model, one-template ownership, CLI target vocabulary, the then-named Constituter/Simples web surfaces, and visual contract. Product-role statements that conflict with the newer explicit direction were treated as transitional.
 
 `DigitalHerencia/DevNotes`:
 
@@ -2880,10 +2889,10 @@ These informed capability categories only; they do not define Loaded Vibes archi
 The architecture is definitive, but several implementation facts still require repository-level proof before release claims are made:
 
 1. Verify that the current Hipster Stack runtime has completed the target public CLI/config rename before documenting the command family as shipped.
-2. Verify the exact current generator ownership graph and supported selectable Simples before exposing every catalog entry in The Constituter.
+2. Verify the exact current generator ownership graph and supported selectable Simples before exposing every catalog entry in Anthimeria.
 3. Verify which of the wider business-domain library entries are implemented versus conceptual.
 4. Verify the actual Loaded Vibes Codex plugin package/repository and its precise agents/skills filenames before publishing a shipped-content manifest.
-5. Verify that generated Ordinary Objects enforce the form-feature exception and normal feature → block boundary consistently.
+5. Verify that generated Arrangements enforce the form-feature exception and normal feature → block boundary consistently.
 6. Verify application-owned tenancy and RLS coverage in the actual maximal template.
 7. Verify webhook durability/idempotency behavior in implemented providers before advertising hardened reconciliation as present everywhere.
 8. Verify that the dark-only visual contract is applied consistently and that the black Loaded Vibes mark has an appropriate dark-surface variant before using it on the primary black canvas.

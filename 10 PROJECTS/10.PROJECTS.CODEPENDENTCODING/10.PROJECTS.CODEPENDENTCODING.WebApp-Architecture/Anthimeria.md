@@ -1,6 +1,6 @@
-# The Constituter™
+# The Anthimeria™ Workbench
 
-The Constituter is the stateless web application used to configure an `Ontology` or build a custom `Arrangement` from supported `Simples`from The Maximal Template™.
+Anthimeria is the stateless web application used to configure an `Ontology` or build a custom `Virgule` Application Definition from supported `Simples` in The Maximal Template™.
 
 It is an adapter over the same configuration semantics used by the CLI and portable config file.
 
@@ -32,13 +32,13 @@ The top layer of the configuration UI allows the user to choose from 9 defaults 
 
     The next layer allows the user to configure the normalized semantic tokens that style each UI primitives by selecting normalized Tailwind CSS color palettes, amination values, Tailwind properties like `rounded`, padding, margins, and Typography properties like define values for Next.js fonts, typefaces for headings, and so on. These properties are derived from and transform The Maximal Template™ `globals.css`
 
-7. Logic is orchestrated in workflows called BusinessLogic Blocks™ 
+7. Logic is constituted in workflows called BusinessLogic Blocks™ 
 
     The next layer allows the user to configure the normalized workflows in each feature component by selecting/deselecting workflows from a list of all the workflows from The Maximal Template™
 
-8. Workflows are composed of server operations and helpers
+8. Workflows are constituted from server operations and helpers
 
-    The last layer allows the user to configure the normalized server operations and helpers that compose each workflow by selecting/deselecting normalized server operations and helpers from a list of all server operations and helpers The Maximal Template™
+    Anthimeria exposes meaningful workflow-level behavioral choices. The shared resolver automatically closes the selected workflow's dependencies over the required server operations and helpers; those constituents retain their original architectural ownership and are not presented as arbitrary source-file toggles.
 
 ### Pages 
   
@@ -379,27 +379,24 @@ All nine `Ontologies` inherit from a common application foundation that is the s
     ├── Error / Loading States
     └── Common Tenant Infrastructure
 
-The customized transformed master template that is generated based on the user's configuration of one of the default starter specifications is called `The Arrangement™`
+The standalone application generated from the user's Virgule and The Maximal Template is called `The Arrangement™`.
 
 So the generator model becomes:
 
-    Shared Foundation
-            +
-    Selected Ontology™
-            +
-    User Overrides
-            +
-    Optional Capabilities
-            +
-    Presentation Configuration
-            +
-    Dependency Closure
+    The Ontology™ Normalized Default
             ↓
-    Resolved Application Definition
+    The Anthimeria™ Workbench
             ↓
-    The Arrangement™
+    The Virgule™ Application Definition / Recipe
+      draft → normalized → validated → dependency-closed
+            ↓
+    The Hipster Stack™ Technology Stack / CLI
+            +
+    The Maximal Template™ Domain Library
+            ↓
+    The Arrangement™ Generated Artifact
 
-The generated standalone application is ****`The Arrangement™`****: a white-label project produced from a normalized and validated application definition. It contains no runtime dependency on the generator and no requirement to remain connected to a hosted control plane.
+The generated standalone application is **The Arrangement™**: a white-label project produced when The Hipster Stack consumes a dependency-closed Virgule against The Maximal Template. It contains no runtime dependency on the generator and no requirement to remain connected to a hosted control plane.
 
 ### The Architecture Classifier
 
@@ -492,15 +489,14 @@ SHARED COMPILE-TIME CONTRACT?
 ### Branded Products
 | **The Codependent Coding™ Web App Architecture** | The governing architecture and documentation system. It defines responsibilities, boundaries, invariants, composition, security posture, and implementation grammar.                     |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **The Hipster Stack™ Technology Stack**          | The concrete technology stack plus deterministic constitution/generation system and CLI that turns a normalized application definition into a project.                                   |
+| **The Hipster Stack™ Technology Stack**          | The concrete technology stack plus deterministic constitution/generation system and CLI that consumes a dependency-closed Virgule against The Maximal Template.                          |
 | **The Maximal Template™ Domain Library**         | The single runnable superset application containing every supported implementation that may be retained, removed, or transformed during generation.                                      |
-| **The Anthimeria™  Workbench**                   | Stateless web configuration workbench over the shared Application Definition and resolver.                                                                                               |
+| **The Anthimeria™ Workbench**                    | Stateless web configuration workbench over the shared Virgule Application Definition and resolver.                                                                                       |
 | **The Loaded Vibes™ Codex Plugin**               | The Codex-oriented architecture-enforcement and software-operations layer: governance, agents, skills, instructions, prompts, validators, smoke tests, and developer-environment assets. |
 | **The Visual Vibes™ Design System**              | A modern dark industrial neo-brutalist technical design system with restrained signal.                                                                                                   |
 | **Simples™**                                     | A maximal domain library of normalized supported building blocks.                                                                                                                        |
 | **Ontology™**                                    | One of nine default normalized starter application definitions/presets.                                                                                                                  |
-| **BusinessLogic Blocks™**                        | Domain/business logic workflow orchestration boundary.                                                                                                                                   |
+| **BusinessLogic Blocks™**                        | Named reusable workflows that constitute application logic from existing server operations and helpers.                                                                                  |
 | **PureUI Presentation Layer™**                   | Pure reusable UI composition orchestration boundary.                                                                                                                                     |
-| The Arrangement™                                 | Generated standalone white-label application.                                                                                                                                            |
-| The Virgule™                                     | Dependency-closed resolved authority for materialization and preview.                                                                                                                    |
-
+| **The Virgule™ Application Definition**          | Portable recipe configured in Anthimeria that remains The Virgule through draft, normalized, validated, and dependency-closed states.                                                    |
+| **The Arrangement™ Generated Artifact**          | Generated standalone white-label application produced from a dependency-closed Virgule and The Maximal Template.                                                                         |
