@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\app\(public)\pricing\page.tsx'
+title: 'The Maximal Template™ Domain Library\app\(public)\pricing\page.tsx'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\app\(public)\pricing\page.tsx'
+artifact: 'The Maximal Template™ Domain Library\app\(public)\pricing\page.tsx'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.app.-public-.pricing.page.tsx'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.app.-public-.pricing.page.tsx'
 status: active
 authority: reference
 parent:
@@ -15,54 +15,81 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\app\(public)\pricing\page.tsx'
+source_path: 'The Maximal Template™ Domain Library\app\(public)\pricing\page.tsx'
 source_file: 'page.tsx'
-source_sha256: '3285eb21a4179f5d5807c0ea140251b0581be780181b92c1311661b789355f3f'
+source_sha256: '0ab1358081632e7a32e28b8de40cc472cfd3bc5f1cbc4ee025b88868b08b8f49'
 generated: true
 ---
 
 # `page.tsx`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\app\(public)\pricing\page.tsx`
-> SHA-256: `3285eb21a4179f5d5807c0ea140251b0581be780181b92c1311661b789355f3f`
+> Original path: `The Maximal Template™ Domain Library\app\(public)\pricing\page.tsx`
+> SHA-256: `0ab1358081632e7a32e28b8de40cc472cfd3bc5f1cbc4ee025b88868b08b8f49`
 
 ```tsx
-import { PageHero } from "@/components/blocks/page-hero"
-import { ProcessPanel } from "@/components/blocks/process-panel"
+import { FAQTwoColumns } from "@/components/blocks/faq-sections";
+import { PricingSection } from "@/components/blocks/pricing-sections";
 
-export default function PricingPage() {
+const tiers = [
+  {
+    name: "Foundation",
+    price: "$0",
+    period: "project",
+    description: "Evaluate the canonical architecture locally.",
+    features: ["Shared application core", "One recipe", "Local development"],
+    cta: "Explore dashboard",
+    ctaHref: "/dashboard",
+  },
+  {
+    name: "Product",
+    price: "$49",
+    period: "month",
+    description: "Configure a focused SaaS application from the superset.",
+    features: ["All recipes", "Tenant boundaries", "Provider selections"],
+    cta: "Inspect CRM",
+    ctaHref: "/crm/contacts",
+    featured: true,
+  },
+  {
+    name: "Team",
+    price: "$149",
+    period: "month",
+    description: "Shared delivery for multiple products and collaborators.",
+    features: ["Team workspaces", "Reusable definitions", "Priority support"],
+    cta: "Contact us",
+    ctaHref: "/contact",
+  },
+];
+
+export default function Page() {
   return (
-    <div className="grid gap-10">
-      <PageHero
-        eyebrow="Template economics"
-        title="Bring your pricing model."
-        description="The starter includes a tenant-owned Stripe subscription foundation for one server-configured recurring plan."
+    <>
+      <PricingSection
+        title="Pricing without architecture tax"
+        subtitle="Choose an operating tier; the application contracts stay intact."
+        tiers={tiers}
       />
-      <ProcessPanel
-        title="Billing boundaries"
-        steps={[
+      <FAQTwoColumns
+        title="Pricing questions"
+        items={[
           {
-            title: "Hosted billing",
-            description: "Checkout and subscription management stay on Stripe-hosted surfaces.",
+            question: "Does each recipe become a separate application?",
+            answer:
+              "No. Recipes select coherent slices from one maximal implementation.",
           },
           {
-            title: "Provider isolated",
-            description:
-              "Stripe SDK calls stay behind provider adapters, never in pages or components.",
-          },
-          {
-            title: "State first",
-            description:
-              "Verified webhooks normalize local subscription and entitlement state; redirects grant nothing.",
+            question: "Are provider charges included?",
+            answer:
+              "Provider usage is billed by each selected provider and remains explicit.",
           },
         ]}
       />
-    </div>
-  )
+    </>
+  );
 }
 
 ```

@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\prisma.config.ts'
+title: 'The Maximal Template™ Domain Library\prisma.config.ts'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\prisma.config.ts'
+artifact: 'The Maximal Template™ Domain Library\prisma.config.ts'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.prisma.config.ts'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.prisma.config.ts'
 status: active
 authority: reference
 parent:
@@ -15,32 +15,28 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\prisma.config.ts'
+source_path: 'The Maximal Template™ Domain Library\prisma.config.ts'
 source_file: 'prisma.config.ts'
-source_sha256: '37dcdf61029096b7309399a1fb9a4b2e9a1554ac52ac97fca949012032b94e0f'
+source_sha256: 'e35eda34791601897eebdb9dd4f5bb9c371145596b0226e719fefc5b563c7007'
 generated: true
 ---
 
 # `prisma.config.ts`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\prisma.config.ts`
-> SHA-256: `37dcdf61029096b7309399a1fb9a4b2e9a1554ac52ac97fca949012032b94e0f`
+> Original path: `The Maximal Template™ Domain Library\prisma.config.ts`
+> SHA-256: `e35eda34791601897eebdb9dd4f5bb9c371145596b0226e719fefc5b563c7007`
 
 ```ts
-import { config } from "dotenv"
-import { defineConfig } from "prisma/config"
+import { config } from "dotenv";
 
-if (process.env.VIBES_SKIP_DOTENV !== "1") {
-  config({ path: ".env" })
-  config({ path: ".env.local", override: true })
-}
+import { defineConfig, env } from "prisma/config";
 
-const migrationDatabaseUrl =
-  process.env.DIRECT_DATABASE_URL ?? process.env.DATABASE_URL_UNPOOLED ?? process.env.DATABASE_URL
+config({ path: ".env.local", quiet: true });
+config({ quiet: true });
 
 export default defineConfig({
   schema: "prisma/schema.prisma",
@@ -48,16 +44,10 @@ export default defineConfig({
     path: "prisma/migrations",
     seed: "tsx prisma/seed.ts",
   },
-  ...(migrationDatabaseUrl
-    ? {
-        datasource: {
-          url: migrationDatabaseUrl,
-          ...(process.env.SHADOW_DATABASE_URL
-            ? { shadowDatabaseUrl: process.env.SHADOW_DATABASE_URL }
-            : {}),
-        },
-      }
-    : {}),
-})
+  datasource: {
+    // Neon recommends a direct/non-pooled connection for migrations.
+    url: env("DATABASE_NO_POOLING"),
+  },
+});
 
 ```

@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\components.json'
+title: 'The Maximal Template™ Domain Library\components.json'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\components.json'
+artifact: 'The Maximal Template™ Domain Library\components.json'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.components.json'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.components.json'
 status: active
 authority: reference
 parent:
@@ -15,42 +15,36 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\components.json'
+source_path: 'The Maximal Template™ Domain Library\components.json'
 source_file: 'components.json'
-source_sha256: '51901cefb6b2c48ae8f7cc68e81c4eee0d6b75828ebdf082d44c9c1be53f4910'
+source_sha256: '5df14242d3eec26f0e69c809fd38df1c41af6e8539421fbf68be5a851f73db61'
 generated: true
 ---
 
 # `components.json`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\components.json`
-> SHA-256: `51901cefb6b2c48ae8f7cc68e81c4eee0d6b75828ebdf082d44c9c1be53f4910`
+> Original path: `The Maximal Template™ Domain Library\components.json`
+> SHA-256: `5df14242d3eec26f0e69c809fd38df1c41af6e8539421fbf68be5a851f73db61`
 
 ```json
 {
   "$schema": "https://ui.shadcn.com/schema.json",
-  "style": "default",
+  "style": "new-york",
   "rsc": true,
   "tsx": true,
   "tailwind": {
-    "config": "",
     "css": "app/globals.css",
     "baseColor": "neutral",
-    "cssVariables": true,
-    "prefix": ""
+    "cssVariables": true
   },
-  "iconLibrary": "lucide",
-  "rtl": false,
   "aliases": {
     "components": "@/components",
-    "utils": "@/lib/utils",
+    "utils": "@/lib/utils/cn",
     "ui": "@/components/ui",
-    "types": "@/types",
-    "blocks": "@/components/blocks",
     "lib": "@/lib",
     "hooks": "@/hooks"
   }

@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\tsconfig.json'
+title: 'The Maximal Template™ Domain Library\tsconfig.json'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\tsconfig.json'
+artifact: 'The Maximal Template™ Domain Library\tsconfig.json'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.tsconfig.json'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.tsconfig.json'
 status: active
 authority: reference
 parent:
@@ -15,78 +15,54 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\tsconfig.json'
+source_path: 'The Maximal Template™ Domain Library\tsconfig.json'
 source_file: 'tsconfig.json'
-source_sha256: '306c4d25d4ebf1ca0129cc78f3cf7a861756bf797180fae1572b89fc5bf3337b'
+source_sha256: 'a8615e7a337f15b2d8b008b149cf973e074de21e5c7d896f271414997c2f057e'
 generated: true
 ---
 
 # `tsconfig.json`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\tsconfig.json`
-> SHA-256: `306c4d25d4ebf1ca0129cc78f3cf7a861756bf797180fae1572b89fc5bf3337b`
+> Original path: `The Maximal Template™ Domain Library\tsconfig.json`
+> SHA-256: `a8615e7a337f15b2d8b008b149cf973e074de21e5c7d896f271414997c2f057e`
 
 ```json
 {
   "compilerOptions": {
-    "target": "ES2024",
-    "lib": ["dom", "dom.iterable", "es2024"],
+    "target": "ES2022",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-    "noImplicitOverride": true,
-    "noFallthroughCasesInSwitch": true,
     "noEmit": true,
-    "incremental": true,
-    "isolatedModules": true,
-    "module": "Preserve",
-    "moduleResolution": "Bundler",
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "verbatimModuleSyntax": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
     "jsx": "react-jsx",
+    "incremental": true,
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./*"],
-      "@/app/*": ["./app/*"],
-      "@/components/*": ["./components/*"],
-      "@/content/*": ["./content/*"],
-      "@/features/*": ["./features/*"],
-      "@/lib/*": ["./lib/*"],
-      "@/prisma/*": ["./prisma/*"],
-      "@/schemas/*": ["./schemas/*"],
-      "@/types/*": ["./types/*"]
+      "@/*": ["./*"]
     }
   },
   "include": [
     "next-env.d.ts",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.mts",
-    "**/*.cts"
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules",
-    ".next",
-    "out",
-    "coverage",
-    "playwright-report",
-    "test-results",
-    "prisma/generated/prisma"
-  ]
+  "exclude": ["node_modules"]
 }
 
 ```

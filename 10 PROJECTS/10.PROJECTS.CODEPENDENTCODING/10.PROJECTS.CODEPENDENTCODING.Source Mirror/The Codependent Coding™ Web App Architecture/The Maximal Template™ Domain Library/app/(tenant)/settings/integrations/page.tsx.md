@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\settings\integrations\page.tsx'
+title: 'The Maximal Template™ Domain Library\app\(tenant)\settings\integrations\page.tsx'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\settings\integrations\page.tsx'
+artifact: 'The Maximal Template™ Domain Library\app\(tenant)\settings\integrations\page.tsx'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.app.-tenant-.settings.integrations.page.tsx'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.app.-tenant-.settings.integrations.page.tsx'
 status: active
 authority: reference
 parent:
@@ -15,26 +15,27 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\settings\integrations\page.tsx'
+source_path: 'The Maximal Template™ Domain Library\app\(tenant)\settings\integrations\page.tsx'
 source_file: 'page.tsx'
-source_sha256: '7cd694b3aa680ce211494a9dae45d451adda0b0ca5ae775d6d722af1feb764aa'
+source_sha256: 'ccdc31a855fa37455e3d86089e2de480262772f30adc67fda5069d4c65435f40'
 generated: true
 ---
 
 # `page.tsx`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\app\(tenant)\settings\integrations\page.tsx`
-> SHA-256: `7cd694b3aa680ce211494a9dae45d451adda0b0ca5ae775d6d722af1feb764aa`
+> Original path: `The Maximal Template™ Domain Library\app\(tenant)\settings\integrations\page.tsx`
+> SHA-256: `ccdc31a855fa37455e3d86089e2de480262772f30adc67fda5069d4c65435f40`
 
 ```tsx
-import { IntegrationSettingsFeature } from "@/features/settings/integration-settings-feature"
+import { IntegrationsFeature } from "@/features/settings/integrationsFeature";
 
-export default function IntegrationSettingsPage() {
-  return <IntegrationSettingsFeature />
+// URL ownership stops here; orchestration is delegated to the feature.
+export default function Page() {
+  return <IntegrationsFeature />;
 }
 
 ```

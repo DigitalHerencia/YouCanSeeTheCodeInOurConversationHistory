@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\settings\members\page.tsx'
+title: 'The Maximal Template™ Domain Library\app\(tenant)\settings\members\page.tsx'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\settings\members\page.tsx'
+artifact: 'The Maximal Template™ Domain Library\app\(tenant)\settings\members\page.tsx'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.app.-tenant-.settings.members.page.tsx'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.app.-tenant-.settings.members.page.tsx'
 status: active
 authority: reference
 parent:
@@ -15,26 +15,27 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\settings\members\page.tsx'
+source_path: 'The Maximal Template™ Domain Library\app\(tenant)\settings\members\page.tsx'
 source_file: 'page.tsx'
-source_sha256: '9b3e4b79490973f481c9fb54799af731da4518ee95d205897024934bcf1d6831'
+source_sha256: 'e82e4094fb277d86b4fb9cd2158cfaedea3738d9e418a463ee52ea4929cbf357'
 generated: true
 ---
 
 # `page.tsx`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\app\(tenant)\settings\members\page.tsx`
-> SHA-256: `9b3e4b79490973f481c9fb54799af731da4518ee95d205897024934bcf1d6831`
+> Original path: `The Maximal Template™ Domain Library\app\(tenant)\settings\members\page.tsx`
+> SHA-256: `e82e4094fb277d86b4fb9cd2158cfaedea3738d9e418a463ee52ea4929cbf357`
 
 ```tsx
-import { TeamFeature } from "@/features/members/team-feature"
+import { MembersFeature } from "@/features/settings/membersFeature";
 
-export default async function MemberSettingsPage() {
-  return <TeamFeature />
+// URL ownership stops here; orchestration is delegated to the feature.
+export default function Page() {
+  return <MembersFeature />;
 }
 
 ```

@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\app\(public)\faq\page.tsx'
+title: 'The Maximal Template™ Domain Library\app\(public)\faq\page.tsx'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\app\(public)\faq\page.tsx'
+artifact: 'The Maximal Template™ Domain Library\app\(public)\faq\page.tsx'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.app.-public-.faq.page.tsx'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.app.-public-.faq.page.tsx'
 status: active
 authority: reference
 parent:
@@ -15,64 +15,59 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\app\(public)\faq\page.tsx'
+source_path: 'The Maximal Template™ Domain Library\app\(public)\faq\page.tsx'
 source_file: 'page.tsx'
-source_sha256: 'cd1317036fe53ba8b535bb2f043947ac5c1e2586dbe977c6263696fb930d77ab'
+source_sha256: 'a293140565728a1fcc0575c05583a056f6c0bc72928aff675ff156d732fd7c26'
 generated: true
 ---
 
 # `page.tsx`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\app\(public)\faq\page.tsx`
-> SHA-256: `cd1317036fe53ba8b535bb2f043947ac5c1e2586dbe977c6263696fb930d77ab`
+> Original path: `The Maximal Template™ Domain Library\app\(public)\faq\page.tsx`
+> SHA-256: `a293140565728a1fcc0575c05583a056f6c0bc72928aff675ff156d732fd7c26`
 
 ```tsx
-import { PageHero } from "@/components/blocks/page-hero"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { FAQTwoColumns } from "@/components/blocks/faq-sections";
+import { HeroSection } from "@/components/blocks/hero-sections";
 
-const questions = [
-  {
-    question: "Does this use Clerk organizations?",
-    answer: "No. Clerk identifies users. Local Prisma rows authorize access to resources.",
-  },
-  {
-    question: "Where do mutations live?",
-    answer:
-      "Internal app writes use Server Actions under lib/actions. API routes are reserved for webhooks.",
-  },
-  {
-    question: "Can public pages compose components directly?",
-    answer:
-      "Yes, static public pages can compose blocks directly when they do not call backend operations.",
-  },
-]
-
-export default function FaqPage() {
+export default function Page() {
   return (
-    <div className="grid gap-8">
-      <PageHero
-        eyebrow="Architecture FAQ"
-        title="Boundaries before features."
-        description="This starter keeps the default decisions explicit so implementation work lands in the right layer."
+    <>
+      <HeroSection.Minimal
+        title="Frequently asked questions"
+        description="How the maximal application, recipes, and protected capabilities fit together."
       />
-      <section className="grid gap-3">
-        {questions.map((item) => (
-          <Card key={item.question}>
-            <CardHeader>
-              <CardTitle>{item.question}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">{item.answer}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </section>
-    </div>
-  )
+      <FAQTwoColumns
+        title="Architecture and access"
+        items={[
+          {
+            question: "Do I need to sign in to explore?",
+            answer:
+              "No. Seeded demonstration surfaces are browsable while signed out.",
+          },
+          {
+            question: "Can signed-out visitors change data?",
+            answer:
+              "No. Protected writes retain authentication, authorization, scope, and validation checks.",
+          },
+          {
+            question: "Is each recipe a separate application?",
+            answer:
+              "No. Every recipe is a coherent subset of one maximal application.",
+          },
+          {
+            question: "Are providers required to browse the demo?",
+            answer:
+              "No. Optional integrations report their configuration state without breaking unrelated routes.",
+          },
+        ]}
+      />
+    </>
+  );
 }
 
 ```

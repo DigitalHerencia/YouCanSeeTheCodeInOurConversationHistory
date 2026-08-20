@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\ai\page.tsx'
+title: 'The Maximal Template™ Domain Library\app\(tenant)\ai\page.tsx'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\ai\page.tsx'
+artifact: 'The Maximal Template™ Domain Library\app\(tenant)\ai\page.tsx'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.app.-tenant-.ai.page.tsx'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.app.-tenant-.ai.page.tsx'
 status: active
 authority: reference
 parent:
@@ -15,26 +15,27 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\ai\page.tsx'
+source_path: 'The Maximal Template™ Domain Library\app\(tenant)\ai\page.tsx'
 source_file: 'page.tsx'
-source_sha256: 'f8051924c7e8b1745126b4cc38acd087448ba06143f53db9b77e1d9eefb3f744'
+source_sha256: '46ca9d3a238e4a0b20d0c4d37c2a973af6c6ef0cf8e12a2a463c23fab3621c52'
 generated: true
 ---
 
 # `page.tsx`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\app\(tenant)\ai\page.tsx`
-> SHA-256: `f8051924c7e8b1745126b4cc38acd087448ba06143f53db9b77e1d9eefb3f744`
+> Original path: `The Maximal Template™ Domain Library\app\(tenant)\ai\page.tsx`
+> SHA-256: `46ca9d3a238e4a0b20d0c4d37c2a973af6c6ef0cf8e12a2a463c23fab3621c52`
 
 ```tsx
-import { InferenceFeature } from "@/features/ai/inference-feature"
+import { GenerationFeature } from "@/features/ai/generationFeature";
 
-export default function AiPage() {
-  return <InferenceFeature />
+// URL ownership stops here; orchestration is delegated to the feature.
+export default function Page() {
+  return <GenerationFeature />;
 }
 
 ```

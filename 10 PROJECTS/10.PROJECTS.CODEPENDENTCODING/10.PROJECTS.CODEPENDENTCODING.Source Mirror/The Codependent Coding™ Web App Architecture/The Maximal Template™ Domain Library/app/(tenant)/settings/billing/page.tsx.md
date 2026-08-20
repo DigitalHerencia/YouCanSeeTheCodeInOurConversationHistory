@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\settings\billing\page.tsx'
+title: 'The Maximal Template™ Domain Library\app\(tenant)\settings\billing\page.tsx'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\settings\billing\page.tsx'
+artifact: 'The Maximal Template™ Domain Library\app\(tenant)\settings\billing\page.tsx'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.app.-tenant-.settings.billing.page.tsx'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.app.-tenant-.settings.billing.page.tsx'
 status: active
 authority: reference
 parent:
@@ -15,29 +15,27 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\settings\billing\page.tsx'
+source_path: 'The Maximal Template™ Domain Library\app\(tenant)\settings\billing\page.tsx'
 source_file: 'page.tsx'
-source_sha256: '5d7b9fd80776c654d86be51d6c137971bdd9846356f28b82dd15f16bd83d8c9a'
+source_sha256: 'f44d32d0781740e09c33265fdd9eab75011e1f16825d4650c891216983c62dc5'
 generated: true
 ---
 
 # `page.tsx`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\app\(tenant)\settings\billing\page.tsx`
-> SHA-256: `5d7b9fd80776c654d86be51d6c137971bdd9846356f28b82dd15f16bd83d8c9a`
+> Original path: `The Maximal Template™ Domain Library\app\(tenant)\settings\billing\page.tsx`
+> SHA-256: `f44d32d0781740e09c33265fdd9eab75011e1f16825d4650c891216983c62dc5`
 
 ```tsx
-import { BillingSettingsFeature } from "@/features/billing/billing-settings-feature"
-import { loadedVibesCapabilities } from "@/content/loadedvibes"
-import { notFound } from "next/navigation"
+import { BillingFeature } from "@/features/settings/billingFeature";
 
-export default function BillingSettingsPage() {
-  if (!loadedVibesCapabilities.billing) notFound()
-  return <BillingSettingsFeature />
+// URL ownership stops here; orchestration is delegated to the feature.
+export default function Page() {
+  return <BillingFeature />;
 }
 
 ```

@@ -4,7 +4,9 @@ DevNotes is a private, Git-backed Obsidian vault for project knowledge, technica
 
 Its purpose is simple:
 
+> [!TIP]
 > Bring useful material into the DevNotes ChatGPT project, organize it according to a consistent system, save it to the connected GitHub repository, and synchronize it to the local Obsidian vault.
+> 
 
 ## Canonical engineering knowledge
 
@@ -39,11 +41,8 @@ Obsidian vault
 ```
 
 ChatGPT is used as the organizational interface.
-
 GitHub is the remote repository.
-
 Git synchronizes the remote repository with the local vault.
-
 Obsidian is the local reading, writing, linking, and navigation environment.
 
 ## What DevNotes Stores
@@ -97,11 +96,11 @@ External documentation and reference material.
 
 Long-form research, investigations, comparisons, and analytical reports.
 
-### `40 TECH STACK`
+### `40 ARCHIVE`
 
-Reusable technical knowledge about tools, frameworks, libraries, services, implementation patterns, and existing Knowledge System integration/reference artifacts.
+Deprecated technical knowledge about tools, frameworks, libraries, services, implementation patterns, and existing Knowledge System integration/reference artifacts.
 
-### `50 REGRETS, CIGARETTES, & NEURAL NETS`
+### `50 CIGARETTES, REGRETS, & NEURAL NETS`
 
 Essays, personal writing, creative work, and authored commentary.
 

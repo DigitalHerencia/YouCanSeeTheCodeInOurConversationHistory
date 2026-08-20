@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\settings\profile\page.tsx'
+title: 'The Maximal Template™ Domain Library\app\(tenant)\settings\profile\page.tsx'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\settings\profile\page.tsx'
+artifact: 'The Maximal Template™ Domain Library\app\(tenant)\settings\profile\page.tsx'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.app.-tenant-.settings.profile.page.tsx'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.app.-tenant-.settings.profile.page.tsx'
 status: active
 authority: reference
 parent:
@@ -15,26 +15,27 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\settings\profile\page.tsx'
+source_path: 'The Maximal Template™ Domain Library\app\(tenant)\settings\profile\page.tsx'
 source_file: 'page.tsx'
-source_sha256: '1efa125b22cade3f1fdb1b9ea7ed234cdf821309b128bab70547a4d12b0b3650'
+source_sha256: 'af0c0c92f3e95713127822323e14846d47f20db4b662c54899e0e1c3a4d2f6a5'
 generated: true
 ---
 
 # `page.tsx`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\app\(tenant)\settings\profile\page.tsx`
-> SHA-256: `1efa125b22cade3f1fdb1b9ea7ed234cdf821309b128bab70547a4d12b0b3650`
+> Original path: `The Maximal Template™ Domain Library\app\(tenant)\settings\profile\page.tsx`
+> SHA-256: `af0c0c92f3e95713127822323e14846d47f20db4b662c54899e0e1c3a4d2f6a5`
 
 ```tsx
-import { SettingsFeature } from "@/features/settings/settings-feature"
+import { ProfileFeature } from "@/features/settings/profileFeature";
 
-export default function ProfileSettingsPage() {
-  return <SettingsFeature />
+// URL ownership stops here; orchestration is delegated to the feature.
+export default function Page() {
+  return <ProfileFeature />;
 }
 
 ```

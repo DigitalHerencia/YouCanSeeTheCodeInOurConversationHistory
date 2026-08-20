@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\content\application.ts'
+title: 'The Maximal Template™ Domain Library\content\application.ts'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\content\application.ts'
+artifact: 'The Maximal Template™ Domain Library\content\application.ts'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.content.application.ts'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.content.application.ts'
 status: active
 authority: reference
 parent:
@@ -15,29 +15,43 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\content\application.ts'
+source_path: 'The Maximal Template™ Domain Library\content\application.ts'
 source_file: 'application.ts'
-source_sha256: 'a2d2576102cfe2f4aa62b58a91ffe48ad5c96b0b41e712b6ce813b6efaa2b01a'
+source_sha256: '1221a54f58e627e6ec5ae67de38f94a35db77989dd856081466bf02d945ebb4e'
 generated: true
 ---
 
 # `application.ts`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\content\application.ts`
-> SHA-256: `a2d2576102cfe2f4aa62b58a91ffe48ad5c96b0b41e712b6ce813b6efaa2b01a`
+> Original path: `The Maximal Template™ Domain Library\content\application.ts`
+> SHA-256: `1221a54f58e627e6ec5ae67de38f94a35db77989dd856081466bf02d945ebb4e`
 
 ```ts
-export const applicationContent = {
-  dashboardTitle: "Operational overview",
-  projectsLabel: "Projects",
-  teamLabel: "Team",
-  mediaLabel: "Media library",
-  mapsLabel: "Locations",
-  aiLabel: "AI workspace",
-} as const
+export const applicationProduct = {
+  name: "The Maximal Template™",
+  description:
+    "One tenant-aware SaaS superset containing every supported recipe.",
+} as const;
+
+export const applicationCapabilities = {
+  marketing: true,
+  crm: true,
+  projects: true,
+  support: true,
+  marketingAutomation: true,
+  invoicing: true,
+  social: true,
+  ai: true,
+  portal: true,
+  admin: true,
+} as const;
+
+export const applicationDesign = {
+  navigation: "sidebar",
+} as const;
 
 ```

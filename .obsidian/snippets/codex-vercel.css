@@ -1,0 +1,753 @@
+/*
+ * codex-vercel.css
+ * Obsidian — Codex / Vercel-inspired dark UI
+ *
+ * Designed primarily for Obsidian's default theme.
+ */
+
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
+
+.theme-dark {
+  /* Surfaces */
+  --background-primary: #0a0a0a;
+  --background-primary-alt: #0d0d0d;
+  --background-secondary: #111111;
+  --background-secondary-alt: #161616;
+  --background-modifier-hover: #1a1a1a;
+  --background-modifier-active-hover: #202020;
+  --background-modifier-border: #262626;
+  --background-modifier-border-hover: #333333;
+  --background-modifier-border-focus: #454545;
+  --background-modifier-form-field: #111111;
+
+  /* Text */
+  --text-normal: #ededed;
+  --text-muted: #a1a1aa;
+  --text-faint: #66666e;
+  --text-on-accent: #000000;
+  --text-error: #ff6b6b;
+  --text-success: #52d273;
+  --text-warning: #f5c451;
+
+  /* Accent */
+  --interactive-accent: #ededed;
+  --interactive-accent-hover: #ffffff;
+  --interactive-normal: #171717;
+  --interactive-hover: #202020;
+
+  /* Links */
+  --link-color: #ededed;
+  --link-color-hover: #ffffff;
+  --link-unresolved-color: #777777;
+
+  /* Code */
+  --code-normal: #d4d4d8;
+  --code-background: #111111;
+
+  /* Typography */
+  --font-text-theme:
+    "Geist",
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --font-interface-theme:
+    "Geist",
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --font-monospace-theme:
+    "Geist Mono",
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  /* Geometry */
+  --radius-s: 5px;
+  --radius-m: 7px;
+  --radius-l: 10px;
+  --input-radius: 6px;
+
+  /* Vercel-esque sharp UI */
+  --tab-radius-active: 6px;
+  --checkbox-radius: 4px;
+
+  /* Editor */
+  --file-line-width: 900px;
+  --line-height-normal: 1.62;
+}
+
+
+/* =========================================================
+   GLOBAL WORKSPACE
+   ========================================================= */
+
+body {
+  letter-spacing: -0.005em;
+}
+
+.workspace {
+  background: #0a0a0a;
+}
+
+.workspace-split.mod-root {
+  background: #0a0a0a;
+}
+
+.workspace-leaf-content {
+  background: var(--background-primary);
+}
+
+
+/* =========================================================
+   TITLE BAR + WINDOW CHROME
+   ========================================================= */
+
+.titlebar,
+.workspace-ribbon {
+  background: #0a0a0a;
+  border-color: #222222;
+}
+
+.workspace-ribbon {
+  border-right: 1px solid #222222;
+}
+
+.workspace-ribbon.mod-left:before {
+  background: transparent;
+}
+
+
+/* =========================================================
+   SIDEBARS
+   ========================================================= */
+
+.mod-left-split,
+.mod-right-split {
+  background: #0d0d0d;
+}
+
+.workspace-split.mod-left-split > .workspace-leaf-resize-handle,
+.workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+  border-color: #222222;
+}
+
+.nav-header {
+  padding: 8px;
+}
+
+.nav-buttons-container {
+  gap: 3px;
+}
+
+.nav-action-button {
+  border-radius: 6px;
+  color: #888888;
+}
+
+.nav-action-button:hover {
+  color: #ededed;
+  background: #1a1a1a;
+}
+
+
+/* =========================================================
+   FILE EXPLORER
+   ========================================================= */
+
+.nav-file-title,
+.nav-folder-title {
+  border-radius: 6px;
+  font-size: 13px;
+  min-height: 28px;
+}
+
+.nav-file-title:hover,
+.nav-folder-title:hover {
+  background: #171717;
+  color: #ffffff;
+}
+
+.nav-file-title.is-active {
+  background: #ededed;
+  color: #0a0a0a;
+  font-weight: 550;
+}
+
+.nav-file-title.is-active .nav-file-title-content {
+  color: #0a0a0a;
+}
+
+.nav-folder-title {
+  color: #a1a1aa;
+}
+
+.nav-folder.mod-root > .nav-folder-title {
+  color: #ededed;
+}
+
+
+/* =========================================================
+   TABS
+   ========================================================= */
+
+.workspace-tabs {
+  background: #0a0a0a;
+}
+
+.workspace-tab-header-container {
+  background: #0a0a0a;
+  border-bottom: 1px solid #222222;
+}
+
+.workspace-tab-header {
+  margin: 5px 2px;
+  border-radius: 6px;
+  color: #777777;
+}
+
+.workspace-tab-header:hover {
+  background: #161616;
+  color: #ededed;
+}
+
+.workspace-tab-header.is-active {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.workspace-tab-header.is-active::before,
+.workspace-tab-header.is-active::after {
+  display: none;
+}
+
+.workspace-tab-header-inner-title {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   EDITOR / NOTE CONTENT
+   ========================================================= */
+
+.markdown-source-view,
+.markdown-reading-view {
+  background: #0a0a0a;
+}
+
+.markdown-preview-view,
+.markdown-source-view.mod-cm6 .cm-scroller {
+  padding-bottom: 15vh;
+}
+
+.markdown-preview-view {
+  color: #ededed;
+}
+
+.markdown-source-view.mod-cm6 .cm-line {
+  caret-color: #ffffff;
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6,
+.HyperMD-header {
+  color: #fafafa;
+  letter-spacing: -0.025em;
+}
+
+.markdown-rendered h1,
+.HyperMD-header-1 {
+  font-weight: 650;
+}
+
+.markdown-rendered h2,
+.HyperMD-header-2 {
+  font-weight: 620;
+}
+
+.markdown-rendered h3,
+.HyperMD-header-3 {
+  font-weight: 600;
+}
+
+.markdown-rendered h1 {
+  font-size: 2.2em;
+}
+
+.markdown-rendered h2 {
+  font-size: 1.55em;
+  border-bottom: 1px solid #242424;
+  padding-bottom: 0.35em;
+}
+
+.markdown-rendered h3 {
+  font-size: 1.25em;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.markdown-rendered a,
+.cm-hmd-internal-link,
+.cm-link {
+  text-decoration: none;
+}
+
+.internal-link {
+  color: #ededed;
+  text-decoration: underline;
+  text-decoration-color: #444444;
+  text-underline-offset: 3px;
+}
+
+.internal-link:hover {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+}
+
+
+/* =========================================================
+   CODE
+   ========================================================= */
+
+.markdown-rendered code,
+.cm-inline-code {
+  background: #171717 !important;
+  border: 1px solid #292929;
+  border-radius: 5px;
+  color: #e4e4e7 !important;
+  padding: 0.1em 0.35em;
+}
+
+.markdown-rendered pre {
+  background: #0f0f0f !important;
+  border: 1px solid #292929;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.markdown-rendered pre code {
+  background: transparent !important;
+  border: none;
+  padding: 0;
+}
+
+.HyperMD-codeblock {
+  background: #0f0f0f !important;
+}
+
+
+/* =========================================================
+   BLOCKQUOTES
+   ========================================================= */
+
+.markdown-rendered blockquote {
+  background: transparent;
+  border-left: 2px solid #555555;
+  color: #a1a1aa;
+  padding-left: 1em;
+}
+
+
+/* =========================================================
+   HORIZONTAL RULES
+   ========================================================= */
+
+.markdown-rendered hr {
+  border: none;
+  border-top: 1px solid #262626;
+  margin: 2em 0;
+}
+
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.markdown-rendered table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #292929;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.markdown-rendered th {
+  background: #141414;
+  color: #ededed;
+  font-weight: 550;
+}
+
+.markdown-rendered td,
+.markdown-rendered th {
+  border-color: #292929;
+}
+
+.markdown-rendered tr:hover td {
+  background: #121212;
+}
+
+
+/* =========================================================
+   PROPERTIES / FRONTMATTER
+   ========================================================= */
+
+.metadata-container {
+  background: #0f0f0f;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 24px;
+}
+
+.metadata-property {
+  border-radius: 5px;
+}
+
+.metadata-property:hover {
+  background: #171717;
+}
+
+.metadata-property-key {
+  color: #888888;
+  font-size: 12px;
+}
+
+.metadata-property-value {
+  color: #d4d4d8;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   TAGS
+   ========================================================= */
+
+a.tag {
+  background: #171717;
+  border: 1px solid #303030;
+  border-radius: 5px;
+  color: #a1a1aa;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 7px;
+  text-decoration: none;
+}
+
+a.tag:hover {
+  background: #ededed;
+  border-color: #ededed;
+  color: #0a0a0a;
+}
+
+
+/* =========================================================
+   CALLOUTS
+   ========================================================= */
+
+.callout {
+  background: #101010;
+  border: 1px solid #292929;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.callout-title {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.callout-content {
+  color: #b4b4b8;
+}
+
+
+/* =========================================================
+   CHECKBOXES / TASKS
+   ========================================================= */
+
+input[type="checkbox"] {
+  border: 1px solid #555555;
+  background: #111111;
+}
+
+input[type="checkbox"]:checked {
+  background: #ededed;
+  border-color: #ededed;
+}
+
+.markdown-preview-view ul > li.task-list-item.is-checked {
+  color: #666666;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-input-container input {
+  background: #111111;
+  border: 1px solid #292929;
+  box-shadow: none;
+  color: #ededed;
+}
+
+.search-input-container input:focus {
+  border-color: #555555;
+  box-shadow: 0 0 0 1px #555555;
+}
+
+.search-result-file-title {
+  color: #d4d4d8;
+}
+
+.search-result-file-match {
+  background: #171717;
+  border-radius: 6px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button,
+.mod-cta {
+  background: #171717;
+  border: 1px solid #303030;
+  border-radius: 6px;
+  box-shadow: none;
+  color: #ededed;
+  font-weight: 500;
+}
+
+button:hover {
+  background: #222222;
+  border-color: #444444;
+}
+
+button.mod-cta {
+  background: #ededed;
+  border-color: #ededed;
+  color: #0a0a0a;
+}
+
+button.mod-cta:hover {
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+input,
+textarea,
+select,
+.dropdown {
+  background: #111111 !important;
+  border: 1px solid #292929 !important;
+  box-shadow: none !important;
+  color: #ededed !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #555555 !important;
+  box-shadow: 0 0 0 1px #555555 !important;
+}
+
+
+/* =========================================================
+   MODALS
+   ========================================================= */
+
+.modal {
+  background: #111111;
+  border: 1px solid #303030;
+  border-radius: 10px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.025);
+}
+
+.modal-bg {
+  background: rgba(0, 0, 0, 0.72);
+}
+
+
+/* =========================================================
+   COMMAND PALETTE / SUGGESTIONS
+   ========================================================= */
+
+.suggestion-container {
+  background: #111111;
+  border: 1px solid #303030;
+  border-radius: 9px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+}
+
+.suggestion-item {
+  border-radius: 5px;
+}
+
+.suggestion-item.is-selected {
+  background: #ededed;
+  color: #0a0a0a;
+}
+
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #292929;
+  border: 2px solid #0a0a0a;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
+
+
+/* =========================================================
+   STATUS BAR
+   ========================================================= */
+
+.status-bar {
+  background: rgba(10, 10, 10, 0.92);
+  border: 1px solid #292929;
+  border-bottom: none;
+  color: #777777;
+  font-size: 11px;
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   BACKLINKS
+   ========================================================= */
+
+.backlink-pane {
+  color: #a1a1aa;
+}
+
+.search-result-container.mod-global-search,
+.embedded-backlinks {
+  background: transparent;
+}
+
+.tree-item-self:hover {
+  background: #171717;
+}
+
+
+/* =========================================================
+   GRAPH
+   ========================================================= */
+
+.graph-view.color-fill {
+  color: #ededed;
+}
+
+.graph-view.color-fill-tag {
+  color: #a1a1aa;
+}
+
+.graph-view.color-fill-attachment {
+  color: #777777;
+}
+
+.graph-view.color-line {
+  color: #333333;
+}
+
+.graph-view.color-text {
+  color: #a1a1aa;
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: #3a3a3a;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+*:focus-visible {
+  outline: 1px solid #555555;
+  outline-offset: 1px;
+}
+
+
+/* =========================================================
+   OPTIONAL: SMALL "CODEX" DETAILS
+   ========================================================= */
+
+/* File title feels more like an application/document header */
+.inline-title {
+  color: #fafafa;
+  font-size: 2.15em;
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  margin-bottom: 0.75em;
+}
+
+/* Slightly tighter UI than stock Obsidian */
+body {
+  --nav-item-size: 13px;
+  --metadata-label-font-size: 12px;
+  --metadata-input-font-size: 12px;
+}
+
+/* Remove excessive visual depth */
+.workspace-tab-container,
+.workspace-leaf,
+.workspace-tabs,
+.workspace-sidedock-vault-profile {
+  box-shadow: none !important;
+}
+
+/* Thin separators everywhere */
+.workspace-leaf-resize-handle {
+  background: #222222;
+}

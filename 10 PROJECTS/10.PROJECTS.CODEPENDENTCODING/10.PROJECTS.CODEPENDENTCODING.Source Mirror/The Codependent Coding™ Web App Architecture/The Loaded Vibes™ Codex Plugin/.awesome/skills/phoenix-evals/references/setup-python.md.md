@@ -1,0 +1,99 @@
+---
+title: 'The Loaded Vibes™ Codex Plugin\.awesome\skills\phoenix-evals\references\setup-python.md'
+type: source-document
+scope: project
+project: 'Codependent Coding'
+domain: source
+artifact: 'The Loaded Vibes™ Codex Plugin\.awesome\skills\phoenix-evals\references\setup-python.md'
+kind: source-document
+namespace: 'codependentcoding.source.the-loaded-vibes-codex-plugin.awesome.skills.phoenix-evals.references.setup-python.md'
+status: active
+authority: reference
+parent:
+depends_on: []
+supersedes: []
+tags:
+  - projects/codependent-coding
+  - source/mirror
+  - source/the-loaded-vibes-codex-plugin
+created: 2026-08-18
+updated: 2026-08-18
+source_path: 'The Loaded Vibes™ Codex Plugin\.awesome\skills\phoenix-evals\references\setup-python.md'
+source_file: 'setup-python.md'
+source_sha256: '32ac1825d3a943ac95fdfd109a96cda0c717ceb36f30c0daf53d958ef0cd2f22'
+generated: true
+---
+
+# `setup-python.md`
+
+> [!info] Generated source mirror
+> Original path: `The Loaded Vibes™ Codex Plugin\.awesome\skills\phoenix-evals\references\setup-python.md`
+> SHA-256: `32ac1825d3a943ac95fdfd109a96cda0c717ceb36f30c0daf53d958ef0cd2f22`
+
+````markdown
+# Setup: Python
+
+Packages required for Phoenix evals and experiments.
+
+## Installation
+
+```bash
+# Core Phoenix package (includes client, evals, otel)
+pip install arize-phoenix
+
+# Or install individual packages
+pip install arize-phoenix-client   # Phoenix client only
+pip install arize-phoenix-evals    # Evaluation utilities
+pip install arize-phoenix-otel     # OpenTelemetry integration
+```
+
+## LLM Providers
+
+For LLM-as-judge evaluators, install your provider's SDK:
+
+```bash
+pip install openai      # OpenAI
+pip install anthropic   # Anthropic
+pip install google-generativeai  # Google
+```
+
+## Validation (Optional)
+
+```bash
+pip install scikit-learn  # For TPR/TNR metrics
+```
+
+## Quick Verify
+
+```python
+from phoenix.client import Client
+from phoenix.evals import LLM, ClassificationEvaluator
+from phoenix.otel import register
+
+# All imports should work
+print("Phoenix Python setup complete")
+```
+
+## Key Imports (Evals 2.0)
+
+```python
+from phoenix.client import Client
+from phoenix.evals import (
+    ClassificationEvaluator,      # LLM classification evaluator (preferred)
+    LLM,                          # Provider-agnostic LLM wrapper
+    async_evaluate_dataframe,     # Batch evaluate a DataFrame (preferred, async)
+    evaluate_dataframe,           # Batch evaluate a DataFrame (sync)
+    create_evaluator,             # Decorator for code-based evaluators
+    create_classifier,            # Factory for LLM classification evaluators
+    bind_evaluator,               # Map column names to evaluator params
+    Score,                        # Score dataclass
+)
+from phoenix.evals.utils import to_annotation_dataframe  # Format results for Phoenix annotations
+```
+
+**Prefer**: `ClassificationEvaluator` over `create_classifier` (more parameters/customization).
+**Prefer**: `async_evaluate_dataframe` over `evaluate_dataframe` (better throughput for LLM evals).
+
+**Do NOT use** legacy 1.0 imports: `OpenAIModel`, `AnthropicModel`, `run_evals`, `llm_classify`.
+
+````

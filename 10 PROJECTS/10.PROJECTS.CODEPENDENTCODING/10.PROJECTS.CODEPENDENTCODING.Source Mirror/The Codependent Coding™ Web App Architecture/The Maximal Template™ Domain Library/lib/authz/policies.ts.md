@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\lib\authz\policies.ts'
+title: 'The Maximal Template™ Domain Library\lib\authz\policies.ts'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\lib\authz\policies.ts'
+artifact: 'The Maximal Template™ Domain Library\lib\authz\policies.ts'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.lib.authz.policies.ts'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.lib.authz.policies.ts'
 status: active
 authority: reference
 parent:
@@ -15,127 +15,80 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\lib\authz\policies.ts'
+source_path: 'The Maximal Template™ Domain Library\lib\authz\policies.ts'
 source_file: 'policies.ts'
-source_sha256: '594b64a6b48d49b04666c36079243bd251b5fc9c7a2b2f8d319ec7785cd4dabd'
+source_sha256: '21ca520529e7dd803451efea960f67007a4efff66b78dac91862449dfbcf4c90'
 generated: true
 ---
 
 # `policies.ts`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\lib\authz\policies.ts`
-> SHA-256: `594b64a6b48d49b04666c36079243bd251b5fc9c7a2b2f8d319ec7785cd4dabd`
+> Original path: `The Maximal Template™ Domain Library\lib\authz\policies.ts`
+> SHA-256: `21ca520529e7dd803451efea960f67007a4efff66b78dac91862449dfbcf4c90`
 
 ```ts
-import {
-  primaryOrganizationRole,
-  type Capability,
-  type OrganizationRole,
-  type TenantContext,
-} from '@/types/authzTypes';
+import type { AccessContext } from "../../types/access";
 
-type ProjectAccessRecord = {
-  organizationId: string;
-  status: 'active' | 'archived';
-};
+import type { ResourceAccessDescriptor } from "./resources";
+import { isPrivilegedRole } from "./roles";
 
-type MembershipAccessRecord = {
-  organizationId: string;
-  role: OrganizationRole;
-};
-
-function hasTenantCapability(
-  context: TenantContext,
-  capability: Capability,
+export function isSameTenant(
+  context: AccessContext,
+  resource: ResourceAccessDescriptor,
 ): boolean {
-  return (
-    context.organization.status === 'active' &&
-    context.capabilities.some((candidate) => candidate === capability)
-  );
+  return context.organizationId === resource.organizationId;
 }
 
-function isCurrentTenant(
-  context: TenantContext,
-  organizationId: string,
+export function ownsResource(
+  context: AccessContext,
+  resource: ResourceAccessDescriptor,
 ): boolean {
-  return context.organization.id === organizationId;
+  return resource.ownerMembershipId === context.membershipId;
 }
 
-export function canReadProject(
-  context: TenantContext,
-  project: ProjectAccessRecord,
+export function isAssignedResource(
+  context: AccessContext,
+  resource: ResourceAccessDescriptor,
 ): boolean {
-  return (
-    isCurrentTenant(context, project.organizationId) &&
-    hasTenantCapability(context, 'project.read')
-  );
+  return resource.assigneeMembershipId === context.membershipId;
 }
 
-export function canCreateProject(context: TenantContext): boolean {
-  return hasTenantCapability(context, 'project.create');
-}
-
-export function canUpdateProject(
-  context: TenantContext,
-  project: ProjectAccessRecord,
+export function canReadResource(
+  context: AccessContext,
+  resource: ResourceAccessDescriptor,
 ): boolean {
-  return (
-    project.status === 'active' &&
-    isCurrentTenant(context, project.organizationId) &&
-    hasTenantCapability(context, 'project.update')
-  );
-}
-
-export function canTransitionProjectStatus(
-  context: TenantContext,
-  project: ProjectAccessRecord,
-  nextStatus: ProjectAccessRecord['status'],
-): boolean {
-  if (!isCurrentTenant(context, project.organizationId)) return false;
-  if (!hasTenantCapability(context, 'project.archive')) return false;
-
-  return (
-    (project.status === 'active' && nextStatus === 'archived') ||
-    (project.status === 'archived' && nextStatus === 'active')
-  );
-}
-
-export function canManageMembership(
-  context: TenantContext,
-  target: MembershipAccessRecord,
-  ownerCount: number,
-  nextRole: OrganizationRole | null,
-): boolean {
-  if (!isCurrentTenant(context, target.organizationId)) return false;
-  if (!hasTenantCapability(context, 'membership.manage')) return false;
-  if (
-    target.role === primaryOrganizationRole &&
-    context.membership.role !== primaryOrganizationRole
-  )
+  if (!isSameTenant(context, resource)) {
     return false;
-  if (
-    nextRole === primaryOrganizationRole &&
-    context.membership.role !== primaryOrganizationRole
-  )
-    return false;
+  }
 
-  const removesOwner =
-    target.role === primaryOrganizationRole &&
-    nextRole !== primaryOrganizationRole;
-  return !removesOwner || ownerCount > 1;
+  if (context.role !== "CLIENT") {
+    return true;
+  }
+
+  return (
+    resource.clientVisible === true ||
+    ownsResource(context, resource) ||
+    isAssignedResource(context, resource)
+  );
 }
 
-export function canCreateInvitation(
-  context: TenantContext,
-  role: OrganizationRole,
+export function canManageOwnedOrAssignedResource(
+  context: AccessContext,
+  resource: ResourceAccessDescriptor,
 ): boolean {
+  if (!isSameTenant(context, resource)) {
+    return false;
+  }
+
   return (
-    role !== primaryOrganizationRole &&
-    hasTenantCapability(context, 'invitation.manage')
+    isPrivilegedRole(context.role) ||
+    context.role === "MANAGER" ||
+    ownsResource(context, resource) ||
+    isAssignedResource(context, resource)
   );
 }
 

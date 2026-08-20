@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\projects\page.tsx'
+title: 'The Maximal Template™ Domain Library\app\(tenant)\projects\page.tsx'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\projects\page.tsx'
+artifact: 'The Maximal Template™ Domain Library\app\(tenant)\projects\page.tsx'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.app.-tenant-.projects.page.tsx'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.app.-tenant-.projects.page.tsx'
 status: active
 authority: reference
 parent:
@@ -15,33 +15,27 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\app\(tenant)\projects\page.tsx'
+source_path: 'The Maximal Template™ Domain Library\app\(tenant)\projects\page.tsx'
 source_file: 'page.tsx'
-source_sha256: '2e2869462542bb982bdebb85be3cc6514f9eb983a5b32b27d9fb42ec17eefcb2'
+source_sha256: '96df25d48251a0ceff106a4b6496c35a6b5b88d2068dd0cf2a9645e4ed6e0f26'
 generated: true
 ---
 
 # `page.tsx`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\app\(tenant)\projects\page.tsx`
-> SHA-256: `2e2869462542bb982bdebb85be3cc6514f9eb983a5b32b27d9fb42ec17eefcb2`
+> Original path: `The Maximal Template™ Domain Library\app\(tenant)\projects\page.tsx`
+> SHA-256: `96df25d48251a0ceff106a4b6496c35a6b5b88d2068dd0cf2a9645e4ed6e0f26`
 
 ```tsx
-import { Suspense } from "react"
+import { ProjectsFeature } from "@/features/projects/projectsFeature";
 
-import { ProjectsFeature } from "@/features/projects/projects-feature"
-import { ProjectsSkeleton } from "@/features/projects/projects-skeleton"
-
-export default function ProjectsPage() {
-  return (
-    <Suspense fallback={<ProjectsSkeleton />}>
-      <ProjectsFeature />
-    </Suspense>
-  )
+// URL ownership stops here; orchestration is delegated to the feature.
+export default function Page() {
+  return <ProjectsFeature />;
 }
 
 ```

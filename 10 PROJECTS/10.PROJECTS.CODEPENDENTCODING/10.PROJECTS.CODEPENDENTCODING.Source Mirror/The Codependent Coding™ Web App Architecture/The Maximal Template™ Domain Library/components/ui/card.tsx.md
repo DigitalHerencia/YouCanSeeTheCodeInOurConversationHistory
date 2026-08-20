@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\components\ui\card.tsx'
+title: 'The Maximal Template™ Domain Library\components\ui\card.tsx'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\components\ui\card.tsx'
+artifact: 'The Maximal Template™ Domain Library\components\ui\card.tsx'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.components.ui.card.tsx'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.components.ui.card.tsx'
 status: active
 authority: reference
 parent:
@@ -15,68 +15,115 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\components\ui\card.tsx'
+source_path: 'The Maximal Template™ Domain Library\components\ui\card.tsx'
 source_file: 'card.tsx'
-source_sha256: '5f55b3f67355ac96294dbee383a71adcb90ffb7593f4308c27c5c6deb14a3f46'
+source_sha256: '97b895fbcfeafb59ee5a5764070826038bd54aa467185243f86e2cc50325ca71'
 generated: true
 ---
 
 # `card.tsx`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\components\ui\card.tsx`
-> SHA-256: `5f55b3f67355ac96294dbee383a71adcb90ffb7593f4308c27c5c6deb14a3f46`
+> Original path: `The Maximal Template™ Domain Library\components\ui\card.tsx`
+> SHA-256: `97b895fbcfeafb59ee5a5764070826038bd54aa467185243f86e2cc50325ca71`
 
 ```tsx
-import * as React from "react"
+import * as React from "react";
+import { cn } from "@/lib/utils";
 
-import { cn } from "@/lib/utils"
+const Card = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & { interactive?: boolean }
+>(({ className, interactive, role = "article", ...props }, ref) => (
+  <div
+    ref={ref}
+    role={role}
+    className={cn(
+      "bg-card text-card-foreground border-3 border-foreground shadow-[4px_4px_0px_hsl(var(--shadow-color))] bk-interactive",
+      interactive &&
+        "cursor-pointer hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none",
+      className,
+    )}
+    {...props}
+  />
+));
+Card.displayName = "Card";
 
-export const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => (
-    <div ref={ref} className={cn("border bg-card text-card-foreground", className)} {...props} />
-  )
-)
-Card.displayName = "Card"
+const CardHeader = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "flex flex-col space-y-1.5 p-6 border-b-3 border-foreground",
+      className,
+    )}
+    {...props}
+  />
+));
+CardHeader.displayName = "CardHeader";
 
-export const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => (
-    <div ref={ref} className={cn("flex flex-col gap-2 p-6", className)} {...props} />
-  )
-)
-CardHeader.displayName = "CardHeader"
-
-export const CardTitle = React.forwardRef<
+const CardTitle = React.forwardRef<
   HTMLHeadingElement,
   React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
-  <h3 ref={ref} className={cn("text-2xl", className)} {...props} />
-))
-CardTitle.displayName = "CardTitle"
+  <h3
+    ref={ref}
+    className={cn(
+      "text-xl font-bold uppercase tracking-wide leading-none",
+      className,
+    )}
+    {...props}
+  />
+));
+CardTitle.displayName = "CardTitle";
 
-export const CardDescription = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
+const CardDescription = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <p ref={ref} className={cn("text-sm text-muted-foreground", className)} {...props} />
-))
-CardDescription.displayName = "CardDescription"
+  <div
+    ref={ref}
+    className={cn("text-sm text-muted-foreground", className)}
+    {...props}
+  />
+));
+CardDescription.displayName = "CardDescription";
 
-export const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => (
-    <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
-  )
-)
-CardContent.displayName = "CardContent"
+const CardContent = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("p-6", className)} {...props} />
+));
+CardContent.displayName = "CardContent";
 
-export const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => (
-    <div ref={ref} className={cn("flex items-center gap-3 p-6 pt-0", className)} {...props} />
-  )
-)
-CardFooter.displayName = "CardFooter"
+const CardFooter = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "flex items-center p-6 border-t-3 border-foreground bg-muted/50",
+      className,
+    )}
+    {...props}
+  />
+));
+CardFooter.displayName = "CardFooter";
+
+export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardDescription,
+  CardContent,
+};
 
 ```

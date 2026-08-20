@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\.agents\execution\handoff.json'
+title: 'The Maximal Template™ Domain Library\.agents\execution\handoff.json'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\.agents\execution\handoff.json'
+artifact: 'The Maximal Template™ Domain Library\.agents\execution\handoff.json'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.agents.execution.handoff.json'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.agents.execution.handoff.json'
 status: active
 authority: reference
 parent:
@@ -15,30 +15,69 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\.agents\execution\handoff.json'
+source_path: 'The Maximal Template™ Domain Library\.agents\execution\handoff.json'
 source_file: 'handoff.json'
-source_sha256: 'f02e85f46d2ef600acf5cdd33b33f57c54d90f600bf35ac51a344f29c5f14ab7'
+source_sha256: '9d349fda46a9f7b02a3be101431a834ccf501d43068a23f1eada1b0672da2af8'
 generated: true
 ---
 
 # `handoff.json`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\.agents\execution\handoff.json`
-> SHA-256: `f02e85f46d2ef600acf5cdd33b33f57c54d90f600bf35ac51a344f29c5f14ab7`
+> Original path: `The Maximal Template™ Domain Library\.agents\execution\handoff.json`
+> SHA-256: `9d349fda46a9f7b02a3be101431a834ccf501d43068a23f1eada1b0672da2af8`
 
 ```json
 {
-  "schemaVersion": 1,
-  "artifact": "generated-project.execution.handoff",
-  "authority": "execution-state-only",
-  "state": "ready_for_product_specification",
-  "activeImplementation": null,
-  "executedEvidence": [],
-  "blockers": []
+  "schema_version": "1.0.0",
+  "file": ".agents/execution/handoff.json",
+  "product": "The Maximal Template",
+  "purpose": "Current handoff state for the next implementation agent.",
+  "updated_at": "2026-08-15T00:00:00-06:00",
+  "authority_summary": [
+    "Current explicit user instruction is highest authority.",
+    "context/docs owns durable Maximal Template human intent.",
+    "context/specs owns the canonical P0-P7 build/repair sequence.",
+    ".agents/contracts is a machine interpretation and may not override Markdown.",
+    ".agents/execution is mutable state and evidence only.",
+    "Observed code is evidence, not automatic architecture."
+  ],
+  "current_state": {
+    "governance_replacement_prepared": true,
+    "governance_applied_to_repo": true,
+    "application_implementation_changed": true,
+    "runtime_validation_executed": true
+  },
+  "active_spec": null,
+  "next_actions": [],
+  "known_repository_defects": [],
+  "evidence": {
+    "executed": [
+      "Read canonical Codependent Coding Knowledge System governance, epistemology, specification, validation, execution, architecture, and layer-contract sources from DevNotes.",
+      "Inspected current TheMaximalTemplate repository structure, package.json, route groups, Prisma schema, feature roots, and provider integration roots through connected GitHub.",
+      "Spec 00: parsed all .agents contract YAML and execution JSON successfully on 2026-08-15.",
+      "Spec 01: next typegen and pnpm typecheck passed; generated routes include canonical public, admin, and CRM contact entrypoints and exclude accidental root admin routes.",
+      "Spec 02: dark-only root tokens, restrained semantic palette, reduced-motion behavior, and active primitive color/focus rules were inspected; pnpm typecheck passed.",
+      "Spec 03: block files were normalized to presentation categories, provider and form implementations moved to features, prohibited block imports/state audit returned no matches, and pnpm typecheck passed.",
+      "Spec 04: CRM contacts now implements list/client filters/detail/new/edit/archive, domain schemas/types/fetchers/actions/selects/DTOs, authz and optimistic concurrency; pnpm typecheck and pnpm prisma:validate passed.",
+      "Spec 05: action/fetcher names, domain schemas/types, database runtime, loose utilities, and Clerk webhook persistence boundaries were normalized; pnpm typecheck and pnpm prisma:validate passed.",
+      "Spec 06: public explorer, component catalog, architecture context, integration surface, and signed-out major-domain navigation were added; next typegen and pnpm typecheck passed.",
+      "Spec 07: provider environment contracts, explicit safe status states, Stripe/Blob/Cloudinary/SendGrid/Hugging Face boundaries, and Hugging Face generation were completed.",
+      "Final validation: pnpm format:check, pnpm lint, pnpm typecheck, pnpm prisma:validate, next typegen, and pnpm build completed successfully on 2026-08-15."
+    ],
+    "skipped": [
+      "No dev server, migration, deployment, or live provider mutation was run.",
+      "No live database RLS test or external provider provisioning was run."
+    ],
+    "blocked": [],
+    "inferred": [
+      "Spec 00 acceptance criteria were mapped by direct governance inspection.",
+      "Spec 04 tenant containment is evidenced by scoped transactions and the existing CrmContact RLS policy migration; no live database RLS test was executed."
+    ]
+  }
 }
 
 ```

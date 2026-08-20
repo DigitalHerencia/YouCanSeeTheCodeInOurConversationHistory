@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\types\adminTypes.ts'
+title: 'The Maximal Template™ Domain Library\types\adminTypes.ts'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\types\adminTypes.ts'
+artifact: 'The Maximal Template™ Domain Library\types\adminTypes.ts'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.types.admintypes.ts'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.types.admintypes.ts'
 status: active
 authority: reference
 parent:
@@ -15,61 +15,45 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\types\adminTypes.ts'
+source_path: 'The Maximal Template™ Domain Library\types\adminTypes.ts'
 source_file: 'adminTypes.ts'
-source_sha256: '370ee4d696042a4dd28a5e265a7625925ca389d01b2a8b1b47574447ac89dbea'
+source_sha256: '7acdc21bd75bca74e52dcd798fde63424ec8ec3048c9585efd3d6fea79c14990'
 generated: true
 ---
 
 # `adminTypes.ts`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\types\adminTypes.ts`
-> SHA-256: `370ee4d696042a4dd28a5e265a7625925ca389d01b2a8b1b47574447ac89dbea`
+> Original path: `The Maximal Template™ Domain Library\types\adminTypes.ts`
+> SHA-256: `7acdc21bd75bca74e52dcd798fde63424ec8ec3048c9585efd3d6fea79c14990`
 
 ```ts
-export type AdminUserDTO = {
-  id: string
-  displayName: string
-  email: string | null
-  status: "active" | "disabled"
-  isApplicationAdmin: boolean
-  createdAt: string
+export interface AdminMembershipDTO {
+  id: string;
+  role: string;
+  status: string;
+  user: { id: string; displayName: string | null; email: string | null };
+  createdAt: string;
 }
-
-export type AdminOrganizationDTO = {
-  id: string
-  name: string
-  slug: string
-  status: "active" | "suspended"
-  memberCount: number
-  projectCount: number
-  createdAt: string
+export interface AdminRecordSummaryDTO {
+  resource: string;
+  count: number;
 }
-
-export type AdminBillingDTO = {
-  id: string
-  organizationName: string
-  organizationSlug: string
-  status: string
-  priceId: string
-  cancelAtPeriodEnd: boolean
-  currentPeriodEnd: string | null
-  updatedAt: string
-}
-
-export type AdminWebhookDTO = {
-  id: string
-  provider: string
-  eventType: string
-  status: string
-  attemptCount: number
-  receivedAt: string
-  processedAt: string | null
-  processingError: string | null
+export interface AuditEventDTO {
+  id: string;
+  action: string;
+  resourceType: string;
+  resourceId: string | null;
+  metadata: unknown;
+  actor: {
+    id: string;
+    displayName: string | null;
+    email: string | null;
+  } | null;
+  createdAt: string;
 }
 
 ```

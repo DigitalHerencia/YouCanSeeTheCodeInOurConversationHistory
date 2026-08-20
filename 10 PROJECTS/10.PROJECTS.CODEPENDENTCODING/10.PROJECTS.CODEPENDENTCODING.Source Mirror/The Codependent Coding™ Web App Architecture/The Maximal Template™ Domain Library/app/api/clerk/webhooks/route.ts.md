@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\app\api\clerk\webhooks\route.ts'
+title: 'The Maximal Template™ Domain Library\app\api\clerk\webhooks\route.ts'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\app\api\clerk\webhooks\route.ts'
+artifact: 'The Maximal Template™ Domain Library\app\api\clerk\webhooks\route.ts'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.app.api.clerk.webhooks.route.ts'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.app.api.clerk.webhooks.route.ts'
 status: active
 authority: reference
 parent:
@@ -15,67 +15,95 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\app\api\clerk\webhooks\route.ts'
+source_path: 'The Maximal Template™ Domain Library\app\api\clerk\webhooks\route.ts'
 source_file: 'route.ts'
-source_sha256: '90054bfa752e662a7410cf44f6039f9d8755abd2e6fa644285645f2d52c4ac6f'
+source_sha256: '37c90e40868a87a594fd6a4728c9a4db643958f6bd7f495729ec3769c6ff7a3b'
 generated: true
 ---
 
 # `route.ts`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\app\api\clerk\webhooks\route.ts`
-> SHA-256: `90054bfa752e662a7410cf44f6039f9d8755abd2e6fa644285645f2d52c4ac6f`
+> Original path: `The Maximal Template™ Domain Library\app\api\clerk\webhooks\route.ts`
+> SHA-256: `37c90e40868a87a594fd6a4728c9a4db643958f6bd7f495729ec3769c6ff7a3b`
 
 ```ts
-import { verifyWebhook } from "@clerk/nextjs/webhooks"
-import { NextRequest, NextResponse } from "next/server"
+import { verifyWebhook } from "@clerk/nextjs/webhooks";
+import type { NextRequest } from "next/server";
 
-import { getOptionalEnv } from "@/lib/env"
-import { mapVerifiedClerkWebhook } from "@/lib/integrations/clerk/webhooks"
-import { reconcileClerkWebhook } from "@/lib/webhooks/clerkWebhookWorkflow"
+import { projectClerkUser } from "@/lib/auth/clerkWebhook";
+import { withProviderTransaction } from "@/lib/db/provider";
+import {
+  anonymizeClerkUserTx,
+  syncClerkUserTx,
+} from "@/lib/db/transactions/sync-clerk-user.tx";
+import {
+  claimWebhookEventTx,
+  completeWebhookEventTx,
+  failWebhookEventTx,
+} from "@/lib/db/transactions/webhook-event.tx";
 
-type HandlerDependencies = {
-  verify: (request: NextRequest, options: { signingSecret: string }) => Promise<unknown>
-  reconcile: typeof reconcileClerkWebhook
-}
+export async function POST(request: NextRequest) {
+  let webhookEventId: string | null = null;
 
-export function createClerkWebhookPostHandler(dependencies: HandlerDependencies) {
-  return async function clerkWebhookPost(request: NextRequest) {
-    const secret = getOptionalEnv("CLERK_WEBHOOK_SIGNING_SECRET")
-
-    if (!secret) {
-      return NextResponse.json({ error: "Webhook is not configured." }, { status: 503 })
+  try {
+    const signingSecret = process.env.CLERK_WEBHOOK_SECRET;
+    if (!signingSecret) {
+      throw new Error("CLERK_WEBHOOK_SECRET is required.");
     }
 
-    const providerEventId = request.headers.get("svix-id")
-    if (!providerEventId || providerEventId.length > 255) {
-      return NextResponse.json({ error: "Invalid webhook request." }, { status: 400 })
+    const payload = await request.clone().text();
+    const event = await verifyWebhook(request, { signingSecret });
+    const eventId = request.headers.get("svix-id");
+
+    if (!eventId) throw new Error("The svix-id header is required.");
+
+    webhookEventId = await withProviderTransaction((tx) =>
+      claimWebhookEventTx(tx, {
+        provider: "clerk",
+        eventId,
+        type: event.type,
+        payload,
+      }),
+    );
+
+    if (!webhookEventId) {
+      return Response.json({ received: true, duplicate: true });
     }
 
-    let verifiedEvent: unknown
-    try {
-      verifiedEvent = await dependencies.verify(request, { signingSecret: secret })
-    } catch {
-      return NextResponse.json({ error: "Invalid webhook request." }, { status: 400 })
+    if (event.type === "user.created" || event.type === "user.updated") {
+      await withProviderTransaction((tx) =>
+        syncClerkUserTx(tx, projectClerkUser(event.data)),
+      );
+    } else if (event.type === "user.deleted" && event.data.id) {
+      await withProviderTransaction((tx) =>
+        anonymizeClerkUserTx(tx, event.data.id!),
+      );
     }
 
-    const mapped = mapVerifiedClerkWebhook(verifiedEvent, providerEventId)
-    if (!mapped.ok) {
-      return NextResponse.json({ error: "Malformed webhook payload." }, { status: 400 })
+    await withProviderTransaction((tx) =>
+      completeWebhookEventTx(tx, webhookEventId!),
+    );
+
+    return Response.json({ received: true });
+  } catch (cause) {
+    const message =
+      cause instanceof Error ? cause.message : "Clerk webhook failed.";
+
+    if (webhookEventId) {
+      await withProviderTransaction((tx) =>
+        failWebhookEventTx(tx, webhookEventId!, message),
+      );
     }
 
-    const result = await dependencies.reconcile(mapped.event)
-    return NextResponse.json(result, { status: result.ok ? 200 : 500 })
+    return Response.json(
+      { error: message },
+      { status: webhookEventId ? 500 : 400 },
+    );
   }
 }
-
-export const POST = createClerkWebhookPostHandler({
-  verify: verifyWebhook,
-  reconcile: reconcileClerkWebhook,
-})
 
 ```

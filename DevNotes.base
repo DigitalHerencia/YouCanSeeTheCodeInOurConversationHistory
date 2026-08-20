@@ -106,3 +106,6 @@ views:
         direction: ASC
       - property: file.name
         direction: ASC
+  - type: list
+    name: View
+    indentProperties: true

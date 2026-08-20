@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\.agents\execution\progress.json'
+title: 'The Maximal Template™ Domain Library\.agents\execution\progress.json'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\.agents\execution\progress.json'
+artifact: 'The Maximal Template™ Domain Library\.agents\execution\progress.json'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.agents.execution.progress.json'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.agents.execution.progress.json'
 status: active
 authority: reference
 parent:
@@ -15,32 +15,103 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\.agents\execution\progress.json'
+source_path: 'The Maximal Template™ Domain Library\.agents\execution\progress.json'
 source_file: 'progress.json'
-source_sha256: 'cf95ab8e8343bca4fe5c6d7b633108d539150218474cae9e09d61a408f634221'
+source_sha256: '17cb37d44093d09abf9d2fd05163e2f4816151da4593f86f3015247ae062f86d'
 generated: true
 ---
 
 # `progress.json`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\.agents\execution\progress.json`
-> SHA-256: `cf95ab8e8343bca4fe5c6d7b633108d539150218474cae9e09d61a408f634221`
+> Original path: `The Maximal Template™ Domain Library\.agents\execution\progress.json`
+> SHA-256: `17cb37d44093d09abf9d2fd05163e2f4816151da4593f86f3015247ae062f86d`
 
 ```json
 {
-  "schemaVersion": 1,
-  "artifact": "generated-project.execution.progress",
-  "authority": "execution-state-only",
-  "overallStatus": "generated_baseline",
-  "activeIssue": null,
-  "activeBranch": null,
-  "activePullRequest": null,
-  "executedEvidence": [],
-  "blockers": []
+  "schema_version": "1.0.0",
+  "file": ".agents/execution/progress.json",
+  "product": "The Maximal Template",
+  "purpose": "Machine-readable tracker for the canonical eight-spec Maximal Template repair/build sequence.",
+  "updated_at": "2026-08-15T00:00:00-06:00",
+  "status_values": [
+    "not_started",
+    "in_progress",
+    "blocked",
+    "complete",
+    "deferred"
+  ],
+  "current_phase": "complete",
+  "implementation_started": true,
+  "specs": [
+    {
+      "id": "00",
+      "priority": "P0",
+      "title": "Fix the architectural contract",
+      "path": "context/specs/00.architectural-contract.md",
+      "status": "complete"
+    },
+    {
+      "id": "01",
+      "priority": "P1",
+      "title": "Repair route topology and public-demo information architecture",
+      "path": "context/specs/01.route-topology-public-demo.md",
+      "status": "complete"
+    },
+    {
+      "id": "02",
+      "priority": "P2",
+      "title": "Make the design system dark-only and mature neo-brutalist",
+      "path": "context/specs/02.design-system.md",
+      "status": "complete"
+    },
+    {
+      "id": "03",
+      "priority": "P3",
+      "title": "Rebuild the block library around categories and variations",
+      "path": "context/specs/03.block-library.md",
+      "status": "complete"
+    },
+    {
+      "id": "04",
+      "priority": "P4",
+      "title": "Normalize CRM contacts as the golden vertical slice",
+      "path": "context/specs/04.crm-golden-vertical-slice.md",
+      "status": "complete"
+    },
+    {
+      "id": "05",
+      "priority": "P5",
+      "title": "Normalize application library, types, schemas, and webhook persistence boundaries",
+      "path": "context/specs/05.application-library-normalization.md",
+      "status": "complete"
+    },
+    {
+      "id": "06",
+      "priority": "P6",
+      "title": "Turn the application shell into the Maximal Template explorer",
+      "path": "context/specs/06.maximal-template-explorer.md",
+      "status": "complete"
+    },
+    {
+      "id": "07",
+      "priority": "P7",
+      "title": "Finish external-provider configuration and demo surfaces",
+      "path": "context/specs/07.provider-integrations.md",
+      "status": "complete"
+    }
+  ],
+  "governance_package": {
+    "status": "applied",
+    "applied_to_repository": true,
+    "validation": {
+      "yaml_json_parse": "passed_2026-08-15",
+      "repository_runtime_checks": "passed_2026-08-15"
+    }
+  }
 }
 
 ```

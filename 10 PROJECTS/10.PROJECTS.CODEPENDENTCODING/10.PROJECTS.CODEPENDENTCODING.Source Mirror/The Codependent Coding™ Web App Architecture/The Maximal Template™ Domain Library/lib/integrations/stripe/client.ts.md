@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\lib\integrations\stripe\client.ts'
+title: 'The Maximal Template™ Domain Library\lib\integrations\stripe\client.ts'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\lib\integrations\stripe\client.ts'
+artifact: 'The Maximal Template™ Domain Library\lib\integrations\stripe\client.ts'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.lib.integrations.stripe.client.ts'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.lib.integrations.stripe.client.ts'
 status: active
 authority: reference
 parent:
@@ -15,35 +15,36 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\lib\integrations\stripe\client.ts'
+source_path: 'The Maximal Template™ Domain Library\lib\integrations\stripe\client.ts'
 source_file: 'client.ts'
-source_sha256: 'b3b06d1c7df0d7a3c9ef6d6591b9a1f48770beb375b4dbf88ecb3d0554932fe4'
+source_sha256: '83fbb98b2347321002e3b01dee015ce2c24645cc2a3b5b081b276dd29647a191'
 generated: true
 ---
 
 # `client.ts`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\lib\integrations\stripe\client.ts`
-> SHA-256: `b3b06d1c7df0d7a3c9ef6d6591b9a1f48770beb375b4dbf88ecb3d0554932fe4`
+> Original path: `The Maximal Template™ Domain Library\lib\integrations\stripe\client.ts`
+> SHA-256: `83fbb98b2347321002e3b01dee015ce2c24645cc2a3b5b081b276dd29647a191`
 
 ```ts
-import "server-only"
+import "server-only";
 
-import Stripe from "stripe"
+import Stripe from "stripe";
 
-import { getRequiredEnv } from "@/lib/env"
+let client: Stripe | undefined;
 
-let stripeClient: Stripe | undefined
-
-export function getStripe(): Stripe {
-  if (!stripeClient) {
-    stripeClient = new Stripe(getRequiredEnv("STRIPE_SECRET_KEY"))
-  }
-  return stripeClient
+export function getStripeClient() {
+  const apiKey = process.env.STRIPE_SECRET_KEY;
+  if (!apiKey)
+    throw new Error(
+      "Stripe is not configured. Add STRIPE_SECRET_KEY to .env.local.",
+    );
+  client ??= new Stripe(apiKey);
+  return client;
 }
 
 ```

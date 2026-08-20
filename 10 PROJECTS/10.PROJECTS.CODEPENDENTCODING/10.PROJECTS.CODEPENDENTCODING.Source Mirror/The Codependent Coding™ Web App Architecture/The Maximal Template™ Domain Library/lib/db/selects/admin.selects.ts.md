@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\lib\db\selects\admin.selects.ts'
+title: 'The Maximal Template™ Domain Library\lib\db\selects\admin.selects.ts'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\lib\db\selects\admin.selects.ts'
+artifact: 'The Maximal Template™ Domain Library\lib\db\selects\admin.selects.ts'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.lib.db.selects.admin.selects.ts'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.lib.db.selects.admin.selects.ts'
 status: active
 authority: reference
 parent:
@@ -15,63 +15,54 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\lib\db\selects\admin.selects.ts'
+source_path: 'The Maximal Template™ Domain Library\lib\db\selects\admin.selects.ts'
 source_file: 'admin.selects.ts'
-source_sha256: 'c53fd3c713eb372685c2913dcba2e1d32139c20e0ee5a09f6312ddbdc6b419b0'
+source_sha256: 'f1ece49b12c60b641528bd60cfa5e7b03a6da72d87510d8a6776b90a15edac94'
 generated: true
 ---
 
 # `admin.selects.ts`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\lib\db\selects\admin.selects.ts`
-> SHA-256: `c53fd3c713eb372685c2913dcba2e1d32139c20e0ee5a09f6312ddbdc6b419b0`
+> Original path: `The Maximal Template™ Domain Library\lib\db\selects\admin.selects.ts`
+> SHA-256: `f1ece49b12c60b641528bd60cfa5e7b03a6da72d87510d8a6776b90a15edac94`
 
 ```ts
-import "server-only"
+import type { Prisma } from "../../../generated/prisma/client";
 
-import type { Prisma } from "@/prisma/generated/prisma/client"
-
-export const adminUserSelect = {
+export const auditEventSelect = {
   id: true,
-  displayName: true,
-  email: true,
-  status: true,
-  isApplicationAdmin: true,
+  action: true,
+  resourceType: true,
+  resourceId: true,
+  metadata: true,
+  actor: {
+    select: {
+      id: true,
+      displayName: true,
+      email: true,
+    },
+  },
   createdAt: true,
-} satisfies Prisma.UserSelect
+} satisfies Prisma.AuditEventSelect;
 
-export const adminOrganizationSelect = {
+export type AuditEventRecord = Prisma.AuditEventGetPayload<{
+  select: typeof auditEventSelect;
+}>;
+
+export const adminMembershipSelect = {
   id: true,
-  name: true,
-  slug: true,
+  role: true,
   status: true,
+  user: { select: { id: true, displayName: true, email: true } },
   createdAt: true,
-  _count: { select: { memberships: true, projects: true } },
-} satisfies Prisma.OrganizationSelect
+} satisfies Prisma.MembershipSelect;
 
-export const adminBillingSelect = {
-  id: true,
-  status: true,
-  stripePriceId: true,
-  cancelAtPeriodEnd: true,
-  currentPeriodEnd: true,
-  updatedAt: true,
-  organization: { select: { name: true, slug: true } },
-} satisfies Prisma.BillingSubscriptionSelect
-
-export const adminWebhookSelect = {
-  id: true,
-  provider: true,
-  eventType: true,
-  status: true,
-  attemptCount: true,
-  receivedAt: true,
-  processedAt: true,
-  processingError: true,
-} satisfies Prisma.ProviderWebhookEventSelect
+export type AdminMembershipRecord = Prisma.MembershipGetPayload<{
+  select: typeof adminMembershipSelect;
+}>;
 
 ```

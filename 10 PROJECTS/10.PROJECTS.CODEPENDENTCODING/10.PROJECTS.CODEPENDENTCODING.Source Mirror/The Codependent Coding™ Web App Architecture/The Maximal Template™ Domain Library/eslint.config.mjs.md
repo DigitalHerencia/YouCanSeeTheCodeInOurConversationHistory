@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\eslint.config.mjs'
+title: 'The Maximal Template™ Domain Library\eslint.config.mjs'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\eslint.config.mjs'
+artifact: 'The Maximal Template™ Domain Library\eslint.config.mjs'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.eslint.config.mjs'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.eslint.config.mjs'
 status: active
 authority: reference
 parent:
@@ -15,63 +15,32 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\eslint.config.mjs'
+source_path: 'The Maximal Template™ Domain Library\eslint.config.mjs'
 source_file: 'eslint.config.mjs'
-source_sha256: 'aa2ed55167ed5d62a5e0561565a5a59804dfc36c02c1fc34555c8d43c1b0254f'
+source_sha256: 'e3320df5471c021a5a235581016bf76e2afc43b1e59a9446ee3de6c4e7f13a63'
 generated: true
 ---
 
 # `eslint.config.mjs`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\eslint.config.mjs`
-> SHA-256: `aa2ed55167ed5d62a5e0561565a5a59804dfc36c02c1fc34555c8d43c1b0254f`
+> Original path: `The Maximal Template™ Domain Library\eslint.config.mjs`
+> SHA-256: `e3320df5471c021a5a235581016bf76e2afc43b1e59a9446ee3de6c4e7f13a63`
 
 ```javascript
-import { defineConfig, globalIgnores } from "eslint/config"
-import nextVitals from "eslint-config-next/core-web-vitals"
-import nextTypescript from "eslint-config-next/typescript"
-import prettier from "eslint-config-prettier/flat"
-import reactPlugin from "eslint-plugin-react"
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTypeScript from "eslint-config-next/typescript";
+import reactRefresh from "eslint-plugin-react-refresh";
 
-const disabledReactPluginRules = Object.fromEntries(
-  Object.keys(reactPlugin.rules).map((ruleName) => [`react/${ruleName}`, "off"])
-)
-
-const eslintConfig = defineConfig([
+export default defineConfig([
   ...nextVitals,
-  ...nextTypescript,
-
-  {
-    rules: disabledReactPluginRules,
-  },
-
-  prettier,
-
-  globalIgnores(
-    [
-      ".next/**",
-      "out/**",
-      "build/**",
-      "dist/**",
-      "coverage/**",
-      "playwright-report/**",
-      "test-results/**",
-      "node_modules/**",
-      ".agents/**",
-      "mock-pages/**",
-      "prisma/generated/**",
-      "next-env.d.ts",
-      "*.config.js",
-      "*.config.cjs",
-    ],
-    "next-stack-template global ignores"
-  ),
-])
-
-export default eslintConfig
+  ...nextTypeScript,
+  { plugins: { "react-refresh": reactRefresh } },
+  globalIgnores([".next/**", "generated/prisma/**"]),
+]);
 
 ```

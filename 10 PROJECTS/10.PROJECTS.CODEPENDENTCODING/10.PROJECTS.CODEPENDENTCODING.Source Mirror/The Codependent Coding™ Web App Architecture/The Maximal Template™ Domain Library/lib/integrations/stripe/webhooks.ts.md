@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\lib\integrations\stripe\webhooks.ts'
+title: 'The Maximal Template™ Domain Library\lib\integrations\stripe\webhooks.ts'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\lib\integrations\stripe\webhooks.ts'
+artifact: 'The Maximal Template™ Domain Library\lib\integrations\stripe\webhooks.ts'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.lib.integrations.stripe.webhooks.ts'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.lib.integrations.stripe.webhooks.ts'
 status: active
 authority: reference
 parent:
@@ -15,75 +15,34 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\lib\integrations\stripe\webhooks.ts'
+source_path: 'The Maximal Template™ Domain Library\lib\integrations\stripe\webhooks.ts'
 source_file: 'webhooks.ts'
-source_sha256: '7676abc18452850b9f2438f1b7488cce966aaaa2585030ad275ea9d67c171910'
+source_sha256: 'd6cc36bb51b3822862f368165c19dff081680ea69f3ab73f421bde203c1b5def'
 generated: true
 ---
 
 # `webhooks.ts`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\lib\integrations\stripe\webhooks.ts`
-> SHA-256: `7676abc18452850b9f2438f1b7488cce966aaaa2585030ad275ea9d67c171910`
+> Original path: `The Maximal Template™ Domain Library\lib\integrations\stripe\webhooks.ts`
+> SHA-256: `d6cc36bb51b3822862f368165c19dff081680ea69f3ab73f421bde203c1b5def`
 
 ```ts
-import "server-only"
+import "server-only";
 
-import {
-  stripeSubscriptionTriggerSchema,
-  stripeWebhookEnvelopeSchema,
-} from "@/schemas/stripeWebhookSchemas"
-import type { StripeWebhookTrigger } from "@/types/billingTypes"
+import { getStripeClient } from "./client";
 
-export type StripeWebhookMappingResult =
-  | { ok: true; event: StripeWebhookTrigger }
-  | { ok: false; reason: "malformed_payload" }
-
-export function mapVerifiedStripeWebhook(value: unknown): StripeWebhookMappingResult {
-  const envelope = stripeWebhookEnvelopeSchema.safeParse(value)
-  if (!envelope.success) return { ok: false, reason: "malformed_payload" }
-
-  const supported = stripeSubscriptionTriggerSchema.safeParse(value)
-  if (!supported.success) {
-    if (
-      envelope.data.type === "customer.subscription.created" ||
-      envelope.data.type === "customer.subscription.updated" ||
-      envelope.data.type === "customer.subscription.deleted"
-    ) {
-      return { ok: false, reason: "malformed_payload" }
-    }
-    return {
-      ok: true,
-      event: {
-        provider: "stripe",
-        providerEventId: envelope.data.id,
-        eventType: envelope.data.type,
-        disposition: "ignore",
-        safeMetadata: {
-          resource_type: envelope.data.type.split(".")[1]?.slice(0, 80) ?? "unknown",
-        },
-      },
-    }
-  }
-
-  return {
-    ok: true,
-    event: {
-      provider: "stripe",
-      providerEventId: supported.data.id,
-      eventType: supported.data.type,
-      disposition: "process",
-      subscriptionId: supported.data.data.object.id,
-      safeMetadata: {
-        resource_type: "subscription",
-        stripe_subscription_id: supported.data.data.object.id,
-      },
-    },
-  }
+export function verifyStripeWebhook(payload: string, signature: string | null) {
+  const secret = process.env.STRIPE_WEBHOOK_SECRET;
+  if (!secret)
+    throw new Error(
+      "Stripe webhooks are not configured. Add STRIPE_WEBHOOK_SECRET to .env.local.",
+    );
+  if (!signature) throw new Error("The Stripe-Signature header is required.");
+  return getStripeClient().webhooks.constructEvent(payload, signature, secret);
 }
 
 ```

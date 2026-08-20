@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\components\ui\marquee.tsx'
+title: 'The Maximal Template™ Domain Library\components\ui\marquee.tsx'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\components\ui\marquee.tsx'
+artifact: 'The Maximal Template™ Domain Library\components\ui\marquee.tsx'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.components.ui.marquee.tsx'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.components.ui.marquee.tsx'
 status: active
 authority: reference
 parent:
@@ -15,92 +15,150 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\components\ui\marquee.tsx'
+source_path: 'The Maximal Template™ Domain Library\components\ui\marquee.tsx'
 source_file: 'marquee.tsx'
-source_sha256: '9f72d8abf7f9820c7d2895d96fccf7af20c04c73b827e0728550a3450ca40597'
+source_sha256: '8cdb29f01c5ca21f3abb232ec1f4c671837edadd928b37688f52a75551eb78a8'
 generated: true
 ---
 
 # `marquee.tsx`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\components\ui\marquee.tsx`
-> SHA-256: `9f72d8abf7f9820c7d2895d96fccf7af20c04c73b827e0728550a3450ca40597`
+> Original path: `The Maximal Template™ Domain Library\components\ui\marquee.tsx`
+> SHA-256: `8cdb29f01c5ca21f3abb232ec1f4c671837edadd928b37688f52a75551eb78a8`
 
 ```tsx
-import * as React from "react"
+import * as React from "react";
+import { cn } from "@/lib/utils";
 
-import { cn } from "@/lib/utils"
-
-export interface MarqueeProps extends React.ComponentPropsWithoutRef<"div"> {
-  speed?: "slow" | "normal" | "fast"
-  direction?: "left" | "right"
-  pauseOnHover?: boolean
-  bordered?: boolean
-  repeat?: number
+interface MarqueeProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Content to display in the marquee */
+  children: React.ReactNode;
+  /** Direction of the marquee animation */
+  direction?: "left" | "right";
+  /** Speed of the animation: 'slow' | 'normal' | 'fast' */
+  speed?: "slow" | "normal" | "fast";
+  /** Pause animation on hover */
+  pauseOnHover?: boolean;
+  /** Show neubrutalism border styling */
+  bordered?: boolean;
+  /** Number of times to repeat the content (for seamless loop) */
+  repeat?: number;
 }
-export const Marquee = React.forwardRef<HTMLDivElement, MarqueeProps>(
+
+const speedClasses = {
+  slow: "animate-marquee-slow",
+  normal: "animate-marquee",
+  fast: "animate-marquee-fast",
+};
+
+const Marquee = React.forwardRef<HTMLDivElement, MarqueeProps>(
   (
     {
       className,
       children,
-      speed = "normal",
       direction = "left",
+      speed = "normal",
       pauseOnHover = true,
       bordered = true,
       repeat = 4,
       ...props
     },
-    ref
-  ) => (
-    <div
-      ref={ref}
-      data-direction={direction}
-      data-pause-on-hover={pauseOnHover}
-      data-speed={speed}
-      className={cn("flex overflow-hidden", bordered && "border border-border", className)}
-      {...props}
-    >
-      {[false, true].map((duplicate) => (
+    ref,
+  ) => {
+    // Use the speed-based class for both directions so `speed` is always
+    // honored; flip to a right-scroll via animation-direction (the dedicated
+    // *-reverse speed classes were never defined in the CSS).
+    const animationClass = speedClasses[speed];
+    const animationDirection = direction === "right" ? "reverse" : undefined;
+
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          "flex overflow-hidden",
+          bordered && "border-3 border-foreground bg-background",
+          className,
+        )}
+        {...props}
+      >
         <div
-          key={String(duplicate)}
-          aria-hidden={duplicate || undefined}
-          className="marquee-track flex shrink-0 items-center gap-8 py-3"
+          className={cn(
+            "marquee-content flex shrink-0 items-center gap-8 py-3",
+            animationClass,
+            pauseOnHover && "hover:[animation-play-state:paused]",
+          )}
+          style={{ animationDirection }}
         >
-          {Array.from({ length: repeat }, (_, index) => (
-            <React.Fragment key={index}>{children}</React.Fragment>
+          {Array.from({ length: repeat }).map((_, i) => (
+            <React.Fragment key={i}>{children}</React.Fragment>
           ))}
         </div>
-      ))}
-    </div>
-  )
-)
-Marquee.displayName = "Marquee"
-export const MarqueeItem = React.forwardRef<
+        <div
+          className={cn(
+            "marquee-content flex shrink-0 items-center gap-8 py-3",
+            animationClass,
+            pauseOnHover && "hover:[animation-play-state:paused]",
+          )}
+          style={{ animationDirection }}
+          aria-hidden="true"
+        >
+          {Array.from({ length: repeat }).map((_, i) => (
+            <React.Fragment key={i}>{children}</React.Fragment>
+          ))}
+        </div>
+      </div>
+    );
+  },
+);
+Marquee.displayName = "Marquee";
+
+interface MarqueeItemProps extends React.HTMLAttributes<HTMLSpanElement> {
+  children: React.ReactNode;
+}
+
+const MarqueeItem = React.forwardRef<HTMLSpanElement, MarqueeItemProps>(
+  ({ className, children, ...props }, ref) => {
+    return (
+      <span
+        ref={ref}
+        className={cn(
+          "inline-flex items-center gap-2 whitespace-nowrap px-4 text-lg font-bold uppercase tracking-wide",
+          className,
+        )}
+        {...props}
+      >
+        {children}
+      </span>
+    );
+  },
+);
+MarqueeItem.displayName = "MarqueeItem";
+
+interface MarqueeSeparatorProps extends React.HTMLAttributes<HTMLSpanElement> {
+  /** Separator character or element */
+  children?: React.ReactNode;
+}
+
+const MarqueeSeparator = React.forwardRef<
   HTMLSpanElement,
-  React.ComponentPropsWithoutRef<"span">
->(({ className, ...props }, ref) => (
-  <span
-    ref={ref}
-    className={cn(
-      "inline-flex items-center gap-2 px-4 font-bold whitespace-nowrap uppercase",
-      className
-    )}
-    {...props}
-  />
-))
-MarqueeItem.displayName = "MarqueeItem"
-export const MarqueeSeparator = React.forwardRef<
-  HTMLSpanElement,
-  React.ComponentPropsWithoutRef<"span">
->(({ className, children = "/", ...props }, ref) => (
-  <span ref={ref} className={cn("font-bold text-muted-foreground", className)} {...props}>
-    {children}
-  </span>
-))
-MarqueeSeparator.displayName = "MarqueeSeparator"
+  MarqueeSeparatorProps
+>(({ className, children = "/", ...props }, ref) => {
+  return (
+    <span
+      ref={ref}
+      className={cn("text-2xl font-black text-muted-foreground", className)}
+      {...props}
+    >
+      {children}
+    </span>
+  );
+});
+MarqueeSeparator.displayName = "MarqueeSeparator";
+
+export { Marquee, MarqueeItem, MarqueeSeparator };
 
 ```

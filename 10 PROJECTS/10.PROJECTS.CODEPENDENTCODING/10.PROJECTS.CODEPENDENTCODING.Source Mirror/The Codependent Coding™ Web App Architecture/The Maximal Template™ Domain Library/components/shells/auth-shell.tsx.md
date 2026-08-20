@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\components\shells\auth-shell.tsx'
+title: 'The Maximal Template™ Domain Library\components\shells\auth-shell.tsx'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\components\shells\auth-shell.tsx'
+artifact: 'The Maximal Template™ Domain Library\components\shells\auth-shell.tsx'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.components.shells.auth-shell.tsx'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.components.shells.auth-shell.tsx'
 status: active
 authority: reference
 parent:
@@ -15,29 +15,29 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\components\shells\auth-shell.tsx'
+source_path: 'The Maximal Template™ Domain Library\components\shells\auth-shell.tsx'
 source_file: 'auth-shell.tsx'
-source_sha256: 'c14fc5d957ec9448ca081ce17573d068a41ef545d2125f510d31e3a2613618f4'
+source_sha256: '6dd91ac8a686d7f34820fa5031f310cd098c777ae5dc09e80a51d62339507e34'
 generated: true
 ---
 
 # `auth-shell.tsx`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\components\shells\auth-shell.tsx`
-> SHA-256: `c14fc5d957ec9448ca081ce17573d068a41ef545d2125f510d31e3a2613618f4`
+> Original path: `The Maximal Template™ Domain Library\components\shells\auth-shell.tsx`
+> SHA-256: `6dd91ac8a686d7f34820fa5031f310cd098c777ae5dc09e80a51d62339507e34`
 
 ```tsx
-import type { ReactNode } from "react"
+import type { ReactNode } from "react";
 
-import { Wordmark } from "@/components/brand/wordmark"
+import { Wordmark } from "@/components/brand/wordmark";
 
 type AuthShellProps = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export function AuthShell({ children }: AuthShellProps) {
   return (
@@ -45,10 +45,13 @@ export function AuthShell({ children }: AuthShellProps) {
       <section className="hidden border-r bg-background p-8 md:flex md:flex-col md:justify-between">
         <Wordmark />
         <div className="max-w-xl space-y-4">
-          <p className="eyebrow text-sm text-primary">Server-owned auth boundary</p>
+          <p className="eyebrow text-sm text-primary">
+            Server-owned auth boundary
+          </p>
           <h1>Access stays accountable.</h1>
           <p className="text-muted-foreground">
-            Clerk identifies the user. Local tables authorize row-level reads and writes.
+            Clerk identifies the user. Local tables authorize row-level reads
+            and writes.
           </p>
         </div>
       </section>
@@ -56,7 +59,7 @@ export function AuthShell({ children }: AuthShellProps) {
         {children}
       </section>
     </main>
-  )
+  );
 }
 
 ```

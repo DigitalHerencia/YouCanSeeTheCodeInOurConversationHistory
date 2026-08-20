@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\postcss.config.mjs'
+title: 'The Maximal Template™ Domain Library\postcss.config.mjs'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\postcss.config.mjs'
+artifact: 'The Maximal Template™ Domain Library\postcss.config.mjs'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.postcss.config.mjs'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.postcss.config.mjs'
 status: active
 authority: reference
 parent:
@@ -15,28 +15,28 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\postcss.config.mjs'
+source_path: 'The Maximal Template™ Domain Library\postcss.config.mjs'
 source_file: 'postcss.config.mjs'
-source_sha256: '7c013693fe1a211c61c8825d2f24a55435a81f48f03dd5affdbdad5679fd17cd'
+source_sha256: 'dfac7ac2d86d326a0e5adb024e7943c181393ed17a5fcb8f0315b24c7da6ddde'
 generated: true
 ---
 
 # `postcss.config.mjs`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\postcss.config.mjs`
-> SHA-256: `7c013693fe1a211c61c8825d2f24a55435a81f48f03dd5affdbdad5679fd17cd`
+> Original path: `The Maximal Template™ Domain Library\postcss.config.mjs`
+> SHA-256: `dfac7ac2d86d326a0e5adb024e7943c181393ed17a5fcb8f0315b24c7da6ddde`
 
 ```javascript
 const config = {
   plugins: {
     "@tailwindcss/postcss": {},
   },
-}
+};
 
-export default config
+export default config;
 
 ```

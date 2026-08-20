@@ -1,12 +1,12 @@
 ---
-title: 'The Hipster Stack™ Technology Stack\template\components\shells\tenant-shell.tsx'
+title: 'The Maximal Template™ Domain Library\components\shells\tenant-shell.tsx'
 type: source-document
 scope: project
 project: 'Codependent Coding'
 domain: source
-artifact: 'The Hipster Stack™ Technology Stack\template\components\shells\tenant-shell.tsx'
+artifact: 'The Maximal Template™ Domain Library\components\shells\tenant-shell.tsx'
 kind: source-document
-namespace: 'codependentcoding.source.the-hipster-stack-technology-stack.template.components.shells.tenant-shell.tsx'
+namespace: 'codependentcoding.source.the-maximal-template-domain-library.components.shells.tenant-shell.tsx'
 status: active
 authority: reference
 parent:
@@ -15,75 +15,86 @@ supersedes: []
 tags:
   - projects/codependent-coding
   - source/mirror
-  - source/the-hipster-stack-technology-stack
+  - source/the-maximal-template-domain-library
 created: 2026-08-18
 updated: 2026-08-18
-source_path: 'The Hipster Stack™ Technology Stack\template\components\shells\tenant-shell.tsx'
+source_path: 'The Maximal Template™ Domain Library\components\shells\tenant-shell.tsx'
 source_file: 'tenant-shell.tsx'
-source_sha256: 'ed878da05ea90655b586b2d96dd2feda8b56f45843260c93a9bf1320165505ca'
+source_sha256: 'afca457e7ba877988a2a4d06a394f17a4a239c6f589ffd4065fbb4e780dcb03d'
 generated: true
 ---
 
 # `tenant-shell.tsx`
 
 > [!info] Generated source mirror
-> Original path: `The Hipster Stack™ Technology Stack\template\components\shells\tenant-shell.tsx`
-> SHA-256: `ed878da05ea90655b586b2d96dd2feda8b56f45843260c93a9bf1320165505ca`
+> Original path: `The Maximal Template™ Domain Library\components\shells\tenant-shell.tsx`
+> SHA-256: `afca457e7ba877988a2a4d06a394f17a4a239c6f589ffd4065fbb4e780dcb03d`
 
 ```tsx
-import { UserButton } from '@clerk/nextjs';
+import { Show, SignInButton, UserButton } from "@clerk/nextjs";
 import {
   Brain,
   Image,
   LayoutDashboard,
-  Map,
   Settings,
   SquareKanban,
   Users,
-} from 'lucide-react';
-import Link from 'next/link';
-import type { ReactNode } from 'react';
+} from "lucide-react";
+import Link from "next/link";
+import type { ReactNode } from "react";
 
-import { Wordmark } from '@/components/brand/wordmark';
-import { Button } from '@/components/ui/button';
+import { Wordmark } from "@/components/brand/wordmark";
+import { Button } from "@/components/ui/button";
 import {
-  loadedVibesCapabilities,
-  loadedVibesDesign,
-} from '@/content/loadedvibes';
+  applicationCapabilities,
+  applicationDesign,
+} from "@/content/application";
 
 type TenantShellProps = {
   children: ReactNode;
 };
 
 const navItems = [
-  { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  ...(loadedVibesCapabilities.sampleDomain
-    ? [{ href: '/projects', label: 'Projects', icon: SquareKanban }]
+  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  ...(applicationCapabilities.projects
+    ? [{ href: "/projects", label: "Projects", icon: SquareKanban }]
     : []),
-  ...(loadedVibesCapabilities.invitations
-    ? [{ href: '/team', label: 'Team', icon: Users }]
+  ...(applicationCapabilities.admin
+    ? [{ href: "/users", label: "Users", icon: Users }]
     : []),
-  ...(loadedVibesCapabilities.uploads
-    ? [{ href: '/uploads', label: 'Media', icon: Image }]
+  ...(applicationCapabilities.social
+    ? [{ href: "/social/media", label: "Media", icon: Image }]
     : []),
-  ...(loadedVibesCapabilities.maps
-    ? [{ href: '/maps', label: 'Maps', icon: Map }]
+  ...(applicationCapabilities.ai
+    ? [{ href: "/ai", label: "AI", icon: Brain }]
     : []),
-  ...(loadedVibesCapabilities.ai
-    ? [{ href: '/ai', label: 'AI', icon: Brain }]
-    : []),
-  { href: '/settings', label: 'Settings', icon: Settings },
+  { href: "/settings/profile", label: "Settings", icon: Settings },
 ] as const;
 
+function AccountControl() {
+  return (
+    <>
+      <Show when="signed-in">
+        <UserButton />
+      </Show>
+      <Show when="signed-out">
+        <SignInButton mode="modal">
+          <Button size="sm">Sign in</Button>
+        </SignInButton>
+      </Show>
+    </>
+  );
+}
+
 export function TenantShell({ children }: TenantShellProps) {
-  const sidebar = loadedVibesDesign.navigation === 'sidebar';
+  const sidebar = applicationDesign.navigation === "sidebar";
 
   return (
     <div
       className={
         sidebar
-          ? 'min-h-dvh pb-20 md:grid md:grid-cols-[15rem_1fr] md:pb-0'
-          : 'min-h-dvh pb-20 md:pb-0'
+          ? "min-h-dvh pb-20 md:grid md:grid-cols-[15rem_1fr] md:pb-0"
+          : "min-h-dvh pb-20 md:pb-0"
       }
     >
       {sidebar ? (
@@ -105,13 +116,13 @@ export function TenantShell({ children }: TenantShellProps) {
             ))}
           </nav>
           <div className="mt-auto">
-            <UserButton />
+            <AccountControl />
           </div>
         </aside>
       ) : null}
       <div className="min-w-0">
         <header
-          className={`sticky top-0 z-40 border-b bg-background/90 backdrop-blur ${sidebar ? 'md:hidden' : ''}`}
+          className={`sticky top-0 z-40 border-b bg-background/90 backdrop-blur ${sidebar ? "md:hidden" : ""}`}
         >
           <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6 sm:px-10 lg:px-12">
             <Wordmark />
@@ -125,7 +136,7 @@ export function TenantShell({ children }: TenantShellProps) {
                 </Button>
               ))}
             </nav>
-            <UserButton />
+            <AccountControl />
           </div>
         </header>
         <main className="lv-shell-main mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-12">
