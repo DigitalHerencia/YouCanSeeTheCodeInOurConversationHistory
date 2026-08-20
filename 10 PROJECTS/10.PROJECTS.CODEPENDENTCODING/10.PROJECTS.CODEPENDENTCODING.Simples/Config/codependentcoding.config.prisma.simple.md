@@ -20,13 +20,13 @@ tags:
   - database/config
   - status/review
 created: 2026-08-18
-updated: 2026-08-18
+updated: 2026-08-19
 simple_type: config
 layer: prisma-lifecycle
 source_path: prisma.config.ts
 public_source_path: prisma.config.ts
 hardened_source_path: prisma.config.ts
-source_mirror: "[[60 CODEPENDENT CODING/Source Mirror/The Maximal Template™ Domain Library/prisma.config.ts|source mirror — prisma.config.ts]]"
+source_mirror: "[[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/prisma.config.ts|source mirror — prisma.config.ts]]"
 canonicalization_status: review
 owner_approval: pending
 public_implementation_status: observed
@@ -161,7 +161,7 @@ export default defineConfig({
 - [[codependentcoding.simples.database.map]]
 - [[codependentcoding.database.client.simple]]
 - [[codependentcoding.prisma.application-owned-tenancy.simple]]
-- [[60 CODEPENDENT CODING/Source Mirror/The Maximal Template™ Domain Library/prisma.config.ts|source mirror]]
+- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/prisma.config.ts|source mirror]]
 
 ## Backlinks
 
