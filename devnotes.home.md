@@ -18,7 +18,7 @@ tags:
   - maps/vault
   - status/active
 created: 2026-08-04
-updated: 2026-08-08
+updated: 2026-08-19
 ---
 # DevNotes Home
 
@@ -31,8 +31,10 @@ updated: 2026-08-08
 
 ## Knowledge Systems
 
-- [[codependentcoding.manifest.map]] — complete Codependent Coding™ corpus in `60 CODEPENDENT CODING`.
-- [[devnotes.tech-stack.map]] — reusable technical knowledge and integration references.
+- [[codependentcoding.manifest.map]] — canonical flat Codependent Coding™ knowledge-system corpus in `60 CODEPENDENT CODING`.
+- [[codependentcoding.webapp-architecture.master.source-document]] — active Codependent Coding™ WebApp Architecture in `10 PROJECTS/10.PROJECTS.CODEPENDENTCODING`.
+- [[codependentcoding.simples.dashboard]] — active Simples™ operating view in the Codependent Coding project workspace.
+- [[devnotes.tech-stack.map]] — reusable technical knowledge and integration references where still active.
 
 ## Active Source-of-Truth Notes
 
@@ -85,4 +87,4 @@ SORT file.mtime DESC
 
 ## Operating Rule
 
-Capture unfinished material in `00 ZETTELKASTEN`. Place durable material in its correct destination using the established naming, property, and note-type contracts. Keep source-of-truth notes clearly identified and discoverable.
+Capture unfinished material in `00 ZETTELKASTEN`. Place durable material in its correct destination using the established naming, property, and note-type contracts. Keep source-of-truth notes clearly identified and discoverable. For Codependent Coding, preserve the distinction between the flat knowledge corpus in `60 CODEPENDENT CODING` and active project-owned material in `10 PROJECTS/10.PROJECTS.CODEPENDENTCODING`.
