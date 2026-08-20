@@ -3,7 +3,7 @@ views:
     name: Table
     filters:
       and:
-        - file.inFolder("60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web")
+        - 'source_path.startsWith("The Hipster Stack™ Technology Stack\\apps\\web")'
     sort:
       - property: file.name
         direction: ASC
@@ -12,4 +12,4 @@ views:
     name: View
     filters:
       and:
-        - file.inFolder("60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/")
+        - 'source_path.startsWith("The Hipster Stack™ Technology Stack\\apps\\web")'
