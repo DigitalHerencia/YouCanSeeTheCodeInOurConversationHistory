@@ -19,13 +19,13 @@ tags:
   - authz/access-context
   - status/review
 created: 2026-08-18
-updated: 2026-08-18
+updated: 2026-08-19
 simple_type: type
 layer: shared-contract
 source_path: types/access.ts
 public_source_path: types/access.ts
 hardened_source_path: types/access.ts
-source_mirror: "[[60 CODEPENDENT CODING/Source Mirror/The Maximal Template™ Domain Library/types/access.ts|source mirror — types/access.ts]]"
+source_mirror: "[[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/types/access.ts|source mirror — types/access.ts]]"
 canonicalization_status: review
 owner_approval: pending
 public_implementation_status: observed
@@ -206,7 +206,7 @@ None currently identified in this file. Runtime enforcement belongs to auth/auth
 - [[codependentcoding.simples.database.map]]
 - [[codependentcoding.database.tenant.simple]]
 - [[codependentcoding.transactions.tenant-context.simple]]
-- [[60 CODEPENDENT CODING/Source Mirror/The Maximal Template™ Domain Library/types/access.ts|source mirror]]
+- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/types/access.ts|source mirror]]
 
 ## Backlinks
 
@@ -215,4 +215,3 @@ TABLE simple_type AS "Type", layer AS "Layer"
 FROM [[]]
 SORT file.name ASC
 ```
-
