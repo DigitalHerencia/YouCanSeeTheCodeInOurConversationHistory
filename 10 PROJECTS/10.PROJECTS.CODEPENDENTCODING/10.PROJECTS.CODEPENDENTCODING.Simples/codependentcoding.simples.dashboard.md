@@ -18,7 +18,7 @@ tags:
   - dashboard/simples
   - status/active
 created: 2026-08-18
-updated: 2026-08-18
+updated: 2026-08-20
 ---
 # Simples Dashboard
 
@@ -149,4 +149,4 @@ SORT file.name ASC
 - [[codependentcoding.simples.canonicalization.workflow]]
 - [[codependentcoding.simples.workbench.contract]]
 - [[codependentcoding.simples.database.map]]
-- [[70.TODO.CODEPENDENTCODING.2.Consolidation|Codependent Coding Consolidation]]
+- [[Codependent Coding|Codependent Coding™ Project]]
