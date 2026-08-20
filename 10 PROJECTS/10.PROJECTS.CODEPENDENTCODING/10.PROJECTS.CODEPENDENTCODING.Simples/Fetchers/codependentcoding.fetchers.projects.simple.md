@@ -21,13 +21,13 @@ tags:
   - domain/projects
   - status/review
 created: 2026-08-18
-updated: 2026-08-18
+updated: 2026-08-19
 simple_type: fetcher
 layer: persisted-read
 source_path: lib/fetchers/projectsFetchers.ts
 public_source_path: lib/fetchers/projectsFetchers.ts
 hardened_source_path: lib/fetchers/projectsFetchers.ts
-source_mirror: "[[60 CODEPENDENT CODING/Source Mirror/The Maximal Template™ Domain Library/lib/fetchers/projectsFetchers.ts|source mirror — projectsFetchers.ts]]"
+source_mirror: "[[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/fetchers/projectsFetchers.ts|source mirror — projectsFetchers.ts]]"
 canonicalization_status: review
 owner_approval: pending
 public_implementation_status: observed
@@ -301,7 +301,7 @@ export async function getMyTasks(limit = 100) {
 - [[codependentcoding.selects.projects.simple]]
 - [[codependentcoding.dto.projects.simple]]
 - [[codependentcoding.simples.database.map]]
-- [[60 CODEPENDENT CODING/Source Mirror/The Maximal Template™ Domain Library/lib/fetchers/projectsFetchers.ts|source mirror]]
+- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/fetchers/projectsFetchers.ts|source mirror]]
 
 ## Backlinks
 
