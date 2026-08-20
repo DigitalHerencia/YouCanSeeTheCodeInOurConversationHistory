@@ -20,7 +20,7 @@ tags:
   - architecture/source-viewer
   - status/review
 created: 2026-08-18
-updated: 2026-08-18
+updated: 2026-08-19
 ---
 
 # Simple Workbench Contract
@@ -350,7 +350,7 @@ A Monaco wrapper is a UI/infrastructure primitive. It does not own Simple domain
 
 - [[libraries.ts|current library registry]]
 - [[library-detail.tsx|current library detail]]
-- [[60 CODEPENDENT CODING/Source Mirror/The Hipster Stack™ Technology Stack/apps/web/app/docs/[[...slug]]/page.tsx|current Docs route]]
+- [[codependentcoding.source.the-hipster-stack-technology-stack.apps.web.app.docs.-.slug-.page.tsx|current Docs route]]
 - [[constituter.tsx|current Constituter]]
 - [[codependentcoding.simples.database.map]]
 - [[codependentcoding.fetchers.projects.simple]]
