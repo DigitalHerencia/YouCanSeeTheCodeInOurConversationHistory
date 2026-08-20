@@ -15,7 +15,7 @@ tags: ["codependent-coding", "governance", "canon"]
 subtaskIds: []
 dependencies: []
 createdAt: "2026-08-18T18:23:00.000Z"
-updatedAt: "2026-08-20T08:48:00.000Z"
+updatedAt: "2026-08-20T20:31:00.003Z"
 ---
 
 # Lock the Canon and Governance
@@ -45,3 +45,5 @@ Make the current product names, architecture rules, authority order, workflow de
 ## Acceptance
 
 A new agent can determine product identity, authority, terminology, repository boundaries, and next work from the four root docs plus the master architecture without choosing between conflicting current names.
+
+Project: [[Codependent Coding|Codependent Coding™]]

@@ -10,31 +10,20 @@ customFields: []
 teamMembers: []
 savedViews: []
 createdAt: "2026-08-18T18:23:00.000Z"
-updatedAt: "2026-08-20T08:48:00.000Z"
+updatedAt: "2026-08-20T20:31:00.017Z"
 ---
 
 # 🎯 Codependent Coding™
 
-One project. Nine work packages. The task files carry the detail; this page stays readable.
-
-## Current phase
-
-**Lock the canon and governance, then consolidate the real `DigitalHerencia/CodependentCoding` repository.**
+Consolidate Codependent Coding into one executable product, canonicalize the source-backed Simples, complete and harden the Maximal Template, finish The Virgule™ + Hipster Stack™ + Anthimeria™, build Loaded Vibes™, and verify the system.
 
 ## Tasks
-
-- [ ] [[01 - Lock the Canon and Governance]]
-- [ ] [[02 - Consolidate the CodependentCoding Repository]]
-- [ ] [[03 - Canonicalize Simples from the Ontology Master List]]
-- [ ] [[04 - Build the Simples Workbench and Database Reference Slice]]
-- [ ] [[05 - Complete the Maximal Template and Public Demo]]
-- [ ] [[06 - Harden the Maximal Template for Generation]]
-- [ ] [[07 - Finish the Virgule, Hipster Stack CLI, and Anthimeria]]
-- [ ] [[08 - Build the Loaded Vibes Codex Plugin]]
-- [ ] [[09 - Finish Public Docs, Verify, and Release]]
-
-## Project orientation
-
-- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/README|Codependent Coding project README]]
-- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/CODEPENDENTCODING.EXECUTION|Execution order]]
-- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/CODEPENDENTCODING.CODEX-HANDOFF|Codex handoff]]
+- [ ] [[lock-the-canon-and-governance|Lock the Canon and Governance]]
+- [ ] [[02 - Consolidate the CodependentCoding Repository|Consolidate the CodependentCoding Repository]]
+- [ ] [[03 - Canonicalize Simples from the Ontology Master List|Canonicalize Simples from the Ontology Master List]]
+- [ ] [[04 - Build the Simples Workbench and Database Reference Slice|Build the Simples Workbench and Database Reference Slice]]
+- [ ] [[05 - Complete the Maximal Template and Public Demo|Complete the Maximal Template and Public Demo]]
+- [ ] [[06 - Harden the Maximal Template for Generation|Harden the Maximal Template for Generation]]
+- [ ] [[07 - Finish the Virgule, Hipster Stack CLI, and Anthimeria|Finish The Virgule™, Hipster Stack™ CLI, and The Anthimeria™ Workbench]]
+- [ ] [[08 - Build the Loaded Vibes Codex Plugin|Build The Loaded Vibes™ Codex Plugin]]
+- [ ] [[09 - Finish Public Docs, Verify, and Release|Finish Public Docs, Verify the System, and Release the Handoff]]
