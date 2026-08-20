@@ -17,7 +17,7 @@ tags:
   - obsidian/naming
   - status/active
 created:
-updated: 2026-08-08
+updated: 2026-08-19
 ---
 # Obsidian Contract Naming Standard
 
@@ -64,7 +64,7 @@ Top-level folders:
 10 PROJECTS
 20 DOCUMENTATION
 30 DEEP RESEARCH
-40 TECH STACK
+40 ARCHIVE
 50 REGRETS, CIGARETTES, & NEURAL NETS
 60 CODEPENDENT CODING
 70 TODO
@@ -72,6 +72,22 @@ Top-level folders:
 _OPS
 .agent-logs
 ```
+
+### Codependent Coding placement rule
+
+The current Codependent Coding organization intentionally uses two different vault areas for two different responsibilities:
+
+```text
+60 CODEPENDENT CODING
+  = canonical flat knowledge-system corpus
+
+10 PROJECTS/10.PROJECTS.CODEPENDENTCODING
+  = active project-owned architecture, Simples, source mirror, and execution/context
+```
+
+Do not move active project material back into `60 CODEPENDENT CODING` merely because older paths or documents used that location. Do not move the flat canonical corpus into the project folder unless the user explicitly requests a further restructuring.
+
+`40 ARCHIVE` is preserved historical/deprecated material and must not silently carry active source-of-truth authority.
 
 ## File Identity Rule
 
@@ -129,11 +145,12 @@ work-package
 handoff
 checklist
 schema
+simple
 ```
 
 The `type` property identifies the broad note class.
 
-The `kind` property identifies the specific document shape. It may match `type` when no narrower distinction is needed.
+The `kind` property identifies the specific document shape. It may match `type` when no narrower distinction is needed. `simple` is reserved for first-class Codependent Coding Simple records as defined by the property-schema and note-types contracts.
 
 ## Standard Statuses
 
