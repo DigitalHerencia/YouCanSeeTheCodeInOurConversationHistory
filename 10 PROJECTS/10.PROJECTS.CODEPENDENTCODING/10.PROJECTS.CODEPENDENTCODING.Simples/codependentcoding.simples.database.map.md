@@ -20,7 +20,7 @@ tags:
   - database
   - status/review
 created: 2026-08-18
-updated: 2026-08-18
+updated: 2026-08-19
 ---
 
 # Database Library
@@ -174,7 +174,7 @@ The observed source and current doctrine are reconciled enough to demonstrate th
 
 ```dataview
 TABLE simple_type AS "Type", source_path AS "Source", canonicalization_status AS "Canonical", public_implementation_status AS "Public", hardened_implementation_status AS "Hardened"
-FROM "60 CODEPENDENT CODING/Simples"
+FROM "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Simples"
 WHERE parent = link("codependentcoding.simples.database.map")
 SORT source_path ASC
 ```
