@@ -11,17 +11,11 @@ The primary agent responsibility is to help the user capture, organize, maintain
 The expected workflow is:
 
 1. The user brings a conversation, draft, source, idea, or note into the DevNotes ChatGPT project.
-    
 2. The agent determines whether the material should remain a raw capture or become a durable note.
-    
 3. The agent classifies the note using the existing DevNotes contracts.
-    
 4. The agent chooses the correct folder, filename, note type, properties, and links.
-    
 5. The agent creates or updates the note in the connected `DigitalHerencia/DevNotes` GitHub repository.
-    
 6. The user synchronizes the repository to the local Obsidian vault.
-    
 
 The agent must maintain the existing system. It must not invent a replacement system unless the user explicitly requests one.
 
@@ -30,26 +24,17 @@ The agent must maintain the existing system. It must not invent a replacement sy
 Read and follow these files before creating, renaming, moving, or materially editing durable notes:
 
 1. `90 OBSIDIAN/Contracts/obsidian.contracts.naming-standard.md`
-    
 2. `90 OBSIDIAN/Contracts/obsidian.contracts.property-schema.md`
-    
 3. `90 OBSIDIAN/Contracts/obsidian.contracts.note-types.md`
-    
 
 These three files govern:
 
 - filename structure
-    
 - note classification
-    
 - required frontmatter
-    
 - allowed property values
-    
 - note authority
-    
 - lifecycle status
-    
 
 When another note conflicts with these contracts, the contracts control unless the user explicitly changes them.
 
@@ -62,9 +47,10 @@ Top-level folders:
 10 PROJECTS
 20 DOCUMENTATION
 30 DEEP RESEARCH
-40 TECH STACK
+40 ARCHIVE
 50 REGRETS, CIGARETTES, & NEURAL NETS
 60 CODEPENDENT CODING
+70 TODO
 90 OBSIDIAN
 _OPS
 .agent-logs
@@ -77,23 +63,29 @@ Use each folder according to its purpose.
 Use for:
 
 - raw captures
-    
 - conversation extracts
-    
 - unfinished thoughts
-    
 - unclassified material
-    
 - notes that still need processing
-    
 
 A note should not remain here after it has been promoted into a durable note unless the user wants to preserve the original capture.
 
 ### `10 PROJECTS`
 
-Use for notes owned by a specific project.
+Use for notes and project-owned supporting material belonging to a specific project.
 
 Do not flatten project folders or invent a different project structure without explicit instruction.
+
+#### Codependent Coding project boundary
+
+`10 PROJECTS/10.PROJECTS.CODEPENDENTCODING` is the active Codependent Coding project workspace. Current project-owned material belongs here, including:
+
+- the active Codependent Coding™ WebApp Architecture;
+- Simples™ and their project maps/workbench records;
+- the project source mirror;
+- active project execution, handoff, and supporting context when placed in the project hierarchy.
+
+This is intentionally separate from the flat knowledge-system corpus in `60 CODEPENDENT CODING`. Do not move active project material back into `60 CODEPENDENT CODING` merely because an older path or document used that location.
 
 ### `20 DOCUMENTATION`
 
@@ -103,9 +95,11 @@ Use for external documentation, standards, copied references, platform documenta
 
 Use for substantial investigation, analysis, comparison, or research reports.
 
-### `40 TECH STACK`
+### `40 ARCHIVE`
 
-Use for reusable technical knowledge about frameworks, libraries, tools, services, patterns, and implementation approaches.
+Use for preserved deprecated, superseded, legacy, or historical material.
+
+Material in `40 ARCHIVE` must not silently retain active source-of-truth authority. When archived material remains useful, treat it as historical/reference evidence and link to the current authoritative replacement when one exists.
 
 ### `50 REGRETS, CIGARETTES, & NEURAL NETS`
 
@@ -113,7 +107,15 @@ Use for essays, personal writing, creative work, and authored commentary.
 
 ### `60 CODEPENDENT CODING`
 
-Use for the complete Obsidian-native Codependent Coding™ Knowledge System corpus, including doctrine, architecture, contracts, patterns, governance, provenance, and maps. Preserve it as a flat dot-notation namespace unless the user explicitly requests restructuring.
+Use for the canonical flat Obsidian-native Codependent Coding™ Knowledge System corpus, including doctrine, architecture, contracts, patterns, governance, provenance, and maps migrated into the vault as durable knowledge.
+
+Preserve it as a flat dot-notation namespace unless the user explicitly requests restructuring.
+
+This folder is not the active Codependent Coding project workspace and is not the current source-mirror location.
+
+### `70 TODO`
+
+Use for active task, backlog, work-package, and handoff material that intentionally lives in the vault-wide TODO system rather than inside a project folder.
 
 ### `90 OBSIDIAN`
 
@@ -155,6 +157,7 @@ work-package
 handoff
 checklist
 schema
+simple
 ```
 
 Do not force every useful note to become a contract.
@@ -162,23 +165,15 @@ Do not force every useful note to become a contract.
 Use:
 
 - `capture` for unfinished material
-    
 - `reference` for stable supporting knowledge
-    
 - `research` for investigation
-    
 - `writing` for authored prose
-    
 - `execution` for active work state
-    
 - `contract` for durable rules
-    
 - `map` for navigation
-    
 - `workflow` for repeatable procedures
-    
+- `simple` for one-file Codependent Coding knowledge records
 - `legacy` for preserved but non-authoritative material
-    
 
 ## Naming Rules
 
@@ -264,6 +259,8 @@ Add links when they improve navigation, ownership, dependency tracking, or conte
 
 Do not add links merely to increase backlink count.
 
+When a relationship is path-sensitive — for example a Dataview folder source, Base `file.inFolder()` filter, embed, or path-qualified source-mirror wikilink — verify the current vault path rather than relying on an older physical layout. Stable namespace wikilinks are preferred for durable note relationships when a path-qualified target is unnecessary.
+
 ## Authority and Status
 
 Use `authority` to describe how strongly a note should be trusted:
@@ -289,20 +286,16 @@ archived
 legacy
 ```
 
-Do not silently treat a research note, capture, or working note as source-of-truth.
+Do not silently treat a research note, capture, working note, or archived note as source-of-truth.
 
 Do not silently replace an existing source-of-truth note.
 
 When a new note supersedes an older note:
 
 - set the old note to `status: superseded`
-    
 - update its `authority` if appropriate
-    
 - link the new note through `supersedes`
-    
 - preserve the old note unless the user explicitly requests deletion
-    
 
 ## Inbox and Capture Handling
 
@@ -311,26 +304,17 @@ The inbox is a temporary processing area, not an archive.
 When the user asks to save material:
 
 1. Determine whether it is still raw.
-    
 2. If raw, create a `capture` note in `00 ZETTELKASTEN`.
-    
 3. If already durable, place it directly in the correct destination.
-    
 4. Do not duplicate the same material into both inbox and archive.
-    
 5. Do not leave processed notes in the inbox without a reason.
-    
 6. Do not archive unprocessed inbox material merely to make the inbox look clean.
-    
 
 When promoting a capture:
 
 - create or update the durable note
-    
 - link the original capture to the promoted note when useful
-    
 - remove or retain the capture only according to the user’s instruction
-    
 
 ## GitHub Operations
 
@@ -339,49 +323,34 @@ Use the connected `DigitalHerencia/DevNotes` repository as the remote source of 
 Before changing files:
 
 - inspect the current repository state
-    
 - confirm the current path exists
-    
 - check for same-name destination files
-    
 - identify references that would break
-    
 
 For routine single-note creation or editing, make the smallest necessary change.
 
 For structural changes involving multiple moves, renames, or deletions:
 
 - explain the exact scope first
-    
 - do not broaden the task
-    
 - preserve meaning and links
-    
 - use Git checkpoints when possible
-    
 - report what changed
-    
 
-Do not create unnecessary branches, issues, pull requests, migration scripts, dashboards, or governance files unless the user asks for them.
+Do not create unnecessary branches, issues, pull requests, migration scripts, dashboards, or governance files unless the task requires them.
 
 ## Editing Rules
 
 When the user asks to organize notes:
 
 - follow the existing contracts
-    
-- use the current repository state
-    
+- use the current repository state as the baseline
+- do not assume an older layout is more correct merely because prior documentation describes it
 - make the smallest useful change
-    
 - do not redesign the vault
-    
 - do not introduce a new taxonomy
-    
 - do not add tooling merely because it exists
-    
 - do not modify Obsidian plugins or settings unless the task specifically requires it
-    
 
 When the user asks for analysis only, do not make repository changes.
 
@@ -394,15 +363,10 @@ Deletion is allowed when the user explicitly requests it.
 Before deleting:
 
 - verify the exact file
-    
 - determine whether it is referenced
-    
 - distinguish duplicate, obsolete, generated, and unique content
-    
 - do not preserve material merely because deletion feels risky
-    
 - do not delete unrelated files as part of cleanup
-    
 
 The user is the final authority on what should be retained.
 
@@ -413,30 +377,19 @@ The user values speed and direct execution.
 Agents must:
 
 - stay within the requested scope
-    
 - avoid repetitive recaps
-    
 - avoid unnecessary preliminary checks
-    
 - avoid proposing unrelated improvements
-    
 - avoid turning small cleanup tasks into migrations
-    
 - state uncertainty plainly
-    
 - report concrete file paths and changes
-    
 
 In voice-mode conversations:
 
 - avoid long lists
-    
 - avoid reading file trees unless requested
-    
 - speak in short, direct sentences
-    
 - confirm alignment before beginning broad work
-    
 
 ## Final Rule
 
