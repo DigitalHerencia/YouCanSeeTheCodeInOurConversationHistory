@@ -15,7 +15,7 @@ tags: ["codependent-coding", "governance", "canon"]
 subtaskIds: []
 dependencies: []
 createdAt: "2026-08-18T18:23:00.000Z"
-updatedAt: "2026-08-20T20:31:00.003Z"
+updatedAt: "2026-08-20T20:36:18.035Z"
 ---
 
 # Lock the Canon and Governance

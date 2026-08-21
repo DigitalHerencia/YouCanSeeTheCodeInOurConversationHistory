@@ -79,8 +79,8 @@ Invariant/derived backend foundation when required by the generated application.
 - [ ] Provider/application truth boundary is explicit.
 
 ## Links
-- [[codependentcoding.webapp-architecture.master.source-document]]
-- [[The Maximal Template™ Demo Doctrine]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo]]
 
 ## Backlinks
 ```dataview

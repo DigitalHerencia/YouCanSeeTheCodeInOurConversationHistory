@@ -99,8 +99,8 @@ Normally derived from selected routes/features/workflows rather than user-select
 - [ ] Cross-tenant/read security tests identified where applicable.
 
 ## Links
-- [[codependentcoding.webapp-architecture.master.source-document]]
-- [[The Maximal Template™ Demo Doctrine]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo]]
 
 ## Backlinks
 ```dataview

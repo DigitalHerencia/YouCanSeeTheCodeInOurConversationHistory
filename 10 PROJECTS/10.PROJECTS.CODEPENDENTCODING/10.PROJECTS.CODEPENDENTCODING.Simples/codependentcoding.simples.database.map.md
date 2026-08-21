@@ -9,10 +9,10 @@ kind: map
 namespace: codependentcoding.simples.database.map
 status: review
 authority: working-note
-parent: "[[codependentcoding.webapp-architecture.master.source-document]]"
+parent: "[[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]]"
 depends_on:
-  - "[[The Maximal Template™ Demo Doctrine]]"
-  - "[[The Maximal Template™ Backlog]]"
+  - "[[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo]]"
+  - "[[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Backlog]]"
 supersedes: []
 tags:
   - codependent-coding/simples
@@ -164,9 +164,9 @@ The observed source and current doctrine are reconciled enough to demonstrate th
 
 ## Source Material
 
-- [[codependentcoding.webapp-architecture.master.source-document]]
-- [[The Maximal Template™ Demo Doctrine]]
-- [[The Maximal Template™ Backlog]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Backlog]]
 - [[libraries.ts|current public library registry]]
 - [[library-detail.tsx|current public library detail renderer]]
 

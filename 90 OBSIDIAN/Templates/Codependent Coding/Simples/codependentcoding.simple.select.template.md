@@ -78,8 +78,8 @@ Derived backend helper retained with consumers that require it.
 - [ ] No transport-layer responsibility leaked into the select.
 
 ## Links
-- [[codependentcoding.webapp-architecture.master.source-document]]
-- [[The Maximal Template™ Demo Doctrine]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo]]
 
 ## Backlinks
 ```dataview

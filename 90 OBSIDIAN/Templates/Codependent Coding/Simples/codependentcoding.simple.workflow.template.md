@@ -99,9 +99,9 @@ If a workflow is exposed as a meaningful selectable capability, dependency closu
 - [ ] Dependency closure is machine-resolvable if generation-visible.
 
 ## Links
-- [[The Codependent Coding™ WebApp Architecture — Canonical Workflow Constitution Correction]]
-- [[codependentcoding.webapp-architecture.master.source-document]]
-- [[The Maximal Template™ Demo Doctrine]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.BusinessLogic-Blocks]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo]]
 
 ## Backlinks
 ```dataview

@@ -80,8 +80,8 @@ Presentation-configurable or derived only when the source template is a real sup
 - [ ] No server responsibility leaked into the template.
 
 ## Links
-- [[codependentcoding.webapp-architecture.master.source-document]]
-- [[The Maximal Template™ Demo Doctrine]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo]]
 
 ## Backlinks
 ```dataview

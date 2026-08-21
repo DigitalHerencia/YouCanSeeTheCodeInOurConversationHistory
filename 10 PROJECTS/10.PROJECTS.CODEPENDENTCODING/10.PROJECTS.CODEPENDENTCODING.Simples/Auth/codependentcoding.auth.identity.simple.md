@@ -9,9 +9,9 @@ kind: simple
 namespace: codependentcoding.auth.identity.simple
 status: review
 authority: working-note
-parent: "[[codependentcoding.webapp-architecture.master.source-document]]"
+parent: "[[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]]"
 depends_on:
-  - "[[The Maximal Template™ Demo Doctrine]]"
+  - "[[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo]]"
 supersedes: []
 tags:
   - codependent-coding/simples

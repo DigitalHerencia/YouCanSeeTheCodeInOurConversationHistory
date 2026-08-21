@@ -80,8 +80,8 @@ Derived helper retained with consumers requiring its transport boundary.
 - [ ] Mapper is pure or its side effects are explicitly justified.
 
 ## Links
-- [[codependentcoding.webapp-architecture.master.source-document]]
-- [[The Maximal Template™ Demo Doctrine]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo]]
 
 ## Backlinks
 ```dataview

@@ -76,7 +76,7 @@ Derived/invariant according to consumers; constant files are retained only when 
 - [ ] No secrets or runtime state.
 
 ## Links
-- [[codependentcoding.webapp-architecture.master.source-document]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]]
 
 ## Backlinks
 ```dataview

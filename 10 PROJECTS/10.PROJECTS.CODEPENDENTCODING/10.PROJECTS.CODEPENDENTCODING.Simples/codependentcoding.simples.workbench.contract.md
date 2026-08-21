@@ -9,7 +9,7 @@ kind: contract
 namespace: codependentcoding.simples.workbench.contract
 status: review
 authority: working-note
-parent: "[[codependentcoding.webapp-architecture.master.source-document]]"
+parent: "[[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]]"
 depends_on:
   - "[[codependentcoding.simples.canonicalization.workflow]]"
   - "[[codependentcoding.simples.database.map]]"

@@ -77,7 +77,7 @@ Derived helper retained only with real consumers.
 - [ ] Tests cover reusable behavior where consequential.
 
 ## Links
-- [[codependentcoding.webapp-architecture.master.source-document]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]]
 
 ## Backlinks
 ```dataview

@@ -9,7 +9,7 @@ kind: dashboard
 namespace: codependentcoding.simples.dashboard
 status: active
 authority: derived
-parent: "[[codependentcoding.webapp-architecture.master.source-document]]"
+parent: "[[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]]"
 depends_on:
   - "[[codependentcoding.simples.canonicalization.workflow]]"
 supersedes: []

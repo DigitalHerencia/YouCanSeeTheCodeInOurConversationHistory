@@ -32,7 +32,7 @@ updated: 2026-08-19
 ## Knowledge Systems
 
 - [[codependentcoding.manifest.map]] — canonical flat Codependent Coding™ knowledge-system corpus in `60 CODEPENDENT CODING`.
-- [[codependentcoding.webapp-architecture.master.source-document]] — active Codependent Coding™ WebApp Architecture in `10 PROJECTS/10.PROJECTS.CODEPENDENTCODING`.
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]] — active Codependent Coding™ WebApp Architecture in `10 PROJECTS/10.PROJECTS.CODEPENDENTCODING`.
 - [[codependentcoding.simples.dashboard]] — active Simples™ operating view in the Codependent Coding project workspace.
 - [[devnotes.tech-stack.map]] — reusable technical knowledge and integration references where still active.
 

@@ -172,8 +172,8 @@ Properties live in frontmatter so Obsidian, Dataview, Graph View, validation, an
 
 ### Governing Knowledge
 
-- [[codependentcoding.webapp-architecture.master.source-document]]
-- [[The Maximal Template™ Demo Doctrine]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]]
+- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo]]
 
 ### Source Material
 

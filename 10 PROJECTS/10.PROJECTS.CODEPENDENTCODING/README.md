@@ -33,9 +33,9 @@ The immediate engineering step is therefore **repository consolidation**, after 
 1. [[CODEPENDENTCODING.TERMINOLOGY]]
 2. [[CODEPENDENTCODING.GOVERNANCE]]
 3. [[CODEPENDENTCODING.EXECUTION]]
-4. [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/codependentcoding.webapp-architecture.master.source-document|Master Web App Architecture]]
-5. [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/The Codependent Coding™ WebApp Architecture — Canonical Workflow Constitution Correction|Canonical Workflow Constitution Correction]]
-6. [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/Ontologies|Ontology Master List]]
+4. [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document|Master Web App Architecture]]
+5. [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.BusinessLogic-Blocks|Canonical Workflow Constitution Correction]]
+6. [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Ontologies-Normalized-Defaults|Ontology Master List]]
 7. [[10.PROJECTS.CODEPENDENTCODING.Simples/codependentcoding.simples.canonicalization.workflow|Simple Canonicalization Workflow]]
 8. [[10.PROJECTS.CODEPENDENTCODING.Simples/codependentcoding.simples.workbench.contract|Simple Workbench Contract]]
 9. [[CODEPENDENTCODING.CODEX-HANDOFF]] when delegating implementation.

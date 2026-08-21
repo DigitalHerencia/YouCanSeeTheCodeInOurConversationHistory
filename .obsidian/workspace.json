@@ -4,26 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "8f73ce7398f92062",
+        "id": "535c0c73912829bb",
         "type": "tabs",
         "children": [
           {
-            "id": "adac941d3f2880c1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "70 TODO/Codependent Coding.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "Codependent Coding"
-            }
-          },
-          {
-            "id": "feddad089901ad1c",
+            "id": "0df4c9d9aa9b0787",
             "type": "leaf",
             "state": {
               "type": "pm-project",
@@ -35,18 +20,33 @@
             }
           },
           {
-            "id": "d58299fdc78aafcb",
+            "id": "2edbbe664b7b0a93",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "70 TODO/Codependent Coding_tasks/lock-the-canon-and-governance.md",
+                "file": "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.The-Anthimeria-Workbench.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "lock-the-canon-and-governance"
+              "title": "10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.The-Anthimeria-Workbench"
+            }
+          },
+          {
+            "id": "4e76b9fbb7a2ea96",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.The-Anthimeria-Workbench.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.The-Anthimeria-Workbench"
             }
           }
         ],
@@ -88,9 +88,25 @@
               "icon": "chart-gantt",
               "title": "Projects"
             }
+          },
+          {
+            "id": "d08e56a814c8d130",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "constituter",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "35e269d79bdcab6c",
@@ -111,8 +127,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 426.5326843261719,
-    "collapsed": true
+    "width": 711.3484497070312
   },
   "right": {
     "id": "acf9b2ce38860566",
@@ -128,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10 PROJECTS/10.PROJECTS.CTRLPLUS/10.PROJECTS.CTRLPLUS.Architecture.Server-First-Blueprint.md",
+                "file": "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.The-Anthimeria-Workbench.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -198,13 +213,11 @@
               "title": "All properties"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -222,35 +235,35 @@
       "switcher:Open quick switcher": false
     }
   },
-  "active": "feddad089901ad1c",
+  "active": "2edbbe664b7b0a93",
   "lastOpenFiles": [
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Directive.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.BusinessLogic-Blocks.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.The-Anthimeria-Workbench.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo-Website-Copy.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Backlog.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Systems-That-Remember.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Ontologies-Normalized-Defaults.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Maximal-Template.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Loaded-Vibes-Plugin—Status.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Hipster-Stack.Technologies.md",
+    "devnotes.home.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/CODEPENDENTCODING.CODEX-HANDOFF.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/CODEPENDENTCODING.EXECUTION.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Website-Design-Content-Specification.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/The Codependent Coding WebApp Architecture/codependentcoding.webapp-architecture.master.source-document.md.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/Unique Templates Is An Oxymoron.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/conceptual frameworks of limited domains.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/README.md",
     "70 TODO/Codependent Coding.md",
     "70 TODO/Codependent Coding_tasks/lock-the-canon-and-governance.md",
-    "devnotes.home.md",
     "70 TODO/Codependent Coding_tasks/09 - Finish Public Docs, Verify, and Release.md",
     "70 TODO/Codependent Coding_tasks/08 - Build the Loaded Vibes Codex Plugin.md",
     "70 TODO/Codependent Coding_tasks/07 - Finish the Virgule, Hipster Stack CLI, and Anthimeria.md",
     "70 TODO/Codependent Coding_tasks/06 - Harden the Maximal Template for Generation.md",
-    "70 TODO/Codependent Coding_tasks/05 - Complete the Maximal Template and Public Demo.md",
-    "70 TODO/Codependent Coding_tasks/04 - Build the Simples Workbench and Database Reference Slice.md",
-    "70 TODO/Codependent Coding_tasks/03 - Canonicalize Simples from the Ontology Master List.md",
-    "70 TODO/Codependent Coding_tasks/02 - Consolidate the CodependentCoding Repository.md",
-    "70 TODO/Codependent Coding_tasks/01 - Lock the Canon and Governance.md",
     "70 TODO/Codependent Coding_tasks",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/README.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/CODEPENDENTCODING.TERMINOLOGY.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/CODEPENDENTCODING.GOVERNANCE.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/CODEPENDENTCODING.EXECUTION.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/CODEPENDENTCODING.CODEX-HANDOFF.md",
-    "10 PROJECTS/10.PROJECTS.CHATGPT/10.PROJECTS.CHATGPT.Message-Board.md",
-    "10 PROJECTS/10.PROJECTS.CHATGPT/10.PROJECTS.CHATGPT.Interproject-Handoff-Contract.md",
-    "70 TODO/70.TODO.CODEPENDENTCODING.01.Webapp-Architecture.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/70.TODO.CODEPENDENTCODING.01.Webapp-Architecture.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/TheHipsterStack.DemoSite.Map.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/vitest.config.ts.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/tests/unit/web-configurator.test.ts.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/tests/unit/recipe-resolution.test.ts.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/tests/unit/preflight.test.ts.md",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/tests/unit",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/tests/integration",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/tests/generated",

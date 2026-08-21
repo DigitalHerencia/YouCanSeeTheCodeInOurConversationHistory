@@ -9,10 +9,10 @@ kind: simple
 namespace: codependentcoding.fetchers.projects.simple
 status: review
 authority: working-note
-parent: "[[codependentcoding.webapp-architecture.master.source-document]]"
+parent: "[[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]]"
 depends_on:
-  - "[[The Maximal Template™ Demo Doctrine]]"
-  - "[[The Maximal Template™ Backlog]]"
+  - "[[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo]]"
+  - "[[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Backlog]]"
 supersedes: []
 tags:
   - codependent-coding/simples

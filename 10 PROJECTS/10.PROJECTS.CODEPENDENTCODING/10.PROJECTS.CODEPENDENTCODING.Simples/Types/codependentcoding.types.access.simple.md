@@ -11,7 +11,7 @@ status: review
 authority: working-note
 parent: "[[codependentcoding.simples.database.map]]"
 depends_on:
-  - "[[The Maximal Template™ Demo Doctrine]]"
+  - "[[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo]]"
 supersedes: []
 tags:
   - codependent-coding/simples
