@@ -26,7 +26,7 @@ layer: tenant-context-resolution
 source_path: lib/db/transactions/tenant-context.tx.ts
 public_source_path: lib/db/transactions/tenant-context.tx.ts
 hardened_source_path: lib/db/transactions/tenant-context.tx.ts
-source_mirror: "[[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/db/transactions/tenant-context.tx.ts|source mirror — tenant-context.tx.ts]]"
+source_mirror: "[[tenant-context.tx.ts|source mirror — tenant-context.tx.ts]]"
 canonicalization_status: review
 owner_approval: pending
 public_implementation_status: observed
@@ -310,7 +310,7 @@ export async function resolveAccessContextTx(
 - [[codependentcoding.database.tenant.simple]]
 - [[codependentcoding.types.access.simple]]
 - [[codependentcoding.prisma.application-owned-tenancy.simple]]
-- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/db/transactions/tenant-context.tx.ts|source mirror]]
+- [[tenant-context.tx.ts|source mirror]]
 
 ## Backlinks
 

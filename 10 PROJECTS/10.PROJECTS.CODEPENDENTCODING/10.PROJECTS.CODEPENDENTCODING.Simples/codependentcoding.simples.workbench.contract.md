@@ -348,10 +348,10 @@ A Monaco wrapper is a UI/infrastructure primitive. It does not own Simple domain
 
 ### DevNotes mirrors
 
-- [[libraries.ts|current library registry]]
-- [[library-detail.tsx|current library detail]]
+- [[simples.ts|current library registry]]
+- [[simplesFeature.tsx|current library detail]]
 - [[codependentcoding.source.the-hipster-stack-technology-stack.apps.web.app.docs.-.slug-.page.tsx|current Docs route]]
-- [[constituter.tsx|current implementation under the superseded Constituter source name]]
+- [[anthimeriaFeature.tsx|current implementation under the superseded Constituter source name]]
 - [[codependentcoding.simples.database.map]]
 - [[codependentcoding.fetchers.projects.simple]]
 

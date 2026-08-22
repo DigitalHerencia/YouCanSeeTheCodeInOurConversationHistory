@@ -25,7 +25,7 @@ layer: persistence-projection
 source_path: lib/db/selects/projects.selects.ts
 public_source_path: lib/db/selects/projects.selects.ts
 hardened_source_path: lib/db/selects/projects.selects.ts
-source_mirror: "[[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/db/selects/projects.selects.ts|source mirror — projects.selects.ts]]"
+source_mirror: "[[projects.selects.ts|source mirror — projects.selects.ts]]"
 canonicalization_status: review
 owner_approval: pending
 public_implementation_status: observed
@@ -216,7 +216,7 @@ None identified. Security hardening occurs in the caller's auth/authz/query/RLS 
 
 - [[codependentcoding.fetchers.projects.simple]]
 - [[codependentcoding.dto.projects.simple]]
-- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/db/selects/projects.selects.ts|source mirror]]
+- [[projects.selects.ts|source mirror]]
 
 ## Backlinks
 

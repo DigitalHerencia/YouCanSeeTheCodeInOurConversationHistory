@@ -27,7 +27,7 @@ layer: database-security-migration
 source_path: prisma/migrations/20260815000000_application_owned_tenancy/migration.sql
 public_source_path: prisma/migrations/20260815000000_application_owned_tenancy/migration.sql
 hardened_source_path: prisma/migrations/20260815000000_application_owned_tenancy/migration.sql
-source_mirror: "[[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/prisma/migrations/20260815000000_application_owned_tenancy/migration.sql|source mirror — application-owned tenancy migration]]"
+source_mirror: "[[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Maximal Template™ Domain Library/prisma/migrations/20260815000000_application_owned_tenancy/migration.sql|source mirror — application-owned tenancy migration]]"
 canonicalization_status: review
 owner_approval: pending
 public_implementation_status: observed
@@ -246,7 +246,7 @@ WITH CHECK (
 - [[codependentcoding.transactions.tenant-context.simple]]
 - [[codependentcoding.database.client.simple]]
 - [[codependentcoding.config.prisma.simple]]
-- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/prisma/migrations/20260815000000_application_owned_tenancy/migration.sql|source mirror]]
+- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Maximal Template™ Domain Library/prisma/migrations/20260815000000_application_owned_tenancy/migration.sql|source mirror]]
 
 ## Backlinks
 

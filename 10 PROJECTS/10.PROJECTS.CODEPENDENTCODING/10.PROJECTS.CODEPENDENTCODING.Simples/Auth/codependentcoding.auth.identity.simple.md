@@ -25,7 +25,7 @@ layer: authentication
 source_path: lib/auth/identity.ts
 public_source_path: lib/auth/identity.ts
 hardened_source_path: lib/auth/identity.ts
-source_mirror: "[[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/auth/identity.ts|source mirror — lib/auth/identity.ts]]"
+source_mirror: "[[identity.ts|source mirror — lib/auth/identity.ts]]"
 canonicalization_status: review
 owner_approval: pending
 public_implementation_status: observed
@@ -173,7 +173,7 @@ None in responsibility. Hardened generated reads use this identity instead of th
 
 - [[codependentcoding.database.tenant.simple]]
 - [[codependentcoding.types.access.simple]]
-- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/auth/identity.ts|source mirror]]
+- [[identity.ts|source mirror]]
 
 ## Backlinks
 

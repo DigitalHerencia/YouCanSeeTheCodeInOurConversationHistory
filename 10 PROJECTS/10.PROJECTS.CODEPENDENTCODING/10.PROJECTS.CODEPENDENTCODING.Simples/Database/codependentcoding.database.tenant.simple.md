@@ -27,7 +27,7 @@ layer: tenant-transaction-boundary
 source_path: lib/db/tenant.ts
 public_source_path: lib/db/tenant.ts
 hardened_source_path: lib/db/tenant.ts
-source_mirror: "[[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/db/tenant.ts|source mirror — lib/db/tenant.ts]]"
+source_mirror: "[[tenant.ts|source mirror — lib/db/tenant.ts]]"
 canonicalization_status: review
 owner_approval: pending
 public_implementation_status: observed
@@ -231,8 +231,8 @@ export async function withAuthenticatedTenantTransaction<T>(
 - [[codependentcoding.database.client.simple]]
 - [[codependentcoding.transactions.tenant-context.simple]]
 - [[codependentcoding.types.access.simple]]
-- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/auth/identity.ts|existing Clerk identity helper]]
-- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/db/tenant.ts|source mirror]]
+- [[identity.ts|existing Clerk identity helper]]
+- [[tenant.ts|source mirror]]
 
 ## Backlinks
 

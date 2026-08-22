@@ -27,7 +27,7 @@ layer: database-runtime
 source_path: lib/db/client.ts
 public_source_path: lib/db/client.ts
 hardened_source_path: lib/db/client.ts
-source_mirror: "[[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/db/client.ts|source mirror — lib/db/client.ts]]"
+source_mirror: "[[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Maximal Template™ Domain Library/lib/db/client.ts|source mirror — lib/db/client.ts]]"
 canonicalization_status: review
 owner_approval: pending
 public_implementation_status: observed
@@ -220,7 +220,7 @@ if (process.env.NODE_ENV !== "production") {
 - [[codependentcoding.database.provider.simple]]
 - [[codependentcoding.config.prisma.simple]]
 - [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Backlog]]
-- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/db/client.ts|source mirror]]
+- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Maximal Template™ Domain Library/lib/db/client.ts|source mirror]]
 
 ## Backlinks
 

@@ -25,7 +25,7 @@ layer: transport-mapping
 source_path: lib/db/dto/projects.dto.ts
 public_source_path: lib/db/dto/projects.dto.ts
 hardened_source_path: lib/db/dto/projects.dto.ts
-source_mirror: "[[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/db/dto/projects.dto.ts|source mirror — projects.dto.ts]]"
+source_mirror: "[[projects.dto.ts|source mirror — projects.dto.ts]]"
 canonicalization_status: review
 owner_approval: pending
 public_implementation_status: observed
@@ -203,7 +203,7 @@ None identified. The same transport mapping should serve showroom and hardened e
 
 - [[codependentcoding.fetchers.projects.simple]]
 - [[codependentcoding.selects.projects.simple]]
-- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/db/dto/projects.dto.ts|source mirror]]
+- [[projects.dto.ts|source mirror]]
 
 ## Backlinks
 

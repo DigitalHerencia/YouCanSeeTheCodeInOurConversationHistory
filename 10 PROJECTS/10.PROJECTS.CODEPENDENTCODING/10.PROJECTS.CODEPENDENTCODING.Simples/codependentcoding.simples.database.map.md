@@ -167,8 +167,8 @@ The observed source and current doctrine are reconciled enough to demonstrate th
 - [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]]
 - [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo]]
 - [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Backlog]]
-- [[libraries.ts|current public library registry]]
-- [[library-detail.tsx|current public library detail renderer]]
+- [[simples.ts|current public library registry]]
+- [[simplesFeature.tsx|current public library detail renderer]]
 
 ## Dataview
 

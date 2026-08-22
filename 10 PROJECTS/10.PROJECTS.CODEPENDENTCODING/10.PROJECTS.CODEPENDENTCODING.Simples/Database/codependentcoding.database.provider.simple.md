@@ -27,7 +27,7 @@ layer: provider-persistence-boundary
 source_path: lib/db/provider.ts
 public_source_path: lib/db/provider.ts
 hardened_source_path: lib/db/provider.ts
-source_mirror: "[[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/db/provider.ts|source mirror — lib/db/provider.ts]]"
+source_mirror: "[[provider.ts|source mirror — lib/db/provider.ts]]"
 canonicalization_status: review
 owner_approval: pending
 public_implementation_status: observed
@@ -191,8 +191,8 @@ export function withProviderOrganizationTransaction<T>(
 
 - [[codependentcoding.simples.database.map]]
 - [[codependentcoding.database.client.simple]]
-- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/app/api/stripe/webhooks/route.ts|Stripe webhook source mirror]]
-- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/lib/db/provider.ts|source mirror]]
+- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Maximal Template™ Domain Library/app/api/stripe/webhooks/route.ts|Stripe webhook source mirror]]
+- [[provider.ts|source mirror]]
 
 ## Backlinks
 

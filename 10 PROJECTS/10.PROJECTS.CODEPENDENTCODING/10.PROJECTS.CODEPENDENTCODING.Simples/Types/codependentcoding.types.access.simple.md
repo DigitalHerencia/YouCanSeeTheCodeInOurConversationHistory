@@ -25,7 +25,7 @@ layer: shared-contract
 source_path: types/access.ts
 public_source_path: types/access.ts
 hardened_source_path: types/access.ts
-source_mirror: "[[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/types/access.ts|source mirror — types/access.ts]]"
+source_mirror: "[[access.ts|source mirror — types/access.ts]]"
 canonicalization_status: review
 owner_approval: pending
 public_implementation_status: observed
@@ -206,7 +206,7 @@ None currently identified in this file. Runtime enforcement belongs to auth/auth
 - [[codependentcoding.simples.database.map]]
 - [[codependentcoding.database.tenant.simple]]
 - [[codependentcoding.transactions.tenant-context.simple]]
-- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/The Codependent Coding™ Web App Architecture/The Maximal Template™ Domain Library/types/access.ts|source mirror]]
+- [[access.ts|source mirror]]
 
 ## Backlinks
 
