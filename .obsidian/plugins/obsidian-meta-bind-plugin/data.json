@@ -11,6 +11,10 @@
   "inputFieldTemplates": [],
   "buttonTemplates": [],
   "excludedFolders": [
-    "templates"
+    "90 OBSIDIAN/Templates",
+    "40 ARCHIVE",
+    ".agent-logs",
+    "_OPS",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror"
   ]
 }
