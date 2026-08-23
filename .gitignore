@@ -81,6 +81,10 @@ pnpm-debug.log*
 !.obsidian/plugins/*/manifest.json
 !.obsidian/plugins/*/data.json
 
+# Code Space external-folder mounts contain machine-specific absolute paths.
+# Keep those local even though other plugin settings are versioned.
+.obsidian/plugins/code-space/data.json
+
 # -----------------------------
 # Obsidian themes
 # -----------------------------
