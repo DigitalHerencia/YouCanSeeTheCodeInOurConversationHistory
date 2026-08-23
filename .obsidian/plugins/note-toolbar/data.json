@@ -1,0 +1,1637 @@
+{
+  "debugEnabled": false,
+  "defaultToolbar": null,
+  "editorMenuAsToolbar": false,
+  "editorMenuToolbar": null,
+  "emptyViewToolbar": null,
+  "export": {
+    "includeIcons": true,
+    "replaceVars": true,
+    "useDataEls": true,
+    "useIds": true
+  },
+  "folderMappings": [],
+  "icon": "circle-ellipsis",
+  "keepPropsState": false,
+  "lockCallouts": false,
+  "obsidianUiVisibility": {},
+  "onboarding": {
+    "startup-help-view": true,
+    "startup-help-welcome": true,
+    "default-a7ca0916-c895-4928-bfe5-670beb1a3587": true
+  },
+  "ribbon": [],
+  "rules": [],
+  "scriptingEnabled": true,
+  "showEditInFabMenu": false,
+  "showLaunchpad": false,
+  "showToolbarIn": {
+    "audio": false,
+    "bases": false,
+    "canvas": false,
+    "image": false,
+    "kanban": false,
+    "pdf": false,
+    "video": false
+  },
+  "showToolbarInFileMenu": false,
+  "showToolbarInOther": "",
+  "showWhatsNew": true,
+  "textToolbar": null,
+  "textToolbarOnKeyboard": true,
+  "toolbarProp": "notetoolbar",
+  "toolbars": [
+    {
+      "uuid": "ff440b5a-a5a1-4444-aba9-612dd9d68634",
+      "commandPosition": "float",
+      "customClasses": "",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky",
+        "button",
+        "glass",
+        "autohide"
+      ],
+      "description": "",
+      "hasCommand": true,
+      "icon": "",
+      "items": [
+        {
+          "uuid": "f937b263-1655-49e9-a373-89588810c42c",
+          "hasCommand": false,
+          "icon": "lucide-undo-2",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "javascript"
+          },
+          "plugin": "",
+          "scriptConfig": {
+            "expression": "ntb.app.workspace.activeLeaf.view?.editor.undo()",
+            "pluginFunction": "evaluate"
+          },
+          "tooltip": "Undo",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "f34e19be-6058-49cb-8381-a4ebf05fdd46",
+          "hasCommand": false,
+          "icon": "lucide-redo-2",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "javascript"
+          },
+          "plugin": "",
+          "scriptConfig": {
+            "expression": "ntb.app.workspace.activeLeaf.view?.editor.redo()",
+            "pluginFunction": "evaluate"
+          },
+          "tooltip": "Redo",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "c5c26fb5-de7e-494f-bbe8-ea1d90d30450",
+          "hasCommand": false,
+          "icon": "brackets",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:insert-wikilink",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Add internal link",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "ce57c077-a92d-4be9-856c-4dd7bd47b172",
+          "hasCommand": false,
+          "icon": "sticky-note",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:insert-embed",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Add embed",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "ade391cb-db02-460f-9334-036ff7c98633",
+          "hasCommand": false,
+          "icon": "tag",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:insert-tag",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Insert tag",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "d35e6326-7499-4b02-a111-d4c2d49d3e4e",
+          "hasCommand": false,
+          "icon": "paperclip",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:attach-file",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Insert attachment",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "fb34d507-04a4-4246-8144-ab7f2c036b74",
+          "hasCommand": false,
+          "icon": "heading",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:set-heading",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Toggle heading",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "fd17ff1b-9dbd-4ae1-9f48-79ef653416de",
+          "hasCommand": false,
+          "icon": "bold",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:toggle-bold",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Toggle bold",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "e7ec1c17-8abe-4820-accd-fcca99cc0a77",
+          "hasCommand": false,
+          "icon": "strikethrough",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:toggle-strikethrough",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Toggle strikethrough",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "f4609ad9-c779-409c-b571-5b34f50b4660",
+          "hasCommand": false,
+          "icon": "highlighter",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:toggle-highlight",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Toggle highlight",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "c25d86f8-eb07-47a6-a396-37f0993dc94d",
+          "hasCommand": false,
+          "icon": "code",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:toggle-code",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Toggle code",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "a7b6e334-2565-466d-83ea-8115f01152b9",
+          "hasCommand": false,
+          "icon": "text-quote",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:toggle-blockquote",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Toggle blockquote",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "c2f51ec9-5aa9-4e81-9daa-35c772c3af39",
+          "hasCommand": false,
+          "icon": "link",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:insert-link",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Insert Markdown link",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "d4ac24aa-c48c-432d-9431-c2212b1cdec3",
+          "hasCommand": false,
+          "icon": "list",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:toggle-bullet-list",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Toggle bullet list",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "b4579fdf-af5a-4b63-a30d-39ed41944cd1",
+          "hasCommand": false,
+          "icon": "list-ordered",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:toggle-numbered-list",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Toggle numbered list",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "f5e0e42f-f9f3-4888-9712-ca6bacb1079d",
+          "hasCommand": false,
+          "icon": "list-checks",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:toggle-checklist-status",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Toggle checkbox status",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "f292027c-8711-473c-9b73-ae8fc4071c42",
+          "hasCommand": false,
+          "icon": "indent-increase",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:indent-list",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Indent list item",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "ba12e7cb-3099-4166-ade0-c60dd1b38be6",
+          "hasCommand": false,
+          "icon": "indent-decrease",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:unindent-list",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Unindent list item",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "c4360a46-758f-444c-9a0f-b714e9a633b4",
+          "hasCommand": false,
+          "icon": "wrench",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "note-toolbar:open-toolbar-settings",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Toolbar settings",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "Editor Tools",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-08-23T17:17:50.111Z"
+    },
+    {
+      "uuid": "d29914c9-c757-42dc-b775-a385de09c6c8",
+      "commandPosition": "float",
+      "customClasses": "",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "",
+      "hasCommand": false,
+      "icon": "",
+      "items": [
+        {
+          "uuid": "a6a08b12-c5bf-45a1-b326-249c1a7f9327",
+          "hasCommand": false,
+          "icon": "file-plus",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "file-explorer:new-file",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "New note",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "dffc4532-840a-46ce-9bd2-91a87c95317d",
+          "hasCommand": false,
+          "icon": "square-kanban",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "obsidian-kanban:create-new-kanban-board",
+            "hasVars": false,
+            "target": "tab",
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "New kanban",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "c5adfa3c-4e23-418e-9bd4-edea3eba5b97",
+          "hasCommand": false,
+          "icon": "network",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "canvas:new-file",
+            "hasVars": false,
+            "target": "tab",
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "New canvas",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "e85002ab-dc31-4f17-bde0-ce7c1bbd4c54",
+          "hasCommand": false,
+          "icon": "folder-input",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "file-explorer:move-file",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Move file to folder",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "e884cdb7-f069-47fb-ba88-68f46358658f",
+          "hasCommand": false,
+          "icon": "folder-tree",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "file-explorer:reveal-active-file",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Show file in navigation",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "d8c10f75-0271-49b7-a0f9-4d22cbb5cbb9",
+          "hasCommand": false,
+          "icon": "folder-search",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "open-with-default-app:show",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Show file in system",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "f5a82f53-cd0b-4cca-a96e-43cd5269f45a",
+          "hasCommand": false,
+          "icon": "file-json-2",
+          "inGallery": false,
+          "label": "",
+          "link": "vscode://file/{{encode:vault_path}}%2F{{encode:file_path}}",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "uri"
+          },
+          "plugin": "",
+          "tooltip": "Open in VS Code",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "Files",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-08-23T17:19:26.033Z"
+    },
+    {
+      "uuid": "cfe2e1e3-8b97-430a-b3fa-2acb2d529d79",
+      "commandPosition": "float",
+      "customClasses": "",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "",
+      "hasCommand": false,
+      "icon": "",
+      "items": [
+        {
+          "uuid": "b89ab96d-8a33-4524-a405-f3ef4eb2db8c",
+          "hasCommand": false,
+          "icon": "code-square",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:insert-codeblock",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Insert code block",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "db2b58df-b33b-4aa8-ab1a-9fa435044e11",
+          "hasCommand": false,
+          "icon": "quote",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:insert-callout",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Insert callout",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "d1c77189-1030-4d1a-b743-8acffc440e07",
+          "hasCommand": false,
+          "icon": "file-signature",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:insert-footnote",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Insert footnote",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "b0338c1d-9430-4fd8-81cc-84a9fdaf670c",
+          "hasCommand": false,
+          "icon": "link",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:insert-link",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Insert Markdown link",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "b817bbf4-c61b-4b95-b210-b029f4e79de8",
+          "hasCommand": false,
+          "icon": "tag",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:insert-tag",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Insert tag",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "ea497648-2f8d-4395-8522-1c413ba93e48",
+          "hasCommand": false,
+          "icon": "line-horizontal",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:insert-horizontal-rule",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Insert horizontal rule",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "e5702558-e4a9-4d31-91e3-9139da21d62a",
+          "hasCommand": false,
+          "icon": "brackets",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:insert-wikilink",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Add internal link",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "bf29aa98-1f30-4138-8d8d-0d9d4929db94",
+          "hasCommand": false,
+          "icon": "table",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:insert-table",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Insert table",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "fddfd0fe-5b76-4dec-91a4-0914c510b385",
+          "hasCommand": false,
+          "icon": "sticky-note",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:insert-embed",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Add embed",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "f01ecdd0-12fe-41b8-b0f1-35a5a01aedf6",
+          "hasCommand": false,
+          "icon": "paperclip",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:attach-file",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Insert attachment",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "a4d35168-add6-4981-9d4e-d38bdee22388",
+          "hasCommand": false,
+          "icon": "sigma-square",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:insert-mathblock",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Insert math block",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "Insertions",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-08-23T17:20:37.304Z"
+    },
+    {
+      "uuid": "a7ca0916-c895-4928-bfe5-670beb1a3587",
+      "commandPosition": "float",
+      "customClasses": "",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "",
+      "hasCommand": false,
+      "icon": "",
+      "items": [
+        {
+          "uuid": "b137aa95-dfd0-4969-9deb-f29bae54464c",
+          "hasCommand": false,
+          "icon": "sticky-note",
+          "inGallery": false,
+          "label": "",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:insert-embed",
+            "focus": "editor",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Add embed",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "Toolbar",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-08-23T17:05:06.939Z"
+    }
+  ],
+  "version": 20260703.1,
+  "webviewerToolbar": null,
+  "whatsnew_version": "0"
+}

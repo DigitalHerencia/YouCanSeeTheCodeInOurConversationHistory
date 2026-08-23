@@ -1,0 +1,346 @@
+{
+  "title": "You Can See The Code In The Conversation History Below",
+  "showTitle": true,
+  "logo": "∴",
+  "logoIcon": "",
+  "tabIcon": "",
+  "themeColorTarget": "none",
+  "showSearch": true,
+  "searchPlaceholder": "Search or command",
+  "showNewNoteButton": true,
+  "newNoteButtonMode": "newNote",
+  "searchContents": true,
+  "searchEngine": "builtin",
+  "backgroundKind": "url",
+  "backgroundValue": "https://raw.githubusercontent.com/DigitalHerencia/SiempreNuevo/refs/heads/main/public/DigitalHerencia.jpeg",
+  "backgroundOpacity": 0.6,
+  "backgroundBlur": 0,
+  "backgroundLayout": "full",
+  "bannerHeight": 220,
+  "bannerFade": true,
+  "bannerFullWidth": false,
+  "openOnStartup": true,
+  "replaceNewTabs": true,
+  "focusSearchOnOpen": false,
+  "liveRefresh": false,
+  "mobileSearchOnly": false,
+  "showMobileActionBar": true,
+  "mobileActionButtons": [
+    {
+      "id": "action-new-note",
+      "label": "New note",
+      "icon": "plus",
+      "type": "command",
+      "target": "hearth:new-note"
+    },
+    {
+      "id": "action-new-drawing",
+      "label": "New drawing",
+      "icon": "pen-tool",
+      "type": "command",
+      "target": "hearth:new-drawing"
+    },
+    {
+      "id": "action-record-voice",
+      "label": "Record voice",
+      "icon": "mic",
+      "type": "command",
+      "target": "hearth:record-voice"
+    },
+    {
+      "id": "action-daily-note",
+      "label": "Daily note",
+      "icon": "calendar",
+      "type": "command",
+      "target": "hearth:open-daily-note"
+    }
+  ],
+  "disableExternalCalls": false,
+  "openIn": "tab",
+  "openInOverrides": {
+    "link": "default",
+    "search": "default",
+    "card": "default",
+    "newNote": "default"
+  },
+  "openFromOutside": "same",
+  "lowPower": false,
+  "lowPowerBackgroundColor": "#4a4459",
+  "compact": false,
+  "arrangeButtonVisibility": "always",
+  "dashboardSwitcherVisibility": "always",
+  "cardOpacity": 0.5,
+  "cardBlur": 7,
+  "cardRadius": 14,
+  "cardBorderWidth": 1,
+  "hiddenFilters": [],
+  "dashboards": [
+    {
+      "id": "dash-mt61nzd2-2030",
+      "name": "DevNotes",
+      "cards": [
+        {
+          "kind": "clock",
+          "title": "",
+          "x": 0,
+          "y": 0,
+          "w": 12,
+          "h": 2,
+          "id": "card-mt61xd51-0-3911",
+          "fx": 0,
+          "fw": 0.3115996967399545,
+          "fy": 113,
+          "fh": 108
+        },
+        {
+          "kind": "daily",
+          "title": "Today",
+          "x": 0,
+          "y": 2,
+          "w": 6,
+          "h": 5,
+          "id": "card-mt61xd51-1-8631",
+          "fx": 0.3237300985595148,
+          "fw": 0.47081122062168307,
+          "fy": 0,
+          "fh": 213
+        },
+        {
+          "kind": "tasks",
+          "title": "Tasks",
+          "x": 6,
+          "y": 2,
+          "w": 6,
+          "h": 5,
+          "tasks": {},
+          "id": "card-mt61xd51-2-4671",
+          "fx": 0.8066717210007581,
+          "fw": 0.19332827899924185,
+          "fy": 0,
+          "fh": 363
+        },
+        {
+          "kind": "schedule",
+          "title": "Calendar",
+          "x": 0,
+          "y": 7,
+          "w": 8,
+          "h": 6,
+          "schedule": {},
+          "id": "card-mt61xd51-3-3194",
+          "fx": 0,
+          "fw": 0.3115996967399545,
+          "fy": 229,
+          "fh": 368
+        },
+        {
+          "kind": "recent",
+          "title": "Recent",
+          "count": 8,
+          "x": 8,
+          "y": 7,
+          "w": 4,
+          "h": 4,
+          "id": "card-mt61xd51-4-6926",
+          "fx": 0.3237300985595148,
+          "fw": 0.22971948445792267,
+          "fy": 229,
+          "fh": 285
+        },
+        {
+          "kind": "bookmarks",
+          "title": "Bookmarks",
+          "x": 0,
+          "y": 13,
+          "w": 4,
+          "h": 3,
+          "id": "card-mt61xd51-6-6871",
+          "fx": 0.8066717210007581,
+          "fw": 0.19332827899924185,
+          "fy": 371,
+          "fh": 308
+        },
+        {
+          "kind": "links",
+          "title": "Links",
+          "links": [],
+          "x": 4,
+          "y": 14,
+          "w": 6,
+          "h": 2,
+          "id": "card-mt61xd51-7-1694",
+          "fx": 0.354814253222138,
+          "fw": 0.3062926459438969,
+          "fy": 379,
+          "fh": 200
+        },
+        {
+          "kind": "commands",
+          "title": "Commands",
+          "commands": [],
+          "x": 0,
+          "y": 16,
+          "w": 6,
+          "h": 2,
+          "id": "card-mt61xd51-8-3818",
+          "fx": 0.5049279757391963,
+          "fw": 0.221379833206975,
+          "fy": 708,
+          "fh": 200
+        },
+        {
+          "kind": "stats",
+          "title": "Vault",
+          "x": 6,
+          "y": 16,
+          "w": 4,
+          "h": 2,
+          "id": "card-mt61xd51-9-7736",
+          "fx": 0,
+          "fw": 0.3115996967399545,
+          "fy": 0,
+          "fh": 104,
+          "stats": {
+            "advanced": true,
+            "queries": [],
+            "builtins": [
+              "notes",
+              "attachments",
+              "folders",
+              "tags"
+            ]
+          }
+        },
+        {
+          "kind": "heatmap",
+          "title": "Activity",
+          "heatmap": {},
+          "x": 0,
+          "y": 18,
+          "w": 8,
+          "h": 3,
+          "id": "card-mt61xd51-10-6087",
+          "fx": 0,
+          "fw": 0.3115996967399545,
+          "fy": 613,
+          "fh": 158
+        },
+        {
+          "kind": "rss",
+          "title": "Reading",
+          "rss": {
+            "sources": []
+          },
+          "x": 8,
+          "y": 18,
+          "w": 4,
+          "h": 5,
+          "id": "card-mt61xd51-11-879",
+          "fx": 0.5094768764215315,
+          "fw": 0.32676269901440486,
+          "fy": 1648,
+          "fh": 524
+        },
+        {
+          "kind": "templater",
+          "title": "New note",
+          "templater": {
+            "items": [
+              {
+                "id": "templater-0",
+                "label": "work-package.contract",
+                "icon": "file-plus-2",
+                "template": "90 OBSIDIAN/Templates/work-package.contract.md"
+              },
+              {
+                "id": "templater-1",
+                "label": "test-contract.contract",
+                "icon": "file-plus-2",
+                "template": "90 OBSIDIAN/Templates/test-contract.contract.md"
+              },
+              {
+                "id": "templater-2",
+                "label": "webhook-contract.contract",
+                "icon": "file-plus-2",
+                "template": "90 OBSIDIAN/Templates/webhook-contract.contract.md"
+              },
+              {
+                "id": "templater-3",
+                "label": "ui-contract.contract",
+                "icon": "file-plus-2",
+                "template": "90 OBSIDIAN/Templates/ui-contract.contract.md"
+              },
+              {
+                "id": "templater-4",
+                "label": "verification-checklist.contract",
+                "icon": "file-plus-2",
+                "template": "90 OBSIDIAN/Templates/verification-checklist.contract.md"
+              },
+              {
+                "id": "templater-5",
+                "label": "route-map.contract",
+                "icon": "file-plus-2",
+                "template": "90 OBSIDIAN/Templates/route-map.contract.md"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 25,
+          "w": 6,
+          "h": 2,
+          "id": "card-mt61xd51-14-3352",
+          "fx": 0,
+          "fw": 0.49507202426080366,
+          "fy": 2700,
+          "fh": 107
+        },
+        {
+          "kind": "git",
+          "title": "Git",
+          "git": {},
+          "x": 7,
+          "y": 23,
+          "w": 4,
+          "h": 4,
+          "id": "card-mt61xd51-15-2959",
+          "fx": 0.5891666666666667,
+          "fw": 0.3266666666666667,
+          "fy": 2484,
+          "fh": 416
+        },
+        {
+          "kind": "embed",
+          "title": "DevNotes",
+          "target": "DevNotes.base",
+          "x": 0,
+          "y": 27,
+          "w": 6,
+          "h": 5,
+          "id": "card-mt61xd51-16-2725",
+          "fx": 0.2175890826383624,
+          "fw": 0.49507202426080366,
+          "fy": 2768,
+          "fh": 524
+        }
+      ],
+      "fitToPage": false
+    }
+  ],
+  "activeDashboardId": "dash-mt61nzd2-2030",
+  "pinnedCards": [],
+  "gridColumns": 12,
+  "rowHeight": 92,
+  "favorites": [],
+  "fitToPage": true,
+  "taskNotesStatusField": "status",
+  "taskNotesDueField": "due",
+  "taskNotesPriorityField": "priority",
+  "taskNotesDoneValue": "done",
+  "taskFieldsEnabled": false,
+  "taskFields": [],
+  "customFileIcons": true,
+  "iconizeIconProperty": "icon",
+  "maxWidth": 1600,
+  "lastSeenVersion": "2.1.0",
+  "setupStatus": "done"
+}

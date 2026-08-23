@@ -1,0 +1,159 @@
+{
+  "version": 3,
+  "callouts": [
+    {
+      "id": "importat",
+      "displayName": "Importat",
+      "icon": {
+        "type": "lucide",
+        "value": "pencil"
+      },
+      "colorLight": "#086ddd",
+      "colorDark": "#027aff",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": []
+    },
+    {
+      "id": "remember",
+      "displayName": "Remember",
+      "icon": {
+        "type": "lucide",
+        "value": "pencil"
+      },
+      "colorLight": "#086ddd",
+      "colorDark": "#027aff",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": []
+    }
+  ],
+  "settings": {
+    "globalStyle": {
+      "borderSides": {
+        "top": false,
+        "right": false,
+        "bottom": false,
+        "left": false
+      },
+      "borderWidth": 2.5,
+      "titleScale": 1,
+      "contentScale": 1,
+      "borderRadius": 4,
+      "alignContentWithTitle": false,
+      "heading": {
+        "borderSides": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "borderWidth": 1.5,
+        "borderRadius": 4,
+        "paddingTop": 0.25,
+        "paddingBottom": 0.25,
+        "marginTop": 0.5
+      },
+      "inline": {
+        "borderSides": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "borderWidth": 1.5,
+        "borderRadius": 16,
+        "fontScale": 1
+      }
+    },
+    "contextMenu": {
+      "enabled": true,
+      "items": {
+        "regular": [
+          {
+            "id": "copyMarkdown",
+            "enabled": true
+          },
+          {
+            "id": "foldDefaults",
+            "enabled": true
+          },
+          {
+            "id": "edit",
+            "enabled": true
+          },
+          {
+            "id": "openSettings",
+            "enabled": true
+          }
+        ],
+        "heading": [
+          {
+            "id": "cutSection",
+            "enabled": true
+          },
+          {
+            "id": "copySection",
+            "enabled": true
+          },
+          {
+            "id": "deleteSection",
+            "enabled": true
+          },
+          {
+            "id": "edit",
+            "enabled": true
+          },
+          {
+            "id": "openSettings",
+            "enabled": true
+          }
+        ],
+        "inline": [
+          {
+            "id": "edit",
+            "enabled": true
+          },
+          {
+            "id": "openSettings",
+            "enabled": true
+          }
+        ]
+      }
+    },
+    "autocomplete": {
+      "enabled": true
+    },
+    "iconSources": {
+      "materialStyleDefault": "rounded",
+      "materialWeightDefault": 300,
+      "lastCategory": {
+        "material": ""
+      },
+      "lastEmojiSkinTone": 0
+    },
+    "headingCallouts": {
+      "enabled": true,
+      "refCleanTitles": true,
+      "refShowIcon": true,
+      "showFoldArrow": true
+    },
+    "inlineCallouts": {
+      "enabled": true,
+      "allowContent": true
+    },
+    "firstRunCompleted": true,
+    "welcomeSeen": true,
+    "fallbackCalloutId": "note",
+    "language": "auto",
+    "customPalettes": [],
+    "userImages": [],
+    "customCommands": [],
+    "disabledFixedCommands": [],
+    "quickInsertSource": "all"
+  }
+}
