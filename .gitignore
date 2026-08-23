@@ -52,6 +52,13 @@ pnpm-debug.log*
 .git/
 
 # -----------------------------
+# Local external mounts
+# -----------------------------
+# Code Space mounts trusted external repositories here. These are workspace
+# affordances, not DevNotes-owned content, and must never enter vault Git.
+_MOUNTS/
+
+# -----------------------------
 # Obsidian local UI state
 # -----------------------------
 .obsidian/workspace.json
