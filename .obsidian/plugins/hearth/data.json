@@ -88,9 +88,9 @@
           "h": 2,
           "id": "card-mt61xd51-0-3911",
           "fx": 0,
-          "fw": 0.3115996967399545,
-          "fy": 113,
-          "fh": 108
+          "fw": 0.135625,
+          "fy": 0,
+          "fh": 609.2199174751867
         },
         {
           "kind": "daily",
@@ -100,10 +100,10 @@
           "w": 6,
           "h": 5,
           "id": "card-mt61xd51-1-8631",
-          "fx": 0.3237300985595148,
-          "fw": 0.47081122062168307,
+          "fx": 0.31625,
+          "fw": 0.45,
           "fy": 0,
-          "fh": 213
+          "fh": 1115.0570610757961
         },
         {
           "kind": "tasks",
@@ -114,10 +114,10 @@
           "h": 5,
           "tasks": {},
           "id": "card-mt61xd51-2-4671",
-          "fx": 0.8066717210007581,
-          "fw": 0.19332827899924185,
-          "fy": 0,
-          "fh": 363
+          "fx": 0.77625,
+          "fw": 0.22375,
+          "fy": 911.9837552507339,
+          "fh": 1982.7339132374257
         },
         {
           "kind": "schedule",
@@ -129,64 +129,9 @@
           "schedule": {},
           "id": "card-mt61xd51-3-3194",
           "fx": 0,
-          "fw": 0.3115996967399545,
-          "fy": 229,
-          "fh": 368
-        },
-        {
-          "kind": "recent",
-          "title": "Recent",
-          "count": 8,
-          "x": 8,
-          "y": 7,
-          "w": 4,
-          "h": 4,
-          "id": "card-mt61xd51-4-6926",
-          "fx": 0.3237300985595148,
-          "fw": 0.22971948445792267,
-          "fy": 229,
-          "fh": 285
-        },
-        {
-          "kind": "bookmarks",
-          "title": "Bookmarks",
-          "x": 0,
-          "y": 13,
-          "w": 4,
-          "h": 3,
-          "id": "card-mt61xd51-6-6871",
-          "fx": 0.8066717210007581,
-          "fw": 0.19332827899924185,
-          "fy": 371,
-          "fh": 308
-        },
-        {
-          "kind": "links",
-          "title": "Links",
-          "links": [],
-          "x": 4,
-          "y": 14,
-          "w": 6,
-          "h": 2,
-          "id": "card-mt61xd51-7-1694",
-          "fx": 0.354814253222138,
-          "fw": 0.3062926459438969,
-          "fy": 379,
-          "fh": 200
-        },
-        {
-          "kind": "commands",
-          "title": "Commands",
-          "commands": [],
-          "x": 0,
-          "y": 16,
-          "w": 6,
-          "h": 2,
-          "id": "card-mt61xd51-8-3818",
-          "fx": 0.5049279757391963,
-          "fw": 0.221379833206975,
-          "fy": 708,
-          "fh": 200
+          "fw": 0.311875,
+          "fy": 1174.1329318612688,
+          "fh": 1720.5847366268908
         },
         {
           "kind": "stats",
@@ -197,9 +142,9 @@
           "h": 2,
           "id": "card-mt61xd51-9-7736",
           "fx": 0,
-          "fw": 0.3115996967399545,
-          "fy": 0,
-          "fh": 104,
+          "fw": 0.311875,
+          "fy": 668.2957882606593,
+          "fh": 446.76127281513686,
           "stats": {
             "advanced": true,
             "queries": [],
@@ -220,26 +165,10 @@
           "w": 8,
           "h": 3,
           "id": "card-mt61xd51-10-6087",
-          "fx": 0,
-          "fw": 0.3115996967399545,
-          "fy": 613,
-          "fh": 158
-        },
-        {
-          "kind": "rss",
-          "title": "Reading",
-          "rss": {
-            "sources": []
-          },
-          "x": 8,
-          "y": 18,
-          "w": 4,
-          "h": 5,
-          "id": "card-mt61xd51-11-879",
-          "fx": 0.5094768764215315,
-          "fw": 0.32676269901440486,
-          "fy": 1648,
-          "fh": 524
+          "fx": 0.145625,
+          "fw": 0.16625,
+          "fy": 0,
+          "fh": 609.2199174751867
         },
         {
           "kind": "templater",
@@ -250,37 +179,61 @@
                 "id": "templater-0",
                 "label": "work-package.contract",
                 "icon": "file-plus-2",
-                "template": "90 OBSIDIAN/Templates/work-package.contract.md"
+                "template": "90 OBSIDIAN/Templates/work-package.contract.md",
+                "sizeW": 48,
+                "sizeH": 44,
+                "col": 6,
+                "row": 1
               },
               {
                 "id": "templater-1",
                 "label": "test-contract.contract",
                 "icon": "file-plus-2",
-                "template": "90 OBSIDIAN/Templates/test-contract.contract.md"
+                "template": "90 OBSIDIAN/Templates/test-contract.contract.md",
+                "sizeW": 56,
+                "sizeH": 48,
+                "col": 1,
+                "row": 1
               },
               {
                 "id": "templater-2",
                 "label": "webhook-contract.contract",
                 "icon": "file-plus-2",
-                "template": "90 OBSIDIAN/Templates/webhook-contract.contract.md"
+                "template": "90 OBSIDIAN/Templates/webhook-contract.contract.md",
+                "col": 3,
+                "row": 1,
+                "sizeW": 44,
+                "sizeH": 34
               },
               {
                 "id": "templater-3",
                 "label": "ui-contract.contract",
                 "icon": "file-plus-2",
-                "template": "90 OBSIDIAN/Templates/ui-contract.contract.md"
+                "template": "90 OBSIDIAN/Templates/ui-contract.contract.md",
+                "col": 2,
+                "row": 1,
+                "sizeW": 44,
+                "sizeH": 34
               },
               {
                 "id": "templater-4",
                 "label": "verification-checklist.contract",
                 "icon": "file-plus-2",
-                "template": "90 OBSIDIAN/Templates/verification-checklist.contract.md"
+                "template": "90 OBSIDIAN/Templates/verification-checklist.contract.md",
+                "col": 4,
+                "row": 1,
+                "sizeW": 44,
+                "sizeH": 34
               },
               {
                 "id": "templater-5",
                 "label": "route-map.contract",
                 "icon": "file-plus-2",
-                "template": "90 OBSIDIAN/Templates/route-map.contract.md"
+                "template": "90 OBSIDIAN/Templates/route-map.contract.md",
+                "col": 5,
+                "row": 1,
+                "sizeW": 44,
+                "sizeH": 34
               }
             ]
           },
@@ -289,10 +242,10 @@
           "w": 6,
           "h": 2,
           "id": "card-mt61xd51-14-3352",
-          "fx": 0,
-          "fw": 0.49507202426080366,
-          "fy": 2700,
-          "fh": 107
+          "fx": 0.77625,
+          "fw": 0.22375,
+          "fy": 0,
+          "fh": 228.9189992937065
         },
         {
           "kind": "git",
@@ -303,10 +256,10 @@
           "w": 4,
           "h": 4,
           "id": "card-mt61xd51-15-2959",
-          "fx": 0.5891666666666667,
-          "fw": 0.3266666666666667,
-          "fy": 2484,
-          "fh": 416
+          "fx": 0.77625,
+          "fw": 0.22375,
+          "fy": 269.53366045871894,
+          "fh": 598.1431917029105
         },
         {
           "kind": "embed",
@@ -317,13 +270,17 @@
           "w": 6,
           "h": 5,
           "id": "card-mt61xd51-16-2725",
-          "fx": 0.2175890826383624,
-          "fw": 0.49507202426080366,
-          "fy": 2768,
-          "fh": 524
+          "fx": 0.31625,
+          "fw": 0.45,
+          "fy": 1174.1329318612688,
+          "fh": 1720.5847366268908
         }
       ],
-      "fitToPage": false
+      "fitToPage": true,
+      "showSearch": false,
+      "header": {
+        "showTitle": false
+      }
     }
   ],
   "activeDashboardId": "dash-mt61nzd2-2030",
