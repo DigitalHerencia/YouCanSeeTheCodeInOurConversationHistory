@@ -8,64 +8,21 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0df4c9d9aa9b0787",
-            "type": "leaf",
-            "state": {
-              "type": "pm-project",
-              "state": {
-                "filePath": "70 TODO/Codependent Coding.md"
-              },
-              "icon": "chart-gantt",
-              "title": "Codepende…"
-            }
-          },
-          {
-            "id": "2edbbe664b7b0a93",
+            "id": "ef2238d02947f637",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "devnotes.home.md",
+                "file": "00 ZETTELKASTEN/Untitled.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "devnotes.home"
-            }
-          },
-          {
-            "id": "35ed4636fa723048",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/CODEPENDENTCODING.TREE.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "CODEPENDENTCODING.TREE"
-            }
-          },
-          {
-            "id": "4e76b9fbb7a2ea96",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.The-Anthimeria-Workbench.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.The-Anthimeria-Workbench"
+              "title": "Untitled"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -142,7 +99,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 309.6852111816406
+    "width": 617.8704223632812
   },
   "right": {
     "id": "acf9b2ce38860566",
@@ -251,8 +208,11 @@
       "switcher:Open quick switcher": false
     }
   },
-  "active": "35ed4636fa723048",
+  "active": "ef2238d02947f637",
   "lastOpenFiles": [
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.The-Anthimeria-Workbench.md",
+    "00 ZETTELKASTEN/Untitled.md",
+    "00 ZETTELKASTEN/invoice.tsx",
     "devnotes.home.md",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/CODEPENDENTCODING.TREE.md",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/features/anthimeria/anthimeriaFeature.tsx.md",
@@ -269,7 +229,6 @@
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/features/simples/simplesClientFeature.tsx.md",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/features/Anthimeria/constituter-preview.tsx.md",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/components.json.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.The-Anthimeria-Workbench.md",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Directive.md",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.BusinessLogic-Blocks.md",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo-Website-Copy.md",
@@ -279,8 +238,6 @@
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Ontologies-Normalized-Defaults.md",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Maximal-Template.md",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Loaded-Vibes-Plugin—Status.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Hipster-Stack.Technologies.md",
     "70 TODO/Codependent Coding_tasks",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/tests/unit",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/tests/integration",
@@ -288,7 +245,6 @@
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/tests",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/_The Loaded Vibes™ Codex Plugin/LoadedPlugin/toolsets",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/_The Loaded Vibes™ Codex Plugin/LoadedPlugin/templates",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/_The Loaded Vibes™ Codex Plugin/LoadedPlugin/scripts",
     "Pasted image 20260815231425.png",
     "Untitled 1.canvas",
     "Untitled.canvas",
