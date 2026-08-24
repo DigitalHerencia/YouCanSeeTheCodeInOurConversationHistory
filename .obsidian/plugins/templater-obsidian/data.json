@@ -1,17 +1,85 @@
 {
   "data_version": 2,
   "command_timeout": 5,
-  "templates_folder": "90 OBSIDIAN/Templates",
+  "templates_folder": "_obsidian/Templates",
   "templates_pairs": [],
   "trigger_on_file_creation_mode": "folder",
   "auto_jump_to_cursor": true,
   "jump_to_cursor_after_file_name": false,
   "shell_path": "",
-  "user_scripts_folder": "",
+  "user_scripts_folder": "_obsidian/Scripts/templater",
   "folder_templates": [
     {
       "folder": "00 ZETTELKASTEN",
       "template": "90 OBSIDIAN/Templates/obsidian.capture.template.md"
+    },
+    {
+      "folder": "DevNotes/Inbox",
+      "template": "_obsidian/Templates/capture.template.md"
+    },
+    {
+      "folder": "Chief of Staff/Workspaces",
+      "template": "_obsidian/Templates/project-home.template.md"
+    },
+    {
+      "folder": "Trust Issues/Workspaces",
+      "template": "_obsidian/Templates/verification-evidence.template.md"
+    },
+    {
+      "folder": "Execution/Workspaces",
+      "template": "_obsidian/Templates/work-package.template.md"
+    },
+    {
+      "folder": "Vibes/Workspaces",
+      "template": "_obsidian/Templates/architecture.template.md"
+    },
+    {
+      "folder": "DevNotes/Workspaces",
+      "template": "_obsidian/Templates/reference.template.md"
+    },
+    {
+      "folder": "Schemes/Workspaces",
+      "template": "_obsidian/Templates/data-model.template.md"
+    },
+    {
+      "folder": "Prömpter/Workspaces",
+      "template": "_obsidian/Templates/prompt-contract.template.md"
+    },
+    {
+      "folder": "Fuck You Pay Me/Workspaces",
+      "template": "_obsidian/Templates/business-operation.template.md"
+    },
+    {
+      "folder": "Chief of Staff/Workspaces/Codependent Coding",
+      "template": "_obsidian/Templates/project-home.template.md"
+    },
+    {
+      "folder": "Trust Issues/Workspaces/Codependent Coding",
+      "template": "_obsidian/Templates/verification-evidence.template.md"
+    },
+    {
+      "folder": "Execution/Workspaces/Codependent Coding",
+      "template": "_obsidian/Templates/work-package.template.md"
+    },
+    {
+      "folder": "Vibes/Workspaces/Codependent Coding",
+      "template": "_obsidian/Templates/architecture.template.md"
+    },
+    {
+      "folder": "DevNotes/Workspaces/Codependent Coding",
+      "template": "_obsidian/Templates/reference.template.md"
+    },
+    {
+      "folder": "Schemes/Workspaces/Codependent Coding",
+      "template": "_obsidian/Templates/data-model.template.md"
+    },
+    {
+      "folder": "Prömpter/Workspaces/Codependent Coding",
+      "template": "_obsidian/Templates/prompt-contract.template.md"
+    },
+    {
+      "folder": "Fuck You Pay Me/Workspaces/Codependent Coding",
+      "template": "_obsidian/Templates/business-operation.template.md"
     }
   ],
   "file_templates": [],

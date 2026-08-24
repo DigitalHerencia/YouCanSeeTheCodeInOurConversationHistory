@@ -1,0 +1,49 @@
+/* DevNotes Unified Workbench — dark industrial technical UI */
+.theme-dark {
+  --dn-canvas: #05070a;
+  --dn-surface: #0b0f14;
+  --dn-raised: #101720;
+  --dn-line: #26313b;
+  --dn-line-strong: #3d4b57;
+  --dn-text: #eef3f6;
+  --dn-muted: #8d9aa4;
+  --dn-signal: #48a8bd;
+  --dn-danger: #ef6a6a;
+  --dn-warning: #e3b85b;
+  --dn-success: #62c98d;
+
+  --background-primary: var(--dn-canvas);
+  --background-primary-alt: #080b0f;
+  --background-secondary: var(--dn-surface);
+  --background-secondary-alt: var(--dn-raised);
+  --background-modifier-border: var(--dn-line);
+  --background-modifier-hover: #121923;
+  --text-normal: var(--dn-text);
+  --text-muted: var(--dn-muted);
+  --interactive-accent: var(--dn-signal);
+  --radius-s: 2px;
+  --radius-m: 3px;
+  --radius-l: 4px;
+  --input-radius: 2px;
+  --file-line-width: 980px;
+}
+body { letter-spacing: -0.006em; }
+.workspace, .workspace-leaf-content, .markdown-source-view, .markdown-reading-view { background: var(--dn-canvas); }
+.nav-folder-title, .nav-file-title, .workspace-tab-header, button, input, textarea, select, .dropdown { border-radius: 2px !important; }
+.nav-file-title.is-active { background: var(--dn-signal); color: #041014; font-weight: 700; }
+.markdown-rendered h1 { text-transform: uppercase; font-weight: 800; letter-spacing: -0.03em; }
+.markdown-rendered h2 { border-bottom: 2px solid var(--dn-line); padding-bottom: .35em; }
+.internal-link { color: var(--dn-text); text-decoration-color: var(--dn-signal); text-underline-offset: 3px; }
+.metadata-container, .callout, .markdown-rendered pre, .markdown-rendered table {
+  background: var(--dn-surface); border: 2px solid var(--dn-line); border-radius: 2px; box-shadow: none;
+}
+button, .mod-cta {
+  border: 2px solid var(--dn-line-strong); background: var(--dn-raised); color: var(--dn-text);
+  font-weight: 650; box-shadow: 3px 3px 0 #000;
+}
+button:hover { border-color: var(--dn-signal); transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #000; }
+.callout[data-callout="truth"], .callout[data-callout="evidence"], .callout[data-callout="handoff"] { border-left: 4px solid var(--dn-signal); }
+.callout[data-callout="blocked"], .callout[data-callout="risk"] { border-left: 4px solid var(--dn-danger); }
+.callout[data-callout="decision"], .callout[data-callout="requirement"] { border-left: 4px solid var(--dn-warning); }
+.callout[data-callout="spark"] { border-left: 4px solid var(--dn-success); }
+.hearth-card, .mb-input, .mb-button { border-radius: 2px !important; }

@@ -1,5 +1,5 @@
 {
-  "title": "You Can See The Code In The Conversation History Below",
+  "title": "DEVNOTES · KNOWLEDGE + ENGINEERING SYSTEM",
   "showTitle": true,
   "logo": "∴",
   "logoIcon": "",
@@ -71,10 +71,203 @@
   "dashboardSwitcherVisibility": "always",
   "cardOpacity": 0.5,
   "cardBlur": 7,
-  "cardRadius": 14,
+  "cardRadius": 2,
   "cardBorderWidth": 1,
   "hiddenFilters": [],
   "dashboards": [
+    {
+      "id": "dash-devnotes-unified-v010",
+      "name": "Unified Workbench",
+      "cards": [
+        {
+          "kind": "clock",
+          "title": "",
+          "x": 0,
+          "y": 0,
+          "w": 12,
+          "h": 2,
+          "id": "dn-clock-001"
+        },
+        {
+          "kind": "embed",
+          "title": "Now",
+          "target": "_obsidian/Bases/Now.base",
+          "x": 0,
+          "y": 2,
+          "w": 6,
+          "h": 5,
+          "id": "dn-now-001"
+        },
+        {
+          "kind": "embed",
+          "title": "Workspaces",
+          "target": "_obsidian/Bases/Workspaces.base",
+          "x": 6,
+          "y": 2,
+          "w": 6,
+          "h": 5,
+          "id": "dn-workspaces-001"
+        },
+        {
+          "kind": "embed",
+          "title": "Handoffs",
+          "target": "_obsidian/Bases/Handoffs.base",
+          "x": 0,
+          "y": 7,
+          "w": 6,
+          "h": 5,
+          "id": "dn-handoffs-001"
+        },
+        {
+          "kind": "embed",
+          "title": "Evidence",
+          "target": "_obsidian/Bases/Evidence.base",
+          "x": 6,
+          "y": 7,
+          "w": 6,
+          "h": 5,
+          "id": "dn-evidence-001"
+        },
+        {
+          "kind": "embed",
+          "title": "Inbox",
+          "target": "_obsidian/Bases/Inbox.base",
+          "x": 0,
+          "y": 12,
+          "w": 6,
+          "h": 5,
+          "id": "dn-inbox-001"
+        },
+        {
+          "kind": "embed",
+          "title": "Roles",
+          "target": "_obsidian/Bases/Roles.base",
+          "x": 6,
+          "y": 12,
+          "w": 6,
+          "h": 5,
+          "id": "dn-roles-001"
+        },
+        {
+          "kind": "embed",
+          "title": "Codependent Coding",
+          "target": "_obsidian/Bases/Codependent-Coding.base",
+          "x": 0,
+          "y": 17,
+          "w": 12,
+          "h": 6,
+          "id": "dn-codependent-001"
+        },
+        {
+          "kind": "templater",
+          "title": "Create",
+          "templater": {
+            "items": [
+              {
+                "id": "dn-template-capture",
+                "label": "Capture",
+                "icon": "inbox",
+                "template": "_obsidian/Templates/capture.template.md",
+                "sizeW": 48,
+                "sizeH": 44,
+                "col": 1,
+                "row": 1
+              },
+              {
+                "id": "dn-template-project",
+                "label": "Workspace",
+                "icon": "layout-dashboard",
+                "template": "_obsidian/Templates/project-home.template.md",
+                "sizeW": 48,
+                "sizeH": 44,
+                "col": 2,
+                "row": 1
+              },
+              {
+                "id": "dn-template-spec",
+                "label": "Specification",
+                "icon": "file-check-2",
+                "template": "_obsidian/Templates/specification.template.md",
+                "sizeW": 48,
+                "sizeH": 44,
+                "col": 3,
+                "row": 1
+              },
+              {
+                "id": "dn-template-decision",
+                "label": "Decision",
+                "icon": "git-branch",
+                "template": "_obsidian/Templates/adr-decision.template.md",
+                "sizeW": 48,
+                "sizeH": 44,
+                "col": 4,
+                "row": 1
+              },
+              {
+                "id": "dn-template-handoff",
+                "label": "Handoff",
+                "icon": "send",
+                "template": "_obsidian/Templates/handoff.template.md",
+                "sizeW": 48,
+                "sizeH": 44,
+                "col": 5,
+                "row": 1
+              },
+              {
+                "id": "dn-template-evidence",
+                "label": "Evidence",
+                "icon": "badge-check",
+                "template": "_obsidian/Templates/verification-evidence.template.md",
+                "sizeW": 48,
+                "sizeH": 44,
+                "col": 6,
+                "row": 1
+              },
+              {
+                "id": "dn-template-prompt",
+                "label": "Prompt Contract",
+                "icon": "messages-square",
+                "template": "_obsidian/Templates/prompt-contract.template.md",
+                "sizeW": 48,
+                "sizeH": 44,
+                "col": 7,
+                "row": 1
+              },
+              {
+                "id": "dn-template-business",
+                "label": "Business Operation",
+                "icon": "landmark",
+                "template": "_obsidian/Templates/business-operation.template.md",
+                "sizeW": 48,
+                "sizeH": 44,
+                "col": 8,
+                "row": 1
+              }
+            ]
+          },
+          "x": 0,
+          "y": 23,
+          "w": 9,
+          "h": 3,
+          "id": "dn-create-001"
+        },
+        {
+          "kind": "git",
+          "title": "Git",
+          "git": {},
+          "x": 9,
+          "y": 23,
+          "w": 3,
+          "h": 3,
+          "id": "dn-git-001"
+        }
+      ],
+      "fitToPage": true,
+      "showSearch": false,
+      "header": {
+        "showTitle": false
+      }
+    },
     {
       "id": "dash-mt61nzd2-2030",
       "name": "DevNotes",
@@ -283,7 +476,7 @@
       }
     }
   ],
-  "activeDashboardId": "dash-mt61nzd2-2030",
+  "activeDashboardId": "dash-devnotes-unified-v010",
   "pinnedCards": [],
   "gridColumns": 12,
   "rowHeight": 92,

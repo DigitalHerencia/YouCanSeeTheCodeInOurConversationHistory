@@ -1,6 +1,6 @@
 {
   "debugEnabled": false,
-  "defaultToolbar": null,
+  "defaultToolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010",
   "editorMenuAsToolbar": false,
   "editorMenuToolbar": null,
   "emptyViewToolbar": null,
@@ -10,7 +10,40 @@
     "useDataEls": true,
     "useIds": true
   },
-  "folderMappings": [],
+  "folderMappings": [
+    {
+      "folder": "Chief of Staff",
+      "toolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010"
+    },
+    {
+      "folder": "Trust Issues",
+      "toolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010"
+    },
+    {
+      "folder": "Execution",
+      "toolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010"
+    },
+    {
+      "folder": "Vibes",
+      "toolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010"
+    },
+    {
+      "folder": "DevNotes",
+      "toolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010"
+    },
+    {
+      "folder": "Schemes",
+      "toolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010"
+    },
+    {
+      "folder": "Prömpter",
+      "toolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010"
+    },
+    {
+      "folder": "Fuck You Pay Me",
+      "toolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010"
+    }
+  ],
   "icon": "circle-ellipsis",
   "keepPropsState": false,
   "lockCallouts": false,
@@ -41,6 +74,270 @@
   "textToolbarOnKeyboard": true,
   "toolbarProp": "notetoolbar",
   "toolbars": [
+    {
+      "uuid": "7ca88b11-e0b5-45ce-a7e1-895a7328d010",
+      "commandPosition": "float",
+      "customClasses": "devnotes-unified-toolbar",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "sticky",
+        "button",
+        "glass",
+        "nowrap"
+      ],
+      "description": "Universal DevNotes navigation and creation controls.",
+      "hasCommand": true,
+      "icon": "network",
+      "items": [
+        {
+          "uuid": "dn-home-4cb3",
+          "hasCommand": false,
+          "icon": "home",
+          "inGallery": false,
+          "label": "HOME",
+          "link": "devnotes.home.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file"
+          },
+          "plugin": "",
+          "tooltip": "Open DevNotes home",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "dn-back-956e",
+          "hasCommand": false,
+          "icon": "arrow-left",
+          "inGallery": false,
+          "label": "BACK",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "app:go-back",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Navigate back",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "dn-workspace-21ea",
+          "hasCommand": false,
+          "icon": "layout-dashboard",
+          "inGallery": false,
+          "label": "WORKSPACE",
+          "link": "{{prop_workspace}}.workspace.home",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": true,
+            "type": "file"
+          },
+          "plugin": "",
+          "tooltip": "Open current workspace",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "dn-create-031b",
+          "hasCommand": false,
+          "icon": "file-plus-2",
+          "inGallery": false,
+          "label": "CREATE",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "templater-obsidian:create-new-note-from-template",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Create from a routed template",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "dn-related-335d",
+          "hasCommand": false,
+          "icon": "orbit",
+          "inGallery": false,
+          "label": "RELATED",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "graph:open-local",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Open local graph",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "dn-more-e582",
+          "hasCommand": false,
+          "icon": "ellipsis",
+          "inGallery": false,
+          "label": "MORE",
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "command-palette:open",
+            "hasVars": false,
+            "type": "command"
+          },
+          "plugin": "",
+          "tooltip": "Open command palette",
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [
+        "mbrder",
+        "mbtn",
+        "mstcky"
+      ],
+      "name": "DevNotes Unified",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-08-23T00:00:00.000Z"
+    },
     {
       "uuid": "ff440b5a-a5a1-4444-aba9-612dd9d68634",
       "commandPosition": "float",

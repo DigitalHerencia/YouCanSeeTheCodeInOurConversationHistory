@@ -11,6 +11,7 @@
   "nativeMenus": false,
   "baseFontSize": 16,
   "enabledCssSnippets": [
-    "codex-vercel"
+    "codex-vercel",
+    "devnotes-unified"
   ]
 }

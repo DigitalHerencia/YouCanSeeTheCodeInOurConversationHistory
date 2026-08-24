@@ -1,0 +1,52 @@
+filters:
+  and:
+    - file.ext == "md"
+    - or:
+        - system == "codependent-coding"
+        - workspace == "codependent-coding"
+        - file.inFolder("60 CODEPENDENT CODING")
+        - file.inFolder("10 PROJECTS/10.PROJECTS.CODEPENDENTCODING")
+properties:
+  file.name:
+    displayName: Artifact
+  role:
+    displayName: Role
+  workspace:
+    displayName: Workspace
+  system:
+    displayName: System
+  type:
+    displayName: Type
+  status:
+    displayName: Status
+  authority:
+    displayName: Authority
+  source_kind:
+    displayName: Source Kind
+views:
+  - type: table
+    name: Workspace
+    order: [file.name, role, type, status, authority, source_kind]
+  - type: table
+    name: Role Lenses
+    filters:
+      and:
+        - workspace == "codependent-coding"
+        - type == "map"
+    groupBy:
+      property: role
+      direction: ASC
+    order: [role, file.name, type, status, authority]
+  - type: table
+    name: Canon
+    filters:
+      or:
+        - authority == "canonical"
+        - authority == "source-of-truth"
+    order: [file.name, role, type, status, authority]
+  - type: table
+    name: Source Mirror
+    filters:
+      and:
+        - file.inFolder("10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror")
+    order: [file.name, source_kind, status, authority]

@@ -62,67 +62,11 @@
       "aliases": []
     },
     {
-<<<<<<< HEAD
-      "id": "decision",
-      "displayName": "Decision",
-      "icon": {
-        "type": "lucide",
-        "value": "pencil"
-      },
-      "colorLight": "#086ddd",
-      "colorDark": "#027aff",
-      "foldable": false,
-      "defaultFolded": false,
-      "builtIn": false,
-      "source": "fallback",
-      "aliases": []
-    },
-    {
-      "id": "spark",
-      "displayName": "Spark",
-      "icon": {
-        "type": "lucide",
-        "value": "pencil"
-      },
-      "colorLight": "#086ddd",
-      "colorDark": "#027aff",
-      "foldable": false,
-      "defaultFolded": false,
-      "builtIn": false,
-      "source": "fallback",
-      "aliases": []
-    },
-    {
-      "id": "handoff",
-      "displayName": "Handoff",
-      "icon": {
-        "type": "lucide",
-        "value": "pencil"
-      },
-      "colorLight": "#086ddd",
-      "colorDark": "#027aff",
-      "foldable": false,
-      "defaultFolded": false,
-      "builtIn": false,
-      "source": "fallback",
-      "aliases": []
-    },
-    {
-      "id": "truth",
-      "displayName": "Truth",
-      "icon": {
-        "type": "lucide",
-        "value": "pencil"
-      },
-      "colorLight": "#086ddd",
-      "colorDark": "#027aff",
-=======
       "id": "blocked",
       "displayName": "Blocked",
       "icon": { "type": "lucide", "value": "ban" },
       "colorLight": "#b91c1c",
       "colorDark": "#f87171",
->>>>>>> origin/master
       "foldable": false,
       "defaultFolded": false,
       "builtIn": false,
@@ -132,15 +76,6 @@
     {
       "id": "evidence",
       "displayName": "Evidence",
-<<<<<<< HEAD
-      "icon": {
-        "type": "lucide",
-        "value": "pencil"
-      },
-      "colorLight": "#086ddd",
-      "colorDark": "#027aff",
-      "foldable": false,
-=======
       "icon": { "type": "lucide", "value": "badge-check" },
       "colorLight": "#15803d",
       "colorDark": "#4ade80",
@@ -157,13 +92,10 @@
       "colorLight": "#0f766e",
       "colorDark": "#2dd4bf",
       "foldable": true,
->>>>>>> origin/master
       "defaultFolded": false,
       "builtIn": false,
       "source": "fallback",
       "aliases": []
-<<<<<<< HEAD
-=======
     },
     {
       "id": "spark",
@@ -188,7 +120,6 @@
       "builtIn": false,
       "source": "fallback",
       "aliases": ["historical", "superseded"]
->>>>>>> origin/master
     }
   ],
   "settings": {
