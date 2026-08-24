@@ -8,6 +8,8 @@
     "current ChatGPT Project configuration sources",
     "Codependent Coding authority packages"
   ],
-  "normative_status": "proposed target architecture; does not mutate live vault",
-  "migration_policy": "overlay-first, no-delete"
+  "normative_status": "accepted and implemented",
+  "migration_policy": "completed unified migration",
+  "source_archive": "D:/.ARCHIVE/ZIPS/DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0.zip",
+  "adopted": "2026-08-24"
 }

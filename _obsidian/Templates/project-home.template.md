@@ -19,13 +19,13 @@ tags: []
 
 ## Control Surface
 
-Status: `INPUT[inlineSelect(option(backlog), option(ready), option(in-progress), option(in-review), option(blocked), option(done), option(cancelled)):status]`
+Status: `INPUT[dn-status][:status]`
 
-Priority: `INPUT[inlineSelect(option(low), option(normal), option(high), option(critical)):priority]`
+Priority: `INPUT[dn-priority][:priority]`
 
-Health: `INPUT[inlineSelect(option(on-track), option(at-risk), option(blocked), option(paused)):health]`
+Health: `INPUT[dn-health][:health]`
 
-Progress: `INPUT[slider(addLabels, minValue(0), maxValue(100)):progress]`
+Progress: `INPUT[dn-progress][:progress]`
 
 Target: `INPUT[date:target]`
 
@@ -39,6 +39,11 @@ Repository: `INPUT[text:repository]`
 ## Governance
 ## Active Specifications
 ## Work
+
+![[_obsidian/Bases/TaskNotes/kanban-default.base#Kanban]]
+
+![[_obsidian/Bases/TaskNotes/agenda-default.base#Agenda]]
+
 ## Recent Decisions
 ## Research
 ## Code / Repository

@@ -1,5 +1,5 @@
 # _mounts
 
-Local-only trusted Code Space repository mounts. Git-ignore this tree.
+Local-only trusted Code Space source mounts. Git ignores this tree.
 
-Current pilot: `TheHipsterStack/` → the specific Hipster Stack Git checkout recorded in [[codependent-coding.vibes.code-space-pilot.execution]]. Do not mount the surrounding development drive or source-tree parent.
+Only mount: `CodependentCoding/` → `D:\TheCodependentCodingWebAppArchitecture`, recorded in [[codependent-coding.vibes.code-space-pilot.execution]]. Do not add another mount without explicit user instruction.

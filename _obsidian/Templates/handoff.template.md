@@ -17,7 +17,7 @@ tags: []
 > [!handoff] Transfer
 > Make the next action executable.
 
-Status: `INPUT[inlineSelect(option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]`
+Status: `INPUT[dn-status][:status]`
 
 ## From
 ## To

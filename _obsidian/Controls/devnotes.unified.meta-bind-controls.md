@@ -20,13 +20,19 @@ Properties remain canonical state. These controls expose routine edits without m
 
 ## Core state
 
-Status: `INPUT[dn-status][:status]`
+Work / task status: `INPUT[dn-status-task][:status]`
+
+Knowledge status: `INPUT[dn-status-knowledge][:status]`
+
+Decision status: `INPUT[dn-status-decision][:status]`
+
+Validation status: `INPUT[dn-status-validation][:status]`
 
 Authority: `INPUT[dn-authority][:authority]`
 
 Role: `INPUT[dn-role][:role]`
 
-Workspace: `INPUT[text:workspace]`
+Workspace: `INPUT[dn-text][:workspace]`
 
 ## Project state
 
@@ -34,6 +40,10 @@ Priority: `INPUT[dn-priority][:priority]`
 
 Health: `INPUT[dn-health][:health]`
 
-Progress: `INPUT[slider(addLabels, minValue(0), maxValue(100)):progress]`
+Progress: `INPUT[dn-progress][:progress]`
 
-Target: `INPUT[date:target]`
+Target: `INPUT[dn-date][:target]`
+
+Scheduled: `INPUT[dn-date][:scheduled]`
+
+Due: `INPUT[dn-date][:due]`

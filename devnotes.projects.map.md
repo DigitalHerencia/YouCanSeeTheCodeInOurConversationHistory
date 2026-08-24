@@ -24,38 +24,18 @@ updated: 2026-08-11
 
 # Projects Map
 
-## Project Maps
+## Portfolio
 
-~~~dataview
-TABLE project, status, authority
-FROM "10 PROJECTS"
-WHERE type = "map" AND scope = "project"
-SORT project ASC
-~~~
+![[_obsidian/Bases/Workspaces.base#Workspace Knowledge]]
 
-## Active Contracts
+## Active tasks
 
-~~~dataview
-TABLE project, domain, artifact, kind, status
-FROM "10 PROJECTS"
-WHERE type = "contract" AND status = "active"
-SORT project ASC, domain ASC, artifact ASC
-~~~
+![[_obsidian/Bases/TaskNotes/tasks-default.base#All Tasks]]
 
-## Draft Contracts
+## Kanban
 
-~~~dataview
-TABLE project, domain, artifact, kind, file.mtime AS Modified
-FROM "10 PROJECTS"
-WHERE type = "contract" AND status = "draft"
-SORT file.mtime DESC
-~~~
+![[_obsidian/Bases/TaskNotes/kanban-default.base#Kanban]]
 
-## Agent Ops
+## Schedule
 
-~~~dataview
-LIST
-FROM "10 PROJECTS"
-WHERE contains(file.path, "50 AGENT OPS")
-SORT file.mtime DESC
-~~~
+![[_obsidian/Bases/TaskNotes/calendar-default.base#Calendar]]

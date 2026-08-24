@@ -1,13 +1,8 @@
 filters:
   and:
     - file.ext == "md"
-    - file.hasProperty("namespace")
     - not:
         - file.inFolder("_obsidian/Templates")
-        - file.inFolder("90 OBSIDIAN/Templates")
-        - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/03-templates")
-        - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/07-vault-overlay")
-        - file.inFolder("10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror")
         - file.inFolder("_ops")
 formulas:
   backlink_count: file.backlinks.length
@@ -31,27 +26,54 @@ properties:
     displayName: Backlinks
   formula.outgoing_link_count:
     displayName: Outgoing
-
 views:
   - type: table
     name: Knowledge Index
-    order: [file.name, role, workspace, system, type, status, authority, formula.backlink_count, formula.outgoing_link_count]
+    order:
+      - file.name
+      - role
+      - workspace
+      - system
+      - type
+      - status
+      - authority
+      - formula.backlink_count
+      - formula.outgoing_link_count
   - type: table
     name: Canon
     filters:
       and:
         - authority == "canonical"
-    order: [file.name, role, system, type, status, formula.backlink_count]
+    order:
+      - file.name
+      - role
+      - system
+      - type
+      - status
+      - formula.backlink_count
   - type: table
-    name: Legacy Source of Truth
+    name: Source of Truth
     filters:
       and:
         - authority == "source-of-truth"
-    order: [file.name, project, domain, type, status, formula.backlink_count]
+    order:
+      - file.name
+      - project
+      - domain
+      - type
+      - status
+      - formula.backlink_count
   - type: table
-    name: Link Health
+    name: Graph Review
     filters:
       or:
         - file.backlinks.length == 0
         - file.links.length == 0
-    order: [file.name, role, workspace, type, authority, formula.backlink_count, formula.outgoing_link_count]
+    order:
+      - file.name
+      - role
+      - workspace
+      - type
+      - authority
+      - formula.backlink_count
+      - formula.outgoing_link_count

@@ -145,8 +145,8 @@ venv/
 *.ai
 *.sketch
 
-# Keep intentional vault reference images.
-!20 DOCUMENTATION/**/*.png
-!20 DOCUMENTATION/**/*.jpg
-!20 DOCUMENTATION/**/*.jpeg
-!20 DOCUMENTATION/**/*.webp
+# Keep intentional vault media.
+!_assets/**/*.png
+!_assets/**/*.jpg
+!_assets/**/*.jpeg
+!_assets/**/*.webp

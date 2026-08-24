@@ -14,9 +14,9 @@ tags: []
 
 # Work Package
 
-Status: `INPUT[inlineSelect(option(backlog), option(ready), option(in-progress), option(in-review), option(blocked), option(done), option(cancelled)):status]`
+Status: `INPUT[dn-status][:status]`
 
-Priority: `INPUT[inlineSelect(option(low), option(normal), option(high), option(critical)):priority]`
+Priority: `INPUT[dn-priority][:priority]`
 
 ## Objective
 ## Context

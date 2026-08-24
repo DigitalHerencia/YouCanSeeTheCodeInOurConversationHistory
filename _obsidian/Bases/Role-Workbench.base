@@ -5,10 +5,6 @@ filters:
     - role == this.role
     - not:
         - file.inFolder("_obsidian/Templates")
-        - file.inFolder("90 OBSIDIAN/Templates")
-        - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/03-templates")
-        - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/07-vault-overlay")
-        - file.inFolder("10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror")
 properties:
   file.name:
     displayName: Note

@@ -4,15 +4,12 @@ filters:
     - file.hasProperty("namespace")
     - not:
         - file.inFolder("_obsidian/Templates")
-        - file.inFolder("90 OBSIDIAN/Templates")
-        - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/03-templates")
-        - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/07-vault-overlay")
-        - file.inFolder("10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror")
         - file.inFolder("_ops")
+        - file.inFolder("DevNotes/Archive")
 formulas:
   backlink_count: file.backlinks.length
   outgoing_link_count: file.links.length
-  connection_health: 'if(file.backlinks.length == 0 || file.links.length == 0, "weak", "connected")'
+  connection_health: if(file.backlinks.length == 0 || file.links.length == 0, "weak", "connected")
 properties:
   file.name:
     displayName: Note
@@ -36,14 +33,12 @@ properties:
     displayName: Outgoing
 views:
   - type: table
-    name: System Health
+    name: Operational Health
     filters:
       or:
         - type == "capture"
         - status == "blocked"
         - health == "at-risk"
-        - file.backlinks.length == 0
-        - file.links.length == 0
     order:
       - file.name
       - role
@@ -51,14 +46,6 @@ views:
       - type
       - status
       - health
-      - formula.connection_health
-      - formula.backlink_count
-      - formula.outgoing_link_count
-    sort:
-      - property: formula.backlink_count
-        direction: ASC
-      - property: formula.outgoing_link_count
-        direction: ASC
   - type: table
     name: Blocked or At Risk
     filters:
@@ -73,7 +60,7 @@ views:
       - health
       - type
   - type: table
-    name: Weak Links
+    name: Graph Review
     filters:
       or:
         - file.backlinks.length == 0

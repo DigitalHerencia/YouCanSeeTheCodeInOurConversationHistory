@@ -1,5 +1,5 @@
 {
-  "folder": "00 ZETTELKASTEN",
-  "template": "90 OBSIDIAN/Templates/obsidian.capture.template.md",
+  "folder": "DevNotes/Inbox",
+  "template": "_obsidian/Templates/capture.template.md",
   "format": "dddd MMM DD YYYY"
 }

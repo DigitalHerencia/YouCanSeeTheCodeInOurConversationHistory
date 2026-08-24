@@ -12,6 +12,18 @@
   },
   "folderMappings": [
     {
+      "folder": "Chief of Staff/Workspaces/Codependent Coding/Project Management",
+      "toolbar": "f63eb83d-ab03-4241-a0f3-7751973e9ee9"
+    },
+    {
+      "folder": "Chief of Staff/Tasks",
+      "toolbar": "f63eb83d-ab03-4241-a0f3-7751973e9ee9"
+    },
+    {
+      "folder": "Chief of Staff/Daily",
+      "toolbar": "f63eb83d-ab03-4241-a0f3-7751973e9ee9"
+    },
+    {
       "folder": "Chief of Staff",
       "toolbar": "faeac3db-3952-42d1-ab3c-f00206859053"
     },
@@ -60,10 +72,10 @@
   "showLaunchpad": false,
   "showToolbarIn": {
     "audio": false,
-    "bases": false,
-    "canvas": false,
+    "bases": true,
+    "canvas": true,
     "image": false,
-    "kanban": false,
+    "kanban": true,
     "pdf": false,
     "video": false
   },
@@ -169,7 +181,7 @@
           "tooltip": "Open Chief of Staff workbench",
           "hasCommand": false,
           "inGallery": false,
-          "link": "Chief of Staff/README.md",
+          "link": "Chief of Staff/Workspaces/Codependent Coding/Project Management/codependent-coding.project-management.dashboard.md",
           "linkAttr": {
             "commandCheck": false,
             "commandId": "",
@@ -206,7 +218,7 @@
           "tooltip": "Open milestone ownership surface",
           "hasCommand": false,
           "inGallery": false,
-          "link": "Chief of Staff/README.md",
+          "link": "_obsidian/Bases/TaskNotes/tasks-default.base",
           "linkAttr": {
             "commandCheck": false,
             "commandId": "",
@@ -279,7 +291,7 @@
           "tooltip": "Open scheduling ownership surface",
           "hasCommand": false,
           "inGallery": false,
-          "link": "Chief of Staff/README.md",
+          "link": "_obsidian/Bases/TaskNotes/calendar-default.base",
           "linkAttr": {
             "commandCheck": false,
             "commandId": "",
@@ -724,7 +736,7 @@
           "link": "",
           "linkAttr": {
             "commandCheck": false,
-            "commandId": "templater-obsidian:create-new-note-from-template",
+            "commandId": "quickadd:runQuickAdd",
             "hasVars": false,
             "type": "command"
           },
@@ -2838,6 +2850,258 @@
         }
       },
       "updated": "2026-08-23T17:20:37.304Z"
+    },
+    {
+      "uuid": "f63eb83d-ab03-4241-a0f3-7751973e9ee9",
+      "commandPosition": "float",
+      "customClasses": "",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "Tasks, Kanban, calendar, and daily planning.",
+      "hasCommand": false,
+      "icon": "list-checks",
+      "items": [
+        {
+          "uuid": "f90b7ad9-6599-4e29-a191-01c552a4abe3",
+          "icon": "circle-plus",
+          "label": "NEW TASK",
+          "tooltip": "Create a TaskNote",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "tasknotes:create-new-task",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "aabcc5f7-ae1e-4731-93dd-35a7300e6fb1",
+          "icon": "list-checks",
+          "label": "TASKS",
+          "tooltip": "Open all tasks",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "tasknotes:open-tasks-view",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "bba05097-13a2-4e00-9464-d6dcafb89f3b",
+          "icon": "columns-3",
+          "label": "KANBAN",
+          "tooltip": "Open the task Kanban",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "tasknotes:open-kanban-view",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "b9d9a552-7b34-440d-8d40-664757948152",
+          "icon": "calendar-days",
+          "label": "CALENDAR",
+          "tooltip": "Open the task calendar",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "tasknotes:open-advanced-calendar-view",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "ca952fc8-c6fe-4811-a1c5-cac9c8d8869b",
+          "icon": "calendar-clock",
+          "label": "AGENDA",
+          "tooltip": "Open the agenda",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "tasknotes:open-agenda-view",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "df08c9fc-7325-496f-b085-9397ed905284",
+          "icon": "sun",
+          "label": "TODAY",
+          "tooltip": "Open today's daily note",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "daily-notes",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "Project Management",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-08-24T22:57:26.015Z"
     },
     {
       "uuid": "a7a7a26e-07f4-43cb-bf4a-fada86f816e7",

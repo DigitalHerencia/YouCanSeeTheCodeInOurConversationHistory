@@ -3,15 +3,9 @@ filters:
     - file.ext == "md"
     - not:
         - file.inFolder("_obsidian/Templates")
-        - file.inFolder("90 OBSIDIAN/Templates")
-        - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/03-templates")
-        - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/07-vault-overlay")
-        - file.inFolder("10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror")
     - or:
         - system == "codependent-coding"
         - workspace == "codependent-coding"
-        - file.inFolder("60 CODEPENDENT CODING")
-        - file.inFolder("10 PROJECTS/10.PROJECTS.CODEPENDENTCODING")
 properties:
   file.name:
     displayName: Artifact
@@ -32,7 +26,13 @@ properties:
 views:
   - type: table
     name: Workspace
-    order: [file.name, role, type, status, authority, source_kind]
+    order:
+      - file.name
+      - role
+      - type
+      - status
+      - authority
+      - source_kind
   - type: table
     name: Role Lenses
     filters:
@@ -42,11 +42,21 @@ views:
     groupBy:
       property: role
       direction: ASC
-    order: [role, file.name, type, status, authority]
+    order:
+      - role
+      - file.name
+      - type
+      - status
+      - authority
   - type: table
     name: Canon
     filters:
       or:
         - authority == "canonical"
         - authority == "source-of-truth"
-    order: [file.name, role, type, status, authority]
+    order:
+      - file.name
+      - role
+      - type
+      - status
+      - authority

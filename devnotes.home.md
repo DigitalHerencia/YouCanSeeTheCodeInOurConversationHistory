@@ -32,7 +32,12 @@ updated: 2026-08-23
 
 - [[devnotes.roles.registry.map|Role domains]]
 - [[codependent-coding.workspace.home|Codependent Coding workspace]]
+- [[codependent-coding.project-management.dashboard|Project management]]
 - [[devnotes.unified-system.authority.map|Unified system authority]]
+
+![[_obsidian/Bases/TaskNotes/kanban-default.base#Kanban]]
+
+![[_obsidian/Bases/TaskNotes/agenda-default.base#Agenda]]
 
 ![[_obsidian/Bases/Now.base#Active Work]]
 
@@ -46,23 +51,23 @@ updated: 2026-08-23
 
 ![[_obsidian/Bases/Recent-Knowledge.base#Recent Knowledge]]
 
-![[_obsidian/Bases/System-Health.base#System Health]]
+![[_obsidian/Bases/System-Health.base#Operational Health]]
 
 ![[_obsidian/Bases/DevNotes-Unified.base#Knowledge Index]]
 
 ## Vault System
 
 - [[obsidian.system.map]]
-- [[obsidian.contracts.naming-standard]]
-- [[obsidian.contracts.property-schema]]
-- [[obsidian.contracts.note-types]]
+- [[DevNotes-Unified-System.Authoritative-Blueprint]]
+- [[Metadata-and-Knowledge-Graph-Contract]]
+- [[Knowledge-Model.Authority-and-Ownership]]
 
 ## Knowledge Systems
 
-- [[60 CODEPENDENT CODING/60.CODEPENDENTCODING.Manifest.Map|Codependent Coding manifest]] — canonical flat Codependent Coding™ knowledge-system corpus in `60 CODEPENDENT CODING`.
-- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/Codependent-Coding-Docs-Knowledge-Authority-Package/10.PROJECTS.CODEPENDENTCODING.Docs.Authoritative-Knowledge-System-Spec|Codependent Coding authoritative knowledge-system specification]] — active Codependent Coding™ WebApp Architecture authority in `10 PROJECTS/10.PROJECTS.CODEPENDENTCODING`.
+- [[60.CODEPENDENTCODING.Manifest.Map|Codependent Coding manifest]] — canonical doctrine distributed across role Canon folders.
+- [[10.PROJECTS.CODEPENDENTCODING.Docs.Authoritative-Knowledge-System-Spec|Codependent Coding authoritative knowledge-system specification]] — active architecture material in role-owned Codependent Coding workspaces.
 - [[codependentcoding.simples.dashboard]] — active Simples™ operating view in the Codependent Coding project workspace.
-- [[40 ARCHIVE/40.ARCHIVE.TECHSTACK/40.ARCHIVE.TECHSTACK.Map|Historical tech-stack map]] — archived migration/provenance reference only.
+- [[40.ARCHIVE.TECHSTACK.Map|Historical tech-stack map]] — archived migration/provenance reference only.
 
 ## Active Source-of-Truth Notes
 
@@ -115,4 +120,4 @@ SORT file.mtime DESC
 
 ## Operating Rule
 
-Capture new unfinished material in `DevNotes/Inbox`; `00 ZETTELKASTEN` remains a legacy compatibility inbox until its contents are classified. Create new notes through the routed QuickAdd/Templater controls under `_obsidian/Templates`. Place durable material in its responsibility-owned role context using the unified metadata contract, while preserving legacy metadata until it is intentionally reconciled. Keep canonical authority explicit and discoverable. For Codependent Coding, preserve the distinction between the shared flat canon in `60 CODEPENDENT CODING` and active project-owned material in `10 PROJECTS/10.PROJECTS.CODEPENDENTCODING`.
+Capture unfinished material in `DevNotes/Inbox`. Create durable notes through QuickAdd so note type and destination are explicit. Use TaskNotes for tasks, Kanban, agenda, and calendar work. Keep canonical authority explicit, link live code through Code Space, and use role folders plus workspace/system properties for retrieval.

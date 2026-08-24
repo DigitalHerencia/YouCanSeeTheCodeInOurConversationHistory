@@ -178,8 +178,8 @@
         },
         {
           "kind": "embed",
-          "title": "Codependent Coding",
-          "target": "_obsidian/Bases/Codependent-Coding.base",
+          "title": "Project Kanban",
+          "target": "_obsidian/Bases/TaskNotes/kanban-default.base",
           "x": 0,
           "y": 17,
           "w": 12,
@@ -192,8 +192,8 @@
         },
         {
           "kind": "embed",
-          "title": "Recent Knowledge",
-          "target": "_obsidian/Bases/Recent-Knowledge.base",
+          "title": "Task Calendar",
+          "target": "_obsidian/Bases/TaskNotes/calendar-default.base",
           "x": 0,
           "y": 23,
           "w": 6,
@@ -206,7 +206,7 @@
         },
         {
           "kind": "embed",
-          "title": "System Health",
+          "title": "Operational Health",
           "target": "_obsidian/Bases/System-Health.base",
           "x": 6,
           "y": 23,
@@ -248,10 +248,10 @@
                 "row": 1
               },
               {
-                "id": "dn-template-project",
-                "label": "Workspace",
-                "icon": "layout-dashboard",
-                "template": "_obsidian/Templates/project-home.template.md",
+                "id": "dn-template-task",
+                "label": "Task",
+                "icon": "circle-check-big",
+                "template": "_obsidian/Templates/task.template.md",
                 "sizeW": 48,
                 "sizeH": 44,
                 "col": 2,
@@ -342,213 +342,6 @@
           "fw": 0.2425,
           "fy": 3672,
           "fh": 308
-        }
-      ],
-      "fitToPage": true,
-      "showSearch": false,
-      "header": {
-        "showTitle": false
-      }
-    },
-    {
-      "id": "dash-mt61nzd2-2030",
-      "name": "DevNotes",
-      "cards": [
-        {
-          "kind": "clock",
-          "title": "",
-          "x": 0,
-          "y": 0,
-          "w": 12,
-          "h": 2,
-          "id": "card-mt61xd51-0-3911",
-          "fx": 0,
-          "fw": 0.135625,
-          "fy": 0,
-          "fh": 609.2199174751867
-        },
-        {
-          "kind": "daily",
-          "title": "Today",
-          "x": 0,
-          "y": 2,
-          "w": 6,
-          "h": 5,
-          "id": "card-mt61xd51-1-8631",
-          "fx": 0.31625,
-          "fw": 0.45,
-          "fy": 0,
-          "fh": 1115.0570610757961
-        },
-        {
-          "kind": "tasks",
-          "title": "Tasks",
-          "x": 6,
-          "y": 2,
-          "w": 6,
-          "h": 5,
-          "tasks": {},
-          "id": "card-mt61xd51-2-4671",
-          "fx": 0.77625,
-          "fw": 0.22375,
-          "fy": 911.9837552507339,
-          "fh": 1982.7339132374257
-        },
-        {
-          "kind": "schedule",
-          "title": "Calendar",
-          "x": 0,
-          "y": 7,
-          "w": 8,
-          "h": 6,
-          "schedule": {},
-          "id": "card-mt61xd51-3-3194",
-          "fx": 0,
-          "fw": 0.311875,
-          "fy": 1174.1329318612688,
-          "fh": 1720.5847366268908
-        },
-        {
-          "kind": "stats",
-          "title": "Vault",
-          "x": 6,
-          "y": 16,
-          "w": 4,
-          "h": 2,
-          "id": "card-mt61xd51-9-7736",
-          "fx": 0,
-          "fw": 0.311875,
-          "fy": 668.2957882606593,
-          "fh": 446.76127281513686,
-          "stats": {
-            "advanced": true,
-            "queries": [],
-            "builtins": [
-              "notes",
-              "attachments",
-              "folders",
-              "tags"
-            ]
-          }
-        },
-        {
-          "kind": "heatmap",
-          "title": "Activity",
-          "heatmap": {},
-          "x": 0,
-          "y": 18,
-          "w": 8,
-          "h": 3,
-          "id": "card-mt61xd51-10-6087",
-          "fx": 0.145625,
-          "fw": 0.16625,
-          "fy": 0,
-          "fh": 609.2199174751867
-        },
-        {
-          "kind": "templater",
-          "title": "New note",
-          "templater": {
-            "items": [
-              {
-                "id": "templater-0",
-                "label": "work-package.contract",
-                "icon": "file-plus-2",
-                "template": "90 OBSIDIAN/Templates/work-package.contract.md",
-                "sizeW": 48,
-                "sizeH": 44,
-                "col": 6,
-                "row": 1
-              },
-              {
-                "id": "templater-1",
-                "label": "test-contract.contract",
-                "icon": "file-plus-2",
-                "template": "90 OBSIDIAN/Templates/test-contract.contract.md",
-                "sizeW": 56,
-                "sizeH": 48,
-                "col": 1,
-                "row": 1
-              },
-              {
-                "id": "templater-2",
-                "label": "webhook-contract.contract",
-                "icon": "file-plus-2",
-                "template": "90 OBSIDIAN/Templates/webhook-contract.contract.md",
-                "col": 3,
-                "row": 1,
-                "sizeW": 44,
-                "sizeH": 34
-              },
-              {
-                "id": "templater-3",
-                "label": "ui-contract.contract",
-                "icon": "file-plus-2",
-                "template": "90 OBSIDIAN/Templates/ui-contract.contract.md",
-                "col": 2,
-                "row": 1,
-                "sizeW": 44,
-                "sizeH": 34
-              },
-              {
-                "id": "templater-4",
-                "label": "verification-checklist.contract",
-                "icon": "file-plus-2",
-                "template": "90 OBSIDIAN/Templates/verification-checklist.contract.md",
-                "col": 4,
-                "row": 1,
-                "sizeW": 44,
-                "sizeH": 34
-              },
-              {
-                "id": "templater-5",
-                "label": "route-map.contract",
-                "icon": "file-plus-2",
-                "template": "90 OBSIDIAN/Templates/route-map.contract.md",
-                "col": 5,
-                "row": 1,
-                "sizeW": 44,
-                "sizeH": 34
-              }
-            ]
-          },
-          "x": 0,
-          "y": 25,
-          "w": 6,
-          "h": 2,
-          "id": "card-mt61xd51-14-3352",
-          "fx": 0.77625,
-          "fw": 0.22375,
-          "fy": 0,
-          "fh": 228.9189992937065
-        },
-        {
-          "kind": "git",
-          "title": "Git",
-          "git": {},
-          "x": 7,
-          "y": 23,
-          "w": 4,
-          "h": 4,
-          "id": "card-mt61xd51-15-2959",
-          "fx": 0.77625,
-          "fw": 0.22375,
-          "fy": 269.53366045871894,
-          "fh": 598.1431917029105
-        },
-        {
-          "kind": "embed",
-          "title": "DevNotes",
-          "target": "DevNotes.base",
-          "x": 0,
-          "y": 27,
-          "w": 6,
-          "h": 5,
-          "id": "card-mt61xd51-16-2725",
-          "fx": 0.31625,
-          "fw": 0.45,
-          "fy": 1174.1329318612688,
-          "fh": 1720.5847366268908
         }
       ],
       "fitToPage": true,

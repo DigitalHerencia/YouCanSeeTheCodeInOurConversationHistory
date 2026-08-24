@@ -11,5 +11,5 @@ module.exports = function inferRole(folderPath = "") {
     "Prompter": "prompter",
     "Fuck You Pay Me": "fuck-you-pay-me",
   };
-  return map[first] || "devnotes";
+  return map[first] || "";
 };

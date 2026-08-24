@@ -11,7 +11,23 @@
   "inputFieldTemplates": [
     {
       "name": "dn-status",
-      "declaration": "INPUT[inlineSelect(option(draft), option(review), option(active), option(superseded), option(archived), option(backlog), option(ready), option(in-progress), option(in-review), option(blocked), option(done), option(cancelled), option(proposed), option(accepted), option(rejected), option(passed), option(failed), option(skipped), option(inferred))]"
+      "declaration": "INPUT[inlineSelect(option(backlog), option(ready), option(in-progress), option(in-review), option(blocked), option(done), option(cancelled))]"
+    },
+    {
+      "name": "dn-status-task",
+      "declaration": "INPUT[inlineSelect(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled))]"
+    },
+    {
+      "name": "dn-status-knowledge",
+      "declaration": "INPUT[inlineSelect(option(draft), option(review), option(active), option(superseded), option(archived))]"
+    },
+    {
+      "name": "dn-status-decision",
+      "declaration": "INPUT[inlineSelect(option(proposed), option(accepted), option(rejected), option(superseded))]"
+    },
+    {
+      "name": "dn-status-validation",
+      "declaration": "INPUT[inlineSelect(option(ready), option(in-progress), option(passed), option(failed), option(blocked), option(skipped), option(inferred))]"
     },
     {
       "name": "dn-authority",
@@ -28,16 +44,25 @@
     {
       "name": "dn-health",
       "declaration": "INPUT[inlineSelect(option(on-track), option(at-risk), option(blocked), option(paused))]"
+    },
+    {
+      "name": "dn-progress",
+      "declaration": "INPUT[slider(addLabels, minValue(0), maxValue(100))]"
+    },
+    {
+      "name": "dn-date",
+      "declaration": "INPUT[date]"
+    },
+    {
+      "name": "dn-text",
+      "declaration": "INPUT[text]"
     }
   ],
   "buttonTemplates": [],
   "excludedFolders": [
-    "90 OBSIDIAN/Templates",
     "_obsidian/Templates",
-    "40 ARCHIVE",
+    "DevNotes/Archive",
     ".agent-logs",
-    "_OPS",
-    "_ops",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror"
+    "_ops"
   ]
 }

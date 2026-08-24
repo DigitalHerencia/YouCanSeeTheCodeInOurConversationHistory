@@ -16,17 +16,17 @@ tags:
 
 # DevNotes Unified System Authority
 
-> [!truth] Controlling implementation package
-> `DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0` is the approved target architecture. This map integrates it without creating a second doctrine.
+> [!truth] Controlling authority
+> The accepted unified authority is promoted into role Canon notes and projected into `.system/`. The original distribution archive remains external to the vault.
 
 ## Human authority
 
-- [[DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/01-authority/DevNotes-Unified-System.Authoritative-Blueprint|Authoritative blueprint]]
-- [[DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/01-authority/Knowledge-Model.Authority-and-Ownership|Knowledge-model ownership]]
-- [[DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/01-authority/Metadata-and-Knowledge-Graph-Contract|Metadata and knowledge graph]]
-- [[DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/01-authority/Epistemology-and-Source-Authority|Epistemology and source authority]]
-- [[DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/01-authority/Folder-Nomenclature-and-Information-Architecture|Folder nomenclature and information architecture]]
-- [[DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/01-authority/Codependent-Coding-Kernel-Distribution|Codependent Coding kernel distribution]]
+- [[DevNotes-Unified-System.Authoritative-Blueprint|Authoritative blueprint]]
+- [[Knowledge-Model.Authority-and-Ownership|Knowledge-model ownership]]
+- [[Metadata-and-Knowledge-Graph-Contract|Metadata and knowledge graph]]
+- [[Epistemology-and-Source-Authority|Epistemology and source authority]]
+- [[Folder-Nomenclature-and-Information-Architecture|Folder nomenclature and information architecture]]
+- [[Codependent-Coding-Kernel-Distribution|Codependent Coding kernel distribution]]
 
 ## Machine projections
 
@@ -36,12 +36,5 @@ tags:
 - [[.system/registries/status-families.json|Status families]]
 - [[.system/authority/authority-registry.json|Authority registry]]
 - [[.system/schemas/note.schema.json|Unified note schema]]
-
-## Compatibility
-
-- [[devnotes.metadata.legacy-compatibility.contract]]
-- [[obsidian.contracts.naming-standard]]
-- [[obsidian.contracts.property-schema]]
-- [[obsidian.contracts.note-types]]
 
 Machine projections must remain synchronized with the controlling human authority. A disagreement is governance drift.

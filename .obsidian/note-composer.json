@@ -1,4 +1,4 @@
 {
   "askBeforeMerging": true,
-  "template": "90 OBSIDIAN/Templates/obsidian.durable-note.template.md"
+  "template": "_obsidian/Templates/reference.template.md"
 }

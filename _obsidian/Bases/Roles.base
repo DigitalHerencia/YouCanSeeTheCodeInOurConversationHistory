@@ -4,10 +4,6 @@ filters:
     - file.hasProperty("role")
     - not:
         - file.inFolder("_obsidian/Templates")
-        - file.inFolder("90 OBSIDIAN/Templates")
-        - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/03-templates")
-        - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/07-vault-overlay")
-        - file.inFolder("10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror")
 properties:
   file.name:
     displayName: Note
@@ -29,7 +25,20 @@ views:
     groupBy:
       property: role
       direction: ASC
-    order: [role, file.name, workspace, system, type, status, authority]
+    order:
+      - role
+      - file.name
+      - workspace
+      - system
+      - type
+      - status
+      - authority
   - type: cards
     name: Role Domains
-    order: [file.name, role, workspace, system, type, status]
+    order:
+      - file.name
+      - role
+      - workspace
+      - system
+      - type
+      - status

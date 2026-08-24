@@ -4,10 +4,6 @@ filters:
     - file.hasProperty("namespace")
     - not:
         - file.inFolder("_obsidian/Templates")
-        - file.inFolder("90 OBSIDIAN/Templates")
-        - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/03-templates")
-        - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/07-vault-overlay")
-        - file.inFolder("10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror")
 formulas:
   backlink_count: file.backlinks.length
   outgoing_link_count: file.links.length
@@ -30,11 +26,17 @@ properties:
     displayName: Backlinks
   formula.outgoing_link_count:
     displayName: Outgoing
-
 views:
   - type: table
     name: Workspace Knowledge
     filters:
       and:
         - workspace != ""
-    order: [workspace, role, file.name, type, status, authority, formula.backlink_count]
+    order:
+      - workspace
+      - role
+      - file.name
+      - type
+      - status
+      - authority
+      - formula.backlink_count

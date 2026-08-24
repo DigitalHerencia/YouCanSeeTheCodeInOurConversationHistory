@@ -4,11 +4,8 @@ filters:
     - file.hasProperty("namespace")
     - not:
         - file.inFolder("_obsidian/Templates")
-        - file.inFolder("90 OBSIDIAN/Templates")
-        - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/03-templates")
-        - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/07-vault-overlay")
-        - file.inFolder("10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror")
         - file.inFolder("_ops")
+        - file.inFolder("DevNotes/Archive")
 properties:
   file.name:
     displayName: Note
@@ -29,7 +26,6 @@ properties:
 views:
   - type: table
     name: Recent Knowledge
-    limit: 25
     filters:
       or:
         - authority == "canonical"
@@ -47,3 +43,4 @@ views:
     sort:
       - property: file.mtime
         direction: DESC
+    limit: 25

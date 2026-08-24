@@ -16,18 +16,13 @@ tags:
 
 # Template Routing
 
-Templater uses `_obsidian/Templates` and `_obsidian/Scripts/templater`. Folder context provides the default document shape; explicit creation commands select narrower shapes.
+Templater uses `_obsidian/Templates` and `_obsidian/Scripts/templater`. QuickAdd selects a note type and routes it to a valid role/workspace destination. Automatic templates are limited to folders with one unambiguous document shape.
 
 | Context | Default |
 |---|---|
 | `DevNotes/Inbox` | Capture |
-| `Chief of Staff/Workspaces` | Project Home |
-| `Trust Issues/Workspaces` | Verification / Evidence |
-| `Execution/Workspaces` | Work Package |
-| `Vibes/Workspaces` | Architecture |
-| `DevNotes/Workspaces` | Reference |
-| `Schemes/Workspaces` | Data Model |
-| `Prömpter/Workspaces` | Prompt Contract |
-| `Fuck You Pay Me/Workspaces` | Business Operation |
+| `Chief of Staff/Daily` | Daily Note |
 
-The complete routing authority is [[DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/04-obsidian/Templater-and-QuickAdd-Routing]].
+Workspace folders deliberately have no automatic template. Use QuickAdd so a workspace can contain projects, specifications, tasks, research, decisions, evidence, and handoffs without receiving the wrong document shape.
+
+The complete routing reference is [[Templater-and-QuickAdd-Routing]].

@@ -14,7 +14,7 @@ tags: []
 
 # Progress Update
 
-Status: `INPUT[inlineSelect(option(in-progress), option(in-review), option(blocked), option(done)):status]`
+Status: `INPUT[dn-status][:status]`
 
 Progress: `INPUT[slider(addLabels, minValue(0), maxValue(100)):progress]`
 

@@ -7,7 +7,7 @@ workspace: chatgpt-role-system
 type: contract
 status: active
 authority: canonical
-derived_from: "[[DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/02-chatgpt-projects/Chief-of-Staff.Project-Instructions]]"
+derived_from: "[[devnotes.unified-system.authority.map]]"
 created: 2026-08-23
 updated: 2026-08-23
 tags:
