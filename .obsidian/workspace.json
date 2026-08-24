@@ -38,6 +38,20 @@
             }
           },
           {
+            "id": "2d6c72daf5bf5d17",
+            "type": "leaf",
+            "state": {
+              "type": "split-diff-view",
+              "state": {
+                "aFile": ".obsidian/plugins/callout-studio/data.json",
+                "bFile": ".obsidian/plugins/callout-studio/data.json",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: data.json  (Working Tree)"
+            }
+          },
+          {
             "id": "1e4e427d8230a94e",
             "type": "leaf",
             "state": {
@@ -48,7 +62,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -60,7 +74,7 @@
       {
         "id": "29638fda63730726",
         "type": "tabs",
-        "dimension": 69.39024390243902,
+        "dimension": 29.542097488921716,
         "children": [
           {
             "id": "196f6ed94d57a4c6",
@@ -112,7 +126,7 @@
       {
         "id": "35e269d79bdcab6c",
         "type": "tabs",
-        "dimension": 30.609756097560975,
+        "dimension": 70.45790251107829,
         "children": [
           {
             "id": "129d925824af078b",
@@ -144,7 +158,6 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "devnotes.home.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -218,7 +231,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -241,8 +255,9 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "8f2d29d51387a96e",
+  "active": "2d6c72daf5bf5d17",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
     "devnotes.home.md",
     "40 ARCHIVE/40.ARCHIVE.WEBAPP/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Loaded-Vibes-Plugin—Status.md",
     "40 ARCHIVE/40.ARCHIVE.WEBAPP/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Directive.md",
@@ -271,7 +286,6 @@
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Directive.md",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.BusinessLogic-Blocks.md",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo-Website-Copy.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo.md",
     "70 TODO/Codependent Coding_tasks",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/tests/unit",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/tests/integration",

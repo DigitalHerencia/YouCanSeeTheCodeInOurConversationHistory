@@ -2,14 +2,35 @@
   "version": 3,
   "callouts": [
     {
-      "id": "importat",
-      "displayName": "Importat",
-      "icon": {
-        "type": "lucide",
-        "value": "pencil"
-      },
-      "colorLight": "#086ddd",
-      "colorDark": "#027aff",
+      "id": "truth",
+      "displayName": "Source of Truth",
+      "icon": { "type": "lucide", "value": "shield-check" },
+      "colorLight": "#2563eb",
+      "colorDark": "#60a5fa",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": ["canonical"]
+    },
+    {
+      "id": "decision",
+      "displayName": "Decision",
+      "icon": { "type": "lucide", "value": "git-branch" },
+      "colorLight": "#7c3aed",
+      "colorDark": "#a78bfa",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": ["adr"]
+    },
+    {
+      "id": "requirement",
+      "displayName": "Requirement",
+      "icon": { "type": "lucide", "value": "list-checks" },
+      "colorLight": "#0369a1",
+      "colorDark": "#38bdf8",
       "foldable": false,
       "defaultFolded": false,
       "builtIn": false,
@@ -17,14 +38,23 @@
       "aliases": []
     },
     {
-      "id": "remember",
-      "displayName": "Remember",
-      "icon": {
-        "type": "lucide",
-        "value": "pencil"
-      },
-      "colorLight": "#086ddd",
-      "colorDark": "#027aff",
+      "id": "working",
+      "displayName": "Working",
+      "icon": { "type": "lucide", "value": "hammer" },
+      "colorLight": "#a16207",
+      "colorDark": "#facc15",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": ["draft"]
+    },
+    {
+      "id": "risk",
+      "displayName": "Risk",
+      "icon": { "type": "lucide", "value": "triangle-alert" },
+      "colorLight": "#c2410c",
+      "colorDark": "#fb923c",
       "foldable": false,
       "defaultFolded": false,
       "builtIn": false,
@@ -32,6 +62,7 @@
       "aliases": []
     },
     {
+<<<<<<< HEAD
       "id": "decision",
       "displayName": "Decision",
       "icon": {
@@ -85,6 +116,13 @@
       },
       "colorLight": "#086ddd",
       "colorDark": "#027aff",
+=======
+      "id": "blocked",
+      "displayName": "Blocked",
+      "icon": { "type": "lucide", "value": "ban" },
+      "colorLight": "#b91c1c",
+      "colorDark": "#f87171",
+>>>>>>> origin/master
       "foldable": false,
       "defaultFolded": false,
       "builtIn": false,
@@ -94,6 +132,7 @@
     {
       "id": "evidence",
       "displayName": "Evidence",
+<<<<<<< HEAD
       "icon": {
         "type": "lucide",
         "value": "pencil"
@@ -101,32 +140,67 @@
       "colorLight": "#086ddd",
       "colorDark": "#027aff",
       "foldable": false,
+=======
+      "icon": { "type": "lucide", "value": "badge-check" },
+      "colorLight": "#15803d",
+      "colorDark": "#4ade80",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": ["validation"]
+    },
+    {
+      "id": "handoff",
+      "displayName": "Handoff",
+      "icon": { "type": "lucide", "value": "send" },
+      "colorLight": "#0f766e",
+      "colorDark": "#2dd4bf",
+      "foldable": true,
+>>>>>>> origin/master
       "defaultFolded": false,
       "builtIn": false,
       "source": "fallback",
       "aliases": []
+<<<<<<< HEAD
+=======
+    },
+    {
+      "id": "spark",
+      "displayName": "Spark",
+      "icon": { "type": "lucide", "value": "lightbulb" },
+      "colorLight": "#ca8a04",
+      "colorDark": "#fde047",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": ["idea"]
+    },
+    {
+      "id": "deprecated",
+      "displayName": "Deprecated",
+      "icon": { "type": "lucide", "value": "archive" },
+      "colorLight": "#52525b",
+      "colorDark": "#a1a1aa",
+      "foldable": true,
+      "defaultFolded": true,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": ["historical", "superseded"]
+>>>>>>> origin/master
     }
   ],
   "settings": {
     "globalStyle": {
-      "borderSides": {
-        "top": false,
-        "right": false,
-        "bottom": false,
-        "left": false
-      },
+      "borderSides": { "top": false, "right": false, "bottom": false, "left": false },
       "borderWidth": 2.5,
       "titleScale": 1,
       "contentScale": 1,
       "borderRadius": 4,
       "alignContentWithTitle": false,
       "heading": {
-        "borderSides": {
-          "top": false,
-          "right": false,
-          "bottom": false,
-          "left": false
-        },
+        "borderSides": { "top": false, "right": false, "bottom": false, "left": false },
         "borderWidth": 1.5,
         "borderRadius": 4,
         "paddingTop": 0.25,
@@ -134,12 +208,7 @@
         "marginTop": 0.5
       },
       "inline": {
-        "borderSides": {
-          "top": false,
-          "right": false,
-          "bottom": false,
-          "left": false
-        },
+        "borderSides": { "top": false, "right": false, "bottom": false, "left": false },
         "borderWidth": 1.5,
         "borderRadius": 16,
         "fontScale": 1
@@ -149,66 +218,29 @@
       "enabled": true,
       "items": {
         "regular": [
-          {
-            "id": "copyMarkdown",
-            "enabled": true
-          },
-          {
-            "id": "foldDefaults",
-            "enabled": true
-          },
-          {
-            "id": "edit",
-            "enabled": true
-          },
-          {
-            "id": "openSettings",
-            "enabled": true
-          }
+          { "id": "copyMarkdown", "enabled": true },
+          { "id": "foldDefaults", "enabled": true },
+          { "id": "edit", "enabled": true },
+          { "id": "openSettings", "enabled": true }
         ],
         "heading": [
-          {
-            "id": "cutSection",
-            "enabled": true
-          },
-          {
-            "id": "copySection",
-            "enabled": true
-          },
-          {
-            "id": "deleteSection",
-            "enabled": true
-          },
-          {
-            "id": "edit",
-            "enabled": true
-          },
-          {
-            "id": "openSettings",
-            "enabled": true
-          }
+          { "id": "cutSection", "enabled": true },
+          { "id": "copySection", "enabled": true },
+          { "id": "deleteSection", "enabled": true },
+          { "id": "edit", "enabled": true },
+          { "id": "openSettings", "enabled": true }
         ],
         "inline": [
-          {
-            "id": "edit",
-            "enabled": true
-          },
-          {
-            "id": "openSettings",
-            "enabled": true
-          }
+          { "id": "edit", "enabled": true },
+          { "id": "openSettings", "enabled": true }
         ]
       }
     },
-    "autocomplete": {
-      "enabled": true
-    },
+    "autocomplete": { "enabled": true },
     "iconSources": {
       "materialStyleDefault": "rounded",
       "materialWeightDefault": 300,
-      "lastCategory": {
-        "material": ""
-      },
+      "lastCategory": { "material": "" },
       "lastEmojiSkinTone": 0
     },
     "headingCallouts": {
