@@ -53,10 +53,10 @@ updated: 2026-08-23
 
 ## Knowledge Systems
 
-- [[codependentcoding.manifest.map]] — canonical flat Codependent Coding™ knowledge-system corpus in `60 CODEPENDENT CODING`.
-- [[10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document]] — active Codependent Coding™ WebApp Architecture in `10 PROJECTS/10.PROJECTS.CODEPENDENTCODING`.
+- [[60 CODEPENDENT CODING/60.CODEPENDENTCODING.Manifest.Map|Codependent Coding manifest]] — canonical flat Codependent Coding™ knowledge-system corpus in `60 CODEPENDENT CODING`.
+- [[10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/Codependent-Coding-Docs-Knowledge-Authority-Package/10.PROJECTS.CODEPENDENTCODING.Docs.Authoritative-Knowledge-System-Spec|Codependent Coding authoritative knowledge-system specification]] — active Codependent Coding™ WebApp Architecture authority in `10 PROJECTS/10.PROJECTS.CODEPENDENTCODING`.
 - [[codependentcoding.simples.dashboard]] — active Simples™ operating view in the Codependent Coding project workspace.
-- [[devnotes.tech-stack.map]] — reusable technical knowledge and integration references where still active.
+- [[40 ARCHIVE/40.ARCHIVE.TECHSTACK/40.ARCHIVE.TECHSTACK.Map|Historical tech-stack map]] — archived migration/provenance reference only.
 
 ## Active Source-of-Truth Notes
 

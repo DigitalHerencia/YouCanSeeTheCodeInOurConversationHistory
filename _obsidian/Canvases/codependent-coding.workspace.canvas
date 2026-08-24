@@ -1,0 +1,110 @@
+{
+  "nodes": [
+    {
+      "id": "88ca2a4ce84d90b1",
+      "type": "group",
+      "x": -40,
+      "y": -40,
+      "width": 1540,
+      "height": 760,
+      "label": "Codependent Coding Workspace",
+      "color": "5"
+    },
+    {
+      "id": "709102a4826dc101",
+      "type": "file",
+      "x": 40,
+      "y": 40,
+      "width": 420,
+      "height": 300,
+      "file": "Chief of Staff/Workspaces/Codependent Coding/codependent-coding.workspace.home.md"
+    },
+    {
+      "id": "9b5580de2a17c325",
+      "type": "file",
+      "x": 540,
+      "y": 40,
+      "width": 420,
+      "height": 300,
+      "file": "_obsidian/Bases/Codependent-Coding.base"
+    },
+    {
+      "id": "f9123f988e4be83b",
+      "type": "file",
+      "x": 1040,
+      "y": 40,
+      "width": 380,
+      "height": 300,
+      "file": "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/Codependent-Coding-Docs-Knowledge-Authority-Package/10.PROJECTS.CODEPENDENTCODING.Docs.Authoritative-Knowledge-System-Spec.md"
+    },
+    {
+      "id": "a9326133574aa09c",
+      "type": "file",
+      "x": 40,
+      "y": 420,
+      "width": 420,
+      "height": 240,
+      "file": "60 CODEPENDENT CODING/60.CODEPENDENTCODING.Manifest.Map.md"
+    },
+    {
+      "id": "caa2729083167fd7",
+      "type": "file",
+      "x": 540,
+      "y": 420,
+      "width": 420,
+      "height": 240,
+      "file": "DevNotes/Workspaces/Codependent Coding/codependent-coding.devnotes.knowledge-map.md"
+    },
+    {
+      "id": "0470de514d54496f",
+      "type": "file",
+      "x": 1040,
+      "y": 420,
+      "width": 380,
+      "height": 240,
+      "file": "Vibes/Workspaces/Codependent Coding/codependent-coding.vibes.architecture-map.md"
+    }
+  ],
+  "edges": [
+    {
+      "id": "98a20756b8937a68",
+      "fromNode": "709102a4826dc101",
+      "fromSide": "right",
+      "toNode": "9b5580de2a17c325",
+      "toSide": "left",
+      "label": "retrieves"
+    },
+    {
+      "id": "b71186ad46f6b0b6",
+      "fromNode": "9b5580de2a17c325",
+      "fromSide": "right",
+      "toNode": "f9123f988e4be83b",
+      "toSide": "left",
+      "label": "recomposes"
+    },
+    {
+      "id": "74e3f76864dc6cf8",
+      "fromNode": "709102a4826dc101",
+      "fromSide": "bottom",
+      "toNode": "a9326133574aa09c",
+      "toSide": "top",
+      "label": "loads canon"
+    },
+    {
+      "id": "937baafec9e003bc",
+      "fromNode": "709102a4826dc101",
+      "fromSide": "bottom",
+      "toNode": "caa2729083167fd7",
+      "toSide": "top",
+      "label": "knowledge lens"
+    },
+    {
+      "id": "88bbfcf2a76151a2",
+      "fromNode": "709102a4826dc101",
+      "fromSide": "bottom",
+      "toNode": "0470de514d54496f",
+      "toSide": "top",
+      "label": "architecture lens"
+    }
+  ]
+}
