@@ -4,55 +4,96 @@
     "type": "split",
     "children": [
       {
-        "id": "6f17c8569ecd5d96",
+        "id": "4989966c64b0d3ea",
         "type": "tabs",
         "children": [
           {
-            "id": "b9d5910c1d760c46",
+            "id": "e2888338d3dcdb74",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "THE ARCHITECTURE.md",
+                "file": "Chief of Staff/README.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "THE ARCHITECTURE"
+              "title": "README"
             }
           },
           {
-            "id": "8f2d29d51387a96e",
+            "id": "f9c792b38fc20f8d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "devnotes.home.md",
+                "file": "Chief of Staff/Workspaces/Codependent Coding/codependent-coding.workspace.home.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "devnotes.home"
+              "title": "codependent-coding.workspace.home"
             }
           },
           {
-            "id": "2d6c72daf5bf5d17",
+            "id": "596e5d5d338d19e4",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": ".obsidian/plugins/callout-studio/data.json",
-                "bFile": ".obsidian/plugins/callout-studio/data.json",
-                "aRef": ""
+                "file": "_obsidian/Controls/devnotes.unified.meta-bind-controls.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
               },
-              "icon": "diff",
-              "title": "Diff: data.json  (Working Tree)"
+              "icon": "lucide-file",
+              "title": "devnotes.unified.meta-bind-controls"
             }
           },
           {
-            "id": "1e4e427d8230a94e",
+            "id": "22280f1f8afee5ae",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Chief of Staff/Workspaces/Codependent Coding/codependent-coding.workspace.home.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "codependent-coding.workspace.home"
+            }
+          },
+          {
+            "id": "57edc2f387bb251d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Fuck You Pay Me/README.md",
+                "mode": "preview",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          },
+          {
+            "id": "f18013b480512b02",
+            "type": "leaf",
+            "state": {
+              "type": "code-space-dashboard",
+              "state": {},
+              "icon": "code-glyph",
+              "title": "Code space"
+            }
+          },
+          {
+            "id": "5472b96950d49306",
             "type": "leaf",
             "state": {
               "type": "hearth-home-view",
@@ -62,7 +103,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -74,7 +115,7 @@
       {
         "id": "29638fda63730726",
         "type": "tabs",
-        "dimension": 29.542097488921716,
+        "dimension": 57.01624815361891,
         "children": [
           {
             "id": "196f6ed94d57a4c6",
@@ -126,7 +167,7 @@
       {
         "id": "35e269d79bdcab6c",
         "type": "tabs",
-        "dimension": 70.45790251107829,
+        "dimension": 42.98375184638109,
         "children": [
           {
             "id": "129d925824af078b",
@@ -142,7 +183,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 404.70001220703125
+    "width": 404.70001220703125,
+    "collapsed": true
   },
   "right": {
     "id": "acf9b2ce38860566",
@@ -255,52 +297,56 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "2d6c72daf5bf5d17",
+  "active": "f18013b480512b02",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
+    "_obsidian/Canvases/codependent-coding.workspace.canvas",
     "devnotes.home.md",
-    "40 ARCHIVE/40.ARCHIVE.WEBAPP/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Loaded-Vibes-Plugin—Status.md",
-    "40 ARCHIVE/40.ARCHIVE.WEBAPP/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Directive.md",
-    "40 ARCHIVE/40.ARCHIVE.WEBAPP/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.BusinessLogic-Blocks.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/Anthimeria-Authority-Package/10.PROJECTS.CODEPENDENTCODING.Anthimeria.Authoritative-Source-Spec.md",
-    "THE ARCHITECTURE.md",
-    "Untitled.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.The-Anthimeria-Workbench.md",
-    "00 ZETTELKASTEN/Untitled.md",
-    "00 ZETTELKASTEN/invoice.tsx",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/CODEPENDENTCODING.TREE.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/features/anthimeria/anthimeriaFeature.tsx.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/features/anthimeria/anthimeriaClientFeature.tsx.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/features/anthimeria",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/lib/simples.ts.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/TheHipsterStack.DemoSite.Base.base",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/lib/codependent.tsx.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/lib/anthimeria.ts.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/features/codependent/codependentClientFeature.tsx.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/features/codependent/codependentFeature.tsx.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/features/simples/simplesFeature.tsx.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/app/base.css.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/features/simples/simplesClientFeature.tsx.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/features/Anthimeria/constituter-preview.tsx.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/components.json.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Directive.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.BusinessLogic-Blocks.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo-Website-Copy.md",
-    "70 TODO/Codependent Coding_tasks",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/tests/unit",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/tests/integration",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/tests/generated",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/tests",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/_The Loaded Vibes™ Codex Plugin/LoadedPlugin/toolsets",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/_The Loaded Vibes™ Codex Plugin/LoadedPlugin/templates",
-    "Pasted image 20260815231425.png",
+    "Chief of Staff/Workspaces/Codependent Coding/codependent-coding.workspace.home.md",
+    "_obsidian/Controls/devnotes.unified.meta-bind-controls.md",
+    "Fuck You Pay Me/README.md",
+    "_ops/Reports/devnotes-migration-inventory.summary.json",
+    "_ops/Scripts/Get-DevNotesMigrationInventory.ps1",
+    "Prömpter/README.md",
+    "Schemes/README.md",
+    "DevNotes/README.md",
+    "Vibes/README.md",
+    "Execution/README.md",
+    "Trust Issues/README.md",
+    "Chief of Staff/README.md",
+    "DevNotes/Inbox/devnotes.inbox.runtime-callout-audit.capture.md",
+    "_mounts/TheHipsterStack/template/app/api/stripe/connect/webhooks/route.ts",
+    "_mounts/TheHipsterStack/template/app/api/stripe/connect/webhooks/AGENTS.md",
+    "_mounts/TheHipsterStack/template/reference-implementations/vouch/context/instructions/validation.agents.md",
+    "_mounts/TheHipsterStack/template/reference-implementations/vouch/context/instructions/implementation.agents.md",
+    "_mounts/TheHipsterStack/template/reference-implementations/vouch/context/instructions/audit.agents.md",
+    "_mounts/TheHipsterStack/template/reference-implementations/vouch/context/docs/product-doctrine.md",
+    "_mounts/TheHipsterStack/template/reference-implementations/vouch/context/docs/ui-inventory.md",
+    "_mounts/TheHipsterStack/template/reference-implementations/vouch/context/docs/legal-and-copy.md",
+    "_mounts/TheHipsterStack/template/reference-implementations/vouch/context/docs/launch-checklist.md",
+    "_mounts/TheHipsterStack/template/reference-implementations/vouch/context/docs/design-system-standards.md",
+    "_mounts/TheHipsterStack/template/app/api/clerk/webhooks/route.ts",
+    "_mounts/TheHipsterStack/template/reference-implementations/vouch/context/docs/architecture.md",
+    "_mounts/TheHipsterStack/template/app/api/stripe/webhooks/route.ts",
+    "_mounts/TheHipsterStack/template/app/api/cloudinary/webhooks/route.ts",
+    "_mounts/TheHipsterStack/template/app/api/stripe/connect/webhooks",
+    "_mounts/TheHipsterStack/template/app/api/cloudinary/webhooks/AGENTS.md",
+    "_mounts/TheHipsterStack/template/app/(tenant)/team/invitations/page.tsx",
+    "_mounts/TheHipsterStack/template/app/(tenant)/settings/profile/page.tsx",
+    "_mounts/TheHipsterStack/template/app/(tenant)/settings/organization/page.tsx",
+    "_mounts/TheHipsterStack/template/app/(tenant)/projects/[projectId]/AGENTS.md",
+    "_mounts/TheHipsterStack/template/app/(tenant)/uploads/AGENTS.md",
+    "_mounts/TheHipsterStack/template/public/icon.svg",
+    "_mounts/TheHipsterStack/context/mockups/libraries.png",
+    "_mounts/TheHipsterStack/context/mockups/landing.png",
+    "_mounts/TheHipsterStack/context/mockups/builder.png",
+    "_mounts/TheHipsterStack/context/mockups/config.png",
+    "_mounts/TheHipsterStack/public/Loaded Vibes Logo Black.png",
+    "_mounts/TheHipsterStack/public/Hipster Stack Crown.webp",
+    "_mounts/TheHipsterStack/public/Loaded Vibes Banner.png",
+    "_mounts/TheHipsterStack/public/Hipster Stack Logo White.webp",
+    "_mounts/TheHipsterStack/public/Digital Herencia White Logo.png",
     "Untitled 1.canvas",
     "Untitled.canvas",
-    "DOCUMENTATION/HuggingFace Docs/target.png",
-    "DOCUMENTATION/HuggingFace Docs/reference.png",
-    "DOCUMENTATION/HuggingFace Docs/output.png",
-    "Process&Methods/Untitled diagram-2026-04-20-173022.png",
-    "Pasted image 20260420112449.png",
     "knowledge-graph.canvas"
   ]
 }
