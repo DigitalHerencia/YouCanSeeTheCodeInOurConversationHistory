@@ -2,6 +2,14 @@
 
 This repository is a private Obsidian vault named DevNotes.
 
+## Unified system authority
+
+The approved `DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0` controls the target architecture for the unified migration. Its target human-facing bounded contexts are `Chief of Staff/`, `Trust Issues/`, `Execution/`, `Vibes/`, `DevNotes/`, `Schemes/`, `Prömpter/`, and `Fuck You Pay Me/`; cross-cutting support belongs in `.system/`, `_obsidian/`, `_ops/`, `_mounts/`, and `_assets/`.
+
+Role/folder records responsibility ownership. `workspace` records the project, product, or objective. `system` records reusable doctrine. `namespace` records stable semantic identity. Metadata facets and typed wikilinks provide independent classification and graph relationships.
+
+The numbered roots remain compatibility paths during staged migration. Do not move or reclassify their contents merely to fill the unified tree. New unified notes use the package metadata contract; existing legacy metadata remains valid until inspected and intentionally reconciled.
+
 Agents working in this repository must treat it as a source-controlled knowledge system, not as a normal software codebase.
 
 The primary agent responsibility is to help the user capture, organize, maintain, and retrieve notes through the connected GitHub repository so those changes can be synchronized to the user’s local Obsidian vault.

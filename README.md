@@ -7,6 +7,19 @@ Its purpose is simple:
 > [!TIP]
 > Bring useful material into the DevNotes ChatGPT project, organize it according to a consistent system, save it to the connected GitHub repository, and synchronize it to the local Obsidian vault.
 
+## Unified operating model
+
+DevNotes now uses eight responsibility-owned bounded contexts as its primary human-facing operating model:
+
+```text
+Chief of Staff/   Trust Issues/   Execution/   Vibes/
+DevNotes/         Schemes/        Prömpter/    Fuck You Pay Me/
+```
+
+Cross-cutting machine and interface support lives in `.system/`, `_obsidian/`, `_ops/`, `_mounts/`, and `_assets/`. Role folders answer who owns knowledge by responsibility; `workspace` identifies the project or objective; `system` identifies reusable doctrine; `namespace` preserves semantic identity; typed relations form the knowledge graph.
+
+The legacy numbered roots remain supported during conservative migration. They are not silently reclassified, bulk-moved, or deleted. The approved authority package and [[devnotes.unified-system.authority.map]] define the target and compatibility boundary.
+
 ## Canonical engineering knowledge
 
 `DigitalHerencia/DevNotes` is the permanent canonical repository for the **Codependent Coding™ Knowledge System** and the active **Codependent Coding™ WebApp Architecture** project material.

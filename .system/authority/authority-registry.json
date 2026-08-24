@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "values": {
+    "canonical": "accepted durable doctrine/fact owner in scope",
+    "supporting": "reference/explanatory material",
+    "implementation-evidence": "observed implementation or executed evidence",
+    "project-specific": "workspace-scoped authority",
+    "operational": "mutable execution/coordination state"
+  },
+  "rule": "physical prefix/location does not determine authority"
+}

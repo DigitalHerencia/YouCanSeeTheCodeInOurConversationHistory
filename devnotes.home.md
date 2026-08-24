@@ -8,7 +8,10 @@ artifact: home
 kind: map
 namespace: devnotes.home
 status: active
-authority: source-of-truth
+authority: canonical
+role: devnotes
+system: devnotes
+workspace:
 parent:
 depends_on:
   - "[[obsidian.system.map]]"
@@ -18,9 +21,28 @@ tags:
   - maps/vault
   - status/active
 created: 2026-08-04
-updated: 2026-08-19
+updated: 2026-08-23
 ---
 # DevNotes Home
+
+> [!truth] Unified operating shell
+> Role owns responsibility. Workspace and system are facets. Properties remain canonical state.
+
+## Unified Workbench
+
+- [[devnotes.roles.registry.map|Role domains]]
+- [[codependent-coding.workspace.home|Codependent Coding workspace]]
+- [[devnotes.unified-system.authority.map|Unified system authority]]
+
+![[_obsidian/Bases/Now.base#Active Work]]
+
+![[_obsidian/Bases/Workspaces.base#Workspace Knowledge]]
+
+![[_obsidian/Bases/Handoffs.base#Active Handoffs]]
+
+![[_obsidian/Bases/Evidence.base#Evidence]]
+
+![[_obsidian/Bases/Inbox.base#Inbox]]
 
 ## Vault System
 

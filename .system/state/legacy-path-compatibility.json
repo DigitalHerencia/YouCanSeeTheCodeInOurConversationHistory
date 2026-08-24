@@ -1,0 +1,9 @@
+{
+  "version": "0.1.0",
+  "mode": "overlay-first",
+  "legacy_paths_supported": true,
+  "bulk_moves_allowed": false,
+  "bulk_metadata_conversion_allowed": false,
+  "source_mirror_deletion_allowed": false,
+  "authority": "DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/06-migration/No-Delete-Migration-Plan.md"
+}

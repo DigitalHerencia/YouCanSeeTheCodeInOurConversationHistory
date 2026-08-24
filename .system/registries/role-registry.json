@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "roles": [
+    {
+      "id": "chief-of-staff",
+      "display_name": "Chief of Staff",
+      "formal_role": "Organization & Lifecycle"
+    },
+    {
+      "id": "trust-issues",
+      "display_name": "Trust Issues",
+      "formal_role": "Epistemology & Evidence"
+    },
+    {
+      "id": "execution",
+      "display_name": "Execution",
+      "formal_role": "Function & Implementation"
+    },
+    {
+      "id": "vibes",
+      "display_name": "Vibes",
+      "formal_role": "Architecture & Topology"
+    },
+    {
+      "id": "devnotes",
+      "display_name": "DevNotes",
+      "formal_role": "Knowledge & Classification"
+    },
+    {
+      "id": "schemes",
+      "display_name": "Schemes",
+      "formal_role": "Ontology & Modeling"
+    },
+    {
+      "id": "prompter",
+      "display_name": "Prömpter",
+      "formal_role": "Language & Semantics"
+    },
+    {
+      "id": "fuck-you-pay-me",
+      "display_name": "Fuck You Pay Me",
+      "formal_role": "Domain & External Reality"
+    }
+  ]
+}
