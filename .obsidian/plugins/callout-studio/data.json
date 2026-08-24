@@ -30,6 +30,81 @@
       "builtIn": false,
       "source": "fallback",
       "aliases": []
+    },
+    {
+      "id": "decision",
+      "displayName": "Decision",
+      "icon": {
+        "type": "lucide",
+        "value": "pencil"
+      },
+      "colorLight": "#086ddd",
+      "colorDark": "#027aff",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": []
+    },
+    {
+      "id": "spark",
+      "displayName": "Spark",
+      "icon": {
+        "type": "lucide",
+        "value": "pencil"
+      },
+      "colorLight": "#086ddd",
+      "colorDark": "#027aff",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": []
+    },
+    {
+      "id": "handoff",
+      "displayName": "Handoff",
+      "icon": {
+        "type": "lucide",
+        "value": "pencil"
+      },
+      "colorLight": "#086ddd",
+      "colorDark": "#027aff",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": []
+    },
+    {
+      "id": "truth",
+      "displayName": "Truth",
+      "icon": {
+        "type": "lucide",
+        "value": "pencil"
+      },
+      "colorLight": "#086ddd",
+      "colorDark": "#027aff",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": []
+    },
+    {
+      "id": "evidence",
+      "displayName": "Evidence",
+      "icon": {
+        "type": "lucide",
+        "value": "pencil"
+      },
+      "colorLight": "#086ddd",
+      "colorDark": "#027aff",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": []
     }
   ],
   "settings": {
@@ -153,7 +228,7 @@
     "customPalettes": [],
     "userImages": [],
     "customCommands": [],
-    "disabledFixedCommands": [],
-    "quickInsertSource": "all"
+    "quickInsertSource": "all",
+    "disabledFixedCommands": []
   }
 }

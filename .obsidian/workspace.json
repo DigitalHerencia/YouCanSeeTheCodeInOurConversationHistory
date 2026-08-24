@@ -11,13 +11,44 @@
             "id": "b9d5910c1d760c46",
             "type": "leaf",
             "state": {
+              "type": "markdown",
+              "state": {
+                "file": "THE ARCHITECTURE.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "THE ARCHITECTURE"
+            }
+          },
+          {
+            "id": "8f2d29d51387a96e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "devnotes.home.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "devnotes.home"
+            }
+          },
+          {
+            "id": "1e4e427d8230a94e",
+            "type": "leaf",
+            "state": {
               "type": "hearth-home-view",
               "state": {},
               "icon": "hearth-crystal",
               "title": "Home"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -97,8 +128,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 220.58901977539062,
-    "collapsed": true
+    "width": 404.70001220703125
   },
   "right": {
     "id": "acf9b2ce38860566",
@@ -114,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/CODEPENDENTCODING.TREE.md",
+                "file": "devnotes.home.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -188,8 +218,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -203,7 +232,6 @@
       "obsidian-git:Open Git source control": false,
       "bases:Create new base": false,
       "markdown-importer:Open format converter": false,
-      "project-manager:Project manager": false,
       "switcher:Open quick switcher": false,
       "hearth:Open Hearth home": false,
       "callout-studio:Quick insert block callout": false,
@@ -213,9 +241,14 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "b9d5910c1d760c46",
+  "active": "8f2d29d51387a96e",
   "lastOpenFiles": [
     "devnotes.home.md",
+    "40 ARCHIVE/40.ARCHIVE.WEBAPP/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Loaded-Vibes-Plugin—Status.md",
+    "40 ARCHIVE/40.ARCHIVE.WEBAPP/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Directive.md",
+    "40 ARCHIVE/40.ARCHIVE.WEBAPP/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.BusinessLogic-Blocks.md",
+    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/Anthimeria-Authority-Package/10.PROJECTS.CODEPENDENTCODING.Anthimeria.Authoritative-Source-Spec.md",
+    "THE ARCHITECTURE.md",
     "Untitled.md",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.The-Anthimeria-Workbench.md",
     "00 ZETTELKASTEN/Untitled.md",
@@ -239,11 +272,6 @@
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.BusinessLogic-Blocks.md",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo-Website-Copy.md",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Demo.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Template-Backlog.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Systems-That-Remember.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Ontologies-Normalized-Defaults.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Maximal-Template.md",
-    "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture/10.PROJECTS.CODEPENDENTCODING.WebApp-Architecture.Master.Source-Document.md",
     "70 TODO/Codependent Coding_tasks",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/tests/unit",
     "10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror/tests/integration",

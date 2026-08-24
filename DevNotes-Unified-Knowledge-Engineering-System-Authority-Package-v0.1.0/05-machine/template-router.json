@@ -1,0 +1,52 @@
+{
+  "version": "0.1.0",
+  "rules": [
+    {
+      "role": "devnotes",
+      "path_contains": "Inbox",
+      "template": "capture.template.md"
+    },
+    {
+      "role": "trust-issues",
+      "type": "verification",
+      "template": "verification-evidence.template.md"
+    },
+    {
+      "role": "execution",
+      "type": "specification",
+      "template": "specification.template.md"
+    },
+    {
+      "role": "execution",
+      "type": "work-package",
+      "template": "work-package.template.md"
+    },
+    {
+      "role": "schemes",
+      "type": "data-model",
+      "template": "data-model.template.md"
+    },
+    {
+      "role": "prompter",
+      "type": "prompt-contract",
+      "template": "prompt-contract.template.md"
+    },
+    {
+      "role": "fuck-you-pay-me",
+      "type": "business-operation",
+      "template": "business-operation.template.md"
+    },
+    {
+      "type": "decision",
+      "template": "adr-decision.template.md"
+    },
+    {
+      "type": "research",
+      "template": "research.template.md"
+    },
+    {
+      "type": "handoff",
+      "template": "handoff.template.md"
+    }
+  ]
+}

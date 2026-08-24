@@ -1,0 +1,37 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.hasProperty("namespace")
+formulas:
+  backlink_count: file.backlinks.length
+  outgoing_link_count: file.links.length
+properties:
+  file.name:
+    displayName: Note
+  role:
+    displayName: Role
+  system:
+    displayName: System
+  workspace:
+    displayName: Workspace
+  type:
+    displayName: Type
+  status:
+    displayName: Status
+  authority:
+    displayName: Authority
+  formula.backlink_count:
+    displayName: Backlinks
+  formula.outgoing_link_count:
+    displayName: Outgoing
+
+views:
+  - type: table
+    name: Active Work
+    filters:
+      or:
+        - status == "ready"
+        - status == "in-progress"
+        - status == "in-review"
+        - status == "blocked"
+    order: [file.name, workspace, role, status, type, formula.backlink_count]
