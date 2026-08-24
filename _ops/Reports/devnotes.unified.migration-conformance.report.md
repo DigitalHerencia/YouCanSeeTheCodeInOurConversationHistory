@@ -42,6 +42,7 @@ Logical checkpoints:
 - `fe599f2 docs(migration): record unified conformance`
 - `0bd5326 vault backup: 2026-08-23 20:17:40` (scheduled Obsidian Git runtime checkpoint)
 - `44eadbf chore(obsidian): exclude local workspace state`
+- `ce4243b feat(obsidian): complete unified workbench integration`
 
 ## Implemented subsystems
 
