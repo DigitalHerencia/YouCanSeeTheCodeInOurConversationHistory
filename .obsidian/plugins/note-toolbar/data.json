@@ -13,35 +13,35 @@
   "folderMappings": [
     {
       "folder": "Chief of Staff",
-      "toolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010"
+      "toolbar": "faeac3db-3952-42d1-ab3c-f00206859053"
     },
     {
       "folder": "Trust Issues",
-      "toolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010"
+      "toolbar": "d6d529ae-077b-4f60-b7d5-42911e58e093"
     },
     {
       "folder": "Execution",
-      "toolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010"
+      "toolbar": "bea33cf7-dfc5-4ef3-bb57-8e03e7b44cea"
     },
     {
       "folder": "Vibes",
-      "toolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010"
+      "toolbar": "f8cc8d40-11a7-4a30-88b8-98cc70e8a089"
     },
     {
       "folder": "DevNotes",
-      "toolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010"
+      "toolbar": "af89e088-5610-4a5f-bc0e-93c8f16e6984"
     },
     {
       "folder": "Schemes",
-      "toolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010"
+      "toolbar": "e6a871df-16d3-437f-9fc0-4151924d1bcf"
     },
     {
       "folder": "Prömpter",
-      "toolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010"
+      "toolbar": "a7a7a26e-07f4-43cb-bf4a-fada86f816e7"
     },
     {
       "folder": "Fuck You Pay Me",
-      "toolbar": "7ca88b11-e0b5-45ce-a7e1-895a7328d010"
+      "toolbar": "fcc3c9bc-94bc-4a63-88c2-887932a0d5c8"
     }
   ],
   "icon": "circle-ellipsis",
@@ -74,6 +74,520 @@
   "textToolbarOnKeyboard": true,
   "toolbarProp": "notetoolbar",
   "toolbars": [
+    {
+      "uuid": "faeac3db-3952-42d1-ab3c-f00206859053",
+      "commandPosition": "float",
+      "customClasses": "",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "Unified role controls for Chief of Staff Context",
+      "hasCommand": false,
+      "icon": "",
+      "items": [
+        {
+          "uuid": "a0cb53a6-4686-4b15-8203-cb5e50173bf7",
+          "icon": "layout-dashboard",
+          "label": "PROJECTS",
+          "tooltip": "Open workspace portfolio",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "_obsidian/Bases/Workspaces.base",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "dd87d222-4492-480c-a611-b0d740d36394",
+          "icon": "circle-dot",
+          "label": "NOW",
+          "tooltip": "Open current operational work",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "_obsidian/Bases/Now.base",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "ac2d2c90-620c-447c-8d3c-2ae226796254",
+          "icon": "route",
+          "label": "ROADMAP",
+          "tooltip": "Open Chief of Staff workbench",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Chief of Staff/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "a9aef2e9-6656-4da1-b74f-71d176256e3d",
+          "icon": "milestone",
+          "label": "MILESTONES",
+          "tooltip": "Open milestone ownership surface",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Chief of Staff/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "d2dad4cb-d4c2-43bf-83f2-3565a817e487",
+          "icon": "send",
+          "label": "HANDOFF",
+          "tooltip": "Create operational handoff",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:62d87d96-6757-4c75-9eb2-8026adac51b1",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "deb67637-20ef-4304-bf17-e140b3ed0654",
+          "icon": "calendar-clock",
+          "label": "SCHEDULE",
+          "tooltip": "Open scheduling ownership surface",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Chief of Staff/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "Chief of Staff Context",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-08-24T02:27:59.249Z"
+    },
+    {
+      "uuid": "af89e088-5610-4a5f-bc0e-93c8f16e6984",
+      "commandPosition": "float",
+      "customClasses": "",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "Unified role controls for DevNotes Context",
+      "hasCommand": false,
+      "icon": "",
+      "items": [
+        {
+          "uuid": "fcc27a95-ca91-48c0-a105-70bd26b90b67",
+          "icon": "inbox",
+          "label": "INBOX",
+          "tooltip": "Open unified inbox",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "_obsidian/Bases/Inbox.base",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "e5654e43-29d1-48e9-9784-50b1571fe871",
+          "icon": "arrow-up-right",
+          "label": "PROMOTE",
+          "tooltip": "Open promotion workflow",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "DevNotes/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "feb3497b-cc77-4664-b225-39a0451f183b",
+          "icon": "tags",
+          "label": "CLASSIFY",
+          "tooltip": "Open classification workbench",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "DevNotes/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "d81f16f4-2dfb-4f9f-b4db-85d7728c33c7",
+          "icon": "waypoints",
+          "label": "LINK",
+          "tooltip": "Open unified knowledge graph index",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "_obsidian/Bases/DevNotes-Unified.base",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "abccf5c3-9222-4467-be50-5af48ace584f",
+          "icon": "microscope",
+          "label": "RESEARCH",
+          "tooltip": "Create research note",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:92e9e004-75b4-4124-9f48-591060356fb7",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "e340692d-ce33-422a-b748-29dbc0a286ee",
+          "icon": "heart-pulse",
+          "label": "HEALTH",
+          "tooltip": "Open knowledge health view",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "_obsidian/Bases/System-Health.base",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "DevNotes Context",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-08-24T02:28:28.828Z"
+    },
     {
       "uuid": "7ca88b11-e0b5-45ce-a7e1-895a7328d010",
       "commandPosition": "float",
@@ -1103,6 +1617,224 @@
       "updated": "2026-08-23T17:17:50.111Z"
     },
     {
+      "uuid": "bea33cf7-dfc5-4ef3-bb57-8e03e7b44cea",
+      "commandPosition": "float",
+      "customClasses": "",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "Unified role controls for Execution Context",
+      "hasCommand": false,
+      "icon": "",
+      "items": [
+        {
+          "uuid": "aed859f2-6851-43a8-8ca1-c8ed53ecc590",
+          "icon": "file-check-2",
+          "label": "SPEC",
+          "tooltip": "Create specification",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:122e1f5e-4580-41af-b1ef-9a2dd471cf50",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "f5b543e5-ee80-4967-a07f-e30463ed8523",
+          "icon": "package-check",
+          "label": "WORK PACKAGE",
+          "tooltip": "Create work package",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:4e749623-74c9-4cfb-81a2-9d93cf61fcb0",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "ad6fc9a0-fadd-422b-8906-cb61e86b784c",
+          "icon": "code-2",
+          "label": "CODE",
+          "tooltip": "Open engineering execution workbench",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Execution/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "ffef936f-2116-42c7-82c9-b3a4a547d179",
+          "icon": "activity",
+          "label": "PROGRESS",
+          "tooltip": "Open active progress view",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "_obsidian/Bases/Now.base",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "fd4c69d2-59f4-4224-8c2c-2d9895abc90d",
+          "icon": "send",
+          "label": "HANDOFF",
+          "tooltip": "Create operational handoff",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:62d87d96-6757-4c75-9eb2-8026adac51b1",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "Execution Context",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-08-24T02:28:00.546Z"
+    },
+    {
       "uuid": "d29914c9-c757-42dc-b775-a385de09c6c8",
       "commandPosition": "float",
       "customClasses": "",
@@ -1398,6 +2130,260 @@
         }
       },
       "updated": "2026-08-23T17:19:26.033Z"
+    },
+    {
+      "uuid": "fcc3c9bc-94bc-4a63-88c2-887932a0d5c8",
+      "commandPosition": "float",
+      "customClasses": "",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "Unified role controls for Fuck You Pay Me Context",
+      "hasCommand": false,
+      "icon": "",
+      "items": [
+        {
+          "uuid": "fd551b37-f71f-4ea5-a689-6be9c40d128b",
+          "icon": "route",
+          "label": "PIPELINE",
+          "tooltip": "Create pipeline business operation",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:c9327353-27d5-48b3-9531-e6e93a740e76",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "a28f6edf-660b-4f79-95b1-dd4f7b65a9de",
+          "icon": "contact",
+          "label": "CUSTOMER",
+          "tooltip": "Create customer business operation",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:c9327353-27d5-48b3-9531-e6e93a740e76",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "f561d5e2-d379-485f-b915-b672581c1802",
+          "icon": "receipt",
+          "label": "INVOICE",
+          "tooltip": "Create invoice business operation",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:c9327353-27d5-48b3-9531-e6e93a740e76",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "eb2a16d3-4868-4c13-867d-307713b03a6e",
+          "icon": "scale",
+          "label": "OBLIGATION",
+          "tooltip": "Create obligation business operation",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:c9327353-27d5-48b3-9531-e6e93a740e76",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "d27e0bd9-4683-4179-a1cf-680580a0ac62",
+          "icon": "alarm-clock",
+          "label": "FOLLOW-UP",
+          "tooltip": "Open follow-up workbench",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Fuck You Pay Me/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "fd5d387b-2bb0-4bf7-9daf-51cd3d2b42ea",
+          "icon": "landmark",
+          "label": "RECONCILE",
+          "tooltip": "Open business reconciliation workbench",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Fuck You Pay Me/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "Fuck You Pay Me Context",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-08-24T02:28:31.017Z"
     },
     {
       "uuid": "cfe2e1e3-8b97-430a-b3fa-2acb2d529d79",
@@ -1854,6 +2840,481 @@
       "updated": "2026-08-23T17:20:37.304Z"
     },
     {
+      "uuid": "a7a7a26e-07f4-43cb-bf4a-fada86f816e7",
+      "commandPosition": "float",
+      "customClasses": "",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "Unified role controls for Prömpter Context",
+      "hasCommand": false,
+      "icon": "",
+      "items": [
+        {
+          "uuid": "c01338b5-d659-44e0-aac6-06c16b98b9d5",
+          "icon": "messages-square",
+          "label": "PROMPT",
+          "tooltip": "Create prompt contract",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:7539692c-65d3-460b-830b-0884b35b93c4",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "baef1aa5-c6f7-4086-8d4a-ba3d6edef596",
+          "icon": "languages",
+          "label": "TERMINOLOGY",
+          "tooltip": "Open terminology workbench",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Prömpter/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "ba90fca8-5107-4c13-9e93-b8765e29ab9e",
+          "icon": "spell-check-2",
+          "label": "NOMENCLATURE",
+          "tooltip": "Open nomenclature workbench",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Prömpter/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "a6eb892e-7e66-4fe9-9959-d4c781cdef9b",
+          "icon": "workflow",
+          "label": "PROTOCOL",
+          "tooltip": "Open communication protocol workbench",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Prömpter/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "c02c25f1-e337-4296-8614-051a023d5ba3",
+          "icon": "send",
+          "label": "HANDOFF",
+          "tooltip": "Create handoff using canonical grammar",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:62d87d96-6757-4c75-9eb2-8026adac51b1",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "Prömpter Context",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-08-24T02:28:30.124Z"
+    },
+    {
+      "uuid": "e6a871df-16d3-437f-9fc0-4151924d1bcf",
+      "commandPosition": "float",
+      "customClasses": "",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "Unified role controls for Schemes Context",
+      "hasCommand": false,
+      "icon": "",
+      "items": [
+        {
+          "uuid": "f49e8ae0-667d-4d86-aa06-0094d61c28d8",
+          "icon": "braces",
+          "label": "ONTOLOGY",
+          "tooltip": "Open ontology workbench",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Schemes/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "b002c543-21e5-40e4-b2cd-541c522d9acd",
+          "icon": "boxes",
+          "label": "MODEL",
+          "tooltip": "Create data model",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:3a42ae78-5c90-401b-a2cc-a57cd7afff3d",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "b4aeb23b-3495-470d-a9fc-2d36f7caeab2",
+          "icon": "circle-dot-dashed",
+          "label": "ENTITY",
+          "tooltip": "Open entity semantics workbench",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Schemes/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "d8ac947b-7812-4a58-b93c-9a3facb4314c",
+          "icon": "git-merge",
+          "label": "RELATIONSHIP",
+          "tooltip": "Open relationship semantics workbench",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Schemes/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "e279b03d-ef98-4f83-8a17-a41f9775e180",
+          "icon": "database-zap",
+          "label": "SCHEMA",
+          "tooltip": "Create schema or data model",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:3a42ae78-5c90-401b-a2cc-a57cd7afff3d",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "cdca3cac-aaeb-4aac-b9bd-7c5ee53104dc",
+          "icon": "refresh-cw",
+          "label": "LIFECYCLE",
+          "tooltip": "Open lifecycle semantics workbench",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Schemes/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "Schemes Context",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-08-24T02:28:29.514Z"
+    },
+    {
       "uuid": "a7ca0916-c895-4928-bfe5-670beb1a3587",
       "commandPosition": "float",
       "customClasses": "",
@@ -1926,6 +3387,446 @@
         }
       },
       "updated": "2026-08-23T17:05:06.939Z"
+    },
+    {
+      "uuid": "d6d529ae-077b-4f60-b7d5-42911e58e093",
+      "commandPosition": "float",
+      "customClasses": "",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "Unified role controls for Trust Issues Context",
+      "hasCommand": false,
+      "icon": "",
+      "items": [
+        {
+          "uuid": "eb0e298b-4dde-4c27-9e49-10da05750248",
+          "icon": "badge-check",
+          "label": "VERIFY",
+          "tooltip": "Create verification evidence",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:28dd32b8-5e6c-45ee-a1d2-bf3355ff1577",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "fd1ae88c-bb11-487e-864e-046c8ce79279",
+          "icon": "search-check",
+          "label": "EVIDENCE",
+          "tooltip": "Open evidence view",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "_obsidian/Bases/Evidence.base",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "c5705c6a-1947-4ca7-9ee4-2ebab4a4dfba",
+          "icon": "shield-alert",
+          "label": "FINDINGS",
+          "tooltip": "Open findings workbench",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Trust Issues/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "a2a670e0-83a9-4624-8668-cfcc876db346",
+          "icon": "git-compare",
+          "label": "RECONCILE",
+          "tooltip": "Open reconciliation workbench",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Trust Issues/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "e0dff609-d67f-409c-b4cd-b6ef1bd3e32e",
+          "icon": "send",
+          "label": "HANDOFF",
+          "tooltip": "Create operational handoff",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:62d87d96-6757-4c75-9eb2-8026adac51b1",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "Trust Issues Context",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-08-24T02:27:59.916Z"
+    },
+    {
+      "uuid": "f8cc8d40-11a7-4a30-88b8-98cc70e8a089",
+      "commandPosition": "float",
+      "customClasses": "",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "Unified role controls for Vibes Context",
+      "hasCommand": false,
+      "icon": "",
+      "items": [
+        {
+          "uuid": "b330c15f-c33f-4a69-8de5-3d9138f71514",
+          "icon": "network",
+          "label": "ARCHITECTURE",
+          "tooltip": "Open architecture workbench",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Vibes/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "dff3b9a1-240d-4ef2-85fc-9cf472d4cadd",
+          "icon": "git-fork",
+          "label": "REPOSITORY",
+          "tooltip": "Open repository ownership surface",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Vibes/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "e8c084c1-24f3-41d0-b5c5-bef0110fb2c7",
+          "icon": "server-cog",
+          "label": "ENVIRONMENT",
+          "tooltip": "Open environment ownership surface",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Vibes/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "cdd57d8f-0bec-4b36-aa11-35187958e28f",
+          "icon": "rocket",
+          "label": "DEPLOY",
+          "tooltip": "Open deployment ownership surface",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Vibes/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "a2bffae6-e663-41dc-b4b3-0ce36eece900",
+          "icon": "siren",
+          "label": "INCIDENT",
+          "tooltip": "Open incident ownership surface",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "Vibes/README.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "Vibes Context",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-08-24T02:28:01.141Z"
     }
   ],
   "version": 20260703.1,

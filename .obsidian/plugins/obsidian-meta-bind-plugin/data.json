@@ -11,23 +11,23 @@
   "inputFieldTemplates": [
     {
       "name": "dn-status",
-      "declaration": "INPUT[inlineSelect(option(draft), option(review), option(active), option(superseded), option(archived), option(backlog), option(ready), option(in-progress), option(in-review), option(blocked), option(done), option(cancelled), option(proposed), option(accepted), option(rejected), option(passed), option(failed), option(skipped), option(inferred)):status]"
+      "declaration": "INPUT[inlineSelect(option(draft), option(review), option(active), option(superseded), option(archived), option(backlog), option(ready), option(in-progress), option(in-review), option(blocked), option(done), option(cancelled), option(proposed), option(accepted), option(rejected), option(passed), option(failed), option(skipped), option(inferred))]"
     },
     {
       "name": "dn-authority",
-      "declaration": "INPUT[inlineSelect(option(canonical), option(supporting), option(implementation-evidence), option(project-specific), option(operational)):authority]"
+      "declaration": "INPUT[inlineSelect(option(canonical), option(supporting), option(implementation-evidence), option(project-specific), option(operational))]"
     },
     {
       "name": "dn-role",
-      "declaration": "INPUT[inlineSelect(option(chief-of-staff), option(trust-issues), option(execution), option(vibes), option(devnotes), option(schemes), option(prompter), option(fuck-you-pay-me)):role]"
+      "declaration": "INPUT[inlineSelect(option(chief-of-staff), option(trust-issues), option(execution), option(vibes), option(devnotes), option(schemes), option(prompter), option(fuck-you-pay-me))]"
     },
     {
       "name": "dn-priority",
-      "declaration": "INPUT[inlineSelect(option(low), option(normal), option(high), option(critical)):priority]"
+      "declaration": "INPUT[inlineSelect(option(low), option(normal), option(high), option(critical))]"
     },
     {
       "name": "dn-health",
-      "declaration": "INPUT[inlineSelect(option(on-track), option(at-risk), option(blocked), option(paused)):health]"
+      "declaration": "INPUT[inlineSelect(option(on-track), option(at-risk), option(blocked), option(paused))]"
     }
   ],
   "buttonTemplates": [],

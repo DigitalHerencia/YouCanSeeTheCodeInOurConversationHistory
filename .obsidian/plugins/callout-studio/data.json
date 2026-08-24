@@ -13,7 +13,7 @@
       "foldable": false,
       "defaultFolded": false,
       "builtIn": false,
-      "source": "fallback",
+      "source": "user",
       "aliases": [
         "canonical"
       ]
@@ -30,10 +30,57 @@
       "foldable": false,
       "defaultFolded": false,
       "builtIn": false,
-      "source": "fallback",
+      "source": "user",
       "aliases": [
         "adr"
       ]
+    },
+    {
+      "id": "requirement",
+      "displayName": "Requirement",
+      "icon": {
+        "type": "lucide",
+        "value": "list-checks"
+      },
+      "colorLight": "#0369a1",
+      "colorDark": "#38bdf8",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "working",
+      "displayName": "Working",
+      "icon": {
+        "type": "lucide",
+        "value": "hammer"
+      },
+      "colorLight": "#a16207",
+      "colorDark": "#facc15",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": [
+        "draft"
+      ]
+    },
+    {
+      "id": "risk",
+      "displayName": "Risk",
+      "icon": {
+        "type": "lucide",
+        "value": "triangle-alert"
+      },
+      "colorLight": "#c2410c",
+      "colorDark": "#fb923c",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
     },
     {
       "id": "blocked",
@@ -47,7 +94,7 @@
       "foldable": false,
       "defaultFolded": false,
       "builtIn": false,
-      "source": "fallback",
+      "source": "user",
       "aliases": []
     },
     {
@@ -62,7 +109,7 @@
       "foldable": true,
       "defaultFolded": false,
       "builtIn": false,
-      "source": "fallback",
+      "source": "user",
       "aliases": [
         "validation"
       ]
@@ -79,7 +126,7 @@
       "foldable": true,
       "defaultFolded": false,
       "builtIn": false,
-      "source": "fallback",
+      "source": "user",
       "aliases": []
     },
     {
@@ -94,9 +141,27 @@
       "foldable": false,
       "defaultFolded": false,
       "builtIn": false,
-      "source": "fallback",
+      "source": "user",
       "aliases": [
         "idea"
+      ]
+    },
+    {
+      "id": "deprecated",
+      "displayName": "Deprecated",
+      "icon": {
+        "type": "lucide",
+        "value": "archive"
+      },
+      "colorLight": "#52525b",
+      "colorDark": "#a1a1aa",
+      "foldable": true,
+      "defaultFolded": true,
+      "builtIn": false,
+      "source": "user",
+      "aliases": [
+        "historical",
+        "superseded"
       ]
     }
   ],

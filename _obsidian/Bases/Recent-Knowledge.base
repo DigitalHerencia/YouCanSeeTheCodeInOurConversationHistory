@@ -8,36 +8,42 @@ filters:
         - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/03-templates")
         - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/07-vault-overlay")
         - file.inFolder("10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror")
-formulas:
-  backlink_count: file.backlinks.length
-  outgoing_link_count: file.links.length
+        - file.inFolder("_ops")
 properties:
   file.name:
     displayName: Note
+  file.mtime:
+    displayName: Modified
   role:
     displayName: Role
-  system:
-    displayName: System
   workspace:
     displayName: Workspace
+  system:
+    displayName: System
   type:
     displayName: Type
   status:
     displayName: Status
   authority:
     displayName: Authority
-  formula.backlink_count:
-    displayName: Backlinks
-  formula.outgoing_link_count:
-    displayName: Outgoing
-
 views:
   - type: table
-    name: Active Work
+    name: Recent Knowledge
+    limit: 25
     filters:
       or:
-        - status == "ready"
-        - status == "in-progress"
-        - status == "in-review"
-        - status == "blocked"
-    order: [file.name, workspace, role, status, type, formula.backlink_count]
+        - authority == "canonical"
+        - authority == "supporting"
+        - type == "research"
+        - type == "decision"
+    order:
+      - file.name
+      - role
+      - workspace
+      - type
+      - status
+      - authority
+      - file.mtime
+    sort:
+      - property: file.mtime
+        direction: DESC

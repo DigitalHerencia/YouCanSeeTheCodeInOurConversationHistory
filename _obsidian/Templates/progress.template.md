@@ -16,7 +16,7 @@ tags: []
 
 Status: `INPUT[inlineSelect(option(in-progress), option(in-review), option(blocked), option(done)):status]`
 
-Progress: `INPUT[progressBar:progress]`
+Progress: `INPUT[slider(addLabels, minValue(0), maxValue(100)):progress]`
 
 ## Current State
 ## Completed

@@ -25,7 +25,7 @@ Priority: `INPUT[inlineSelect(option(low), option(normal), option(high), option(
 
 Health: `INPUT[inlineSelect(option(on-track), option(at-risk), option(blocked), option(paused)):health]`
 
-Progress: `INPUT[progressBar:progress]`
+Progress: `INPUT[slider(addLabels, minValue(0), maxValue(100)):progress]`
 
 Target: `INPUT[date:target]`
 

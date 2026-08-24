@@ -1,0 +1,116 @@
+# DevNotes Unified implementation change manifest
+# Base: master
+# Branch: codex/feat-devnotes-unified-system
+# Local-only .obsidian/workspace.json is intentionally excluded.
+# Status  Path
+A	_assets/README.md
+M	_mounts/README.md
+M	_obsidian/Bases/Codependent-Coding.base
+M	_obsidian/Bases/DevNotes-Unified.base
+M	_obsidian/Bases/Evidence.base
+M	_obsidian/Bases/Handoffs.base
+M	_obsidian/Bases/Inbox.base
+M	_obsidian/Bases/Now.base
+A	_obsidian/Bases/Recent-Knowledge.base
+A	_obsidian/Bases/Role-Workbench.base
+M	_obsidian/Bases/Roles.base
+A	_obsidian/Bases/System-Health.base
+M	_obsidian/Bases/Workspaces.base
+A	_obsidian/Canvases/codependent-coding.workspace.canvas
+M	_obsidian/Controls/devnotes.unified.meta-bind-controls.md
+A	_obsidian/CSS/devnotes-unified.css
+A	_obsidian/README.md
+A	_obsidian/Scripts/templater/inferRole.js
+A	_obsidian/Scripts/templater/inferSystem.js
+A	_obsidian/Scripts/templater/inferWorkspace.js
+A	_obsidian/Scripts/templater/makeNamespace.js
+A	_obsidian/Templates/adr-decision.template.md
+A	_obsidian/Templates/architecture.template.md
+A	_obsidian/Templates/auth-security.template.md
+A	_obsidian/Templates/business-operation.template.md
+A	_obsidian/Templates/capture.template.md
+A	_obsidian/Templates/data-model.template.md
+A	_obsidian/Templates/design.template.md
+A	_obsidian/Templates/handoff.template.md
+A	_obsidian/Templates/knowledge-model.template.md
+A	_obsidian/Templates/prd.template.md
+M	_obsidian/Templates/progress.template.md
+M	_obsidian/Templates/project-home.template.md
+A	_obsidian/Templates/prompt-contract.template.md
+A	_obsidian/Templates/reference.template.md
+A	_obsidian/Templates/research.template.md
+A	_obsidian/Templates/specification.template.md
+A	_obsidian/Templates/technical-requirements.template.md
+A	_obsidian/Templates/validation-conformance.template.md
+A	_obsidian/Templates/verification-evidence.template.md
+A	_obsidian/Templates/work-package.template.md
+A	_obsidian/Workflows/devnotes.template-routing.workflow.md
+A	_ops/README.md
+M	_ops/Reports/devnotes-migration-inventory.csv
+A	_ops/Reports/devnotes-migration-inventory.summary.json
+M	_ops/Reports/devnotes.migration.context-dependency-map.execution.md
+A	_ops/Reports/devnotes.source-mirror.classification.report.md
+A	_ops/Reports/devnotes.unified.change-manifest.txt
+M	_ops/Reports/devnotes.unified.migration-conformance.report.md
+A	_ops/Reports/devnotes.unified.runtime-validation.json
+A	_ops/Reports/source-mirror-classification.csv
+A	_ops/Reports/source-mirror-classification.summary.json
+M	_ops/Scripts/Get-DevNotesMigrationInventory.ps1
+A	_ops/Scripts/Get-SourceMirrorClassification.ps1
+M	_ops/Scripts/Test-DevNotesUnifiedImplementation.ps1
+A	_ops/Scripts/Test-DevNotesUnifiedPackage.ps1
+M	.gitignore
+M	.obsidian/appearance.json
+M	.obsidian/community-plugins.json
+M	.obsidian/plugins/callout-studio/data.json
+M	.obsidian/plugins/hearth/data.json
+M	.obsidian/plugins/note-toolbar/data.json
+M	.obsidian/plugins/obsidian-meta-bind-plugin/data.json
+M	.obsidian/plugins/quickadd/data.json
+A	.obsidian/plugins/quickadd/manifest.json
+M	.obsidian/plugins/templater-obsidian/data.json
+A	.obsidian/snippets/devnotes-unified.css
+A	.system/authority/authority-registry.json
+A	.system/provenance/authority-package-v0.1.0.json
+A	.system/README.md
+A	.system/registries/knowledge-model.json
+A	.system/registries/relationship-registry.json
+A	.system/registries/role-registry.json
+A	.system/registries/status-families.json
+A	.system/registries/template-router.json
+A	.system/schemas/note.schema.json
+A	.system/state/legacy-path-compatibility.json
+A	10 PROJECTS/10.PROJECTS.CHATGPT/10.PROJECTS.CHATGPT.Unified-Role-System.Map.md
+M	AGENTS.md
+A	Chief of Staff/Canon/devnotes.chief-of-staff.chatgpt-project-instructions.contract.md
+M	Chief of Staff/README.md
+M	Chief of Staff/Workspaces/Codependent Coding/codependent-coding.workspace.home.md
+M	devnotes.home.md
+A	DevNotes/Canon/devnotes.devnotes.chatgpt-project-instructions.contract.md
+A	DevNotes/Canon/devnotes.metadata.legacy-compatibility.contract.md
+A	DevNotes/Canon/devnotes.roles.registry.map.md
+A	DevNotes/Canon/devnotes.unified-system.authority.map.md
+A	DevNotes/Inbox/README.md
+M	DevNotes/README.md
+A	DevNotes/Workspaces/Codependent Coding/codependent-coding.devnotes.knowledge-map.md
+A	Execution/Canon/devnotes.execution.chatgpt-project-instructions.contract.md
+M	Execution/README.md
+A	Execution/Workspaces/Codependent Coding/codependent-coding.execution.implementation-map.md
+A	Fuck You Pay Me/Canon/devnotes.fuck-you-pay-me.chatgpt-project-instructions.contract.md
+M	Fuck You Pay Me/README.md
+A	Fuck You Pay Me/Workspaces/Codependent Coding/codependent-coding.fuck-you-pay-me.external-reality-map.md
+A	Prömpter/Canon/devnotes.prompter.chatgpt-project-instructions.contract.md
+A	Prömpter/Canon/devnotes.prompter.interproject-handoff.contract.md
+M	Prömpter/README.md
+A	Prömpter/Workspaces/Codependent Coding/codependent-coding.prompter.semantics-map.md
+M	README.md
+A	Schemes/Canon/devnotes.schemes.chatgpt-project-instructions.contract.md
+M	Schemes/README.md
+A	Schemes/Workspaces/Codependent Coding/codependent-coding.schemes.model-map.md
+A	Trust Issues/Canon/devnotes.trust-issues.chatgpt-project-instructions.contract.md
+M	Trust Issues/README.md
+A	Trust Issues/Workspaces/Codependent Coding/codependent-coding.trust-issues.evidence-map.md
+A	Vibes/Canon/devnotes.vibes.chatgpt-project-instructions.contract.md
+M	Vibes/README.md
+A	Vibes/Workspaces/Codependent Coding/codependent-coding.vibes.architecture-map.md
+M	Vibes/Workspaces/Codependent Coding/codependent-coding.vibes.code-space-pilot.execution.md

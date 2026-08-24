@@ -44,6 +44,12 @@ updated: 2026-08-23
 
 ![[_obsidian/Bases/Inbox.base#Inbox]]
 
+![[_obsidian/Bases/Recent-Knowledge.base#Recent Knowledge]]
+
+![[_obsidian/Bases/System-Health.base#System Health]]
+
+![[_obsidian/Bases/DevNotes-Unified.base#Knowledge Index]]
+
 ## Vault System
 
 - [[obsidian.system.map]]
@@ -92,7 +98,7 @@ TABLE WITHOUT ID
   file.link AS Template,
   type AS Type,
   kind AS Kind
-FROM "90 OBSIDIAN/Templates"
+FROM "_obsidian/Templates"
 SORT file.name ASC
 ```
 
@@ -102,11 +108,11 @@ SORT file.name ASC
 TABLE WITHOUT ID
   file.link AS Capture,
   file.mtime AS Modified
-FROM "00 ZETTELKASTEN"
+FROM "DevNotes/Inbox"
 WHERE type = "capture" OR !type
 SORT file.mtime DESC
 ```
 
 ## Operating Rule
 
-Capture unfinished material in `00 ZETTELKASTEN`. Place durable material in its correct destination using the established naming, property, and note-type contracts. Keep source-of-truth notes clearly identified and discoverable. For Codependent Coding, preserve the distinction between the flat knowledge corpus in `60 CODEPENDENT CODING` and active project-owned material in `10 PROJECTS/10.PROJECTS.CODEPENDENTCODING`.
+Capture new unfinished material in `DevNotes/Inbox`; `00 ZETTELKASTEN` remains a legacy compatibility inbox until its contents are classified. Create new notes through the routed QuickAdd/Templater controls under `_obsidian/Templates`. Place durable material in its responsibility-owned role context using the unified metadata contract, while preserving legacy metadata until it is intentionally reconciled. Keep canonical authority explicit and discoverable. For Codependent Coding, preserve the distinction between the shared flat canon in `60 CODEPENDENT CODING` and active project-owned material in `10 PROJECTS/10.PROJECTS.CODEPENDENTCODING`.

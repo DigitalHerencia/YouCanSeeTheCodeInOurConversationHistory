@@ -1,6 +1,12 @@
 filters:
   and:
     - file.ext == "md"
+    - not:
+        - file.inFolder("_obsidian/Templates")
+        - file.inFolder("90 OBSIDIAN/Templates")
+        - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/03-templates")
+        - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/07-vault-overlay")
+        - file.inFolder("10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror")
     - or:
         - system == "codependent-coding"
         - workspace == "codependent-coding"
@@ -44,9 +50,3 @@ views:
         - authority == "canonical"
         - authority == "source-of-truth"
     order: [file.name, role, type, status, authority]
-  - type: table
-    name: Source Mirror
-    filters:
-      and:
-        - file.inFolder("10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror")
-    order: [file.name, source_kind, status, authority]

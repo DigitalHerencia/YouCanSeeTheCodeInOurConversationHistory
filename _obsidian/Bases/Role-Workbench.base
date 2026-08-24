@@ -1,37 +1,44 @@
 filters:
   and:
     - file.ext == "md"
-    - file.hasProperty("namespace")
+    - file.hasProperty("role")
+    - role == this.role
     - not:
         - file.inFolder("_obsidian/Templates")
         - file.inFolder("90 OBSIDIAN/Templates")
         - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/03-templates")
         - file.inFolder("DevNotes-Unified-Knowledge-Engineering-System-Authority-Package-v0.1.0/07-vault-overlay")
         - file.inFolder("10 PROJECTS/10.PROJECTS.CODEPENDENTCODING/10.PROJECTS.CODEPENDENTCODING.Source Mirror")
-formulas:
-  backlink_count: file.backlinks.length
-  outgoing_link_count: file.links.length
 properties:
   file.name:
     displayName: Note
   role:
     displayName: Role
-  system:
-    displayName: System
   workspace:
     displayName: Workspace
+  system:
+    displayName: System
   type:
     displayName: Type
   status:
     displayName: Status
   authority:
     displayName: Authority
-  formula.backlink_count:
-    displayName: Backlinks
-  formula.outgoing_link_count:
-    displayName: Outgoing
-
 views:
+  - type: table
+    name: Role Workbench
+    order:
+      - file.name
+      - workspace
+      - system
+      - type
+      - status
+      - authority
+    sort:
+      - property: workspace
+        direction: ASC
+      - property: file.name
+        direction: ASC
   - type: table
     name: Active Work
     filters:
@@ -40,4 +47,19 @@ views:
         - status == "in-progress"
         - status == "in-review"
         - status == "blocked"
-    order: [file.name, workspace, role, status, type, formula.backlink_count]
+    order:
+      - file.name
+      - workspace
+      - type
+      - status
+      - authority
+  - type: table
+    name: Canon
+    filters:
+      and:
+        - authority == "canonical"
+    order:
+      - file.name
+      - system
+      - type
+      - status

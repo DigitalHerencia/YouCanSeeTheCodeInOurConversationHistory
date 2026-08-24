@@ -28,7 +28,7 @@ tags:
 
 ## Control Surface
 
-Status: `INPUT[dn-status]` · Priority: `INPUT[dn-priority]` · Health: `INPUT[dn-health]` · Progress: `INPUT[progressBar:progress]`
+Status: `INPUT[dn-status][:status]` · Priority: `INPUT[dn-priority][:priority]` · Health: `INPUT[dn-health][:health]` · Progress: `INPUT[slider(addLabels, minValue(0), maxValue(100)):progress]`
 
 ## Role Lenses
 

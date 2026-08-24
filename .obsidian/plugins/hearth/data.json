@@ -191,6 +191,48 @@
           "fh": 632
         },
         {
+          "kind": "embed",
+          "title": "Recent Knowledge",
+          "target": "_obsidian/Bases/Recent-Knowledge.base",
+          "x": 0,
+          "y": 23,
+          "w": 6,
+          "h": 5,
+          "id": "dn-recent-knowledge-001",
+          "fx": 0,
+          "fw": 0.495,
+          "fy": 2484,
+          "fh": 524
+        },
+        {
+          "kind": "embed",
+          "title": "System Health",
+          "target": "_obsidian/Bases/System-Health.base",
+          "x": 6,
+          "y": 23,
+          "w": 6,
+          "h": 5,
+          "id": "dn-system-health-001",
+          "fx": 0.5050000000000001,
+          "fw": 0.495,
+          "fy": 2484,
+          "fh": 524
+        },
+        {
+          "kind": "embed",
+          "title": "Knowledge Index",
+          "target": "_obsidian/Bases/DevNotes-Unified.base",
+          "x": 0,
+          "y": 28,
+          "w": 12,
+          "h": 6,
+          "id": "dn-knowledge-index-001",
+          "fx": 0,
+          "fw": 1,
+          "fy": 3024,
+          "fh": 632
+        },
+        {
           "kind": "templater",
           "title": "Create",
           "templater": {
@@ -278,13 +320,13 @@
             ]
           },
           "x": 0,
-          "y": 23,
+          "y": 34,
           "w": 9,
           "h": 3,
           "id": "dn-create-001",
           "fx": 0,
           "fw": 0.7475,
-          "fy": 2484,
+          "fy": 3672,
           "fh": 308
         },
         {
@@ -292,13 +334,13 @@
           "title": "Git",
           "git": {},
           "x": 9,
-          "y": 23,
+          "y": 34,
           "w": 3,
           "h": 3,
           "id": "dn-git-001",
           "fx": 0.7575000000000002,
           "fw": 0.2425,
-          "fy": 2484,
+          "fy": 3672,
           "fh": 308
         }
       ],

@@ -1,12 +1,381 @@
 {
-  "choices": [],
+  "choices": [
+    {
+      "id": "1df44c59-e206-445d-a6d1-c693712fd9ad",
+      "name": "New Workspace",
+      "type": "Template",
+      "command": true,
+      "onePageInput": "always",
+      "templatePath": "_obsidian/Templates/project-home.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{VALUE}}/{{VALUE}}.workspace.home"
+      },
+      "discoverExistingNotesBeforeCreate": false,
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "Chief of Staff/Workspaces"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "duplicateSuffix"
+      }
+    },
+    {
+      "id": "3f38fe20-758e-4f77-a640-f7f2eaf9d1f0",
+      "name": "Capture",
+      "type": "Template",
+      "command": true,
+      "onePageInput": "always",
+      "templatePath": "_obsidian/Templates/capture.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "devnotes.inbox.{{DATE:YYYY-MM-DD}}-{{VALUE}}.capture"
+      },
+      "discoverExistingNotesBeforeCreate": false,
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "DevNotes/Inbox"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "duplicateSuffix"
+      }
+    },
+    {
+      "id": "122e1f5e-4580-41af-b1ef-9a2dd471cf50",
+      "name": "New Specification",
+      "type": "Template",
+      "command": true,
+      "onePageInput": "always",
+      "templatePath": "_obsidian/Templates/specification.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{VALUE}}.specification"
+      },
+      "discoverExistingNotesBeforeCreate": false,
+      "folder": {
+        "enabled": true,
+        "folders": [],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": true,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "duplicateSuffix"
+      }
+    },
+    {
+      "id": "486fd936-491d-4974-a9cf-ef26f09f2dbc",
+      "name": "Record Decision",
+      "type": "Template",
+      "command": true,
+      "onePageInput": "always",
+      "templatePath": "_obsidian/Templates/adr-decision.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{VALUE}}.decision"
+      },
+      "discoverExistingNotesBeforeCreate": false,
+      "folder": {
+        "enabled": true,
+        "folders": [],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": true,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "duplicateSuffix"
+      }
+    },
+    {
+      "id": "92e9e004-75b4-4124-9f48-591060356fb7",
+      "name": "Start Research",
+      "type": "Template",
+      "command": true,
+      "onePageInput": "always",
+      "templatePath": "_obsidian/Templates/research.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{VALUE}}.research"
+      },
+      "discoverExistingNotesBeforeCreate": false,
+      "folder": {
+        "enabled": true,
+        "folders": [],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": true,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "duplicateSuffix"
+      }
+    },
+    {
+      "id": "4e749623-74c9-4cfb-81a2-9d93cf61fcb0",
+      "name": "Create Work Package",
+      "type": "Template",
+      "command": true,
+      "onePageInput": "always",
+      "templatePath": "_obsidian/Templates/work-package.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{VALUE}}.work-package"
+      },
+      "discoverExistingNotesBeforeCreate": false,
+      "folder": {
+        "enabled": true,
+        "folders": [],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": true,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "duplicateSuffix"
+      }
+    },
+    {
+      "id": "62d87d96-6757-4c75-9eb2-8026adac51b1",
+      "name": "Create Handoff",
+      "type": "Template",
+      "command": true,
+      "onePageInput": "always",
+      "templatePath": "_obsidian/Templates/handoff.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{VALUE}}.handoff"
+      },
+      "discoverExistingNotesBeforeCreate": false,
+      "folder": {
+        "enabled": true,
+        "folders": [],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": true,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "duplicateSuffix"
+      }
+    },
+    {
+      "id": "28dd32b8-5e6c-45ee-a1d2-bf3355ff1577",
+      "name": "Create Verification",
+      "type": "Template",
+      "command": true,
+      "onePageInput": "always",
+      "templatePath": "_obsidian/Templates/verification-evidence.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{VALUE}}.verification"
+      },
+      "discoverExistingNotesBeforeCreate": false,
+      "folder": {
+        "enabled": true,
+        "folders": [],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": true,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "duplicateSuffix"
+      }
+    },
+    {
+      "id": "7539692c-65d3-460b-830b-0884b35b93c4",
+      "name": "Create Prompt Contract",
+      "type": "Template",
+      "command": true,
+      "onePageInput": "always",
+      "templatePath": "_obsidian/Templates/prompt-contract.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{VALUE}}.prompt-contract"
+      },
+      "discoverExistingNotesBeforeCreate": false,
+      "folder": {
+        "enabled": true,
+        "folders": [],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": true,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "duplicateSuffix"
+      }
+    },
+    {
+      "id": "3a42ae78-5c90-401b-a2cc-a57cd7afff3d",
+      "name": "Create Data Model",
+      "type": "Template",
+      "command": true,
+      "onePageInput": "always",
+      "templatePath": "_obsidian/Templates/data-model.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{VALUE}}.data-model"
+      },
+      "discoverExistingNotesBeforeCreate": false,
+      "folder": {
+        "enabled": true,
+        "folders": [],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": true,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "duplicateSuffix"
+      }
+    },
+    {
+      "id": "c9327353-27d5-48b3-9531-e6e93a740e76",
+      "name": "Create Business Operation",
+      "type": "Template",
+      "command": true,
+      "onePageInput": "always",
+      "templatePath": "_obsidian/Templates/business-operation.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{VALUE}}.business-operation"
+      },
+      "discoverExistingNotesBeforeCreate": false,
+      "folder": {
+        "enabled": true,
+        "folders": [],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": true,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "duplicateSuffix"
+      }
+    }
+  ],
   "inputPrompt": "single-line",
   "persistInputPromptDrafts": true,
   "useSelectionAsCaptureValue": true,
   "searchNestedChoices": true,
-  "templateFolderLauncherRow": "bottom",
+  "templateFolderLauncherRow": "off",
   "devMode": false,
   "templateFolderPaths": [
+    "_obsidian/Templates",
     "90 OBSIDIAN/Templates"
   ],
   "announceUpdates": "major",
