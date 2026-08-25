@@ -1,17 +1,16 @@
 {
   "theme": "obsidian",
-  "accentColor": "",
+  "accentColor": "#00504c",
   "interfaceFontFamily": "Terminess Nerd Font Propo",
   "textFontFamily": "CodeNewRoman Nerd Font",
   "monospaceFontFamily": "CodeNewRoman Nerd Font Mono",
-  "cssTheme": "Minimal",
+  "cssTheme": "Obsidianite",
   "baseFontSizeAction": true,
   "showRibbon": false,
   "showViewHeader": false,
   "nativeMenus": false,
   "baseFontSize": 16,
   "enabledCssSnippets": [
-    "codex-vercel",
     "devnotes-unified"
   ]
 }

@@ -163,6 +163,36 @@
         "historical",
         "superseded"
       ]
+    },
+    {
+      "id": "importat",
+      "displayName": "Importat",
+      "icon": {
+        "type": "lucide",
+        "value": "pencil"
+      },
+      "colorLight": "#086ddd",
+      "colorDark": "#027aff",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": []
+    },
+    {
+      "id": "remember",
+      "displayName": "Remember",
+      "icon": {
+        "type": "lucide",
+        "value": "pencil"
+      },
+      "colorLight": "#086ddd",
+      "colorDark": "#027aff",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": []
     }
   ],
   "settings": {

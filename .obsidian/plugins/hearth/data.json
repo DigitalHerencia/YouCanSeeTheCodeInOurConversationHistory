@@ -77,7 +77,32 @@
   "dashboards": [
     {
       "id": "dash-devnotes-unified-v010",
-      "name": "Unified Workbench",
+      "name": "D3VN0T3S",
+      "cards": [],
+      "fitToPage": true,
+      "showSearch": true,
+      "header": {
+        "showTitle": true,
+        "title": "YOU CAN SEE THE CODE IN THE CONVERSATION HISTORY",
+        "logoIcon": "terminal",
+        "align": "center",
+        "titleScale": 0.9,
+        "logoScale": 0.9,
+        "marginTop": 0,
+        "spacingBelow": 96
+      },
+      "background": {
+        "kind": "image",
+        "value": "BG.jpg",
+        "opacity": 1,
+        "blur": 0
+      },
+      "iconLucide": "terminal",
+      "backgroundLayout": "full"
+    },
+    {
+      "id": "dash-mt80bjwl-9789",
+      "name": "Unified Workbench copy",
       "cards": [
         {
           "kind": "clock",
@@ -86,137 +111,27 @@
           "y": 0,
           "w": 12,
           "h": 2,
-          "id": "dn-clock-001",
+          "id": "card-mt80bjwl-9612",
           "fx": 0,
-          "fw": 1,
+          "fw": 0.2165551839464883,
           "fy": 0,
-          "fh": 200
+          "fh": 128
         },
         {
           "kind": "embed",
-          "title": "Now",
-          "target": "_obsidian/Bases/Now.base",
-          "x": 0,
-          "y": 2,
-          "w": 6,
-          "h": 5,
-          "id": "dn-now-001",
-          "fx": 0,
-          "fw": 0.495,
-          "fy": 216,
-          "fh": 524
-        },
-        {
-          "kind": "embed",
-          "title": "Workspaces",
-          "target": "_obsidian/Bases/Workspaces.base",
-          "x": 6,
-          "y": 2,
-          "w": 6,
-          "h": 5,
-          "id": "dn-workspaces-001",
-          "fx": 0.5050000000000001,
-          "fw": 0.495,
-          "fy": 216,
-          "fh": 524
-        },
-        {
-          "kind": "embed",
-          "title": "Handoffs",
-          "target": "_obsidian/Bases/Handoffs.base",
-          "x": 0,
-          "y": 7,
-          "w": 6,
-          "h": 5,
-          "id": "dn-handoffs-001",
-          "fx": 0,
-          "fw": 0.495,
-          "fy": 756,
-          "fh": 524
-        },
-        {
-          "kind": "embed",
-          "title": "Evidence",
-          "target": "_obsidian/Bases/Evidence.base",
-          "x": 6,
-          "y": 7,
-          "w": 6,
-          "h": 5,
-          "id": "dn-evidence-001",
-          "fx": 0.5050000000000001,
-          "fw": 0.495,
-          "fy": 756,
-          "fh": 524
-        },
-        {
-          "kind": "embed",
-          "title": "Inbox",
-          "target": "_obsidian/Bases/Inbox.base",
-          "x": 0,
-          "y": 12,
-          "w": 6,
-          "h": 5,
-          "id": "dn-inbox-001",
-          "fx": 0,
-          "fw": 0.495,
-          "fy": 1296,
-          "fh": 524
-        },
-        {
-          "kind": "embed",
-          "title": "Roles",
-          "target": "_obsidian/Bases/Roles.base",
-          "x": 6,
-          "y": 12,
-          "w": 6,
-          "h": 5,
-          "id": "dn-roles-001",
-          "fx": 0.5050000000000001,
-          "fw": 0.495,
-          "fy": 1296,
-          "fh": 524
-        },
-        {
-          "kind": "embed",
-          "title": "Project Kanban",
+          "title": "",
           "target": "_obsidian/Bases/TaskNotes/kanban-default.base",
           "x": 0,
           "y": 17,
           "w": 12,
           "h": 6,
-          "id": "dn-codependent-001",
+          "id": "card-mt80bjwm-6300",
           "fx": 0,
           "fw": 1,
-          "fy": 1836,
-          "fh": 632
-        },
-        {
-          "kind": "embed",
-          "title": "Task Calendar",
-          "target": "_obsidian/Bases/TaskNotes/calendar-default.base",
-          "x": 0,
-          "y": 23,
-          "w": 6,
-          "h": 5,
-          "id": "dn-recent-knowledge-001",
-          "fx": 0,
-          "fw": 0.495,
-          "fy": 2484,
-          "fh": 524
-        },
-        {
-          "kind": "embed",
-          "title": "Operational Health",
-          "target": "_obsidian/Bases/System-Health.base",
-          "x": 6,
-          "y": 23,
-          "w": 6,
-          "h": 5,
-          "id": "dn-system-health-001",
-          "fx": 0.5050000000000001,
-          "fw": 0.495,
-          "fy": 2484,
-          "fh": 524
+          "fy": 174,
+          "fh": 613,
+          "accent": "#00504c",
+          "hideBaseHeader": true
         },
         {
           "kind": "embed",
@@ -226,7 +141,7 @@
           "y": 28,
           "w": 12,
           "h": 6,
-          "id": "dn-knowledge-index-001",
+          "id": "card-mt80bjwm-1752",
           "fx": 0,
           "fw": 1,
           "fy": 3024,
@@ -323,7 +238,7 @@
           "y": 34,
           "w": 9,
           "h": 3,
-          "id": "dn-create-001",
+          "id": "card-mt80bjwm-2942",
           "fx": 0,
           "fw": 0.7475,
           "fy": 3672,
@@ -337,21 +252,35 @@
           "y": 34,
           "w": 3,
           "h": 3,
-          "id": "dn-git-001",
-          "fx": 0.7575000000000002,
-          "fw": 0.2425,
-          "fy": 3672,
-          "fh": 308
+          "id": "card-mt80bjwm-9727",
+          "fx": 0.7477678571428571,
+          "fw": 0.25223214285714285,
+          "fy": 0,
+          "fh": 158
         }
       ],
-      "fitToPage": true,
+      "fitToPage": false,
       "showSearch": false,
       "header": {
-        "showTitle": false
-      }
+        "showTitle": false,
+        "title": "YOU CAN SEE THE CODE IN THE CONVERSATION HISTORY",
+        "logoIcon": "terminal",
+        "align": "left"
+      },
+      "background": {
+        "kind": "image",
+        "value": "BG4.jpg",
+        "opacity": 0.5,
+        "blur": 0
+      },
+      "iconLucide": "computer",
+      "backgroundLayout": "full",
+      "bannerHeight": 500,
+      "bannerFullWidth": true,
+      "bannerFade": false
     }
   ],
-  "activeDashboardId": "dash-devnotes-unified-v010",
+  "activeDashboardId": "dash-mt80bjwl-9789",
   "pinnedCards": [],
   "gridColumns": 12,
   "rowHeight": 92,
