@@ -113,9 +113,9 @@
           "h": 2,
           "id": "card-mt80bjwl-9612",
           "fx": 0,
-          "fw": 0.2165551839464883,
+          "fw": 0.20986622073578595,
           "fy": 0,
-          "fh": 128
+          "fh": 89
         },
         {
           "kind": "embed",
@@ -127,29 +127,32 @@
           "h": 6,
           "id": "card-mt80bjwm-6300",
           "fx": 0,
-          "fw": 1,
-          "fy": 174,
-          "fh": 613,
+          "fw": 0.6396321070234113,
+          "fy": 228,
+          "fh": 418,
           "accent": "#00504c",
-          "hideBaseHeader": true
+          "baseView": "Kanban Board",
+          "editable": true,
+          "livePreview": true,
+          "showOpenButton": true
         },
         {
           "kind": "embed",
-          "title": "Knowledge Index",
+          "title": "",
           "target": "_obsidian/Bases/DevNotes-Unified.base",
           "x": 0,
           "y": 28,
           "w": 12,
           "h": 6,
           "id": "card-mt80bjwm-1752",
-          "fx": 0,
-          "fw": 1,
-          "fy": 3024,
-          "fh": 632
+          "fx": 0.22324414715719063,
+          "fw": 0.41638795986622074,
+          "fy": 0,
+          "fh": 212
         },
         {
           "kind": "templater",
-          "title": "Create",
+          "title": "",
           "templater": {
             "items": [
               {
@@ -190,7 +193,7 @@
                 "sizeW": 48,
                 "sizeH": 44,
                 "col": 4,
-                "row": 1
+                "row": 2
               },
               {
                 "id": "dn-template-handoff",
@@ -199,7 +202,7 @@
                 "template": "_obsidian/Templates/handoff.template.md",
                 "sizeW": 48,
                 "sizeH": 44,
-                "col": 5,
+                "col": 4,
                 "row": 1
               },
               {
@@ -209,8 +212,8 @@
                 "template": "_obsidian/Templates/verification-evidence.template.md",
                 "sizeW": 48,
                 "sizeH": 44,
-                "col": 6,
-                "row": 1
+                "col": 3,
+                "row": 2
               },
               {
                 "id": "dn-template-prompt",
@@ -219,18 +222,18 @@
                 "template": "_obsidian/Templates/prompt-contract.template.md",
                 "sizeW": 48,
                 "sizeH": 44,
-                "col": 7,
-                "row": 1
+                "col": 2,
+                "row": 2
               },
               {
                 "id": "dn-template-business",
                 "label": "Business Operation",
                 "icon": "landmark",
                 "template": "_obsidian/Templates/business-operation.template.md",
-                "sizeW": 48,
-                "sizeH": 44,
-                "col": 8,
-                "row": 1
+                "sizeW": 44,
+                "sizeH": 40,
+                "col": 1,
+                "row": 2
               }
             ]
           },
@@ -240,32 +243,49 @@
           "h": 3,
           "id": "card-mt80bjwm-2942",
           "fx": 0,
-          "fw": 0.7475,
-          "fy": 3672,
-          "fh": 308
+          "fw": 0.20986622073578595,
+          "fy": 105,
+          "fh": 105
         },
         {
-          "kind": "git",
-          "title": "Git",
-          "git": {},
-          "x": 9,
-          "y": 34,
-          "w": 3,
-          "h": 3,
-          "id": "card-mt80bjwm-9727",
-          "fx": 0.7477678571428571,
-          "fw": 0.25223214285714285,
+          "id": "card-mt9a5twg-2706",
+          "x": 0,
+          "y": 3,
+          "kind": "tasks",
+          "title": "",
+          "tasks": {},
+          "w": 4,
+          "h": 4,
+          "fx": 0.653010033444816,
+          "fy": 228,
+          "fw": 0.34698996655518394,
+          "fh": 416
+        },
+        {
+          "id": "card-mt9bdvl4-2180",
+          "x": 0,
+          "y": 0,
+          "kind": "schedule",
+          "title": "",
+          "schedule": {},
+          "w": 8,
+          "h": 6,
+          "fx": 0.653010033444816,
           "fy": 0,
-          "fh": 158
+          "fw": 0.34698996655518394,
+          "fh": 212
         }
       ],
       "fitToPage": false,
       "showSearch": false,
       "header": {
-        "showTitle": false,
-        "title": "YOU CAN SEE THE CODE IN THE CONVERSATION HISTORY",
-        "logoIcon": "terminal",
-        "align": "left"
+        "showTitle": true,
+        "align": "center",
+        "spacingBelow": 0,
+        "title": "Dashboard",
+        "logoIcon": "computer",
+        "titleScale": 1,
+        "marginTop": 0
       },
       "background": {
         "kind": "image",
@@ -278,9 +298,218 @@
       "bannerHeight": 500,
       "bannerFullWidth": true,
       "bannerFade": false
+    },
+    {
+      "id": "dash-mt9an59i-7967",
+      "name": "Github",
+      "cards": [
+        {
+          "kind": "clock",
+          "title": "",
+          "x": 0,
+          "y": 0,
+          "w": 12,
+          "h": 2,
+          "id": "card-mt9an59i-355",
+          "fx": 0.8385761589403974,
+          "fw": 0.16142384105960264,
+          "fy": 0,
+          "fh": 101
+        },
+        {
+          "kind": "embed",
+          "title": "",
+          "target": "_obsidian/Bases/DevNotes-Unified.base",
+          "x": 0,
+          "y": 28,
+          "w": 12,
+          "h": 6,
+          "id": "card-mt9an59j-1667",
+          "fx": 0.6895695364238411,
+          "fw": 0.31043046357615894,
+          "fy": 117,
+          "fh": 293
+        },
+        {
+          "kind": "templater",
+          "title": "",
+          "templater": {
+            "items": [
+              {
+                "id": "dn-template-capture",
+                "label": "Capture",
+                "icon": "inbox",
+                "template": "_obsidian/Templates/capture.template.md",
+                "sizeW": 48,
+                "sizeH": 44,
+                "col": 1,
+                "row": 1
+              },
+              {
+                "id": "dn-template-task",
+                "label": "Task",
+                "icon": "circle-check-big",
+                "template": "_obsidian/Templates/task.template.md",
+                "sizeW": 48,
+                "sizeH": 44,
+                "col": 2,
+                "row": 1
+              },
+              {
+                "id": "dn-template-spec",
+                "label": "Specification",
+                "icon": "file-check-2",
+                "template": "_obsidian/Templates/specification.template.md",
+                "sizeW": 48,
+                "sizeH": 44,
+                "col": 3,
+                "row": 1
+              },
+              {
+                "id": "dn-template-decision",
+                "label": "Decision",
+                "icon": "git-branch",
+                "template": "_obsidian/Templates/adr-decision.template.md",
+                "sizeW": 44,
+                "sizeH": 34,
+                "col": 2,
+                "row": 2
+              },
+              {
+                "id": "dn-template-handoff",
+                "label": "Handoff",
+                "icon": "send",
+                "template": "_obsidian/Templates/handoff.template.md",
+                "sizeW": 44,
+                "sizeH": 34,
+                "col": 3,
+                "row": 2
+              },
+              {
+                "id": "dn-template-evidence",
+                "label": "Evidence",
+                "icon": "badge-check",
+                "template": "_obsidian/Templates/verification-evidence.template.md",
+                "sizeW": 44,
+                "sizeH": 36,
+                "col": 1,
+                "row": 2
+              }
+            ]
+          },
+          "x": 0,
+          "y": 34,
+          "w": 9,
+          "h": 3,
+          "id": "card-mt9an59j-2585",
+          "fx": 0.6895695364238411,
+          "fw": 0.1357615894039735,
+          "fy": 1,
+          "fh": 100
+        },
+        {
+          "kind": "git",
+          "title": "",
+          "git": {
+            "sections": [
+              "status",
+              "actions",
+              "changes",
+              "log"
+            ],
+            "actions": [
+              "commitAndSync",
+              "commit",
+              "push",
+              "pull",
+              "history",
+              "sourceControl",
+              "switchBranch",
+              "fetch",
+              "stageAll",
+              "unstageAll"
+            ]
+          },
+          "x": 9,
+          "y": 34,
+          "w": 3,
+          "h": 3,
+          "id": "card-mt9an59j-6916",
+          "fx": 0.29221854304635764,
+          "fw": 0.3841059602649007,
+          "fy": 0,
+          "fh": 410
+        },
+        {
+          "id": "card-mt9an59j-5159",
+          "x": 0,
+          "y": 11,
+          "kind": "stats",
+          "title": "",
+          "w": 4,
+          "h": 2,
+          "fx": 0,
+          "fy": 0,
+          "fw": 0.27897350993377484,
+          "fh": 241,
+          "stats": {
+            "advanced": true,
+            "queries": [],
+            "builtins": [
+              "notes",
+              "folders",
+              "tags"
+            ],
+            "attachmentTypes": [
+              "bases",
+              "images",
+              "canvas",
+              "videos",
+              "pdf",
+              "documents"
+            ]
+          }
+        },
+        {
+          "id": "card-mt9axl49-1978",
+          "x": 0,
+          "y": 1,
+          "kind": "heatmap",
+          "title": "",
+          "heatmap": {},
+          "w": 6,
+          "h": 3,
+          "fx": 0,
+          "fy": 256,
+          "fw": 0.27897350993377484,
+          "fh": 154
+        }
+      ],
+      "iconLucide": "github",
+      "fitToPage": true,
+      "showSearch": false,
+      "header": {
+        "showTitle": true,
+        "align": "center",
+        "spacingBelow": 0,
+        "title": "Github",
+        "logoIcon": "github",
+        "titleScale": 1,
+        "marginTop": 0
+      },
+      "background": {
+        "kind": "image",
+        "value": "BG4.jpg",
+        "opacity": 0.5,
+        "blur": 0
+      },
+      "backgroundLayout": "full",
+      "bannerHeight": 500,
+      "bannerFade": false,
+      "bannerFullWidth": true
     }
   ],
-  "activeDashboardId": "dash-mt80bjwl-9789",
+  "activeDashboardId": "dash-mt9an59i-7967",
   "pinnedCards": [],
   "gridColumns": 12,
   "rowHeight": 92,

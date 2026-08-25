@@ -27,6 +27,7 @@ workspace: codependent-coding
 authority: reference
 updated: 2026-08-24
 projects: "[[Codependent Coding]]"
+tasknotes_manual_order: tnmzzzzzzzzx
 ---
 
 # Harden the Maximal Template for Generation

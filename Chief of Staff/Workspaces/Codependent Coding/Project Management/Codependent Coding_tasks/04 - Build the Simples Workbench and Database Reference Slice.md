@@ -5,7 +5,7 @@ parentId:
 id: i5tw3dd560kf8ngv
 title: Build the Simples Workbench and Database Reference Slice
 type: task
-status: backlog
+status: in-progress
 priority: high
 start: ""
 due: ""
@@ -28,6 +28,8 @@ workspace: codependent-coding
 authority: reference
 updated: 2026-08-24
 projects: "[[Codependent Coding]]"
+tasknotes_manual_order: tncppppppppo
+dateModified: 2026-08-25T17:19:23.959-06:00
 ---
 
 # Build the Simples Workbench and Database Reference Slice

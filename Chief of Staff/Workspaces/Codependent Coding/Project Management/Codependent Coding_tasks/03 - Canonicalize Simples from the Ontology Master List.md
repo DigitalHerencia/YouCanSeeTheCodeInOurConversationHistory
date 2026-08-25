@@ -5,7 +5,7 @@ parentId:
 id: cwz4l3c0iee3814s
 title: Canonicalize Simples from the Ontology Master List
 type: task
-status: backlog
+status: ready
 priority: high
 start: 2026-08-20
 due: ""
@@ -26,6 +26,8 @@ workspace: codependent-coding
 authority: reference
 updated: 2026-08-24
 projects: "[[Codependent Coding]]"
+dateModified: 2026-08-25T17:19:06.428-06:00
+tasknotes_manual_order: tnfffffffffe
 ---
 
 # Canonicalize Simples from the Ontology Master List

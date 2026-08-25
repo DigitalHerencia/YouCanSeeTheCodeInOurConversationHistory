@@ -5,7 +5,7 @@ parentId:
 id: 512mrcv0rfcvsz91
 title: Consolidate the CodependentCoding Repository
 type: task
-status: backlog
+status: in-progress
 priority: high
 start: 2026-08-20
 due: ""
@@ -26,6 +26,8 @@ workspace: codependent-coding
 authority: reference
 updated: 2026-08-24
 projects: "[[Codependent Coding]]"
+tasknotes_manual_order: tncppppppppp
+dateModified: 2026-08-25T17:19:02.670-06:00
 ---
 
 # Consolidate the CodependentCoding Repository

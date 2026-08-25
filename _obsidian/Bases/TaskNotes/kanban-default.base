@@ -51,17 +51,6 @@ views:
       property: status
       direction: ASC
     order:
-      - status
-      - priority
-      - due
-      - scheduled
-      - projects
-      - contexts
-      - file.tags
-      - blockedBy
-      - file.name
-      - recurrence
-      - complete_instances
       - file.tasks
     sort:
       - property: tasknotes_manual_order
@@ -69,3 +58,10 @@ views:
     config:
       columnWidth: 280
       hideEmptyColumns: false
+    columnWidth: 220
+    maxSwimlaneHeight: 450
+    hideEmptyColumns: true
+    hideEmptySwimLanes: true
+    consolidateStatusIcon: true
+    cardLayout: compact
+    hideTopLevelSubtasks: false
