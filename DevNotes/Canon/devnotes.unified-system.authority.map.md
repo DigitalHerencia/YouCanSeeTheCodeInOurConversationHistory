@@ -21,9 +21,9 @@ tags:
 
 ## Human authority
 
-- [[DevNotes-Unified-System.Authoritative-Blueprint|Authoritative blueprint]]
-- [[Knowledge-Model.Authority-and-Ownership|Knowledge-model ownership]]
-- [[Metadata-and-Knowledge-Graph-Contract|Metadata and knowledge graph]]
+- [[DevNotes/Canon/Unified System/DevNotes-Unified-System.Authoritative-Blueprint|Authoritative blueprint]]
+- [[ZETTLECASTEN/Vault Remodel/Knowledge-Model.Authority-and-Ownership|Knowledge-model ownership]]
+- [[DevNotes/Canon/Unified System/Metadata-and-Knowledge-Graph-Contract|Metadata and knowledge graph]]
 - [[Epistemology-and-Source-Authority|Epistemology and source authority]]
 - [[Folder-Nomenclature-and-Information-Architecture|Folder nomenclature and information architecture]]
 - [[Codependent-Coding-Kernel-Distribution|Codependent Coding kernel distribution]]

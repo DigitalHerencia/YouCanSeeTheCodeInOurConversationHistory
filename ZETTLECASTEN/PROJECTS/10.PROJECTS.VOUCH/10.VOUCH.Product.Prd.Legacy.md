@@ -1,0 +1,313 @@
+# **vouch.prd.md**
+
+_(Product Requirements Document — aka “the plan you will try to ignore later”)_
+
+---
+
+## **1. Product Overview**
+
+### **Product Name**
+
+Vouch
+
+### **One-Liner**
+
+> Vouch is a commitment-backed payment system that ensures funds are only released when both parties confirm they showed up.
+
+---
+
+## **2. Problem Statement**
+
+People don’t show up.
+
+This causes:
+
+- Lost revenue
+- Wasted time
+- Broken trust
+
+Existing tools fail because:
+
+- Payment apps don’t enforce conditions
+- Scheduling tools don’t enforce commitment
+- Manual deposits are inconsistent and risky
+
+---
+
+## **3. Product Goals**
+
+### **Primary Goal**
+
+Enable reliable, trust-minimized in-person commitments through conditional payments.
+
+### **Secondary Goals**
+
+- Reduce no-shows
+- Eliminate deposit scams
+- Remove need for dispute resolution
+
+---
+
+## **4. Non-Goals (read this twice, please)**
+
+Vouch is NOT:
+
+- A marketplace
+- A scheduling tool
+- A messaging platform
+- A review system
+
+If you add any of these, I will spiritually haunt your repo.
+
+---
+
+## **5. User Roles**
+
+### **Payer**
+
+- Creates Vouch
+- Commits funds
+- Can trigger release
+
+### **Payee**
+
+- Accepts Vouch
+- Must show up
+- Receives funds
+
+---
+
+## **6. Core Features**
+
+---
+
+### **6.1 Account Creation & Verification**
+
+**Requirements:**
+
+- Email / phone signup
+- Identity verification (KYC)
+- Age verification (18+)
+- Stripe account connection
+
+**Acceptance Criteria:**
+
+- User cannot create or accept Vouch without verification
+- Verification status is stored and enforced
+
+---
+
+### **6.2 Payment Infrastructure**
+
+**Requirements:**
+
+- Stripe Connect integration
+- Funds held in Payee’s connected account (not platform)
+- Platform triggers release/refund
+
+**Acceptance Criteria:**
+
+- Platform never directly holds funds
+- Payments succeed/fail deterministically
+
+---
+
+### **6.3 Create Vouch**
+
+**Inputs:**
+
+- Amount
+- Time window
+- Recipient (link or user ID)
+
+**Flow:**
+
+1. Payer enters details
+2. Confirms payment
+3. Vouch created
+
+**Acceptance Criteria:**
+
+- Vouch has unique ID
+- Status = Pending
+
+---
+
+### **6.4 Accept Vouch**
+
+**Flow:**
+
+1. Payee receives link
+2. Logs in / signs up
+3. Accepts terms
+4. Accepts Vouch
+
+**Acceptance Criteria:**
+
+- Cannot accept without verification
+- Status = Active
+
+---
+
+### **6.5 Presence Confirmation**
+
+**Primary Method:**
+
+- GPS proximity (~1000 ft)
+
+**Fallback:**
+
+- Dual manual confirmation
+
+**Acceptance Criteria:**
+
+- Both users must confirm
+- One-sided confirmation does nothing
+
+---
+
+### **6.6 Payment Resolution**
+
+**Rules:**
+
+IF:
+
+- Both confirm within time window  
+    → Release funds
+
+ELSE:
+
+- Refund
+
+**Acceptance Criteria:**
+
+- Fully automated
+- No manual override
+- Final outcomes
+
+---
+
+## **7. System States**
+
+Each Vouch has states:
+
+- Pending (created, not accepted)
+- Active (accepted, awaiting meeting)
+- Completed (funds released)
+- Expired (refund triggered)
+
+---
+
+## **8. Edge Cases**
+
+You will forget these. Don’t.
+
+- User never opens app
+- GPS fails
+- One user confirms, other doesn’t
+- Payment fails
+- User disconnects Stripe
+
+**System must:**  
+→ default to refund unless both confirm
+
+---
+
+## **9. UX Requirements**
+
+### Must Be:
+
+- Clear
+- Fast
+- Low friction
+
+### Must Avoid:
+
+- Ambiguity
+- Hidden states
+- “What happens next?” confusion
+
+Critical screen:
+
+> **“Release / Confirm Presence”**
+
+If users hesitate here, you failed.
+
+---
+
+## **10. Legal / Compliance Constraints**
+
+- No custody of funds
+- No facilitation of services
+- No knowledge of transaction purpose
+- Mandatory user agreement + per-Vouch consent
+
+---
+
+## **11. Metrics (so you know if this isn’t a delusion)**
+
+Track:
+
+- Vouches created
+- Vouches completed
+- Completion rate
+- Refund rate
+- Avg transaction value
+- Revenue per Vouch
+
+If completion rate is low:  
+→ your UX sucks or users don’t trust it
+
+---
+
+## **12. Monetization**
+
+Model:
+
+> $1 minimum + 2.5% per Vouch
+
+Collected at:
+
+- Time of payment
+
+---
+
+## **13. MVP Scope**
+
+Launch with ONLY:
+
+- Auth + verification
+- Stripe Connect
+- Create / accept Vouch
+- Manual confirmation (skip GPS if needed)
+- Auto release / refund
+
+Everything else:  
+→ later
+
+---
+
+## **14. Future Enhancements (not now, stop it)**
+
+- GPS automation
+- Group Vouches
+- Recurring Vouches
+- API access
+
+Not before traction.
+
+---
+
+## **15. Success Criteria**
+
+Product is working if:
+
+- Users complete Vouches without support
+- Funds move correctly 100% of time
+- No disputes require intervention
+
+Product is failing if:
+
+- Users are confused
+- You need customer support
+- You add features to compensate

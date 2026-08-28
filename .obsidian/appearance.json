@@ -9,7 +9,7 @@
   "showRibbon": false,
   "showViewHeader": false,
   "nativeMenus": false,
-  "baseFontSize": 16,
+  "baseFontSize": 13,
   "enabledCssSnippets": [
     "devnotes-unified"
   ]

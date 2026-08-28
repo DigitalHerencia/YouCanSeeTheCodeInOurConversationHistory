@@ -17,7 +17,7 @@ tags:
 # Codependent Coding · Semantics
 
 - [[codependent-coding.workspace.home|Workspace]]
-- [[60.CODEPENDENTCODING.Docs.Terminology-Nomenclature.Reference|Terminology and nomenclature]]
+- [[ZETTLECASTEN/OldependentCoding/60.CODEPENDENTCODING.Docs.Terminology-Nomenclature.Reference|Terminology and nomenclature]]
 - [[CODEPENDENTCODING.TERMINOLOGY|Active terminology]]
 - [[CODEPENDENTCODING.GOVERNANCE|Active governance]]
 - [[devnotes.prompter.interproject-handoff.contract|Shared handoff grammar]]

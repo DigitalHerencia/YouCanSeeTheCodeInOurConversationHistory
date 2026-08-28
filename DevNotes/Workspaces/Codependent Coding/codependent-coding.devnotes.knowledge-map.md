@@ -17,9 +17,9 @@ tags:
 # Codependent Coding · Knowledge
 
 - [[codependent-coding.workspace.home|Workspace]]
-- [[60.CODEPENDENTCODING.Manifest.Map|Canonical corpus manifest]]
-- [[60.CODEPENDENTCODING.Provenance.Pattern-Traceability.Reference|Pattern provenance]]
-- [[60.CODEPENDENTCODING.Provenance.Ontology-Traceability.Reference|Ontology provenance]]
+- [[ZETTLECASTEN/OldependentCoding/60.CODEPENDENTCODING.Manifest.Map|Canonical corpus manifest]]
+- [[ZETTLECASTEN/OldependentCoding/60.CODEPENDENTCODING.Provenance.Pattern-Traceability.Reference|Pattern provenance]]
+- [[ZETTLECASTEN/OldependentCoding/60.CODEPENDENTCODING.Provenance.Ontology-Traceability.Reference|Ontology provenance]]
 - [[10.PROJECTS.CODEPENDENTCODING.Docs.Authoritative-Knowledge-System-Spec|Authoritative knowledge-system specification]]
 
 ![[_obsidian/Bases/Codependent-Coding.base#Workspace]]

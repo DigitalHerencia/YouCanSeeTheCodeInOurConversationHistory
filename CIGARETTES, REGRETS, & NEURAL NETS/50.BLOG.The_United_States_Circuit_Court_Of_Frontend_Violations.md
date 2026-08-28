@@ -1,0 +1,126 @@
+**Session 01: Code vs. Maintainability**
+ 
+*Clerk, read the docket.*
+  
+**Case 001: The People vs. `useEffect` Inside a Server Component**
+ 
+*Arraignment Hearing*
+ 
+**Clerk:** Count one: improper invocation of a client-side React hook inside a server component.
+ 
+**Judge:** And how does the defendant plead?
+ 
+**Defense Attorney:** Your honor, my client was under the impression all React components are the same now.
+ 
+**Judge:** Ignorance of the hydration model is no excuse. Bail denied.
+  
+**Case 002: `env.local` Leaks v. GitHub, Inc.**
+ 
+*Sentencing Hearing*
+ 
+**Clerk:** This case involves the public committing of secrets, access tokens, and in one instance, a MongoDB URI that ended in “pls_dont_hack.”
+ 
+**Judge:** The court sentences the defendant to revoking all keys manually, emailing DevOps with “hey can we rotate these real quick,” and living with the shame.
+ 
+**Gavel slams.**
+  
+**Case 003: `--legacy-peer-deps` as Defense Strategy**
+ 
+*Motion to Suppress Audit Logs*
+ 
+**Defense Attorney:** Your honor, if we just install everything with `--legacy-peer-deps`, it goes away.
+ 
+**Prosecutor:** Yes, and so do *half the dependencies*.
+ 
+**Judge:** Motion denied. You are not allowed to sweep this under the node_modules.
+  
+**Case 004: React Suspense vs. Reality**
+ 
+*Bail Hearing*
+ 
+**Clerk:** The app refuses to render anything until *all* server data resolves.
+ 
+**Judge:** Did you provide a fallback?
+ 
+**Defense:** We assumed the user could wait.
+ 
+**Judge:** You assumed wrong.
+ 
+**Gavel slams.**
+  
+**Case 005: The Great ISR Freeze of 2025**
+ 
+*Sentencing Hearing*
+ 
+**Clerk:** The defendant configured `revalidate: 60`, but never actually invalidated the cache.
+ 
+**Judge:** Site data was last updated four weeks ago.
+ 
+**Defendant:** But it was… so fast…
+ 
+**Judge:** Static and fast is still wrong. You are hereby sentenced to re-read the Next.js docs with all cookies disabled.
+  
+**Case 006: Unverified Webhooks v. Sanity**
+ 
+*Emergency Injunction*
+ 
+**Prosecutor:** The webhook accepts unauthenticated POST requests and blindly trusts the payload.
+ 
+**Defense:** It only handles newsletter signups!
+ 
+**Judge:** You’re storing PII in plaintext. You’ll be lucky if this trial finishes before the class action starts.
+ 
+**Court orders immediate middleware intervention.**
+  
+**Case 007: Failure to `use client` Directive**
+ 
+*Plea Deal*
+ 
+**Defendant:** I just added a click handler to a server component. It was one little thing.
+ 
+**Prosecutor:** The button rendered, but it never did anything.
+ 
+**Judge:** A misleading interface is a crime against UX.
+ 
+**Defense Attorney:** My client is prepared to plea and move the entire file into a `components/client/` folder.
+ 
+**Judge:** Acceptable. Court will monitor refactors closely.
+  
+**Case 008: Async Neglect in Server Components**
+ 
+*Sentencing Hearing*
+ 
+**Clerk:** Function marked `async` never was.
+ 
+**Judge:** Did you `await` without declaring it async?
+ 
+**Defendant:** I thought Next.js would just, like, know.
+ 
+**Judge:** You are sentenced to one full sprint of no Copilot and hand-written Promises.
+  
+**Case 009: Tailwind v4 v. Logic and Reason**
+ 
+*Motion to Delay Trial*
+ 
+**Defense:** Your honor, we followed the installation steps, but the styles never rendered.
+ 
+**Prosecutor:** You didn’t configure PostCSS. You styled a div for *hours* and thought Tailwind was broken.
+ 
+**Judge:** Trial delayed until `postcss.config.js` is created. Defendant must write `@layer components` 500 times.
+  
+**Case 010: JWT Possession With Intent to Persist**
+ 
+*Final Verdict*
+ 
+**Clerk:** The defendant stored a full admin JWT in localStorage. No hashing. No expiration. Just vibes.
+ 
+**Prosecutor:** Every user was one devtools tab away from becoming God.
+ 
+**Judge:** This is identity malpractice. You are sentenced to revoke every token you’ve ever issued and spend the weekend reading OAuth specs.
+ 
+**Defendant:** *audible sobbing*
+  
+### *Court Adjourned.*
+ 
+You may now resume shipping things that break silently.
+  

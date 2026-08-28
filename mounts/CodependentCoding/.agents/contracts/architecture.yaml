@@ -1,0 +1,72 @@
+schema_version: 5
+id: hipster-stack.architecture
+authority: machine-contract
+sources:
+  - context/docs/architecture.md
+  - context/docs/template.md
+  - context/docs/configuration.md
+  - context/docs/generator-cli.md
+  - context/docs/web.md
+
+current_repository:
+  apps: [web]
+  packages: [cli, core, schema]
+  template_path: template
+  docs_path: docs
+  maintainer_context_path: context
+  machine_governance_path: .agents
+
+shared_configuration:
+  consumers: [cli, web-constituter, portable-config]
+  one_schema: true
+  one_resolution_path: true
+  ui_may_duplicate_dependency_rules: false
+  selectable_option_requires_real_generation_effect: true
+
+boundaries:
+  web:
+    owns:
+      - product-presentation
+      - simples-presentation
+      - docs-presentation
+      - constituter-local-orchestration
+    forbidden:
+      - filesystem-generation
+      - provider-secrets
+      - duplicate-configuration-authority
+  cli:
+    owns: [command-parsing, prompts, terminal-output, core-invocation]
+    forbidden: [second-configuration-resolver]
+  generator:
+    owns:
+      - normalization
+      - constitution-resolution
+      - generator-template-catalog
+      - generation-plan
+      - materialization
+      - transforms
+      - provenance
+    forbidden: [nextjs-web-presentation, template-runtime-product-ui]
+  template:
+    standalone_application: true
+    forbidden:
+      - generator-ownership-catalog
+      - pruning-instructions
+      - constituter-state
+      - cli-implementation
+      - generation-plan
+
+generated_application:
+  preserve_codependent_coding_grammar: true
+  routes_adapt: true
+  features_orchestrate: true
+  components_render: true
+  schemas_validate: true
+  generator_internals_leak: false
+
+generation:
+  source_template_count: 1
+  network_template_fetch: false
+  collect_provider_secrets: false
+  windows_first_class: true
+  overwrite_unrelated_nonempty_target: false

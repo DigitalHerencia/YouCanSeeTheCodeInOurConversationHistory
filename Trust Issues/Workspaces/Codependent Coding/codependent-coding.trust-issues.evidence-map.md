@@ -17,8 +17,8 @@ tags:
 # Codependent Coding · Evidence
 
 - [[codependent-coding.workspace.home|Workspace]]
-- [[60.CODEPENDENTCODING.Docs.Validation-Conformance.Contract|Validation and conformance]]
-- [[60.CODEPENDENTCODING.Agents.Contracts.Validation.Contract|Agent validation contract]]
+- [[ZETTLECASTEN/OldependentCoding/60.CODEPENDENTCODING.Docs.Validation-Conformance.Contract|Validation and conformance]]
+- [[ZETTLECASTEN/OldependentCoding/60.CODEPENDENTCODING.Agents.Contracts.Validation.Contract|Agent validation contract]]
 - [[10.PROJECTS.CODEPENDENTCODING.Hipster-Stack.Implementation-Evidence-Catalog|Hipster Stack evidence]]
 - [[10.PROJECTS.CODEPENDENTCODING.Maximal-Template-Arrangement.Implementation-Evidence-Catalog|Maximal Template evidence]]
 

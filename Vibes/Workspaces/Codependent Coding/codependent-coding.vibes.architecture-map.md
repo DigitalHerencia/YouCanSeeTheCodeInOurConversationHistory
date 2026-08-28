@@ -17,7 +17,7 @@ tags:
 # Codependent Coding · Architecture
 
 - [[codependent-coding.workspace.home|Workspace]]
-- [[60.CODEPENDENTCODING.Agents.Contracts.Architecture.Contract|Architecture contract]]
+- [[ZETTLECASTEN/OldependentCoding/60.CODEPENDENTCODING.Agents.Contracts.Architecture.Contract|Architecture contract]]
 - [[10.PROJECTS.CODEPENDENTCODING.Hipster-Stack.Authoritative-Source-Spec|The Hipster Stack]]
 - [[10.PROJECTS.CODEPENDENTCODING.Maximal-Template.Authoritative-Domain-Library-Spec|The Maximal Template]]
 - [[10.PROJECTS.CODEPENDENTCODING.Anthimeria.Authoritative-Source-Spec|The Anthimeria]]

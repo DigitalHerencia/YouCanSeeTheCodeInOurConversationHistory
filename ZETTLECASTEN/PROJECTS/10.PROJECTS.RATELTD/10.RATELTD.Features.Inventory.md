@@ -1,0 +1,837 @@
+# Feature Inventory
+
+This note preserves the full feature universe for RateLtd.
+
+## Brand 
+
+- UI labels
+- banner and logo
+- README 
+- package metadata
+- CLI help
+- terminal title
+- splash screens
+- Add product brand constants:
+  - product name
+  - version label
+  - display title
+  - command name
+  - tagline
+  - default theme
+  - workspace config folder name
+- Keep display names separate from internal screen IDs.
+
+## termcn UI Adoption
+
+- Use termcn as the primary UI component foundation.
+- Install/verify compatible termcn packages.
+- Identify current Ink version.
+- Verify peer dependencies.
+- Confirm which components are Ink-compatible.
+- Separate Ink-compatible components from OpenTUI-only templates.
+- Build a local wrapper layer for termcn components.
+- Add Vercel theme as a named theme.
+- Preserve or migrate the existing matrix theme.
+- Add a theme registry:
+  - matrix
+  - vercel
+  - future themes
+- Store selected theme in settings.
+- Allow theme switching from PreferLtd.
+- Make theme tokens available to all UI components.
+- Validate narrow terminal behavior.
+- Validate Windows Terminal rendering.
+- Validate PowerShell glyph/icon behavior.
+- Add fallback ASCII mode for broken glyph environments.
+- Add a `termcn-lab` or dev-only screen for fast component testing.
+
+## termcn Components to Use
+
+- app shell
+- bullet list
+- help screen
+- info box
+- login flow
+- setup flow
+- splash screen
+- usage monitor
+- welcome screen
+- aspect ratio
+- markdown
+- box
+- center
+- columns
+- divider
+- grid
+- scroll view
+- spacer
+- stack
+- code blocks
+- diff view
+- directory tree
+- git status
+- JSON viewer
+- command palette
+- tabs
+- menu
+- multiselect
+- select
+- checkbox
+- data grid
+- status message
+- alert
+- banner
+- multi progress
+- progress bar
+- clipboard
+- log
+- panel
+- embedded terminal
+- error boundary
+- file change
+- streaming text
+- chat thread
+- keyboard shortcuts
+- clock
+- wizard
+- confirm
+- file picker
+- tooltip
+- notification center
+- dialog
+- modal
+- drawer
+
+## App Shell
+
+Every screen should share:
+
+- RateLtd banner/logo
+- target repo strip
+- package manager and node version strip
+- Git branch/status strip
+- current screen breadcrumbs
+- command palette hint
+- help hint
+- status indicator
+- version label
+- active job indicator
+- notifications
+
+## Navigation and Input
+
+- Top-level navigation:
+  - LauncherLtd
+  - RateLtd
+  - EditorLtd
+  - CommanderLtd
+  - DifferLtd
+  - LoggerLtd
+  - PreferLtd
+  - HelpLtd
+- Arrow navigation.
+- Tab/shift-tab area switching.
+- Enter/select.
+- Escape/back.
+- Ctrl+P command palette.
+- `?` help.
+- `q` quit.
+- Screen-local shortcuts.
+- Modal input priority.
+- Text-entry input priority.
+- Command cancellation.
+- Destructive-action confirmation.
+- Prevent global shortcuts from firing while typing.
+- Make modal/input priority explicit.
+
+## Responsive Terminal Layout
+
+- Wide layout uses multi-column dashboards.
+- Medium layout uses two-column panels.
+- Narrow layout uses stacked single-column panels.
+- Scroll panels where needed.
+- Truncate consistently.
+- Avoid browser layout assumptions.
+- Preserve Windows Terminal usability.
+
+## Workspace and Filesystem
+
+- File tree.
+- File picker.
+- Search files.
+- Preview file.
+- Recent files.
+- Create file.
+- Create folder.
+- Rename file/folder.
+- Move file/folder.
+- Delete file/folder with confirmation.
+- Copy absolute path.
+- Copy relative path.
+- Open in external editor.
+- Open in Explorer.
+- Filter by extension.
+- Ignore `node_modules` and build artifacts.
+- Show file metadata.
+- Show file size.
+- Show modified time.
+- Detect generated files.
+- Detect binary files.
+- Detect large files.
+- Normalize Windows paths.
+- Support UNC paths.
+- Support paths with spaces.
+- Enforce safe root boundaries.
+- Prevent writes/deletes outside the selected target unless explicitly allowed.
+- Handle permission errors.
+- Handle symlinks.
+- Use file watchers where useful.
+- Debounce refresh.
+- Respect `.gitignore`.
+- Add fuzzy file search.
+- Integrate ripgrep.
+- Virtualize large directory trees if needed.
+
+## Clipboard and Writer Workflow
+
+- Paste and parse clipboard.
+- Detect AI command.
+- Detect macro JSON.
+- Detect file-write JSON.
+- Detect file payload.
+- Detect patch.
+- Detect markdown.
+- Detect plain shell command.
+- Validate payload.
+- Show warnings.
+- Preview payload.
+- Preview proposed writes.
+- Show file changes.
+- Show patch diff.
+- Apply changes.
+- Reject changes.
+- Save draft.
+- Export handoff.
+- Copy command summary.
+- Generate Codex prompt.
+- Generate GitHub issue/PR plan.
+- Validate changed files after write.
+- Show before/after preview.
+- Integrate with DifferLtd.
+- Parse markdown/prompt content.
+- Support strict JSON macro parsing.
+- Strip markdown fences when parsing clipboard payloads.
+- Detect suspicious prose.
+- Support multi-file transactions.
+- Support partial apply.
+- Write audit logs.
+- Create generated patch sessions.
+- Detect conflicts.
+- Preserve Codex handoff format.
+
+## Command Execution
+
+- Command catalog.
+- Script discovery.
+- PowerShell module/script index.
+- Command search.
+- Run selected command.
+- Run package scripts.
+- Run Git commands.
+- Run verification workflow.
+- Run custom macros.
+- Run shell command with confirmation.
+- Stream output.
+- Cancel command.
+- Save output log.
+- Copy output.
+- Retry command.
+- View command history.
+- Mark commands safe/medium/destructive/admin/network/secret-sensitive.
+- Support dry-run/preview where possible.
+- Use explicit command lifecycle states.
+- Prevent orphaned processes.
+- Add command queue and concurrency guards.
+- Track command metadata:
+  - id
+  - title
+  - description
+  - category
+  - shortcut
+  - risk level
+  - enabled/disabled predicate
+  - handler
+
+## PowerShell Integration
+
+- Inventory downloaded `lazywinadmin/PowerShell` scripts.
+- Classify scripts:
+  - safe read-only
+  - local system read
+  - file mutation
+  - network/system mutation
+  - destructive/admin
+- Extract script metadata:
+  - name
+  - description
+  - parameters
+  - examples
+  - required modules
+  - admin requirement
+  - output type
+- Build a PowerShell command manifest.
+- Add sandbox/allowlist.
+- Add execution policy handling.
+- Use `pwsh` first.
+- Fall back to Windows PowerShell if needed.
+- Handle quoted paths.
+- Handle long-running commands.
+- Handle prompts/interactivity.
+- Handle credentials securely.
+- Capture PowerShell streams:
+  - stdout
+  - stderr
+  - warning
+  - verbose
+  - debug
+  - information
+- Normalize output into structured results when possible.
+- Add timeout support.
+- Add cancellation via child process kill.
+- Add command transcript logging.
+- Detect admin/elevation requirements.
+- Detect PowerShell availability.
+- Detect PowerShell version.
+- Detect required module dependencies.
+- Warn for unsigned/untrusted scripts.
+- Isolate profiles.
+- Prevent random downloaded scripts from running without review.
+
+## Git and Diff
+
+- Git status.
+- Changed files list.
+- Staged/unstaged tabs.
+- File diff preview.
+- Split diff view.
+- Unified diff fallback.
+- Word-level diff.
+- Hunk navigation.
+- Stage file.
+- Unstage file.
+- Stage hunk if feasible.
+- Revert file.
+- Copy diff.
+- Save patch.
+- Compare branches.
+- Compare commits.
+- Preview AI file changes.
+- Accept/reject AI changes.
+- Open diff from Writer/Editor.
+- Open PR diff.
+- Show GitHub PR diff if connected.
+- Normalize Git diff output.
+- Handle large diffs.
+- Handle binary files.
+- Handle renamed files.
+- Handle deleted files.
+- Handle new files.
+- Handle CRLF/LF noise.
+- Add ignore whitespace toggle.
+- Add branch compare mode.
+- Add PR compare mode.
+- Add diff search.
+- Add hunk copy.
+- Add patch application path.
+- Add conflict display.
+- Add merge/rebase conflict helper later.
+
+## GitHub Workflow
+
+- Detect GitHub remote.
+- Show current branch.
+- Show upstream branch.
+- Show dirty status.
+- Show ahead/behind.
+- Show recent commits.
+- Show open PR for current branch.
+- Show PR checks.
+- Show CI status.
+- Create branch.
+- Commit staged changes.
+- Push branch.
+- Open PR.
+- Copy PR summary.
+- Pull latest.
+- Fetch.
+- Compare with main.
+- Show changed files.
+- Show GitHub issue/PR links.
+- Generate PR description from diff.
+- Generate commit message from staged diff.
+- Review changed files before commit.
+- Warn before committing dirty generated/log files.
+- Detect GitHub CLI.
+- Detect GitHub auth status.
+- Parse remotes.
+- Read repository metadata.
+- Detect branch protection where possible.
+- Use GitHub API or GitHub CLI adapter.
+- Detect PR templates.
+- Read CI status.
+- Confirm safe push.
+- Prevent accidental commit on wrong branch.
+- Add branch naming helper.
+- Add conventional commit helper.
+
+## Editor
+
+- File open.
+- File preview.
+- Syntax-highlighted code blocks.
+- Search within file.
+- Edit buffer.
+- Unsaved changes state.
+- Save file.
+- Save as.
+- Open in external editor.
+- Open in Monaco companion.
+- Show diagnostics.
+- Show file metadata.
+- Show recent files.
+- Show AI proposed changes.
+- Apply patch.
+- Revert file.
+- Compare current buffer to disk.
+- Detect external changes.
+- Prevent overwrite conflicts.
+- Create editor adapter interface.
+- Create file buffer model.
+- Track dirty buffers.
+- Handle encoding.
+- Handle large files.
+- Detect binary files.
+- Detect readonly files.
+- Handle symlinks.
+- Watch files for external changes.
+- Resolve save conflicts.
+- Configure external editor command.
+- Build Monaco dev server or static companion app if used.
+- Secure local server binding.
+- Add workspace trust model.
+- Add cross-platform open command.
+- Add editor command registry.
+
+## Logs and Sessions
+
+- Session list.
+- Run history.
+- Command history.
+- Failed step focus.
+- View stdout/stderr.
+- Copy step output.
+- Copy full session.
+- Save session.
+- Export handoff.
+- Filter logs.
+- Search logs.
+- Open latest failure.
+- View active run.
+- View command timeline.
+- View clipboard parse events.
+- View file write events.
+- View Git events.
+- View settings changes.
+- View app errors.
+- Define log event schema.
+- Preserve `.agent-logs/events.jsonl` as append-oriented operational history unless intentionally changed.
+- Add session store.
+- Add run store.
+- Add log compaction/retention.
+- Export logs as:
+  - markdown
+  - JSON
+  - JSONL
+  - patch bundle
+  - Codex handoff
+- Redact sensitive output.
+- Handle max log size.
+- Rotate logs.
+- Add debug mode.
+- Separate user-facing logs from internal logs.
+
+## Settings
+
+- Startup screen setting.
+- Copy mode.
+- Theme.
+- Save logs automatically.
+- Confirmation for risky commands.
+- Centralized backups.
+- Default target root.
+- Session retention.
+- Profile detection summary.
+- PowerShell settings.
+- Git settings.
+- Editor settings.
+- Diff settings.
+- AI/write settings.
+- Keyboard shortcut settings.
+- Appearance settings.
+- Notification settings.
+- Settings schema.
+- Versioned settings file.
+- Migration from old settings.
+- Default settings.
+- Settings validation.
+- Broken settings recovery.
+- Export/import settings.
+- Reset category.
+- Reset all.
+- Per-workspace overrides.
+- Global vs local settings.
+- Environment variable overrides.
+- Secret handling.
+- Config path decision:
+  - old `.meatharness`
+  - new `.rateltd`
+  - migration bridge
+
+## Diagnostics and Troubleshooting
+
+- Health check screen.
+- Dependency check.
+- Node version check.
+- pnpm version check.
+- Git availability check.
+- PowerShell availability check.
+- GitHub auth check.
+- termcn component availability check.
+- Config file check.
+- Session/log storage check.
+- File permissions check.
+- Workspace validation.
+- Package scripts validation.
+- Clear cache.
+- Clear sessions.
+- Clear logs.
+- Reset settings.
+- Repair settings.
+- Rebuild index.
+- Export diagnostic bundle.
+- Show app version/environment.
+- Diagnostics service.
+- Health check registry.
+- Severity levels:
+  - info
+  - warning
+  - error
+  - fatal
+- Fix actions per diagnostic.
+- Troubleshooting recommendations.
+- Copy diagnostics action.
+- Open logs action.
+- Safe mode startup.
+- Recovery mode startup.
+- Crash boundary.
+- Error reporting screen.
+- Terminal capability detection.
+- Glyph support test.
+- Width/height warnings.
+
+## Workflow System
+
+- Workflow list.
+- Workflow details.
+- Workflow steps.
+- Step safety classification.
+- Step progress.
+- Step stdout/stderr.
+- Step retry.
+- Step skip.
+- Step cancellation.
+- Workflow templates.
+- Custom macros.
+- JSON workflow intake.
+- Clipboard workflow intake.
+- Save workflow.
+- Duplicate workflow.
+- Delete workflow.
+- Export workflow.
+- Import workflow.
+- Workflow schema.
+- Step registry.
+- Runner engine.
+- Sequential execution.
+- Parallel execution later.
+- Timeout per step.
+- Cancellation.
+- Failure policy:
+  - stop on fail
+  - continue on warning
+  - ask user
+- Rollback hooks where possible.
+- Progress events.
+- Persist run results.
+- UI integration with LoggerLtd.
+
+## Setup and Onboarding
+
+- First-run welcome.
+- Splash screen.
+- Setup wizard.
+- Choose default target root.
+- Choose theme.
+- Detect PowerShell.
+- Detect Git.
+- Detect GitHub CLI.
+- Detect Node/pnpm.
+- Configure log retention.
+- Configure safety confirmations.
+- Create settings file.
+- Import old MeatHarness settings.
+- Quick start into LauncherLtd.
+- First-run detection.
+- Setup completion marker.
+- Safe setup retry.
+- Migration summary.
+- Optional GitHub auth detection.
+- Optional Codex handoff config.
+- Terminal compatibility check.
+- Theme preview.
+- Sample workspace session.
+
+## Usage Monitor
+
+- Command runtime tracking.
+- Workflow duration tracking.
+- Session count.
+- Failed runs.
+- Passed runs.
+- Files changed.
+- Diffs reviewed.
+- Clipboard payloads parsed.
+- Logs size.
+- Command frequency.
+- Current active process elapsed time.
+- CPU/memory optional.
+- Repo activity summary.
+- Metrics schema.
+- Local-only telemetry.
+- Aggregate session stats.
+- Daily/weekly view.
+- Storage limits.
+- Privacy controls.
+- Export metrics.
+- Reset metrics.
+
+## Notifications and Overlays
+
+- Toast-style notifications.
+- Persistent notification center.
+- Confirmation modals.
+- Help drawer.
+- Settings drawer.
+- Command details modal.
+- Diff detail modal.
+- Error detail modal.
+- Tooltip/help hints.
+- Destructive action dialog.
+- Long-running command drawer.
+- Overlay state machine.
+- Modal priority in input router.
+- Notification queue.
+- Optional notification persistence.
+- Auto-dismiss behavior.
+- Copy details action.
+- Error expansion/collapse.
+
+## Markdown and Code Rendering
+
+- Render README.
+- Render generated plans.
+- Render command output summaries.
+- Render Codex prompts.
+- Render handoff docs.
+- Render markdown clipboard payloads.
+- Syntax-highlight code blocks.
+- Truncate large markdown.
+- Scroll markdown.
+- Copy markdown.
+- Preview markdown before write.
+- Markdown sanitization.
+- Terminal-safe markdown renderer.
+- Code language detection.
+- ANSI handling.
+- Long line wrapping.
+- Tables.
+- Links.
+- Heading navigation.
+- Search within markdown.
+- Export markdown.
+
+## JSON and Data Grid
+
+- Inspect JSON config.
+- Inspect package.json.
+- Inspect tsconfig.
+- Inspect workflow payloads.
+- Inspect parsed clipboard payloads.
+- Inspect logs.
+- Show tabular results for:
+  - files
+  - scripts
+  - sessions
+  - commands
+  - diagnostics
+  - Git changes
+  - PowerShell scripts
+- JSON safe parse.
+- Collapsible tree.
+- Large JSON handling.
+- Copy JSON path.
+- Copy value.
+- Validate JSON schema.
+- Data grid selection.
+- Sort/filter.
+- Column widths.
+- Row virtualization if needed.
+
+## Embedded Terminal
+
+- Run shell commands inside a panel.
+- Stream stdout/stderr.
+- Support active command view.
+- Cancel process.
+- Save output.
+- Copy output.
+- Show command metadata.
+- Show elapsed time.
+- Show current step.
+- Show partial output if timed out.
+- Choose between PTY and child process execution.
+- Support Windows PTY if used.
+- Handle raw mode.
+- Clean up processes on exit.
+- Prevent orphaned processes.
+- Add command queue.
+- Add command concurrency guard.
+- Inject environment intentionally.
+- Select working directory.
+- Support shell selection:
+  - pwsh
+  - powershell.exe
+  - cmd
+  - bash if available
+- Render ANSI output.
+
+## Safety and Risk System
+
+- Risk levels:
+  - safe
+  - medium
+  - destructive
+  - admin
+  - network
+  - secret-sensitive
+- Confirmation for risky commands.
+- Preview before mutation.
+- Dry-run where possible.
+- Backups before file writes only if intentionally added.
+- Logs for all mutations.
+- Clear destructive-action labels.
+- Require typed command descriptors.
+- Command allowlist.
+- Command denylist.
+- Dangerous pattern detector:
+  - `Remove-Item -Recurse`
+  - `rm -rf`
+  - force push
+  - reset hard
+  - clean -fd
+  - deleting outside repo
+  - writing outside repo
+- Path boundary enforcement.
+- Session rollback support.
+- Command cancellation.
+- Admin/elevation warning.
+
+## Testing and Validation
+
+- TypeScript compile.
+- Unit tests.
+- Component smoke tests.
+- Controller reducer tests.
+- Input router tests.
+- Command runner tests.
+- PowerShell adapter tests.
+- File system service tests.
+- Git service tests.
+- Diff parser tests.
+- Settings migration tests.
+- Manual TUI smoke test.
+- Windows Terminal test.
+- Narrow terminal layout test.
+- No orphan process test.
+- No global shortcut during text input test.
+- Update package scripts where necessary.
+- Add test fixtures.
+- Add fake repos for tests.
+- Add fake command runner.
+- Add mock file system.
+- Add snapshot-free TUI component testing where possible.
+- Add CI workflow.
+- Add lint/typecheck/test gate.
+- Add release check.
+
+## Documentation
+
+- README.
+- Installation guide.
+- Command reference.
+- Screen reference.
+- Keyboard shortcuts.
+- Settings reference.
+- PowerShell integration guide.
+- Git/GitHub workflow guide.
+- Editor integration guide.
+- Diff workflow guide.
+- Troubleshooting guide.
+- Architecture guide.
+- Codex handoff guide.
+- Migration notes from MeatHarness to RateLtd.
+- ADRs:
+  - adapter-first integration
+  - Monaco companion instead of direct embed
+  - PowerShell scripts as providers, not core replacement
+  - termcn wrapper layer
+  - screen IDs separate from display names
+- Contribution notes for future agents.
+- Repo scavenging notes.
+- License notes.
+
+## Release and Packaging
+
+- CLI binary.
+- Version display.
+- Build output.
+- Local install.
+- Global install.
+- Dev mode.
+- Production mode.
+- Safe mode.
+- Debug mode.
+- Config migration.
+- Changelog.
+- Package name decision.
+- npm binary name.
+- ESM/CJS posture.
+- Node engine.
+- pnpm version.
+- Bundle strategy.
+- External dependency strategy.
+- Monaco dependency strategy.
+- Optional peer dependencies for editor companion.
+- Release scripts.
+- Tagging.
+- GitHub release notes.

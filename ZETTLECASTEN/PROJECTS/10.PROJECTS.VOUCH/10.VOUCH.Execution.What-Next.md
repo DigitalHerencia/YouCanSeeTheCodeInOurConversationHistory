@@ -1,0 +1,259 @@
+---
+title: Untitled 1
+source:
+created: 05/05/2026
+parent:
+description:
+tags: []
+type:
+---
+## Locked
+
+Route orchestration
+- app/** page.tsx files are thin route shells only.
+- layout.tsx files are thin shell wrappers.
+- Route-group loading.tsx handles normal static/loading fallback.
+- Dynamic page shells may wrap the feature page in Suspense with a custom page skeleton.
+- No auth, authz, tenancy, DTO shaping, provider logic, Prisma, Stripe, or complex branching in app/**.
+
+Feature orchestration
+- features/** owns page-level orchestration.
+- One page-level feature component per route/page.
+- Feature components compose fetchers, actions, Suspense boundaries, URL/search params, action result mapping, and page states.
+- Client interactivity goes into colocated *.client.tsx feature/client components.
+- Features should not become design-system components.
+
+Pure UI component layer
+- components/** is pure UI.
+- No protected fetching.
+- No server actions.
+- No provider SDK logic.
+- No authz.
+- No hidden domain mutation.
+- Built from shadcn/ui primitives and approved shared components.
+- Legacy/domain-specific visual components get deleted, not kept as fallbacks.
+
+Golden prototype direction
+- Public/marketing/auth pages already established the visual/component baseline.
+- Everything else gets rebuilt from that Lego set.
+- We consolidate into shared/layout/navigation/ui components where possible.
+- Domain-specific components survive only when they represent reusable pure UI with narrow display props and no orchestration.
+
+
+## Component architecture
+
+This is the most important frontend decision:
+
+```
+Golden prototypes first.Everything else gets replaced or deleted.No fallback graveyard.
+```
+
+That is correct.
+
+The public/auth pages are the source of truth for visual language. Tenant/admin pages should not invent their own card systems, panel systems, badge systems, or layout systems.
+
+Current golden primitives used on dashboard:
+
+```
+SectionIntroMetricGridCalloutPanelCtaPanelSurfaceButton
+```
+
+The dashboard cleanup exposed the next missing golden primitive: a reusable list/action panel. Not a Vouch-only component unless it truly has domain behavior. Better name:
+
+```
+components/data-display/action-list-panel.tsx
+```
+
+It should support:
+
+- title/description/header icon
+- row leading slot: avatar/icon/initials
+- title/meta/status badge
+- value/deadline slot
+- action slot
+- full-width rows
+- mobile-first stacking
+- brand-blue-only defaults
+
+That can replace dashboard vouch rows, setup requirement lists, payment readiness queues, admin operation queues, and vouch list rows.
+
+
+## Canonical Golden Prototype List
+
+```txt
+components/ui/button.tsx
+
+components/providers/app-provider.tsx
+
+components/navigation/public-shell.tsx
+components/navigation/app-shell.tsx
+components/navigation/admin-shell.tsx
+components/navigation/public-header.tsx
+components/navigation/public-footer.tsx
+components/navigation/app-header.tsx
+components/navigation/app-sidebar.tsx
+components/navigation/mobile-header.tsx
+components/navigation/mobile-bottom-nav.tsx
+components/navigation/back-link.tsx
+components/navigation/breadcrumb.tsx
+components/navigation/user-menu.tsx
+
+components/brand/logo-lockup.tsx
+components/brand/verification-mark.tsx
+components/brand/wordmark.tsx
+
+components/shared/surface.tsx
+components/shared/action-row.tsx
+components/shared/page-header.tsx
+components/shared/section-intro.tsx
+components/shared/process-panel.tsx
+components/shared/metric-grid.tsx
+components/shared/card-grid.tsx
+components/shared/callout-panel.tsx
+components/shared/rule-panel.tsx
+components/shared/summary-panel.tsx
+components/shared/detail-panel.tsx
+components/shared/divider.tsx
+
+components/forms/brutalist-form.tsx
+components/forms/form-section.tsx
+components/forms/field-group.tsx
+components/forms/text-input.tsx
+components/forms/email-input.tsx
+components/forms/money-input.tsx
+components/forms/textarea.tsx
+components/forms/select.tsx
+components/forms/switch.tsx
+components/forms/checkbox.tsx
+components/forms/date-picker.tsx
+components/forms/time-select.tsx
+components/forms/submit-button.tsx
+
+components/feedback/loading-state.tsx
+components/feedback/empty-state.tsx
+components/feedback/error-state.tsx
+components/feedback/inline-alert.tsx
+components/feedback/toast-message.tsx
+components/feedback/status-badge.tsx
+components/feedback/status-dot.tsx
+components/feedback/progress-meter.tsx
+components/feedback/step-indicator.tsx
+
+components/data-display/stat-card.tsx
+components/data-display/stat-grid.tsx
+components/data-display/timeline.tsx
+components/data-display/timeline-item.tsx
+components/data-display/summary-row.tsx
+components/data-display/summary-list.tsx
+components/data-display/summary-panel.tsx
+components/data-display/countdown.tsx
+components/data-display/table.tsx
+```
+
+Working deletion rule:
+
+```txt
+If the pattern exists on public/auth golden pages, preserve/generalize it.
+If it only exists inside a domain component folder, replace it with golden shared/forms/feedback/data-display/navigation primitives and delete the legacy component.
+No fallback compatibility layer unless required to keep the build green during a single commit.
+```
+
+## Stripe
+
+Today’s Stripe work was painful but valuable. The big win is that the account confusion is now documented and no longer floating around as tribal knowledge.
+
+Current source of truth:
+
+```
+Sandbox platform:   acct_1TPa46GV5dKxUPtbSandbox connected:  acct_1TQHpNGV5d6axbAJLive platform:      acct_1TQHH2GuFcEUvSe9
+```
+
+And the sandbox connected account is actually usable:
+
+```
+card_payments activetransfers activecharges_enabled truepayouts_enabled truedetails_submitted trueno currently_due / past_due requirements
+```
+
+That means the next Stripe work can be real implementation validation, not account archaeology.
+
+Criticism: the Stripe connector being scoped to live is a trap. We should assume the connector is unsafe for sandbox inspection unless explicitly re-scoped. CLI is the current sandbox truth.
+
+Also, return routes are still necessary:
+
+```
+/settings/payment/return/settings/payout/return
+```
+
+Those pages must not say “success” just because Stripe redirected back. They need to refresh/reconcile and show state.
+
+## List
+
+1. ***Payment Contract:*** What object owns pricing snapshot, fee breakdown, gross amount, net amount, beneficiary, authorization expiry, capture eligibility, refund semantics, and provider IDs.
+
+2. ***Transition Contract:*** Every allowed state transition, who can trigger it, required preconditions, transaction boundary, provider side effect, audit side effect, and terminal outcome.
+
+3. ***Webhook Contract:*** Event type, dedupe key, validation, mapping, idempotent write, reconciliation path, retry semantics.
+
+4. ***Setup Readiness Contract:*** Exactly what makes a payer ready, what makes a payee ready, what blocks acceptance, what blocks creation, and how readiness is computed.
+
+5. ***UI Contract:*** Route maps to feature. Feature composes only golden prototypes. No legacy components. Delete replaced surfaces.
+
+6. ***Operational Contract:*** Cron expirations. Late reconciliation. Admin retry surfaces. Observability. Alerts.
+
+
+## Mt. Code
+
+Yes. There is still a mountain of code.
+
+Not “start over” mountain. More like:
+
+```txt
+the foundation is poured
+the framing is up
+but plumbing, electrical, drywall, inspection, and finish work are still very real
+```
+
+Roughly:
+
+```txt
+Frontend UI cleanup: a lot, but repetitive.
+Setup/settings/payment/payout pages: medium-large.
+Vouch create/accept/confirm/detail flows: large.
+Stripe state machine + webhooks: large and high-risk.
+Admin/reconciliation/failure states: medium-large.
+Tests/e2e/sandbox proof: large.
+```
+
+The good news: it is no longer mostly unknown code. It is mostly **known surfaces that need convergence**.
+
+The scary part is Stripe, not because it is impossible, but because it has to be exact:
+
+```txt
+PaymentIntent create
+manual authorization
+capability gating
+destination/application fee behavior
+capture
+cancel
+refund fallback
+webhook reconciliation
+idempotency
+audit events
+state transition guards
+expiration jobs
+retry handling
+```
+
+That is real implementation work.
+
+The UI mountain is different. It is mostly mechanical:
+
+```txt
+replace legacy cards
+standardize panels
+delete domain components
+normalize route shells
+promote missing golden primitives
+repeat per page
+```
+

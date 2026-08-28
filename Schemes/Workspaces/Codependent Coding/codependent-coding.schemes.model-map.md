@@ -17,6 +17,6 @@ tags:
 # Codependent Coding · Models
 
 - [[codependent-coding.workspace.home|Workspace]]
-- [[60.CODEPENDENTCODING.Agents.Contracts.Ontology.Contract|Ontology contract]]
+- [[ZETTLECASTEN/OldependentCoding/60.CODEPENDENTCODING.Agents.Contracts.Ontology.Contract|Ontology contract]]
 - [[10.PROJECTS.CODEPENDENTCODING.Ontologies.Authoritative-Source-Spec|Ontologies authority]]
 - [[10.PROJECTS.CODEPENDENTCODING.Simples.Authoritative-Source-Spec|Simples authority]]

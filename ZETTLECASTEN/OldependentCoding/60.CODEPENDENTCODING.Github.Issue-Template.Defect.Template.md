@@ -1,0 +1,121 @@
+---
+title: Codependent Coding Knowledge-System Defect Template
+type: template
+scope: domain
+project: CodependentCoding
+domain: github
+artifact: defect-issue-template
+kind: template
+namespace: codependentcoding.github.issue-template.defect.template
+status: active
+authority: reference
+parent: "[[codependentcoding.manifest.map]]"
+depends_on:
+  - "[[codependentcoding.docs.validation-conformance.contract]]"
+  - "[[codependentcoding.docs.governance-model.contract]]"
+supersedes: []
+tags:
+  - codependentcoding/github
+  - codependentcoding/templates
+  - status/active
+created: 2026-08-08
+updated: 2026-08-08
+source_repository: DigitalHerencia/CodependentCoding
+source_path: .github/ISSUE_TEMPLATE/defect.yml
+source_commit: 773a3469b80d8f8aafccecd749c60ebdb8a930ae
+source_blob: f98c6404473a6124167b10d658836a55d33a1c3c
+source_format: yaml
+---
+# Knowledge-System Defect Issue Template
+
+The original source payload is preserved verbatim below.
+
+```yaml
+name: Knowledge-system defect
+about: Report a conformance, provenance, architecture, governance, or verification defect
+title: "[DEF-] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for defects in the Codependent Coding™ Knowledge System. Do not mark work complete without executed validation evidence.
+  - type: input
+    id: defect_id
+    attributes:
+      label: Defect / finding ID
+      description: Use the authoritative audit or finding identifier when one exists.
+      placeholder: DEF-HIGH-001
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: State the defect and why it matters.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Cite current repository paths, commit SHAs, commands, outputs, or source evidence.
+    validations:
+      required: true
+  - type: textarea
+    id: affected_artifacts
+    attributes:
+      label: Affected artifacts
+      description: List canonical documents, contracts, scripts, reports, or repository areas.
+    validations:
+      required: true
+  - type: input
+    id: requirement_ids
+    attributes:
+      label: Requirement IDs
+      description: Exact traceability IDs when known. Leave blank rather than inventing identifiers.
+      placeholder: VAL-011, RPT-007
+  - type: textarea
+    id: remediation
+    attributes:
+      label: Required remediation
+      description: Describe the required outcome, not an implementation shortcut.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Provide objective, testable criteria using a task list where useful.
+      placeholder: |
+        - [ ] Criterion one
+        - [ ] Criterion two
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation procedure and evidence
+      description: State the commands/reviews that must run, the expected evidence, and what the evidence proves.
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / blockers
+      description: Use GitHub issue links or numbers when known. State None when there are no blockers.
+    validations:
+      required: true
+```

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 3,
+  "status": "in-review",
+  "observedRevision": "617c980",
+  "observedDate": "2026-08-13",
+  "currentOutcome": "HS-308 is establishing the canonical Application Definition, typed property metadata, and shared deterministic resolver for The Constituter™, CLI, config, and generator planning.",
+  "activeIssue": 154,
+  "activeSpec": "context/specs/HS-308-application-definition-foundation.md",
+  "openIssuesObserved": 1,
+  "openPullRequestsObserved": 1,
+  "completedRoadmap": [
+    "HS-301",
+    "HS-302",
+    "HS-303",
+    "HS-304",
+    "HS-305",
+    "HS-306",
+    "HS-307"
+  ],
+  "knownTransitionFacts": [
+    "template/ remains the sole standalone executable application source",
+    "the repository and GitHub repository are named The Hipster Stack",
+    "the web application-definition workbench is named The Constituter™",
+    "the existing recipe surface is a temporary compatibility adapter over the canonical Application Definition resolver"
+  ],
+  "verification": [
+    "PASS: node_modules/.bin/tsc.CMD --noEmit",
+    "PASS: targeted ESLint on changed TypeScript and TSX files",
+    "PASS: node_modules/.bin/vitest.CMD run tests/unit/application-definition.test.ts tests/unit/recipe-resolution.test.ts tests/unit/config.test.ts tests/unit/web-configurator.test.ts (27 tests)",
+    "PASS: node_modules/.bin/tsdown.CMD",
+    "PASS: apps/web node_modules/.bin/next.CMD build --webpack (31 static routes)",
+    "PASS: CI=1 corepack pnpm release:check (470 safe packed entries and packed CLI smoke)"
+  ],
+  "nextAction": "Wait for PR #155 checks, address any focused failure, then leave the production-triggering merge for owner approval."
+}

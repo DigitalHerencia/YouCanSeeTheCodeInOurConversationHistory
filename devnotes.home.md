@@ -58,13 +58,13 @@ updated: 2026-08-23
 ## Vault System
 
 - [[obsidian.system.map]]
-- [[DevNotes-Unified-System.Authoritative-Blueprint]]
-- [[Metadata-and-Knowledge-Graph-Contract]]
-- [[Knowledge-Model.Authority-and-Ownership]]
+- [[ZETTLECASTEN/Vault Remodel/DevNotes-Unified-System.Authoritative-Blueprint]]
+- [[ZETTLECASTEN/Vault Remodel/Metadata-and-Knowledge-Graph-Contract]]
+- [[ZETTLECASTEN/Vault Remodel/Knowledge-Model.Authority-and-Ownership]]
 
 ## Knowledge Systems
 
-- [[60.CODEPENDENTCODING.Manifest.Map|Codependent Coding manifest]] — canonical doctrine distributed across role Canon folders.
+- [[ZETTLECASTEN/OldependentCoding/60.CODEPENDENTCODING.Manifest.Map|Codependent Coding manifest]] — canonical doctrine distributed across role Canon folders.
 - [[10.PROJECTS.CODEPENDENTCODING.Docs.Authoritative-Knowledge-System-Spec|Codependent Coding authoritative knowledge-system specification]] — active architecture material in role-owned Codependent Coding workspaces.
 - [[codependentcoding.simples.dashboard]] — active Simples™ operating view in the Codependent Coding project workspace.
 - [[40.ARCHIVE.TECHSTACK.Map|Historical tech-stack map]] — archived migration/provenance reference only.

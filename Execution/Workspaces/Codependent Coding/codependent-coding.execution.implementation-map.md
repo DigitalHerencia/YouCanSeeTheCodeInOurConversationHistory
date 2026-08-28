@@ -17,7 +17,7 @@ tags:
 # Codependent Coding · Implementation
 
 - [[codependent-coding.workspace.home|Workspace]]
-- [[60.CODEPENDENTCODING.Patterns.Catalog.Map|Pattern catalog]]
-- [[60.CODEPENDENTCODING.Patterns.Application-Workflow.Reference|Application workflow]]
+- [[ZETTLECASTEN/OldependentCoding/60.CODEPENDENTCODING.Patterns.Catalog.Map|Pattern catalog]]
+- [[ZETTLECASTEN/OldependentCoding/60.CODEPENDENTCODING.Patterns.Application-Workflow.Reference|Application workflow]]
 - [[codependentcoding.simples.dashboard|Simples Workbench]]
 - [[10.PROJECTS.CODEPENDENTCODING.Generation-Pipeline.Authoritative-Integration-Spec|Generation pipeline]]

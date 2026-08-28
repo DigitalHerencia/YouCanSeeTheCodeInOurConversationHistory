@@ -77,7 +77,7 @@
   "dashboards": [
     {
       "id": "dash-devnotes-unified-v010",
-      "name": "D3VN0T3S",
+      "name": "YOU CAN SEE THE CODE IN THE CONVERSATION HISTORY",
       "cards": [],
       "fitToPage": true,
       "showSearch": true,
@@ -102,7 +102,7 @@
     },
     {
       "id": "dash-mt80bjwl-9789",
-      "name": "Unified Workbench copy",
+      "name": "Dashboard",
       "cards": [
         {
           "kind": "clock",
@@ -509,7 +509,7 @@
       "bannerFullWidth": true
     }
   ],
-  "activeDashboardId": "dash-mt9an59i-7967",
+  "activeDashboardId": "dash-mt80bjwl-9789",
   "pinnedCards": [],
   "gridColumns": 12,
   "rowHeight": 92,

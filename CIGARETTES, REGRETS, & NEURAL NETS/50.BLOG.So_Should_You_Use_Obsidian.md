@@ -1,0 +1,272 @@
+## Related
+
+- [[Thinking vs Execution vs Machines]]
+
+## Type
+
+- concept
+  Yes, that overall shape makes sense. The part that needs tightening is **where the source of truth lives**. Right now you’re close to building a clever mess.
+
+# My answer
+
+Use **Obsidian for personal knowledge**, **the repo for project-executable knowledge**, and **JSON as disposable runtime exhaust**.
+
+Not everything belongs in one place just because you technically can stuff it there. Humanity keeps trying that and somehow remains surprised by entropy.
+
+# Recommended split
+
+## 1. Obsidian
+
+Use it for your **personal brain**.
+
+Good things to keep there:
+
+- conversation summaries
+- architecture notes
+- design thoughts
+- strategy notes
+- dev journal entries
+- lessons learned
+- reusable mental models
+- rough drafts before they become project artifacts
+
+This is where the markdown canvas docs fit well.
+
+What Obsidian is **not** for:
+
+- canonical project instructions that the repo must follow
+- anything that needs versioning with code changes
+- anything agents must reliably consume during implementation
+
+So yes, saving polished markdown docs from here into Obsidian is a good move. That gives you a durable personal knowledge base without turning the codebase into a diary.
+
+## 2. Repo markdown
+
+Use repo markdown for **project-bound human-readable source material**.
+
+Good things to keep in the repo:
+
+- PRDs
+- tech requirements
+- architecture docs
+- domain docs
+- implementation plans
+- agents.md when it is specifically about that repo
+- workflow docs
+- contribution rules
+- stack-specific conventions
+
+Rule:
+If it should evolve with the code, review with the code, and be understood by collaborators or agents working on that repo, it belongs in the repo.
+
+## 3. YAML
+
+Use YAML for **structured project intent**.
+
+Good uses:
+
+- feature specs
+- task manifests
+- implementation plans that need to be parsed
+- orchestration inputs
+- test plan manifests
+- route/component/action maps
+- handoff-ready structured specs derived from markdown
+
+This should usually be generated from or aligned with the markdown docs, not replace them.
+
+Think of it this way:
+
+- markdown explains
+- YAML defines
+
+## 4. JSON
+
+Use JSON for **runtime outputs and machine state**.
+
+Good uses:
+
+- progress snapshots
+- agent outputs
+- symbol maps
+- file inventories
+- execution logs
+- task status
+- tool call payloads
+- internal state passed between automated steps
+
+JSON should usually be treated as **ephemeral or generated**, not as the place where you do thinking.
+
+# Now the important part: where to store prompts, agents, and instructions
+
+This is the real architecture question.
+
+## Don’t make AppData your source of truth
+
+Keeping everything in AppData roaming for VS Code user prompts is fine for:
+
+- global personal defaults
+- cross-repo habits
+- your personal assistant behavior
+- utility prompts you use everywhere
+
+It is **not** a great source of truth for project execution, because it is:
+
+- not versioned with the repo
+- not visible to future-you when cloning elsewhere
+- not visible to collaborators
+- not naturally tied to code changes
+- easy to drift from repo reality
+
+So: keep global stuff there, but not project-critical stuff.
+
+# The professional split for your setup
+
+## A. User-level
+
+Keep in your user prompts directory only things that are:
+
+- stable across all projects
+- personal preferences
+- your general engineering philosophy
+- your default agent behavior
+- your global writing/review/testing preferences
+
+Examples:
+
+- “prefer server-first”
+- “favor strict TypeScript”
+- “avoid Prisma in UI”
+- “use Zod on the server”
+- “respect Next.js app router patterns”
+
+These are your cross-project defaults.
+
+## B. Repo-level
+
+Keep inside the repo anything that is:
+
+- specific to CtrlPlus
+- specific to FleetFusion, PipeFindr, etc.
+- tied to folder structure
+- tied to naming
+- tied to current architecture
+- expected to change alongside implementation
+
+Examples:
+
+- repo-specific agents
+- project prompts
+- project workflow definitions
+- project architecture docs
+- domain specs
+- feature specs
+- generated YAML manifests if they matter to the workflow
+
+This is the material that should travel with the repository.
+
+# About using a `.agents` folder
+
+I would **not** invent a top-level `.agents` folder unless the tool explicitly supports it and benefits from it.
+
+Reason:
+Custom hidden directories feel clever for about five minutes, then six months later you’re spelunking through your own filesystem wondering which sacred cave contains the real instructions.
+
+Use the locations your tools already expect.
+
+# My recommendation on directory strategy
+
+## Keep this split:
+
+### In AppData user prompts
+
+Use for:
+
+- personal/global instructions
+- universal prompt kits
+- generic skills you use across projects
+
+### In the repo
+
+Use tool-native locations for project-specific assets.
+
+For example, conceptually:
+
+- `.github/...` for GitHub/Copilot-relevant repo instructions
+- `.codex/...` if Codex expects that and you’re actively using it there
+- `docs/...` for human-readable project docs
+- `specs/...` for structured YAML specs
+- generated state in a generated or temp-oriented location, depending on whether you want it committed
+
+# So should you use Obsidian?
+
+Yes, but for the **right layer**.
+
+Use Obsidian as:
+
+- your external thinking layer
+- your archive of strategic docs from conversations
+- your personal knowledge system
+- your note-taking and reflection layer
+
+Do not use Obsidian as:
+
+- your project runtime orchestration layer
+- your authoritative source for repo instructions
+- the place agents depend on for deterministic execution
+
+Obsidian is your brain attic. The repo is the factory floor.
+
+# The clean operating model
+
+Here’s the sane version of your workflow:
+
+1. Conversation with me produces a polished markdown doc.
+2. You save that into Obsidian if it’s evergreen, strategic, or personal knowledge.
+3. If it is project-relevant, you derive repo markdown artifacts from it.
+4. From repo markdown, you create structured YAML specs for implementation workflows.
+5. Agents consume YAML and produce JSON state/results.
+6. JSON is used for tracking and automation, not as your long-term knowledge store.
+
+That is a strong model.
+
+# What I would change in your current setup
+
+I would tighten it like this:
+
+- Keep **global prompts/instructions** in AppData user prompts.
+- Keep **project-specific prompts/instructions/agents** inside each repo.
+- Keep **conversation-derived reference docs** in Obsidian if they are broad, reusable, or personal.
+- Keep **spec-driving markdown and YAML** in the repo.
+- Keep **JSON outputs** generated and compartmentalized.
+
+# My blunt recommendation
+
+Do this:
+
+- Obsidian = personal knowledge vault
+- Repo markdown = canonical project docs
+- YAML = structured implementation contracts
+- JSON = generated machine state
+- AppData user prompts = global defaults only
+- Repo-local tool folders = project-specific agent behavior
+
+Do **not** do this:
+
+- keep all important prompts only in AppData
+- invent a random `.agents` directory unless your tools actually use it
+- let Obsidian become your repo control plane
+- let JSON become a pseudo-documentation layer
+
+# Final answer
+
+Yes, use Obsidian, but only as your **personal knowledge and reflection system**.
+
+For execution:
+
+- keep project truth in the repo
+- keep global preferences in AppData
+- keep structured contracts in YAML
+- keep machine chatter in JSON
+
+That separation will save you a lot of future self-inflicted archaeology.

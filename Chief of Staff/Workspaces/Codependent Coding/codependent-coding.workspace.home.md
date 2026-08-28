@@ -48,7 +48,7 @@ Status: `INPUT[dn-status][:status]` · Priority: `INPUT[dn-priority][:priority]`
 
 ## Current authority
 
-- [[60.CODEPENDENTCODING.Manifest.Map|Canonical flat knowledge corpus]]
+- [[ZETTLECASTEN/OldependentCoding/60.CODEPENDENTCODING.Manifest.Map|Canonical flat knowledge corpus]]
 - [[DevNotes/Workspaces/codependent-coding/README|Active project workspace]]
 - [[10.PROJECTS.CODEPENDENTCODING.Docs.Authoritative-Knowledge-System-Spec|Authoritative knowledge-system specification]]
 

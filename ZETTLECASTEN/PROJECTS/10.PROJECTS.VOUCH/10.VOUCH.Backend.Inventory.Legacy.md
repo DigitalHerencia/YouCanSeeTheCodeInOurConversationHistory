@@ -1,0 +1,140 @@
+## `lib/`
+
+Legend:
+
+✅ good / useful  
+⚠️ needs review or consolidation  
+❌ bad shape / likely violates preferred architecture  
+🧱 scaffold/stub-risk or incomplete
+
+lib/
+├─ env.ts                                      ✅ Central env handling; keep server-only where secrets are involved.
+├─ utils.ts                                    ⚠️ Generic shadcn-style cn location; duplicates lib/utils/cn.ts.
+├─ utils/
+│  └─ cn.ts                                    ⚠️ Duplicate utility path. Pick one canonical `cn` export and delete/redirect the other.
+│
+├─ db/
+│  ├─ prisma.ts                                ✅ Prisma client boundary exists.
+│  │
+│  ├─ selects/                                 ✅ Correct architectural bucket for DTO-safe query shapes.
+│  │  ├─ admin.selects.ts                      ✅ Admin query select layer exists.
+│  │  ├─ auth.selects.ts                       ✅ Auth/user sync select layer exists.
+│  │  ├─ dashboard.selects.ts                  ✅ Dashboard select layer exists.
+│  │  ├─ invitation.selects.ts                 ✅ Invitation select layer exists.
+│  │  ├─ notification.selects.ts               ✅ Notification select layer exists.
+│  │  ├─ settings.selects.ts                   ✅ Settings select layer exists.
+│  │  └─ vouch.selects.ts                      ✅ Vouch select layer exists.
+│  │     └─ MISSING payment.selects.ts         ⚠️ Contract/docs expected payment query shapes; payments only has mapper.
+│  │     └─ MISSING audit.selects.ts           ⚠️ Audit timeline should have explicit select shapes.
+│  │
+│  ├─ mappers/                                 ✅ DTO mapping bucket exists; good separation from raw Prisma.
+│  │  ├─ admin.mappers.ts                      ✅ Admin DTO mapping exists.
+│  │  ├─ audit.mappers.ts                      ✅ Audit DTO mapping exists.
+│  │  ├─ invitation.mappers.ts                 ✅ Invite DTO mapping exists.
+│  │  ├─ notification.mappers.ts               ✅ Notification DTO mapping exists.
+│  │  ├─ payment.mappers.ts                    ✅ Payment DTO mapping exists.
+│  │  ├─ settings.mappers.ts                   ✅ Settings DTO mapping exists.
+│  │  ├─ setup.mappers.ts                      ✅ Setup/readiness DTO mapping exists.
+│  │  ├─ user.mappers.ts                       ✅ User DTO mapping exists.
+│  │  └─ vouch.mappers.ts                      ✅ Vouch DTO mapping exists.
+│  │
+│  └─ transactions/                            ✅ Correct place for DB write primitives.
+│     ├─ adminTransactions.ts                  ✅ Admin-safe transaction bucket exists.
+│     └─ analyticsTransactions.ts              ✅ Analytics write bucket exists.
+│        └─ MISSING vouchTransactions.ts       ❌ Core lifecycle should have transactional write primitives.
+│        └─ MISSING paymentTransactions.ts     ❌ Payment state updates need transactional primitives.
+│        └─ MISSING auditTransactions.ts       ⚠️ Audit writes should probably centralize here or in lib/audit.
+│        └─ MISSING userTransactions.ts        ⚠️ Clerk sync/user upsert should have a transaction primitive.
+│
+├─ auth/
+│  ├─ current-user.ts                          ✅ Correct canonical auth helper location.
+│  ├─ redirects.ts                             ✅ Auth redirect utilities exist.
+│  ├─ redirect.ts                              ⚠️ Duplicate/confusing with redirects.ts. Consolidate.
+│  ├─ routes.ts                                ✅ Route/auth constants or helpers exist.
+│  ├─ setup-gates.ts                           ✅ Readiness gate logic belongs here or lib/setup; good.
+│  └─ webhooks.ts                              ✅ Clerk/auth webhook business logic bucket exists.
+│
+├─ authz/
+│  ├─ assertions.ts                            ✅ Server-side authz assertion layer exists.
+│  ├─ capabilities.ts                          ✅ Capability model exists.
+│  ├─ participants.ts                          ✅ Participant relationship checks exist.
+│  └─ policies.ts                              ✅ Policy layer exists.
+│
+├─ actions/                                    ❌ Architectural smell: flat action bucket instead of domain actions.
+│  ├─ adminActions.ts                          ⚠️ Should move to `lib/admin/actions/`.
+│  ├─ analyticsActions.ts                      ⚠️ Should move to `lib/analytics/actions/`.
+│  ├─ auditActions.ts                          ⚠️ Should move to `lib/audit/actions/`.
+│  ├─ authActions.ts                           ⚠️ Should move to `lib/auth/actions/` or stay as helpers under auth.
+│  ├─ dashboardActions.ts                      ⚠️ Dashboard should usually be fetchers, not actions, unless mutating filters/preferences.
+│  ├─ notificationActions.ts                   ⚠️ Should move to `lib/notifications/actions/`.
+│  ├─ paymentActions.ts                        ⚠️ Should move to `lib/payments/actions/`.
+│  ├─ systemActions.ts                         ⚠️ Should move to `lib/system/actions/` or domain-specific jobs.
+│  ├─ userActions.ts                           ⚠️ Should move to `lib/users/actions/`.
+│  └─ verificationActions.ts                   ⚠️ Should move to `lib/verification/actions/`.
+│
+├─ fetcher/                                    ❌ Naming + architecture mismatch. Should be plural and domain-scoped.
+│  ├─ dashboardFetchers.ts                     ⚠️ Should move to `lib/dashboard/fetchers/` or `lib/vouches/fetchers/`.
+│  └─ setupFetchers.ts                         ⚠️ Should move to `lib/setup/fetchers/` or `lib/auth/fetchers/`.
+│
+├─ payments/
+│  └─ adapters/
+│     └─ stripe-payment-adapter.ts             ✅ Good abstraction boundary for Stripe payment operations.
+│        └─ MISSING payments/actions           ❌ Payment actions currently live in flat `lib/actions`.
+│        └─ MISSING payments/fetchers          ❌ Participant/admin payment summaries need domain fetchers.
+│        └─ MISSING payments/webhooks          ⚠️ Webhook reconciliation should land under payments or stripe integration.
+│
+├─ stripe/                                     ⚠️ Mixed with `integrations/stripe`; consolidate boundaries.
+│  ├─ client.ts                                ✅ Stripe client exists.
+│  ├─ config.ts                                ✅ Stripe config exists.
+│  ├─ status-map.ts                            ✅ Provider-to-domain status mapping exists.
+│  └─ webhook-events.ts                        ✅ Stripe webhook event mapping exists.
+│
+├─ integrations/
+│  ├─ stripe/
+│  │  ├─ identity.ts                           ✅ Stripe Identity integration exists.
+│  │  └─ payment-intents.ts                    ✅ Stripe PaymentIntent integration exists.
+│  │     └─ NOTE                               ⚠️ Decide whether Stripe code lives in `lib/stripe` or `lib/integrations/stripe`.
+│  │
+│  └─ email/
+│     └─ templates.ts                          ✅ Email template bucket exists.
+│        └─ MISSING sender/provider adapter    ⚠️ Templates exist, but sending integration may be absent or elsewhere.
+│
+├─ vouch/                                      ⚠️ Singular domain folder. Contract language usually wants `vouches`.
+│  ├─ fees.ts                                  ✅ Fee calculation domain logic exists.
+│  ├─ status.ts                                ✅ Status helper logic exists.
+│  └─ time-windows.ts                          ✅ Confirmation/meeting window helper exists.
+│     └─ MISSING actions/                      ❌ Core lifecycle actions should live here/domain-scoped.
+│     └─ MISSING fetchers/                     ❌ Vouch read authority should live here/domain-scoped.
+│     └─ MISSING lifecycle.ts                  ⚠️ State transition guards/resolution helpers should be explicit.
+│     └─ MISSING invitations.ts                ⚠️ Token generation/hash/lookup rules should be explicit.
+│
+├─ clerk/
+│  └─ webhook-events.ts                        ⚠️ Mixed auth provider location with `lib/auth/webhooks.ts`.
+│     └─ NOTE                                  ⚠️ Consolidate Clerk provider specifics under `lib/integrations/clerk` or `lib/auth`.
+│
+├─ constants/
+│  ├─ admin.ts                                 ✅ Admin constants exist.
+│  ├─ app.ts                                   ✅ App constants exist.
+│  ├─ cache-tags.ts                            ✅ Cache tag constants exist.
+│  ├─ index.ts                                 ✅ Barrel exists.
+│  ├─ limits.ts                                ✅ Limits exist; likely used by amount/window validation.
+│  ├─ routes.ts                                ✅ Route constants exist.
+│  └─ status.ts                                ✅ Status constants exist.
+│
+├─ cache/
+│  └─ revalidate.ts                            ✅ Cache invalidation helper exists.
+│
+├─ security/
+│  ├─ hash.ts                                  ✅ Needed for invitation token hashing / sensitive hashing.
+│  ├─ idempotency.ts                           ✅ Needed for webhook/provider idempotency.
+│  ├─ rate-limit.ts                            ✅ Sensitive action rate limit boundary exists.
+│  └─ request.ts                               ✅ Request helpers / request ID likely useful for audit/logging.
+│
+├─ webhooks/
+│  └─ provider-webhook-status.ts               ✅ Generic provider webhook status helper exists.
+│
+├─ observability/
+│  └─ logger.ts                                ✅ Logging boundary exists.
+│
+└─ errors/
+   └─ action-errors.ts                         ✅ Typed action error layer exists.

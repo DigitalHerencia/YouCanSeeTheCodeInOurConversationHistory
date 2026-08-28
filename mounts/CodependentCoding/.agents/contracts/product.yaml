@@ -1,0 +1,78 @@
+schema_version: 6
+id: hipster-stack.product
+authority: machine-contract
+sources:
+  - context/docs/product.md
+  - context/docs/web.md
+  - context/docs/documentation.md
+
+product:
+  name: Hipster Stack
+  class: opinionated-project-initializer
+  framing: deterministic-application-constitution
+  primary_value: repetitive-work-removed-by-generated-project
+
+ecosystem:
+  engineering_knowledge: Codependent Coding
+  generator: Hipster Stack
+  downstream_adaptive_development: Loaded Vibes
+
+authorities:
+  executable_template: this-repository
+  engineering_doctrine: DigitalHerencia/DevNotes
+  configuration_semantics: shared-schema-and-generator
+
+surfaces:
+  - maximal-template
+  - shared-configuration
+  - generation-engine
+  - cli
+  - web-product
+  - web-simples
+  - web-docs
+  - web-constituter
+  - portable-config
+  - generated-application
+
+web:
+  stateless: true
+  requires_auth: false
+  requires_database: false
+  hosted_generation_required: false
+  routes:
+    product: /
+    simples: /libraries
+    simple_detail: /libraries/[slug]
+    docs: /docs
+    constituter: /configure
+  navigation: [Product, Simples, Docs, Constituter]
+  branded_names_do_not_change_route_semantics: true
+  mockups_control_presentation: true
+  shared_configuration_controls_semantics: true
+  boldkit_source_is_locally_owned: true
+  tanstack_is_interaction_reference_only: true
+  visual_tokens:
+    background: ['#000000', '#05030b']
+    foreground: ['#ffffff', '#2f7a8d']
+    signal: '#2f7a8d'
+
+template:
+  count: 1
+  repository_owned: true
+  standalone_application: true
+  generator_internal_metadata_allowed: false
+
+configuration:
+  one_contract_for_cli_web_file: true
+  visible_options_must_change_real_output: true
+  future_options_hidden_until_generator_support: true
+  fixed_method_not_equal_fixed_provider: true
+
+prohibited_product_drift:
+  - generic-framework-generator
+  - provider-or-plugin-marketplace
+  - hosted-project-control-plane
+  - configurator-account-system
+  - duplicate-web-configuration-engine
+  - generator-machinery-inside-template
+  - arbitrary-generated-repository-upgrade-engine

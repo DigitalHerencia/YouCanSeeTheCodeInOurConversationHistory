@@ -1,0 +1,776 @@
+# Vouch Page Taxonomy
+
+## Purpose
+
+This document defines the canonical page and interaction taxonomy for Vouch.
+
+The goal is to keep the product surface intentionally narrow, consistent, and enforceable. Vouch is not a marketplace, scheduler, messaging platform, review system, dispute product, or admin arbitration surface. Its interface should reflect that constraint.
+
+Every page must have a clear category, a fixed purpose, and a predictable component composition pattern.
+
+---
+
+## Core Interface Doctrine
+
+Vouch has a small product surface by design.
+
+The interface should not grow by inventing new page types whenever a feature needs a place to live. Instead, all UI work should fit into one of the approved page categories or interaction surfaces defined below.
+
+The core hierarchy is:
+
+```txt
+Public conversion and explanation surfaces
+-> authenticated Vouch index
+-> individual Vouch detail surface
+-> temporary protocol action surfaces
+-> external provider surfaces
+```
+
+The Vouch object is the product.
+
+The dashboard is an index of Vouch objects.
+
+The Vouch detail page is the operational center for one Vouch.
+
+Protocol drawers are temporary action surfaces, not standalone pages.
+
+External Stripe and Clerk surfaces are provider-hosted flows, not Vouch pages.
+
+---
+
+## Page Category 1: Funnel Pages
+
+### Purpose
+
+Funnel pages exist to capture attention, establish trust quickly, explain enough to reduce uncertainty, and move the user toward conversion.
+
+These pages are not full documentation surfaces. They are high-velocity conversion surfaces.
+
+### Included Pages
+
+```txt
+app/page.tsx
+```
+
+### Canonical Composition
+
+```txt
+LandingHero
+-> TrustStatementBand
+-> HowItWorksStrip
+-> FrictionReductionSection
+-> CTASection
+-> MinimalFAQ
+-> Footer
+```
+
+### Rules
+
+Funnel pages must:
+
+- explain what Vouch is quickly
+- make the payment coordination model understandable
+- build trust through protocol clarity
+- avoid marketplace, escrow, scheduling, messaging, or dispute framing
+- move users toward sign-up or deeper product understanding
+
+Funnel pages must not:
+
+- become dense legal/documentation pages
+- bury the conversion action under excessive doctrine
+- imply Vouch arranges appointments or mediates outcomes
+
+---
+
+## Page Category 2: Product Definition / Pricing Pages
+
+### Purpose
+
+The pricing page is intentionally named for user behavior. Users click pricing because money is one of the highest-friction trust questions.
+
+In Vouch, the pricing page is also a product-definition surface. It explains the system through the lens of economic participation.
+
+### Included Pages
+
+```txt
+app/(public)/pricing/page.tsx
+```
+
+### Canonical Composition
+
+```txt
+PageHero
+-> PricingSummary
+-> ProcessPanel
+-> DoctrineSection
+-> FeeExplanation
+-> FAQPreview
+-> CTASection
+-> Footer
+```
+
+### Rules
+
+Product definition / pricing pages must:
+
+- explain what the user pays for
+- clarify that the protocol execution fee is due when creating a Vouch
+- clarify that payment rails are handled by Stripe
+- explain the relationship between fee, commitment, and deterministic execution
+- build understanding without becoming a legal wall of text
+
+Product definition / pricing pages must not:
+
+- pretend Vouch is a marketplace subscription catalog
+- frame individual Vouches as reusable Stripe products or SKUs
+- confuse fee explanation with settlement outcome
+
+---
+
+## Page Category 3: Dense Informational / Legal Pages
+
+### Purpose
+
+Dense informational pages are reading-oriented reference surfaces. They handle legal, FAQ, agreement, disclaimer, and policy content.
+
+These pages should be lower-choreography and typography-heavy. They should feel stable, serious, and easy to scan.
+
+### Included Pages
+
+Current:
+
+```txt
+app/(public)/faq/page.tsx
+app/(public)/legal/terms/page.tsx
+app/(public)/legal/privacy/page.tsx
+```
+
+Future or optional standalone surfaces:
+
+```txt
+app/(public)/legal/disclaimer/page.tsx
+app/(public)/legal/user-agreement/page.tsx
+```
+
+### Canonical Composition
+
+```txt
+PageHero
+-> SectionIntro
+-> ContentSectionList
+-> BottomCallout
+```
+
+### Rules
+
+Dense informational pages must:
+
+- render content from typed content modules
+- use consistent headings, spacing, and section hierarchy
+- support long-form text without becoming visually chaotic
+- reinforce the deterministic protocol model where appropriate
+
+Dense informational pages must not:
+
+- contain custom one-off layouts for every legal document
+- embed large copy blocks directly inside reusable UI components
+- introduce dispute, mediation, arbitration, evidence, or support override language except to explicitly disclaim it
+
+---
+
+## Page Category 4: Dashboard Index Pages
+
+### Purpose
+
+The dashboard is the authenticated index of the user’s Vouches.
+
+It is not a business intelligence dashboard. It is not a CRM. It is not an analytics center. It is a list-oriented operational index.
+
+### Included Pages
+
+```txt
+app/(tenant)/dashboard/page.tsx
+```
+
+### Canonical Composition
+
+```txt
+DashboardHeader
+-> OptionalStatusStrip
+-> VouchCardList
+-> BottomCallout
+```
+
+### Rules
+
+Dashboard index pages must:
+
+- show the user’s relevant Vouch cards
+- make the next action obvious
+- show enough state to let the user choose which Vouch to open
+- keep the page focused on Vouch objects
+
+Dashboard index pages may include a small status strip if it helps orientation, but must avoid fake KPI theater.
+
+Dashboard index pages must not include:
+
+- marketplace feeds
+- messaging inboxes
+- review widgets
+- dispute panels
+- analytics dashboards
+- provider discovery
+- public profile surfaces
+
+---
+
+## Page Category 5: Protocol Action Pages
+
+### Purpose
+
+Protocol action pages perform one narrow operational task.
+
+For MVP, the canonical protocol action page is the new Vouch page. It exists only to create a new Vouch.
+
+### Included Pages
+
+```txt
+app/(tenant)/vouches/new/page.tsx
+```
+
+### Canonical Composition
+
+```txt
+PageHeader
+-> PurposeBuiltForm
+-> SummaryPanel
+-> DisclaimerGate
+-> ProtocolDrawer
+-> BottomCallout
+```
+
+### Rules
+
+Protocol action pages must:
+
+- be purpose-built
+- use React Hook Form where appropriate
+- validate through Zod
+- render from DTO/context supplied by feature orchestration
+- keep user input narrow and domain-specific
+
+The new Vouch page collects only:
+
+```txt
+amount
+appointment date/time
+confirmation window
+```
+
+The new Vouch page must not collect:
+
+```txt
+customer field
+memo
+private note
+service category
+message body
+public listing data
+marketplace metadata
+dispute language
+```
+
+The per-Vouch disclaimer gate must be explicit before commitment.
+
+---
+
+## Page Category 6: Vouch Detail Pages
+
+### Purpose
+
+The Vouch detail page is the operational center for a single Vouch.
+
+This is the most important authenticated page in the product. It shows terms, lifecycle state, payment state, confirmation state, timeline, and available role-aware actions.
+
+### Included Pages
+
+```txt
+app/(tenant)/vouches/[vouchId]/page.tsx
+```
+
+### Canonical Composition
+
+```txt
+VouchDetailHeader
+-> VouchTermsSummary
+-> LifecycleStatusPanel
+-> PaymentStatusPanel
+-> ConfirmationPanel
+-> VouchCodeExchangePanel
+-> VouchTimelinePanel
+-> VouchActionsPanel
+-> BottomCallout
+```
+
+### Rules
+
+Vouch detail pages must:
+
+- be the canonical surface for one Vouch
+- show the full protocol state
+- expose role-aware actions
+- host confirmation behavior through drawers or inline panels
+- show payment/provider state safely
+- show participant-safe timeline events
+
+Vouch detail pages must not:
+
+- become a dispute page
+- become a messaging page
+- become a manual settlement control panel
+- create separate route sprawl for sub-actions
+- let UI components own settlement logic
+
+### Architecture Split
+
+Route file:
+
+```txt
+app/(tenant)/vouches/[vouchId]/page.tsx
+```
+
+Owns only:
+
+```txt
+params handoff
+Suspense boundary
+feature composition
+```
+
+Server feature:
+
+```txt
+features/vouches/vouch-detail-page.tsx
+```
+
+Owns:
+
+```txt
+fetcher orchestration
+DTO handoff
+role-aware server composition
+```
+
+Client feature:
+
+```txt
+features/vouches/vouch-detail-page.client.tsx
+```
+
+Owns:
+
+```txt
+drawer/dialog state
+confirmation form interaction
+pending UI
+copy/share UI state
+action result display
+```
+
+Pure components render DTOs only.
+
+---
+
+## Page Category 7: Provider Return Pages
+
+### Purpose
+
+Provider return pages receive users after external Stripe or provider-hosted flows.
+
+They are not provider truth. They are user-facing return surfaces that explain pending or reconciled state.
+
+### Included Pages
+
+```txt
+app/(public)/checkout/success/page.tsx
+```
+
+Additional return pages may exist only if required by provider configuration and source-of-truth contracts.
+
+### Canonical Composition
+
+```txt
+ReturnHeader
+-> StatusResolutionPanel
+-> NextActionPanel
+-> RedirectCTA
+```
+
+### Rules
+
+Provider return pages must:
+
+- be small
+- avoid claiming success solely from URL state
+- explain that provider-backed reconciliation determines final state
+- route users toward the relevant next Vouch surface
+
+Provider return pages must not:
+
+- mutate provider state directly
+- treat browser return as payment truth
+- finalize settlement
+- perform business logic inside the route shell
+
+---
+
+## Page Category 8: Auth Pages
+
+### Purpose
+
+Auth pages provide identity/session entry through Clerk-backed authentication.
+
+They are not product workflow pages.
+
+### Included Pages
+
+```txt
+app/(auth)/sign-in/[[...sign-in]]/page.tsx
+app/(auth)/sign-up/[[...sign-up]]/page.tsx
+```
+
+### Canonical Composition
+
+```txt
+AuthPageShell
+-> AuthForm
+-> AgreementOrOrientationPanel
+```
+
+### Rules
+
+Auth pages must:
+
+- support Clerk catch-all route structure
+- use custom Vouch-branded forms where applicable
+- collect account-level agreement acceptance on sign-up
+- route authenticated users into the tenant product surface
+
+Auth pages must not:
+
+- perform Vouch workflow mutations
+- perform Stripe operations
+- decide payment or payout readiness
+- replace per-Vouch disclaimer acceptance
+
+---
+
+## Interaction Surface Category: Protocol Drawers
+
+### Purpose
+
+Protocol drawers are temporary action surfaces used for confirmations, warnings, reminders, and high-consequence actions.
+
+They are not pages.
+
+They keep the user inside the current page while allowing focused protocol interaction.
+
+### Canonical Composition
+
+```txt
+DrawerHeader
+-> ConsequenceStatement
+-> RequiredContextSummary
+-> PrimaryInteraction
+-> SecondaryEscape
+-> FinePrintOrRuleReminder
+```
+
+### Use Cases
+
+```txt
+confirm presence
+submit Vouch code
+accept per-Vouch disclaimer
+archive confirmation
+payment redirect warning
+Connect redirect warning
+saved payment method redirect warning
+```
+
+### Rules
+
+Protocol drawers must:
+
+- be standardized
+- make consequences clear
+- show relevant context before action
+- avoid route sprawl
+- preserve the parent page as the durable state surface
+
+Default to drawers for mobile-first high-consequence actions.
+
+Reserve modals or alert dialogs for destructive or emergency interruptions only.
+
+---
+
+## External Provider Surfaces
+
+These are part of the user journey but are not Vouch pages.
+
+### Stripe Connect
+
+Tenant nav label:
+
+```txt
+Connect
+```
+
+Behavior:
+
+```txt
+not onboarded -> Stripe-hosted Connect onboarding
+onboarded -> Stripe-hosted connected account dashboard or account management
+```
+
+This is not an internal Vouch route.
+
+### Stripe Saved Payment Method
+
+Tenant nav label:
+
+```txt
+Payment
+```
+
+or:
+
+```txt
+Payments
+```
+
+Behavior:
+
+```txt
+opens Stripe-hosted saved payment method / billing collection flow
+```
+
+This is for saving the payment method and whatever Stripe requires for the user to make payments.
+
+It is not a page for creating PaymentIntents, confirming payments, or manually paying a Vouch.
+
+### Clerk User Account Surface
+
+User account/settings is currently Clerk-hosted or Clerk-component-managed.
+
+It is not a Vouch settings page.
+
+Future custom account settings require a new contract before becoming a Vouch-owned page.
+
+---
+
+## Tenant Navigation Contract
+
+Tenant navigation should remain narrow.
+
+Approved tenant nav items:
+
+```txt
+Dashboard -> /dashboard
+Vouches -> /vouches/new
+Connect -> external Stripe Connect flow
+Payment -> external Stripe payment method flow
+User account -> Clerk account surface
+```
+
+Tenant navigation must not include:
+
+```txt
+settings
+setup
+readiness
+profile
+messages
+disputes
+claims
+appeals
+evidence
+reviews
+ratings
+providers
+marketplace
+search
+browse
+admin settlement
+```
+
+---
+
+## Component Ownership Rules
+
+Components define shape.
+
+Content files define words.
+
+Features define orchestration.
+
+Fetchers define protected reads.
+
+Actions define protected writes.
+
+Transactions define atomic persistence.
+
+Integrations define provider communication.
+
+DTO mappers define transport-safe UI data.
+
+### Component Rules
+
+Components may:
+
+```txt
+render DTOs
+render content module data
+handle presentational layout
+render buttons, panels, cards, drawers, badges, summaries
+```
+
+Components must not:
+
+```txt
+call Prisma
+call Stripe SDKs
+call Clerk server APIs
+perform protected fetching
+perform domain mutations
+decide settlement
+own authorization truth
+own confirmation truth
+hard-code repeated long-form copy
+```
+
+---
+
+## Content Module Rules
+
+Repeated copy and section content should live in content modules.
+
+Canonical content modules:
+
+```txt
+content/marketing.tsx
+content/pricing.tsx
+content/faq.tsx
+content/legal.tsx
+content/dashboard.tsx
+content/vouches.tsx
+content/auth.tsx
+```
+
+Content modules should export typed arrays and objects.
+
+Components should map over those exports.
+
+This keeps copy editable without turning JSX into a content landfill.
+
+---
+
+## Forbidden Page Behavior
+
+Vouch must not create user-facing surfaces for:
+
+```txt
+marketplace discovery
+public provider profiles
+service listings
+categories
+messaging
+chat
+reviews
+ratings
+disputes
+claims
+appeals
+evidence upload
+screenshot review
+manual settlement
+manual payout
+manual refund award
+force release
+support override
+admin arbitration
+```
+
+If a proposed page implies one of those behaviors, it is not part of the MVP surface.
+
+---
+
+## Canonical MVP Page Inventory
+
+### Public Pages
+
+```txt
+/
+/pricing
+/faq
+/legal/terms
+/legal/privacy
+/checkout/success
+```
+
+### Auth Pages
+
+```txt
+/sign-in
+/sign-up
+```
+
+### Tenant Pages
+
+```txt
+/dashboard
+/vouches/new
+/vouches/[vouchId]
+```
+
+### Optional Future Legal Pages
+
+```txt
+/legal/disclaimer
+/legal/user-agreement
+```
+
+### External Surfaces, Not Pages
+
+```txt
+Stripe Connect onboarding
+Stripe connected account dashboard
+Stripe saved payment method flow
+Clerk user account/profile surface
+```
+
+### Interaction Surfaces, Not Pages
+
+```txt
+Protocol drawers
+Confirmation drawers
+Warning drawers
+Reminder drawers
+```
+
+---
+
+## Final Invariant
+
+Vouch has a narrow interface because Vouch has a narrow product.
+
+The product is not the dashboard.
+
+The product is not a marketplace.
+
+The product is not a dispute process.
+
+The product is the Vouch object and its deterministic protocol state.
+
+Every page exists only to create, understand, list, inspect, or act on that object.
+

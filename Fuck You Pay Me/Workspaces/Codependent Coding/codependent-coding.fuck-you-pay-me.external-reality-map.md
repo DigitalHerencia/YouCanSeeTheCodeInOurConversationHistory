@@ -17,8 +17,8 @@ tags:
 # Codependent Coding · External Reality
 
 - [[codependent-coding.workspace.home|Workspace]]
-- [[60.CODEPENDENTCODING.Patterns.Infrastructure-Integration-Patterns.Reference|Provider integration patterns]]
-- [[60.CODEPENDENTCODING.Patterns.Webhook-Processor.Reference|Webhook processing]]
+- [[ZETTLECASTEN/OldependentCoding/60.CODEPENDENTCODING.Patterns.Infrastructure-Integration-Patterns.Reference|Provider integration patterns]]
+- [[ZETTLECASTEN/OldependentCoding/60.CODEPENDENTCODING.Patterns.Webhook-Processor.Reference|Webhook processing]]
 - [[10.PROJECTS.CODEPENDENTCODING.Maximal-Template.Authoritative-Domain-Library-Spec|Provider-domain implementation authority]]
 
 Live provider systems remain authoritative for volatile commercial facts.
