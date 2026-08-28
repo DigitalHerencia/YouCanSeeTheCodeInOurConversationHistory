@@ -1,11 +1,13 @@
 filters:
   and:
     - file.ext == "md"
-    - file.hasProperty("namespace")
+    - file.hasProperty("role")
     - not:
-        - file.inFolder("_obsidian/Templates")
-        - file.inFolder("_ops")
+        - file.inFolder("obsidian/Templates")
+        - file.inFolder("ops")
         - file.inFolder("DevNotes/Archive")
+        - file.inFolder("ZETTLECASTEN")
+        - file.inFolder("CIGARETTES, REGRETS, & NEURAL NETS")
 properties:
   file.name:
     displayName: Note
@@ -28,8 +30,9 @@ views:
     name: Recent Knowledge
     filters:
       or:
-        - authority == "canonical"
-        - authority == "supporting"
+        - authority == "Source of Truth"
+        - authority == "Working"
+        - authority == "Reference"
         - type == "research"
         - type == "decision"
     order:
