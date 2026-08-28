@@ -1,43 +1,60 @@
 ---
 title: DevNotes
-namespace: devnotes.devnotes.role.home
-role: devnotes
-system: devnotes
+role: DevNotes
+system: DevNotes
 workspace:
 type: dashboard
-status: active
-authority: operational
+status: Active
+authority: Working
 created: 2026-08-23
-updated: 2026-08-23
+updated: 2026-08-28
 tags:
-  - role/devnotes
-  - devnotes/workbench
+  - devnotes
+  - knowledge
+  - classification
+  - workbench
 ---
 
 # DevNotes
 
-**Formal role:** Knowledge & Classification
+**Formal role:** Knowledge & Classification  
+**Core question:** What do we know, and how can we recover it?
 
-Own durable knowledge, taxonomy, metadata, information architecture, provenance, retrieval, backlinks, and vault health.
+DevNotes owns durable knowledge, taxonomy, metadata, Properties stewardship, information architecture, provenance, retrieval, wikilinks/backlinks, typed relationships, and vault health.
 
-Recommended human structure:
+## Canon
+
+- [[ChatGPT Project Instructions]]
+- [[Role Manifest Specification]]
+- [[Role Registry]]
+- [[Authority and Ownership]]
+- [[Metadata and Knowledge Graph Contract]]
+- [[Information Architecture and Naming]]
+- [[Obsidian System Map]]
+
+## Operating surfaces
+
+- [[DevNotes Home|Vault Home]]
+- [[obsidian/Bases/Inbox.base|Inbox]]
+- [[obsidian/Bases/System-Health.base|System Health]]
+- [[obsidian/Bases/Recent-Knowledge.base|Recent Knowledge]]
+- [[obsidian/Bases/Evidence.base|Evidence]]
+- [[obsidian/Bases/Workspaces.base|Workspaces]]
+
+## Role structure
 
 ```text
 Canon/
 Workspaces/
 Reference/
 Archive/
+Inbox/
 ```
 
-Create only the subfolders actually needed.
+Create only subfolders with an actual responsibility.
 
-## Workbench
+## Operating rule
 
-![[_obsidian/Bases/Role-Workbench.base#Role Workbench]]
+Properties represent useful mutable state. Tags classify. Callouts communicate semantics. Links preserve durable relationships. Use normal human-readable filenames and do not encode classification into semantic dot notation.
 
-## Operating Surfaces
-
-- [[devnotes.home|Vault Home]]
-- [[_obsidian/Bases/Inbox.base|Inbox]]
-- [[_obsidian/Bases/System-Health.base|System Health]]
-- [[codependent-coding.devnotes.knowledge-map|Codependent Coding Knowledge]]
+`ZETTLECASTEN/` and `CIGARETTES, REGRETS, & NEURAL NETS/` are outside governance cleanup and are not modified without a separate explicit request.
