@@ -1,29 +1,29 @@
 filters:
   and:
     - file.ext == "md"
-    - file.hasProperty("namespace")
+    - file.hasProperty("role")
 formulas:
   backlink_count: file.backlinks.length
   outgoing_link_count: file.links.length
 properties:
   file.name:
     displayName: Note
-  project:
-    displayName: Project
-  domain:
-    displayName: Domain
+  role:
+    displayName: Role
+  workspace:
+    displayName: Workspace
+  system:
+    displayName: System
   type:
     displayName: Type
-  kind:
-    displayName: Kind
   status:
     displayName: Status
   authority:
     displayName: Authority
   tags:
     displayName: Tags
-  parent:
-    displayName: Parent
+  part_of:
+    displayName: Part Of
   depends_on:
     displayName: Dependencies
   formula.backlink_count:
@@ -35,9 +35,12 @@ views:
     name: Knowledge Index
     order:
       - file.name
-      - project
-      - domain
+      - role
+      - workspace
+      - system
       - type
+      - status
+      - authority
       - formula.backlink_count
       - formula.outgoing_link_count
       - tags
@@ -50,12 +53,12 @@ views:
         - file.links.length == 0
     order:
       - file.name
-      - project
-      - domain
+      - role
+      - workspace
       - type
       - status
       - authority
-      - parent
+      - part_of
       - depends_on
       - tags
       - formula.backlink_count
@@ -71,18 +74,18 @@ views:
     name: Source of Truth
     filters:
       and:
-        - authority == "source-of-truth"
+        - authority == "Source of Truth"
     order:
       - file.name
-      - project
-      - domain
+      - role
+      - workspace
+      - system
       - type
       - status
-      - parent
       - formula.backlink_count
       - formula.outgoing_link_count
     sort:
-      - property: project
+      - property: role
         direction: ASC
       - property: file.name
         direction: ASC
@@ -93,16 +96,16 @@ views:
         - type == "map"
     order:
       - file.name
-      - project
-      - domain
+      - role
+      - workspace
       - authority
-      - parent
+      - part_of
       - depends_on
       - tags
       - formula.backlink_count
       - formula.outgoing_link_count
     sort:
-      - property: project
+      - property: role
         direction: ASC
       - property: file.name
         direction: ASC
