@@ -1,12 +1,10 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "DevNotes Unified Note Metadata",
+  "title": "DevNotes Note Metadata",
   "type": "object",
   "required": [
     "title",
-    "namespace",
     "role",
-    "system",
     "type",
     "status",
     "authority",
@@ -18,47 +16,58 @@
       "type": "string",
       "minLength": 1
     },
-    "namespace": {
-      "type": "string",
-      "minLength": 1
-    },
     "role": {
       "enum": [
-        "chief-of-staff",
-        "trust-issues",
-        "execution",
-        "vibes",
-        "devnotes",
-        "schemes",
-        "prompter",
-        "fuck-you-pay-me"
+        "Chief of Staff",
+        "Trust Issues",
+        "Execution",
+        "Vibes",
+        "DevNotes",
+        "Schemes",
+        "Prömpter",
+        "Fuck You Pay Me"
       ]
     },
     "system": {
-      "type": "string",
-      "minLength": 1
+      "type": ["string", "null"]
     },
     "workspace": {
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": ["string", "null"]
     },
     "type": {
       "type": "string",
       "minLength": 1
     },
     "status": {
-      "type": "string",
-      "minLength": 1
+      "enum": [
+        "Draft",
+        "Review",
+        "Active",
+        "Superseded",
+        "Archived",
+        "Backlog",
+        "Ready",
+        "In Progress",
+        "Blocked",
+        "Done",
+        "Cancelled"
+      ]
     },
     "authority": {
       "enum": [
-        "canonical",
-        "supporting",
-        "implementation-evidence",
-        "project-specific",
-        "operational"
+        "Source of Truth",
+        "Working",
+        "Reference",
+        "Derived",
+        "Historical"
+      ]
+    },
+    "health": {
+      "enum": [
+        "On Track",
+        "At Risk",
+        "Blocked",
+        "Paused"
       ]
     },
     "created": {
@@ -71,10 +80,30 @@
     },
     "tags": {
       "type": "array",
-      "items": {
-        "type": "string"
-      },
+      "items": { "type": "string" },
       "uniqueItems": true
+    },
+    "part_of": { "$ref": "#/$defs/relationships" },
+    "depends_on": { "$ref": "#/$defs/relationships" },
+    "implements": { "$ref": "#/$defs/relationships" },
+    "refines": { "$ref": "#/$defs/relationships" },
+    "validates": { "$ref": "#/$defs/relationships" },
+    "evidence_for": { "$ref": "#/$defs/relationships" },
+    "derived_from": { "$ref": "#/$defs/relationships" },
+    "supersedes": { "$ref": "#/$defs/relationships" },
+    "governed_by": { "$ref": "#/$defs/relationships" },
+    "connects_to": { "$ref": "#/$defs/relationships" }
+  },
+  "$defs": {
+    "relationships": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        }
+      ]
     }
   },
   "additionalProperties": true
