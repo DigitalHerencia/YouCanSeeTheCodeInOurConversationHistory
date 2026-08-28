@@ -15,7 +15,7 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "devnotes.home.md",
+                    "file": "DevNotes Home.md",
                     "mode": "source",
                     "source": false,
                     "backlinks": true,
@@ -30,7 +30,7 @@
                     }
                   },
                   "icon": "lucide-file",
-                  "title": "devnotes.home"
+                  "title": "DevNotes Home"
                 }
               },
               {
@@ -202,7 +202,7 @@
                 "state": {
                   "type": "backlink",
                   "state": {
-                    "file": "devnotes.home.md",
+                    "file": "DevNotes Home.md",
                     "collapseAll": true,
                     "extraContext": false,
                     "sortOrder": "alphabetical",
