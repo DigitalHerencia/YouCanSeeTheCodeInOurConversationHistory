@@ -1,38 +1,36 @@
 {
-  "version": "0.1.0",
+  "version": 1,
+  "source": "DevNotes/Canon/Unified System/Role Manifest Specification.md",
   "knowledge": [
-    "draft",
-    "review",
-    "active",
-    "superseded",
-    "archived"
+    "Draft",
+    "Review",
+    "Active",
+    "Superseded",
+    "Archived"
   ],
   "work": [
-    "backlog",
-    "ready",
-    "in-progress",
-    "in-review",
-    "blocked",
-    "done",
-    "cancelled"
-  ],
-  "decision": [
-    "proposed",
-    "accepted",
-    "rejected",
-    "superseded"
-  ],
-  "validation": [
-    "passed",
-    "failed",
-    "skipped",
-    "blocked",
-    "inferred"
+    "Backlog",
+    "Ready",
+    "In Progress",
+    "Blocked",
+    "Done",
+    "Cancelled"
   ],
   "project_health": [
-    "on-track",
-    "at-risk",
-    "blocked",
-    "paused"
+    "On Track",
+    "At Risk",
+    "Blocked",
+    "Paused"
+  ],
+  "validation_evidence": [
+    "Passed",
+    "Failed",
+    "Skipped",
+    "Blocked",
+    "Inferred"
+  ],
+  "rules": [
+    "Use the lifecycle family appropriate to the artifact rather than treating every status as one universal workflow.",
+    "Display values are human-readable and are the values active controls and templates should generate."
   ]
 }
