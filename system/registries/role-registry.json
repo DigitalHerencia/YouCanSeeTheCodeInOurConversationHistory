@@ -1,45 +1,64 @@
 {
-  "version": "0.1.0",
+  "version": 1,
+  "source": "DevNotes/Canon/Unified System/Role Manifest Specification.md",
+  "derivation": "Role Manifest Specification -> machine role registry -> Hearth dashboard + ChatGPT Project launcher",
   "roles": [
     {
       "id": "chief-of-staff",
-      "display_name": "Chief of Staff",
-      "formal_role": "Organization & Lifecycle"
+      "name": "Chief of Staff",
+      "formal_role": "Organization & Lifecycle",
+      "core_question": "What are we trying to accomplish and what state is the work in?",
+      "instructions": "Chief of Staff/Canon/ChatGPT Project Instructions.md"
     },
     {
       "id": "trust-issues",
-      "display_name": "Trust Issues",
-      "formal_role": "Epistemology & Evidence"
+      "name": "Trust Issues",
+      "formal_role": "Epistemology & Evidence",
+      "core_question": "How do we know this is true?",
+      "instructions": "Trust Issues/Canon/ChatGPT Project Instructions.md"
     },
     {
       "id": "execution",
-      "display_name": "Execution",
-      "formal_role": "Function & Implementation"
+      "name": "Execution",
+      "formal_role": "Function & Implementation",
+      "core_question": "What does the system do, and how is that behavior realized?",
+      "instructions": "Execution/Canon/ChatGPT Project Instructions.md"
     },
     {
       "id": "vibes",
-      "display_name": "Vibes",
-      "formal_role": "Architecture & Topology"
+      "name": "Vibes",
+      "formal_role": "Architecture & Topology",
+      "core_question": "How is the system constructed and connected?",
+      "instructions": "Vibes/Canon/ChatGPT Project Instructions.md"
     },
     {
       "id": "devnotes",
-      "display_name": "DevNotes",
-      "formal_role": "Knowledge & Classification"
+      "name": "DevNotes",
+      "formal_role": "Knowledge & Classification",
+      "core_question": "What do we know, and how can we recover it?",
+      "instructions": "DevNotes/Canon/ChatGPT Project Instructions.md"
     },
     {
       "id": "schemes",
-      "display_name": "Schemes",
-      "formal_role": "Ontology & Modeling"
+      "name": "Schemes",
+      "formal_role": "Ontology & Modeling",
+      "core_question": "What exists, relates, and is valid?",
+      "instructions": "Schemes/Canon/ChatGPT Project Instructions.md"
     },
     {
       "id": "prompter",
-      "display_name": "Prömpter",
-      "formal_role": "Language & Semantics"
+      "name": "Prömpter",
+      "formal_role": "Language & Semantics",
+      "core_question": "What do we call things, and how is intent communicated?",
+      "instructions": "Prömpter/Canon/ChatGPT Project Instructions.md"
     },
     {
       "id": "fuck-you-pay-me",
-      "display_name": "Fuck You Pay Me",
-      "formal_role": "Domain & External Reality"
+      "name": "Fuck You Pay Me",
+      "formal_role": "Domain & External Reality",
+      "core_question": "What real-world business entities, obligations, authorities, customers, and money does the system interact with?",
+      "instructions": "Fuck You Pay Me/Canon/ChatGPT Project Instructions.md"
     }
-  ]
+  ],
+  "rule": "Role ownership is canonical meaning, not exclusive use. Machine and interface projections may not redefine the role manifest."
 }
