@@ -11,7 +11,7 @@
   "showIndentGuide": false,
   "useTab": true,
   "tabSize": 2,
-  "openBehavior": "file:devnotes.home.md",
+  "openBehavior": "file:DevNotes Home.md",
   "newFileLocation": "current",
   "attachmentFolderPath": "./",
   "pdfExportSettings": {
