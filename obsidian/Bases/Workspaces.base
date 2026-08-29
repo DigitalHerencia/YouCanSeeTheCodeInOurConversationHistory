@@ -1,9 +1,11 @@
 filters:
   and:
     - file.ext == "md"
-    - file.hasProperty("namespace")
+    - file.hasProperty("role")
     - not:
-        - file.inFolder("_obsidian/Templates")
+        - file.inFolder("obsidian/Templates")
+        - file.inFolder("ZETTLECASTEN")
+        - file.inFolder("CIGARETTES, REGRETS, & NEURAL NETS")
 formulas:
   backlink_count: file.backlinks.length
   outgoing_link_count: file.links.length

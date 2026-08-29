@@ -11,39 +11,35 @@
   "inputFieldTemplates": [
     {
       "name": "dn-status",
-      "declaration": "INPUT[inlineSelect(option(backlog), option(ready), option(in-progress), option(in-review), option(blocked), option(done), option(cancelled))]"
+      "declaration": "INPUT[inlineSelect(option(\"Backlog\"), option(\"Ready\"), option(\"In Progress\"), option(\"Blocked\"), option(\"Done\"), option(\"Cancelled\"))]"
     },
     {
       "name": "dn-status-task",
-      "declaration": "INPUT[inlineSelect(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled))]"
+      "declaration": "INPUT[inlineSelect(option(\"Backlog\"), option(\"Ready\"), option(\"In Progress\"), option(\"Blocked\"), option(\"Done\"), option(\"Cancelled\"))]"
     },
     {
       "name": "dn-status-knowledge",
-      "declaration": "INPUT[inlineSelect(option(draft), option(review), option(active), option(superseded), option(archived))]"
-    },
-    {
-      "name": "dn-status-decision",
-      "declaration": "INPUT[inlineSelect(option(proposed), option(accepted), option(rejected), option(superseded))]"
+      "declaration": "INPUT[inlineSelect(option(\"Draft\"), option(\"Review\"), option(\"Active\"), option(\"Superseded\"), option(\"Archived\"))]"
     },
     {
       "name": "dn-status-validation",
-      "declaration": "INPUT[inlineSelect(option(ready), option(in-progress), option(passed), option(failed), option(blocked), option(skipped), option(inferred))]"
+      "declaration": "INPUT[inlineSelect(option(\"Passed\"), option(\"Failed\"), option(\"Skipped\"), option(\"Blocked\"), option(\"Inferred\"))]"
     },
     {
       "name": "dn-authority",
-      "declaration": "INPUT[inlineSelect(option(canonical), option(supporting), option(implementation-evidence), option(project-specific), option(operational))]"
+      "declaration": "INPUT[inlineSelect(option(\"Source of Truth\"), option(\"Working\"), option(\"Reference\"), option(\"Derived\"), option(\"Historical\"))]"
     },
     {
       "name": "dn-role",
-      "declaration": "INPUT[inlineSelect(option(chief-of-staff), option(trust-issues), option(execution), option(vibes), option(devnotes), option(schemes), option(prompter), option(fuck-you-pay-me))]"
+      "declaration": "INPUT[inlineSelect(option(\"Chief of Staff\"), option(\"Trust Issues\"), option(\"Execution\"), option(\"Vibes\"), option(\"DevNotes\"), option(\"Schemes\"), option(\"Prömpter\"), option(\"Fuck You Pay Me\"))]"
     },
     {
       "name": "dn-priority",
-      "declaration": "INPUT[inlineSelect(option(low), option(normal), option(high), option(critical))]"
+      "declaration": "INPUT[inlineSelect(option(\"Low\"), option(\"Normal\"), option(\"High\"), option(\"Critical\"))]"
     },
     {
       "name": "dn-health",
-      "declaration": "INPUT[inlineSelect(option(on-track), option(at-risk), option(blocked), option(paused))]"
+      "declaration": "INPUT[inlineSelect(option(\"On Track\"), option(\"At Risk\"), option(\"Blocked\"), option(\"Paused\"))]"
     },
     {
       "name": "dn-progress",
@@ -60,9 +56,11 @@
   ],
   "buttonTemplates": [],
   "excludedFolders": [
-    "_obsidian/Templates",
+    "obsidian/Templates",
     "DevNotes/Archive",
     ".agent-logs",
-    "_ops"
+    "ops",
+    "ZETTLECASTEN",
+    "CIGARETTES, REGRETS, & NEURAL NETS"
   ]
 }

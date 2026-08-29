@@ -1,15 +1,17 @@
 filters:
   and:
     - file.ext == "md"
-    - file.hasProperty("namespace")
+    - file.hasProperty("role")
     - not:
-        - file.inFolder("_obsidian/Templates")
-        - file.inFolder("_ops")
+        - file.inFolder("obsidian/Templates")
+        - file.inFolder("ops")
         - file.inFolder("DevNotes/Archive")
+        - file.inFolder("ZETTLECASTEN")
+        - file.inFolder("CIGARETTES, REGRETS, & NEURAL NETS")
 formulas:
   backlink_count: file.backlinks.length
   outgoing_link_count: file.links.length
-  connection_health: if(file.backlinks.length == 0 || file.links.length == 0, "weak", "connected")
+  connection_health: if(file.backlinks.length == 0 || file.links.length == 0, "Weak", "Connected")
 properties:
   file.name:
     displayName: Note
@@ -37,8 +39,8 @@ views:
     filters:
       or:
         - type == "capture"
-        - status == "blocked"
-        - health == "at-risk"
+        - status == "Blocked"
+        - health == "At Risk"
     order:
       - file.name
       - role
@@ -50,8 +52,8 @@ views:
     name: Blocked or At Risk
     filters:
       or:
-        - status == "blocked"
-        - health == "at-risk"
+        - status == "Blocked"
+        - health == "At Risk"
     order:
       - file.name
       - role

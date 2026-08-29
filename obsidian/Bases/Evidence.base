@@ -1,9 +1,10 @@
 filters:
   and:
     - file.ext == "md"
-    - file.hasProperty("namespace")
     - not:
-        - file.inFolder("_obsidian/Templates")
+        - file.inFolder("obsidian/Templates")
+        - file.inFolder("ZETTLECASTEN")
+        - file.inFolder("CIGARETTES, REGRETS, & NEURAL NETS")
 formulas:
   backlink_count: file.backlinks.length
   outgoing_link_count: file.links.length
@@ -32,7 +33,8 @@ views:
     filters:
       or:
         - type == "verification"
-        - authority == "implementation-evidence"
+        - file.hasTag("evidence")
+        - file.hasTag("verification")
     order:
       - file.name
       - workspace
