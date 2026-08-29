@@ -1,106 +1,58 @@
-# Hipster Stack Governance Directory
+# Codependent Coding Governance Directory
 
-Hipster Stack™ is the opinionated project initializer implemented in this repository: one repository-owned maximal white-label application, one deterministic constitution/generation engine, one shared configuration contract, a CLI execution surface, and a stateless public web app.
+The local workspace is a consolidation source tree for **The Codependent Coding™ Web App Architecture**. Its repository identity is disposable; its working implementation is not.
 
-This file is the governance directory. Read only the material relevant to the active Issue.
+## Controlling authority
 
-## Authority
+Resolve instructions in this order:
 
-1. The current GitHub Issue defines the unit of work.
-2. The matching `context/specs/HS-*.md` defines durable implementation scope for new work. Historical `LV-*` specs remain provenance, not current direction unless an Issue explicitly names one.
-3. `context/docs/*.md` defines human-readable product and architecture contracts.
-4. `.agents/contracts/*.yaml` encodes compact deterministic boundaries derived from the controlling docs.
-5. The live repository establishes current implementation state.
-6. The Codependent Coding™ Knowledge System in DevNotes is the canonical reusable engineering authority.
-7. `.agents/execution/*.json` records operational state and never overrides canon.
+1. current owner instructions and `context/00-governance/00-TypeScripture-Canonical-Doctrine.md`;
+2. the remaining contracts in `context/00-governance/`;
+3. current canonical domain sources in `context/10-authority/`;
+4. working implementation as migration evidence;
+5. mockups as visual and interaction evidence;
+6. explicitly superseded material as provenance only.
 
-When sources conflict, do not invent a compromise. Prefer the higher authority and update stale lower-level governance as part of the focused change when required.
+`context/00-governance/04-Segmented-Build-Spec.md` is the active implementation plan. Work through Segments 0–9 in order and record each completed segment under `context/01-codex/`.
 
-## Ecosystem boundary
+## Canonical system
 
 ```text
-Codependent Coding Knowledge System
-  reusable engineering doctrine
-        │
-        ▼
-Hipster Stack
-  deterministic application constitution
-        │
-        ▼
-standalone generated application
-        │
-        ▼
-Loaded Vibes
-  adaptive specification-driven development
-        │
-        ▼
-product-specific MVP
+TypeScripture™ Canonical Doctrine
+  -> Codependent Coding™ Web App Architecture
+  -> Hipster Stack™ resolver/generator + Maximal Template™ source
+  -> nine Ontology™ defaults
+  -> Anthimeria™ + CLI/config adapters
+  -> dependency-closed Virgule™
+  -> Arrangement™
+  -> Loaded Vibes™ post-generation Codex operations
 ```
 
-Hipster Stack owns deterministic generation and the executable template. Codependent Coding owns reusable knowledge. Loaded Vibes is downstream adaptive tooling and is not a generation/runtime dependency.
+Simples™ contains exactly two top-level families: **PureUI Blocks™** and **BusinessLogic Blocks™ / Workflows**. Visual Vibes™ owns the shared presentation language.
+
+## Reconciliation rules
+
+- Search all imported source families for semantic equivalents before declaring an implementation missing.
+- Migrate, rename, and adapt working code before writing replacements.
+- Keep one semantic owner for the Application Definition/Virgule resolver. Web, CLI, config, preview, and generation remain adapters over it.
+- Keep one authoritative Maximal Template superset. Imported `main`, `demo`, and root presentation sources are evidence to reconcile, not permanent parallel products.
+- Anthimeria is stateless and presentation/configuration-oriented. It does not own provider, authorization, persistence, workflow-membership, or dependency-closure rules.
+- Mockups control hierarchy and presentation, not unsupported behavior. Every visible control must perform a real action or be reframed.
+- Loaded Vibes operates on generated Arrangements after generation; it is not the resolver or materializer.
+- Preserve historical source only when clearly labeled and useful.
 
 ## Engineering grammar
 
-The generated application and this repository follow the applicable subset of the canonical method:
+> Routes adapt. Features orchestrate. Pure presentation renders. Fetchers read. Actions adapt mutations. Workflows coordinate use cases. Schemas validate. Authorization decides. Transactions preserve invariants. Integration adapters own provider mechanics. Webhooks reconcile external truth.
 
-> Routes adapt. Features orchestrate. Components render. Fetchers read. Actions write. Schemas validate. Authorization decides. Transactions preserve invariants. Webhooks reconcile external truth.
+## Read by segment
 
-Apply the grammar proportionally. Static website presentation does not need ceremonial fetchers/actions/workflows.
+For every segment, read this file, `context/README.md`, the controlling segment, only the canonical sources named by that segment, and only affected implementation plus direct imports. Do not inventory the entire repository again once Segment 0 has mapped ownership.
 
-## Fixed method, configurable constitution
+Before mutation, write the required short YAML plan. After focused validation, write a checkpoint from `context/01-codex/SEGMENT-CHECKPOINT-TEMPLATE.md` with Executed, Skipped, Blocked, and Inferred evidence.
 
-The opinionated foundation is the engineering method, responsibility boundaries, trust model, and supported architecture. Concrete providers, modules, capabilities, route surfaces, or policies become editable only when the shared schema and generator can produce the corresponding repository correctly.
+## Local-only delivery
 
-Never expose a decorative option that only changes metadata. Current implementation constraints remain real until an implementation Issue changes them.
+Do not create a remote, push, deploy, publish, or provision credentials. Do not perform destructive or irreversible data changes. Repository/remote/deployment work begins only after owner acceptance of the completed local build.
 
-## Template boundary
-
-`template/` is the standalone maximal white-label application. It must make sense if extracted from this monorepo.
-
-Generator-specific ownership catalogs, pruning rules, Constituter state, CLI implementation, and generation instructions belong outside `template/`. Application-local context, tests, CI, and agent contracts may remain when they govern the standalone application itself.
-
-## Read by task
-
-### Any implementation Issue
-
-Read:
-
-1. this file;
-2. `context/README.md`;
-3. the matching active spec;
-4. only docs/contracts named by that spec;
-5. only actual files being changed and direct imports needed to satisfy acceptance.
-
-Do not inventory the whole repository once the spec identifies the surface.
-
-### Website work
-
-Read the active web spec first, then `context/docs/web.md`, the named mockup(s), and only affected `apps/web` files plus directly required shared configuration code. The mockups control presentation; repository-supported behavior controls semantics.
-
-### Generator/configuration work
-
-Read `context/docs/configuration.md`, `context/docs/generator-cli.md`, `context/docs/architecture.md`, `.agents/contracts/product.yaml`, and `.agents/contracts/architecture.yaml`.
-
-### Template work
-
-Read `context/docs/template.md`, `context/docs/architecture.md`, the relevant machine contract, and only the required Codependent Coding/Hipster Stack references from DevNotes.
-
-## Web-overhaul rules
-
-- Current mockups in `context/mockups/` are visual acceptance artifacts.
-- Reproduce their structure, hierarchy, density, spacing, and Hipster Stack/Digital Herencia aesthetic faithfully; adapt literal labels only when needed for truthful behavior.
-- Primary navigation vocabulary is `Product | Simples | Docs | Constituter`; keep current routes `/`, `/libraries/*`, `/docs/*`, and `/configure` unless a future explicit product decision changes them.
-- The pre-Codex brand baseline in `context/docs/web.md` is locked: black/`#05030b`, white, `#2f7a8d`, approved typography/wordmarks, supplied Crown/Banner/Desert assets, required public copy, and mobile-first Tailwind v4 semantic tokens.
-- Simples™ is the browsable building-block surface. It does not mean the items are independently composable packages and does not own configuration rules.
-- Docs remains canonical end-user technical content.
-- Constituter™ is the stateless visual configuration workbench over the same shared semantics as CLI/config file.
-- Use actual locally owned BoldKit source for UI primitives and selected blocks; BoldKit is an implementation source, not visual authority.
-- TanStack may inform compact interaction hierarchy, inspectable configuration, and generated-plan ergonomics only. Do not copy its visual design or introduce unrelated TanStack technology.
-- Delete replaced UI/CSS/helpers after their final caller is gone.
-- Do not add a backend, CMS, hosted generator, analytics project, visual-regression harness, or broad design-system abstraction merely to reproduce the mockups.
-
-## Delivery
-
-Work one Issue/spec at a time on a short-lived Issue branch. Make the smallest complete change, run only focused existing checks named by the spec, open an Issue-linked PR, delete replaced code, and report executed/skipped/blocked validation truthfully. Merge only when actual acceptance and required CI are satisfied.
-
-Governance exists to reduce ambiguity and token use. It is not the product.
+The current migration map is `context/01-codex/segment-00-migration-map.md`.

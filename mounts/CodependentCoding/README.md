@@ -1,6 +1,6 @@
-# Hipster Stack
+# The Codependent Coding™ Web App Architecture
 
-Hipster Stack turns a bounded Application Definition into a complete white-label application. It combines the canonical `hipster-stack` CLI, the stateless application-definition workbench **The Constituter™**, reproducible `hipsterstack.json` contracts, and one packaged maximal template—without asking you to redesign the stack.
+TypeScripture™ governs the method. The Hipster Stack™ resolves and materializes a bounded Application Definition from one Maximal Template™. Nine Ontology™ defaults establish supported behavior, Anthimeria™ provides the stateless web workbench, a dependency-closed Virgule™ drives generation, and the resulting standalone source is an Arrangement™. Loaded Vibes™ operates on that Arrangement after generation.
 
 The canonical end-user guide lives in [`docs/`](docs/index.md) and is rendered by the website under `/docs/*`. Start with [Getting started](docs/getting-started.md), then use the [configuration](docs/concepts/configuration.md) and [CLI](docs/cli/index.md) references as needed.
 
@@ -28,7 +28,7 @@ Useful create options include `--dry-run`, `--no-git`, `--skip-install`, and `--
 
 ## Configure generated output
 
-Starting configurations are convenience defaults over one template—not separate application forks.
+The nine Ontology defaults are the canonical starting configurations. The four earlier generator presets below remain temporary compatibility inputs until the Ontology/Virgule migration in Segments 3 and 6; they are not separate templates or current product taxonomy.
 
 | Preset                 | Best starting point for                                                             |
 | ---------------------- | ----------------------------------------------------------------------------------- |
@@ -39,9 +39,9 @@ Starting configurations are convenience defaults over one template—not separat
 
 Capability prerequisites resolve automatically. Fixed architecture choices—TypeScript, Next.js, Clerk identity, local row-backed authorization, Prisma, server workflows, provider adapters, and validation boundaries—come from the repository-local Hipster Stack master template rather than configuration questions.
 
-## Visual configurator
+## Anthimeria workbench
 
-The Constituter™ web app uses the same Application Definition resolver as the CLI. It previews resolved capabilities, providers, routes, artifact sets, and environment consequences, then downloads `hipsterstack.json` or copies the matching CLI command.
+The Anthimeria™ web app uses the same Application Definition resolver as the CLI. It will select an Ontology, accept supported presentation intent, preview the resolved Virgule and generation plan, and export the portable `hipsterstack.json` representation without owning a second rules engine.
 
 It is intentionally stateless: no Hipster Stack account, database, remote build worker, or hosted project infrastructure is involved. To run it locally:
 
@@ -52,7 +52,7 @@ corepack pnpm --dir apps/web dev
 
 ## What gets generated
 
-Every project starts from a self-contained Hipster Stack-owned Next.js application and includes:
+Every Arrangement starts from the self-contained Maximal Template-owned Next.js application and includes:
 
 - Clerk identity with local organization, membership, and RBAC truth;
 - Prisma and Neon-ready tenant data boundaries;
@@ -67,7 +67,7 @@ Identical supported recipes and template revisions produce equivalent source out
 
 ## After generation
 
-Run these commands inside a generated project with an installed Hipster Stack CLI:
+Loaded Vibes is the post-generation Codex operations layer. The Hipster Stack CLI continues to explain and diagnose generator-owned output:
 
 ```powershell
 hipster-stack explain
@@ -96,7 +96,7 @@ Start with the generated `.env.example`, run `hipster-stack doctor`, and follow 
 
 ## Package and repository development
 
-The npm package contains the compiled CLI, the complete canonical master template, and local compatibility projections used by existing recipe/add behavior. Generation never fetches an application template from another repository or the network.
+The Hipster Stack package contains the compiled CLI, the canonical Maximal Template, and temporary compatibility projections used by existing recipe/add behavior. Generation never fetches an application template from another repository or the network.
 
 ```powershell
 corepack pnpm install --frozen-lockfile

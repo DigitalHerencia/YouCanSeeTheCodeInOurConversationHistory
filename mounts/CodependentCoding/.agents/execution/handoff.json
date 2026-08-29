@@ -1,21 +1,21 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "handoff": {
-    "issue": 154,
-    "pullRequest": 155,
-    "spec": "context/specs/HS-308-application-definition-foundation.md",
-    "branch": "feat/154-application-definition",
-    "status": "in-review",
-    "implementationCommit": "c8ac9ae",
-    "scope": "Canonical Application Definition entities, property metadata, deterministic resolver, compatibility adapters, generation-plan preview, and The Constituter™ naming.",
-    "verification": [
-      "node_modules/.bin/tsc.CMD --noEmit",
-      "targeted ESLint on changed TypeScript and TSX files",
-      "node_modules/.bin/vitest.CMD run tests/unit/application-definition.test.ts tests/unit/recipe-resolution.test.ts tests/unit/config.test.ts tests/unit/web-configurator.test.ts (27 passed)",
-      "node_modules/.bin/tsdown.CMD",
-      "apps/web node_modules/.bin/next.CMD build --webpack",
-      "CI=1 corepack pnpm release:check"
-    ],
-    "blocked": []
+    "issue": null,
+    "pullRequest": null,
+    "branch": null,
+    "status": "in-progress",
+    "spec": "context/00-governance/04-Segmented-Build-Spec.md",
+    "segment": 2,
+    "scope": "One source-backed TypeScripture reader for the paired Book of Knowledge and Book of Implementation corpus, with chapter/deep-link navigation and reconciled active identity.",
+    "plan": "context/01-codex/segment-02-plan.md",
+    "checkpoint": null,
+    "verification": [],
+    "blocked": [],
+    "externalWork": {
+      "remoteCreation": "deferred",
+      "push": "deferred",
+      "deployment": "deferred"
+    }
   }
 }

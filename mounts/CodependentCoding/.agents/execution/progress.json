@@ -1,35 +1,32 @@
 {
-  "schemaVersion": 3,
-  "status": "in-review",
-  "observedRevision": "617c980",
-  "observedDate": "2026-08-13",
-  "currentOutcome": "HS-308 is establishing the canonical Application Definition, typed property metadata, and shared deterministic resolver for The Constituter™, CLI, config, and generator planning.",
-  "activeIssue": 154,
-  "activeSpec": "context/specs/HS-308-application-definition-foundation.md",
-  "openIssuesObserved": 1,
-  "openPullRequestsObserved": 1,
-  "completedRoadmap": [
-    "HS-301",
-    "HS-302",
-    "HS-303",
-    "HS-304",
-    "HS-305",
-    "HS-306",
-    "HS-307"
-  ],
+  "schemaVersion": 4,
+  "status": "in-progress",
+  "observedDate": "2026-08-28",
+  "currentOutcome": "Segment 1 is complete: canonical workspace wiring, Codependent Coding identity, Visual Vibes shell, canonical navigation/routes, compatibility redirects, and the owner-supplied Landing mockup composition are implemented and verified.",
+  "authority": "context/00-governance/04-Segmented-Build-Spec.md",
+  "currentSegment": 2,
+  "activeIssue": null,
+  "activePullRequest": null,
+  "remoteAndDeploymentWork": "deferred-by-owner",
+  "completedSegments": [0, 1],
+  "currentPlan": "context/01-codex/segment-02-plan.md",
+  "currentCheckpoint": null,
   "knownTransitionFacts": [
-    "template/ remains the sole standalone executable application source",
-    "the repository and GitHub repository are named The Hipster Stack",
-    "the web application-definition workbench is named The Constituter™",
-    "the existing recipe surface is a temporary compatibility adapter over the canonical Application Definition resolver"
+    "the workspace is not currently a Git repository",
+    "the active web source is apps/web",
+    "the active Hipster Stack packages are packages/schema, packages/core, and packages/cli",
+    "the active web shell uses Ontologies, Simples, Anthimeria, and Maximal navigation",
+    "the ten owner-supplied visual references are available under docs/mockups",
+    "no remote creation, push, publication, or deployment is authorized"
   ],
   "verification": [
-    "PASS: node_modules/.bin/tsc.CMD --noEmit",
-    "PASS: targeted ESLint on changed TypeScript and TSX files",
-    "PASS: node_modules/.bin/vitest.CMD run tests/unit/application-definition.test.ts tests/unit/recipe-resolution.test.ts tests/unit/config.test.ts tests/unit/web-configurator.test.ts (27 tests)",
-    "PASS: node_modules/.bin/tsdown.CMD",
-    "PASS: apps/web node_modules/.bin/next.CMD build --webpack (31 static routes)",
-    "PASS: CI=1 corepack pnpm release:check (470 safe packed entries and packed CLI smoke)"
+    "PASS: corepack pnpm install --frozen-lockfile",
+    "PASS: corepack pnpm typecheck",
+    "PASS: corepack pnpm --dir apps/web typecheck",
+    "PASS: targeted ESLint and Prettier",
+    "PASS: corepack pnpm --dir apps/web build (25 generated pages)",
+    "PASS: desktop and narrow browser route/layout smoke with no console warnings or errors",
+    "PASS: Landing Mockup native 894x1600 visual and geometry comparison"
   ],
-  "nextAction": "Wait for PR #155 checks, address any focused failure, then leave the production-triggering merge for owner approval."
+  "nextAction": "Implement the unified TypeScripture paired-book reader directly over the canonical chapter map and source files."
 }

@@ -1,30 +1,22 @@
-# Hipster Stack Machine Governance
+# Codependent Coding Machine Governance
 
 Scope: `.agents/**`.
 
-Machine governance is a compact projection of the controlling Markdown context. It exists to help Codex preserve fixed boundaries while implementing Issues.
+Machine governance is a compact projection of the controlling handoff authority in `context/00-governance/`. It never overrides current owner instructions, the TypeScripture identity map, canonical domain authority, or live implementation evidence.
 
-## Contracts
+## Current transition
 
-- `.agents/contracts/*.yaml` encode stable, enforceable subsets of `context/docs/*`.
-- Every contract names its controlling source documents.
-- Contracts do not invent product behavior.
-- A Markdown source-of-truth change that alters a machine boundary must update the affected contract in the same focused change.
-- Keep IDs stable while they are referenced by active specs, Issues, or implementation.
-- Do not create machine contracts for every paragraph. Encode only boundaries that materially prevent product or architecture drift.
-
-## Execution state
-
-- `.agents/execution/decisions.json` records durable Hipster Stack-specific decisions.
-- `.agents/execution/progress.json` records current roadmap state.
-- `.agents/execution/handoff.json` records the next coherent implementation handoff.
-- Execution files do not prove code correctness.
-- Execution files never override context, contracts, implementation, or live repository evidence.
-- Record unknown or blocked state explicitly rather than inventing evidence.
+- The active work unit is the next incomplete segment in `context/00-governance/04-Segmented-Build-Spec.md`.
+- Segment plans and checkpoints live in `context/01-codex/`.
+- `.agents/contracts/*.yaml` are transitional projections from the earlier Hipster Stack repository. Each is updated with the segment that changes its public or machine boundary; stale names in them are migration targets, not authority.
+- `.agents/execution/progress.json` records the current segment.
+- `.agents/execution/handoff.json` records the current local implementation package.
+- `.agents/execution/decisions.json` is append-only; newer entries supersede named older decisions without deleting history.
 
 ## Integrity
 
-- Keep JSON strict JSON.
-- Keep YAML simple and human-readable.
-- Never store provider secrets, tokens, credential values, or private payloads.
-- Do not introduce a new governance-validation system as part of this migration.
+- Keep JSON strict JSON and YAML simple and human-readable.
+- Record unknown, skipped, blocked, and inferred state explicitly.
+- Never store secrets, tokens, credential values, or private payloads.
+- Do not create a parallel governance validator or semantic rules engine.
+- Do not treat this consolidation workspace as an Arrangement merely because Loaded Vibes source is present.

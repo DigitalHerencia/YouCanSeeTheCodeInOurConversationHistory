@@ -1,78 +1,64 @@
-schema_version: 6
-id: hipster-stack.product
+schema_version: 7
+id: codependent-coding.product
 authority: machine-contract
 sources:
-  - context/docs/product.md
-  - context/docs/web.md
-  - context/docs/documentation.md
+  - context/00-governance/00-TypeScripture-Canonical-Doctrine.md
+  - context/00-governance/02-Canonical-System-Manifest.md
+  - context/00-governance/04-Segmented-Build-Spec.md
+  - context/00-governance/05-Mockup-to-Function-Contract.md
 
 product:
-  name: Hipster Stack
-  class: opinionated-project-initializer
-  framing: deterministic-application-constitution
-  primary_value: repetitive-work-removed-by-generated-project
+  name: The Codependent Coding Web App Architecture
+  class: governed-web-application-architecture
+  framing: doctrine-to-deterministic-generated-source
 
 ecosystem:
-  engineering_knowledge: Codependent Coding
-  generator: Hipster Stack
-  downstream_adaptive_development: Loaded Vibes
+  doctrine: TypeScripture
+  resolver_generator_cli: Hipster Stack
+  source_superset: Maximal Template
+  normalized_defaults: Ontology
+  web_workbench: Anthimeria
+  resolved_definition: Virgule
+  generated_artifact: Arrangement
+  post_generation_operations: Loaded Vibes
+  presentation_system: Visual Vibes
 
-authorities:
-  executable_template: this-repository
-  engineering_doctrine: DigitalHerencia/DevNotes
-  configuration_semantics: shared-schema-and-generator
-
-surfaces:
-  - maximal-template
-  - shared-configuration
-  - generation-engine
-  - cli
-  - web-product
-  - web-simples
-  - web-docs
-  - web-constituter
-  - portable-config
-  - generated-application
+simples:
+  families:
+    - PureUI Blocks
+    - BusinessLogic Blocks
+  constituents_are_top_level_simples: false
 
 web:
+  package: apps/web
   stateless: true
   requires_auth: false
   requires_database: false
   hosted_generation_required: false
   routes:
     product: /
-    simples: /libraries
-    simple_detail: /libraries/[slug]
+    ontologies: /ontologies
+    simples: /simples
     docs: /docs
-    constituter: /configure
-  navigation: [Product, Simples, Docs, Constituter]
-  branded_names_do_not_change_route_semantics: true
+    anthimeria: /anthimeria
+    maximal: /maximal
+  compatibility_redirects:
+    /libraries: /simples
+    /configure: /anthimeria
+  navigation: [Ontologies, Simples, Anthimeria, Maximal]
   mockups_control_presentation: true
-  shared_configuration_controls_semantics: true
-  boldkit_source_is_locally_owned: true
-  tanstack_is_interaction_reference_only: true
-  visual_tokens:
-    background: ['#000000', '#05030b']
-    foreground: ['#ffffff', '#2f7a8d']
-    signal: '#2f7a8d'
-
-template:
-  count: 1
-  repository_owned: true
-  standalone_application: true
-  generator_internal_metadata_allowed: false
+  shared_resolver_controls_semantics: true
 
 configuration:
   one_contract_for_cli_web_file: true
-  visible_options_must_change_real_output: true
-  future_options_hidden_until_generator_support: true
-  fixed_method_not_equal_fixed_provider: true
+  normalized_starting_points: 9
+  visible_options_must_change_supported_output: true
+  dependency_closure_is_resolver_owned: true
 
 prohibited_product_drift:
-  - generic-framework-generator
-  - provider-or-plugin-marketplace
+  - duplicate-web-configuration-engine
+  - arbitrary-workflow-constituent-toggles
+  - multiple-active-maximal-templates
+  - loaded-vibes-as-generator
   - hosted-project-control-plane
   - configurator-account-system
-  - duplicate-web-configuration-engine
-  - generator-machinery-inside-template
-  - arbitrary-generated-repository-upgrade-engine

@@ -60,6 +60,31 @@
       "id": "HS-D-001",
       "decision": "The owner-approved 2026-08-13 Constituter redesign supersedes older fixed-composition governance: architecture remains opinionated while providers, capabilities, authorization, routes, resources, and safe output policy move behind one canonical Application Definition and resolver. The web workbench is named The Constituter™.",
       "status": "active"
+    },
+    {
+      "id": "CC-D-001",
+      "decision": "The 2026-08-28 handoff authority establishes TypeScripture as doctrine, Codependent Coding as the Web App Architecture, Hipster Stack as the resolver/generator/CLI technology, Anthimeria as the stateless workbench, Virgule as the dependency-closed definition, Arrangement as generated output, and Loaded Vibes as post-generation Codex operations.",
+      "status": "active",
+      "supersedes": [
+        "LV-D-001",
+        "LV-D-002",
+        "LV-D-012",
+        "LV-D-016",
+        "LV-D-017",
+        "LV-D-020",
+        "HS-D-001"
+      ]
+    },
+    {
+      "id": "CC-D-002",
+      "decision": "Nine Ontology normalized defaults replace the four generic presets as canonical starters; Simples contains only PureUI Blocks and BusinessLogic Blocks or Workflows; one shared resolver remains authoritative for CLI, config, Anthimeria preview, planning, and materialization.",
+      "status": "active",
+      "supersedes": ["LV-D-015"]
+    },
+    {
+      "id": "CC-D-003",
+      "decision": "The consolidation workspace is local implementation evidence, not a repository identity. Remote creation, push, publication, deployment, and credential provisioning remain deferred until owner acceptance.",
+      "status": "active"
     }
   ]
 }

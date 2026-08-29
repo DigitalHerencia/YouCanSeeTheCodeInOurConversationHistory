@@ -1,23 +1,25 @@
-schema_version: 5
-id: hipster-stack.architecture
+schema_version: 6
+id: codependent-coding.architecture
 authority: machine-contract
 sources:
-  - context/docs/architecture.md
-  - context/docs/template.md
-  - context/docs/configuration.md
-  - context/docs/generator-cli.md
-  - context/docs/web.md
+  - context/00-governance/02-Canonical-System-Manifest.md
+  - context/00-governance/03-Repository-Reconciliation-Contract.md
+  - context/00-governance/04-Segmented-Build-Spec.md
 
 current_repository:
   apps: [web]
   packages: [cli, core, schema]
-  template_path: template
-  docs_path: docs
+  web_path: apps/web
+  maximal_template_path: template
+  maximal_template_status: segment-5-pending
+  docs_authority_path: context/10-authority/typescripture
   maintainer_context_path: context
   machine_governance_path: .agents
 
-shared_configuration:
-  consumers: [cli, web-constituter, portable-config]
+shared_definition:
+  input: Application Definition
+  resolved: Virgule
+  consumers: [cli, anthimeria, portable-config, generation-plan, materializer]
   one_schema: true
   one_resolution_path: true
   ui_may_duplicate_dependency_rules: false
@@ -26,47 +28,54 @@ shared_configuration:
 boundaries:
   web:
     owns:
-      - product-presentation
+      - codependent-coding-product-presentation
+      - ontology-presentation
       - simples-presentation
-      - docs-presentation
-      - constituter-local-orchestration
+      - typescripture-docs-presentation
+      - anthimeria-local-orchestration
+      - maximal-source-explorer-presentation
     forbidden:
       - filesystem-generation
       - provider-secrets
       - duplicate-configuration-authority
+      - workflow-constituent-authority
   cli:
     owns: [command-parsing, prompts, terminal-output, core-invocation]
     forbidden: [second-configuration-resolver]
   generator:
     owns:
       - normalization
-      - constitution-resolution
-      - generator-template-catalog
+      - dependency-closure
+      - maximal-template-catalog
       - generation-plan
       - materialization
       - transforms
       - provenance
     forbidden: [nextjs-web-presentation, template-runtime-product-ui]
-  template:
+  maximal_template:
     standalone_application: true
+    source_count: 1
     forbidden:
       - generator-ownership-catalog
       - pruning-instructions
-      - constituter-state
+      - anthimeria-state
       - cli-implementation
       - generation-plan
+  loaded_vibes:
+    phase: post-generation
+    forbidden:
+      - virgule-normalization
+      - maximal-template-pruning
+      - arrangement-materialization
 
 generated_application:
+  name: Arrangement
+  standalone: true
   preserve_codependent_coding_grammar: true
-  routes_adapt: true
-  features_orchestrate: true
-  components_render: true
-  schemas_validate: true
   generator_internals_leak: false
 
 generation:
   source_template_count: 1
   network_template_fetch: false
   collect_provider_secrets: false
-  windows_first_class: true
   overwrite_unrelated_nonempty_target: false

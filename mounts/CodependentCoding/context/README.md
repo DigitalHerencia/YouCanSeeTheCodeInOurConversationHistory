@@ -1,51 +1,47 @@
-# Hipster Stack Context
+# Codependent Coding — Codex Handoff Governance v0.1.0
 
-This directory tells Codex what Hipster Stack™ is, which contracts control this repository, and what active work remains.
+**Prepared:** 2026-08-28  
+**Purpose:** self-contained authority + execution package for handing the current Codependent Coding consolidation workspace to Codex without requiring the original authority ZIP archives.
 
-## Product
+## What this package does
 
-Hipster Stack is an opinionated project initializer and deterministic application-constitution tool for modern TypeScript web applications built according to the Codependent Coding™ Knowledge System and the established WebApp architecture.
+It resolves the major handoff problem: the implementation workspace contains valuable working code and older governance/names, while the owner has now supplied newer canonical identities and domain packages. Codex should **reconcile**, not restart.
 
-Its payoff is a standalone white-label repository that already contains the recurring architecture, boundaries, integrations, structure, tests, and development context the user would otherwise recreate by hand.
+The package therefore contains:
 
-The CLI is the primary local execution adapter. The web app has four coherent branded surfaces:
+- a controlling current TypeScripture identity map;
+- precedence/conflict rules;
+- canonical system manifest;
+- repository reconciliation contract;
+- a ten-segment build specification (Segments 0–9);
+- mockup-to-function rules;
+- validation/completion rules;
+- Loaded Vibes disposition and verification evidence;
+- a ready-to-paste Codex loop prompt;
+- extracted canonical source material from the supplied TypeScripture, Ontologies, Simples, Anthimeria, generation, and Loaded Vibes packages;
+- the superseded old Codependent Coding Docs/Knowledge package isolated under `90-superseded-source/` for provenance only.
 
-```text
-Product      /
-Simples™     /libraries/*
-Docs         /docs/*
-The Constituter™ /configure
-```
+## Handoff procedure
 
-Simples and The Constituter are presentation vocabulary over existing route/application semantics. The Constituter, CLI, and the portable configuration file must continue to use the same shared configuration authority.
+Give Codex:
 
-## Ecosystem
+1. the current `TheCodependentCodingWebAppArchitecture.zip` workspace;
+2. this package (directory or ZIP);
+3. the prompt in `01-codex/CODEX-LOOP-PROMPT.md`.
 
-```text
-Codependent Coding Knowledge System
-        ↓
-Hipster Stack generator
-        ↓
-standalone generated application
-        ↓
-Loaded Vibes adaptive spec-driven tool
-        ↓
-product-specific MVP
-```
+You do **not** need to give Codex the original Ontologies/Simples/Anthimeria/generation/Loaded-Vibes authority ZIPs separately; their source material has been extracted here.
 
-The Knowledge System is authority, not a runtime dependency. Hipster Stack deterministically materializes the starting application. Loaded Vibes may later adapt that application through governed specifications and agents.
+## Most important instruction
 
-## Current implementation versus approved direction
+When an old file uses an old name and current authority supplies a clear new name, the correct operation is generally **rename/migrate/update references**, not “declare a contradiction” and not “rewrite the whole project.”
 
-Historical Loaded Vibes identifiers remain only where they are legitimate downstream or provenance references. The owner has locked the Product/Simples/Docs/The Constituter™ vocabulary, semantic Tailwind v4 color/type tokens, mobile-first responsive overrides, supplied Crown/Banner/Desert assets, and required public copy.
+## Deferred work
 
-## Source map
+This build intentionally excludes:
 
-- Product/architecture: `context/docs/product.md`, `architecture.md`, `configuration.md`, `template.md`, `generator-cli.md`
-- Web/docs: `context/docs/web.md`, `documentation.md`, `context/mockups/`
-- Machine boundaries: `.agents/contracts/product.yaml`, `.agents/contracts/architecture.yaml`
-- Roadmap: `context/specs/README.md` and active `HS-*` specs
+- creating a new GitHub repository/remote;
+- pushing;
+- production/preview deployment setup;
+- provider credential provisioning.
 
-## Working rule
-
-Make the real product look and operate like the approved mockups with the fewest correct edits. Read only active scope, preserve working semantics and the owner-approved brand baseline, remove replaced code, and do not let governance become a second software project.
+Those happen after local acceptance.
