@@ -24,6 +24,7 @@ export {
   type ResolvedRecipe,
 } from './recipe.js';
 export { getProductPreset, productPresets } from './presets.js';
+export { getOntology, ontologyCatalog, type OntologyDefinition, type OntologyRouteConstitution } from './ontologies.js';
 export {
   applicationDefinitionSchema,
   applicationDefinitionSchemaVersion,
@@ -36,6 +37,7 @@ export {
   propertyMechanismIds,
   propertyStateIds,
   productPresetIds,
+  ontologyIds,
   providerIds,
   recipeSchema,
   type ApplicationDefinition,
@@ -55,6 +57,7 @@ export {
   type PropertyMechanism,
   type PropertyState,
   type ProductPresetId,
+  type OntologyId,
   type ProviderDefinition,
   type ProviderId,
   type ProviderSelection,

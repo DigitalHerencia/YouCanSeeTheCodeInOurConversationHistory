@@ -819,6 +819,11 @@ const defaultRouteLabels = {
 
 async function applyRouteComposition(plan: GenerationPlan): Promise<void> {
   const routes = plan.applicationPlan.routes
+    .filter(
+      (route) =>
+        route.capability === undefined ||
+        plan.applicationPlan.selectedCapabilities.includes(route.capability),
+    )
     .map((route) => ({
       route,
       source: routeSourcePaths[route.id as keyof typeof routeSourcePaths],

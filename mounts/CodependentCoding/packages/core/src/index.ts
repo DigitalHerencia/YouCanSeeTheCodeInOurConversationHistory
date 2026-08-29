@@ -57,8 +57,10 @@ export {
 export {
   capabilityIds,
   designChoices,
+  ontologyIds,
   productPresetIds,
 } from '@hipster-stack/schema';
+export { getOntology, ontologyCatalog, type OntologyDefinition, type OntologyRouteConstitution } from './ontologies.js';
 export {
   applicationDefinitionFromRecipe,
   normalizeRecipe,
@@ -90,6 +92,7 @@ export type {
   ProductIdentity,
   ProductIdentityInput,
   ProductPresetId,
+  OntologyId,
   ProviderDefinition,
   ProviderId,
   ProviderSelection,

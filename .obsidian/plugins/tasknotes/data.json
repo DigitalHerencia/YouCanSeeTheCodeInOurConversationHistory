@@ -474,13 +474,13 @@
   "enableMdbaseSpec": false,
   "autoCreateDefaultBasesFiles": true,
   "commandFileMapping": {
-    "open-calendar-view": "_obsidian/Bases/TaskNotes/mini-calendar-default.base",
-    "open-kanban-view": "_obsidian/Bases/TaskNotes/kanban-default.base",
-    "open-tasks-view": "_obsidian/Bases/TaskNotes/tasks-default.base",
-    "open-advanced-calendar-view": "_obsidian/Bases/TaskNotes/calendar-default.base",
-    "open-agenda-view": "_obsidian/Bases/TaskNotes/agenda-default.base",
-    "pomodoro-stats-base": "_obsidian/Bases/TaskNotes/pomodoro-stats.base",
-    "relationships": "_obsidian/Bases/TaskNotes/relationships.base"
+    "open-calendar-view": "obsidian/Bases/TaskNotes/mini-calendar-default.base",
+    "open-kanban-view": "obsidian/Bases/TaskNotes/kanban-default.base",
+    "open-tasks-view": "obsidian/Bases/TaskNotes/tasks-default.base",
+    "open-advanced-calendar-view": "obsidian/Bases/TaskNotes/calendar-default.base",
+    "open-agenda-view": "obsidian/Bases/TaskNotes/agenda-default.base",
+    "pomodoro-stats-base": "obsidian/Bases/TaskNotes/pomodoro-stats.base",
+    "relationships": "obsidian/Bases/TaskNotes/relationships.base"
   },
   "maintainDueDateOffsetInRecurring": false,
   "resetCheckboxesOnRecurrence": false,

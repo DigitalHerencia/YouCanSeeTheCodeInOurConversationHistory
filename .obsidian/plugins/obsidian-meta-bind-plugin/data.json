@@ -58,7 +58,6 @@
   "excludedFolders": [
     "obsidian/Templates",
     "DevNotes/Archive",
-    ".agent-logs",
     "ops",
     "ZETTLECASTEN",
     "CIGARETTES, REGRETS, & NEURAL NETS"

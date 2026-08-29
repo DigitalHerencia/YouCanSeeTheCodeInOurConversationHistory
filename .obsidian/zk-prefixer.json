@@ -1,5 +1,5 @@
 {
   "folder": "DevNotes/Inbox",
-  "template": "_obsidian/Templates/capture.template.md",
+  "template": "obsidian/Bases/TaskNotes/tasks-default.base",
   "format": "dddd MMM DD YYYY"
 }

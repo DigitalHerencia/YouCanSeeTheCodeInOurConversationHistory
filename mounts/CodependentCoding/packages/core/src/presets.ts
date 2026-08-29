@@ -1,4 +1,5 @@
-import type { ProductPresetId, ResolvedModules } from '@hipster-stack/schema';
+import type { OntologyId, ProductPresetId, ResolvedModules } from '@hipster-stack/schema';
+import { ontologyCatalog } from './ontologies.js';
 
 export interface ProductPreset {
   id: ProductPresetId;
@@ -23,7 +24,17 @@ const goldenFoundation = {
   governance: true,
 } as const satisfies ResolvedModules;
 
-export const productPresets = {
+const ontologyPresets = Object.fromEntries(
+  Object.values(ontologyCatalog).map((ontology) => [ontology.id, {
+    id: ontology.id,
+    label: ontology.label,
+    description: ontology.description,
+    modules: ontology.modules,
+  }]),
+) as Record<OntologyId, ProductPreset>;
+
+export const productPresets: Record<ProductPresetId, ProductPreset> = {
+  ...ontologyPresets,
   'bare-golden-app': {
     id: 'bare-golden-app',
     label: 'Bare golden app',
@@ -73,7 +84,7 @@ export const productPresets = {
       sampleDomain: 'projects',
     },
   },
-} as const satisfies Record<ProductPresetId, ProductPreset>;
+};
 
 export function getProductPreset(id: ProductPresetId): ProductPreset {
   return productPresets[id];

@@ -2,15 +2,15 @@
   "schemaVersion": 4,
   "status": "in-progress",
   "observedDate": "2026-08-28",
-  "currentOutcome": "Segment 1 is complete: canonical workspace wiring, Codependent Coding identity, Visual Vibes shell, canonical navigation/routes, compatibility redirects, and the owner-supplied Landing mockup composition are implemented and verified.",
+  "currentOutcome": "Segments 0-2 are complete: canonical workspace wiring and shell, Landing mockup composition, and a source-backed paired TypeScripture reader are implemented and verified.",
   "authority": "context/00-governance/04-Segmented-Build-Spec.md",
-  "currentSegment": 2,
+  "currentSegment": 9,
   "activeIssue": null,
   "activePullRequest": null,
   "remoteAndDeploymentWork": "deferred-by-owner",
-  "completedSegments": [0, 1],
-  "currentPlan": "context/01-codex/segment-02-plan.md",
-  "currentCheckpoint": null,
+  "completedSegments": [0, 1, 2, 3, 4, 5, 6, 7, 8],
+  "currentPlan": "context/01-codex/segment-09-plan.md",
+  "currentCheckpoint": "context/01-codex/segment-09-checkpoint.md",
   "knownTransitionFacts": [
     "the workspace is not currently a Git repository",
     "the active web source is apps/web",
@@ -28,5 +28,5 @@
     "PASS: desktop and narrow browser route/layout smoke with no console warnings or errors",
     "PASS: Landing Mockup native 894x1600 visual and geometry comparison"
   ],
-  "nextAction": "Implement the unified TypeScripture paired-book reader directly over the canonical chapter map and source files."
+  "nextAction": "Resolve fixed-timeout full-suite validation after template consolidation, then complete browser checks and final handoff."
 }

@@ -143,7 +143,8 @@ function TypeScriptureOverview() {
                 <div>
                   <strong>{chapter.title}</strong>
                   <small>
-                    {chapter.implementation_axis} · {chapter.implementation_term}
+                    {chapter.implementation_axis} ·{' '}
+                    {chapter.implementation_term}
                   </small>
                 </div>
                 <Link href={chapterHref('knowledge', chapter.chapter)}>K</Link>
@@ -199,12 +200,17 @@ export default async function DocumentationPage({
               Open paired {typescriptureBooks[pairedBook].shortLabel} chapter →
             </Link>
           </div>
-          <small title={page.sourcePath}>Rendered from canonical authority</small>
+          <small title={page.sourcePath}>
+            Rendered from canonical authority
+          </small>
         </header>
 
         <div className="docs-prose">{renderDocumentation(page.source)}</div>
 
-        <nav className="docs-chapter-pagination" aria-label="Chapter pagination">
+        <nav
+          className="docs-chapter-pagination"
+          aria-label="Chapter pagination"
+        >
           {previous ? (
             <Link href={chapterHref(page.book, previous.chapter)}>
               <small>Previous</small>

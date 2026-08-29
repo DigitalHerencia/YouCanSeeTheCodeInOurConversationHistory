@@ -1,6 +1,8 @@
 import { z } from 'zod';
 import {
   capabilityIds,
+  ontologyIds,
+  legacyProductPresetIds,
   defaultDesign,
   designSchema,
   productPresetIds,
@@ -351,4 +353,4 @@ export type ApplicationDefinition = z.output<
   typeof applicationDefinitionSchema
 >;
 
-export { capabilityIds, productPresetIds };
+export { capabilityIds, ontologyIds, legacyProductPresetIds, productPresetIds };

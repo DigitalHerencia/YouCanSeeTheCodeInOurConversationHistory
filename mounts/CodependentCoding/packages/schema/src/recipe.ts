@@ -2,12 +2,27 @@ import { z } from 'zod';
 
 export const recipeSchemaVersion = 1 as const;
 
-export const productPresetIds = [
+export const ontologyIds = [
+  'crm-pipeline-tracker',
+  'project-management-task-tracker',
+  'customer-support-ticketing',
+  'marketing-automation-analytics',
+  'invoicing-expense-tracker',
+  'social-media-scheduler',
+  'ai-powered-wrapper',
+  'b2b-client-portal',
+  'internal-tools-admin-portal',
+] as const;
+
+/** Transitional product preset IDs retained for legacy CLI/config inputs. */
+export const legacyProductPresetIds = [
   'b2b-saas',
   'client-portal',
   'platform-marketplace',
   'bare-golden-app',
 ] as const;
+
+export const productPresetIds = [...ontologyIds, ...legacyProductPresetIds] as const;
 
 export const productPresetSchema = z.enum(productPresetIds);
 
@@ -115,6 +130,7 @@ export const normalizedRecipeSchema = recipeSchema.extend({
 export type RecipeInput = z.input<typeof recipeSchema>;
 export type ParsedRecipe = z.output<typeof recipeSchema>;
 export type ProductPresetId = z.infer<typeof productPresetSchema>;
+export type OntologyId = (typeof ontologyIds)[number];
 export type CapabilityId = (typeof capabilityIds)[number];
 export type ModuleSelection = z.infer<typeof moduleSelectionSchema>;
 export type ResolvedModules = z.infer<typeof resolvedModulesSchema>;

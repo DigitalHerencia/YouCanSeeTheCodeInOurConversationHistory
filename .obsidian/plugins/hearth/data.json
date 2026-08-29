@@ -1,9 +1,9 @@
 {
-  "title": "DEVNOTES · KNOWLEDGE + ENGINEERING SYSTEM",
+  "title": "YOU CAN SEE THE CODE IN OUR CONVERSATION HISTORY",
   "showTitle": true,
-  "logo": "∴",
-  "logoIcon": "",
-  "tabIcon": "",
+  "logo": "",
+  "logoIcon": "terminal",
+  "tabIcon": "terminal",
   "themeColorTarget": "none",
   "showSearch": true,
   "searchPlaceholder": "Search or command",
@@ -304,19 +304,6 @@
       "name": "Github",
       "cards": [
         {
-          "kind": "clock",
-          "title": "",
-          "x": 0,
-          "y": 0,
-          "w": 12,
-          "h": 2,
-          "id": "card-mt9an59i-355",
-          "fx": 0.8385761589403974,
-          "fw": 0.16142384105960264,
-          "fy": 0,
-          "fh": 101
-        },
-        {
           "kind": "embed",
           "title": "",
           "target": "_obsidian/Bases/DevNotes-Unified.base",
@@ -325,10 +312,10 @@
           "w": 12,
           "h": 6,
           "id": "card-mt9an59j-1667",
-          "fx": 0.6898907103825137,
-          "fw": 0.31010928961748635,
-          "fy": 117,
-          "fh": 444
+          "fx": 0.762406015037594,
+          "fw": 0.23759398496240602,
+          "fy": 279.8835164835165,
+          "fh": 279.8835164835165
         },
         {
           "kind": "templater",
@@ -372,8 +359,8 @@
                 "template": "_obsidian/Templates/adr-decision.template.md",
                 "sizeW": 44,
                 "sizeH": 34,
-                "col": 2,
-                "row": 2
+                "col": 5,
+                "row": 1
               },
               {
                 "id": "dn-template-handoff",
@@ -381,9 +368,9 @@
                 "icon": "send",
                 "template": "_obsidian/Templates/handoff.template.md",
                 "sizeW": 44,
-                "sizeH": 34,
-                "col": 3,
-                "row": 2
+                "sizeH": 40,
+                "col": 4,
+                "row": 1
               },
               {
                 "id": "dn-template-evidence",
@@ -392,8 +379,8 @@
                 "template": "_obsidian/Templates/verification-evidence.template.md",
                 "sizeW": 44,
                 "sizeH": 36,
-                "col": 1,
-                "row": 2
+                "col": 6,
+                "row": 1
               }
             ]
           },
@@ -402,10 +389,10 @@
           "w": 9,
           "h": 3,
           "id": "card-mt9an59j-2585",
-          "fx": 0.6895695364238411,
-          "fw": 0.1357615894039735,
-          "fy": 1,
-          "fh": 100
+          "fx": 0.762406015037594,
+          "fw": 0.23759398496240602,
+          "fy": 167.68351648351648,
+          "fh": 69.04615384615384
         },
         {
           "kind": "git",
@@ -428,15 +415,17 @@
               "fetch",
               "stageAll",
               "unstageAll"
-            ]
+            ],
+            "changeLimit": 10,
+            "logLimit": 10
           },
           "x": 9,
           "y": 34,
           "w": 3,
           "h": 3,
           "id": "card-mt9an59j-6916",
-          "fx": 0.2923497267759563,
-          "fw": 0.383879781420765,
+          "fx": 0.2924812030075188,
+          "fw": 0.45789473684210524,
           "fy": 0,
           "fh": 561
         },
@@ -450,8 +439,8 @@
           "h": 2,
           "fx": 0,
           "fy": 0,
-          "fw": 0.2786885245901639,
-          "fh": 152,
+          "fw": 0.2789473684210526,
+          "fh": 114.66593406593407,
           "stats": {
             "advanced": true,
             "queries": [],
@@ -468,33 +457,6 @@
               "documents"
             ]
           }
-        },
-        {
-          "id": "card-mt9axl49-1978",
-          "x": 0,
-          "y": 1,
-          "kind": "heatmap",
-          "title": "",
-          "heatmap": {},
-          "w": 6,
-          "h": 3,
-          "fx": 0,
-          "fy": 447,
-          "fw": 0.2786885245901639,
-          "fh": 114
-        },
-        {
-          "id": "card-mtdcsull-8208",
-          "x": 0,
-          "y": 1,
-          "kind": "calendar",
-          "title": "Calendar",
-          "w": 4,
-          "h": 4,
-          "fx": 0,
-          "fy": 168,
-          "fw": 0.2814207650273224,
-          "fh": 263
         }
       ],
       "iconLucide": "github",

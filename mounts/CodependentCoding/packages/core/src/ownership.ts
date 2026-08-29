@@ -95,6 +95,7 @@ export const optionalSurfaceOwnership = {
   ),
   onboarding: surface('onboarding', [
     'app/(onboarding)',
+    'app/(tenant)/onboarding',
     'features/onboarding',
   ]),
   admin: surface('admin', ['app/(admin)', 'features/admin']),
@@ -207,6 +208,15 @@ export const providerSurfaceOwnership = {
     'scripts/Test-PostgresRls.ps1',
     'docs/adr/adr-0004-postgresql-rls-roles-and-context.md',
     'context/patterns/transaction-helper.md',
+    'features/crm',
+    'features/invoicing',
+    'features/marketing',
+    'features/portal',
+    'features/social',
+    'features/support',
+    'app/(public)/integrations',
+    'app/api/ai',
+    'app/api/sendgrid',
   ],
   stripe: [
     'app/api/stripe',

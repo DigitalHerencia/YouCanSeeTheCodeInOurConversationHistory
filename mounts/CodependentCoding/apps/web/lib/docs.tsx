@@ -57,9 +57,10 @@ if (!typescriptureRoot) {
     'TypeScripture authority is unavailable: context/10-authority/typescripture/00-Chapter-Map.json was not found.',
   );
 }
+const authorityRoot: string = typescriptureRoot;
 
 const chapterMap = JSON.parse(
-  fs.readFileSync(path.join(typescriptureRoot, '00-Chapter-Map.json'), 'utf8'),
+  fs.readFileSync(path.join(authorityRoot, '00-Chapter-Map.json'), 'utf8'),
 ) as ChapterMapEntry[];
 
 function titleFromFile(file: string): string {
@@ -75,7 +76,9 @@ export const typescriptureChapters: readonly TypeScriptureChapter[] =
     title: titleFromFile(entry.file),
   }));
 
-const chapterNumbers = new Set(typescriptureChapters.map(({ chapter }) => chapter));
+const chapterNumbers = new Set(
+  typescriptureChapters.map(({ chapter }) => chapter),
+);
 if (typescriptureChapters.length !== 24 || chapterNumbers.size !== 24) {
   throw new Error(
     `TypeScripture chapter map must contain 24 unique chapters; received ${typescriptureChapters.length} entries and ${chapterNumbers.size} unique identifiers.`,
@@ -83,9 +86,14 @@ if (typescriptureChapters.length !== 24 || chapterNumbers.size !== 24) {
 }
 
 for (const chapter of typescriptureChapters) {
-  for (const relativePath of [chapter.knowledge_output, chapter.implementation_output]) {
-    if (!fs.existsSync(path.join(typescriptureRoot, relativePath))) {
-      throw new Error(`TypeScripture chapter source is missing: ${relativePath}`);
+  for (const relativePath of [
+    chapter.knowledge_output,
+    chapter.implementation_output,
+  ]) {
+    if (!fs.existsSync(path.join(authorityRoot, relativePath))) {
+      throw new Error(
+        `TypeScripture chapter source is missing: ${relativePath}`,
+      );
     }
   }
 }
@@ -117,15 +125,17 @@ export function getTypeScripturePage(
   );
   if (!chapter) return null;
 
-  const sourcePath =
+  const sourcePath = (
     book === 'knowledge'
       ? chapter.knowledge_output
-      : chapter.implementation_output;
+      : chapter.implementation_output
+  ) as string;
+  if (!sourcePath) return null;
 
   return {
     book,
     chapter,
-    source: fs.readFileSync(path.join(typescriptureRoot, sourcePath), 'utf8'),
+    source: fs.readFileSync(path.join(authorityRoot, sourcePath), 'utf8'),
     sourcePath,
   };
 }
