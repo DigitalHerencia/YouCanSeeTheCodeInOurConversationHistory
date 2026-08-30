@@ -1,0 +1,48 @@
+filters:
+  and:
+    - 'file.inFolder("Digital Herencia/Meetings")'
+    - 'entity == "meeting-series"'
+properties:
+  file.name:
+    displayName: Meeting
+  meeting_type:
+    displayName: Type
+  cadence:
+    displayName: Cadence
+  teams:
+    displayName: Teams
+  projects:
+    displayName: Projects
+views:
+  - type: table
+    name: Cadence
+    groupBy:
+      property: cadence
+      direction: ASC
+    order:
+      - file.name
+      - meeting_type
+      - cadence
+      - teams
+      - projects
+  - type: cards
+    name: Daily
+    filters:
+      and:
+        - 'cadence == "Daily"'
+    order:
+      - file.name
+      - meeting_type
+      - teams
+  - type: table
+    name: Planning and Review
+    filters:
+      or:
+        - 'cadence == "Weekly"'
+        - 'cadence == "Biweekly"'
+        - 'cadence == "Ad Hoc"'
+    order:
+      - file.name
+      - meeting_type
+      - cadence
+      - teams

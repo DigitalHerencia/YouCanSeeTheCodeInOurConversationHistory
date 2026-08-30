@@ -1,12 +1,12 @@
 {
-  "title": "YOU CAN SEE THE CODE IN OUR CONVERSATION HISTORY",
+  "title": "Digital Herencia",
   "showTitle": true,
   "logo": "",
-  "logoIcon": "terminal",
-  "tabIcon": "terminal",
+  "logoIcon": "building-2",
+  "tabIcon": "layout-dashboard",
   "themeColorTarget": "none",
   "showSearch": true,
-  "searchPlaceholder": "Search or command",
+  "searchPlaceholder": "Search Digital Herencia",
   "showNewNoteButton": true,
   "newNoteButtonMode": "newNote",
   "searchContents": true,
@@ -26,464 +26,50 @@
   "mobileSearchOnly": false,
   "showMobileActionBar": true,
   "mobileActionButtons": [
-    {
-      "id": "action-new-note",
-      "label": "New note",
-      "icon": "plus",
-      "type": "command",
-      "target": "hearth:new-note"
-    },
-    {
-      "id": "action-new-drawing",
-      "label": "New drawing",
-      "icon": "pen-tool",
-      "type": "command",
-      "target": "hearth:new-drawing"
-    },
-    {
-      "id": "action-record-voice",
-      "label": "Record voice",
-      "icon": "mic",
-      "type": "command",
-      "target": "hearth:record-voice"
-    },
-    {
-      "id": "action-daily-note",
-      "label": "Daily note",
-      "icon": "calendar",
-      "type": "command",
-      "target": "hearth:open-daily-note"
-    }
+    {"id":"dh-new-project","label":"Project","icon":"target","type":"command","target":"templater-obsidian:create-new-note-from-template"},
+    {"id":"dh-new-task","label":"Task","icon":"check-square","type":"command","target":"tasknotes:create-new-task"},
+    {"id":"action-daily-note","label":"Daily note","icon":"calendar","type":"command","target":"hearth:open-daily-note"}
   ],
   "disableExternalCalls": false,
   "openIn": "tab",
-  "openInOverrides": {
-    "link": "default",
-    "search": "default",
-    "card": "default",
-    "newNote": "default"
-  },
+  "openInOverrides": {"link":"default","search":"default","card":"default","newNote":"default"},
   "openFromOutside": "same",
   "lowPower": false,
   "lowPowerBackgroundColor": "#4a4459",
   "compact": false,
   "arrangeButtonVisibility": "always",
   "dashboardSwitcherVisibility": "always",
-  "cardOpacity": 0.5,
+  "cardOpacity": 0.55,
   "cardBlur": 7,
   "cardRadius": 2,
   "cardBorderWidth": 1,
   "hiddenFilters": [],
   "dashboards": [
     {
-      "id": "dash-devnotes-unified-v010",
-      "name": "YOU CAN SEE THE CODE IN THE CONVERSATION HISTORY",
-      "cards": [],
-      "fitToPage": true,
-      "showSearch": true,
-      "header": {
-        "showTitle": true,
-        "title": "YOU CAN SEE THE CODE IN THE CONVERSATION HISTORY",
-        "logoIcon": "terminal",
-        "align": "center",
-        "titleScale": 0.9,
-        "logoScale": 0.9,
-        "marginTop": 0,
-        "spacingBelow": 96
-      },
-      "background": {
-        "kind": "image",
-        "value": "BG.jpg",
-        "opacity": 1,
-        "blur": 0
-      },
-      "iconLucide": "terminal",
-      "backgroundLayout": "full"
-    },
-    {
-      "id": "dash-mt80bjwl-9789",
-      "name": "Dashboard",
-      "cards": [
-        {
-          "kind": "clock",
-          "title": "",
-          "x": 0,
-          "y": 0,
-          "w": 12,
-          "h": 2,
-          "id": "card-mt80bjwl-9612",
-          "fx": 0,
-          "fw": 0.20986622073578595,
-          "fy": 0,
-          "fh": 89
-        },
-        {
-          "kind": "embed",
-          "title": "",
-          "target": "_obsidian/Bases/TaskNotes/kanban-default.base",
-          "x": 0,
-          "y": 17,
-          "w": 12,
-          "h": 6,
-          "id": "card-mt80bjwm-6300",
-          "fx": 0,
-          "fw": 0.6396321070234113,
-          "fy": 228,
-          "fh": 418,
-          "accent": "#00504c",
-          "baseView": "Kanban Board",
-          "editable": true,
-          "livePreview": true,
-          "showOpenButton": true
-        },
-        {
-          "kind": "embed",
-          "title": "",
-          "target": "_obsidian/Bases/DevNotes-Unified.base",
-          "x": 0,
-          "y": 28,
-          "w": 12,
-          "h": 6,
-          "id": "card-mt80bjwm-1752",
-          "fx": 0.22324414715719063,
-          "fw": 0.41638795986622074,
-          "fy": 0,
-          "fh": 212
-        },
-        {
-          "kind": "templater",
-          "title": "",
-          "templater": {
-            "items": [
-              {
-                "id": "dn-template-capture",
-                "label": "Capture",
-                "icon": "inbox",
-                "template": "_obsidian/Templates/capture.template.md",
-                "sizeW": 48,
-                "sizeH": 44,
-                "col": 1,
-                "row": 1
-              },
-              {
-                "id": "dn-template-task",
-                "label": "Task",
-                "icon": "circle-check-big",
-                "template": "_obsidian/Templates/task.template.md",
-                "sizeW": 48,
-                "sizeH": 44,
-                "col": 2,
-                "row": 1
-              },
-              {
-                "id": "dn-template-spec",
-                "label": "Specification",
-                "icon": "file-check-2",
-                "template": "_obsidian/Templates/specification.template.md",
-                "sizeW": 48,
-                "sizeH": 44,
-                "col": 3,
-                "row": 1
-              },
-              {
-                "id": "dn-template-decision",
-                "label": "Decision",
-                "icon": "git-branch",
-                "template": "_obsidian/Templates/adr-decision.template.md",
-                "sizeW": 48,
-                "sizeH": 44,
-                "col": 4,
-                "row": 2
-              },
-              {
-                "id": "dn-template-handoff",
-                "label": "Handoff",
-                "icon": "send",
-                "template": "_obsidian/Templates/handoff.template.md",
-                "sizeW": 48,
-                "sizeH": 44,
-                "col": 4,
-                "row": 1
-              },
-              {
-                "id": "dn-template-evidence",
-                "label": "Evidence",
-                "icon": "badge-check",
-                "template": "_obsidian/Templates/verification-evidence.template.md",
-                "sizeW": 48,
-                "sizeH": 44,
-                "col": 3,
-                "row": 2
-              },
-              {
-                "id": "dn-template-prompt",
-                "label": "Prompt Contract",
-                "icon": "messages-square",
-                "template": "_obsidian/Templates/prompt-contract.template.md",
-                "sizeW": 48,
-                "sizeH": 44,
-                "col": 2,
-                "row": 2
-              },
-              {
-                "id": "dn-template-business",
-                "label": "Business Operation",
-                "icon": "landmark",
-                "template": "_obsidian/Templates/business-operation.template.md",
-                "sizeW": 44,
-                "sizeH": 40,
-                "col": 1,
-                "row": 2
-              }
-            ]
-          },
-          "x": 0,
-          "y": 34,
-          "w": 9,
-          "h": 3,
-          "id": "card-mt80bjwm-2942",
-          "fx": 0,
-          "fw": 0.20986622073578595,
-          "fy": 105,
-          "fh": 105
-        },
-        {
-          "id": "card-mt9a5twg-2706",
-          "x": 0,
-          "y": 3,
-          "kind": "tasks",
-          "title": "",
-          "tasks": {},
-          "w": 4,
-          "h": 4,
-          "fx": 0.6528925619834711,
-          "fy": 228,
-          "fw": 0.34710743801652894,
-          "fh": 416
-        },
-        {
-          "id": "card-mt9bdvl4-2180",
-          "x": 0,
-          "y": 0,
-          "kind": "schedule",
-          "title": "",
-          "schedule": {},
-          "w": 8,
-          "h": 6,
-          "fx": 0.653010033444816,
-          "fy": 0,
-          "fw": 0.34698996655518394,
-          "fh": 212
-        }
-      ],
+      "id": "dash-digital-herencia",
+      "name": "Digital Herencia",
       "fitToPage": false,
-      "showSearch": false,
-      "header": {
-        "showTitle": true,
-        "align": "center",
-        "spacingBelow": 0,
-        "title": "Dashboard",
-        "logoIcon": "computer",
-        "titleScale": 1,
-        "marginTop": 0
-      },
-      "background": {
-        "kind": "image",
-        "value": "BG4.jpg",
-        "opacity": 0.5,
-        "blur": 0
-      },
-      "iconLucide": "computer",
+      "showSearch": true,
+      "header": {"showTitle":true,"title":"Digital Herencia","logoIcon":"building-2","align":"center","titleScale":1,"logoScale":1,"marginTop":0,"spacingBelow":20},
+      "background": {"kind":"url","value":"https://raw.githubusercontent.com/DigitalHerencia/SiempreNuevo/refs/heads/main/public/DigitalHerencia.jpeg","opacity":0.55,"blur":0},
       "backgroundLayout": "full",
-      "bannerHeight": 500,
-      "bannerFullWidth": true,
-      "bannerFade": false
-    },
-    {
-      "id": "dash-mt9an59i-7967",
-      "name": "Github",
+      "iconLucide": "layout-dashboard",
       "cards": [
-        {
-          "kind": "embed",
-          "title": "",
-          "target": "_obsidian/Bases/DevNotes-Unified.base",
-          "x": 0,
-          "y": 28,
-          "w": 12,
-          "h": 6,
-          "id": "card-mt9an59j-1667",
-          "fx": 0.762406015037594,
-          "fw": 0.23759398496240602,
-          "fy": 279.8835164835165,
-          "fh": 279.8835164835165
-        },
-        {
-          "kind": "templater",
-          "title": "",
-          "templater": {
-            "items": [
-              {
-                "id": "dn-template-capture",
-                "label": "Capture",
-                "icon": "inbox",
-                "template": "_obsidian/Templates/capture.template.md",
-                "sizeW": 48,
-                "sizeH": 44,
-                "col": 1,
-                "row": 1
-              },
-              {
-                "id": "dn-template-task",
-                "label": "Task",
-                "icon": "circle-check-big",
-                "template": "_obsidian/Templates/task.template.md",
-                "sizeW": 48,
-                "sizeH": 44,
-                "col": 2,
-                "row": 1
-              },
-              {
-                "id": "dn-template-spec",
-                "label": "Specification",
-                "icon": "file-check-2",
-                "template": "_obsidian/Templates/specification.template.md",
-                "sizeW": 48,
-                "sizeH": 44,
-                "col": 3,
-                "row": 1
-              },
-              {
-                "id": "dn-template-decision",
-                "label": "Decision",
-                "icon": "git-branch",
-                "template": "_obsidian/Templates/adr-decision.template.md",
-                "sizeW": 44,
-                "sizeH": 34,
-                "col": 5,
-                "row": 1
-              },
-              {
-                "id": "dn-template-handoff",
-                "label": "Handoff",
-                "icon": "send",
-                "template": "_obsidian/Templates/handoff.template.md",
-                "sizeW": 44,
-                "sizeH": 40,
-                "col": 4,
-                "row": 1
-              },
-              {
-                "id": "dn-template-evidence",
-                "label": "Evidence",
-                "icon": "badge-check",
-                "template": "_obsidian/Templates/verification-evidence.template.md",
-                "sizeW": 44,
-                "sizeH": 36,
-                "col": 6,
-                "row": 1
-              }
-            ]
-          },
-          "x": 0,
-          "y": 34,
-          "w": 9,
-          "h": 3,
-          "id": "card-mt9an59j-2585",
-          "fx": 0.762406015037594,
-          "fw": 0.23759398496240602,
-          "fy": 167.68351648351648,
-          "fh": 69.04615384615384
-        },
-        {
-          "kind": "git",
-          "title": "",
-          "git": {
-            "sections": [
-              "status",
-              "actions",
-              "changes",
-              "log"
-            ],
-            "actions": [
-              "commitAndSync",
-              "commit",
-              "push",
-              "pull",
-              "history",
-              "sourceControl",
-              "switchBranch",
-              "fetch",
-              "stageAll",
-              "unstageAll"
-            ],
-            "changeLimit": 10,
-            "logLimit": 10
-          },
-          "x": 9,
-          "y": 34,
-          "w": 3,
-          "h": 3,
-          "id": "card-mt9an59j-6916",
-          "fx": 0.2924812030075188,
-          "fw": 0.45789473684210524,
-          "fy": 0,
-          "fh": 561
-        },
-        {
-          "id": "card-mt9an59j-5159",
-          "x": 0,
-          "y": 11,
-          "kind": "stats",
-          "title": "",
-          "w": 4,
-          "h": 2,
-          "fx": 0,
-          "fy": 0,
-          "fw": 0.2789473684210526,
-          "fh": 114.66593406593407,
-          "stats": {
-            "advanced": true,
-            "queries": [],
-            "builtins": [
-              "notes",
-              "folders",
-              "tags"
-            ],
-            "attachmentTypes": [
-              "bases",
-              "images",
-              "canvas",
-              "pdf",
-              "documents"
-            ]
-          }
-        }
-      ],
-      "iconLucide": "github",
-      "fitToPage": true,
-      "showSearch": false,
-      "header": {
-        "showTitle": true,
-        "align": "center",
-        "spacingBelow": 0,
-        "title": "Github",
-        "logoIcon": "github",
-        "titleScale": 1,
-        "marginTop": 0
-      },
-      "background": {
-        "kind": "image",
-        "value": "BG4.jpg",
-        "opacity": 0.5,
-        "blur": 0
-      },
-      "backgroundLayout": "full",
-      "bannerHeight": 500,
-      "bannerFade": false,
-      "bannerFullWidth": true
+        {"kind":"embed","title":"","target":"Digital Herencia/Navigation.md","x":0,"y":0,"w":3,"h":10,"id":"dh-nav","editable":false,"livePreview":true,"showOpenButton":true},
+        {"kind":"embed","title":"Projects","target":"Digital Herencia/Bases/Projects.base","baseView":"Status","x":3,"y":0,"w":6,"h":10,"id":"dh-projects","editable":true,"livePreview":true,"showOpenButton":true},
+        {"kind":"embed","title":"Tasks","target":"Digital Herencia/Bases/Tasks.base","baseView":"This Week","x":9,"y":0,"w":3,"h":10,"id":"dh-tasks","editable":true,"livePreview":true,"showOpenButton":true},
+        {"kind":"embed","title":"Schedule","target":"Digital Herencia/Bases/Schedule.base","baseView":"Active Schedule","x":3,"y":10,"w":6,"h":5,"id":"dh-schedule","editable":true,"livePreview":true,"showOpenButton":true},
+        {"kind":"embed","title":"Meetings","target":"Digital Herencia/Bases/Meetings.base","baseView":"Cadence","x":9,"y":10,"w":3,"h":5,"id":"dh-meetings","editable":true,"livePreview":true,"showOpenButton":true},
+        {"kind":"templater","title":"Create","templater":{"items":[
+          {"id":"dh-template-project","label":"Project","icon":"target","template":"obsidian/Templates/Digital Herencia/Project.template.md","sizeW":48,"sizeH":44,"col":1,"row":1},
+          {"id":"dh-template-task","label":"Task","icon":"check-square","template":"obsidian/Templates/Digital Herencia/Task.template.md","sizeW":48,"sizeH":44,"col":2,"row":1},
+          {"id":"dh-template-meeting","label":"Meeting","icon":"calendar-days","template":"obsidian/Templates/Digital Herencia/Meeting.template.md","sizeW":48,"sizeH":44,"col":1,"row":2},
+          {"id":"dh-template-team","label":"Team","icon":"users","template":"obsidian/Templates/Digital Herencia/Team.template.md","sizeW":48,"sizeH":44,"col":2,"row":2}
+        ]},"x":0,"y":10,"w":3,"h":5,"id":"dh-create"}
+      ]
     }
   ],
-  "activeDashboardId": "dash-mt9an59i-7967",
+  "activeDashboardId": "dash-digital-herencia",
   "pinnedCards": [],
   "gridColumns": 12,
   "rowHeight": 92,

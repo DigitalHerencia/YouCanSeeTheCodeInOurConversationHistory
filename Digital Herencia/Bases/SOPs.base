@@ -1,0 +1,20 @@
+filters:
+  and:
+    - 'file.inFolder("Digital Herencia/SOPs")'
+properties:
+  file.name:
+    displayName: SOP
+  document_id:
+    displayName: Document ID
+  version:
+    displayName: Version
+  source_status:
+    displayName: Source Status
+views:
+  - type: list
+    name: SOPs
+    order:
+      - file.name
+      - document_id
+      - version
+      - source_status

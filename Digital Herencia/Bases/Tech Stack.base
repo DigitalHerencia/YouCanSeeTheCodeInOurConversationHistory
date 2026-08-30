@@ -1,0 +1,31 @@
+filters:
+  and:
+    - 'file.inFolder("Digital Herencia/Tech Stack")'
+    - 'entity == "tech-stack-item"'
+properties:
+  file.name:
+    displayName: Technology
+  category:
+    displayName: Category
+  languages:
+    displayName: Languages
+  source_tags:
+    displayName: Tags
+views:
+  - type: cards
+    name: Stack
+    groupBy:
+      property: category
+      direction: ASC
+    order:
+      - file.name
+      - category
+      - languages
+      - source_tags
+  - type: table
+    name: Catalog
+    order:
+      - file.name
+      - category
+      - languages
+      - source_tags

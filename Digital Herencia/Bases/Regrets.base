@@ -1,0 +1,24 @@
+filters:
+  or:
+    - 'file.inFolder("CIGARETTES, REGRETS, & NEURAL NETS")'
+    - 'file.inFolder("Digital Herencia/Regrets, Cigarettes, & Neural Nets")'
+properties:
+  file.name:
+    displayName: Title
+  published:
+    displayName: Published
+  status:
+    displayName: Status
+  type:
+    displayName: Type
+  tags:
+    displayName: Tags
+views:
+  - type: cards
+    name: All Writing
+    order:
+      - file.name
+      - published
+      - status
+      - type
+      - tags

@@ -16,22 +16,6 @@
     {
       "folder": "Chief of Staff/Daily",
       "template": "_obsidian/Templates/daily-note.template.md"
-    },
-    {
-      "folder": "Digital Herencia/Projects",
-      "template": "obsidian/Templates/Digital Herencia/Project.template.md"
-    },
-    {
-      "folder": "Digital Herencia/Tasks",
-      "template": "obsidian/Templates/Digital Herencia/Task.template.md"
-    },
-    {
-      "folder": "Digital Herencia/Meetings",
-      "template": "obsidian/Templates/Digital Herencia/Meeting.template.md"
-    },
-    {
-      "folder": "Digital Herencia/Teams",
-      "template": "obsidian/Templates/Digital Herencia/Team.template.md"
     }
   ],
   "file_templates": [],

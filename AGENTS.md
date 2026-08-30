@@ -2,167 +2,139 @@
 
 ## Purpose
 
-DevNotes is a private, source-controlled Obsidian knowledge and project-management system. Treat it as an institutional-memory and execution interface, not as a generic software repository or a filing exercise.
+DevNotes is a private, Git-backed Obsidian workspace whose active operating model is **Digital Herencia**.
 
-The governing UX principle is:
+The active system is an Obsidian-native rebuild of the Digital Herencia Notion workspace. It organizes work around **Teams, Projects, Tasks, Meetings, Portfolio, Schedule, SOPs, Tech Stack, and authored material**.
 
-> **You should only have to mean something once.**
+Do not reintroduce ChatGPT Project roles, Codependent Coding ownership, role folders, inter-project handoffs, or other superseded orchestration as active governance.
 
-Before asking the user to reconstruct context, inspect the live repository, available Project context, durable handoffs, files, and connected evidence.
+## Governing sources
 
-## Controlling authority
+The active operational contract is:
 
-The controlling human specification is:
+- `Digital Herencia/System/Operating Model.md`
+- `Digital Herencia/System/Cadence.md`
+- the migrated SOPs in `Digital Herencia/SOPs/`
 
-`DevNotes/Canon/Unified System/Role Manifest Specification.md`
+The Notion workspace is the migration source. The Obsidian vault is the durable operating environment after migration.
 
-Machine registries under `system/` are projections of that human contract. Obsidian dashboards and ChatGPT Project launchers are rendered projections of the same role manifest.
+When migrated SOPs conflict, preserve the conflict and source wording. Do not silently reconcile doctrine.
 
-Derivation is one-way:
+## Core entities
 
-**Role Manifest Specification → machine role registry → Hearth dashboard + ChatGPT Project launcher**
+### Teams
 
-Do not independently redefine role semantics in a machine registry, dashboard, Project instruction file, or template.
+The operating workspace contains these current teams:
 
-## Responsibility model
+- Operations Team
+- Product Team
+- Design Team
+- Engineering Team
+- Marketing Team
+- Research Team
 
-```text
-Chief of Staff   Organization & Lifecycle
-Trust Issues     Epistemology & Evidence
-Execution        Function & Implementation
-Vibes            Architecture & Topology
-DevNotes         Knowledge & Classification
-Schemes          Ontology & Modeling
-Prömpter         Language & Semantics
-Fuck You Pay Me  Domain & External Reality
-```
+The migrated SOPs define Operations, Product, Design, Engineering, and Marketing as the canonical studio functions. Research exists as an operational team in the Notion data model and is preserved as such without rewriting the SOPs.
 
-Canonical ownership does not imply exclusive use. One role owns universal meaning; other roles consume it.
+### Projects
 
-Role determines primary ownership. Project/workspace and reusable system/doctrine are facets.
+Projects carry:
 
-## Operating loop
+- `domain`: OPS, PROD, DES, ENG, MKT, RES
+- `milestone`: M1, M2, M3
+- `phase`: P1.1 through P3.3
+- `status`: Backlog, Ready, In progress, Review, Done
+- work date range
+- team relationship
+- task relationships
+- meeting relationships
+- archive state
 
-**Human intent → structured knowledge → specification → orchestration → implementation → verification → durable context**
+### Tasks
 
-Use the interaction mode implied by the request:
+Tasks are daily execution units related to a project and team. Imported task state is preserved from Notion.
 
-- **Conversation** → low cognitive load.
-- **Research** → retrieve, source, distinguish evidence from inference.
-- **Execution** → act, validate, and report evidence.
-- **Artifact** → create the reusable deliverable.
+TaskNotes-compatible mutable state uses:
 
-Do not replace requested execution with advice or another approval loop when intent is already explicit.
+`backlog → ready → in-progress → blocked → done / cancelled`
 
-## Naming
+### Meetings
 
-Use normal human-readable filenames.
+Meeting series preserve explicit `type` and `cadence`.
 
-Do **not** generate semantic dot-notation filenames. Do not encode role, project, domain, taxonomy, type, authority, lifecycle, or other classification into a dotted filename.
+Supported cadence values migrated from Notion:
 
-Classification belongs in folders, Properties, tags, wikilinks, typed relationships, Bases, and other retrieval surfaces.
+- Daily
+- Weekly
+- Biweekly
+- Ad Hoc
 
-Use established artifact names such as `PRD.md`, `Architecture.md`, `Specification.md`, `Product.yaml`, `Decision.json`, and `Handoff.json` where applicable.
+Supported meeting types migrated from Notion:
 
-## Metadata
+- Operations
+- Standup
+- Weekly Sync
+- Post-mortem
+- Sprint Planning
+- Design
+- Engineering
 
-Properties exist primarily for useful mutable state. Tags classify. Callouts communicate semantics. Links preserve durable relationships.
+### Portfolio
 
-### Authority
+Portfolio items preserve parent/child relationships and links to teams, projects, tasks, and meetings.
 
-Use only:
+## Delivery model
 
-- `Source of Truth`
-- `Working`
-- `Reference`
-- `Derived`
-- `Historical`
+The migrated SOP model is:
 
-Do not generate the discarded values `canonical`, `supporting`, `implementation-evidence`, `project-specific`, or `operational`. They are not aliases of the active authority vocabulary.
+`Milestone → Phase → Project → Task/Ticket`
 
-### Knowledge lifecycle
+The fuller Notion framework also expresses:
 
-`Draft → Review → Active → Superseded → Archived`
+`Portfolio → Milestone → Phase → Project → Task`
 
-### Work lifecycle
-
-`Backlog → Ready → In Progress → Blocked → Done / Cancelled`
-
-### Project health
-
-`On Track / At Risk / Blocked / Paused`
-
-### Typed relationships
-
-Use only when edge semantics matter:
-
-`part_of`, `depends_on`, `implements`, `refines`, `validates`, `evidence_for`, `derived_from`, `supersedes`, `governed_by`, `connects_to`
-
-Canonical traceability is:
-
-**source → claim → decision → specification → artifact → validation → evidence**
-
-## Artifact format roles
-
-- **Markdown** explains and supports human governance/working artifacts.
-- **YAML** constrains machine-readable contracts.
-- **JSON** records execution state, decisions, handoffs, and progress.
-
-Templates instantiate shared doctrine for a concrete project. Do not copy universal doctrine into every project document.
+Milestones and phases are preserved exactly as source concepts. Do not replace them with a different project-management taxonomy.
 
 ## Obsidian interaction layer
 
-- Hearth composes the operating shell and dashboards.
-- Bases retrieves and projects.
-- Meta Bind changes mutable state.
-- Note Toolbar performs context-sensitive actions.
-- Callout Studio supplies semantic visual language.
-- Templater creates deterministic artifact shapes.
-- QuickAdd exposes convenient creation flows.
-- TaskNotes owns task lifecycle, Kanban, calendar, and agenda views.
-- Code Space is the live implementation/repository surface.
-- Canvas supports spatial ontology/topology/model reasoning.
-- Iconic supplies semantic wayfinding.
-- Git supplies provenance/version history.
-- Web Clipper handles external capture/reference intake.
-- Linter performs safe structural cleanup only.
-- Obsidian CLI supports environment automation.
+Use the installed plugins instead of inventing another interface:
 
-Routine workflow must not require manually editing YAML.
+- **Hearth**: primary dashboard shell
+- **Bases**: projects, tasks, teams, meetings, schedule, portfolio, SOPs, tech stack, library
+- **Meta Bind**: routine mutable-state controls where useful
+- **Note Toolbar**: context actions
+- **Templater**: deterministic creation shapes
+- **QuickAdd**: creation commands when configured
+- **TaskNotes**: task lifecycle/calendar/agenda when compatible with the Digital Herencia task schema
+- **Kanban**: optional board presentation
+- **Callout Studio**: semantic visual markers
+- **Iconic**: wayfinding
+- **Git**: provenance and synchronization
 
-## Live authority
+Do not add external integrations merely because they exist.
 
-Use the strongest current authority for volatile facts:
+Routine work must not require manual YAML editing.
 
-- live repository source for actual implementation behavior;
-- GitHub Projects v2 / GitHub for repository delivery state;
-- deployment platform for deployment state;
-- financial provider for financial state;
-- mail/calendar provider for those systems;
-- executed evidence for validation results;
-- DevNotes for durable institutional memory.
+## No-delete migration rule
 
-Do not copy volatile live state into durable notes when a live link or evidence reference is sufficient.
+This migration is additive and non-destructive.
 
-## Repository operations
+- Do not delete existing notes.
+- Do not mass-move existing notes.
+- Do not mass-rename existing notes.
+- Existing material outside `Digital Herencia/` remains valid historical/reference content unless explicitly reclassified later.
+- `ZETTLECASTEN/` and `CIGARETTES, REGRETS, & NEURAL NETS/` remain untouched unless separately requested.
+- Superseded active system files are preserved under `Legacy/System/` before replacement.
 
-Inspect current state before editing. Make the smallest useful change consistent with the user’s request. Preserve unrelated work. Do not create branches, PRs, Issues, migrations, dashboards, taxonomies, or plugin changes unless requested or genuinely required.
+The vault-wide `Digital Herencia/Bases/Library.base` is the transition layer that makes old material retrievable inside the new system without relocating it.
 
-When the user asks for analysis only, do not modify the repository. When the user asks for changes, execute them rather than substituting recommendations.
+## Editing rules
 
-Report exactly what changed and what was actually verified.
+Inspect current state before edits. Make the smallest useful change. Preserve unrelated work.
 
-## Protected content boundary
+When creating new operational records, use human-readable filenames and valid Obsidian Properties. Internal relationships use wikilinks.
 
-Do not rename, reorganize, rewrite, migrate, clean, normalize, or delete material under:
-
-- `ZETTLECASTEN/`
-- `CIGARETTES, REGRETS, & NEURAL NETS/`
-
-This prohibition applies to governance refactors and cleanup passes. Work inside those areas requires a separate explicit user request.
-
-Historical conventions found there are non-authoritative for new governance.
+Do not silently convert old notes to the new schema. New Digital Herencia records use the new schema; legacy records remain readable through the Library base.
 
 ## Final rule
 
-DevNotes succeeds when important context is durable, correctly owned, recoverable, connected to evidence, and cheap for humans or agents to reuse. The system is an execution interface, not a filing cabinet.
+The system succeeds when the Digital Herencia dashboard is the useful front door, current work is visible, SOPs remain recoverable, recurring cadence is explicit, and the old vault remains intact behind it.

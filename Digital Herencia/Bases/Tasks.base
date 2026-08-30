@@ -1,0 +1,55 @@
+filters:
+  and:
+    - 'file.inFolder("Digital Herencia/Tasks")'
+    - 'entity == "task"'
+properties:
+  file.name:
+    displayName: Task
+  task_code:
+    displayName: Code
+  status:
+    displayName: Status
+  project:
+    displayName: Project
+  team:
+    displayName: Team
+  source_created:
+    displayName: Created
+views:
+  - type: cards
+    name: This Week
+    filters:
+      not:
+        - 'status == "done"'
+    groupBy:
+      property: team
+      direction: ASC
+    order:
+      - file.name
+      - task_code
+      - project
+      - status
+  - type: cards
+    name: Open
+    filters:
+      not:
+        - 'status == "done"'
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - project
+      - team
+      - task_code
+  - type: table
+    name: Done
+    filters:
+      and:
+        - 'status == "done"'
+    order:
+      - file.name
+      - task_code
+      - project
+      - team
+      - source_created

@@ -10,23 +10,28 @@ properties:
     displayName: Entity
   status:
     displayName: Status
-  team:
-    displayName: Team
-  project:
-    displayName: Project
   tags:
     displayName: Tags
 views:
   - type: table
-    name: All Notes
+    name: Recently Modified
+    limit: 50
     order:
       - file.name
       - file.folder
       - entity
       - status
-      - team
-      - project
       - file.mtime
+  - type: table
+    name: Existing Vault
+    filters:
+      not:
+        - 'file.inFolder("Digital Herencia")'
+    order:
+      - file.name
+      - file.folder
+      - file.mtime
+      - tags
   - type: table
     name: Digital Herencia
     filters:
@@ -37,15 +42,4 @@ views:
       - file.folder
       - entity
       - status
-      - team
-      - project
-      - file.mtime
-  - type: table
-    name: Legacy Vault
-    filters:
-      not:
-        - 'file.inFolder("Digital Herencia")'
-    order:
-      - file.name
-      - file.folder
       - file.mtime
