@@ -10,14 +10,6 @@
   "user_scripts_folder": "obsidian/Scripts/templater",
   "folder_templates": [
     {
-      "folder": "DevNotes/Inbox",
-      "template": "_obsidian/Templates/capture.template.md"
-    },
-    {
-      "folder": "Chief of Staff/Daily",
-      "template": "_obsidian/Templates/daily-note.template.md"
-    },
-    {
       "folder": "Digital Herencia/Projects",
       "template": "obsidian/Templates/Digital Herencia/Project.template.md"
     },
