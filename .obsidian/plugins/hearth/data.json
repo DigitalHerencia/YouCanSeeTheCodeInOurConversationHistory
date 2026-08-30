@@ -26,8 +26,7 @@
   "mobileSearchOnly": false,
   "showMobileActionBar": true,
   "mobileActionButtons": [
-    {"id":"dh-new-project","label":"Project","icon":"target","type":"command","target":"templater-obsidian:create-new-note-from-template"},
-    {"id":"dh-new-task","label":"Task","icon":"check-square","type":"command","target":"tasknotes:create-new-task"},
+    {"id":"action-new-note","label":"New note","icon":"plus","type":"command","target":"hearth:new-note"},
     {"id":"action-daily-note","label":"Daily note","icon":"calendar","type":"command","target":"hearth:open-daily-note"}
   ],
   "disableExternalCalls": false,
@@ -51,7 +50,7 @@
       "fitToPage": false,
       "showSearch": true,
       "header": {"showTitle":true,"title":"Digital Herencia","logoIcon":"building-2","align":"center","titleScale":1,"logoScale":1,"marginTop":0,"spacingBelow":20},
-      "background": {"kind":"url","value":"https://raw.githubusercontent.com/DigitalHerencia/SiempreNuevo/refs/heads/main/public/DigitalHerencia.jpeg","opacity":0.55,"blur":0},
+      "background": {"kind":"image","value":"https://raw.githubusercontent.com/DigitalHerencia/SiempreNuevo/refs/heads/main/public/DigitalHerencia.jpeg","opacity":0.55,"blur":0},
       "backgroundLayout": "full",
       "iconLucide": "layout-dashboard",
       "cards": [
