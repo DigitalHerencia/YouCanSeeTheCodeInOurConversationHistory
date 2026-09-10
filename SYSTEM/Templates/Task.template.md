@@ -1,6 +1,6 @@
 ---
-status: todo
-priority: medium
+status: backlog
+priority: normal
 due:
 archive: false
 tags:
@@ -8,9 +8,11 @@ tags:
 ---
 # <% tp.file.title %>
 
-`INPUT[select(option(todo), option(doing), option(blocked), option(done)):status]` `INPUT[select(option(low), option(medium), option(high), option(critical)):priority]` `INPUT[toggle:archive]`
+`INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]` `INPUT[select(option(low), option(normal), option(high)):priority]` `INPUT[toggle:archive]`
 
 ## Project
+
+<%* const project = await tp.user.related_project(tp); if (project) tR += project; %>
 
 ## Definition of Done
 

@@ -1,5 +1,5 @@
 {
-  "folder": "DevNotes/Inbox",
-  "template": "obsidian/Bases/TaskNotes/tasks-default.base",
-  "format": "dddd MMM DD YYYY"
+  "format": "YYYYMMDDHHmm",
+  "template": "SYSTEM/Templates/Resource.template.md",
+  "folder": "ZETTLECASTEN"
 }

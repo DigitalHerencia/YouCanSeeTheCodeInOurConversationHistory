@@ -1,0 +1,7 @@
+body.theme-dark {
+  --background-primary:#10091f; --background-primary-alt:#180d2b; --background-secondary:#1d1036; --background-secondary-alt:#28154a;
+  --text-normal:#f7e9ff; --text-muted:#c49ad8; --interactive-accent:#ff5fd2; --interactive-accent-hover:#6df7ff;
+  --h1-color:#ff6dde; --h2-color:#6df7ff; --code-normal:#9ffcff; --code-background:#090414;
+}
+body { --reform-radius:10px; }
+.workspace { background-image:linear-gradient(135deg,rgba(255,95,210,.035),rgba(109,247,255,.025)); }

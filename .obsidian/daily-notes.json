@@ -1,5 +1,5 @@
 {
-  "folder": "Chief of Staff/Daily",
-  "format": "YYYY-MM-DD",
-  "template": "obsidian/Templates/daily-note.template.md"
+  "folder": "DAILY",
+  "format": "YYYY/YYYY-MM/YYYY-MM-DD",
+  "template": "SYSTEM/Templates/Daily.template.md"
 }

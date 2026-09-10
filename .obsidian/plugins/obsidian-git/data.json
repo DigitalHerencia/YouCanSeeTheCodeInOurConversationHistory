@@ -1,6 +1,6 @@
 {
-  "commitMessage": "vault backup: {{date}}",
-  "autoCommitMessage": "vault backup: {{date}}",
+  "commitMessage": "vault: {{date}}",
+  "autoCommitMessage": "vault: {{date}}",
   "commitMessageScript": "",
   "commitDateFormat": "YYYY-MM-DD HH:mm:ss",
   "autoSaveInterval": 0,
@@ -13,8 +13,8 @@
   "squashCommitsBeforePush": false,
   "disablePopups": false,
   "showErrorNotices": true,
-  "disablePopupsForNoChanges": false,
-  "listChangedFilesInMessageBody": false,
+  "disablePopupsForNoChanges": true,
+  "listChangedFilesInMessageBody": true,
   "showStatusBar": true,
   "updateSubmodules": false,
   "syncMethod": "merge",
@@ -25,44 +25,11 @@
   "refreshSourceControl": true,
   "basePath": "",
   "differentIntervalCommitAndPush": false,
-  "changedFilesInStatusBar": false,
-  "showedMobileNotice": true,
-  "refreshSourceControlTimer": 7000,
+  "changedFilesInStatusBar": true,
+  "refreshSourceControlTimer": 5000,
   "showBranchStatusBar": true,
-  "setLastSaveToLastCommit": false,
-  "submoduleRecurseCheckout": false,
-  "gitDir": "",
   "showFileMenu": true,
-  "authorInHistoryView": "hide",
-  "dateInHistoryView": false,
-  "diffStyle": "split",
-  "hunks": {
-    "showSigns": false,
-    "hunkCommands": false,
-    "statusBar": "disabled"
-  },
-  "lineAuthor": {
-    "show": false,
-    "followMovement": "inactive",
-    "authorDisplay": "initials",
-    "showCommitHash": false,
-    "dateTimeFormatOptions": "date",
-    "dateTimeFormatCustomString": "YYYY-MM-DD HH:mm",
-    "dateTimeTimezone": "viewer-local",
-    "coloringMaxAge": "1y",
-    "colorNew": {
-      "r": 255,
-      "g": 150,
-      "b": 150
-    },
-    "colorOld": {
-      "r": 120,
-      "g": 160,
-      "b": 255
-    },
-    "textColorCss": "var(--text-muted)",
-    "ignoreWhitespace": false,
-    "lastShownAuthorDisplay": "initials",
-    "lastShownDateTimeFormatOptions": "date"
-  }
+  "authorInHistoryView": "show",
+  "dateInHistoryView": true,
+  "diffStyle": "split"
 }

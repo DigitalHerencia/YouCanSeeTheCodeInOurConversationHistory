@@ -1,0 +1,6 @@
+body.theme-dark {
+  --background-primary:#090a0d; --background-primary-alt:#0d0f14; --background-secondary:#11141b; --background-secondary-alt:#171b24;
+  --text-normal:#e8eaf0; --text-muted:#8e94a3; --interactive-accent:#7c8cff; --interactive-accent-hover:#9aa6ff;
+  --h1-color:#ffffff; --h2-color:#c9ceff; --code-normal:#d7dbff; --code-background:#05060a;
+}
+body { --reform-radius:6px; }

@@ -1,0 +1,7 @@
+body.theme-dark {
+  --background-primary:#151515; --background-primary-alt:#181818; --background-secondary:#1c1c1c; --background-secondary-alt:#222222;
+  --text-normal:#ededed; --text-muted:#999999; --interactive-accent:#c7c7c7; --interactive-accent-hover:#ffffff;
+  --h1-color:#ffffff; --h2-color:#d8d8d8; --code-normal:#e5e5e5; --code-background:#101010;
+}
+body { --reform-radius:2px; }
+.markdown-rendered h1,.markdown-rendered h2,.markdown-rendered h3 { letter-spacing:-.02em; }

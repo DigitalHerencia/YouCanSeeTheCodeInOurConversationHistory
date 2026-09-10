@@ -1,30 +1,20 @@
 {
   "data_version": 2,
-  "command_timeout": 5,
-  "templates_folder": "obsidian/Templates",
+  "command_timeout": 8,
+  "templates_folder": "SYSTEM/Templates",
   "templates_pairs": [],
   "trigger_on_file_creation_mode": "folder",
   "auto_jump_to_cursor": true,
   "jump_to_cursor_after_file_name": false,
   "shell_path": "",
-  "user_scripts_folder": "obsidian/Scripts/templater",
+  "user_scripts_folder": "SYSTEM/Scripts/templater",
   "folder_templates": [
-    {
-      "folder": "Digital Herencia/Projects",
-      "template": "obsidian/Templates/Digital Herencia/Project.template.md"
-    },
-    {
-      "folder": "Digital Herencia/Tasks",
-      "template": "obsidian/Templates/Digital Herencia/Task.template.md"
-    },
-    {
-      "folder": "Digital Herencia/Meetings",
-      "template": "obsidian/Templates/Digital Herencia/Meeting.template.md"
-    },
-    {
-      "folder": "Digital Herencia/Teams",
-      "template": "obsidian/Templates/Digital Herencia/Team.template.md"
-    }
+    {"folder":"AMOEBA","template":"SYSTEM/Templates/Amoeba.template.md"},
+    {"folder":"DAILY","template":"SYSTEM/Templates/Daily.template.md"},
+    {"folder":"1.PROJECTS/_Tasks","template":"SYSTEM/Templates/Task.template.md"},
+    {"folder":"ZETTLECASTEN/Clippings","template":"SYSTEM/Templates/Zettel Clipping.template.md"},
+    {"folder":"ZETTLECASTEN/AI Threads","template":"SYSTEM/Templates/AI Thread.template.md"},
+    {"folder":"3.RESOURCES/Stack Syntax/Drills","template":"SYSTEM/Templates/Stack Syntax Drill.template.md"}
   ],
   "file_templates": [],
   "syntax_highlighting": true,
@@ -32,5 +22,5 @@
   "enabled_templates_hotkeys": [],
   "startup_templates": [],
   "intellisense_render": "1",
-  "ignore_folders_on_creation": []
+  "ignore_folders_on_creation": ["SYSTEM/Templates"]
 }

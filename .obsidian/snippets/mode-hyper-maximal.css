@@ -1,0 +1,9 @@
+body.theme-dark {
+  --background-primary:#0c0b10; --background-primary-alt:#15111c; --background-secondary:#1a1424; --background-secondary-alt:#241934;
+  --text-normal:#fff7ff; --text-muted:#d4afdc; --interactive-accent:#ff477e; --interactive-accent-hover:#38f9d7;
+  --h1-color:#ff477e; --h2-color:#38f9d7; --h3-color:#ffd166; --code-normal:#76f7ff; --code-background:#070609;
+}
+body { --reform-radius:12px; }
+.markdown-rendered h1 { font-size:2.5em; letter-spacing:-.04em; }
+.markdown-rendered strong { color:#ffd166; }
+.workspace { background-image:radial-gradient(circle at 10% 10%,rgba(255,71,126,.07),transparent 32%),radial-gradient(circle at 85% 20%,rgba(56,249,215,.06),transparent 35%); }

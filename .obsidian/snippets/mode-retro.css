@@ -1,0 +1,6 @@
+body.theme-dark {
+  --background-primary:#17140f; --background-primary-alt:#201b13; --background-secondary:#262017; --background-secondary-alt:#30271c;
+  --text-normal:#eadfbd; --text-muted:#bcae87; --interactive-accent:#e5a84b; --interactive-accent-hover:#f5c46d;
+  --h1-color:#f0b95c; --h2-color:#d98849; --code-normal:#f0cf85; --code-background:#100e0a;
+}
+body { --reform-radius:2px; filter:saturate(.92) contrast(1.02); }

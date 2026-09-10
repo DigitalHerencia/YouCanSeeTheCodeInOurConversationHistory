@@ -1,0 +1,28 @@
+:root {
+  --reform-radius: 8px;
+  --reform-border: color-mix(in srgb, var(--text-muted) 28%, transparent);
+  --reform-panel: color-mix(in srgb, var(--background-secondary) 82%, transparent);
+}
+
+.workspace, .workspace-tab-container, .workspace-leaf-content { background: var(--background-primary); }
+.workspace-tab-header-container { border-bottom: 1px solid var(--reform-border); }
+.markdown-source-view.mod-cm6 .cm-scroller, .markdown-preview-view { max-width: 100%; }
+.markdown-preview-sizer, .cm-contentContainer { max-width: 1100px; margin-inline: auto; }
+
+.callout, .metadata-container, .bases-view, .kanban-plugin, .block-language-meta-bind { border-radius: var(--reform-radius); }
+.metadata-container { border: 1px solid var(--reform-border); background: var(--reform-panel); padding: 0.5rem 0.75rem; }
+
+.reform-toolbar { backdrop-filter: blur(14px); }
+.reform-toolbar .cg-note-toolbar-item { font-family: var(--font-monospace); letter-spacing: 0.04em; }
+
+.hearth-git .markdown-preview-view, .hearth-git .markdown-preview-sizer { overflow: hidden !important; max-height: 100% !important; }
+.hearth-git .markdown-preview-sizer { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; align-content: start; }
+.hearth-git h1 { grid-column: 1 / -1; margin: 0 0 0.25rem; }
+.hearth-git h2, .hearth-git .callout { margin: 0; }
+
+body { --file-line-width: 1100px; }
+body:not(.is-mobile) .workspace-split.mod-root .view-content { padding-inline: clamp(4px, 1vw, 14px); }
+
+code, pre, .cm-inline-code { font-variant-ligatures: contextual; }
+.nav-folder-title, .nav-file-title { border-radius: 4px; }
+.nav-folder-title:hover, .nav-file-title:hover { background: color-mix(in srgb, var(--interactive-accent) 10%, transparent); }

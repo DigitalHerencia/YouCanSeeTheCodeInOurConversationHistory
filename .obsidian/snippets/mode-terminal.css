@@ -1,0 +1,7 @@
+body.theme-dark {
+  --background-primary:#07110a; --background-primary-alt:#09170d; --background-secondary:#0c1d11; --background-secondary-alt:#102817;
+  --text-normal:#8cff9d; --text-muted:#4fbf65; --interactive-accent:#42ff68; --interactive-accent-hover:#9dffad;
+  --h1-color:#9dffad; --h2-color:#66e47b; --code-normal:#a8ffb6; --code-background:#020704;
+}
+body { --reform-radius:0px; --font-text:var(--font-monospace); }
+.markdown-rendered h1,.markdown-rendered h2,.markdown-rendered h3 { font-family:var(--font-monospace); text-transform:uppercase; letter-spacing:.06em; }
