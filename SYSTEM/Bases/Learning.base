@@ -1,0 +1,21 @@
+filters:
+  and:
+    - 'file.hasTag("domain/typescript")'
+    - 'archive != true'
+properties:
+  file.name:
+    displayName: Item
+  status:
+    displayName: Status
+  progress:
+    displayName: Progress
+  file.tags:
+    displayName: Tags
+views:
+  - type: table
+    name: Study Queue
+    order:
+      - file.name
+      - status
+      - progress
+      - file.tags

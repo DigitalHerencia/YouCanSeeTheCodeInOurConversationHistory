@@ -1,0 +1,39 @@
+filters:
+  and:
+    - 'file.inFolder("1.PROJECTS")'
+    - 'file.name == "Project"'
+    - 'archive != true'
+properties:
+  file.name:
+    displayName: Project
+  status:
+    displayName: Status
+  phase:
+    displayName: Phase
+  progress:
+    displayName: Progress
+  priority:
+    displayName: Priority
+  due:
+    displayName: Due
+views:
+  - type: cards
+    name: Active
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - phase
+      - progress
+      - priority
+      - due
+  - type: table
+    name: Roadmap
+    order:
+      - file.name
+      - status
+      - phase
+      - progress
+      - priority
+      - due

@@ -1,62 +1,35 @@
-# DevNotes / Digital Herencia
+# Digital Herencia — Obsidian Vault
 
-DevNotes is a private, Git-backed Obsidian workspace. Its active operating interface is **Digital Herencia**, rebuilt from the Digital Herencia Notion dashboard without deleting or reorganizing the existing vault.
+This branch is a clean rebuild of the vault around one durable filing model and a small set of explicit workflows.
 
-## Active model
+## Filing model
 
-```text
-Digital Herencia
-├── Teams
-├── Projects
-├── Tasks
-├── Meetings
-├── Portfolio
-├── Schedule
-├── SOPs
-├── Tech Stack
-└── Library
-```
+Durable notes belong in PARA:
 
-The active dashboard is composed in Hearth. Bases provide editable views over Markdown records. Templater supports creation. Existing notes remain where they already live and are exposed through the Library base.
+- `1.PROJECTS/` — finite outcomes with milestones, phases, and tasks.
+- `2.AREAS/` — ongoing responsibilities and standards.
+- `3.RESOURCES/` — reusable knowledge, modules, prompts, study material, and references.
+- `4.ARCHIVE/` — inactive PARA material. Archive state is controlled by the `archive` lifecycle property.
 
-## Delivery hierarchy
+Operational subsystems sit beside PARA instead of competing with it:
 
-```text
-Portfolio
-  ↓
-Milestone
-  ↓
-Phase
-  ↓
-Project
-  ↓
-Task / Ticket
-```
+- `AMOEBA/` — scratch capture and decomposition before promotion.
+- `DAILY/` — daily Scrum cadence.
+- `HABITS/` — accountability and progress tracking.
+- `HEARTH/` — dashboard source notes.
+- `SYSTEM/` — templates, Bases, scripts, taxonomy, and configuration documentation.
+- `ZETTLECASTEN/` — preserved collection; new clippings and AI thread transcripts enter through dedicated templates.
+- `CIGARETTES, REGRETS, & NEURAL NETS/` — preserved creative-writing collection.
+- `assets/` — preserved visual assets.
 
-The migrated project domains are `OPS`, `PROD`, `DES`, `ENG`, `MKT`, and `RES`.
+## Metadata contract
 
-## Obsidian surfaces
+Properties are operational: lifecycle, status, progress, dates, cadence, priority, or configuration. They are not a taxonomy.
 
-- Hearth: operating dashboard
-- Bases: database-like views
-- Templater: record creation
-- Meta Bind: mutable state controls
-- Note Toolbar: context actions
-- TaskNotes: task lifecycle where compatible
-- Kanban: optional project/task boards
-- Callout Studio: semantic callouts
-- Iconic: navigation icons
-- Git: version history and sync
+Tags classify and retrieve content. Use hierarchical tags such as `type/project`, `domain/typescript`, `topic/react`, `stack/nextjs`, and `source/ai-thread`.
 
-## Migration rule
+## Workflows
 
-This is a **no-delete migration**.
+Projects use Kanban for flow, TaskNotes for task records, milestones and phases for planning, and Meta Bind controls for lifecycle state. Daily notes provide Scrum cadence. Habits are recorded in the daily note and summarized in `HABITS/`. QuickAdd routes capture into Amoeba, Zettelkasten, projects, tasks, and stack-syntax drills. Templater owns folder-aware creation and dynamic project context.
 
-Existing notes are not moved, renamed, or deleted merely to fit the new interface. Superseded active configuration is preserved under `Legacy/System/`. `ZETTLECASTEN/` and `CIGARETTES, REGRETS, & NEURAL NETS/` are left untouched.
-
-See:
-
-- `Digital Herencia/System/Operating Model.md`
-- `Digital Herencia/System/Cadence.md`
-- `Digital Herencia/System/Migration Manifest.md`
-- `Digital Herencia.md`
+The default visual stack is the installed Minimal community theme plus `reform-core`, `callouts`, and one switchable mode snippet. Seven modes are supplied: retro, terminal, dark, vaporwave, neo-modern, hyper-maximal, and minimalist.

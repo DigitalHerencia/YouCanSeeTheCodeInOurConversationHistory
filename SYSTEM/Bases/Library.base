@@ -1,0 +1,19 @@
+filters:
+  and:
+    - 'file.inFolder("3.RESOURCES")'
+    - 'archive != true'
+properties:
+  file.name:
+    displayName: Resource
+  file.tags:
+    displayName: Tags
+views:
+  - type: table
+    name: All Resources
+    order:
+      - file.name
+      - file.tags
+  - type: cards
+    name: Browse
+    order:
+      - file.name

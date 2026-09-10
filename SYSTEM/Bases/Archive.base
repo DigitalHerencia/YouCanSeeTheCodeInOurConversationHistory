@@ -1,0 +1,17 @@
+filters:
+  and:
+    - 'archive == true'
+properties:
+  file.name:
+    displayName: Note
+  file.folder:
+    displayName: Location
+  file.tags:
+    displayName: Tags
+views:
+  - type: table
+    name: Archived
+    order:
+      - file.name
+      - file.folder
+      - file.tags
