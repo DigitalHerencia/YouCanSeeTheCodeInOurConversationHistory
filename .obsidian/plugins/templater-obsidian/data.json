@@ -9,12 +9,26 @@
   "shell_path": "",
   "user_scripts_folder": "SYSTEM/Scripts/templater",
   "folder_templates": [
-    {"folder":"AMOEBA","template":"SYSTEM/Templates/Amoeba.template.md"},
-    {"folder":"DAILY","template":"SYSTEM/Templates/Daily.template.md"},
-    {"folder":"1.PROJECTS/_Tasks","template":"SYSTEM/Templates/Task.template.md"},
-    {"folder":"ZETTLECASTEN/Clippings","template":"SYSTEM/Templates/Zettel Clipping.template.md"},
-    {"folder":"ZETTLECASTEN/AI Threads","template":"SYSTEM/Templates/AI Thread.template.md"},
-    {"folder":"3.RESOURCES/Stack Syntax/Drills","template":"SYSTEM/Templates/Stack Syntax Drill.template.md"}
+    {
+      "folder": "AMOEBA",
+      "template": "SYSTEM/Templates/Amoeba.template.md"
+    },
+    {
+      "folder": "DAILY",
+      "template": "SYSTEM/Templates/Daily.template.md"
+    },
+    {
+      "folder": "ZETTLECASTEN/Clippings",
+      "template": "SYSTEM/Templates/Zettel Clipping.template.md"
+    },
+    {
+      "folder": "ZETTLECASTEN/AI Threads",
+      "template": "SYSTEM/Templates/AI Thread.template.md"
+    },
+    {
+      "folder": "3.RESOURCES/Stack Syntax/Drills",
+      "template": "SYSTEM/Templates/Stack Syntax Drill.template.md"
+    }
   ],
   "file_templates": [],
   "syntax_highlighting": true,
@@ -22,5 +36,15 @@
   "enabled_templates_hotkeys": [],
   "startup_templates": [],
   "intellisense_render": "1",
-  "ignore_folders_on_creation": ["SYSTEM/Templates"]
+  "ignore_folders_on_creation": [
+    {
+      "folder": "SYSTEM"
+    },
+    {
+      "folder": "1.PROJECTS/_Tasks"
+    },
+    {
+      "folder": "_mounts"
+    }
+  ]
 }

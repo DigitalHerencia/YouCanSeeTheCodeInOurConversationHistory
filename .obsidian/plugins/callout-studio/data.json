@@ -1,27 +1,444 @@
 {
-  "version":3,
-  "callouts":[
-    {"id":"note","displayName":"Note","icon":{"type":"lucide","value":"notebook-pen"},"colorLight":"#2563eb","colorDark":"#60a5fa","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"tip","displayName":"Tip","icon":{"type":"lucide","value":"lightbulb"},"colorLight":"#15803d","colorDark":"#4ade80","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"important","displayName":"Important","icon":{"type":"lucide","value":"badge-alert"},"colorLight":"#7c3aed","colorDark":"#a78bfa","foldable":false,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"warning","displayName":"Warning","icon":{"type":"lucide","value":"triangle-alert"},"colorLight":"#b45309","colorDark":"#fbbf24","foldable":false,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"caution","displayName":"Caution","icon":{"type":"lucide","value":"octagon-alert"},"colorLight":"#b91c1c","colorDark":"#f87171","foldable":false,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"epistemology","displayName":"Epistemology","icon":{"type":"lucide","value":"search-check"},"colorLight":"#0369a1","colorDark":"#38bdf8","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"ontology","displayName":"Ontology","icon":{"type":"lucide","value":"boxes"},"colorLight":"#6d28d9","colorDark":"#a78bfa","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"terminology","displayName":"Terminology","icon":{"type":"lucide","value":"text-cursor-input"},"colorLight":"#0f766e","colorDark":"#2dd4bf","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"taxonomy","displayName":"Taxonomy","icon":{"type":"lucide","value":"list-tree"},"colorLight":"#166534","colorDark":"#4ade80","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"typology","displayName":"Typology","icon":{"type":"lucide","value":"layout-list"},"colorLight":"#4338ca","colorDark":"#818cf8","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"mereology","displayName":"Mereology","icon":{"type":"lucide","value":"combine"},"colorLight":"#be123c","colorDark":"#fb7185","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"topology","displayName":"Topology","icon":{"type":"lucide","value":"route"},"colorLight":"#c2410c","colorDark":"#fb923c","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"nomenclature","displayName":"Nomenclature","icon":{"type":"lucide","value":"tags"},"colorLight":"#a21caf","colorDark":"#e879f9","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"semantics","displayName":"Semantics","icon":{"type":"lucide","value":"languages"},"colorLight":"#0e7490","colorDark":"#22d3ee","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"schema","displayName":"Schema","icon":{"type":"lucide","value":"braces"},"colorLight":"#1d4ed8","colorDark":"#60a5fa","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"metadata","displayName":"Metadata","icon":{"type":"lucide","value":"database"},"colorLight":"#047857","colorDark":"#34d399","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"folksonomy","displayName":"Folksonomy","icon":{"type":"lucide","value":"tag"},"colorLight":"#a16207","colorDark":"#facc15","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"faceted-classification","displayName":"Faceted Classification","icon":{"type":"lucide","value":"filter"},"colorLight":"#7e22ce","colorDark":"#c084fc","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"information","displayName":"Information","icon":{"type":"lucide","value":"info"},"colorLight":"#2563eb","colorDark":"#60a5fa","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"domain","displayName":"Domain","icon":{"type":"lucide","value":"globe-2"},"colorLight":"#0f766e","colorDark":"#2dd4bf","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]},
-    {"id":"knowledge","displayName":"Knowledge","icon":{"type":"lucide","value":"brain"},"colorLight":"#7c3aed","colorDark":"#c4b5fd","foldable":true,"defaultFolded":false,"builtIn":false,"source":"user","aliases":[]}
+  "version": 3,
+  "callouts": [
+    {
+      "id": "note",
+      "displayName": "Note",
+      "icon": {
+        "type": "lucide",
+        "value": "notebook-pen"
+      },
+      "colorLight": "#2563eb",
+      "colorDark": "#60a5fa",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": true,
+      "source": "builtin",
+      "aliases": []
+    },
+    {
+      "id": "tip",
+      "displayName": "Tip",
+      "icon": {
+        "type": "lucide",
+        "value": "lightbulb"
+      },
+      "colorLight": "#15803d",
+      "colorDark": "#4ade80",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": true,
+      "source": "builtin",
+      "aliases": []
+    },
+    {
+      "id": "warning",
+      "displayName": "Warning",
+      "icon": {
+        "type": "lucide",
+        "value": "triangle-alert"
+      },
+      "colorLight": "#b45309",
+      "colorDark": "#fbbf24",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": true,
+      "source": "builtin",
+      "aliases": []
+    },
+    {
+      "id": "important",
+      "displayName": "Important",
+      "icon": {
+        "type": "lucide",
+        "value": "badge-alert"
+      },
+      "colorLight": "#7c3aed",
+      "colorDark": "#a78bfa",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "caution",
+      "displayName": "Caution",
+      "icon": {
+        "type": "lucide",
+        "value": "octagon-alert"
+      },
+      "colorLight": "#b91c1c",
+      "colorDark": "#f87171",
+      "foldable": false,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "epistemology",
+      "displayName": "Epistemology",
+      "icon": {
+        "type": "lucide",
+        "value": "search-check"
+      },
+      "colorLight": "#0369a1",
+      "colorDark": "#38bdf8",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "ontology",
+      "displayName": "Ontology",
+      "icon": {
+        "type": "lucide",
+        "value": "boxes"
+      },
+      "colorLight": "#6d28d9",
+      "colorDark": "#a78bfa",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "terminology",
+      "displayName": "Terminology",
+      "icon": {
+        "type": "lucide",
+        "value": "text-cursor-input"
+      },
+      "colorLight": "#0f766e",
+      "colorDark": "#2dd4bf",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "taxonomy",
+      "displayName": "Taxonomy",
+      "icon": {
+        "type": "lucide",
+        "value": "list-tree"
+      },
+      "colorLight": "#166534",
+      "colorDark": "#4ade80",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "typology",
+      "displayName": "Typology",
+      "icon": {
+        "type": "lucide",
+        "value": "layout-list"
+      },
+      "colorLight": "#4338ca",
+      "colorDark": "#818cf8",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "mereology",
+      "displayName": "Mereology",
+      "icon": {
+        "type": "lucide",
+        "value": "combine"
+      },
+      "colorLight": "#be123c",
+      "colorDark": "#fb7185",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "topology",
+      "displayName": "Topology",
+      "icon": {
+        "type": "lucide",
+        "value": "route"
+      },
+      "colorLight": "#c2410c",
+      "colorDark": "#fb923c",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "nomenclature",
+      "displayName": "Nomenclature",
+      "icon": {
+        "type": "lucide",
+        "value": "tags"
+      },
+      "colorLight": "#a21caf",
+      "colorDark": "#e879f9",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "semantics",
+      "displayName": "Semantics",
+      "icon": {
+        "type": "lucide",
+        "value": "languages"
+      },
+      "colorLight": "#0e7490",
+      "colorDark": "#22d3ee",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "schema",
+      "displayName": "Schema",
+      "icon": {
+        "type": "lucide",
+        "value": "braces"
+      },
+      "colorLight": "#1d4ed8",
+      "colorDark": "#60a5fa",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "metadata",
+      "displayName": "Metadata",
+      "icon": {
+        "type": "lucide",
+        "value": "database"
+      },
+      "colorLight": "#047857",
+      "colorDark": "#34d399",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "folksonomy",
+      "displayName": "Folksonomy",
+      "icon": {
+        "type": "lucide",
+        "value": "tag"
+      },
+      "colorLight": "#a16207",
+      "colorDark": "#facc15",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "faceted-classification",
+      "displayName": "Faceted Classification",
+      "icon": {
+        "type": "lucide",
+        "value": "filter"
+      },
+      "colorLight": "#7e22ce",
+      "colorDark": "#c084fc",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "information",
+      "displayName": "Information",
+      "icon": {
+        "type": "lucide",
+        "value": "info"
+      },
+      "colorLight": "#2563eb",
+      "colorDark": "#60a5fa",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "domain",
+      "displayName": "Domain",
+      "icon": {
+        "type": "lucide",
+        "value": "globe-2"
+      },
+      "colorLight": "#0f766e",
+      "colorDark": "#2dd4bf",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    },
+    {
+      "id": "knowledge",
+      "displayName": "Knowledge",
+      "icon": {
+        "type": "lucide",
+        "value": "brain"
+      },
+      "colorLight": "#7c3aed",
+      "colorDark": "#c4b5fd",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "user",
+      "aliases": []
+    }
   ],
-  "settings":{"globalStyle":{"borderSides":{"top":false,"right":false,"bottom":false,"left":true},"borderWidth":3,"titleScale":1,"contentScale":1,"borderRadius":4,"alignContentWithTitle":true,"heading":{"borderSides":{"top":false,"right":false,"bottom":false,"left":false},"borderWidth":1,"borderRadius":4,"paddingTop":0.25,"paddingBottom":0.25,"marginTop":0.5},"inline":{"borderSides":{"top":false,"right":false,"bottom":false,"left":false},"borderWidth":1,"borderRadius":12,"fontScale":1}},"contextMenu":{"enabled":true,"items":{"regular":[{"id":"copyMarkdown","enabled":true},{"id":"foldDefaults","enabled":true},{"id":"edit","enabled":true},{"id":"openSettings","enabled":true}],"heading":[{"id":"cutSection","enabled":true},{"id":"copySection","enabled":true},{"id":"deleteSection","enabled":true},{"id":"edit","enabled":true},{"id":"openSettings","enabled":true}],"inline":[{"id":"edit","enabled":true},{"id":"openSettings","enabled":true}]}},"autocomplete":{"enabled":true},"iconSources":{"materialStyleDefault":"rounded","materialWeightDefault":300,"lastCategory":{"material":""},"lastEmojiSkinTone":0},"headingCallouts":{"enabled":true,"refCleanTitles":true,"refShowIcon":true,"showFoldArrow":true},"inlineCallouts":{"enabled":true,"allowContent":true},"firstRunCompleted":true,"welcomeSeen":true,"fallbackCalloutId":"note","language":"auto","customPalettes":[],"userImages":[],"customCommands":[],"quickInsertSource":"all","disabledFixedCommands":[]}
+  "settings": {
+    "globalStyle": {
+      "borderSides": {
+        "top": false,
+        "right": false,
+        "bottom": false,
+        "left": true
+      },
+      "borderWidth": 3,
+      "titleScale": 1,
+      "contentScale": 1,
+      "borderRadius": 4,
+      "alignContentWithTitle": true,
+      "heading": {
+        "borderSides": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "borderWidth": 1,
+        "borderRadius": 4,
+        "paddingTop": 0.25,
+        "paddingBottom": 0.25,
+        "marginTop": 0.5
+      },
+      "inline": {
+        "borderSides": {
+          "top": false,
+          "right": false,
+          "bottom": false,
+          "left": false
+        },
+        "borderWidth": 1,
+        "borderRadius": 12,
+        "fontScale": 1
+      }
+    },
+    "contextMenu": {
+      "enabled": true,
+      "items": {
+        "regular": [
+          {
+            "id": "copyMarkdown",
+            "enabled": true
+          },
+          {
+            "id": "foldDefaults",
+            "enabled": true
+          },
+          {
+            "id": "edit",
+            "enabled": true
+          },
+          {
+            "id": "openSettings",
+            "enabled": true
+          }
+        ],
+        "heading": [
+          {
+            "id": "cutSection",
+            "enabled": true
+          },
+          {
+            "id": "copySection",
+            "enabled": true
+          },
+          {
+            "id": "deleteSection",
+            "enabled": true
+          },
+          {
+            "id": "edit",
+            "enabled": true
+          },
+          {
+            "id": "openSettings",
+            "enabled": true
+          }
+        ],
+        "inline": [
+          {
+            "id": "edit",
+            "enabled": true
+          },
+          {
+            "id": "openSettings",
+            "enabled": true
+          }
+        ]
+      }
+    },
+    "autocomplete": {
+      "enabled": true
+    },
+    "iconSources": {
+      "materialStyleDefault": "rounded",
+      "materialWeightDefault": 300,
+      "lastCategory": {
+        "material": ""
+      },
+      "lastEmojiSkinTone": 0
+    },
+    "headingCallouts": {
+      "enabled": true,
+      "refCleanTitles": true,
+      "refShowIcon": true,
+      "showFoldArrow": true
+    },
+    "inlineCallouts": {
+      "enabled": true,
+      "allowContent": true
+    },
+    "firstRunCompleted": true,
+    "welcomeSeen": true,
+    "fallbackCalloutId": "note",
+    "language": "auto",
+    "customPalettes": [],
+    "userImages": [],
+    "customCommands": [],
+    "quickInsertSource": "all",
+    "disabledFixedCommands": []
+  }
 }

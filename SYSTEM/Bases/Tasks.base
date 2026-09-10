@@ -1,27 +1,24 @@
 filters:
   and:
-    - 'file.inFolder("1.PROJECTS")'
-    - 'file.hasTag("type/task")'
-    - 'archive != true'
+    - file.inFolder("1.PROJECTS/_Tasks")
+    - file.hasTag("type/task")
+    - archive != true
 properties:
   file.name:
     displayName: Task
-  status:
-    displayName: Status
-  priority:
-    displayName: Priority
-  due:
-    displayName: Due
 views:
   - type: table
     name: Open Tasks
     filters:
       and:
-        - 'status != "done"'
+        - status != "done"
+        - status != "cancelled"
     groupBy:
       property: status
       direction: ASC
     order:
       - file.name
+      - status
       - priority
       - due
+      - projects

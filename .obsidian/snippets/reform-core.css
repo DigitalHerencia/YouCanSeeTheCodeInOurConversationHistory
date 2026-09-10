@@ -26,3 +26,21 @@ body:not(.is-mobile) .workspace-split.mod-root .view-content { padding-inline: c
 code, pre, .cm-inline-code { font-variant-ligatures: contextual; }
 .nav-folder-title, .nav-file-title { border-radius: 4px; }
 .nav-folder-title:hover, .nav-file-title:hover { background: color-mix(in srgb, var(--interactive-accent) 10%, transparent); }
+
+/* Compact Hearth launchers retain labels instead of becoming mystery icons. */
+.hearth-link-tile.is-icon-only {
+  flex-direction: row;
+  gap: 6px;
+  padding: 6px;
+}
+.hearth-link-tile.is-icon-only .hearth-link-label {
+  display: block;
+  font-size: 0.72rem;
+}
+.hearth-link-tile.is-icon-only .hearth-link-icon .svg-icon {
+  width: 18px;
+  height: 18px;
+}
+.hearth-stats { gap: 6px; }
+.hearth-stat { gap: 2px; }
+.hearth-stat-value { font-size: 1.1rem; }

@@ -1,60 +1,868 @@
 {
-  "debugEnabled":false,
-  "defaultToolbar":"00000000-0000-4000-8000-000000000001",
-  "editorMenuAsToolbar":true,
-  "editorMenuToolbar":"00000000-0000-4000-8000-000000000002",
-  "emptyViewToolbar":"00000000-0000-4000-8000-000000000001",
-  "export":{"includeIcons":true,"replaceVars":true,"useDataEls":true,"useIds":true},
-  "folderMappings":[
-    {"folder":"AMOEBA","toolbar":"00000000-0000-4000-8000-000000000003"},
-    {"folder":"1.PROJECTS","toolbar":"00000000-0000-4000-8000-000000000004"},
-    {"folder":"3.RESOURCES","toolbar":"00000000-0000-4000-8000-000000000002"},
-    {"folder":"ZETTLECASTEN","toolbar":"00000000-0000-4000-8000-000000000002"},
-    {"folder":"SYSTEM","toolbar":"00000000-0000-4000-8000-000000000005"}
+  "debugEnabled": false,
+  "defaultToolbar": "00000000-0000-4000-8000-000000000001",
+  "editorMenuAsToolbar": true,
+  "editorMenuToolbar": "00000000-0000-4000-8000-000000000002",
+  "emptyViewToolbar": "00000000-0000-4000-8000-000000000001",
+  "export": {
+    "includeIcons": true,
+    "replaceVars": true,
+    "useDataEls": true,
+    "useIds": true
+  },
+  "folderMappings": [
+    {
+      "folder": "AMOEBA",
+      "toolbar": "00000000-0000-4000-8000-000000000003"
+    },
+    {
+      "folder": "1.PROJECTS",
+      "toolbar": "00000000-0000-4000-8000-000000000004"
+    },
+    {
+      "folder": "3.RESOURCES",
+      "toolbar": "00000000-0000-4000-8000-000000000002"
+    },
+    {
+      "folder": "ZETTLECASTEN",
+      "toolbar": "00000000-0000-4000-8000-000000000002"
+    },
+    {
+      "folder": "SYSTEM",
+      "toolbar": "00000000-0000-4000-8000-000000000005"
+    }
   ],
-  "icon":"circle-ellipsis",
-  "keepPropsState":false,
-  "lockCallouts":false,
-  "obsidianUiVisibility":{},
-  "ribbon":[],
-  "rules":[],
-  "scriptingEnabled":true,
-  "showEditInFabMenu":true,
-  "showLaunchpad":true,
-  "showToolbarIn":{"audio":false,"bases":true,"canvas":true,"image":false,"kanban":true,"pdf":false,"video":false},
-  "showToolbarInFileMenu":true,
-  "showToolbarInOther":"",
-  "showWhatsNew":false,
-  "textToolbar":"00000000-0000-4000-8000-000000000002",
-  "textToolbarOnKeyboard":true,
-  "toolbarProp":"notetoolbar",
-  "toolbars":[
-    {"uuid":"00000000-0000-4000-8000-000000000001","commandPosition":"float","customClasses":"reform-toolbar","defaultItem":null,"defaultStyles":["border","even","sticky"],"description":"Vault navigation and capture","hasCommand":false,"icon":"layout-dashboard","items":[
-      {"uuid":"10000000-0000-4000-8000-000000000001","icon":"house","label":"HOME","tooltip":"Open Hearth home","hasCommand":false,"inGallery":false,"link":"HEARTH/Home.md","linkAttr":{"commandCheck":false,"commandId":"","hasVars":false,"type":"file","target":"tab"},"visibility":{"desktop":{"components":["icon","label"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon","label"]},"viewMode":"all"}},
-      {"uuid":"10000000-0000-4000-8000-000000000002","icon":"spline","label":"CAPTURE","tooltip":"QuickAdd capture","hasCommand":false,"inGallery":false,"link":"","linkAttr":{"commandCheck":false,"commandId":"quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000001","hasVars":false,"type":"command"},"visibility":{"desktop":{"components":["icon","label"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon","label"]},"viewMode":"all"}},
-      {"uuid":"10000000-0000-4000-8000-000000000003","icon":"calendar-days","label":"DAILY","tooltip":"Open daily note","hasCommand":false,"inGallery":false,"link":"","linkAttr":{"commandCheck":false,"commandId":"daily-notes","hasVars":false,"type":"command"},"visibility":{"desktop":{"components":["icon","label"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon","label"]},"viewMode":"all"}}
-    ],"mobileStyles":[],"name":"Navigation","position":{"desktop":{"allViews":{"position":"props"}},"mobile":{"allViews":{"position":"props"}},"tablet":{"allViews":{"position":"props"}}},"updated":"2026-09-09T00:00:00.000Z"},
-    {"uuid":"00000000-0000-4000-8000-000000000002","commandPosition":"float","customClasses":"reform-toolbar","defaultItem":null,"defaultStyles":["border","even","sticky"],"description":"Writing, tables, and code tools","hasCommand":false,"icon":"pencil-ruler","items":[
-      {"uuid":"20000000-0000-4000-8000-000000000001","icon":"bold","label":"BOLD","tooltip":"Bold","hasCommand":false,"inGallery":false,"link":"","linkAttr":{"commandCheck":false,"commandId":"editor:toggle-bold","hasVars":false,"type":"command"},"visibility":{"desktop":{"components":["icon"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon"]},"viewMode":"all"}},
-      {"uuid":"20000000-0000-4000-8000-000000000002","icon":"italic","label":"ITALIC","tooltip":"Italic","hasCommand":false,"inGallery":false,"link":"","linkAttr":{"commandCheck":false,"commandId":"editor:toggle-italics","hasVars":false,"type":"command"},"visibility":{"desktop":{"components":["icon"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon"]},"viewMode":"all"}},
-      {"uuid":"20000000-0000-4000-8000-000000000003","icon":"link","label":"LINK","tooltip":"Insert link","hasCommand":false,"inGallery":false,"link":"","linkAttr":{"commandCheck":false,"commandId":"editor:insert-link","hasVars":false,"type":"command"},"visibility":{"desktop":{"components":["icon"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon"]},"viewMode":"all"}},
-      {"uuid":"20000000-0000-4000-8000-000000000004","icon":"table-2","label":"TABLE","tooltip":"Table tools","hasCommand":false,"inGallery":false,"link":"","linkAttr":{"commandCheck":false,"commandId":"","hasVars":false,"type":"javascript"},"plugin":"","scriptConfig":{"expression":"const items = ntb.app.commands.listCommands().filter(c => /table/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'table-2'})); return await ntb.menu(items);","pluginFunction":"evaluate"},"visibility":{"desktop":{"components":["icon","label"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon"]},"viewMode":"all"}},
-      {"uuid":"20000000-0000-4000-8000-000000000005","icon":"braces","label":"CODE","tooltip":"Code Space and code commands","hasCommand":false,"inGallery":false,"link":"","linkAttr":{"commandCheck":false,"commandId":"","hasVars":false,"type":"javascript"},"plugin":"","scriptConfig":{"expression":"const items = ntb.app.commands.listCommands().filter(c => /code space|code block|source mode/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'braces'})); return await ntb.menu(items);","pluginFunction":"evaluate"},"visibility":{"desktop":{"components":["icon","label"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon"]},"viewMode":"all"}}
-    ],"mobileStyles":[],"name":"Writing & Editing","position":{"desktop":{"allViews":{"position":"props"}},"mobile":{"allViews":{"position":"props"}},"tablet":{"allViews":{"position":"props"}}},"updated":"2026-09-09T00:00:00.000Z"},
-    {"uuid":"00000000-0000-4000-8000-000000000003","commandPosition":"float","customClasses":"reform-toolbar","defaultItem":null,"defaultStyles":["border","even","sticky"],"description":"Scratch-note refactoring controls","hasCommand":false,"icon":"spline","items":[
-      {"uuid":"30000000-0000-4000-8000-000000000001","icon":"scissors","label":"REFACTOR","tooltip":"Note Refactor tools","hasCommand":false,"inGallery":false,"link":"","linkAttr":{"commandCheck":false,"commandId":"","hasVars":false,"type":"javascript"},"plugin":"","scriptConfig":{"expression":"const items = ntb.app.commands.listCommands().filter(c => /note refactor|extract/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'scissors'})); return await ntb.menu(items);","pluginFunction":"evaluate"},"visibility":{"desktop":{"components":["icon","label"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon"]},"viewMode":"all"}},
-      {"uuid":"30000000-0000-4000-8000-000000000002","icon":"table-2","label":"TABLE","tooltip":"Table tools","hasCommand":false,"inGallery":false,"link":"","linkAttr":{"commandCheck":false,"commandId":"","hasVars":false,"type":"javascript"},"plugin":"","scriptConfig":{"expression":"const items = ntb.app.commands.listCommands().filter(c => /table/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'table-2'})); return await ntb.menu(items);","pluginFunction":"evaluate"},"visibility":{"desktop":{"components":["icon","label"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon"]},"viewMode":"all"}},
-      {"uuid":"30000000-0000-4000-8000-000000000003","icon":"arrow-up-right","label":"PROMOTE","tooltip":"Open PARA","hasCommand":false,"inGallery":false,"link":"1.PROJECTS/README.md","linkAttr":{"commandCheck":false,"commandId":"","hasVars":false,"type":"file","target":"tab"},"visibility":{"desktop":{"components":["icon","label"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon"]},"viewMode":"all"}}
-    ],"mobileStyles":[],"name":"Amoeba","position":{"desktop":{"allViews":{"position":"props"}},"mobile":{"allViews":{"position":"props"}},"tablet":{"allViews":{"position":"props"}}},"updated":"2026-09-09T00:00:00.000Z"},
-    {"uuid":"00000000-0000-4000-8000-000000000004","commandPosition":"float","customClasses":"reform-toolbar","defaultItem":null,"defaultStyles":["border","even","sticky"],"description":"Project management controls","hasCommand":false,"icon":"kanban-square","items":[
-      {"uuid":"40000000-0000-4000-8000-000000000001","icon":"square-check-big","label":"TASK","tooltip":"Create TaskNote","hasCommand":false,"inGallery":false,"link":"","linkAttr":{"commandCheck":false,"commandId":"quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000003","hasVars":false,"type":"command"},"visibility":{"desktop":{"components":["icon","label"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon"]},"viewMode":"all"}},
-      {"uuid":"40000000-0000-4000-8000-000000000002","icon":"kanban-square","label":"KANBAN","tooltip":"Kanban commands","hasCommand":false,"inGallery":false,"link":"","linkAttr":{"commandCheck":false,"commandId":"","hasVars":false,"type":"javascript"},"plugin":"","scriptConfig":{"expression":"const items = ntb.app.commands.listCommands().filter(c => /kanban/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'kanban-square'})); return await ntb.menu(items);","pluginFunction":"evaluate"},"visibility":{"desktop":{"components":["icon","label"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon"]},"viewMode":"all"}},
-      {"uuid":"40000000-0000-4000-8000-000000000003","icon":"git-branch","label":"GIT","tooltip":"Git commands","hasCommand":false,"inGallery":false,"link":"","linkAttr":{"commandCheck":false,"commandId":"","hasVars":false,"type":"javascript"},"plugin":"","scriptConfig":{"expression":"const items = ntb.app.commands.listCommands().filter(c => /git/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'git-branch'})); return await ntb.menu(items);","pluginFunction":"evaluate"},"visibility":{"desktop":{"components":["icon","label"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon"]},"viewMode":"all"}}
-    ],"mobileStyles":[],"name":"Project","position":{"desktop":{"allViews":{"position":"props"}},"mobile":{"allViews":{"position":"props"}},"tablet":{"allViews":{"position":"props"}}},"updated":"2026-09-09T00:00:00.000Z"},
-    {"uuid":"00000000-0000-4000-8000-000000000005","commandPosition":"float","customClasses":"reform-toolbar","defaultItem":null,"defaultStyles":["border","even","sticky"],"description":"System and file management controls","hasCommand":false,"icon":"settings-2","items":[
-      {"uuid":"50000000-0000-4000-8000-000000000001","icon":"folder-cog","label":"FILES","tooltip":"File management commands","hasCommand":false,"inGallery":false,"link":"","linkAttr":{"commandCheck":false,"commandId":"","hasVars":false,"type":"javascript"},"plugin":"","scriptConfig":{"expression":"const items = ntb.app.commands.listCommands().filter(c => /new file|new folder|move current file|rename|reveal active file|delete current file/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'folder-cog'})); return await ntb.menu(items);","pluginFunction":"evaluate"},"visibility":{"desktop":{"components":["icon","label"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon"]},"viewMode":"all"}},
-      {"uuid":"50000000-0000-4000-8000-000000000002","icon":"git-branch","label":"GIT","tooltip":"Git commands","hasCommand":false,"inGallery":false,"link":"","linkAttr":{"commandCheck":false,"commandId":"","hasVars":false,"type":"javascript"},"plugin":"","scriptConfig":{"expression":"const items = ntb.app.commands.listCommands().filter(c => /git/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'git-branch'})); return await ntb.menu(items);","pluginFunction":"evaluate"},"visibility":{"desktop":{"components":["icon","label"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon"]},"viewMode":"all"}},
-      {"uuid":"50000000-0000-4000-8000-000000000003","icon":"wrench","label":"COMMANDS","tooltip":"Command palette","hasCommand":false,"inGallery":false,"link":"","linkAttr":{"commandCheck":false,"commandId":"command-palette:open","hasVars":false,"type":"command"},"visibility":{"desktop":{"components":["icon","label"]},"mobile":{"components":["icon"]},"tablet":{"components":["icon"]},"viewMode":"all"}}
-    ],"mobileStyles":[],"name":"System","position":{"desktop":{"allViews":{"position":"props"}},"mobile":{"allViews":{"position":"props"}},"tablet":{"allViews":{"position":"props"}}},"updated":"2026-09-09T00:00:00.000Z"}
-  ]
+  "icon": "circle-ellipsis",
+  "keepPropsState": false,
+  "lockCallouts": false,
+  "obsidianUiVisibility": {},
+  "onboarding": {
+    "startup-help-view": true,
+    "startup-help-welcome": true
+  },
+  "ribbon": [],
+  "rules": [],
+  "scriptingEnabled": true,
+  "showEditInFabMenu": true,
+  "showLaunchpad": true,
+  "showToolbarIn": {
+    "audio": false,
+    "bases": true,
+    "canvas": true,
+    "image": false,
+    "kanban": true,
+    "pdf": false,
+    "video": false
+  },
+  "showToolbarInFileMenu": true,
+  "showToolbarInOther": "",
+  "showWhatsNew": false,
+  "textToolbar": "00000000-0000-4000-8000-000000000002",
+  "textToolbarOnKeyboard": true,
+  "toolbarProp": "notetoolbar",
+  "toolbars": [
+    {
+      "uuid": "00000000-0000-4000-8000-000000000001",
+      "commandPosition": "float",
+      "customClasses": "reform-toolbar",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "Vault navigation and capture",
+      "hasCommand": false,
+      "icon": "layout-dashboard",
+      "items": [
+        {
+          "uuid": "10000000-0000-4000-8000-000000000001",
+          "icon": "house",
+          "label": "HOME",
+          "tooltip": "Open Hearth home",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "HEARTH/Home.md",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "10000000-0000-4000-8000-000000000002",
+          "icon": "spline",
+          "label": "CAPTURE",
+          "tooltip": "QuickAdd capture",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000001",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "10000000-0000-4000-8000-000000000003",
+          "icon": "calendar-days",
+          "label": "DAILY",
+          "tooltip": "Open daily note",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "daily-notes",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "Navigation",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-09-09T00:00:00.000Z"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000002",
+      "commandPosition": "float",
+      "customClasses": "reform-toolbar",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "Writing, tables, and code tools",
+      "hasCommand": false,
+      "icon": "pencil-ruler",
+      "items": [
+        {
+          "uuid": "20000000-0000-4000-8000-000000000001",
+          "icon": "bold",
+          "label": "BOLD",
+          "tooltip": "Bold",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:toggle-bold",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "20000000-0000-4000-8000-000000000002",
+          "icon": "italic",
+          "label": "ITALIC",
+          "tooltip": "Italic",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:toggle-italics",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "20000000-0000-4000-8000-000000000003",
+          "icon": "link",
+          "label": "LINK",
+          "tooltip": "Insert link",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "editor:insert-link",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "20000000-0000-4000-8000-000000000004",
+          "icon": "table-2",
+          "label": "TABLE",
+          "tooltip": "Table tools",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "javascript"
+          },
+          "plugin": "",
+          "scriptConfig": {
+            "expression": "const items = Object.values(app.commands.commands).filter(c => /table/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'table-2'})); return await ntb.menu(items);",
+            "pluginFunction": "evaluate"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "20000000-0000-4000-8000-000000000005",
+          "icon": "braces",
+          "label": "CODE",
+          "tooltip": "Code Space and code commands",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "javascript"
+          },
+          "plugin": "",
+          "scriptConfig": {
+            "expression": "const items = Object.values(app.commands.commands).filter(c => /code space|code block|source mode/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'braces'})); return await ntb.menu(items);",
+            "pluginFunction": "evaluate"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "Writing & Editing",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-09-09T00:00:00.000Z"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000003",
+      "commandPosition": "float",
+      "customClasses": "reform-toolbar",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "Scratch-note refactoring controls",
+      "hasCommand": false,
+      "icon": "spline",
+      "items": [
+        {
+          "uuid": "30000000-0000-4000-8000-000000000001",
+          "icon": "scissors",
+          "label": "REFACTOR",
+          "tooltip": "Note Refactor tools",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "javascript"
+          },
+          "plugin": "",
+          "scriptConfig": {
+            "expression": "const items = Object.values(app.commands.commands).filter(c => /note refactor|extract/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'scissors'})); return await ntb.menu(items);",
+            "pluginFunction": "evaluate"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "30000000-0000-4000-8000-000000000002",
+          "icon": "table-2",
+          "label": "TABLE",
+          "tooltip": "Table tools",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "javascript"
+          },
+          "plugin": "",
+          "scriptConfig": {
+            "expression": "const items = Object.values(app.commands.commands).filter(c => /table/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'table-2'})); return await ntb.menu(items);",
+            "pluginFunction": "evaluate"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "30000000-0000-4000-8000-000000000003",
+          "icon": "arrow-up-right",
+          "label": "PROMOTE",
+          "tooltip": "Move this note into PARA or Zettelkasten",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "file-explorer:move-file",
+            "hasVars": false,
+            "type": "command",
+            "target": "tab"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "Amoeba",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-09-09T00:00:00.000Z"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000004",
+      "commandPosition": "float",
+      "customClasses": "reform-toolbar",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "Project management controls",
+      "hasCommand": false,
+      "icon": "kanban-square",
+      "items": [
+        {
+          "uuid": "40000000-0000-4000-8000-000000000001",
+          "icon": "square-check-big",
+          "label": "TASK",
+          "tooltip": "Create TaskNote",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000003",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "40000000-0000-4000-8000-000000000002",
+          "icon": "kanban-square",
+          "label": "KANBAN",
+          "tooltip": "Kanban commands",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "javascript"
+          },
+          "plugin": "",
+          "scriptConfig": {
+            "expression": "const items = Object.values(app.commands.commands).filter(c => /kanban/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'kanban-square'})); return await ntb.menu(items);",
+            "pluginFunction": "evaluate"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "40000000-0000-4000-8000-000000000003",
+          "icon": "git-branch",
+          "label": "GIT",
+          "tooltip": "Git commands",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "javascript"
+          },
+          "plugin": "",
+          "scriptConfig": {
+            "expression": "const items = Object.values(app.commands.commands).filter(c => /git/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'git-branch'})); return await ntb.menu(items);",
+            "pluginFunction": "evaluate"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "Project",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-09-09T00:00:00.000Z"
+    },
+    {
+      "uuid": "00000000-0000-4000-8000-000000000005",
+      "commandPosition": "float",
+      "customClasses": "reform-toolbar",
+      "defaultItem": null,
+      "defaultStyles": [
+        "border",
+        "even",
+        "sticky"
+      ],
+      "description": "System and file management controls",
+      "hasCommand": false,
+      "icon": "settings-2",
+      "items": [
+        {
+          "uuid": "50000000-0000-4000-8000-000000000001",
+          "icon": "folder-cog",
+          "label": "FILES",
+          "tooltip": "File management commands",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "javascript"
+          },
+          "plugin": "",
+          "scriptConfig": {
+            "expression": "const items = Object.values(app.commands.commands).filter(c => /new file|new folder|move current file|rename|reveal active file|delete current file/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'folder-cog'})); return await ntb.menu(items);",
+            "pluginFunction": "evaluate"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "50000000-0000-4000-8000-000000000002",
+          "icon": "git-branch",
+          "label": "GIT",
+          "tooltip": "Git commands",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "javascript"
+          },
+          "plugin": "",
+          "scriptConfig": {
+            "expression": "const items = Object.values(app.commands.commands).filter(c => /git/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'git-branch'})); return await ntb.menu(items);",
+            "pluginFunction": "evaluate"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon"
+              ]
+            },
+            "viewMode": "all"
+          }
+        },
+        {
+          "uuid": "50000000-0000-4000-8000-000000000003",
+          "icon": "wrench",
+          "label": "COMMANDS",
+          "tooltip": "Command palette",
+          "hasCommand": false,
+          "inGallery": false,
+          "link": "",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "command-palette:open",
+            "hasVars": false,
+            "type": "command"
+          },
+          "visibility": {
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon"
+              ]
+            },
+            "viewMode": "all"
+          }
+        }
+      ],
+      "mobileStyles": [],
+      "name": "System",
+      "position": {
+        "desktop": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "mobile": {
+          "allViews": {
+            "position": "props"
+          }
+        },
+        "tablet": {
+          "allViews": {
+            "position": "props"
+          }
+        }
+      },
+      "updated": "2026-09-09T00:00:00.000Z"
+    }
+  ],
+  "version": 20260703.1,
+  "webviewerToolbar": null,
+  "whatsnew_version": "0"
 }

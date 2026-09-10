@@ -1,9 +1,13 @@
 filters:
   and:
-    - 'file.inFolder("1.PROJECTS")'
-    - 'file.name == "Project"'
-    - 'archive != true'
+    - file.inFolder("1.PROJECTS")
+    - file.name == "Project"
+    - archive != true
+formulas:
+  project: 'link(file.path, file.folder.replace("1.PROJECTS/", ""))'
 properties:
+  formula.project:
+    displayName: Project
   file.name:
     displayName: Project
   status:
@@ -17,13 +21,13 @@ properties:
   due:
     displayName: Due
 views:
-  - type: cards
+  - type: table
     name: Active
     groupBy:
       property: status
       direction: ASC
     order:
-      - file.name
+      - formula.project
       - phase
       - progress
       - priority
@@ -31,7 +35,7 @@ views:
   - type: table
     name: Roadmap
     order:
-      - file.name
+      - formula.project
       - status
       - phase
       - progress

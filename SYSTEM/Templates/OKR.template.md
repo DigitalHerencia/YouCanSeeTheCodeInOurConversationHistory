@@ -7,7 +7,7 @@ tags:
 ---
 # <% tp.file.title %>
 
-`INPUT[select(option(planned), option(active), option(at-risk), option(complete)):status]` `INPUT[slider(minValue(0), maxValue(100), stepSize(5)):progress]`
+`INPUT[inlineSelect(option(planned), option(active), option(at-risk), option(complete)):status]` `INPUT[slider(minValue(0), maxValue(100), stepSize(5)):progress]`
 
 ## Objective
 
