@@ -1,24 +1,5 @@
----
-cssclasses:
-  - hearth-git
----
 # Git
 
-> [!information] Working Tree
-> Obsidian Git owns local status, history, diff, commit, pull, and push operations. Branch and status indicators remain enabled in the status bar.
+The Git Hearth uses Hearth's native Obsidian Git integration. It shows repository status, actions, changed files, and recent commits through the running `obsidian-git` plugin rather than shelling out to a second Git implementation.
 
-## Actions
-
-Use the Note Toolbar Git context for source-control commands without leaving Obsidian.
-
-## Repository
-
-- Branch: shown by Obsidian Git status bar
-- Changes: source-control view
-- History: Obsidian Git history view
-- Diff: split view
-- Sync policy: pull before push
-
-## Cadence
-
-Commit meaningful vault changes. Keep automatic commit/push disabled; this vault uses intentional Git operations.
+The dashboard also includes vault statistics and the activity heatmap. `fitToPage` is enabled so the board is designed to remain visible without dashboard scrolling.
