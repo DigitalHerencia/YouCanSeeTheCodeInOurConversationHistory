@@ -8,23 +8,21 @@ tags:
 ---
 # Stack Syntax Drills Board
 
-## Backlog
+## Workstreams
 
-- [ ] Build fetcher drills
-- [ ] Build server-action drills
-- [ ] Build Zod/schema drills
-- [ ] Build typed React handler drills
+- [ ] Fetcher syntax
+- [ ] Server-action syntax
+- [ ] Zod and schema syntax
+- [ ] Typed React handlers
 
-## Ready
+## Milestones
 
-## In Progress
+## Ideas
 
-## Review
-
-## Done
+## Delivered
 
 %% kanban:settings
 ```
-{"kanban-plugin":"board","list-collapse":[false,false,false,false,false]}
+{"kanban-plugin":"board","list-collapse":[false,false,false,false]}
 ```
 %%

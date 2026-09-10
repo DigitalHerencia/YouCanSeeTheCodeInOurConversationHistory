@@ -1,26 +1,189 @@
 {
-  "biggerIcons":"on",
-  "clickableIcons":"desktop",
-  "showAllFileIcons":true,
-  "showAllFolderIcons":true,
-  "minimalFolderIcons":true,
-  "showMarkdownTabIcons":true,
-  "showTitleIcons":true,
-  "showTagPillIcons":true,
-  "showMenuActions":true,
-  "showSuggestionIcons":true,
-  "showQuickSwitcherIcons":true,
-  "showMoveFileIcons":true,
-  "showItemName":"desktop",
-  "useSearchKeywords":"on",
-  "maxSearchResults":100,
-  "colorPicker1":"list",
-  "colorPicker2":"rgb",
-  "uncolorHover":false,
-  "uncolorDrag":false,
-  "uncolorSelect":false,
-  "uncolorQuick":false,
-  "maxBackups":2,
-  "dialogState":{"iconMode":true,"emojiMode":false,"rulePage":"folder"},
-  "appIcons":{},"tabIcons":{},"fileIcons":{},"bookmarkIcons":{},"tagIcons":{},"propertyIcons":{},"ribbonIcons":{},"fileRules":[],"folderRules":[]
+  "biggerIcons": "on",
+  "clickableIcons": "desktop",
+  "showAllFileIcons": true,
+  "showAllFolderIcons": true,
+  "minimalFolderIcons": true,
+  "showMarkdownTabIcons": true,
+  "showTitleIcons": true,
+  "showTagPillIcons": true,
+  "showMenuActions": true,
+  "showSuggestionIcons": true,
+  "showQuickSwitcherIcons": true,
+  "showMoveFileIcons": true,
+  "showItemName": "desktop",
+  "useSearchKeywords": "on",
+  "maxSearchResults": 100,
+  "colorPicker1": "list",
+  "colorPicker2": "rgb",
+  "uncolorHover": false,
+  "uncolorDrag": false,
+  "uncolorSelect": false,
+  "uncolorQuick": false,
+  "maxBackups": 2,
+  "dialogState": {
+    "iconMode": true,
+    "emojiMode": false,
+    "rulePage": "folder"
+  },
+  "appIcons": {},
+  "tabIcons": {},
+  "fileIcons": {},
+  "bookmarkIcons": {},
+  "tagIcons": {},
+  "propertyIcons": {},
+  "ribbonIcons": {},
+  "fileRules": [],
+  "folderRules": [
+    {
+      "id": "cb7c9447-5cdb-4716-a053-7f2e9f967ab8",
+      "name": "1.PROJECTS",
+      "icon": "target",
+      "color": "#a78bfa",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "path",
+          "operator": "is",
+          "value": "1.PROJECTS"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "id": "95dc023a-8ce1-4e2f-8a3d-a2ed3c133acb",
+      "name": "2.AREAS",
+      "icon": "layers",
+      "color": "#60a5fa",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "path",
+          "operator": "is",
+          "value": "2.AREAS"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "id": "835d48bf-430c-4beb-aa93-1cff97bc4b59",
+      "name": "3.RESOURCES",
+      "icon": "library",
+      "color": "#2dd4bf",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "path",
+          "operator": "is",
+          "value": "3.RESOURCES"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "id": "27389827-1dde-4ff2-8df2-d400444280a1",
+      "name": "4.ARCHIVE",
+      "icon": "archive",
+      "color": "#94a3b8",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "path",
+          "operator": "is",
+          "value": "4.ARCHIVE"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "id": "e5bd68ab-20a9-4d9f-ba4d-d32b89a4a22e",
+      "name": "AMOEBA",
+      "icon": "spline",
+      "color": "#fb923c",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "path",
+          "operator": "is",
+          "value": "AMOEBA"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "id": "eab2e19f-c864-448d-b8d5-2e2ea31d0458",
+      "name": "DAILY",
+      "icon": "calendar-days",
+      "color": "#facc15",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "path",
+          "operator": "is",
+          "value": "DAILY"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "id": "3d11a819-a293-40ba-98db-75dee7539378",
+      "name": "HABITS",
+      "icon": "repeat-2",
+      "color": "#4ade80",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "path",
+          "operator": "is",
+          "value": "HABITS"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "id": "065676f6-b05d-46cd-8e23-099aa9f8cb4c",
+      "name": "HEARTH",
+      "icon": "layout-dashboard",
+      "color": "#c084fc",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "path",
+          "operator": "is",
+          "value": "HEARTH"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "id": "8aa0daf5-2b11-4a48-a995-4949b79c158c",
+      "name": "SYSTEM",
+      "icon": "settings-2",
+      "color": "#94a3b8",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "path",
+          "operator": "is",
+          "value": "SYSTEM"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "id": "00c3cc8c-dd0c-4e72-9114-7012485f8126",
+      "name": "ZETTLECASTEN",
+      "icon": "network",
+      "color": "#22d3ee",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "path",
+          "operator": "is",
+          "value": "ZETTLECASTEN"
+        }
+      ],
+      "enabled": true
+    }
+  ]
 }

@@ -12,7 +12,7 @@ tags:
 ---
 # Stack Syntax Drills
 
-`INPUT[select(option(planning), option(active), option(blocked), option(done)):status]` `INPUT[select(option(foundation), option(application), option(fluency), option(maintenance)):phase]` `INPUT[slider(minValue(0), maxValue(100), stepSize(5)):progress]` `INPUT[toggle:archive]`
+`INPUT[inlineSelect(option(planning), option(active), option(blocked), option(done)):status]` `INPUT[inlineSelect(option(foundation), option(application), option(fluency), option(maintenance)):phase]` `INPUT[slider(minValue(0), maxValue(100), stepSize(5)):progress]` `INPUT[toggle:archive]`
 
 ## Outcome
 
@@ -40,3 +40,9 @@ Build fast, accurate recall for the code forms actually used in the modern TypeS
 ## Board
 
 [[1.PROJECTS/Stack Syntax Drills/Board]]
+
+## Tasks
+
+![[SYSTEM/Bases/Project Tasks.base]]
+
+Use **TASK** with this project open. TaskNotes owns task status; [[Board]] holds workstreams and milestones.

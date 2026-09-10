@@ -9,7 +9,7 @@ tags:
 ---
 # <% tp.file.title %>
 
-`INPUT[select(option(queued), option(attempted), option(corrected), option(mastered)):status]` `INPUT[slider(minValue(0), maxValue(100), stepSize(10)):progress]`
+`INPUT[inlineSelect(option(queued), option(attempted), option(corrected), option(mastered)):status]` `INPUT[slider(minValue(0), maxValue(100), stepSize(10)):progress]`
 
 ## Prompt
 

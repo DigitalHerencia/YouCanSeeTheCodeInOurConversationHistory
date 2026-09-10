@@ -6,7 +6,7 @@ tags:
 ---
 # <% tp.file.title %>
 
-`INPUT[select(option(weekly), option(monthly), option(quarterly)):cadence]` `INPUT[toggle:archive]`
+`INPUT[inlineSelect(option(weekly), option(monthly), option(quarterly)):cadence]` `INPUT[toggle:archive]`
 
 ## Standard
 

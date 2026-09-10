@@ -8,58 +8,10 @@
   "viewFieldDisplayNullAsEmpty": true,
   "enableSyntaxHighlighting": true,
   "enableEditorRightClickMenu": true,
-  "inputFieldTemplates": [
-    {
-      "name": "dn-status",
-      "declaration": "INPUT[inlineSelect(option(\"Backlog\"), option(\"Ready\"), option(\"In Progress\"), option(\"Blocked\"), option(\"Done\"), option(\"Cancelled\"))]"
-    },
-    {
-      "name": "dn-status-task",
-      "declaration": "INPUT[inlineSelect(option(\"Backlog\"), option(\"Ready\"), option(\"In Progress\"), option(\"Blocked\"), option(\"Done\"), option(\"Cancelled\"))]"
-    },
-    {
-      "name": "dn-status-knowledge",
-      "declaration": "INPUT[inlineSelect(option(\"Draft\"), option(\"Review\"), option(\"Active\"), option(\"Superseded\"), option(\"Archived\"))]"
-    },
-    {
-      "name": "dn-status-validation",
-      "declaration": "INPUT[inlineSelect(option(\"Passed\"), option(\"Failed\"), option(\"Skipped\"), option(\"Blocked\"), option(\"Inferred\"))]"
-    },
-    {
-      "name": "dn-authority",
-      "declaration": "INPUT[inlineSelect(option(\"Source of Truth\"), option(\"Working\"), option(\"Reference\"), option(\"Derived\"), option(\"Historical\"))]"
-    },
-    {
-      "name": "dn-role",
-      "declaration": "INPUT[inlineSelect(option(\"Chief of Staff\"), option(\"Trust Issues\"), option(\"Execution\"), option(\"Vibes\"), option(\"DevNotes\"), option(\"Schemes\"), option(\"Prömpter\"), option(\"Fuck You Pay Me\"))]"
-    },
-    {
-      "name": "dn-priority",
-      "declaration": "INPUT[inlineSelect(option(\"Low\"), option(\"Normal\"), option(\"High\"), option(\"Critical\"))]"
-    },
-    {
-      "name": "dn-health",
-      "declaration": "INPUT[inlineSelect(option(\"On Track\"), option(\"At Risk\"), option(\"Blocked\"), option(\"Paused\"))]"
-    },
-    {
-      "name": "dn-progress",
-      "declaration": "INPUT[slider(addLabels, minValue(0), maxValue(100))]"
-    },
-    {
-      "name": "dn-date",
-      "declaration": "INPUT[date]"
-    },
-    {
-      "name": "dn-text",
-      "declaration": "INPUT[text]"
-    }
-  ],
+  "inputFieldTemplates": [],
   "buttonTemplates": [],
   "excludedFolders": [
-    "obsidian/Templates",
-    "DevNotes/Archive",
-    "ops",
-    "ZETTLECASTEN",
-    "CIGARETTES, REGRETS, & NEURAL NETS"
+    "SYSTEM",
+    "assets"
   ]
 }

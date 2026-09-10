@@ -1,57 +1,764 @@
 {
-  "title":"Digital Herencia",
-  "showTitle":true,
-  "logo":"assets/Digital Herencia Logo.jpg",
-  "logoIcon":"terminal-square",
-  "tabIcon":"layout-dashboard",
-  "themeColorTarget":"none",
-  "showSearch":true,
-  "searchPlaceholder":"Search the vault",
-  "showNewNoteButton":true,
-  "newNoteButtonMode":"newNote",
-  "searchContents":true,
-  "searchEngine":"builtin",
-  "backgroundKind":"image",
-  "backgroundValue":"assets/Digital Herencia Desert BG.jpg",
-  "backgroundOpacity":0.56,
-  "backgroundBlur":0,
-  "backgroundLayout":"full",
-  "bannerHeight":180,
-  "bannerFade":true,
-  "bannerFullWidth":true,
-  "openOnStartup":true,
-  "replaceNewTabs":true,
-  "focusSearchOnOpen":false,
-  "liveRefresh":true,
-  "compact":true,
-  "arrangeButtonVisibility":"hover",
-  "dashboardSwitcherVisibility":"always",
-  "cardOpacity":0.58,
-  "cardBlur":12,
-  "cardRadius":6,
-  "cardBorderWidth":1,
-  "dashboards":[
-    {"id":"dash-home","name":"Home","fitToPage":true,"showSearch":true,"header":{"showTitle":true,"title":"Digital Herencia","logoIcon":"terminal-square","align":"center","titleScale":1,"logoScale":1,"marginTop":0,"spacingBelow":10},"background":{"kind":"image","value":"assets/Digital Herencia Desert BG.jpg","opacity":0.56,"blur":0},"backgroundLayout":"full","iconLucide":"house","cards":[{"kind":"embed","title":"","target":"HEARTH/Home.md","x":0,"y":0,"w":4,"h":12,"id":"home-nav","editable":false,"livePreview":true,"showOpenButton":false},{"kind":"embed","title":"Projects","target":"SYSTEM/Bases/Projects.base","baseView":"Active","x":4,"y":0,"w":4,"h":6,"id":"home-projects","editable":true,"livePreview":true,"showOpenButton":true},{"kind":"embed","title":"Learning","target":"SYSTEM/Bases/Learning.base","baseView":"Study Queue","x":8,"y":0,"w":4,"h":6,"id":"home-learning","editable":true,"livePreview":true,"showOpenButton":true},{"kind":"templater","title":"Create","templater":{"items":[{"id":"create-project","label":"Project","icon":"target","template":"SYSTEM/Templates/Project.template.md","sizeW":48,"sizeH":44,"col":1,"row":1},{"id":"create-task","label":"Task","icon":"square-check-big","template":"SYSTEM/Templates/Task.template.md","sizeW":48,"sizeH":44,"col":2,"row":1},{"id":"create-amoeba","label":"Amoeba","icon":"spline","template":"SYSTEM/Templates/Amoeba.template.md","sizeW":48,"sizeH":44,"col":3,"row":1},{"id":"create-drill","label":"Drill","icon":"braces","template":"SYSTEM/Templates/Stack Syntax Drill.template.md","sizeW":48,"sizeH":44,"col":1,"row":2},{"id":"create-clip","label":"Clipping","icon":"paperclip","template":"SYSTEM/Templates/Zettel Clipping.template.md","sizeW":48,"sizeH":44,"col":2,"row":2},{"id":"create-thread","label":"AI Thread","icon":"messages-square","template":"SYSTEM/Templates/AI Thread.template.md","sizeW":48,"sizeH":44,"col":3,"row":2}]},"x":4,"y":6,"w":8,"h":6,"id":"home-create"}]},
-    {"id":"dash-library","name":"Library","fitToPage":true,"showSearch":true,"header":{"showTitle":true,"title":"Library","logoIcon":"library","align":"center","titleScale":1,"logoScale":1,"marginTop":0,"spacingBelow":10},"background":{"kind":"none","value":"","opacity":0,"blur":0},"backgroundLayout":"full","iconLucide":"library","cards":[{"kind":"embed","title":"","target":"HEARTH/Library.md","x":0,"y":0,"w":12,"h":12,"id":"library-main","editable":false,"livePreview":true,"showOpenButton":false}]},
-    {"id":"dash-learning","name":"Learning","fitToPage":true,"showSearch":true,"header":{"showTitle":true,"title":"TypeScript Learning","logoIcon":"braces","align":"center","titleScale":1,"logoScale":1,"marginTop":0,"spacingBelow":10},"background":{"kind":"none","value":"","opacity":0,"blur":0},"backgroundLayout":"full","iconLucide":"graduation-cap","cards":[{"kind":"embed","title":"","target":"HEARTH/Learning.md","x":0,"y":0,"w":12,"h":12,"id":"learning-main","editable":false,"livePreview":true,"showOpenButton":false}]},
-    {"id":"dash-projects","name":"Projects","fitToPage":true,"showSearch":true,"header":{"showTitle":true,"title":"Projects","logoIcon":"kanban-square","align":"center","titleScale":1,"logoScale":1,"marginTop":0,"spacingBelow":10},"background":{"kind":"none","value":"","opacity":0,"blur":0},"backgroundLayout":"full","iconLucide":"kanban-square","cards":[{"kind":"embed","title":"","target":"HEARTH/Projects.md","x":0,"y":0,"w":12,"h":12,"id":"projects-main","editable":false,"livePreview":true,"showOpenButton":false}]},
-    {"id":"dash-git","name":"Git","fitToPage":true,"showSearch":false,"header":{"showTitle":true,"title":"Git","logoIcon":"git-branch","align":"center","titleScale":1,"logoScale":1,"marginTop":0,"spacingBelow":8},"background":{"kind":"none","value":"","opacity":0,"blur":0},"backgroundLayout":"full","iconLucide":"git-branch","cards":[{"kind":"git","title":"Repository","git":{"sections":["status","actions","changes","log"],"actions":["commitAndSync","commit","push","pull","fetch","sourceControl","history"],"actionStyle":"labelled","changeLimit":6,"logLimit":6,"showPaths":true,"commitScope":"smart"},"x":0,"y":0,"w":12,"h":7,"id":"git-repository"},{"kind":"stats","title":"Vault","x":0,"y":7,"w":4,"h":3,"id":"git-vault-stats"},{"kind":"heatmap","title":"Activity","heatmap":{},"x":4,"y":7,"w":8,"h":3,"id":"git-activity"}]}
+  "title": "Digital Herencia",
+  "showTitle": true,
+  "logo": "assets/Digital Herencia Logo.jpg",
+  "logoIcon": "terminal-square",
+  "tabIcon": "layout-dashboard",
+  "themeColorTarget": "none",
+  "showSearch": true,
+  "searchPlaceholder": "Search the vault",
+  "showNewNoteButton": false,
+  "newNoteButtonMode": "newNote",
+  "searchContents": true,
+  "searchEngine": "builtin",
+  "backgroundKind": "image",
+  "backgroundValue": "assets/Digital Herencia Desert BG.jpg",
+  "backgroundOpacity": 0.56,
+  "backgroundBlur": 0,
+  "backgroundLayout": "full",
+  "bannerHeight": 180,
+  "bannerFade": true,
+  "bannerFullWidth": true,
+  "openOnStartup": true,
+  "replaceNewTabs": true,
+  "focusSearchOnOpen": false,
+  "liveRefresh": true,
+  "mobileSearchOnly": false,
+  "showMobileActionBar": true,
+  "mobileActionButtons": [
+    {
+      "id": "action-new-note",
+      "label": "New note",
+      "icon": "plus",
+      "type": "command",
+      "target": "hearth:new-note"
+    },
+    {
+      "id": "action-new-drawing",
+      "label": "New drawing",
+      "icon": "pen-tool",
+      "type": "command",
+      "target": "hearth:new-drawing"
+    },
+    {
+      "id": "action-record-voice",
+      "label": "Record voice",
+      "icon": "mic",
+      "type": "command",
+      "target": "hearth:record-voice"
+    },
+    {
+      "id": "action-daily-note",
+      "label": "Daily note",
+      "icon": "calendar",
+      "type": "command",
+      "target": "hearth:open-daily-note"
+    }
   ],
-  "activeDashboardId":"dash-home",
-  "pinnedCards":[],
-  "gridColumns":12,
-  "rowHeight":54,
-  "favorites":[],
-  "fitToPage":true,
-  "taskNotesStatusField":"status",
-  "taskNotesDueField":"due",
-  "taskNotesPriorityField":"priority",
-  "taskNotesDoneValue":"done",
-  "taskFieldsEnabled":true,
-  "taskFields":["status","priority","due"],
-  "customFileIcons":true,
-  "iconizeIconProperty":"icon",
-  "maxWidth":1600,
-  "lastSeenVersion":"2.1.0",
-  "setupStatus":"done"
+  "disableExternalCalls": false,
+  "openIn": "tab",
+  "openInOverrides": {
+    "link": "default",
+    "search": "default",
+    "card": "default",
+    "newNote": "default"
+  },
+  "openFromOutside": "same",
+  "lowPower": false,
+  "lowPowerBackgroundColor": "#4a4459",
+  "compact": true,
+  "arrangeButtonVisibility": "always",
+  "dashboardSwitcherVisibility": "always",
+  "cardOpacity": 0.58,
+  "cardBlur": 12,
+  "cardRadius": 6,
+  "cardBorderWidth": 1,
+  "hiddenFilters": [],
+  "dashboards": [
+    {
+      "id": "dash-home",
+      "name": "Digital Herencia",
+      "fitToPage": true,
+      "showSearch": true,
+      "header": {
+        "showTitle": true,
+        "title": "DIGITAL HERENCIA",
+        "logoIcon": "terminal-square",
+        "align": "center",
+        "titleScale": 1.1,
+        "logoScale": 1.1,
+        "marginTop": 0,
+        "spacingBelow": 20
+      },
+      "background": {
+        "kind": "image",
+        "value": "assets/Digital Herencia Desert BG.jpg",
+        "opacity": 0.56,
+        "blur": 0
+      },
+      "backgroundLayout": "full",
+      "iconLucide": "drafting-compass",
+      "cards": []
+    },
+    {
+      "id": "dash-mtw1u9o8-4376",
+      "name": "Digital Herencia copy",
+      "cards": [
+        {
+          "id": "card-mtw1u9o8-4052",
+          "kind": "commands",
+          "title": "Capture",
+          "commands": [
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000001",
+              "name": "Amoeba",
+              "icon": "spline",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000002",
+              "name": "Project",
+              "icon": "target",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000003",
+              "name": "Task",
+              "icon": "square-check-big",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000004",
+              "name": "Clipping",
+              "icon": "paperclip",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000005",
+              "name": "AI Thread",
+              "icon": "messages-square",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000006",
+              "name": "Drill",
+              "icon": "braces",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "daily-notes",
+              "name": "Daily",
+              "icon": "calendar-days",
+              "sizeW": 96,
+              "sizeH": 44
+            }
+          ],
+          "tileSize": 48,
+          "x": 0,
+          "y": 0,
+          "w": 12,
+          "h": 4,
+          "fx": 0,
+          "fw": 1,
+          "fy": 0,
+          "fh": 264
+        },
+        {
+          "id": "card-mtw1u9o9-905",
+          "kind": "links",
+          "title": "Navigate",
+          "x": 0,
+          "y": 4,
+          "w": 4,
+          "h": 6,
+          "links": [
+            {
+              "id": "5048a3f7-1f9a-4ac3-9534-726cba3016ed",
+              "label": "Projects",
+              "icon": "target",
+              "target": "1.PROJECTS/README.md",
+              "type": "note",
+              "sizeW": 76,
+              "sizeH": 48
+            },
+            {
+              "id": "36eb47a5-4165-413d-b26c-2d8b2cb41838",
+              "label": "Amoeba",
+              "icon": "spline",
+              "target": "AMOEBA/README.md",
+              "type": "note",
+              "sizeW": 76,
+              "sizeH": 48
+            },
+            {
+              "id": "3e1d6756-b62e-46b4-8aff-ab45b597a38d",
+              "label": "Habits",
+              "icon": "repeat-2",
+              "target": "HABITS/Habits.md",
+              "type": "note",
+              "sizeW": 76,
+              "sizeH": 48
+            },
+            {
+              "id": "4f30921d-9d15-499e-afb0-dabefd509027",
+              "label": "Guide",
+              "icon": "book-open",
+              "target": "SYSTEM/Start Here.md",
+              "type": "note",
+              "sizeW": 76,
+              "sizeH": 48
+            }
+          ],
+          "tileSize": 48,
+          "fx": 0,
+          "fw": 0.3266666666666667,
+          "fy": 280,
+          "fh": 404
+        },
+        {
+          "id": "card-mtw1u9o9-7357",
+          "kind": "embed",
+          "title": "Active projects",
+          "target": "SYSTEM/Bases/Projects.base",
+          "baseView": "Active",
+          "x": 4,
+          "y": 4,
+          "w": 8,
+          "h": 6,
+          "fx": 0.3366666666666667,
+          "fw": 0.6633333333333334,
+          "fy": 280,
+          "fh": 404
+        }
+      ],
+      "iconLucide": "drafting-compass",
+      "fitToPage": true,
+      "showSearch": true,
+      "header": {
+        "showTitle": true,
+        "title": "DIGITAL HERENCIA",
+        "logoIcon": "terminal-square",
+        "align": "center",
+        "titleScale": 0.8,
+        "logoScale": 0.8,
+        "marginTop": 0,
+        "spacingBelow": 8
+      },
+      "background": {
+        "kind": "image",
+        "value": "assets/Digital Herencia Desert BG.jpg",
+        "opacity": 0.56,
+        "blur": 0
+      },
+      "backgroundLayout": "full"
+    },
+    {
+      "id": "dash-mtvsxtnj-7603",
+      "name": "Home copy",
+      "cards": [
+        {
+          "kind": "embed",
+          "title": "",
+          "target": "HEARTH/Home.md",
+          "x": 0,
+          "y": 0,
+          "w": 4,
+          "h": 12,
+          "id": "card-mtvsxtnj-9483",
+          "editable": false,
+          "livePreview": true,
+          "showOpenButton": false,
+          "fx": 0,
+          "fw": 0.3266666666666667,
+          "fy": 0,
+          "fh": 824
+        },
+        {
+          "kind": "embed",
+          "title": "Projects",
+          "target": "SYSTEM/Bases/Projects.base",
+          "baseView": "Active",
+          "x": 4,
+          "y": 0,
+          "w": 4,
+          "h": 6,
+          "id": "card-mtvsxtnj-4634",
+          "editable": true,
+          "livePreview": true,
+          "showOpenButton": true,
+          "fx": 0.3366666666666667,
+          "fw": 0.3266666666666667,
+          "fy": 0,
+          "fh": 404
+        },
+        {
+          "kind": "embed",
+          "title": "Learning",
+          "target": "SYSTEM/Bases/Learning.base",
+          "baseView": "Study Queue",
+          "x": 8,
+          "y": 0,
+          "w": 4,
+          "h": 6,
+          "id": "card-mtvsxtnj-8906",
+          "editable": true,
+          "livePreview": true,
+          "showOpenButton": true,
+          "fx": 0.6733333333333335,
+          "fw": 0.3266666666666667,
+          "fy": 0,
+          "fh": 404
+        },
+        {
+          "id": "card-mtvsxtnj-8177",
+          "kind": "commands",
+          "title": "Capture",
+          "commands": [
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000001",
+              "name": "Amoeba",
+              "icon": "spline",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000002",
+              "name": "Project",
+              "icon": "target",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000003",
+              "name": "Task",
+              "icon": "square-check-big",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000004",
+              "name": "Clipping",
+              "icon": "paperclip",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000005",
+              "name": "AI Thread",
+              "icon": "messages-square",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000006",
+              "name": "Drill",
+              "icon": "braces",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "daily-notes",
+              "name": "Daily",
+              "icon": "calendar-days",
+              "sizeW": 96,
+              "sizeH": 44
+            }
+          ],
+          "tileSize": 48,
+          "x": 4,
+          "y": 6,
+          "w": 8,
+          "h": 6,
+          "fx": 0.3366666666666667,
+          "fw": 0.6633333333333334,
+          "fy": 420,
+          "fh": 404
+        }
+      ],
+      "iconLucide": "house",
+      "fitToPage": true,
+      "showSearch": false,
+      "header": {
+        "showTitle": false,
+        "title": "Digital Herencia",
+        "logoIcon": "terminal-square",
+        "align": "center",
+        "titleScale": 1,
+        "logoScale": 1,
+        "marginTop": 0,
+        "spacingBelow": 10
+      },
+      "background": {
+        "kind": "image",
+        "value": "assets/Digital Herencia Logo (2).jpg",
+        "opacity": 0.56,
+        "blur": 0
+      },
+      "backgroundLayout": "full"
+    },
+    {
+      "id": "dash-library",
+      "name": "Library",
+      "fitToPage": true,
+      "showSearch": false,
+      "header": {
+        "showTitle": true,
+        "title": "Library",
+        "logoIcon": "library",
+        "align": "center",
+        "titleScale": 1,
+        "logoScale": 1,
+        "marginTop": 0,
+        "spacingBelow": 10
+      },
+      "background": {
+        "kind": "none",
+        "value": "",
+        "opacity": 0,
+        "blur": 0
+      },
+      "backgroundLayout": "full",
+      "iconLucide": "library",
+      "cards": [
+        {
+          "kind": "embed",
+          "title": "",
+          "target": "HEARTH/Library.md",
+          "x": 0,
+          "y": 0,
+          "w": 12,
+          "h": 12,
+          "id": "library-main",
+          "editable": false,
+          "livePreview": true,
+          "showOpenButton": false,
+          "fx": 0,
+          "fw": 1,
+          "fy": 0,
+          "fh": 824
+        }
+      ]
+    },
+    {
+      "id": "dash-learning",
+      "name": "Learning",
+      "fitToPage": true,
+      "showSearch": false,
+      "header": {
+        "showTitle": true,
+        "title": "TypeScript Learning",
+        "logoIcon": "braces",
+        "align": "center",
+        "titleScale": 1,
+        "logoScale": 1,
+        "marginTop": 0,
+        "spacingBelow": 10
+      },
+      "background": {
+        "kind": "none",
+        "value": "",
+        "opacity": 0,
+        "blur": 0
+      },
+      "backgroundLayout": "full",
+      "iconLucide": "graduation-cap",
+      "cards": [
+        {
+          "kind": "embed",
+          "title": "",
+          "target": "HEARTH/Learning.md",
+          "x": 0,
+          "y": 0,
+          "w": 12,
+          "h": 12,
+          "id": "learning-main",
+          "editable": false,
+          "livePreview": true,
+          "showOpenButton": false,
+          "fx": 0,
+          "fw": 1,
+          "fy": 0,
+          "fh": 824
+        }
+      ]
+    },
+    {
+      "id": "dash-projects",
+      "name": "Projects",
+      "fitToPage": true,
+      "showSearch": false,
+      "header": {
+        "showTitle": false,
+        "title": "Projects",
+        "logoIcon": "kanban-square",
+        "align": "center",
+        "titleScale": 1,
+        "logoScale": 1,
+        "marginTop": 0,
+        "spacingBelow": 10
+      },
+      "background": {
+        "kind": "none",
+        "value": "",
+        "opacity": 0,
+        "blur": 0
+      },
+      "backgroundLayout": "full",
+      "iconLucide": "kanban-square",
+      "cards": [
+        {
+          "id": "projects-list",
+          "kind": "embed",
+          "title": "Projects",
+          "target": "SYSTEM/Bases/Projects.base",
+          "baseView": "Active",
+          "x": 4,
+          "y": 0,
+          "w": 8,
+          "h": 3,
+          "fx": 0.3366666666666667,
+          "fw": 0.6633333333333334,
+          "fy": 0,
+          "fh": 194
+        },
+        {
+          "id": "projects-tasks",
+          "kind": "tasks",
+          "title": "TaskNotes",
+          "tasks": {
+            "source": "tasknotes",
+            "layout": "kanban",
+            "folderScope": "whitelist",
+            "folders": [
+              "1.PROJECTS/_Tasks"
+            ],
+            "showCompleted": false,
+            "taskNotesDoneStatuses": [
+              "done",
+              "cancelled"
+            ],
+            "kanbanOrder": [
+              "backlog",
+              "ready",
+              "in-progress",
+              "blocked",
+              "done",
+              "cancelled"
+            ]
+          },
+          "x": 0,
+          "y": 3,
+          "w": 12,
+          "h": 7,
+          "fx": 0,
+          "fw": 1,
+          "fy": 210,
+          "fh": 474
+        },
+        {
+          "id": "projects-launcher",
+          "kind": "commands",
+          "title": "Work",
+          "commands": [
+            {
+              "id": "tasknotes:create-new-task",
+              "name": "Task",
+              "icon": "square-plus"
+            },
+            {
+              "id": "tasknotes:open-kanban-view",
+              "name": "Full Task Board",
+              "icon": "columns-3"
+            }
+          ],
+          "x": 0,
+          "y": 0,
+          "w": 4,
+          "h": 3,
+          "tileSize": 48,
+          "fx": 0,
+          "fw": 0.3266666666666667,
+          "fy": 0,
+          "fh": 194
+        }
+      ]
+    },
+    {
+      "id": "dash-git",
+      "name": "Git",
+      "fitToPage": true,
+      "showSearch": false,
+      "header": {
+        "showTitle": false,
+        "title": "Git",
+        "logoIcon": "git-branch",
+        "align": "center",
+        "titleScale": 1,
+        "logoScale": 1,
+        "marginTop": 0,
+        "spacingBelow": 8
+      },
+      "background": {
+        "kind": "none",
+        "value": "",
+        "opacity": 0,
+        "blur": 0
+      },
+      "backgroundLayout": "full",
+      "iconLucide": "git-branch",
+      "cards": [
+        {
+          "id": "git-actions",
+          "kind": "git",
+          "title": "Repository",
+          "git": {
+            "sections": [
+              "status",
+              "actions"
+            ],
+            "actions": [
+              "commitAndSync",
+              "commit",
+              "push",
+              "pull",
+              "fetch",
+              "sourceControl",
+              "history"
+            ],
+            "actionStyle": "labelled",
+            "changeLimit": 6,
+            "logLimit": 6,
+            "showPaths": true,
+            "commitScope": "smart"
+          },
+          "x": 0,
+          "y": 0,
+          "w": 12,
+          "h": 3,
+          "fx": 0,
+          "fw": 1,
+          "fy": 0,
+          "fh": 194
+        },
+        {
+          "id": "git-changes",
+          "kind": "git",
+          "title": "Changes",
+          "git": {
+            "sections": [
+              "changes"
+            ],
+            "actions": [
+              "commitAndSync",
+              "commit",
+              "push",
+              "pull",
+              "fetch",
+              "sourceControl",
+              "history"
+            ],
+            "actionStyle": "labelled",
+            "changeLimit": 3,
+            "logLimit": 6,
+            "showPaths": true,
+            "commitScope": "smart"
+          },
+          "x": 0,
+          "y": 3,
+          "w": 6,
+          "h": 4,
+          "fx": 0,
+          "fw": 0.495,
+          "fy": 210,
+          "fh": 264
+        },
+        {
+          "id": "git-log",
+          "kind": "git",
+          "title": "History",
+          "git": {
+            "sections": [
+              "log"
+            ],
+            "actions": [
+              "commitAndSync",
+              "commit",
+              "push",
+              "pull",
+              "fetch",
+              "sourceControl",
+              "history"
+            ],
+            "actionStyle": "labelled",
+            "changeLimit": 6,
+            "logLimit": 3,
+            "showPaths": true,
+            "commitScope": "smart"
+          },
+          "x": 6,
+          "y": 3,
+          "w": 6,
+          "h": 4,
+          "fx": 0.5050000000000001,
+          "fw": 0.495,
+          "fy": 210,
+          "fh": 264
+        },
+        {
+          "id": "git-stats",
+          "kind": "stats",
+          "title": "Vault",
+          "x": 0,
+          "y": 7,
+          "w": 6,
+          "h": 3,
+          "fx": 0,
+          "fw": 0.495,
+          "fy": 490,
+          "fh": 194
+        },
+        {
+          "id": "git-heatmap",
+          "kind": "heatmap",
+          "title": "Activity",
+          "heatmap": {},
+          "x": 6,
+          "y": 7,
+          "w": 6,
+          "h": 3,
+          "fx": 0.5050000000000001,
+          "fw": 0.495,
+          "fy": 490,
+          "fh": 194
+        }
+      ]
+    }
+  ],
+  "activeDashboardId": "dash-home",
+  "pinnedCards": [],
+  "gridColumns": 12,
+  "rowHeight": 54,
+  "favorites": [],
+  "fitToPage": true,
+  "taskNotesStatusField": "status",
+  "taskNotesDueField": "due",
+  "taskNotesPriorityField": "priority",
+  "taskNotesDoneValue": "done",
+  "taskFieldsEnabled": true,
+  "taskFields": [
+    "status",
+    "priority",
+    "due"
+  ],
+  "customFileIcons": true,
+  "iconizeIconProperty": "icon",
+  "maxWidth": 1600,
+  "lastSeenVersion": "2.1.0",
+  "setupStatus": "done"
 }
