@@ -27,6 +27,7 @@ This note records repository-level and live Obsidian evidence for the Digital He
 - QuickAdd Zettelkasten Clipping, AI Thread, and Stack Syntax Drill each created controlled fixtures with the expected destination, template structure, and metadata; all fixtures were removed to the vault trash after verification.
 - TaskNotes explicit capture created a controlled `backlog` task with persisted title, details, priority, and tag frontmatter; the fixture was removed to the vault trash after verification.
 - Project-note visual review passed for status, phase, progress, due date, `archived`, and contextual Task/Kanban/Git controls.
+- Meta Bind status, progress, and archive controls were exercised live on the Stack Syntax Drills project; each write persisted to Markdown and was restored to its original value without errors.
 - Note Toolbar, Note Refactor, Table Editor, Code Space, and Meta Bind plugins are loaded with their expected command surfaces; no runtime errors were captured.
 - Code Space opened its live dashboard against the configured external repository mount; the `_mounts/` path is excluded from vault Git tracking.
 
