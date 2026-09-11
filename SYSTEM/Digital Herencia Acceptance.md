@@ -22,8 +22,8 @@ This note records repository-level and live Obsidian evidence for the Digital He
 
 ## Not run in this pass
 
-- Full Obsidian process restart persistence test.
 - Destructive or fixture-creating workflow tests for every QuickAdd, TaskNotes, Meta Bind, Note Toolbar, Note Refactor, Table Editor, and Code Space action.
+- Full Obsidian process restart persistence test passed: `DevNotes` reopened with Hearth `dash-home`, required commands, Bases, and no captured errors.
 - Console capture was not attached; `dev:errors` reported no captured errors.
 
 ## Explicitly not claimed
