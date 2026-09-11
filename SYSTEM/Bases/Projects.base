@@ -4,7 +4,7 @@ filters:
     - file.name == "Project"
     - archived != true
 formulas:
-  project: 'link(file.path, file.folder.replace("1.PROJECTS/", ""))'
+  project: link(file.path, file.folder.replace("1.PROJECTS/", ""))
 properties:
   formula.project:
     displayName: Project
