@@ -1,11 +1,11 @@
 ---
-archive: false
+archived: false
 tags:
   - type/resource
 ---
 # <% tp.file.title %>
 
-`INPUT[toggle:archive]`
+`INPUT[toggle:archived]`
 
 ## Summary
 

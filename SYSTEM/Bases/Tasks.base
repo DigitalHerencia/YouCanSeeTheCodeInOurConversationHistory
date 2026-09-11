@@ -2,7 +2,7 @@ filters:
   and:
     - file.inFolder("1.PROJECTS/_Tasks")
     - file.hasTag("type/task")
-    - archive != true
+    - archived != true
 properties:
   file.name:
     displayName: Task

@@ -2,7 +2,7 @@
 
 ## Properties
 
-Use properties only for operational state or plugin configuration: `status`, `phase`, `progress`, `priority`, `due`, `cadence`, `archive`, creation/update metadata, and narrowly necessary plugin relationships.
+Use properties only for operational state or plugin configuration: `status`, `phase`, `progress`, `priority`, `due`, `cadence`, `archived`, creation/update metadata, and narrowly necessary plugin relationships.
 
 ## Tags
 

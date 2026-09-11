@@ -1,0 +1,77 @@
+filters:
+  and:
+    - file.inFolder("3.RESOURCES/Stack Syntax/Drills")
+    - file.hasTag("type/drill")
+    - archived != true
+properties:
+  file.name:
+    displayName: Drill
+  status:
+    displayName: Status
+  difficulty:
+    displayName: Difficulty
+  practice_date:
+    displayName: Practice Date
+  progress:
+    displayName: Progress
+  file.tags:
+    displayName: Domain
+views:
+  - type: table
+    name: All Drills
+    order:
+      - file.name
+      - status
+      - difficulty
+      - practice_date
+      - progress
+      - file.tags
+  - type: table
+    name: Status
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - difficulty
+      - progress
+  - type: table
+    name: Domain
+    groupBy:
+      property: file.tags
+      direction: ASC
+    order:
+      - file.name
+      - status
+      - difficulty
+  - type: table
+    name: Difficulty
+    groupBy:
+      property: difficulty
+      direction: ASC
+    order:
+      - file.name
+      - status
+      - progress
+  - type: table
+    name: Practice Calendar
+    groupBy:
+      property: practice_date
+      direction: DESC
+    order:
+      - practice_date
+      - file.name
+      - status
+      - progress
+  - type: table
+    name: Topic Progress
+    groupBy:
+      property: file.tags
+      direction: ASC
+    order:
+      - file.name
+      - status
+      - difficulty
+      - progress
+    summaries:
+      progress: Average

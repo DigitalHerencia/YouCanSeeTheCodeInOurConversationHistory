@@ -5,3 +5,7 @@ Modules are repeatable note infrastructure above a single template but below PAR
 - [[3.RESOURCES/Modules/Software Product Development|Software Product Development]]
 - [[3.RESOURCES/Modules/Campaign Brief|Campaign Brief]]
 - [[3.RESOURCES/Modules/OKR Tracker|OKR Tracker]]
+- [[3.RESOURCES/Modules/Simple Notebook|Simple Notebook]]
+- [[3.RESOURCES/Modules/Wiki|Wiki / Durable Resource]]
+- [[3.RESOURCES/Stack Syntax/Stack Syntax Drill Journal|Stack Syntax Journal]]
+- [[3.RESOURCES/Template Families|Template Families]]

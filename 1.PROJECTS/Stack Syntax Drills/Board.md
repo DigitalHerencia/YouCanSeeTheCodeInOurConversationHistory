@@ -1,6 +1,6 @@
 ---
 kanban-plugin: board
-archive: false
+archived: false
 tags:
   - type/kanban
   - domain/typescript

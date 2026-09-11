@@ -9,9 +9,9 @@
   "propertiesInDocument": "visible",
   "uriCallbacks": true,
   "showIndentGuide": false,
-  "useTab": true,
+  "useTab": false,
   "tabSize": 2,
-  "openBehavior": "file:DevNotes Home.md",
+  "openBehavior": "file:HEARTH/Home.md",
   "newFileLocation": "current",
   "attachmentFolderPath": "./",
   "pdfExportSettings": {

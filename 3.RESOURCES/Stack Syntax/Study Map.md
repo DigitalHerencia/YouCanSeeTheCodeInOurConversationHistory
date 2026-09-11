@@ -1,7 +1,7 @@
 ---
 status: active
 progress: 0
-archive: false
+archived: false
 tags:
   - type/study-map
   - domain/typescript
@@ -9,9 +9,11 @@ tags:
 ---
 # TypeScript Study Map
 
-`INPUT[slider(minValue(0), maxValue(100), stepSize(5)):progress]` `INPUT[toggle:archive]`
+`INPUT[slider(minValue(0), maxValue(100), stepSize(5)):progress]` `INPUT[toggle:archived]`
 
 ## Topics
+
+See [[3.RESOURCES/Stack Syntax/Study Topics|Study Topics]] for the full practice map.
 
 - TypeScript function signatures and generics
 - async/result/error forms

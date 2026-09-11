@@ -1,5 +1,5 @@
 ---
-archive: false
+archived: false
 tags:
   - type/daily
 ---

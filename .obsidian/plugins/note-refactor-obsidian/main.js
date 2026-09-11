@@ -6244,7 +6244,7 @@ var NRDoc = /** @class */ (function () {
         var endPosition = doc.offsetToPos(doc.getValue().length);
         doc.replaceRange(text, currentLine, endPosition);
     };
-    NRDoc.prototype.replaceContent = function (fileName, filePath, doc, currentNote, content, originalContent, mode) {
+    NRDoc.prototype.replaceContent = function (fileName, filePath, doc, currentNote, content, originalContent, mode, selection) {
         return __awaiter(this, void 0, void 0, function () {
             var transclude, link, currentNoteLink, contentToInsert;
             return __generator(this, function (_a) {
@@ -6259,6 +6259,12 @@ var NRDoc = /** @class */ (function () {
                         currentNoteLink = _a.sent();
                         contentToInsert = transclude + link;
                         contentToInsert = this.templatedContent(contentToInsert, this.settings.noteLinkTemplate, currentNote.basename, currentNoteLink, fileName, link, '', content);
+                        if (selection && mode === 'replace-selection') {
+                            doc.setSelection(selection.from, selection.to);
+                        }
+                        else if (selection && mode === 'split') {
+                            doc.setCursor(selection.from);
+                        }
                         if (mode === 'split') {
                             this.removeNoteRemainder(doc, contentToInsert);
                         }
@@ -6458,7 +6464,7 @@ var NoteRefactorModal = /** @class */ (function (_super) {
 }(obsidian.FuzzySuggestModal));
 
 var ModalNoteCreation = /** @class */ (function () {
-    function ModalNoteCreation(app, settings, doc, file, obsFile, content, editor, mode) {
+    function ModalNoteCreation(app, settings, doc, file, obsFile, content, editor, mode, selection) {
         this.app = app;
         this.settings = settings;
         this.content = content;
@@ -6467,6 +6473,7 @@ var ModalNoteCreation = /** @class */ (function () {
         this.file = file;
         this.editor = editor;
         this.mode = mode;
+        this.selection = selection;
     }
     ModalNoteCreation.prototype.create = function (fileName) {
         return __awaiter(this, void 0, void 0, function () {
@@ -6485,7 +6492,7 @@ var ModalNoteCreation = /** @class */ (function () {
                         return [4 /*yield*/, this.obsFile.createOrAppendFile(fileName, templatedContent)];
                     case 3:
                         _a.sent();
-                        return [4 /*yield*/, this.doc.replaceContent(fileName, filePath, this.editor, currentFile, templatedContent, this.content, this.mode)];
+                        return [4 /*yield*/, this.doc.replaceContent(fileName, filePath, this.editor, currentFile, templatedContent, this.content, this.mode, this.selection)];
                     case 4:
                         _a.sent();
                         if (this.settings.openNewNote) {
@@ -6518,7 +6525,7 @@ var ModalNoteCreation = /** @class */ (function () {
                         return [4 /*yield*/, this.app.vault.modify(file, existingContent + templatedContent)];
                     case 5:
                         _c.sent();
-                        return [4 /*yield*/, this.doc.replaceContent(file.basename, file.path, this.editor, currentFile, templatedContent, this.content, this.mode)];
+                        return [4 /*yield*/, this.doc.replaceContent(file.basename, file.path, this.editor, currentFile, templatedContent, this.content, this.mode, this.selection)];
                     case 6:
                         _c.sent();
                         if (this.settings.openNewNote) {
@@ -6806,7 +6813,8 @@ var NoteRefactor = /** @class */ (function (_super) {
     };
     NoteRefactor.prototype.loadModal = function (contentArr, doc, mode) {
         var note = this.NRDoc.noteContent(contentArr[0], contentArr.slice(1), true);
-        var modalCreation = new ModalNoteCreation(this.app, this.settings, this.NRDoc, this.file, this.obsFile, note, doc, mode);
+        var selection = { from: doc.getCursor('from'), to: doc.getCursor('to') };
+        var modalCreation = new ModalNoteCreation(this.app, this.settings, this.NRDoc, this.file, this.obsFile, note, doc, mode, selection);
         new NoteRefactorModal(this.app, modalCreation).open();
     };
     return NoteRefactor;

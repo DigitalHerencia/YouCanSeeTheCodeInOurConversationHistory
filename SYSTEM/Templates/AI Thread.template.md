@@ -1,5 +1,5 @@
 ---
-archive: false
+archived: false
 tags:
   - type/ai-thread
   - source/ai-thread

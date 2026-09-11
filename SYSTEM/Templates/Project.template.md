@@ -4,13 +4,13 @@ phase: discovery
 progress: 0
 priority: normal
 due:
-archive: false
+archived: false
 tags:
   - type/project
 ---
 # <% tp.file.folder().split("/").pop() %>
 
-`INPUT[inlineSelect(option(planning), option(active), option(blocked), option(done)):status]` `INPUT[inlineSelect(option(discovery), option(design), option(build), option(validate), option(ship), option(maintain)):phase]` `INPUT[slider(minValue(0), maxValue(100), stepSize(5)):progress]` `INPUT[toggle:archive]`
+`INPUT[inlineSelect(option(planning), option(active), option(blocked), option(done)):status]` `INPUT[inlineSelect(option(discovery), option(design), option(build), option(validate), option(ship), option(maintain)):phase]` `INPUT[slider(minValue(0), maxValue(100), stepSize(5)):progress]` `INPUT[toggle:archived]`
 
 ## Outcome
 

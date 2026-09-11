@@ -2,9 +2,9 @@ filters:
   and:
     - file.inFolder("1.PROJECTS")
     - file.name == "Project"
-    - archive != true
+    - archived != true
 formulas:
-  project: 'link(file.path, file.folder.replace("1.PROJECTS/", ""))'
+  project: link(file.path, file.folder.replace("1.PROJECTS/", ""))
 properties:
   formula.project:
     displayName: Project

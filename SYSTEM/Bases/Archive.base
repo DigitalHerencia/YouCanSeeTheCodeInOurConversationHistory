@@ -1,6 +1,6 @@
 filters:
   and:
-    - archive == true
+    - archived == true
 properties:
   file.name:
     displayName: Note
