@@ -6,7 +6,7 @@ archived: false
 ---
 # Digital Herencia Acceptance
 
-This note records repository-level evidence for the Digital Herencia implementation baseline. In-app acceptance remains a separate gate because Obsidian must be running for plugin commands, rendered views, persistence, and visual review.
+This note records repository-level and live Obsidian evidence for the Digital Herencia implementation baseline.
 
 ## Implemented and statically verified
 
@@ -17,12 +17,14 @@ This note records repository-level evidence for the Digital Herencia implementat
 - Daily Notes, Templater, TaskNotes, Kanban, Note Toolbar, Table Editor, Note Refactor, Linter, Obsidian Git, Code Space, Callout Studio, and Iconic are configured.
 - Learning has TypeScript/stack-syntax drill metadata and All Drills, Status, Domain, and Difficulty Bases views.
 - Prompt records, reusable modules, template families, and a JSON Canvas navigation map live under Resources/Hearth.
+- Live Obsidian verification passed for vault identity, Hearth rendering, dashboard switching, Git refresh, Base view loading, Daily Notes, and error capture.
+- Home, Library, Learning, Projects, and Git were visually reviewed at the normal target viewport; Git shows the active branch, history, controls, changed files, statistics, and activity grid.
 
-## Blocked until Obsidian is running
+## Not run in this pass
 
-- Rendered dashboard and callout visual review.
-- QuickAdd, TaskNotes, Meta Bind, Note Toolbar, Note Refactor, Table Editor, Code Space, Git, and persistence smoke tests.
-- Obsidian CLI error and console checks.
+- Full Obsidian process restart persistence test.
+- Destructive or fixture-creating workflow tests for every QuickAdd, TaskNotes, Meta Bind, Note Toolbar, Note Refactor, Table Editor, and Code Space action.
+- Console capture was not attached; `dev:errors` reported no captured errors.
 
 ## Explicitly not claimed
 
