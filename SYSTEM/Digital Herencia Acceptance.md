@@ -22,12 +22,13 @@ This note records repository-level and live Obsidian evidence for the Digital He
 - Full Obsidian process restart persistence test passed: `DevNotes` reopened with Hearth `dash-home`, required commands, Bases, and no captured errors.
 - QuickAdd capture, project, clipping, AI-thread, and drill launchers opened and cancelled cleanly; TaskNotes opened its task modal with the current Project linked and cancelled cleanly.
 - QuickAdd Amoeba Capture created a controlled fixture successfully, and QuickAdd New Project created `1.PROJECTS/Acceptance Smoke Project/Project.md` with its `Board.md`, Templater context, required properties, and Projects Base visibility; both fixtures were removed to the vault trash after verification.
+- TaskNotes explicit capture created a controlled `backlog` task with persisted title, details, priority, and tag frontmatter; the fixture was removed to the vault trash after verification.
 - Project-note visual review passed for status, phase, progress, due date, `archived`, and contextual Task/Kanban/Git controls.
 - Note Toolbar, Note Refactor, Table Editor, Code Space, and Meta Bind plugins are loaded with their expected command surfaces; no runtime errors were captured.
 
 ## Not run in this pass
 
-- Saved TaskNotes creation/status persistence, Meta Bind write toggles, and edit/save workflows for Note Refactor, Table Editor, and Code Space were not run in this pass. QuickAdd clipping, AI-thread, and Stack Syntax Drill were launch/cancel checks only.
+- TaskNotes status mutation through the UI, Meta Bind write toggles, and edit/save workflows for Note Refactor, Table Editor, and Code Space were not run in this pass. QuickAdd New Task macro, clipping, AI-thread, and Stack Syntax Drill were launch/cancel checks only.
 - Console capture was not attached; `dev:errors` reported no captured errors.
 
 ## Explicitly not claimed
