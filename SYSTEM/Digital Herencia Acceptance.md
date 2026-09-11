@@ -18,18 +18,21 @@ This note records repository-level and live Obsidian evidence for the Digital He
 - Learning has TypeScript/stack-syntax drill metadata and All Drills, Status, Domain, and Difficulty Bases views.
 - Prompt records, reusable modules, template families, and a JSON Canvas navigation map live under Resources/Hearth.
 - Live Obsidian verification passed for vault identity, Hearth rendering, dashboard switching, Git refresh, Base view loading, Daily Notes, and error capture.
+- Daily Notes opened at the deterministic `DAILY/YYYY/YYYY-MM/YYYY-MM-DD.md` path and rendered the Scrum-style cadence, Stack Syntax practice, and lightweight habit checklist.
 - Home, Library, Learning, Projects, and Git were visually reviewed at the normal target viewport; Git shows the active branch, history, controls, changed files, statistics, and activity grid.
 - All seven required visual modes were smoke-tested live with mode isolation; each produced only the shared foundation/callout snippets plus its own mode, and Neo Modern was restored with no captured errors.
 - Full Obsidian process restart persistence test passed: `DevNotes` reopened with Hearth `dash-home`, required commands, Bases, and no captured errors.
 - QuickAdd capture, project, clipping, AI-thread, and drill launchers opened and cancelled cleanly; TaskNotes opened its task modal with the current Project linked and cancelled cleanly.
 - QuickAdd Amoeba Capture created a controlled fixture successfully, and QuickAdd New Project created `1.PROJECTS/Acceptance Smoke Project/Project.md` with its `Board.md`, Templater context, required properties, and Projects Base visibility; both fixtures were removed to the vault trash after verification.
+- QuickAdd Zettelkasten Clipping, AI Thread, and Stack Syntax Drill each created controlled fixtures with the expected destination, template structure, and metadata; all fixtures were removed to the vault trash after verification.
 - TaskNotes explicit capture created a controlled `backlog` task with persisted title, details, priority, and tag frontmatter; the fixture was removed to the vault trash after verification.
 - Project-note visual review passed for status, phase, progress, due date, `archived`, and contextual Task/Kanban/Git controls.
 - Note Toolbar, Note Refactor, Table Editor, Code Space, and Meta Bind plugins are loaded with their expected command surfaces; no runtime errors were captured.
+- Code Space opened its live dashboard against the configured external repository mount; the `_mounts/` path is excluded from vault Git tracking.
 
 ## Not run in this pass
 
-- TaskNotes status mutation through the UI, Meta Bind write toggles, and edit/save workflows for Note Refactor, Table Editor, and Code Space were not run in this pass. QuickAdd New Task macro, clipping, AI-thread, and Stack Syntax Drill were launch/cancel checks only.
+- TaskNotes status mutation through the UI, Meta Bind write toggles, and edit/save workflows for Note Refactor, Table Editor, and Code Space were not run in this pass. QuickAdd New Task remains a macro/modal check only.
 - Console capture was not attached; `dev:errors` reported no captured errors.
 
 ## Explicitly not claimed
