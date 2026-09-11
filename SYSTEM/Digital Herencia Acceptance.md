@@ -30,7 +30,7 @@ This note records repository-level and live Obsidian evidence for the Digital He
 - TaskNotes status cycling was exercised on a disposable task: `backlog → ready → in-progress → blocked`, with each status persisting to the task Markdown before cleanup.
 - Project-note visual review passed for status, phase, progress, due date, `archived`, and contextual Task/Kanban/Git controls.
 - Meta Bind status, progress, and archive controls were exercised live on the Stack Syntax Drills project; each write persisted to Markdown and was restored to its original value without errors.
-- Table Editor's control-bar command was invoked against a disposable Markdown table note without runtime errors; fixture cleanup succeeded. Actual table cell editing and save persistence remain unverified.
+- Table Editor's control-bar command opened the live Advanced Tables surface for a disposable Markdown table note without runtime errors; fixture cleanup succeeded. Actual table cell editing and save persistence remain unverified.
 - Note Toolbar, Note Refactor, Table Editor, Code Space, and Meta Bind plugins are loaded with their expected command surfaces; no runtime errors were captured.
 - Code Space opened its live dashboard against the configured external repository mount; the `_mounts/` path is excluded from vault Git tracking.
 - Code Space created, edited, saved, closed, and reopened a disposable TypeScript file in the external mount; the reopened editor reported `dirty=false` and the file content matched on disk. The fixture was removed and the external repository returned clean.
