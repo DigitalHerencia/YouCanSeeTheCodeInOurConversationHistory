@@ -4,6 +4,10 @@ This replaces the school/coursework/LeetCode dashboard with TypeScript study and
 
 ![[SYSTEM/Bases/Learning.base#Study Queue]]
 
+![[SYSTEM/Bases/Stack Syntax Drills.base#Practice Calendar]]
+
+![[SYSTEM/Bases/Stack Syntax Drills.base#Topic Progress]]
+
 ## Stack Syntax
 
 - [[1.PROJECTS/Stack Syntax Drills/Project|Stack Syntax Drills]]
@@ -13,3 +17,5 @@ This replaces the school/coursework/LeetCode dashboard with TypeScript study and
 ## Cadence
 
 The default daily target is three short syntax-writing drills drawn from the actual stack: TypeScript functions, fetchers, server actions, Zod schemas, React/Next patterns, Prisma/Neon boundaries, and related code forms.
+
+[[DAILY|Daily practice log]] · [[HABITS/Habits|Practice habits]]

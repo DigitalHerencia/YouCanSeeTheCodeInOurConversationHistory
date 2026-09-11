@@ -21,6 +21,7 @@ This note records repository-level and live Obsidian evidence for the Digital He
 - Daily Notes opened at the deterministic `DAILY/YYYY/YYYY-MM/YYYY-MM-DD.md` path and rendered the Scrum-style cadence, Stack Syntax practice, and lightweight habit checklist.
 - Home, Library, Learning, Projects, and Git were visually reviewed at the normal target viewport; Git shows the active branch, history, controls, changed files, statistics, and activity grid.
 - All seven required visual modes were smoke-tested live with mode isolation; each produced only the shared foundation/callout snippets plus its own mode, and Neo Modern was restored with no captured errors.
+- Hearth Learning now embeds Study Queue, Practice Calendar, and Topic Progress; live DOM inspection confirmed all three Base embeds load, including the Topic Progress Average summary.
 - Full Obsidian process restart persistence test passed: `DevNotes` reopened with Hearth `dash-home`, required commands, Bases, and no captured errors.
 - QuickAdd capture, project, clipping, AI-thread, and drill launchers opened and cancelled cleanly; TaskNotes opened its task modal with the current Project linked and cancelled cleanly.
 - QuickAdd Amoeba Capture created a controlled fixture successfully, and QuickAdd New Project created `1.PROJECTS/Acceptance Smoke Project/Project.md` with its `Board.md`, Templater context, required properties, and Projects Base visibility; both fixtures were removed to the vault trash after verification.
