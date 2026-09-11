@@ -37,14 +37,13 @@ This note records repository-level and live Obsidian evidence for the Digital He
 - Advanced Tables inserted a row through its live toolbar path, reformatted the disposable table, and the result persisted after closing and reopening. An earlier CLI formatter invocation against a malformed fixture failed and is not treated as a formatter pass.
 - Underlying Obsidian Markdown table editing and save persistence were also verified on a disposable table: the cell changed from `original` to `updated` and read back after save.
 - Note Refactor H2 splitting was invoked from a live source-mode Markdown view and created separate heading-named files (`Alpha.md` and `Beta.md`) from a disposable note; all fixtures were removed without captured errors.
-- Note Refactor selection extraction created a note containing the selected block through its live modal. Both selection-replace and split-from-cursor modes left the source note unchanged after modal completion; disabling its post-create tab opening did not change that result, so source replacement/link persistence remains unverified.
+- Note Refactor selection extraction created a note containing the selected block through its live modal. A minimal tracked plugin patch now preserves the source selection through modal completion; the selected block was replaced by the generated internal link and the extracted note persisted the moved content. H2 splitting was also verified separately.
 - Note Toolbar, Note Refactor, Table Editor, Code Space, and Meta Bind plugins are loaded with their expected command surfaces; no runtime errors were captured.
 - Code Space opened its live dashboard against the configured external repository mount; the `_mounts/` path is excluded from vault Git tracking.
 - Code Space created, edited, saved, closed, and reopened a disposable TypeScript file in the external mount; the reopened editor reported `dirty=false` and the file content matched on disk. The fixture was removed and the external repository returned clean.
 
 ## Not run in this pass
 
-- Note Refactor source replacement/link persistence remains unverified. Code Space edit/save and reopen persistence passed with the disposable fixture above.
 - Console capture was not attached; `dev:errors` reported no captured errors.
 
 ## Explicitly not claimed
