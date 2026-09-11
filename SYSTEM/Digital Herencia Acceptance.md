@@ -28,6 +28,7 @@ This note records repository-level and live Obsidian evidence for the Digital He
 - QuickAdd New Task opened its TaskNotes modal, accepted a disposable title, saved `1.PROJECTS/_Tasks/Acceptance QuickAdd Task.md` with backlog/priority/project metadata, and the fixture was removed to the vault trash after verification.
 - TaskNotes explicit capture created a controlled `backlog` task with persisted title, details, priority, and tag frontmatter; the fixture was removed to the vault trash after verification.
 - TaskNotes status cycling was exercised on a disposable task: `backlog → ready → in-progress → blocked`, with each status persisting to the task Markdown before cleanup.
+- The live Stack Syntax Drills board opened as a Kanban view; TaskNotes Bases expose task-list views including All Tasks, Today, Overdue, This Week, Unscheduled, plus a Kanban Board and Calendar view.
 - Project-note visual review passed for status, phase, progress, due date, `archived`, and contextual Task/Kanban/Git controls.
 - Meta Bind status, progress, and archive controls were exercised live on the Stack Syntax Drills project; each write persisted to Markdown and was restored to its original value without errors.
 - Table Editor's control-bar command opened the live Advanced Tables surface for a disposable Markdown table note without runtime errors; fixture cleanup succeeded. Actual table cell editing and save persistence remain unverified.
