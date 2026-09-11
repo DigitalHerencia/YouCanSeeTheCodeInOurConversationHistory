@@ -25,6 +25,7 @@ This note records repository-level and live Obsidian evidence for the Digital He
 - QuickAdd capture, project, clipping, AI-thread, and drill launchers opened and cancelled cleanly; TaskNotes opened its task modal with the current Project linked and cancelled cleanly.
 - QuickAdd Amoeba Capture created a controlled fixture successfully, and QuickAdd New Project created `1.PROJECTS/Acceptance Smoke Project/Project.md` with its `Board.md`, Templater context, required properties, and Projects Base visibility; both fixtures were removed to the vault trash after verification.
 - QuickAdd Zettelkasten Clipping, AI Thread, and Stack Syntax Drill each created controlled fixtures with the expected destination, template structure, and metadata; all fixtures were removed to the vault trash after verification.
+- QuickAdd New Task opened its TaskNotes modal, accepted a disposable title, saved `1.PROJECTS/_Tasks/Acceptance QuickAdd Task.md` with backlog/priority/project metadata, and the fixture was removed to the vault trash after verification.
 - TaskNotes explicit capture created a controlled `backlog` task with persisted title, details, priority, and tag frontmatter; the fixture was removed to the vault trash after verification.
 - TaskNotes status cycling was exercised on a disposable task: `backlog → ready → in-progress → blocked`, with each status persisting to the task Markdown before cleanup.
 - Project-note visual review passed for status, phase, progress, due date, `archived`, and contextual Task/Kanban/Git controls.
@@ -35,7 +36,7 @@ This note records repository-level and live Obsidian evidence for the Digital He
 
 ## Not run in this pass
 
-- Meta Bind writes and edit/save workflows for Note Refactor, Table Editor, and Code Space were not run in this pass. QuickAdd New Task remains a macro/modal check only.
+- Meta Bind writes and edit/save workflows for Note Refactor, Table Editor, and Code Space were not run in this pass.
 - Console capture was not attached; `dev:errors` reported no captured errors.
 
 ## Explicitly not claimed
