@@ -19,3 +19,14 @@ These are personal reusable structures extracted from the supplied team-in-a-box
 - [[3.RESOURCES/Template Families/Startup|Startup]] — founder stages, priorities, and actionable business infrastructure.
 
 Use [[SYSTEM/Templates/Project.template|Project]] as the active-work center and [[SYSTEM/Templates/Task.template|Task]] for TaskNotes records.
+
+## Reusable templates
+
+- [[SYSTEM/Templates/Families/Feature Specification.template|Feature Specification]]
+- [[SYSTEM/Templates/Families/Technical Specification.template|Technical Specification]]
+- [[SYSTEM/Templates/Families/Creative Brief.template|Creative Brief]]
+- [[SYSTEM/Templates/Families/SOP.template|SOP]]
+- [[SYSTEM/Templates/Families/Product Spec.template|Product Spec]]
+- [[SYSTEM/Templates/Families/Editorial Calendar.template|Editorial Calendar]]
+- [[SYSTEM/Templates/Families/API Reference.template|API Reference]]
+- [[SYSTEM/Templates/Families/Founder Stage Review.template|Founder Stage Review]]

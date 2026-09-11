@@ -13,6 +13,8 @@ tags:
 
 ## Topics
 
+See [[3.RESOURCES/Stack Syntax/Study Topics|Study Topics]] for the full practice map.
+
 - TypeScript function signatures and generics
 - async/result/error forms
 - Zod object/union/refinement patterns
