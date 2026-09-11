@@ -20,6 +20,8 @@ This note records repository-level and live Obsidian evidence for the Digital He
 - Live Obsidian verification passed for vault identity, Hearth rendering, dashboard switching, Git refresh, Base view loading, Daily Notes, and error capture.
 - Home, Library, Learning, Projects, and Git were visually reviewed at the normal target viewport; Git shows the active branch, history, controls, changed files, statistics, and activity grid.
 - Full Obsidian process restart persistence test passed: `DevNotes` reopened with Hearth `dash-home`, required commands, Bases, and no captured errors.
+- QuickAdd capture, project, clipping, AI-thread, and drill launchers opened and cancelled cleanly; TaskNotes opened its task modal with the current Project linked and cancelled cleanly.
+- Project-note visual review passed for status, phase, progress, due date, `archived`, and contextual Task/Kanban/Git controls.
 
 ## Not run in this pass
 
