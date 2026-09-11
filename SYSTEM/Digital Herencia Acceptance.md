@@ -15,7 +15,7 @@ This note records repository-level and live Obsidian evidence for the Digital He
 - Home, Library, Learning, Projects, and Git Hearth dashboards are configured with Digital Herencia assets and Lucide/Iconic labels.
 - QuickAdd routes Amoeba Capture, New Project, New Task through TaskNotes, Clipping, AI Thread, and Stack Syntax Drill.
 - Daily Notes, Templater, TaskNotes, Kanban, Note Toolbar, Table Editor, Note Refactor, Linter, Obsidian Git, Code Space, Callout Studio, and Iconic are configured.
-- Learning has TypeScript/stack-syntax drill metadata and All Drills, Status, Domain, and Difficulty Bases views.
+- Learning has TypeScript/stack-syntax drill metadata and All Drills, Status, Domain, Difficulty, Practice Calendar, and Topic Progress Bases views.
 - Prompt records, reusable modules, template families, and a JSON Canvas navigation map live under Resources/Hearth.
 - Live Obsidian verification passed for vault identity, Hearth rendering, dashboard switching, Git refresh, Base view loading, Daily Notes, and error capture.
 - Daily Notes opened at the deterministic `DAILY/YYYY/YYYY-MM/YYYY-MM-DD.md` path and rendered the Scrum-style cadence, Stack Syntax practice, and lightweight habit checklist.

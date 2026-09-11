@@ -53,3 +53,25 @@ views:
       - file.name
       - status
       - progress
+  - type: table
+    name: Practice Calendar
+    groupBy:
+      property: practice_date
+      direction: DESC
+    order:
+      - practice_date
+      - file.name
+      - status
+      - progress
+  - type: table
+    name: Topic Progress
+    groupBy:
+      property: file.tags
+      direction: ASC
+    order:
+      - file.name
+      - status
+      - difficulty
+      - progress
+    summaries:
+      progress: Average
