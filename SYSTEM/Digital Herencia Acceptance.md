@@ -19,11 +19,11 @@ This note records repository-level and live Obsidian evidence for the Digital He
 - Prompt records, reusable modules, template families, and a JSON Canvas navigation map live under Resources/Hearth.
 - Live Obsidian verification passed for vault identity, Hearth rendering, dashboard switching, Git refresh, Base view loading, Daily Notes, and error capture.
 - Home, Library, Learning, Projects, and Git were visually reviewed at the normal target viewport; Git shows the active branch, history, controls, changed files, statistics, and activity grid.
+- Full Obsidian process restart persistence test passed: `DevNotes` reopened with Hearth `dash-home`, required commands, Bases, and no captured errors.
 
 ## Not run in this pass
 
 - Destructive or fixture-creating workflow tests for every QuickAdd, TaskNotes, Meta Bind, Note Toolbar, Note Refactor, Table Editor, and Code Space action.
-- Full Obsidian process restart persistence test passed: `DevNotes` reopened with Hearth `dash-home`, required commands, Bases, and no captured errors.
 - Console capture was not attached; `dev:errors` reported no captured errors.
 
 ## Explicitly not claimed
