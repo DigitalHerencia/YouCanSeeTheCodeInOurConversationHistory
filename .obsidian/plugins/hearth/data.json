@@ -567,6 +567,11 @@
           "title": "Work",
           "commands": [
             {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000002",
+              "name": "Project",
+              "icon": "folder-plus"
+            },
+            {
               "id": "tasknotes:create-new-task",
               "name": "Task",
               "icon": "square-plus"
