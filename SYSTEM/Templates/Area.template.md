@@ -1,12 +1,12 @@
 ---
 cadence: monthly
-archive: false
+archived: false
 tags:
   - type/area
 ---
 # <% tp.file.title %>
 
-`INPUT[inlineSelect(option(weekly), option(monthly), option(quarterly)):cadence]` `INPUT[toggle:archive]`
+`INPUT[inlineSelect(option(weekly), option(monthly), option(quarterly)):cadence]` `INPUT[toggle:archived]`
 
 ## Standard
 

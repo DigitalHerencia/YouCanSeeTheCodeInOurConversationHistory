@@ -15,7 +15,7 @@ Open Hearth for capture, active projects, learning, and Git. Press **Ctrl+Shift+
 
 Hearth Projects shows actual TaskNotes by status. Project notes embed only their own tasks. Kanban cards describe milestones and workstreams; they do not duplicate task status.
 
-Properties describe lifecycle and plugin relationships. Tags classify meaning. Use `archive` to retire or restore a note; automatic task movement and Git sync are off.
+Properties describe lifecycle and plugin relationships. Tags classify meaning. Use `archived` to retire or restore a note; automatic task movement and Git sync are off.
 
 Code Space mounts the local code repository under `_mounts/CodependentCoding`. Files there are the actual repository files. Use that repository's own Git workflow for code changes.
 

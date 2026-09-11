@@ -14,6 +14,13 @@ Use focused resource notes tagged `type/study` and `domain/typescript`.
 
 Practice is scheduled through Daily Notes rather than a school calendar.
 
+## Drill Views
+
+- [[SYSTEM/Bases/Stack Syntax Drills.base#All Drills|All Drills]]
+- [[SYSTEM/Bases/Stack Syntax Drills.base#Status|Status]]
+- [[SYSTEM/Bases/Stack Syntax Drills.base#Domain|Domain]]
+- [[SYSTEM/Bases/Stack Syntax Drills.base#Difficulty|Difficulty]]
+
 ## Drill Log
 
 Create drills with QuickAdd/Templater using `SYSTEM/Templates/Stack Syntax Drill.template.md`.

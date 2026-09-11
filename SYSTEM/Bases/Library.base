@@ -1,7 +1,7 @@
 filters:
   and:
     - file.inFolder("3.RESOURCES")
-    - archive != true
+    - archived != true
 properties:
   file.name:
     displayName: Resource

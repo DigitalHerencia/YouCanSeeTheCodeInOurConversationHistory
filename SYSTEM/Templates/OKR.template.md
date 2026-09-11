@@ -1,7 +1,7 @@
 ---
 status: planned
 progress: 0
-archive: false
+archived: false
 tags:
   - type/okr
 ---

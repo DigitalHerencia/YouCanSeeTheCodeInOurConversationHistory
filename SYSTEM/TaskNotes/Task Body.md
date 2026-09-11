@@ -1,6 +1,6 @@
 # {{title}}
 
-`INPUT[toggle:archive]` Archive
+`INPUT[toggle:archived]` Archive
 
 Use TaskNotes to change status, priority, scheduling, and project relationships.
 

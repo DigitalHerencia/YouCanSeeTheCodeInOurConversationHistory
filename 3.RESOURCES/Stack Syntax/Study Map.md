@@ -1,7 +1,7 @@
 ---
 status: active
 progress: 0
-archive: false
+archived: false
 tags:
   - type/study-map
   - domain/typescript
@@ -9,7 +9,7 @@ tags:
 ---
 # TypeScript Study Map
 
-`INPUT[slider(minValue(0), maxValue(100), stepSize(5)):progress]` `INPUT[toggle:archive]`
+`INPUT[slider(minValue(0), maxValue(100), stepSize(5)):progress]` `INPUT[toggle:archived]`
 
 ## Topics
 

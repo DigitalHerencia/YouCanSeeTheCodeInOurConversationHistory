@@ -2,7 +2,7 @@ filters:
   and:
     - file.inFolder("1.PROJECTS/_Tasks")
     - file.hasTag("type/task")
-    - archive != true
+    - archived != true
     - list(projects).map(file(value).asLink()).contains(this.file.asLink())
 properties:
   file.name:

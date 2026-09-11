@@ -4,7 +4,7 @@ phase: foundation
 progress: 0
 priority: high
 due:
-archive: false
+archived: false
 tags:
   - type/project
   - domain/typescript
@@ -12,7 +12,7 @@ tags:
 ---
 # Stack Syntax Drills
 
-`INPUT[inlineSelect(option(planning), option(active), option(blocked), option(done)):status]` `INPUT[inlineSelect(option(foundation), option(application), option(fluency), option(maintenance)):phase]` `INPUT[slider(minValue(0), maxValue(100), stepSize(5)):progress]` `INPUT[toggle:archive]`
+`INPUT[inlineSelect(option(planning), option(active), option(blocked), option(done)):status]` `INPUT[inlineSelect(option(foundation), option(application), option(fluency), option(maintenance)):phase]` `INPUT[slider(minValue(0), maxValue(100), stepSize(5)):progress]` `INPUT[toggle:archived]`
 
 ## Outcome
 

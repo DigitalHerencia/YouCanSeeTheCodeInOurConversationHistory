@@ -2,7 +2,7 @@ filters:
   and:
     - file.inFolder("3.RESOURCES")
     - file.hasTag("domain/typescript")
-    - archive != true
+    - archived != true
 properties:
   file.name:
     displayName: Item

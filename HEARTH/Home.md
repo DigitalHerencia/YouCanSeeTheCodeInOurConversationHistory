@@ -1,5 +1,7 @@
 # Home
 
+![[HEARTH/Digital Herencia.canvas]]
+
 > [!information] Vault
 > PARA is the filing system. Amoeba captures. Zettelkasten connects. Daily and Habits provide cadence.
 

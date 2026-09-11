@@ -1,0 +1,16 @@
+filters:
+  and:
+    - file.inFolder("3.RESOURCES/Prompt Library")
+    - file.hasTag("type/prompt")
+    - archived != true
+properties:
+  file.name:
+    displayName: Prompt
+  file.tags:
+    displayName: Classification
+views:
+  - type: table
+    name: Prompts
+    order:
+      - file.name
+      - file.tags

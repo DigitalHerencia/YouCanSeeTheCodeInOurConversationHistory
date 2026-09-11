@@ -9,7 +9,7 @@ Durable notes belong in PARA:
 - `1.PROJECTS/` — finite outcomes with milestones, phases, and tasks.
 - `2.AREAS/` — ongoing responsibilities and standards.
 - `3.RESOURCES/` — reusable knowledge, modules, prompts, study material, and references.
-- `4.ARCHIVE/` — inactive PARA material. Archive state is controlled by the `archive` lifecycle property.
+- `4.ARCHIVE/` — inactive PARA material. Archive state is controlled by the `archived` lifecycle property.
 
 Operational subsystems sit beside PARA instead of competing with it:
 

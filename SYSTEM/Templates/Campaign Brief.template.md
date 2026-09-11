@@ -1,7 +1,7 @@
 ---
 status: planning
 progress: 0
-archive: false
+archived: false
 tags:
   - type/brief
   - domain/marketing
