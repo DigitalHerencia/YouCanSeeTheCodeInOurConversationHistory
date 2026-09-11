@@ -33,8 +33,9 @@ This note records repository-level and live Obsidian evidence for the Digital He
 - The live Stack Syntax Drills board opened as a Kanban view; TaskNotes Bases expose task-list views including All Tasks, Today, Overdue, This Week, Unscheduled, plus a Kanban Board and Calendar view.
 - Project-note visual review passed for status, phase, progress, due date, `archived`, and contextual Task/Kanban/Git controls.
 - Meta Bind status, progress, and archive controls were exercised live on the Stack Syntax Drills project; each write persisted to Markdown and was restored to its original value without errors.
-- Table Editor's control-bar command opened the live Advanced Tables surface for a disposable Markdown table note without runtime errors; fixture cleanup succeeded. Actual table cell editing and save persistence remain unverified.
-- Underlying Obsidian Markdown table editing and save persistence were verified on a disposable table: the cell changed from `original` to `updated` and read back after save. The Table Editor formatter command failed, and its direct insert-row command returned without changing the disposable table; plugin-specific behavior remains unverified.
+- Table Editor's control-bar command opened the live Advanced Tables surface for a disposable Markdown table note without runtime errors; fixture cleanup succeeded.
+- Advanced Tables inserted a row through its live toolbar path, reformatted the disposable table, and the result persisted after closing and reopening. An earlier CLI formatter invocation against a malformed fixture failed and is not treated as a formatter pass.
+- Underlying Obsidian Markdown table editing and save persistence were also verified on a disposable table: the cell changed from `original` to `updated` and read back after save.
 - Note Refactor H2 splitting was invoked from a live source-mode Markdown view and created separate heading-named files (`Alpha.md` and `Beta.md`) from a disposable note; all fixtures were removed without captured errors. Selection extraction and content-quality/save verification remain unverified.
 - Note Toolbar, Note Refactor, Table Editor, Code Space, and Meta Bind plugins are loaded with their expected command surfaces; no runtime errors were captured.
 - Code Space opened its live dashboard against the configured external repository mount; the `_mounts/` path is excluded from vault Git tracking.
@@ -42,7 +43,7 @@ This note records repository-level and live Obsidian evidence for the Digital He
 
 ## Not run in this pass
 
-- Note Refactor edit/save remains unverified; Table Editor's plugin-specific formatter/edit behavior remains unverified despite the underlying Markdown table persistence check. Code Space edit/save and reopen persistence passed with the disposable fixture above.
+- Note Refactor selection edit/save remains unverified. Code Space edit/save and reopen persistence passed with the disposable fixture above.
 - Console capture was not attached; `dev:errors` reported no captured errors.
 
 ## Explicitly not claimed
