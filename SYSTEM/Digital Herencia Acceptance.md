@@ -33,10 +33,11 @@ This note records repository-level and live Obsidian evidence for the Digital He
 - Table Editor's control-bar command was invoked against a disposable Markdown table note without runtime errors; fixture cleanup succeeded. Actual table cell editing and save persistence remain unverified.
 - Note Toolbar, Note Refactor, Table Editor, Code Space, and Meta Bind plugins are loaded with their expected command surfaces; no runtime errors were captured.
 - Code Space opened its live dashboard against the configured external repository mount; the `_mounts/` path is excluded from vault Git tracking.
+- Code Space created, edited, saved, closed, and reopened a disposable TypeScript file in the external mount; the reopened editor reported `dirty=false` and the file content matched on disk. The fixture was removed and the external repository returned clean.
 
 ## Not run in this pass
 
-- Meta Bind writes and edit/save workflows for Note Refactor, Table Editor, and Code Space were not run in this pass.
+- Edit/save workflows for Note Refactor and Table Editor were not run in this pass. Code Space edit/save and reopen persistence passed with the disposable fixture above.
 - Console capture was not attached; `dev:errors` reported no captured errors.
 
 ## Explicitly not claimed
