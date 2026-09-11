@@ -26,14 +26,16 @@ This note records repository-level and live Obsidian evidence for the Digital He
 - QuickAdd Amoeba Capture created a controlled fixture successfully, and QuickAdd New Project created `1.PROJECTS/Acceptance Smoke Project/Project.md` with its `Board.md`, Templater context, required properties, and Projects Base visibility; both fixtures were removed to the vault trash after verification.
 - QuickAdd Zettelkasten Clipping, AI Thread, and Stack Syntax Drill each created controlled fixtures with the expected destination, template structure, and metadata; all fixtures were removed to the vault trash after verification.
 - TaskNotes explicit capture created a controlled `backlog` task with persisted title, details, priority, and tag frontmatter; the fixture was removed to the vault trash after verification.
+- TaskNotes status cycling was exercised on a disposable task: `backlog → ready → in-progress → blocked`, with each status persisting to the task Markdown before cleanup.
 - Project-note visual review passed for status, phase, progress, due date, `archived`, and contextual Task/Kanban/Git controls.
 - Meta Bind status, progress, and archive controls were exercised live on the Stack Syntax Drills project; each write persisted to Markdown and was restored to its original value without errors.
+- Table Editor's control-bar command was invoked against a disposable Markdown table note without runtime errors; fixture cleanup succeeded. Actual table cell editing and save persistence remain unverified.
 - Note Toolbar, Note Refactor, Table Editor, Code Space, and Meta Bind plugins are loaded with their expected command surfaces; no runtime errors were captured.
 - Code Space opened its live dashboard against the configured external repository mount; the `_mounts/` path is excluded from vault Git tracking.
 
 ## Not run in this pass
 
-- TaskNotes status mutation through the UI, Meta Bind write toggles, and edit/save workflows for Note Refactor, Table Editor, and Code Space were not run in this pass. QuickAdd New Task remains a macro/modal check only.
+- Meta Bind writes and edit/save workflows for Note Refactor, Table Editor, and Code Space were not run in this pass. QuickAdd New Task remains a macro/modal check only.
 - Console capture was not attached; `dev:errors` reported no captured errors.
 
 ## Explicitly not claimed
