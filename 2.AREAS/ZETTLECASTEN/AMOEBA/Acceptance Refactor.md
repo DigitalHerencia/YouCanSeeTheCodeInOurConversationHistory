@@ -1,5 +1,0 @@
-# Acceptance Refactor
-
-#[[Alpha]]
-
-#[[Beta]]
