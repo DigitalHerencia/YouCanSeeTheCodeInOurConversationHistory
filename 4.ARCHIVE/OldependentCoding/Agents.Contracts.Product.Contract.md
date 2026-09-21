@@ -1,0 +1,76 @@
+---
+title: Codependent Coding Product Contract
+type: contract
+scope: domain
+project: CodependentCoding
+domain: product
+artifact: machine-contract
+kind: contract
+namespace: codependentcoding.agents.contracts.product.contract
+status: active
+authority: source-of-truth
+parent: "[[codependentcoding.manifest.map]]"
+depends_on:
+  - "[[codependentcoding.docs.knowledge-system-definition.source-document]]"
+  - "[[codependentcoding.docs.loaded-vibes-architecture.source-document]]"
+supersedes: []
+tags:
+  - codependentcoding/contracts
+  - codependentcoding/product
+  - status/active
+created: 2026-08-08
+updated: 2026-08-08
+source_repository: DigitalHerencia/CodependentCoding
+source_path: .agents/contracts/product.yaml
+source_commit: 773a3469b80d8f8aafccecd749c60ebdb8a930ae
+source_blob: 1706c309b6373dd38e123a7c43bddf73332ed858
+source_format: yaml
+---
+# Product Machine Contract
+
+The original machine-readable payload is preserved verbatim below.
+
+```yaml
+version: 1
+status: final
+system:
+  name: "Codependent Coding™ Knowledge System"
+  architecture: "Loaded Vibes™ WebApp Architecture"
+  tech_stack: "Hipster Stack™ TechStack"
+  hierarchy:
+    - knowledge-system-defines-governs-validates-architecture
+    - architecture-organizes-constrains-structures-tech-stack
+    - tech-stack-implements-executes-operates-application
+product_class: multi-tenant-b2b-saas
+tenant:
+  abstraction: Tenant
+  reference_noun: Organization
+  access_entities: [User, Membership]
+  rename_requires_coherent_reset: true
+truth_owners:
+  authentication: Clerk
+  application_state: PostgreSQL
+  provider_payment_state: Stripe
+  product_transition: application-workflow
+required_properties:
+  - server-owned-business-truth
+  - self-securing-protected-reads
+  - workflow-owned-mutations
+  - capability-and-resource-authorization
+  - rls-tenant-containment
+  - provider-idempotency-and-reconciliation
+  - stable-transport-dtos
+  - executable-validation
+prohibited_assumptions:
+  - client-identity-is-authoritative
+  - client-tenant-is-authoritative
+  - clerk-metadata-is-product-role-truth
+  - checkout-redirect-grants-entitlement
+  - webhook-delivery-is-exactly-once
+  - provider-model-is-domain-model
+  - project-is-hidden-tenant
+optional_modules:
+  - stripe-subscription-billing
+  - stripe-connect
+  - persistent-application-cache
+```

@@ -92,171 +92,13 @@
       },
       "background": {
         "kind": "image",
-        "value": "assets/Digital Herencia Desert BG.jpg",
+        "value": "3.RESOURCES/assets/Digital Herencia Desert BG.jpg",
         "opacity": 0.56,
         "blur": 0
       },
       "backgroundLayout": "full",
-      "iconLucide": "drafting-compass",
+      "iconLucide": "terminal-square",
       "cards": []
-    },
-    {
-      "id": "dash-mtw1u9o8-4376",
-      "name": "Digital Herencia copy",
-      "cards": [
-        {
-          "id": "card-mtw1u9o8-4052",
-          "kind": "commands",
-          "title": "Capture",
-          "commands": [
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000001",
-              "name": "Amoeba",
-              "icon": "spline",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000002",
-              "name": "Project",
-              "icon": "target",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000003",
-              "name": "Task",
-              "icon": "square-check-big",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000004",
-              "name": "Clipping",
-              "icon": "paperclip",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000005",
-              "name": "AI Thread",
-              "icon": "messages-square",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000006",
-              "name": "Drill",
-              "icon": "braces",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "daily-notes",
-              "name": "Daily",
-              "icon": "calendar-days",
-              "sizeW": 96,
-              "sizeH": 44
-            }
-          ],
-          "tileSize": 48,
-          "x": 0,
-          "y": 0,
-          "w": 12,
-          "h": 4,
-          "fx": 0,
-          "fw": 1,
-          "fy": 0,
-          "fh": 264
-        },
-        {
-          "id": "card-mtw1u9o9-905",
-          "kind": "links",
-          "title": "Navigate",
-          "x": 0,
-          "y": 4,
-          "w": 4,
-          "h": 6,
-          "links": [
-            {
-              "id": "5048a3f7-1f9a-4ac3-9534-726cba3016ed",
-              "label": "Projects",
-              "icon": "target",
-              "target": "1.PROJECTS/README.md",
-              "type": "note",
-              "sizeW": 76,
-              "sizeH": 48
-            },
-            {
-              "id": "36eb47a5-4165-413d-b26c-2d8b2cb41838",
-              "label": "Amoeba",
-              "icon": "spline",
-              "target": "AMOEBA/README.md",
-              "type": "note",
-              "sizeW": 76,
-              "sizeH": 48
-            },
-            {
-              "id": "3e1d6756-b62e-46b4-8aff-ab45b597a38d",
-              "label": "Habits",
-              "icon": "repeat-2",
-              "target": "HABITS/Habits.md",
-              "type": "note",
-              "sizeW": 76,
-              "sizeH": 48
-            },
-            {
-              "id": "4f30921d-9d15-499e-afb0-dabefd509027",
-              "label": "Guide",
-              "icon": "book-open",
-              "target": "SYSTEM/Start Here.md",
-              "type": "note",
-              "sizeW": 76,
-              "sizeH": 48
-            }
-          ],
-          "tileSize": 48,
-          "fx": 0,
-          "fw": 0.3266666666666667,
-          "fy": 280,
-          "fh": 404
-        },
-        {
-          "id": "card-mtw1u9o9-7357",
-          "kind": "embed",
-          "title": "Active projects",
-          "target": "SYSTEM/Bases/Projects.base",
-          "baseView": "Active",
-          "x": 4,
-          "y": 4,
-          "w": 8,
-          "h": 6,
-          "fx": 0.3366666666666667,
-          "fw": 0.6633333333333334,
-          "fy": 280,
-          "fh": 404
-        }
-      ],
-      "iconLucide": "drafting-compass",
-      "fitToPage": true,
-      "showSearch": true,
-      "header": {
-        "showTitle": true,
-        "title": "DIGITAL HERENCIA",
-        "logoIcon": "terminal-square",
-        "align": "center",
-        "titleScale": 0.8,
-        "logoScale": 0.8,
-        "marginTop": 0,
-        "spacingBelow": 8
-      },
-      "background": {
-        "kind": "image",
-        "value": "assets/Digital Herencia Desert BG.jpg",
-        "opacity": 0.56,
-        "blur": 0
-      },
-      "backgroundLayout": "full"
     },
     {
       "id": "dash-mtvsxtnj-7603",
@@ -444,6 +286,162 @@
           "fh": 824
         }
       ]
+    },
+    {
+      "id": "dash-mtw1u9o8-4376",
+      "name": "Digital Herencia copy",
+      "cards": [
+        {
+          "id": "card-mtw1u9o8-4052",
+          "kind": "commands",
+          "title": "Capture",
+          "commands": [
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000001",
+              "name": "Amoeba",
+              "icon": "spline",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000002",
+              "name": "Project",
+              "icon": "target",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000003",
+              "name": "Task",
+              "icon": "square-check-big",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000004",
+              "name": "Clipping",
+              "icon": "paperclip",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000005",
+              "name": "AI Thread",
+              "icon": "messages-square",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000006",
+              "name": "Drill",
+              "icon": "braces",
+              "sizeW": 96,
+              "sizeH": 44
+            },
+            {
+              "id": "daily-notes",
+              "name": "Daily",
+              "icon": "calendar-days",
+              "sizeW": 96,
+              "sizeH": 44
+            }
+          ],
+          "tileSize": 48,
+          "x": 0,
+          "y": 0,
+          "w": 12,
+          "h": 4,
+          "fx": 0,
+          "fw": 1,
+          "fy": 0,
+          "fh": 264
+        },
+        {
+          "id": "card-mtw1u9o9-905",
+          "kind": "links",
+          "title": "Navigate",
+          "x": 0,
+          "y": 4,
+          "w": 4,
+          "h": 6,
+          "links": [
+            {
+              "id": "5048a3f7-1f9a-4ac3-9534-726cba3016ed",
+              "label": "Projects",
+              "icon": "target",
+              "target": "1.PROJECTS/README.md",
+              "type": "note",
+              "sizeW": 76,
+              "sizeH": 48
+            },
+            {
+              "id": "36eb47a5-4165-413d-b26c-2d8b2cb41838",
+              "label": "Amoeba",
+              "icon": "spline",
+              "target": "AMOEBA/README.md",
+              "type": "note",
+              "sizeW": 76,
+              "sizeH": 48
+            },
+            {
+              "id": "3e1d6756-b62e-46b4-8aff-ab45b597a38d",
+              "label": "Habits",
+              "icon": "repeat-2",
+              "target": "HABITS/Habits.md",
+              "type": "note",
+              "sizeW": 76,
+              "sizeH": 48
+            },
+            {
+              "id": "4f30921d-9d15-499e-afb0-dabefd509027",
+              "label": "Guide",
+              "icon": "book-open",
+              "target": "SYSTEM/Start Here.md",
+              "type": "note",
+              "sizeW": 76,
+              "sizeH": 48
+            }
+          ],
+          "tileSize": 48,
+          "fx": 0,
+          "fw": 0.3266666666666667,
+          "fy": 280,
+          "fh": 404
+        },
+        {
+          "id": "card-mtw1u9o9-7357",
+          "kind": "embed",
+          "title": "Active projects",
+          "target": "SYSTEM/Bases/Projects.base",
+          "baseView": "Active",
+          "x": 4,
+          "y": 4,
+          "w": 8,
+          "h": 6,
+          "fx": 0.3366666666666667,
+          "fw": 0.6633333333333334,
+          "fy": 280,
+          "fh": 404
+        }
+      ],
+      "iconLucide": "drafting-compass",
+      "fitToPage": true,
+      "showSearch": false,
+      "header": {
+        "showTitle": false,
+        "align": "center",
+        "titleScale": 0.8,
+        "logoScale": 0.8,
+        "marginTop": 0,
+        "spacingBelow": 8
+      },
+      "background": {
+        "kind": "image",
+        "value": "assets/Digital Herencia Desert BG.jpg",
+        "opacity": 0.56,
+        "blur": 0
+      },
+      "backgroundLayout": "full"
     },
     {
       "id": "dash-learning",
@@ -745,7 +743,7 @@
       ]
     }
   ],
-  "activeDashboardId": "dash-home",
+  "activeDashboardId": "dash-git",
   "pinnedCards": [],
   "gridColumns": 12,
   "rowHeight": 54,

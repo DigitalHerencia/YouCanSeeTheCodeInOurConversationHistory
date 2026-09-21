@@ -82,7 +82,7 @@
           "tooltip": "Open Hearth home",
           "hasCommand": false,
           "inGallery": false,
-          "link": "HEARTH/Home.md",
+          "link": "2.AREAS/SYSTEM/HEARTH/Home.md",
           "linkAttr": {
             "commandCheck": false,
             "commandId": "",
