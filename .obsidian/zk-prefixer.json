@@ -1,5 +1,5 @@
 {
-  "format": "YYYYMMDDHHmm",
-  "template": "SYSTEM/Templates/Resource.template.md",
+  "format": "hhmma dddd, MMMM Do, Y",
+  "template": "2.AREAS/SYSTEM/Templates/Resource.template.md",
   "folder": "ZETTLECASTEN"
 }

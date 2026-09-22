@@ -315,6 +315,81 @@
       "builtIn": false,
       "source": "user",
       "aliases": []
+    },
+    {
+      "id": "truth",
+      "displayName": "Truth",
+      "icon": {
+        "type": "lucide",
+        "value": "notebook-pen"
+      },
+      "colorLight": "#2563eb",
+      "colorDark": "#60a5fa",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": []
+    },
+    {
+      "id": "decision",
+      "displayName": "Decision",
+      "icon": {
+        "type": "lucide",
+        "value": "notebook-pen"
+      },
+      "colorLight": "#2563eb",
+      "colorDark": "#60a5fa",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": []
+    },
+    {
+      "id": "hint",
+      "displayName": "Hint",
+      "icon": {
+        "type": "lucide",
+        "value": "notebook-pen"
+      },
+      "colorLight": "#2563eb",
+      "colorDark": "#60a5fa",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": []
+    },
+    {
+      "id": "ownership",
+      "displayName": "Ownership",
+      "icon": {
+        "type": "lucide",
+        "value": "notebook-pen"
+      },
+      "colorLight": "#2563eb",
+      "colorDark": "#60a5fa",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": []
+    },
+    {
+      "id": "remember",
+      "displayName": "Remember",
+      "icon": {
+        "type": "lucide",
+        "value": "notebook-pen"
+      },
+      "colorLight": "#2563eb",
+      "colorDark": "#60a5fa",
+      "foldable": true,
+      "defaultFolded": false,
+      "builtIn": false,
+      "source": "fallback",
+      "aliases": []
     }
   ],
   "settings": {

@@ -1,5 +1,5 @@
 {
-  "tasksFolder": "1.PROJECTS/_Tasks",
+  "tasksFolder": "/_Tasks",
   "moveArchivedTasks": false,
   "archiveFolder": "4.ARCHIVE/Tasks",
   "taskTag": "type/task",

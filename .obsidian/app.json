@@ -11,7 +11,7 @@
   "showIndentGuide": false,
   "useTab": false,
   "tabSize": 2,
-  "openBehavior": "file:HEARTH/Home.md",
+  "openBehavior": "",
   "newFileLocation": "current",
   "attachmentFolderPath": "./",
   "pdfExportSettings": {

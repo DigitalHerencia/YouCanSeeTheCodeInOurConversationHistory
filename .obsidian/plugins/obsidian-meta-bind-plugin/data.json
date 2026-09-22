@@ -1,7 +1,7 @@
 {
   "devMode": false,
   "ignoreCodeBlockRestrictions": false,
-  "preferredDateFormat": "YYYY-MM-DD",
+  "preferredDateFormat": "hhmma dddd, MMMM Do, Y ",
   "firstWeekday": "Monday",
   "syncInterval": 200,
   "enableJs": false,
@@ -11,7 +11,7 @@
   "inputFieldTemplates": [],
   "buttonTemplates": [],
   "excludedFolders": [
-    "SYSTEM",
-    "assets"
+    "2.AREAS/SYSTEM",
+    "3.RESOURCES/assets"
   ]
 }

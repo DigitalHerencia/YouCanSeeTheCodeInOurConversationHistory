@@ -1,3 +1,5 @@
 {
-  "folder": "SYSTEM/Templates"
+  "folder": "2.AREAS/SYSTEM/Templates",
+  "dateFormat": "dddd, MMMM Do, Y",
+  "timeFormat": "hhmma"
 }

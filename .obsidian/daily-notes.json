@@ -1,5 +1,5 @@
 {
-  "folder": "DAILY",
-  "format": "YYYY/YYYY-MM/YYYY-MM-DD",
-  "template": "SYSTEM/Templates/Daily.template.md"
+  "folder": "2.AREAS/DAILY/{{YYYY}}/{{MMMM}}/{{Do}}",
+  "format": "hhmma dddd, MMMM Do, Y",
+  "template": "2.AREAS/SYSTEM/Templates/Daily.template.md"
 }

@@ -1,0 +1,7 @@
+{
+  "new-note-template": "2.AREAS/SYSTEM/Templates/Task.template.md",
+  "new-note-folder": "2.AREAS/SYSTEM/_Tasks",
+  "move-tags": true,
+  "move-dates": true,
+  "link-date-to-daily-note": true
+}
