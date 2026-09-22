@@ -101,6 +101,112 @@
       "cards": []
     },
     {
+      "id": "dash-projects",
+      "name": "Projects",
+      "fitToPage": true,
+      "showSearch": false,
+      "header": {
+        "showTitle": false,
+        "title": "Projects",
+        "logoIcon": "kanban-square",
+        "align": "center",
+        "titleScale": 1,
+        "logoScale": 1,
+        "marginTop": 0,
+        "spacingBelow": 10
+      },
+      "background": {
+        "kind": "image",
+        "value": "3.RESOURCES/assets/BG4.jpg",
+        "opacity": 1,
+        "blur": 0
+      },
+      "backgroundLayout": "full",
+      "iconLucide": "kanban-square",
+      "cards": [
+        {
+          "id": "projects-list",
+          "kind": "embed",
+          "title": "Projects",
+          "target": "SYSTEM/Bases/Projects.base",
+          "baseView": "Active",
+          "x": 4,
+          "y": 0,
+          "w": 8,
+          "h": 3,
+          "fx": 0.3366666666666667,
+          "fw": 0.6633333333333334,
+          "fy": 0,
+          "fh": 194
+        },
+        {
+          "id": "projects-tasks",
+          "kind": "tasks",
+          "title": "TaskNotes",
+          "tasks": {
+            "source": "tasknotes",
+            "layout": "kanban",
+            "folderScope": "whitelist",
+            "folders": [
+              "1.PROJECTS/_Tasks"
+            ],
+            "showCompleted": false,
+            "taskNotesDoneStatuses": [
+              "done",
+              "cancelled"
+            ],
+            "kanbanOrder": [
+              "backlog",
+              "ready",
+              "in-progress",
+              "blocked",
+              "done",
+              "cancelled"
+            ]
+          },
+          "x": 0,
+          "y": 3,
+          "w": 12,
+          "h": 7,
+          "fx": 0,
+          "fw": 1,
+          "fy": 210,
+          "fh": 474
+        },
+        {
+          "id": "projects-launcher",
+          "kind": "commands",
+          "title": "Work",
+          "commands": [
+            {
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000002",
+              "name": "Project",
+              "icon": "folder-plus"
+            },
+            {
+              "id": "tasknotes:create-new-task",
+              "name": "Task",
+              "icon": "square-plus"
+            },
+            {
+              "id": "tasknotes:open-kanban-view",
+              "name": "Full Task Board",
+              "icon": "columns-3"
+            }
+          ],
+          "x": 0,
+          "y": 0,
+          "w": 4,
+          "h": 3,
+          "tileSize": 48,
+          "fx": 0,
+          "fw": 0.3266666666666667,
+          "fy": 0,
+          "fh": 194
+        }
+      ]
+    },
+    {
       "id": "dash-mtw1u9o8-4376",
       "name": "Digital Herencia copy",
       "cards": [
@@ -483,112 +589,6 @@
           "fw": 1,
           "fy": 0,
           "fh": 824
-        }
-      ]
-    },
-    {
-      "id": "dash-projects",
-      "name": "Projects",
-      "fitToPage": true,
-      "showSearch": false,
-      "header": {
-        "showTitle": false,
-        "title": "Projects",
-        "logoIcon": "kanban-square",
-        "align": "center",
-        "titleScale": 1,
-        "logoScale": 1,
-        "marginTop": 0,
-        "spacingBelow": 10
-      },
-      "background": {
-        "kind": "image",
-        "value": "3.RESOURCES/assets/BG4.jpg",
-        "opacity": 1,
-        "blur": 0
-      },
-      "backgroundLayout": "full",
-      "iconLucide": "kanban-square",
-      "cards": [
-        {
-          "id": "projects-list",
-          "kind": "embed",
-          "title": "Projects",
-          "target": "SYSTEM/Bases/Projects.base",
-          "baseView": "Active",
-          "x": 4,
-          "y": 0,
-          "w": 8,
-          "h": 3,
-          "fx": 0.3366666666666667,
-          "fw": 0.6633333333333334,
-          "fy": 0,
-          "fh": 194
-        },
-        {
-          "id": "projects-tasks",
-          "kind": "tasks",
-          "title": "TaskNotes",
-          "tasks": {
-            "source": "tasknotes",
-            "layout": "kanban",
-            "folderScope": "whitelist",
-            "folders": [
-              "1.PROJECTS/_Tasks"
-            ],
-            "showCompleted": false,
-            "taskNotesDoneStatuses": [
-              "done",
-              "cancelled"
-            ],
-            "kanbanOrder": [
-              "backlog",
-              "ready",
-              "in-progress",
-              "blocked",
-              "done",
-              "cancelled"
-            ]
-          },
-          "x": 0,
-          "y": 3,
-          "w": 12,
-          "h": 7,
-          "fx": 0,
-          "fw": 1,
-          "fy": 210,
-          "fh": 474
-        },
-        {
-          "id": "projects-launcher",
-          "kind": "commands",
-          "title": "Work",
-          "commands": [
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000002",
-              "name": "Project",
-              "icon": "folder-plus"
-            },
-            {
-              "id": "tasknotes:create-new-task",
-              "name": "Task",
-              "icon": "square-plus"
-            },
-            {
-              "id": "tasknotes:open-kanban-view",
-              "name": "Full Task Board",
-              "icon": "columns-3"
-            }
-          ],
-          "x": 0,
-          "y": 0,
-          "w": 4,
-          "h": 3,
-          "tileSize": 48,
-          "fx": 0,
-          "fw": 0.3266666666666667,
-          "fy": 0,
-          "fh": 194
         }
       ]
     },

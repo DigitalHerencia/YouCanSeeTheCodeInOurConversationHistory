@@ -1,10 +1,10 @@
 {
-  "includeFirstLineAsNoteHeading": false,
+  "includeFirstLineAsNoteHeading": true,
   "excludeFirstLineInNote": false,
   "openNewNote": true,
   "headingFormat": "#",
-  "newFileLocation": 1,
-  "customFolder": "",
+  "newFileLocation": 2,
+  "customFolder": "2.AREAS/ZETTLECASTEN/Lit",
   "fileNamePrefix": "",
   "transcludeByDefault": false,
   "noteLinkTemplate": "",

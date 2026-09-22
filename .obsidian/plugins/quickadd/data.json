@@ -1,41 +1,6 @@
 {
   "choices": [
     {
-      "id": "91c8f3a1-b5de-4e66-9a10-000000000001",
-      "name": "Amoeba Capture",
-      "type": "Template",
-      "command": true,
-      "onePageInput": "always",
-      "templatePath": "SYSTEM/Templates/Amoeba.template.md",
-      "fileNameFormat": {
-        "enabled": true,
-        "format": "{{DATE:YYYYMMDDHHmm}}-{{VALUE}}"
-      },
-      "discoverExistingNotesBeforeCreate": false,
-      "folder": {
-        "enabled": true,
-        "folders": [
-          "AMOEBA"
-        ],
-        "chooseWhenCreatingNote": false,
-        "createInSameFolderAsActiveFile": false,
-        "chooseFromSubfolders": false
-      },
-      "appendLink": false,
-      "copyLinkToClipboard": false,
-      "openFile": true,
-      "fileOpening": {
-        "location": "tab",
-        "direction": "vertical",
-        "mode": "default",
-        "focus": true
-      },
-      "fileExistsBehavior": {
-        "kind": "apply",
-        "mode": "duplicateSuffix"
-      }
-    },
-    {
       "id": "91c8f3a1-b5de-4e66-9a10-000000000002",
       "name": "New Project",
       "type": "Template",
@@ -90,76 +55,6 @@
       }
     },
     {
-      "id": "91c8f3a1-b5de-4e66-9a10-000000000004",
-      "name": "Zettelkasten Clipping",
-      "type": "Template",
-      "command": true,
-      "onePageInput": "always",
-      "templatePath": "SYSTEM/Templates/Zettel Clipping.template.md",
-      "fileNameFormat": {
-        "enabled": true,
-        "format": "{{DATE:YYYYMMDDHHmm}}-{{VALUE}}"
-      },
-      "discoverExistingNotesBeforeCreate": false,
-      "folder": {
-        "enabled": true,
-        "folders": [
-          "ZETTLECASTEN/Clippings"
-        ],
-        "chooseWhenCreatingNote": false,
-        "createInSameFolderAsActiveFile": false,
-        "chooseFromSubfolders": false
-      },
-      "appendLink": false,
-      "copyLinkToClipboard": false,
-      "openFile": true,
-      "fileOpening": {
-        "location": "tab",
-        "direction": "vertical",
-        "mode": "default",
-        "focus": true
-      },
-      "fileExistsBehavior": {
-        "kind": "apply",
-        "mode": "duplicateSuffix"
-      }
-    },
-    {
-      "id": "91c8f3a1-b5de-4e66-9a10-000000000005",
-      "name": "AI Thread",
-      "type": "Template",
-      "command": true,
-      "onePageInput": "always",
-      "templatePath": "SYSTEM/Templates/AI Thread.template.md",
-      "fileNameFormat": {
-        "enabled": true,
-        "format": "{{DATE:YYYYMMDDHHmm}}-{{VALUE}}"
-      },
-      "discoverExistingNotesBeforeCreate": false,
-      "folder": {
-        "enabled": true,
-        "folders": [
-          "ZETTLECASTEN/AI Threads"
-        ],
-        "chooseWhenCreatingNote": false,
-        "createInSameFolderAsActiveFile": false,
-        "chooseFromSubfolders": false
-      },
-      "appendLink": false,
-      "copyLinkToClipboard": false,
-      "openFile": true,
-      "fileOpening": {
-        "location": "tab",
-        "direction": "vertical",
-        "mode": "default",
-        "focus": true
-      },
-      "fileExistsBehavior": {
-        "kind": "apply",
-        "mode": "duplicateSuffix"
-      }
-    },
-    {
       "id": "91c8f3a1-b5de-4e66-9a10-000000000006",
       "name": "Stack Syntax Drill",
       "type": "Template",
@@ -198,6 +93,7 @@
   "inputPrompt": "single-line",
   "persistInputPromptDrafts": true,
   "useSelectionAsCaptureValue": true,
+  "namePastedImagesAfterNoteTitle": false,
   "searchNestedChoices": true,
   "templateFolderLauncherRow": "off",
   "devMode": false,
@@ -205,7 +101,7 @@
     "SYSTEM/Templates"
   ],
   "announceUpdates": "major",
-  "version": "2.22.0",
+  "version": "2.27.0",
   "globalVariables": {},
   "onePageInputEnabled": false,
   "disableOnlineFeatures": true,
