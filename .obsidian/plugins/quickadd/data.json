@@ -6,7 +6,7 @@
       "type": "Template",
       "command": true,
       "onePageInput": "always",
-      "templatePath": "SYSTEM/Templates/Project.template.md",
+      "templatePath": "2.AREAS/SYSTEM/Templates/Project.template.md",
       "fileNameFormat": {
         "enabled": true,
         "format": "Project"
@@ -21,7 +21,16 @@
         "createInSameFolderAsActiveFile": false,
         "chooseFromSubfolders": false
       },
-      "appendLink": false,
+      "appendLink": {
+        "enabled": true,
+        "placement": "replaceSelection",
+        "requireActiveFile": true,
+        "linkType": "link",
+        "displayText": "none",
+        "destination": {
+          "type": "activeFile"
+        }
+      },
       "copyLinkToClipboard": false,
       "openFile": true,
       "fileOpening": {
@@ -98,7 +107,7 @@
   "templateFolderLauncherRow": "off",
   "devMode": false,
   "templateFolderPaths": [
-    "SYSTEM/Templates"
+    "2.AREAS/SYSTEM/Templates"
   ],
   "announceUpdates": "major",
   "version": "2.27.0",
