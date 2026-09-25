@@ -1,0 +1,401 @@
+# Cycles
+
+# 📘 Software Studio Delivery Framework
+
+**Enterprise SaaS Product Execution Reference**
+
+**Version:** 2025-12-29
+
+**Status:** Canonical
+
+**Applies To:** Multi-tenant SaaS platforms 
+
+---
+
+## 1. Operating Model Overview
+
+### 1.1 Organizational Constraint Model
+
+This studio operates with **strict functional ownership**:
+
+| Team | Scope Boundary |
+| --- | --- |
+| Operations | Business, finance, legal, customers, revenue, CRM, OKRs |
+| Product | Product truth, scope, roadmap, requirements |
+| Design | UX/UI systems, accessibility, interaction design |
+| Engineering | Architecture, code, security, performance |
+| Marketing | Positioning, messaging, demand, narrative |
+
+Anything not clearly Design, Engineering, or Marketing **defaults to Operations**.
+
+---
+
+## 2. Delivery Timeline Structure (Formalized)
+
+### 2.1 Milestone Schema
+
+Each delivery cycle consists of **3 Milestones**, each containing **one 2-week Phase**.
+
+```
+Portfolio
+ └── Milestone
+     └── Phase (2 weeks)
+         └── Project
+             └── Task (daily execution unit)
+
+```
+
+---
+
+### 2.2 Milestone Definitions
+
+### **Milestone M1: Foundation & Pre-Production**
+
+> Establish legal, technical, product, and narrative foundations.
+> 
+- **Phase P1.1**: Initialization & Scaffolding
+- Duration: Weeks 1–2
+
+---
+
+### **Milestone M2: MVP Launch**
+
+> Deliver a sellable, deployable, supportable MVP.
+> 
+- **Phase P2.1**: MVP Build & Launch
+- Duration: Weeks 3–4
+
+---
+
+### **Milestone M3: Expansion & Hardening**
+
+> Extend functionality, stabilize system, reduce risk.
+> 
+- **Phase P3.1**: Advanced Features, Security, Patching
+- Duration: Weeks 5–6
+
+---
+
+## 3. Canonical Object Properties (Used Everywhere)
+
+### 3.1 Project Properties
+
+| Property | Description |
+| --- | --- |
+| `project_id` | Stable identifier (e.g. OPS-M1-001) |
+| `team` | Owning team |
+| `milestone` | M1, M2, or M3 |
+| `phase` | P1.1, P2.1, P3.1 |
+| `inputs` | Artifacts or dependencies |
+| `outputs` | Produced artifacts |
+| `downstream_consumers` | Teams or systems that depend on output |
+
+---
+
+### 3.2 Task Properties
+
+| Property | Description |
+| --- | --- |
+| `task_id` | Unique identifier |
+| `project_id` | Parent project |
+| `owner_role` | Responsible role |
+| `execution_type` | Daily execution |
+| `dependency` | Blocking task or artifact |
+| `deliverable` | Concrete output |
+
+---
+
+# 4. Team Execution Plans
+
+---
+
+## A. OPERATIONS TEAM
+
+**Title:** Business, Legal, Revenue & Customer Control Plane
+
+**Description:** Owns all non-product business reality.
+
+---
+
+### Milestone M1 – Foundation & Pre-Production
+
+### Project OPS-M1-001: LLC & Governance Initialization
+
+**Description:** Establish legal and financial existence.
+
+**Properties**
+
+- team: Operations
+- milestone: M1
+- phase: P1.1
+- outputs: Operating Agreement, IP Assignment, Banking Setup
+
+**Daily Tasks**
+
+- OPS-M1-001-T1: Draft and execute operating agreement
+- OPS-M1-001-T2: Establish IP ownership framework
+- OPS-M1-001-T3: Configure banking and accounting structure
+- OPS-M1-001-T4: Define vendor approval authority
+- OPS-M1-001-T5: Archive signed documents in company vault
+
+---
+
+### Project OPS-M1-002: OKRs & Business Constraints
+
+**Description:** Define success criteria and constraints.
+
+**Daily Tasks**
+
+- Define company-level Objectives
+- Translate Objectives into measurable KRs
+- Publish OKRs to internal wiki
+- Align budgets to KRs
+- Lock OKRs for cycle
+
+---
+
+### Milestone M2 – MVP Launch
+
+### Project OPS-M2-001: Revenue & Customer Operations
+
+**Description:** Enable billing, CRM, and customer handling.
+
+**Daily Tasks**
+
+- Configure CRM pipelines
+- Define customer lifecycle stages
+- Validate Clerk billing flows
+- Draft refund and cancellation policy
+- Train internal stakeholders on CRM usage
+
+---
+
+### Milestone M3 – Expansion & Hardening
+
+### Project OPS-M3-001: Risk, Compliance & Scale
+
+**Description:** Reduce legal, financial, and customer risk.
+
+**Daily Tasks**
+
+- Audit admin access
+- Review data retention policies
+- Prepare enterprise contract templates
+- Update financial forecasts
+- Produce executive operational report
+
+---
+
+## B. PRODUCT TEAM
+
+**Title:** Product Truth & Decision Authority
+
+**Description:** Defines what exists, why it exists, and what does not.
+
+---
+
+### Milestone M1 – Foundation & Pre-Production
+
+### Project PROD-M1-001: Problem Definition & PRDs
+
+**Daily Tasks**
+
+- Synthesize market and ops inputs
+- Define tenant and RBAC assumptions
+- Author PRDs
+- Define pricing tiers and feature gates
+- Validate feasibility with Engineering
+
+---
+
+### Milestone M2 – MVP Launch
+
+### Project PROD-M2-001: MVP Scope Enforcement
+
+**Daily Tasks**
+
+- Lock MVP feature set
+- Resolve requirement ambiguities
+- Groom backlog daily
+- Accept/reject scope changes
+- Define release acceptance criteria
+
+---
+
+### Milestone M3 – Expansion & Hardening
+
+### Project PROD-M3-001: Advanced Feature Roadmap
+
+**Daily Tasks**
+
+- Review CRM and Ops feedback
+- Prioritize advanced features
+- Specify non-functional requirements
+- Update roadmap
+- Prepare next-cycle PRDs
+
+---
+
+## C. DESIGN TEAM
+
+**Title:** UX & Interface Translation Layer
+
+**Description:** Converts product decisions into usable systems.
+
+---
+
+### Milestone M1 – Foundation & Pre-Production
+
+### Project DES-M1-001: UX Architecture & Design System Alignment
+
+**Daily Tasks**
+
+- Define core user flows
+- Establish layout primitives
+- Align with shadcn/ui components
+- Produce low-fidelity prototypes
+- Hand off specs to Engineering
+
+---
+
+### Milestone M2 – MVP Launch
+
+### Project DES-M2-001: MVP Interface Delivery
+
+**Daily Tasks**
+
+- Finalize high-fidelity designs
+- Review implemented UI
+- Resolve UX defects
+- Validate accessibility
+- Approve launch UI
+
+---
+
+### Milestone M3 – Expansion & Hardening
+
+### Project DES-M3-001: Advanced UX & Design Debt
+
+**Daily Tasks**
+
+- Design advanced dashboards
+- Improve data density patterns
+- Address usability feedback
+- Refine mobile experiences
+- Update design documentation
+
+---
+
+## D. ENGINEERING TEAM
+
+**Title:** System Architecture & Execution Engine
+
+**Description:** Builds, secures, and operates the software.
+
+---
+
+### Milestone M1 – Foundation & Pre-Production
+
+### Project ENG-M1-001: Architecture & Scaffolding
+
+**Daily Tasks**
+
+- Initialize repo and monorepo tooling
+- Configure Next.js App Router
+- Define Prisma schema
+- Integrate Clerk auth
+- Establish CI/CD pipeline
+
+---
+
+### Milestone M2 – MVP Launch
+
+### Project ENG-M2-001: MVP Feature Implementation
+
+**Daily Tasks**
+
+- Implement tenant isolation
+- Build RBAC enforcement
+- Create webhook handlers
+- Implement MVP UI flows
+- Write tests and deploy
+
+---
+
+### Milestone M3 – Expansion & Hardening
+
+### Project ENG-M3-001: Advanced Features & Security
+
+**Daily Tasks**
+
+- Implement advanced permissions
+- Optimize database queries
+- Patch vulnerabilities
+- Fix reported bugs
+- Improve observability
+
+---
+
+## E. MARKETING TEAM
+
+**Title:** Narrative, Demand & Market Signal Generation
+
+**Description:** Creates awareness, interest, and demand.
+
+---
+
+### Milestone M1 – Foundation & Pre-Production
+
+### Project MKT-M1-001: Positioning & Narrative
+
+**Daily Tasks**
+
+- Define market positioning
+- Publish educational content
+- Test messaging
+- Build initial audience
+- Feed language insights to Product
+
+---
+
+### Milestone M2 – MVP Launch
+
+### Project MKT-M2-001: MVP Launch Campaign
+
+**Daily Tasks**
+
+- Publish launch assets
+- Coordinate announcements
+- Drive traffic
+- Monitor engagement
+- Adjust messaging daily
+
+---
+
+### Milestone M3 – Expansion & Hardening
+
+### Project MKT-M3-001: Growth & Retention Campaigns
+
+**Daily Tasks**
+
+- Promote advanced features
+- Publish case studies
+- Optimize funnels
+- Support upsells
+- Report CAC and ROI
+
+---
+
+## 5. Closing Assertion
+
+This framework enforces:
+
+- Single ownership per decision
+- Traceable artifacts
+- Explicit dependency chains
+- Zero ambiguity about “who owns what”
+- A delivery rhythm compatible with enterprise scrutiny
+
+This is not how startups *talk* about building SaaS.
+
+This is how SaaS actually gets built when it’s expected to survive customers, audits, and time.

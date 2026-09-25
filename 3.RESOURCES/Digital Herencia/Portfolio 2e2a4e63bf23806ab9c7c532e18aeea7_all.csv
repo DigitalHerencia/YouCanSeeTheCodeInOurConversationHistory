@@ -1,0 +1,47 @@
+﻿Name,Status
+"T01 Define company objectives ",Not started
+"T01 Market synthesis ",Not started
+"T01 Core user flows ",Not started
+T01 Positioning statement,Not started
+"T01 Audit workspace & repo state ",Not started
+"T01 Core concepts & complexity ",Not started
+"T02 Define key results ",Not started
+"T02 Tenant & RBAC assumptions ",Not started
+"T02 Information architecture ",Not started
+"T02 Validate PRD & TechReq presence ",Not started
+T02 Messaging framework,Not started
+TO2 Sliding window patterns,Not started
+TO3 Align team OKRs,Not started
+TO3 Draft PRDs,Not started
+TO3 Design system alignment,Not started
+TO3 Validate MCP & tooling availability,Not started
+TO3 Educational content,Not started
+T04 Align budgets to OKRs,Not started
+T04 Pricing and packaging,Not started
+"T04 Low-fidelity prototypes ",Not started
+"T04 Environment readiness report ",Not started
+T04 Social signal monitoring,Not started
+"T03 Two pointer patterns ",Not started
+"T05 Publish OKRs ",Not started
+"OPS-M1-P1.1-OKR – OKRs & Constraints ",Done
+"PROD-M1-P1.1-PRD – Problem Definition ",Done
+"T05 Feasibility review ",Not started
+"DES-M1-P1.1-UXARCH – UX Architecture ",Done
+"T05 Handoff to Engineering ",Not started
+"MKT-M1-P1.1-POS – Positioning ",Done
+T05 Product language feedback,Not started
+"ENG-M1-P1.1-INIT – Environment Initialization ",Done
+"T05 Initialization sign-off ",Not started
+"RES-M1-P1.1-A&S - Arrays & Strings ",Done
+"T04 Implementation drills ",Not started
+"OPS-M1-P1.1-GOV – LLC & Governance ",In progress
+"PROD-M1-P1.1-VERIFY – PRD Verification ",In progress
+"DES-M1-P1.1-DESVERIFY – Design Verification ",In progress
+"ENG-M1-P1.2-CONFIG – Project Configuration ",In progress
+"T01 Draft operating agreement ",Not started
+"T01 Cross-check PRD vs TechReq ",Not started
+"T01 Cross-check UX against PRD ",Not started
+"T01 ESLint / Prettier config ",Not started
+"MKT-M1-P1.1-PUBSETUP – Public Presence Setup ",In progress
+T01 Audit existing social presence,Not started
+"T05 128. longest consecutive sequence ",Not started

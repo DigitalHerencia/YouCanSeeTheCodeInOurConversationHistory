@@ -1,0 +1,696 @@
+@import "tailwindcss" source("../");
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-body), ui-monospace, monospace;
+  --font-display: var(--font-heading), Impact, sans-serif;
+  --font-mono: var(--font-code), ui-monospace, monospace;
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: color-mix(
+    in srgb,
+    hsl(var(--muted-primary)) 10%,
+    hsl(var(--background))
+  );
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: color-mix(
+    in srgb,
+    hsl(var(--muted-primary)) 20%,
+    hsl(var(--background))
+  );
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-muted-primary: hsl(var(--muted-primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-muted: color-mix(
+    in srgb,
+    hsl(var(--foreground)) 10%,
+    hsl(var(--background))
+  );
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-success: hsl(var(--success));
+  --color-success-foreground: hsl(var(--success-foreground));
+  --color-warning: hsl(var(--warning));
+  --color-warning-foreground: hsl(var(--warning-foreground));
+  --color-info: hsl(var(--info));
+  --color-info-foreground: hsl(var(--info-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+  --color-neon-pink: hsl(var(--neon-pink));
+  --color-neon-green: hsl(var(--neon-green));
+  --color-neon-blue: hsl(var(--neon-blue));
+  --color-neon-orange: hsl(var(--neon-orange));
+  --color-neon-purple: hsl(var(--neon-purple));
+  --color-clash-1: hsl(var(--clash-1));
+  --color-clash-2: hsl(var(--clash-2));
+  --color-clash-3: hsl(var(--clash-3));
+  --color-clash-4: hsl(var(--clash-4));
+  --radius-sm: max(0px, calc(var(--radius) - 4px));
+  --radius-md: max(0px, calc(var(--radius) - 2px));
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --shadow-hard: 4px 4px 0 hsl(var(--shadow-color));
+  --shadow-hard-lg: var(--shadow-offset) var(--shadow-offset) 0
+    hsl(var(--shadow-color));
+  --ease-mechanical: var(--motion-ease);
+}
+
+@theme {
+  --text-heading-1: clamp(2.25rem, 1.5rem + 3vw, 4.5rem);
+  --text-heading-1--line-height: 1.08;
+  --text-heading-1--letter-spacing: -0.035em;
+  --text-heading-2: clamp(1.75rem, 1.25rem + 2vw, 3rem);
+  --text-heading-2--line-height: 1.15;
+  --text-heading-2--letter-spacing: -0.025em;
+  --text-heading-3: clamp(1.375rem, 1.125rem + 1vw, 2rem);
+  --text-heading-3--line-height: 1.25;
+  --text-heading-3--letter-spacing: -0.02em;
+  --text-heading-4: 1.25rem;
+  --text-heading-4--line-height: 1.3;
+  --text-heading-4--letter-spacing: -0.015em;
+  --text-heading-5: 1.125rem;
+  --text-heading-5--line-height: 1.4;
+  --text-heading-6: 1rem;
+  --text-heading-6--line-height: 1.5;
+
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-marquee-slow: marquee 40s linear infinite;
+  --animate-marquee-fast: marquee 15s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+:root {
+  --motion-fast: 100ms;
+  --motion-base: 160ms;
+  --motion-slow: 240ms;
+  --motion-ease: cubic-bezier(0.2, 0, 0, 1);
+  /* The only four palette sources. All other colors are compatibility aliases. */
+  --background: 248 50% 3%;
+  --foreground: 42 74% 94%;
+  --muted-primary: 193 23% 59%;
+
+  /* Primary */
+  --primary: 193 50% 32%;
+  --primary-foreground: var(--foreground);
+
+  /* Secondary */
+  --secondary: var(--primary);
+  --secondary-foreground: var(--foreground);
+
+  /* Accent */
+  --accent: var(--primary);
+  --accent-foreground: var(--foreground);
+
+  /* Muted */
+  --muted: var(--background);
+  --muted-foreground: var(--muted-primary);
+
+  /* Card & Popover */
+  --card: var(--background);
+  --card-foreground: var(--foreground);
+  --popover: var(--background);
+  --popover-foreground: var(--foreground);
+
+  /* Destructive */
+  --destructive: var(--muted-primary);
+  --destructive-foreground: var(--background);
+
+  /* Status — success / warning / info */
+  --success: var(--primary);
+  --success-foreground: var(--foreground);
+  --warning: var(--muted-primary);
+  --warning-foreground: var(--background);
+  --info: var(--primary);
+  --info-foreground: var(--foreground);
+
+  /* Border & Input */
+  --border: 193 23% 30%;
+  --input: 193 23% 40%;
+  --ring: var(--muted-primary);
+
+  /* Radius - Minimal for neubrutalism */
+  --radius: 0rem;
+
+  /* BoldKit specific */
+  --shadow-color: var(--primary);
+  --shadow-offset: 12px;
+  --border-width: 5px;
+
+  /* Chart colors */
+  --chart-1: var(--primary);
+  --chart-2: var(--muted-primary);
+  --chart-3: var(--primary);
+  --chart-4: var(--primary);
+  --chart-5: var(--muted-primary);
+
+  /* Neon colors */
+  --neon-pink: var(--primary);
+  --neon-green: var(--muted-primary);
+  --neon-blue: var(--primary);
+  --neon-orange: var(--muted-primary);
+  --neon-purple: var(--primary);
+
+  /* Clash colors */
+  --clash-1: var(--muted-primary);
+  --clash-2: var(--primary);
+  --clash-3: var(--muted-primary);
+  --clash-4: var(--primary);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply type-body;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-normal text-balance;
+    overflow-wrap: break-word;
+  }
+
+  h1 {
+    @apply text-heading-1;
+  }
+  h2 {
+    @apply text-heading-2;
+  }
+  h3 {
+    @apply text-heading-3;
+  }
+  h4 {
+    @apply text-heading-4;
+  }
+  h5 {
+    @apply font-sans text-heading-5 font-bold tracking-normal;
+  }
+  h6 {
+    @apply font-sans text-heading-6 font-semibold tracking-normal;
+  }
+
+  p {
+    @apply leading-relaxed text-pretty;
+  }
+  small {
+    @apply type-caption;
+  }
+  label {
+    @apply type-label;
+  }
+  button {
+    @apply type-action;
+  }
+  input,
+  select,
+  textarea {
+    @apply font-sans text-base leading-normal tracking-normal;
+  }
+  a {
+    @apply underline-offset-4;
+  }
+  :where(p, li, dd) > a {
+    @apply type-link;
+  }
+  code,
+  kbd,
+  pre,
+  samp {
+    @apply font-mono;
+  }
+  pre {
+    overflow-x: auto;
+  }
+
+  ::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+}
+
+@utility eyebrow {
+  @apply font-sans text-xs leading-normal font-semibold tracking-widest text-balance uppercase;
+}
+
+/* Roles own type, not layout or surface color. Utilities can override defaults. */
+@utility type-body {
+  @apply font-sans text-base leading-relaxed font-normal tracking-normal;
+}
+
+@utility type-lead {
+  @apply font-sans text-lg leading-relaxed tracking-normal text-pretty;
+}
+
+@utility type-caption {
+  @apply font-sans text-xs leading-relaxed tracking-normal;
+}
+
+@utility type-label {
+  @apply font-sans text-sm leading-normal font-semibold tracking-normal;
+}
+
+@utility type-action {
+  @apply font-sans text-sm leading-normal font-semibold tracking-wide;
+}
+
+@utility type-link {
+  @apply font-medium transition-transform duration-150 hover:scale-105 hover:text-primary hover:underline hover:underline-offset-4 active:underline active:underline-offset-4;
+}
+
+@utility type-title {
+  @apply font-display text-heading-3 font-normal text-balance;
+}
+
+@utility reading-copy {
+  @apply max-w-prose space-y-4 text-pretty;
+}
+
+@utility form-field {
+  @apply grid gap-1.5 text-left;
+}
+
+/* Shared surfaces: opaque composites keep text contrast independent of parents. */
+@utility surface-card {
+  @apply border border-foreground/20 text-foreground;
+  background-color: color-mix(
+    in srgb,
+    hsl(var(--muted-primary)) 10%,
+    hsl(var(--background))
+  );
+}
+
+@utility surface-popover {
+  @apply border border-foreground/30 text-foreground;
+  background-color: color-mix(
+    in srgb,
+    hsl(var(--muted-primary)) 20%,
+    hsl(var(--background))
+  );
+}
+
+@utility surface-inset {
+  @apply border border-foreground/20 bg-background text-foreground;
+}
+
+@utility surface-header {
+  @apply flex flex-col gap-2 border-b border-foreground/20 px-5 py-4;
+}
+
+@utility surface-body {
+  @apply p-5;
+}
+
+@utility surface-footer {
+  @apply flex flex-wrap items-center gap-3 border-t border-foreground/20 px-5 py-4;
+}
+
+@utility control-field {
+  @apply min-h-11 w-full border border-foreground/40 bg-background px-3 py-2 font-sans text-base leading-normal tracking-normal text-foreground placeholder:text-foreground/60 focus-visible:border-muted-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-primary disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+@utility control-action {
+  @apply inline-flex min-h-11 items-center justify-center gap-2 border-3 border-foreground px-4 py-2 type-action focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-primary disabled:pointer-events-none disabled:opacity-50;
+}
+
+/* Button borders are a sitewide invariant, including provider and custom controls. */
+:is(button, [role="button"], .control-action) {
+  border: 3px solid hsl(var(--foreground)) !important;
+}
+
+@utility navigation-item {
+  @apply flex min-h-11 items-center gap-2 px-3 py-2 type-label text-foreground no-underline hover:bg-primary/10 focus-visible:outline-2 focus-visible:outline-muted-primary;
+}
+
+@utility brand-home {
+  @apply inline-flex min-h-11 min-w-0 items-center text-foreground no-underline focus-visible:text-primary focus-visible:outline-none;
+}
+
+@utility brand-lockup {
+  @apply inline-flex items-center gap-2 text-[0.625rem] sm:gap-3 sm:text-xs;
+
+  &[data-size="compact"] {
+    @apply text-[0.625rem];
+  }
+
+  &[data-size="auth"] {
+    @apply text-xs sm:text-sm md:text-xs lg:text-sm xl:text-base;
+  }
+
+  &[data-collapsed="true"] {
+    @apply justify-center text-base;
+  }
+}
+
+@utility auth-brand-placement {
+  @apply mb-8 flex justify-center border-b border-foreground/20 pb-8 sm:mb-10 sm:pb-10;
+}
+
+@utility auth-secondary-actions {
+  @apply flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-foreground/30 pt-4 text-sm;
+}
+
+@utility auth-layout {
+  @apply grid min-h-dvh grid-cols-1 bg-background text-foreground md:grid-cols-2 md:grid-rows-[auto_1fr_auto];
+}
+
+@utility auth-panel {
+  @apply flex min-w-0 flex-col md:row-span-3 md:grid md:grid-rows-subgrid;
+
+  > footer {
+    @apply md:row-start-3;
+  }
+}
+
+@utility auth-copy-placement {
+  @apply px-6 pb-8 md:row-start-2 md:p-12;
+}
+
+@utility auth-form-placement {
+  @apply flex flex-col items-center px-6 py-10 md:row-start-2 md:p-12;
+}
+
+@utility brand-image {
+  @apply size-[2.5em] shrink-0 object-contain;
+}
+
+@utility brand-name {
+  @apply font-display leading-[1.25] whitespace-nowrap uppercase;
+}
+
+@utility brand-subtitle {
+  @apply text-[0.8em] tracking-widest;
+}
+
+@utility public-header {
+  @apply sticky top-0 z-50 w-full border-b border-foreground bg-background;
+}
+
+@utility public-header-inner {
+  @apply mx-auto flex min-h-21 w-full max-w-7xl flex-col items-center justify-center gap-2 px-4 py-3 sm:flex-row sm:justify-between sm:px-10 lg:px-12;
+}
+
+@utility public-nav {
+  @apply flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:gap-x-6;
+}
+
+@utility public-header-actions {
+  @apply flex flex-wrap items-center justify-center gap-2 lg:gap-4;
+}
+
+@utility public-nav-link {
+  @apply inline-flex min-h-11 items-center justify-center border-0 bg-transparent py-2 font-mono text-sm text-foreground no-underline shadow-none transition-[color,scale] duration-150 outline-none hover:scale-105 hover:text-primary focus-visible:text-primary focus-visible:underline focus-visible:underline-offset-4 active:text-primary active:underline active:underline-offset-4 aria-[current=page]:text-primary aria-[current=page]:underline aria-[current=page]:underline-offset-4 motion-reduce:transform-none motion-reduce:transition-none motion-reduce:hover:scale-100;
+}
+
+/* Shared tenant composition: keep controls aligned without changing page markup. */
+.dashboard-header {
+  align-items: flex-start;
+}
+
+.dashboard-header > :last-child {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+
+.dashboard-header .control-field {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .dashboard-header {
+    align-items: center;
+  }
+
+  .dashboard-header > :last-child {
+    justify-content: flex-end;
+  }
+
+  .dashboard-header .control-field {
+    width: min(24rem, 32vw);
+  }
+}
+
+@utility public-footer {
+  @apply w-full border-t border-foreground bg-background;
+}
+
+@utility public-footer-inner {
+  @apply mx-auto flex w-full max-w-7xl flex-col items-center gap-4 px-4 py-6 sm:flex-row sm:justify-between sm:px-10 lg:px-12;
+}
+
+@utility public-copyright {
+  @apply font-mono text-sm leading-normal text-foreground;
+}
+
+@utility navigation-active {
+  @apply bg-primary/20 font-semibold text-foreground;
+}
+
+@layer utilities {
+  .bk-interactive {
+    transition-duration: var(--motion-base);
+    transition-property:
+      background-color, border-color, box-shadow, color, opacity, transform;
+    transition-timing-function: var(--motion-ease);
+  }
+
+  .bk-press {
+    transition:
+      transform var(--motion-base) var(--motion-ease),
+      box-shadow var(--motion-base) var(--motion-ease);
+    &:active {
+      transform: translate(4px, 4px);
+      box-shadow: none;
+    }
+  }
+  .bk-stamp-in {
+    animation: bk-stamp var(--motion-slow) var(--motion-ease) both;
+  }
+  .bk-pulse-shadow {
+    animation: bk-shadow 2s steps(2, end) infinite;
+  }
+  .bk-shake-x {
+    animation: bk-shake var(--motion-slow) linear;
+  }
+  .bk-progress-stepped {
+    transition-timing-function: steps(10, end);
+  }
+  .bk-progress-marquee {
+    width: 30%;
+    animation: bk-progress 1.5s linear infinite;
+  }
+  .bk-skeleton-stamp {
+    animation: bk-blink 1.5s steps(2, end) infinite;
+  }
+  .bk-skeleton-blocks {
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent 0 1rem,
+      hsl(var(--foreground) / 0.12) 1rem 2rem
+    );
+    animation: bk-cells 1s steps(4, end) infinite;
+  }
+  .bk-skeleton-scan {
+    background-image: linear-gradient(
+      90deg,
+      transparent 40%,
+      hsl(var(--foreground) / 0.15) 40% 60%,
+      transparent 60%
+    );
+    background-size: 250% 100%;
+    animation: bk-scan 1.5s linear infinite;
+  }
+  /* Keep content visible before hydration; the observer marks the entrance. */
+  .bk-reveal {
+    --reveal-x: 0px;
+    --reveal-y: 0px;
+  }
+  .bk-reveal-up {
+    --reveal-y: 1rem;
+  }
+  .bk-reveal-down {
+    --reveal-y: -1rem;
+  }
+  .bk-reveal-left {
+    --reveal-x: 1rem;
+  }
+  .bk-reveal-right {
+    --reveal-x: -1rem;
+  }
+  .bk-reveal[data-revealed="true"] {
+    animation: bk-reveal var(--motion-slow) var(--motion-ease) both;
+  }
+}
+
+@keyframes bk-stamp {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes bk-shadow {
+  0%,
+  100% {
+    box-shadow: 4px 4px 0 hsl(var(--shadow-color));
+  }
+  50% {
+    box-shadow: 6px 6px 0 hsl(var(--shadow-color));
+  }
+}
+@keyframes bk-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25%,
+  75% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+@keyframes bk-progress {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(334%);
+  }
+}
+@keyframes bk-blink {
+  50% {
+    opacity: 0.4;
+  }
+}
+@keyframes bk-cells {
+  to {
+    background-position: 2rem 0;
+  }
+}
+@keyframes bk-scan {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@keyframes bk-reveal {
+  from {
+    opacity: 0;
+    transform: translate(var(--reveal-x), var(--reveal-y));
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes brutal-shadow-spin {
+  0%,
+  100% {
+    transform: translate(-4px, -4px);
+  }
+  25% {
+    transform: translate(4px, -4px);
+  }
+  50% {
+    transform: translate(4px, 4px);
+  }
+  75% {
+    transform: translate(-4px, 4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bk-progress-marquee {
+    animation: none !important;
+    transform: translateX(100%);
+  }
+  .bk-reveal[data-revealed="true"] {
+    animation: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Solid auth fields and high-contrast text; no nested card surface. */
+.auth-form-column input {
+  border: 1px solid hsl(var(--background) / 0.4);
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  caret-color: hsl(var(--foreground));
+  box-shadow: none;
+}
+.auth-form-column input::placeholder {
+  color: hsl(var(--foreground) / 0.7);
+}
+.auth-form-column input:autofill,
+.auth-form-column input:-webkit-autofill {
+  -webkit-text-fill-color: hsl(var(--foreground));
+  box-shadow: 0 0 0 1000px hsl(var(--background)) inset;
+}
+.auth-form-column input:focus-visible,
+.auth-form-column button:focus-visible,
+.auth-form-column a:focus-visible {
+  outline: 2px solid hsl(var(--foreground));
+  outline-offset: 3px;
+  --tw-ring-color: transparent;
+  --tw-ring-offset-color: transparent;
+}
+.auth-form-column button {
+  border-color: transparent;
+  color: hsl(var(--foreground));
+  box-shadow: none;
+  white-space: normal;
+}
+.auth-form-column button:hover {
+  color: hsl(var(--foreground));
+}
+.auth-form-column button[type="submit"] {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}

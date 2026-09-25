@@ -1,0 +1,12 @@
+﻿Name,Archive,Domain,Milestone,Phase,Status,Work dates
+"OPS-M1-P1.1-OKR – OKRs & Constraints ",No,OPS,M1,P1.1,Done,"January 1, 2026 → January 15, 2026"
+"PROD-M1-P1.1-PRD – Problem Definition ",No,PROD,M1,P1.1,Done,"January 1, 2026 → January 15, 2026"
+"RES-M1-P1.1-A&S - Arrays & Strings ",No,RES,M1,P1.1,Done,"January 1, 2026 → January 15, 2026"
+"MKT-M1-P1.1-POS – Positioning ",No,MKT,M1,P1.1,Done,"January 1, 2026 → January 15, 2026"
+"DES-M1-P1.1-UXARCH – UX Architecture ",No,DES,M1,P1.1,Done,"January 1, 2026 → January 15, 2026"
+"ENG-M1-P1.1-INIT – Environment Initialization ",No,ENG,M1,P1.1,Done,"January 1, 2026 → January 15, 2026"
+"OPS-M1-P1.1-GOV – LLC & Governance ",No,OPS,M1,P1.1,In progress,"January 8, 2026 → January 22, 2026"
+"PROD-M1-P1.1-VERIFY – PRD Verification ",No,PROD,M1,P1.1,In progress,"January 8, 2026 → January 22, 2026"
+"DES-M1-P1.1-DESVERIFY – Design Verification ",No,DES,M1,P1.1,In progress,"January 8, 2026 → January 22, 2026"
+"ENG-M1-P1.2-CONFIG – Project Configuration ",No,ENG,M1,P1.2,In progress,"January 8, 2026 → January 22, 2026"
+"MKT-M1-P1.1-PUBSETUP – Public Presence Setup ",No,MKT,M1,P1.1,In progress,"January 8, 2026 → January 22, 2026"

@@ -1,0 +1,74 @@
+﻿Name,Category,Cover,Docs Link,Edited,Programming Languages,Tags,Type
+Next/React,Framework,https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000,"• Next.js App Router Docs
+• React Server Components
+• Clerk Middleware Docs
+• Server Actions","December 18, 2025 7:52 PM",TypeScript,"App Router, Data Fetching, React Hook Form, React Server Components, Server Actions",Core
+Clerk,Auth,https://www.notion.so/image/https%3A%2F%2Fkivuto.com%2Fwp-content%2Fuploads%2F2021%2F06%2FUser_Authentication_Best_Practices_Image.jpg,"• Clerk Next.js Server Components
+• Clerk Middleware
+• RBAC & ABAC patterns
+• Next.js Server Actions","December 18, 2025 7:56 PM",,"ABAC, Clerk, Middleware, RBAC",Integration
+Neon/Prisma,Database,https://www.notion.so/image/https%3A%2F%2Fwww.simplilearn.com%2Fice9%2Ffree_resources_article_thumb%2FBest_Data_Science_Courses_in_India.jpg,"• Prisma Docs
+• Prisma + Next.js
+• Neon Postgres Serverless
+• Prisma Migrations","December 18, 2025 7:55 PM",,"Neon, PostgreSQL, Prisma",Integration
+UpStash/Redis,State / Cache,https://www.notion.so/image/https%3A%2F%2Fas2.ftcdn.net%2Fjpg%2F02%2F19%2F99%2F65%2F1000_F_219996555_phCgM63YppVJyw5qFC4OjcjLnFXWAZ0q.jpg,"• Next.js unstable_cache
+• Upstash Redis Docs
+• Clerk Server-Side Auth","December 18, 2025 7:59 PM",TypeScript,"Cache, React Server Components, Server Actions, State",Core
+TailwindCSS,UI / Styling,https://images.unsplash.com/photo-1508317469940-e3de49ba902e?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000,"• Tailwind CSS
+• ShadCN UI
+• Radix UI
+• Framer Motion
+• Next-themes","December 18, 2025 8:01 PM",,"Radix, ShadCN UI, TailwindCSS, UI",UI Component
+ReCharts,Data Visualization,https://images.unsplash.com/photo-1560221328-12fe60f83ab8?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000,"• Recharts
+• Chart.js
+• react-chartjs-2
+• TanStack Table
+• Next.js Server Actions","December 18, 2025 8:02 PM",,"Chart.js, Recharts, Tables",Library
+React Hook Form/Zod,Forms & Validation,https://images.unsplash.com/photo-1583339793403-3d9b001b6008?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000,"• React Hook Form
+• Zod
+• RHF + Zod Resolver
+• Next.js Server Actions","December 18, 2025 8:04 PM",,"React Hook Form, Server Actions, Zod",Library
+Excel JS/ReactPDF,File Handling,https://images.unsplash.com/photo-1690585703267-de31ea667ef0?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000,"• pdf-lib
+• @react-pdf/renderer
+• ExcelJS
+• Vercel Blob","December 18, 2025 8:05 PM",,"Blob, ExcelJS, React-PDF",Utility
+Playwright/Vitest,Testing,https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000,"• Vitest
+• Vitest + TypeScript
+• Playwright
+• @testing-library/react
+• faker-js","December 18, 2025 8:06 PM",,"Faker, Playwright, Testing, Vitest",Utility
+Vaul,Mobile / Responsive,https://www.notion.so/image/https%3A%2F%2Fmishpacha.com%2Fwp-content%2Fuploads%2F2022%2F07%2FSo-You-Want-to-Be-a%25E2%2580%25A6-Web-Developer-R.jpg,"• Tailwind CSS Responsive
+• Vaul Sheets & Drawers
+• Embla Carousel
+• React Resizable Panels","December 18, 2025 8:08 PM",,"Embla, Resizable Panels, TailwindCSS, Vaul",UI Component
+Date FNS,Date / Time,https://images.unsplash.com/photo-1516101922849-2bf0be616449?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000,"• date-fns
+• date-fns-tz
+• react-datepicker","December 18, 2025 8:09 PM",,"date-fns, react-datepicker",Library
+UUID/Js-Cookie,Utilities,https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000,"• clsx
+• class-variance-authority (cva)
+• tailwind-merge
+• uuid
+• Next.js cookies API
+• js-cookie","December 18, 2025 8:09 PM",,"CLSX, JS-Cookie, UUID",Utility
+SVIX,Security,https://images.unsplash.com/photo-1614064643087-96ce7f0737c8?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000,"• Upstash Ratelimit
+• SVIX Webhooks
+• Next.js Middleware
+• Clerk Middleware Auth","December 18, 2025 8:10 PM",,"Middleware, Rate Limiting, WebHooks",Core
+ESLint/Prettier,Dev Tools,https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000,"• ESLint
+• Prettier
+• GitHub Actions
+• Vercel Deployments","December 18, 2025 8:06 PM",,"ESLint, GitHub Actions, Prettier, Vercel",Tooling
+Vercel/GitHub Actions,Build & Deploy,https://images.unsplash.com/photo-1631624215749-b10b3dd7bca7?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000,"• Vercel Deployments
+• Next.js Build & Optimization
+• PostCSS
+• Autoprefixer","December 18, 2025 8:10 PM",,"CI/CD, GitHub Actions, Next.js, Vercel",Infra
+Next.js,Framework,https://images.unsplash.com/photo-1687603921109-46401b201195?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000,"• Next.js App Router Docs
+• React Server Components","December 18, 2025 8:10 PM",,"App Router, Next.js, React Server Components",Core
+"Sentry/OpenTelemetry ",Monitoring / Logging,https://images.unsplash.com/photo-1608742213509-815b97c30b36?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000,"• Sentry for Next.js
+• OpenTelemetry JS
+• Vercel Monitoring","December 18, 2025 8:11 PM",,Logging,Tooling
+Q Stash,Utilities,https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000,"• Upstash QStash
+• Vercel Background Functions","December 18, 2025 8:14 PM",,Vercel,Infra
+Stripe,Payments / Billing,https://images.unsplash.com/photo-1594904351111-a072f80b1a71?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=6000,"• Stripe Checkout
+• Stripe Webhooks
+• Next.js API Routes","December 18, 2025 8:15 PM",,"API, Stripe",Integration
