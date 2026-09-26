@@ -1,38 +1,46 @@
 ---
-archived: false
-tags:
-  - type/daily
+type: daily
+date: "<% tp.date.now('YYYY-MM-DD') %>"
 ---
-# <% tp.date.now("YYYY-MM-DD") %>
+# <% tp.date.now('dddd, MMMM D, YYYY') %>
 
-## Scrum
+## Yesterday
+<!-- hearth:generated:start -->
+<!-- hearth:generated:end -->
 
-### Yesterday
+## Today
+<!-- hearth:generated:start -->
+<!-- hearth:generated:end -->
 
-- 
+## Blockers
+<!-- hearth:generated:start -->
+<!-- hearth:generated:end -->
 
-### Today
+## Deadlines and reviews
+<!-- hearth:generated:start -->
+<!-- hearth:generated:end -->
 
-- 
+## Cadence
+<!-- hearth:generated:start -->
+<!-- hearth:generated:end -->
 
-### Blockers
+## Work context
+<!-- hearth:generated:start -->
+<!-- hearth:generated:end -->
 
-- 
+## Zettelkasten and resources
+<!-- hearth:generated:start -->
+<!-- hearth:generated:end -->
 
-## Stack Syntax
+## Code Lab
+<!-- hearth:generated:start -->
+<!-- hearth:generated:end -->
 
-- [ ] Drill 1
-- [ ] Drill 2
-- [ ] Drill 3
+## Git and vault health
+<!-- hearth:generated:start -->
+<!-- hearth:generated:end -->
 
-## Habits
-
-- [ ] Meaningful project progress
-- [ ] Read or study
-- [ ] Shutdown and retro
-
-## Notes
-
-## Shutdown
-
-What changed, what remains, and what should start first tomorrow?
+## Human notes
+<!-- hearth:human:start -->
+Write freely here; refresh preserves this region.
+<!-- hearth:human:end -->

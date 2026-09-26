@@ -1,5 +1,5 @@
 {
-  "tasksFolder": "/_Tasks",
+  "tasksFolder": "/2.AREAS/SYSTEM/_Tasks",
   "moveArchivedTasks": false,
   "archiveFolder": "4.ARCHIVE/Tasks",
   "taskTag": "type/task",
@@ -8,7 +8,7 @@
   "hideIdentifyingTagsMode": "all",
   "taskPropertyName": "",
   "taskPropertyValue": "",
-  "excludedFolders": "SYSTEM,assets,_mounts,4.ARCHIVE",
+  "excludedFolders": "assets,_mounts,4.ARCHIVE",
   "defaultTaskPriority": "normal",
   "defaultTaskStatus": "backlog",
   "taskOrgFiltersCollapsed": false,
@@ -19,7 +19,7 @@
   "occurrenceFilenameTemplateProperty": "occurrenceFilenameTemplate",
   "taskCreationDefaults": {
     "defaultContexts": "",
-    "defaultTags": "type/task",
+    "defaultTags": "type/task,hearth",
     "defaultProjects": "",
     "useParentNoteForTaskCreation": true,
     "useParentNoteAsProject": true,
@@ -147,9 +147,9 @@
     "due": "due",
     "scheduled": "scheduled",
     "contexts": "contexts",
-    "projects": "projects",
+    "projects": "project",
     "attachments": "attachments",
-    "timeEstimate": "timeEstimate",
+    "timeEstimate": "estimate",
     "completedDate": "completedDate",
     "dateCreated": "dateCreated",
     "dateModified": "dateModified",
@@ -515,5 +515,7 @@
     "isRunning": false,
     "timeRemaining": 1500
   },
-  "lastPomodoroDate": "2026-09-10"
+  "lastPomodoroDate": "2026-09-10",
+  "taskFolder": "2.AREAS/SYSTEM/_Tasks",
+  "taskFolderPath": "2.AREAS/SYSTEM/_Tasks"
 }

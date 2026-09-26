@@ -1,17 +1,5 @@
-filters:
-  and:
-    - archived == true
-properties:
-  file.name:
-    displayName: Note
-  file.folder:
-    displayName: Location
-  file.tags:
-    displayName: Tags
+filters: 'status == "archived"'
 views:
   - type: table
-    name: Archived
-    order:
-      - file.name
-      - file.folder
-      - file.tags
+    name: Archive
+    order: [file.name, archived_at, archive_reason]

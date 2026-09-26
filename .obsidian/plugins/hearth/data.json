@@ -102,7 +102,7 @@
     },
     {
       "id": "dash-projects",
-      "name": "Projects",
+      "name": "Project Command Center",
       "fitToPage": true,
       "showSearch": false,
       "header": {
@@ -128,8 +128,8 @@
           "id": "projects-list",
           "kind": "embed",
           "title": "Projects",
-          "target": "SYSTEM/Bases/Projects.base",
-          "baseView": "Active",
+          "target": "2.AREAS/SYSTEM/Bases/Projects.base",
+          "baseView": "Projects",
           "x": 4,
           "y": 0,
           "w": 8,
@@ -148,7 +148,7 @@
             "layout": "kanban",
             "folderScope": "whitelist",
             "folders": [
-              "1.PROJECTS/_Tasks"
+              "2.AREAS/SYSTEM/_Tasks"
             ],
             "showCompleted": false,
             "taskNotesDoneStatuses": [
@@ -171,7 +171,8 @@
           "fx": 0,
           "fw": 1,
           "fy": 210,
-          "fh": 474
+          "fh": 474,
+          "target": ""
         },
         {
           "id": "projects-launcher",
@@ -202,7 +203,8 @@
           "fx": 0,
           "fw": 0.3266666666666667,
           "fy": 0,
-          "fh": 194
+          "fh": 194,
+          "target": ""
         }
       ]
     },
@@ -273,7 +275,8 @@
           "fx": 0,
           "fw": 1,
           "fy": 0,
-          "fh": 264
+          "fh": 264,
+          "target": ""
         },
         {
           "id": "card-mtw1u9o9-905",
@@ -325,14 +328,15 @@
           "fx": 0,
           "fw": 0.3266666666666667,
           "fy": 280,
-          "fh": 404
+          "fh": 404,
+          "target": ""
         },
         {
           "id": "card-mtw1u9o9-7357",
           "kind": "embed",
           "title": "Active projects",
-          "target": "SYSTEM/Bases/Projects.base",
-          "baseView": "Active",
+          "target": "2.AREAS/SYSTEM/Bases/Projects.base",
+          "baseView": "Projects",
           "x": 4,
           "y": 4,
           "w": 8,
@@ -369,7 +373,7 @@
         {
           "kind": "embed",
           "title": "",
-          "target": "HEARTH/Home.md",
+          "target": "Hearth/Home.md",
           "x": 0,
           "y": 0,
           "w": 4,
@@ -386,8 +390,8 @@
         {
           "kind": "embed",
           "title": "Projects",
-          "target": "SYSTEM/Bases/Projects.base",
-          "baseView": "Active",
+          "target": "2.AREAS/SYSTEM/Bases/Projects.base",
+          "baseView": "Projects",
           "x": 4,
           "y": 0,
           "w": 4,
@@ -404,7 +408,7 @@
         {
           "kind": "embed",
           "title": "Learning",
-          "target": "SYSTEM/Bases/Learning.base",
+          "target": "2.AREAS/SYSTEM/Bases/Code Lab.base",
           "baseView": "Study Queue",
           "x": 8,
           "y": 0,
@@ -482,7 +486,8 @@
           "fx": 0.3366666666666667,
           "fw": 0.6633333333333334,
           "fy": 420,
-          "fh": 404
+          "fh": 404,
+          "target": ""
         }
       ],
       "iconLucide": "house",
@@ -533,7 +538,7 @@
         {
           "kind": "embed",
           "title": "",
-          "target": "HEARTH/Library.md",
+          "target": "Hearth/Library.md",
           "x": 0,
           "y": 0,
           "w": 12,
@@ -576,7 +581,7 @@
         {
           "kind": "embed",
           "title": "",
-          "target": "HEARTH/Learning.md",
+          "target": "Hearth/Learning.md",
           "x": 0,
           "y": 0,
           "w": 12,
@@ -594,7 +599,7 @@
     },
     {
       "id": "dash-git",
-      "name": "Git",
+      "name": "Git and Vault",
       "fitToPage": true,
       "showSearch": false,
       "header": {
@@ -647,7 +652,8 @@
           "fx": 0,
           "fw": 1,
           "fy": 0,
-          "fh": 194
+          "fh": 194,
+          "target": ""
         },
         {
           "id": "git-changes",
@@ -679,7 +685,8 @@
           "fx": 0,
           "fw": 0.495,
           "fy": 210,
-          "fh": 264
+          "fh": 264,
+          "target": ""
         },
         {
           "id": "git-log",
@@ -711,7 +718,8 @@
           "fx": 0.5050000000000001,
           "fw": 0.495,
           "fy": 210,
-          "fh": 264
+          "fh": 264,
+          "target": ""
         },
         {
           "id": "git-stats",
@@ -724,7 +732,8 @@
           "fx": 0,
           "fw": 0.495,
           "fy": 490,
-          "fh": 194
+          "fh": 194,
+          "target": ""
         },
         {
           "id": "git-heatmap",
@@ -738,12 +747,136 @@
           "fx": 0.5050000000000001,
           "fw": 0.495,
           "fy": 490,
-          "fh": 194
+          "fh": 194,
+          "target": ""
+        }
+      ]
+    },
+    {
+      "id": "hearth-command-center",
+      "name": "Command Center",
+      "fitToPage": true,
+      "showSearch": true,
+      "header": {
+        "showTitle": true,
+        "title": "DIGITAL HERENCIA",
+        "logoIcon": "terminal-square",
+        "align": "center",
+        "titleScale": 1.1,
+        "logoScale": 1.1,
+        "marginTop": 0,
+        "spacingBelow": 50
+      },
+      "background": {
+        "kind": "image",
+        "value": "3.RESOURCES/assets/Digital Herencia Desert BG.jpg",
+        "opacity": 0.56,
+        "blur": 0
+      },
+      "backgroundLayout": "full",
+      "iconLucide": "terminal-square",
+      "cards": [
+        {
+          "id": "hearth-command-center",
+          "kind": "embed",
+          "title": "Command Center",
+          "target": "Hearth/Command Center.md",
+          "baseView": "Active",
+          "x": 0,
+          "y": 0,
+          "w": 12,
+          "h": 8,
+          "fx": 0,
+          "fw": 1,
+          "fy": 0,
+          "fh": 1
+        }
+      ]
+    },
+    {
+      "id": "hearth-code-lab",
+      "name": "Code Lab",
+      "fitToPage": true,
+      "showSearch": true,
+      "header": {
+        "showTitle": true,
+        "title": "DIGITAL HERENCIA",
+        "logoIcon": "terminal-square",
+        "align": "center",
+        "titleScale": 1.1,
+        "logoScale": 1.1,
+        "marginTop": 0,
+        "spacingBelow": 50
+      },
+      "background": {
+        "kind": "image",
+        "value": "3.RESOURCES/assets/Digital Herencia Desert BG.jpg",
+        "opacity": 0.56,
+        "blur": 0
+      },
+      "backgroundLayout": "full",
+      "iconLucide": "terminal-square",
+      "cards": [
+        {
+          "id": "hearth-code-lab",
+          "kind": "embed",
+          "title": "Code Lab",
+          "target": "2.AREAS/SYSTEM/Code Lab/Code Lab.md",
+          "baseView": "Active",
+          "x": 0,
+          "y": 0,
+          "w": 12,
+          "h": 8,
+          "fx": 0,
+          "fw": 1,
+          "fy": 0,
+          "fh": 1
+        }
+      ]
+    },
+    {
+      "id": "hearth-code-space",
+      "name": "Code Space",
+      "fitToPage": true,
+      "showSearch": true,
+      "header": {
+        "showTitle": true,
+        "title": "DIGITAL HERENCIA",
+        "logoIcon": "terminal-square",
+        "align": "center",
+        "titleScale": 1.1,
+        "logoScale": 1.1,
+        "marginTop": 0,
+        "spacingBelow": 50
+      },
+      "background": {
+        "kind": "image",
+        "value": "3.RESOURCES/assets/Digital Herencia Desert BG.jpg",
+        "opacity": 0.56,
+        "blur": 0
+      },
+      "backgroundLayout": "full",
+      "iconLucide": "terminal-square",
+      "cards": [
+        {
+          "id": "hearth-code-space",
+          "kind": "embed",
+          "title": "Code Space",
+          "target": "2.AREAS/SYSTEM/Code Space/Code Space.md",
+          "baseView": "Active",
+          "x": 0,
+          "y": 0,
+          "w": 12,
+          "h": 8,
+          "fx": 0,
+          "fw": 1,
+          "fy": 0,
+          "fh": 1
         }
       ]
     }
   ],
-  "activeDashboardId": "dash-home",
+  "activeDashboardId": "hearth-code-space",
   "pinnedCards": [],
   "gridColumns": 12,
   "rowHeight": 54,

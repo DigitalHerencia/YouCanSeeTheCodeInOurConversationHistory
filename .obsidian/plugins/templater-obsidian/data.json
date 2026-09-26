@@ -1,21 +1,25 @@
 {
   "data_version": 2,
   "command_timeout": 8,
-  "templates_folder": "SYSTEM/Templates",
+  "templates_folder": "2.AREAS/SYSTEM/Templates",
   "templates_pairs": [],
   "trigger_on_file_creation_mode": "folder",
   "auto_jump_to_cursor": true,
   "jump_to_cursor_after_file_name": false,
   "shell_path": "",
-  "user_scripts_folder": "SYSTEM/Scripts/templater",
+  "user_scripts_folder": "2.AREAS/SYSTEM/Scripts/templater",
   "folder_templates": [
+    {
+      "folder": "1.PROJECTS",
+      "template": "2.AREAS/SYSTEM/Templates/Project.template.md"
+    },
     {
       "folder": "AMOEBA",
       "template": "SYSTEM/Templates/Amoeba.template.md"
     },
     {
-      "folder": "DAILY",
-      "template": "SYSTEM/Templates/Daily.template.md"
+      "folder": "2.AREAS/DAILY",
+      "template": "2.AREAS/SYSTEM/Templates/Daily.template.md"
     },
     {
       "folder": "ZETTLECASTEN/Clippings",
@@ -28,6 +32,14 @@
     {
       "folder": "3.RESOURCES/Stack Syntax/Drills",
       "template": "SYSTEM/Templates/Stack Syntax Drill.template.md"
+    },
+    {
+      "folder": "2.AREAS/ZETTLECASTEN/Inbox",
+      "template": "2.AREAS/SYSTEM/Templates/Zettel Workbench.template.md"
+    },
+    {
+      "folder": "2.AREAS/ZETTLECASTEN/Processing",
+      "template": "2.AREAS/SYSTEM/Templates/Evergreen.template.md"
     }
   ],
   "file_templates": [],
@@ -41,7 +53,7 @@
       "folder": "SYSTEM"
     },
     {
-      "folder": "1.PROJECTS/_Tasks"
+      "folder": "2.AREAS/SYSTEM/_Tasks"
     },
     {
       "folder": "_mounts"

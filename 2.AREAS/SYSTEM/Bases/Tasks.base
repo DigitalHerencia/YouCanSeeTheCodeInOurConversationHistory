@@ -1,6 +1,6 @@
 filters:
   and:
-    - file.inFolder("1.PROJECTS/_Tasks")
+    - file.inFolder("2.AREAS/SYSTEM/_Tasks")
     - file.hasTag("type/task")
     - archived != true
 properties:

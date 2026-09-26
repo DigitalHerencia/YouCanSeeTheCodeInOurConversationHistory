@@ -1,43 +1,39 @@
 ---
-status: planning
-phase: discovery
-progress: 0
-priority: normal
-due:
-archived: false
-tags:
-  - type/project
+type: project
+status: backlog
+created: {{date:YYYY-MM-DD}}
+updated: {{date:YYYY-MM-DD}}
 ---
-# <% tp.file.folder().split("/").pop() %>
+# {{VALUE}}
 
-`INPUT[inlineSelect(option(planning), option(active), option(blocked), option(done)):status]` `INPUT[inlineSelect(option(discovery), option(design), option(build), option(validate), option(ship), option(maintain)):phase]` `INPUT[slider(minValue(0), maxValue(100), stepSize(5)):progress]` `INPUT[toggle:archived]`
+> [!info] Purpose
+> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
 
-## Outcome
 
-## Why Now
+## Owner controls
+- Status: `INPUT[select(option(backlog), option(active), option(done), option(archived)):status]`
+- Priority: `INPUT[select(option(none), option(low), option(normal), option(high)):priority]`
+- Target start: `INPUT[date:target_start]` · Target end: `INPUT[date:target_end]`
+- Current focus: `INPUT[text:current_focus]` · Blocker: `INPUT[text:blocker]`
+- Code Lab enabled: `INPUT[toggle:codelab_enabled]`
 
-## Context
+## Context and starter content
+- Source / provenance: add the originating note, issue, or conversation.
+- Outcome: state the observable result.
+- Constraints and dependencies: link only verified relations.
 
-<%* const ctx = await tp.user["project-context"](tp); tR += ctx; %>
+## Acceptance criteria
+- [ ] Outcome is explicit and reviewable.
+- [ ] Required evidence or output is linked.
 
-## Milestones
+## Human input
+<!-- hearth:human:start -->
+Add owner-authored context here.
+<!-- hearth:human:end -->
 
-## Current Phase
+## Generated state
+<!-- hearth:generated:start -->
+Refreshed by Hearth.
+<!-- hearth:generated:end -->
 
-## Constraints
-
-## Decisions
-
-## Tasks
-
-![[Project Tasks.base]]
-
-Create tasks with the project note open to associate them with this project.
-
-## Evidence
-
-## Roadmap
-
-[[2.AREAS/Stack Syntax/Stack Syntax Drills/Board|Milestones and workstreams]]
-
-<%* const folder = tp.file.folder(true); const boardPath = `${folder}/Board.md`; if (!app.vault.getAbstractFileByPath(boardPath)) { const template = app.vault.getAbstractFileByPath("SYSTEM/Templates/Board.template.md"); await app.vault.create(boardPath, await app.vault.read(template)); } %>
+<%* await tp.user.hearth_create_project(tp); tR += ""; %>

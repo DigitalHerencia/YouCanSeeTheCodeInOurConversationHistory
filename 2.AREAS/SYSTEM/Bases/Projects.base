@@ -1,43 +1,5 @@
-filters:
-  and:
-    - file.inFolder("1.PROJECTS")
-    - file.name == "Project"
-    - archived != true
-formulas:
-  project: link(file.path, file.folder.replace("1.PROJECTS/", ""))
-properties:
-  formula.project:
-    displayName: Project
-  file.name:
-    displayName: Project
-  status:
-    displayName: Status
-  phase:
-    displayName: Phase
-  progress:
-    displayName: Progress
-  priority:
-    displayName: Priority
-  due:
-    displayName: Due
+filters: 'type == "project"'
 views:
   - type: table
-    name: Active
-    groupBy:
-      property: status
-      direction: ASC
-    order:
-      - formula.project
-      - phase
-      - progress
-      - priority
-      - due
-  - type: table
-    name: Roadmap
-    order:
-      - formula.project
-      - status
-      - phase
-      - progress
-      - priority
-      - due
+    name: Projects
+    order: [file.name, status, progress, health, next_action, target_end]

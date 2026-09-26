@@ -41,7 +41,7 @@
       },
       "fileExistsBehavior": {
         "kind": "apply",
-        "mode": "duplicateSuffix"
+        "mode": "doNothing"
       }
     },
     {
@@ -69,7 +69,7 @@
       "type": "Template",
       "command": true,
       "onePageInput": "always",
-      "templatePath": "SYSTEM/Templates/Stack Syntax Drill.template.md",
+      "templatePath": "2.AREAS/SYSTEM/Templates/Stack Syntax Drill.template.md",
       "fileNameFormat": {
         "enabled": true,
         "format": "{{DATE:YYYYMMDDHHmm}}-{{VALUE}}"
@@ -96,6 +96,244 @@
       "fileExistsBehavior": {
         "kind": "apply",
         "mode": "duplicateSuffix"
+      }
+    },
+    {
+      "id": "hearth-004",
+      "name": "Generate Daily Standup",
+      "type": "Template",
+      "command": true,
+      "templatePath": "2.AREAS/SYSTEM/Templates/Daily Standup.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{DATE:YYYY-MM-DD}} Daily Standup"
+      },
+      "discoverExistingNotesBeforeCreate": true,
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "2.AREAS/DAILY/Meetings"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "skip"
+      }
+    },
+    {
+      "id": "hearth-005",
+      "name": "Generate Engineering Meeting",
+      "type": "Template",
+      "command": true,
+      "templatePath": "2.AREAS/SYSTEM/Templates/Engineering Meeting.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{DATE:YYYY-MM-DD}} Engineering Meeting"
+      },
+      "discoverExistingNotesBeforeCreate": true,
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "2.AREAS/DAILY/Meetings"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "skip"
+      }
+    },
+    {
+      "id": "hearth-006",
+      "name": "Generate Design Meeting",
+      "type": "Template",
+      "command": true,
+      "templatePath": "2.AREAS/SYSTEM/Templates/Design Meeting.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{DATE:YYYY-MM-DD}} Design Meeting"
+      },
+      "discoverExistingNotesBeforeCreate": true,
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "2.AREAS/DAILY/Meetings"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "skip"
+      }
+    },
+    {
+      "id": "hearth-007",
+      "name": "Generate Operations Meeting",
+      "type": "Template",
+      "command": true,
+      "templatePath": "2.AREAS/SYSTEM/Templates/Operations Meeting.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{DATE:YYYY-MM-DD}} Operations Meeting"
+      },
+      "discoverExistingNotesBeforeCreate": true,
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "2.AREAS/DAILY/Meetings"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "skip"
+      }
+    },
+    {
+      "id": "hearth-008",
+      "name": "Generate Weekly Sync",
+      "type": "Template",
+      "command": true,
+      "templatePath": "2.AREAS/SYSTEM/Templates/Weekly-Sync.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{DATE:YYYY-MM-DD}} Weekly-Sync"
+      },
+      "discoverExistingNotesBeforeCreate": true,
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "2.AREAS/DAILY/Meetings"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "skip"
+      }
+    },
+    {
+      "id": "hearth-009",
+      "name": "Generate Sprint Planning",
+      "type": "Template",
+      "command": true,
+      "templatePath": "2.AREAS/SYSTEM/Templates/Sprint-Planning.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{DATE:YYYY-MM-DD}} Sprint-Planning"
+      },
+      "discoverExistingNotesBeforeCreate": true,
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "2.AREAS/DAILY/Meetings"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "skip"
+      }
+    },
+    {
+      "id": "hearth-010",
+      "name": "Generate Post-mortem",
+      "type": "Template",
+      "command": true,
+      "templatePath": "2.AREAS/SYSTEM/Templates/Postmortem Meeting.template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{DATE:YYYY-MM-DD}} Postmortem Meeting"
+      },
+      "discoverExistingNotesBeforeCreate": true,
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "2.AREAS/DAILY/Meetings"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "copyLinkToClipboard": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsBehavior": {
+        "kind": "apply",
+        "mode": "skip"
       }
     }
   ],

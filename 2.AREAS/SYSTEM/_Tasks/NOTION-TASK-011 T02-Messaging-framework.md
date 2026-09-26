@@ -1,0 +1,36 @@
+---
+type: task
+id: TASK-7F6B0F08-7895-471D-9E1A-ED8F5350CA0C
+source_task_code: TO2
+task_code: MKT-M1-P1.1-POS-T02
+status: done
+priority: none
+notion_created_at: January 2, 2026 9:34 AM
+created: 2026-09-26
+updated: 2026-09-26
+completed_at: 2026-01-02
+project: "[[1.PROJECTS/MKT-M1-P1.1-POS Positioning/Project]]"
+milestone: "[[1.PROJECTS/MKT-M1-P1.1-POS Positioning/Milestone M1]]"
+phase: "[[1.PROJECTS/MKT-M1-P1.1-POS Positioning/Phase P1.1]]"
+source: Notion export
+provenance: "[[3.RESOURCES/Digital Herencia/Tasks 2d5a4e63bf23816fa217ef754ce4a70e_all.csv]]"
+tags:
+  - type/task
+  - hearth/migration
+title: T02 Messaging framework
+dateCreated: 2026-01-02
+migration_relation_state: verified-ticketing-source
+relation_source: "[[3.RESOURCES/Digital Herencia/SOPs/Ticketing 2d8a4e63bf2380dd9a04cbbb762b9c7c]]"
+project_code: MKT-M1-P1.1-POS
+---
+
+## Owner controls
+- Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]`
+- Priority: `INPUT[select(option(none), option(low), option(normal), option(high)):priority]` · Due: `INPUT[date:due]` · Scheduled: `INPUT[date:scheduled]`
+- Estimate: `INPUT[number:estimate]` · Blocker: `INPUT[text:blocker]` · Mastery: `INPUT[number:mastery]` · Confidence: `INPUT[number:confidence]`
+
+# T02 Messaging framework
+
+Imported verbatim from Notion. TaskNotes execution record; project relation omitted because source export provides no relation.
+
+Source created: January 2, 2026 9:34 AM.

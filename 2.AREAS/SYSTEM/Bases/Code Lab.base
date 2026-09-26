@@ -1,0 +1,5 @@
+filters: 'type == "module" || type == "lesson" || type == "drill"'
+views:
+  - type: table
+    name: Curriculum
+    order: [file.name, type, mastery_state, confidence, next_review]

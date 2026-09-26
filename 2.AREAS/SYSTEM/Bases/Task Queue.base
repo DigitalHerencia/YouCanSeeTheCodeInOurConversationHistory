@@ -1,0 +1,5 @@
+filters: 'type == "task"'
+views:
+  - type: table
+    name: TaskNotes Queue
+    order: [file.name, status, priority, due, scheduled, project, milestone, phase]
