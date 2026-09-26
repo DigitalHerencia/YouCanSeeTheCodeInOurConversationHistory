@@ -1,0 +1,22 @@
+﻿Name,Add Project,Phase
+" ENG-M1-P1.3-ALPHA – Alpha Build",,P1.3 Internal Alpha Validation
+ENG-M2-P2.1-MVP – MVP Build,,P2.1 Core Feature Implementation
+ENG-M3-P3.2-HARD – Hardening,,P3.2 Platform Hardening & Security
+ENG-M1-P1.1-INIT – Environment Initialization,,P1.1 Product Discovery & Business Definition
+ENG-M1-P1.2-SCAFF – Architecture Setup,,P1.2 Platform & Operations Scaffolding
+ENG-M1-P1.2-CONFIG – Project Configuration,,P1.2 Platform & Operations Scaffolding
+ENG-M1-P1.3-DATA – Data Layer Definition,,P1.3 Internal Alpha Validation
+ENG-M1-P1.3-AUTH – Auth & RBAC,,P1.3 Internal Alpha Validation
+ENG-M2-P2.1-FEATURES – Feature Development,,P2.1 Core Feature Implementation
+ENG-M2-P2.1-TEST – Testing Strategy,,P2.1 Core Feature Implementation
+ENG-M2-P2.2-DEBUG – Debug & Fixes,,P2.2 QA & Launch Readiness
+ENG-M2-P2.2-VALIDATE – System Validation,,P2.2 QA & Launch Readiness
+ENG-M2-P2.3-CICD – CI/CD Pipeline,,P2.3 Soft Launch & Feedback Loop
+ENG-M3-P3.1-SEC – Security Hardening,,P3.1 Feature Expansion
+ENG-M3-P3.1-PERF – Performance Optimization,,P3.1 Feature Expansion
+ENG-M3-P3.2-OBS – Observability,,P3.2 Platform Hardening & Security
+ENG-M3-P3.2-REVIEW – Code Review,,P3.2 Platform Hardening & Security
+ENG-M3-P3.3-DEPLOY – Deployment,,P3.3 Growth Enablement
+ENG-M3-P3.3-DOCS – Documentation,,P3.3 Growth Enablement
+ENG-M3-P3.3-UPDATES – Maintenance & Updates,,P3.3 Growth Enablement
+,,P1.3 Internal Alpha Validation

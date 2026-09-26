@@ -1,0 +1,37 @@
+﻿Name,Phase,Type
+User logs in,Account Setup,"Action, Trigger"
+Prompt: Select your home dispensary,Account Setup,System Output
+Select home dispensary,Account Setup,"Action, Decision Point"
+View home dispensary sales overview,First Insight,"State, System Output"
+Compare to market baseline,First Insight,"Decision Point, System Output"
+Highlight: Key deltas vs market,First Insight,System Output
+Outcome: User sees how they stack up,First Insight,Outcome
+Success Signal: 'Oh shit — I didn’t know that',First Insight,Success Signal
+Select competitor dispensary,Insight Exploration,"Action, Trigger"
+Choose comparison dimension,Insight Exploration,"Action, Decision Point"
+Overlay comparison graphs,Insight Exploration,System Output
+View delta indicators,Insight Exploration,System Output
+Toggle timeframe (daily / monthly / seasonal),Insight Exploration,Action
+Outcome: Understand who’s winning and why,Insight Exploration,Outcome
+Success Signal: Identify actionable differences,Insight Exploration,Success Signal
+Navigate to 'Trending Products',Insight Exploration,"Action, Trigger"
+Select market scope,Insight Exploration,Action
+Run trend algorithm,Insight Exploration,System Output
+"View ranked products (Rising, Peaking, Declining)",Insight Exploration,"State, System Output"
+Drill into product details,Insight Exploration,Action
+Outcome: Decide what to stock or avoid,Insight Exploration,"Decision Point, Outcome"
+Success Signal: Stocking decision made,Insight Exploration,Success Signal
+Select event (e.g. 4/20),Insight Exploration,"Action, Trigger"
+View historical performance,Insight Exploration,System Output
+View spiking product categories,Insight Exploration,System Output
+See likely winners and overstock risks,Insight Exploration,System Output
+Adjust timeframe for trend validation,Insight Exploration,"Action, Decision Point"
+Outcome: User creates inventory strategy,Insight Exploration,Outcome
+Explore market (not from own dispensary),Planning & Research,"Action, Trigger"
+Success Signal: Confirmed pre-event plan,Insight Exploration,Success Signal
+Drill down: City → Category → Product,Planning & Research,"Action, State"
+Outcome: Gain macro market understanding,Planning & Research,Outcome
+Compare performance across seasons,Planning & Research,"Action, Trigger"
+Outcome: Strategic planning & reflection,Planning & Research,Outcome
+Admin: Verify data freshness,Admin / Ops,"Action, Support Flow"
+Admin: Manage access and roles,Admin / Ops,"Action, Support Flow"

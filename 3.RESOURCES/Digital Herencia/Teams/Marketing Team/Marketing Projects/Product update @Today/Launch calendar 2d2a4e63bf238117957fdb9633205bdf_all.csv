@@ -1,0 +1,8 @@
+﻿Name,DRI,Ship date,Stage,Team,tl;dr
+Better text editing & copy/paste,,"May 15, 2022",In beta,Core,Notion’s text editor has been completely retooled to combine the flexibility of “blocks” with the familiar feeling of a traditional word processor.
+Template gallery launch,,"May 11, 2022",Building,Platform,"We rebuilt our Template Gallery from the ground up to showcase the very best dashboards, setups & workflows built by our users around the world."
+Database permissions launch,,"May 17, 2022",Building,Core,"The new “Can Edit Content” permission level prevents accidental edits to the database’s structure — views, filters, property names, property types & more."
+"Database groups ",,"May 9, 2022",In beta,Platform,Group items by any property in your database views to achieve peak organization.
+Simple tables,,"May 13, 2022",Scoping,Core,We’re developing simple tables!
+Sub-page load time,,"May 21, 2022",Building,Infrastructure,"Thanks to a few under-the-hood improvements, deeply nested sub-pages now load and save over 50% faster. 57%, to be exact!"
+Better databases,,"May 19, 2022",Designing,Infrastructure,"Databases are easier to use, easier to customize, and more powerful than ever before."

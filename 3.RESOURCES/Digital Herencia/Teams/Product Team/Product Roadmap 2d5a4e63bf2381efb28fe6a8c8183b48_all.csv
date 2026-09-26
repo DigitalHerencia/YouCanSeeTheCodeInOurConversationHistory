@@ -1,0 +1,15 @@
+﻿Initiative,Add Project,Phase
+PROD-M1-P1.1-PRD – Problem Definition,,P1.1 Product Discovery & Business Definition
+PROD-M1-P1.3-ALPHA – Alpha Validation,,P1.3 Internal Alpha Validation
+PROD-M2-P2.1-MVP – MVP Scope Control,,P2.1 Core Feature Implementation
+PROD-M2-P2.3-FEEDBACK – Feedback Analysis,,P2.3 Soft Launch & Feedback Loop
+PROD-M3-P3.1-ADV – Advanced Planning,,P3.1 Feature Expansion
+PROD-M1-P1.1-VERIFY – PRD Verification,,P1.1 Product Discovery & Business Definition
+PROD-M1-P1.2-CONFIG – Product Configuration,,P1.2 Platform & Operations Scaffolding
+PROD-M1-P1.3-DATA – Product Data Contracts,,P1.3 Internal Alpha Validation
+PROD-M1-P1.3-AUTH – Product Auth & Plans,,P1.3 Internal Alpha Validation
+PROD-M2-P2.1-VALIDATE – Product Validation,,P2.1 Core Feature Implementation
+PROD-M2-P2.2-SEC – Product Security Review,,P2.2 QA & Launch Readiness
+PROD-M3-P3.1-OBS – Product Observability,,P3.1 Feature Expansion
+PROD-M3-P3.3-DOCS – Product Documentation,,P3.3 Growth Enablement
+PROD-M3-P3.3-UPDATES – Product Iteration & Updates,,P3.3 Growth Enablement

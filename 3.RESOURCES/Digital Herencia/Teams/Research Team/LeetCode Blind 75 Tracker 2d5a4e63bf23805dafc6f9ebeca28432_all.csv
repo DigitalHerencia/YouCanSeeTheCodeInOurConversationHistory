@@ -1,0 +1,76 @@
+﻿problem,Add Task,Topics,difficulty
+230. kth smallest element in a bst,,trees,medium
+125. valid palindrome,,two pointers,easy
+39. combination sum,,backtracking,medium
+152. maximum product subarray,,1-D DP,medium
+647. palindromic substrings,,1-D DP,medium
+211. design add and search words data structure,,tries,medium
+208. implement trie prefix tree,,tries,medium
+48. rotate image,,math & geometry,medium
+70. climbing stairs,,1-D DP,easy
+143. reorder list,,linked list,medium
+206. reverse linked list,,linked list,easy
+217. contains duplicate,,array & hashing,easy
+268. missing number,,bit manipulation,easy
+62. unique paths,,2-D DP,medium
+213. house robber 2,,1-D DP,medium
+435. non-overlapping intervals’,,intervals,medium
+128. longest consecutive sequence,,array & hashing,medium
+121. best time to buy and sell stock,,sliding windows,easy
+347. top k frequent elements,,array & hashing,medium
+295. find median from data stream,,heap / priority queue,hard
+55. jump game,,greedy,medium
+252. meeting rooms,,intervals,easy
+53. maximum subarray,,greedy,medium
+417. pacific atlantic water flow,,graphs,medium
+338. counting bits,,bit manipulation,easy
+102. binary tree level order traversal,,trees,medium
+1. two sum,,array & hashing,easy
+371. sum of two integers,,bit manipulation,medium
+57. insert interval,,intervals,medium
+73. set matrix zeroes,,math & geometry,medium
+200. number of islands,,graphs,medium
+139. word break,,1-D DP,medium
+226. invert binary tree,,trees,easy
+11. container with most water,,two pointers,medium
+33. search in rotated sorted array,,binary search,medium
+191. number of 1 bits,,bit manipulation,easy
+3. longest substring without repeating characters,,sliding windows,medium
+323. number of connected components in an undirected graph,,graphs,medium
+91. decode way,,1-D DP,medium
+1143. longest common subsequence,,2-D DP,medium
+100. same tree,,trees,easy
+238. product of array except self,,array & hashing,medium
+79. word search,,backtracking,medium
+207. course schedule,,graphs,medium
+269. alien dictionary,,advance graphs,hard
+141. linked list cycle,,linked list,easy
+300. longest increasing subsequence,,1-D DP,medium
+19. remove Nth node from end of list,,linked list,medium
+124. binary tree maximum path sum,,trees,hard
+133. clone graph,,graphs,medium
+153. find minimum in rotated sorted array,,binary search,medium
+235. lowest common ancestor of a binary search tree,,trees,medium
+21. merge two sorted lists,,linked list,easy
+5. longest palindromic substring,,1-D DP,medium
+23. merge k sorted lists,,linked list,hard
+20. valid parentheses,,stack,easy
+104. maximum depth of binary tree,,trees,easy
+49. group anagrams,,array & hashing,medium
+76. minimum window substring,,sliding windows,hard
+15. 3sum,,two pointers,medium
+105. construct binary tree from preorder and inorder traversal,,trees,medium
+572. subtree of another tree,,trees,easy
+261. graph valid tree,,graphs,medium
+58. spiral matrix,,math & geometry,medium
+297. serialized and deserialize binary tree,,trees,hard
+190.  reverse bits,,bit manipulation,easy
+198. house robber,,1-D DP,medium
+322. coin change,,1-D DP,medium
+424. longest repeating character relacement,,sliding windows,medium
+212. word search 2,,tries,hard
+271. encode and decode strings,,array & hashing,medium
+253. meeting rooms 2,,intervals,medium
+98. validate binary search tree,,trees,medium
+242. valid anagram,,array & hashing,easy
+56. merge intervals,,intervals,medium

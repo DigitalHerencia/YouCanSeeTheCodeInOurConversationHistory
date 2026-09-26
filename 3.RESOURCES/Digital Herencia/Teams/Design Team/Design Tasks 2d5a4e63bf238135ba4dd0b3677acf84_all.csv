@@ -1,0 +1,56 @@
+﻿Task,Add Task,Select
+T01 Advanced dashboards,,DES-M3-P3.1-ADVUX – Advanced UX
+T02 Data density optimization,,DES-M3-P3.1-ADVUX – Advanced UX
+T03 Usability improvements,,DES-M3-P3.1-ADVUX – Advanced UX
+T04 Mobile refinement,,DES-M3-P3.1-ADVUX – Advanced UX
+T05 Design documentation,,DES-M3-P3.1-ADVUX – Advanced UX
+T01 High-fidelity designs,,DES-M2-P2.1-MVPUI – MVP UI
+T02 Responsive layouts,,DES-M2-P2.1-MVPUI – MVP UI
+T03 Component specs,,DES-M2-P2.1-MVPUI – MVP UI
+T04 Accessibility review,,DES-M2-P2.1-MVPUI – MVP UI
+T05 Implementation review,,DES-M2-P2.1-MVPUI – MVP UI
+T01 Core user flows,,DES-M1-P1.1-UXARCH – UX Architecture
+T02 Information architecture,,DES-M1-P1.1-UXARCH – UX Architecture
+T03 Design system alignment,,DES-M1-P1.1-UXARCH – UX Architecture
+T04 Low-fidelity prototypes,,DES-M1-P1.1-UXARCH – UX Architecture
+T05 Handoff to Engineering,,DES-M1-P1.1-UXARCH – UX Architecture
+T01 Cross-check UX against PRD,,DES-M1-P1.1-DESVERIFY – Design Verification
+T02 Validate user journeys,,DES-M1-P1.1-DESVERIFY – Design Verification
+T03 Identify missing screens,,DES-M1-P1.1-DESVERIFY – Design Verification
+T04 UX risk assessment,,DES-M1-P1.1-DESVERIFY – Design Verification
+T05 Verification sign-off,,DES-M1-P1.1-DESVERIFY – Design Verification
+T01 Define design tokens,,DES-M1-P1.2-DESCONF – Design System Configuration
+T02 Theme & color config,,DES-M1-P1.2-DESCONF – Design System Configuration
+T03 Typography scale setup,,DES-M1-P1.2-DESCONF – Design System Configuration
+T04 Component state mapping,,DES-M1-P1.2-DESCONF – Design System Configuration
+T05 Config validation,,DES-M1-P1.2-DESCONF – Design System Configuration
+T01 Validate UX flows in alpha,,DES-M1-P1.3-DESVALIDATE – UX Validation
+T02 Edge-case review,,DES-M1-P1.3-DESVALIDATE – UX Validation
+T03 Error-state validation,,DES-M1-P1.3-DESVALIDATE – UX Validation
+T04 Accessibility validation,,DES-M1-P1.3-DESVALIDATE – UX Validation
+T05 UX validation approval,,DES-M1-P1.3-DESVALIDATE – UX Validation
+T01 Identify UX friction points,,DES-M2-P2.1-DESDEBUG – UX Debug & Friction
+T02 Review user confusion areas,,DES-M2-P2.1-DESDEBUG – UX Debug & Friction
+T03 Iterate problematic flows,,DES-M2-P2.1-DESDEBUG – UX Debug & Friction
+T04 Validate fixes with ENG,,DES-M2-P2.1-DESDEBUG – UX Debug & Friction
+T05 Debug sign-off,,DES-M2-P2.1-DESDEBUG – UX Debug & Friction
+T01 Permission-denied states,,DES-M2-P2.2-DESSEC – UX Security & Permissions
+T02 Role-based UI visibility,,DES-M2-P2.2-DESSEC – UX Security & Permissions
+T03 Secure empty states,,DES-M2-P2.2-DESSEC – UX Security & Permissions
+T04 Redaction & masking rules,,DES-M2-P2.2-DESSEC – UX Security & Permissions
+T05 Security UX approval,,DES-M2-P2.2-DESSEC – UX Security & Permissions
+T01 Define UX metrics,,DES-M3-P3.1-DESOBS – UX Observability
+T02 Dashboard usability signals,,DES-M3-P3.1-DESOBS – UX Observability
+T03 Funnel drop-off review,,DES-M3-P3.1-DESOBS – UX Observability
+T04 Feedback loop definition,,DES-M3-P3.1-DESOBS – UX Observability
+T05 Observability sign-off,,DES-M3-P3.1-DESOBS – UX Observability
+T01 Design system docs,,DES-M3-P3.3-DESDOCS – Design Documentation
+T02 Component usage guidelines,,DES-M3-P3.3-DESDOCS – Design Documentation
+T03 Handoff specs to ENG,,DES-M3-P3.3-DESDOCS – Design Documentation
+T04 Update Figma libraries,,DES-M3-P3.3-DESDOCS – Design Documentation
+T05 Documentation approval,,DES-M3-P3.3-DESDOCS – Design Documentation
+T01 Review UX feedback backlog,,DES-M3-P3.3-DESUPDATES – UX Iteration & Updates
+T02 Prioritize UX improvements,,DES-M3-P3.3-DESUPDATES – UX Iteration & Updates
+T03 Implement minor refinements,,DES-M3-P3.3-DESUPDATES – UX Iteration & Updates
+T04 Validate changes with Product,,DES-M3-P3.3-DESUPDATES – UX Iteration & Updates
+T05 UX update sign-off,,DES-M3-P3.3-DESUPDATES – UX Iteration & Updates

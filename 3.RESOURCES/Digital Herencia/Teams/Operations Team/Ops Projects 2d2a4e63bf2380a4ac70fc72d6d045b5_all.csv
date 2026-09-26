@@ -1,0 +1,20 @@
+﻿Name,Create Project,Phase
+OPS-M1-P1.1-GOV – LLC & Governance,,P1.1 Product Discovery & Business Definition
+OPS-M1-P1.1-OKR – OKRs & Constraints,,P1.1 Product Discovery & Business Definition
+OPS-M1-P1.2-CUSTOPS – Customer & Revenue Ops,,P1.2 Platform & Operations Scaffolding
+OPS-M1-P1.3-RISK – Risk & Readiness,,P1.3 Internal Alpha Validation
+OPS-M2-P2.2-LAUNCHOPS – Launch Operations,,P2.2 QA & Launch Readiness
+OPS-M3-P3.2-COMPLY – Compliance & Scale,,P3.2 Platform Hardening & Security
+OPS-M1-P1.1-VERIFY – Operational Verification,,P1.1 Product Discovery & Business Definition
+OPS-M1-P1.2-CONFIG – Operations Configuration,,P1.2 Platform & Operations Scaffolding
+OPS-M1-P1.3-DATA – Operations Data & Billing Models,,P1.3 Internal Alpha Validation
+OPS-M1-P1.3-AUTH – Operations Access Control,,P1.3 Internal Alpha Validation
+OPS-M2-P2.1-TEST – Operations Testing & Drills,,P2.1 Core Feature Implementation
+OPS-M2-P2.2-VALIDATE – Operations Validation,,P2.2 QA & Launch Readiness
+OPS-M2-P2.2-DEBUG – Operations Incident Handling,,P2.2 QA & Launch Readiness
+OPS-M3-P3.1-SEC – Operations Security Review,,P3.1 Feature Expansion
+OPS-M3-P3.1-OBS – Operations Observability,,P3.1 Feature Expansion
+OPS-M3-P3.2-CICD – Operations Release Controls,,P3.2 Platform Hardening & Security
+OPS-M3-P3.3-DEPLOY – Operations Deployment Authority,,P3.3 Growth Enablement
+OPS-M3-P3.3-DOCS – Operations Documentation,,P3.3 Growth Enablement
+OPS-M3-P3.3-UPDATES – Operations Maintenance & Updates,,P3.3 Growth Enablement

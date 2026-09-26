@@ -1,0 +1,23 @@
+# Daily Standup @April 15, 2026
+
+Type: Standup
+Created: April 15, 2026
+Cadence: Daily
+Team: Product Team (../Teams/Product%20Team%202d5a4e63bf23818da26bc86434571d4a.md), Research Team (../Teams/Research%20Team%202d5a4e63bf2380fdbf70f6d679ba0d14.md), Marketing Team (../Teams/Marketing%20Team%202d5a4e63bf2380819ff6e8ecf118aee6.md)
+Archived: No
+
+# What did we do yesterday?
+
+- 
+
+# What are we doing today?
+
+- 
+
+# Potential blockers?
+
+- 
+
+# Action items
+
+- [ ]  [ ]

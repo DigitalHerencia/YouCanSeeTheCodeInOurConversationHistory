@@ -1,0 +1,96 @@
+﻿Task name,Add Tasks,Project
+T01 Draft operating agreement,,OPS-M1-P1.1-GOV – LLC & Governance
+T02 Execute IP assignments,,OPS-M1-P1.1-GOV – LLC & Governance
+T03 Set up banking & accounting,,OPS-M1-P1.1-GOV – LLC & Governance
+T04 Define vendor authority,,OPS-M1-P1.1-GOV – LLC & Governance
+T05 Archive legal documents,,OPS-M1-P1.1-GOV – LLC & Governance
+T01 Define company objectives,,OPS-M1-P1.1-OKR – OKRs & Constraints
+T02 Define key results,,OPS-M1-P1.1-OKR – OKRs & Constraints
+T03 Align team OKRs,,OPS-M1-P1.1-OKR – OKRs & Constraints
+T04 Align budgets to OKRs,,OPS-M1-P1.1-OKR – OKRs & Constraints
+T05 Publish OKRs,,OPS-M1-P1.1-OKR – OKRs & Constraints
+T01 Define customer lifecycle,,OPS-M1-P1.2-CUSTOPS – Customer & Revenue Ops
+T02 Configure CRM pipelines,,OPS-M1-P1.2-CUSTOPS – Customer & Revenue Ops
+T03 Define billing policies,,OPS-M1-P1.2-CUSTOPS – Customer & Revenue Ops
+T04 Define refund/cancellation rules,,OPS-M1-P1.2-CUSTOPS – Customer & Revenue Ops
+T05 Define support workflows,,OPS-M1-P1.2-CUSTOPS – Customer & Revenue Ops
+T01 Legal risk review,,OPS-M1-P1.3-RISK – Risk & Readiness
+T02 Financial exposure review,,OPS-M1-P1.3-RISK – Risk & Readiness
+T03 Customer policy validation,,OPS-M1-P1.3-RISK – Risk & Readiness
+T04 Alpha readiness sign-off,,OPS-M1-P1.3-RISK – Risk & Readiness
+T05 Go/No-Go recommendation,,OPS-M1-P1.3-RISK – Risk & Readiness
+T01 Validate billing flows,,OPS-M2-P2.2-LAUNCHOPS – Launch Operations
+T02 Finalize policies,,OPS-M2-P2.2-LAUNCHOPS – Launch Operations
+T03 Prepare support escalation,,OPS-M2-P2.2-LAUNCHOPS – Launch Operations
+T04 Incident response plan,,OPS-M2-P2.2-LAUNCHOPS – Launch Operations
+T05 Launch authorization,,OPS-M2-P2.2-LAUNCHOPS – Launch Operations
+T01 Admin access audit,,OPS-M3-P3.2-COMPLY – Compliance & Scale
+T03 Enterprise contracts,,OPS-M3-P3.2-COMPLY – Compliance & Scale
+T02 Data retention review,,OPS-M3-P3.2-COMPLY – Compliance & Scale
+T04 Financial forecast update,,OPS-M3-P3.2-COMPLY – Compliance & Scale
+T05 Executive ops report,,OPS-M3-P3.2-COMPLY – Compliance & Scale
+T01 Verify operational prerequisites,,OPS-M1-P1.1-VERIFY – Operational Verification
+T02 Validate policies readiness,,OPS-M1-P1.1-VERIFY – Operational Verification
+T03 Confirm billing assumptions,,OPS-M1-P1.1-VERIFY – Operational Verification
+T04 Verify support readiness,,OPS-M1-P1.1-VERIFY – Operational Verification
+T05 Verification sign-off,,OPS-M1-P1.1-VERIFY – Operational Verification
+T01 Configure billing environments,,OPS-M1-P1.2-CONFIG – Operations Configuration
+T02 Configure support tooling,,OPS-M1-P1.2-CONFIG – Operations Configuration
+T03 Configure escalation paths,,OPS-M1-P1.2-CONFIG – Operations Configuration
+T04 Align configs with ENG,,OPS-M1-P1.2-CONFIG – Operations Configuration
+T05 Configuration approval,,OPS-M1-P1.2-CONFIG – Operations Configuration
+T01 Define billing data fields,,OPS-M1-P1.3-DATA – Operations Data & Billing Models
+T02 Define audit log requirements,,OPS-M1-P1.3-DATA – Operations Data & Billing Models
+T03 Define retention policies,,OPS-M1-P1.3-DATA – Operations Data & Billing Models
+T04 Validate data assumptions,,OPS-M1-P1.3-DATA – Operations Data & Billing Models
+T05 Data sign-off,,OPS-M1-P1.3-DATA – Operations Data & Billing Models
+T02 Define permissions boundaries,,OPS-M1-P1.3-AUTH – Operations Access Control
+T01 Define ops admin roles,,OPS-M1-P1.3-AUTH – Operations Access Control
+T03 Validate access enforcement,,OPS-M1-P1.3-AUTH – Operations Access Control
+T04 Review privilege escalation risks,,OPS-M1-P1.3-AUTH – Operations Access Control
+T05 Access approval,,OPS-M1-P1.3-AUTH – Operations Access Control
+T01 Incident simulation drill,,OPS-M2-P2.1-TEST – Operations Testing & Drills
+T02 Billing failure drill,,OPS-M2-P2.1-TEST – Operations Testing & Drills
+T03 Support escalation test,,OPS-M2-P2.1-TEST – Operations Testing & Drills
+T04 Ops readiness review,,OPS-M2-P2.1-TEST – Operations Testing & Drills
+T05 Testing sign-off,,OPS-M2-P2.1-TEST – Operations Testing & Drills
+T01 Validate billing correctness,,OPS-M2-P2.2-VALIDATE – Operations Validation
+T02 Validate refund workflows,,OPS-M2-P2.2-VALIDATE – Operations Validation
+T03 Validate support SLAs,,OPS-M2-P2.2-VALIDATE – Operations Validation
+T04 Validate compliance posture,,OPS-M2-P2.2-VALIDATE – Operations Validation
+T05 Validation approval,,OPS-M2-P2.2-VALIDATE – Operations Validation
+T01 Triage operational incidents,,OPS-M2-P2.2-DEBUG – Operations Incident Handling
+T02 Root cause analysis,,OPS-M2-P2.2-DEBUG – Operations Incident Handling
+T03 Coordinate fixes with ENG,,OPS-M2-P2.2-DEBUG – Operations Incident Handling
+T04 Post-incident review,,OPS-M2-P2.2-DEBUG – Operations Incident Handling
+T05 Incident closure,,OPS-M2-P2.2-DEBUG – Operations Incident Handling
+T01 Review ops security posture,,OPS-M3-P3.1-SEC – Operations Security Review
+T02 Review billing abuse risks,,OPS-M3-P3.1-SEC – Operations Security Review
+T03 Audit admin access,,OPS-M3-P3.1-SEC – Operations Security Review
+T04 Mitigation actions,,OPS-M3-P3.1-SEC – Operations Security Review
+T05 Security approval,,OPS-M3-P3.1-SEC – Operations Security Review
+T01 Define ops KPIs,,OPS-M3-P3.1-OBS – Operations Observability
+T02 Define alert thresholds,,OPS-M3-P3.1-OBS – Operations Observability
+T03 Incident metric tracking,,OPS-M3-P3.1-OBS – Operations Observability
+T04 Review observability data,,OPS-M3-P3.1-OBS – Operations Observability
+T05 Observability sign-off,,OPS-M3-P3.1-OBS – Operations Observability
+T01 Define release approval gates,,OPS-M3-P3.2-CICD – Operations Release Controls
+T02 Validate CI/CD checks,,OPS-M3-P3.2-CICD – Operations Release Controls
+T04 Release readiness review,,OPS-M3-P3.2-CICD – Operations Release Controls
+T03 Define rollback authority,,OPS-M3-P3.2-CICD – Operations Release Controls
+T05 Release approval,,OPS-M3-P3.2-CICD – Operations Release Controls
+T01 Go-live authorization,,OPS-M3-P3.3-DEPLOY – Operations Deployment Authority
+T02 Monitor post-deploy health,,OPS-M3-P3.3-DEPLOY – Operations Deployment Authority
+T03 Incident standby,,OPS-M3-P3.3-DEPLOY – Operations Deployment Authority
+T04 Rollback decision protocol,,OPS-M3-P3.3-DEPLOY – Operations Deployment Authority
+T05 Deployment sign-off,,OPS-M3-P3.3-DEPLOY – Operations Deployment Authority
+T01 Maintain ops runbooks,,OPS-M3-P3.3-DOCS – Operations Documentation
+T02 Maintain escalation docs,,OPS-M3-P3.3-DOCS – Operations Documentation
+T03 Update billing procedures,,OPS-M3-P3.3-DOCS – Operations Documentation
+T04 Archive outdated docs,,OPS-M3-P3.3-DOCS – Operations Documentation
+T05 Documentation approval,,OPS-M3-P3.3-DOCS – Operations Documentation
+T01 Review ops backlog,,OPS-M3-P3.3-UPDATES – Operations Maintenance & Updates
+T02 Apply process improvements,,OPS-M3-P3.3-UPDATES – Operations Maintenance & Updates
+T03 Update policies,,OPS-M3-P3.3-UPDATES – Operations Maintenance & Updates
+T04 Sync with Product & ENG,,OPS-M3-P3.3-UPDATES – Operations Maintenance & Updates
+T05 Update sign-off,,OPS-M3-P3.3-UPDATES – Operations Maintenance & Updates

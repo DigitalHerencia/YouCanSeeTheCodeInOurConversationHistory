@@ -1,0 +1,8 @@
+# RES-M1-P1.1-A&S - Arrays & Strings
+
+Meetings: Sprint Planning @January 3, 2026  (../Meetings/Sprint%20Planning%20@January%203,%202026%202dda4e63bf23819ebd3dfd911c156c9b.md)
+Projects: RES-M1-P1.1-A&S - Arrays & Strings  (../Projects/RES-M1-P1%201-A&S%20-%20Arrays%20&%20Strings%202dba4e63bf238078b705e88338208ff2.md)
+Status: Done
+Sub-item: T01 Core concepts & complexity  (T01%20Core%20concepts%20&%20complexity%202e2a4e63bf2380a58518fbeb8ac33bd5.md), TO2 Sliding window patterns (TO2%20Sliding%20window%20patterns%202e2a4e63bf238123a4e4c63f8f9d317c.md), T03 Two pointer patterns  (T03%20Two%20pointer%20patterns%202e2a4e63bf2380ef8208e377f53ca07b.md), T04 Implementation drills  (T04%20Implementation%20drills%202e2a4e63bf23802fab01c6874478a074.md), T05 128. longest consecutive sequence  (T05%20128%20longest%20consecutive%20sequence%202e5a4e63bf238032ac69c98dfc0d2327.md)
+Tasks: T01 Core concepts & complexity (../Tasks/T01%20Core%20concepts%20&%20complexity%202dba4e63bf238078bfcbd06cbd73c125.md), T02 Sliding window patterns (../Tasks/T02%20Sliding%20window%20patterns%202dca4e63bf2380688eafd817f254f13d.md), T03 Two pointer patterns  (../Tasks/T03%20Two%20pointer%20patterns%202e2a4e63bf23802086d8ca830a5e9a8f.md), T04 Implementation drills  (../Tasks/T04%20Implementation%20drills%202e2a4e63bf2380778601de9cb859f907.md)
+Teams: Research Team (../Teams/Research%20Team%202d5a4e63bf2380fdbf70f6d679ba0d14.md)

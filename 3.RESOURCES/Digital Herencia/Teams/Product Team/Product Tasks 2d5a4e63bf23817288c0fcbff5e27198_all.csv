@@ -1,0 +1,71 @@
+﻿Task name,Add Task,Project
+T01 Market synthesis,,PROD-M1-P1.1-PRD – Problem Definition
+T02 Tenant & RBAC assumptions,,PROD-M1-P1.1-PRD – Problem Definition
+T03 Draft PRDs,,PROD-M1-P1.1-PRD – Problem Definition
+T04 Pricing & packaging,,PROD-M1-P1.1-PRD – Problem Definition
+T05 Feasibility review,,PROD-M1-P1.1-PRD – Problem Definition
+T01 Feature review,,PROD-M1-P1.3-ALPHA – Alpha Validation
+T02 UX flow validation,,PROD-M1-P1.3-ALPHA – Alpha Validation
+T03 Risk register review,,PROD-M1-P1.3-ALPHA – Alpha Validation
+T04 Scope adjustments,,PROD-M1-P1.3-ALPHA – Alpha Validation
+T05 MVP readiness sign-off,,PROD-M1-P1.3-ALPHA – Alpha Validation
+T01 Lock MVP scope,,PROD-M2-P2.1-MVP – MVP Scope Control
+T02 Clarify requirements,,PROD-M2-P2.1-MVP – MVP Scope Control
+T03 Backlog grooming,,PROD-M2-P2.1-MVP – MVP Scope Control
+T04 Change control decisions,,PROD-M2-P2.1-MVP – MVP Scope Control
+T05 Define release criteria,,PROD-M2-P2.1-MVP – MVP Scope Control
+T01 Review customer feedback,,PROD-M2-P2.3-FEEDBACK – Feedback Analysis
+T02 Analyze usage metrics,,PROD-M2-P2.3-FEEDBACK – Feedback Analysis
+T03 Analyze conversions,,PROD-M2-P2.3-FEEDBACK – Feedback Analysis
+T04 Validate MVP outcomes,,PROD-M2-P2.3-FEEDBACK – Feedback Analysis
+T05 Adjust roadmap,,PROD-M2-P2.3-FEEDBACK – Feedback Analysis
+T01 Prioritize features,,PROD-M3-P3.1-ADV – Advanced Planning
+T02 Define enterprise needs,,PROD-M3-P3.1-ADV – Advanced Planning
+T03 Non-functional specs,,PROD-M3-P3.1-ADV – Advanced Planning
+T04 Update roadmap,,PROD-M3-P3.1-ADV – Advanced Planning
+T05 Draft next PRDs,,PROD-M3-P3.1-ADV – Advanced Planning
+T01 Cross-check PRD vs TechReq,,PROD-M1-P1.1-VERIFY – PRD Verification
+T02 Validate assumptions & constraints,,PROD-M1-P1.1-VERIFY – PRD Verification
+T03 Identify missing requirements,,PROD-M1-P1.1-VERIFY – PRD Verification
+T04 Resolve inconsistencies,,PROD-M1-P1.1-VERIFY – PRD Verification
+T05 Verification sign-off,,PROD-M1-P1.1-VERIFY – PRD Verification
+T01 Define feature flags,,PROD-M1-P1.2-CONFIG – Product Configuration
+T02 Define plan-level constraints,,PROD-M1-P1.2-CONFIG – Product Configuration
+T03 Define rollout rules,,PROD-M1-P1.2-CONFIG – Product Configuration
+T04 Align config with ENG,,PROD-M1-P1.2-CONFIG – Product Configuration
+T05 Configuration approval,,PROD-M1-P1.2-CONFIG – Product Configuration
+T01 Define core entities,,PROD-M1-P1.3-DATA – Product Data Contracts
+T02 Define required fields,,PROD-M1-P1.3-DATA – Product Data Contracts
+T03 Define lifecycle rules,,PROD-M1-P1.3-DATA – Product Data Contracts
+T04 Validate data assumptions,,PROD-M1-P1.3-DATA – Product Data Contracts
+T05 Data contract sign-off,,PROD-M1-P1.3-DATA – Product Data Contracts
+T01 Define roles & permissions,,PROD-M1-P1.3-AUTH – Product Auth & Plans
+T02 Define plan gating rules,,PROD-M1-P1.3-AUTH – Product Auth & Plans
+T04 Validate auth logic,,PROD-M1-P1.3-AUTH – Product Auth & Plans
+T03 Map features to plans,,PROD-M1-P1.3-AUTH – Product Auth & Plans
+T05 Auth approval,,PROD-M1-P1.3-AUTH – Product Auth & Plans
+T01 Validate business logic,,PROD-M2-P2.1-VALIDATE – Product Validation
+T02 Validate user workflows,,PROD-M2-P2.1-VALIDATE – Product Validation
+T03 Validate edge cases,,PROD-M2-P2.1-VALIDATE – Product Validation
+T04 Validate cross-feature flows,,PROD-M2-P2.1-VALIDATE – Product Validation
+T05 Validation sign-off,,PROD-M2-P2.1-VALIDATE – Product Validation
+T01 Identify product risks,,PROD-M2-P2.2-SEC – Product Security Review
+T02 Review permission exposure,,PROD-M2-P2.2-SEC – Product Security Review
+T03 Review billing abuse risks,,PROD-M2-P2.2-SEC – Product Security Review
+T04 Mitigation recommendations,,PROD-M2-P2.2-SEC – Product Security Review
+T05 Security approval,,PROD-M2-P2.2-SEC – Product Security Review
+T02 Define success metrics,,PROD-M3-P3.1-OBS – Product Observability
+T01 Define core KPIs,,PROD-M3-P3.1-OBS – Product Observability
+T03 Define funnel metrics,,PROD-M3-P3.1-OBS – Product Observability
+T04 Align metrics with ENG,,PROD-M3-P3.1-OBS – Product Observability
+T05 Observability sign-off,,PROD-M3-P3.1-OBS – Product Observability
+T01 Maintain PRD updates,,PROD-M3-P3.3-DOCS – Product Documentation
+T02 Maintain TechReq updates,,PROD-M3-P3.3-DOCS – Product Documentation
+T03 Archive obsolete specs,,PROD-M3-P3.3-DOCS – Product Documentation
+T04 Document decisions,,PROD-M3-P3.3-DOCS – Product Documentation
+T05 Documentation approval,,PROD-M3-P3.3-DOCS – Product Documentation
+T01 Review feedback backlog,,PROD-M3-P3.3-UPDATES – Product Iteration & Updates
+T02 Prioritize improvements,,PROD-M3-P3.3-UPDATES – Product Iteration & Updates
+T03 Adjust roadmap,,PROD-M3-P3.3-UPDATES – Product Iteration & Updates
+T04 Sync with Design & ENG,,PROD-M3-P3.3-UPDATES – Product Iteration & Updates
+T05 Update sign-off,,PROD-M3-P3.3-UPDATES – Product Iteration & Updates

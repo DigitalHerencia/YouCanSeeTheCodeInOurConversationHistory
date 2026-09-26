@@ -1,0 +1,12 @@
+﻿Name,Add Project,Phase
+DES-M1-P1.1-UXARCH – UX Architecture,,P1.1 Product Discovery & Business Definition
+DES-M2-P2.1-MVPUI – MVP UI,,P2.1 Core Feature Implementation
+DES-M3-P3.1-ADVUX – Advanced UX,,P3.1 Feature Expansion
+DES-M1-P1.1-DESVERIFY – Design Verification,,P1.1 Product Discovery & Business Definition
+DES-M1-P1.2-DESCONF – Design System Configuration,,P1.2 Platform & Operations Scaffolding
+DES-M1-P1.3-DESVALIDATE – UX Validation,,P1.3 Internal Alpha Validation
+DES-M2-P2.1-DESDEBUG – UX Debug & Friction,,P2.1 Core Feature Implementation
+DES-M2-P2.2-DESSEC – UX Security & Permissions,,P2.2 QA & Launch Readiness
+DES-M3-P3.1-DESOBS – UX Observability,,P3.1 Feature Expansion
+DES-M3-P3.3-DESDOCS – Design Documentation,,P3.3 Growth Enablement
+DES-M3-P3.3-DESUPDATES – UX Iteration & Updates,,P3.3 Growth Enablement

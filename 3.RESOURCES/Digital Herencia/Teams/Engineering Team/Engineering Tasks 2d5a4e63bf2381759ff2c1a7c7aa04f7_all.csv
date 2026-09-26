@@ -1,0 +1,101 @@
+﻿Task name,Add Task,Project
+T01 Repo initialization,,ENG-M1-P1.2-SCAFF – Architecture Setup
+T02 Next.js configuration,,ENG-M1-P1.2-SCAFF – Architecture Setup
+T03 Prisma schema,,ENG-M1-P1.2-SCAFF – Architecture Setup
+T04 Clerk integration,,ENG-M1-P1.2-SCAFF – Architecture Setup
+T05 CI/CD setup,,ENG-M1-P1.2-SCAFF – Architecture Setup
+T01 Feature integration,,ENG-M1-P1.3-ALPHA – Alpha Build
+T02 Security baseline,,ENG-M1-P1.3-ALPHA – Alpha Build
+T03 Observability setup,,ENG-M1-P1.3-ALPHA – Alpha Build
+T04 Internal testing,,ENG-M1-P1.3-ALPHA – Alpha Build
+T05 Alpha deployment,,ENG-M1-P1.3-ALPHA – Alpha Build
+T01 Tenant isolation,,ENG-M2-P2.1-MVP – MVP Build
+T02 RBAC enforcement,,ENG-M2-P2.1-MVP – MVP Build
+T03 Billing webhooks,,ENG-M2-P2.1-MVP – MVP Build
+T04 Core UI implementation,,ENG-M2-P2.1-MVP – MVP Build
+T05 Tests & deployment,,ENG-M2-P2.1-MVP – MVP Build
+T01 Performance optimization,,ENG-M3-P3.2-HARD – Hardening
+T02 Security patches,,ENG-M3-P3.2-HARD – Hardening
+T03 Permission audits,,ENG-M3-P3.2-HARD – Hardening
+T04 Bug fixes,,ENG-M3-P3.2-HARD – Hardening
+T05 Monitoring improvements,,ENG-M3-P3.2-HARD – Hardening
+T01 Audit workspace & repo state,,ENG-M1-P1.1-INIT – Environment Initialization
+T02 Validate PRD & TechReq presence,,ENG-M1-P1.1-INIT – Environment Initialization
+T03 Validate MCP & tooling availability,,ENG-M1-P1.1-INIT – Environment Initialization
+T04 Environment readiness report,,ENG-M1-P1.1-INIT – Environment Initialization
+T05 Initialization sign-off,,ENG-M1-P1.1-INIT – Environment Initialization
+T01 ESLint / Prettier config,,ENG-M1-P1.2-CONFIG – Project Configuration
+T02 TypeScript strict config,,ENG-M1-P1.2-CONFIG – Project Configuration
+T03 Env variable templates,,ENG-M1-P1.2-CONFIG – Project Configuration
+T04 Tooling alignment check,,ENG-M1-P1.2-CONFIG – Project Configuration
+T05 Configuration validation,,ENG-M1-P1.2-CONFIG – Project Configuration
+T01 Entity & relationship mapping,,ENG-M1-P1.3-DATA – Data Layer Definition
+T02 Migration plan,,ENG-M1-P1.3-DATA – Data Layer Definition
+T03 Seed data definition,,ENG-M1-P1.3-DATA – Data Layer Definition
+T04 Data constraint validation,,ENG-M1-P1.3-DATA – Data Layer Definition
+T05 Data spec sign-off,,ENG-M1-P1.3-DATA – Data Layer Definition
+T01 Tenant model definition,,ENG-M1-P1.3-AUTH – Auth & RBAC
+T02 Role & permission matrix,,ENG-M1-P1.3-AUTH – Auth & RBAC
+T03 Clerk webhook sync logic,,ENG-M1-P1.3-AUTH – Auth & RBAC
+T04 Server-side enforcement,,ENG-M1-P1.3-AUTH – Auth & RBAC
+T05 Auth validation,,ENG-M1-P1.3-AUTH – Auth & RBAC
+T01 Core domain features,,ENG-M2-P2.1-FEATURES – Feature Development
+T02 UI to data wiring,,ENG-M2-P2.1-FEATURES – Feature Development
+T03 Feature flag gating,,ENG-M2-P2.1-FEATURES – Feature Development
+T04 Business logic integration,,ENG-M2-P2.1-FEATURES – Feature Development
+T05 Feature readiness,,ENG-M2-P2.1-FEATURES – Feature Development
+T01 Unit test plan,,ENG-M2-P2.1-TEST – Testing Strategy
+T03 E2E flows,,ENG-M2-P2.1-TEST – Testing Strategy
+T02 Integration test plan,,ENG-M2-P2.1-TEST – Testing Strategy
+T04 Test automation setup,,ENG-M2-P2.1-TEST – Testing Strategy
+T05 Coverage verification,,ENG-M2-P2.1-TEST – Testing Strategy
+T01 Defect triage,,ENG-M2-P2.2-DEBUG – Debug & Fixes
+T02 Root cause analysis,,ENG-M2-P2.2-DEBUG – Debug & Fixes
+T03 Patch application,,ENG-M2-P2.2-DEBUG – Debug & Fixes
+T04 Regression testing,,ENG-M2-P2.2-DEBUG – Debug & Fixes
+T05 Debug sign-off,,ENG-M2-P2.2-DEBUG – Debug & Fixes
+T01 Business logic validation,,ENG-M2-P2.2-VALIDATE – System Validation
+T02 UX flow validation,,ENG-M2-P2.2-VALIDATE – System Validation
+T03 Data contract validation,,ENG-M2-P2.2-VALIDATE – System Validation
+T04 Auth boundary validation,,ENG-M2-P2.2-VALIDATE – System Validation
+T05 Validation approval,,ENG-M2-P2.2-VALIDATE – System Validation
+T01 CI workflows,,ENG-M2-P2.3-CICD – CI/CD Pipeline
+T02 CD workflows,,ENG-M2-P2.3-CICD – CI/CD Pipeline
+T03 Secrets management,,ENG-M2-P2.3-CICD – CI/CD Pipeline
+T04 Rollback strategy,,ENG-M2-P2.3-CICD – CI/CD Pipeline
+T05 CI/CD validation,,ENG-M2-P2.3-CICD – CI/CD Pipeline
+T01 Auth boundary audit,,ENG-M3-P3.1-SEC – Security Hardening
+T02 PII handling audit,,ENG-M3-P3.1-SEC – Security Hardening
+T03 Header & policy setup,,ENG-M3-P3.1-SEC – Security Hardening
+T04 Toolset access review,,ENG-M3-P3.1-SEC – Security Hardening
+T05 Security approval,,ENG-M3-P3.1-SEC – Security Hardening
+T01 Bottleneck analysis,,ENG-M3-P3.1-PERF – Performance Optimization
+T02 Query optimization,,ENG-M3-P3.1-PERF – Performance Optimization
+T03 Dependency audit,,ENG-M3-P3.1-PERF – Performance Optimization
+T04 Resource optimization,,ENG-M3-P3.1-PERF – Performance Optimization
+T05 Performance sign-off,,ENG-M3-P3.1-PERF – Performance Optimization
+T01 Logging specification,,ENG-M3-P3.2-OBS – Observability
+T02 Metrics definition,,ENG-M3-P3.2-OBS – Observability
+T03 Tracing plan,,ENG-M3-P3.2-OBS – Observability
+T04 Alert thresholds,,ENG-M3-P3.2-OBS – Observability
+T05 Observability validation,,ENG-M3-P3.2-OBS – Observability
+T01 PR review standards,,ENG-M3-P3.2-REVIEW – Code Review
+T02 Static analysis,,ENG-M3-P3.2-REVIEW – Code Review
+T03 Feature completeness review,,ENG-M3-P3.2-REVIEW – Code Review
+T04 Refactor recommendations,,ENG-M3-P3.2-REVIEW – Code Review
+T05 Merge approval,,ENG-M3-P3.2-REVIEW – Code Review
+T01 Build artifact validation,,ENG-M3-P3.3-DEPLOY – Deployment
+T02 Production deploy,,ENG-M3-P3.3-DEPLOY – Deployment
+T03 Smoke tests,,ENG-M3-P3.3-DEPLOY – Deployment
+T04 Rollback readiness,,ENG-M3-P3.3-DEPLOY – Deployment
+T05 Deploy sign-off,,ENG-M3-P3.3-DEPLOY – Deployment
+T01 README & repo docs,,ENG-M3-P3.3-DOCS – Documentation
+T02 Contributor docs,,ENG-M3-P3.3-DOCS – Documentation
+T03 PR & issue templates,,ENG-M3-P3.3-DOCS – Documentation
+T04 Architecture documentation,,ENG-M3-P3.3-DOCS – Documentation
+T05 Documentation approval,,ENG-M3-P3.3-DOCS – Documentation
+T01 Patch backlog review,,ENG-M3-P3.3-UPDATES – Maintenance & Updates
+T02 Dependency updates,,ENG-M3-P3.3-UPDATES – Maintenance & Updates
+T03 Minor enhancements,,ENG-M3-P3.3-UPDATES – Maintenance & Updates
+T04 Spec reconciliation,,ENG-M3-P3.3-UPDATES – Maintenance & Updates
+T05 Update release notes,,ENG-M3-P3.3-UPDATES – Maintenance & Updates

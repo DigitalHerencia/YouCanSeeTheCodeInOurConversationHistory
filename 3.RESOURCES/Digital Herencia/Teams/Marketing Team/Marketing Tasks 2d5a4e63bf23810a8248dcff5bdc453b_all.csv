@@ -1,0 +1,61 @@
+﻿Name,Add Task,Project
+T01 Positioning statement,,MKT-M1-P1.1-POS – Positioning
+T02 Messaging framework,,MKT-M1-P1.1-POS – Positioning
+T03 Educational content,,MKT-M1-P1.1-POS – Positioning
+T04 Social signal monitoring,,MKT-M1-P1.1-POS – Positioning
+T05 Product language feedback,,MKT-M1-P1.1-POS – Positioning
+T01 Launch assets,,MKT-M2-P2.3-LAUNCH – Launch Campaign
+T02 Campaign execution,,MKT-M2-P2.3-LAUNCH – Launch Campaign
+T03 Traffic generation,,MKT-M2-P2.3-LAUNCH – Launch Campaign
+T04 Engagement monitoring,,MKT-M2-P2.3-LAUNCH – Launch Campaign
+T05 Messaging optimization,,MKT-M2-P2.3-LAUNCH – Launch Campaign
+T01 Feature promotion,,MKT-M3-P3.3-GROW – Growth
+T02 Case studies,,MKT-M3-P3.3-GROW – Growth
+T03 Funnel optimization,,MKT-M3-P3.3-GROW – Growth
+T04 Upsell support,,MKT-M3-P3.3-GROW – Growth
+T05 CAC & ROI reporting,,MKT-M3-P3.3-GROW – Growth
+T01 Audit existing social presence,,MKT-M1-P1.1-PUBSETUP – Public Presence Setup
+T02 Set up Twitter profile,,MKT-M1-P1.1-PUBSETUP – Public Presence Setup
+T03 Set up blog on Digital Herencia,,MKT-M1-P1.1-PUBSETUP – Public Presence Setup
+T04 Define posting surfaces,,MKT-M1-P1.1-PUBSETUP – Public Presence Setup
+T05 Public presence ready,,MKT-M1-P1.1-PUBSETUP – Public Presence Setup
+T01 Define brand voice & tone,,MKT-M1-P1.2-CONFIG – Marketing Configuration
+T02 Define posting cadence,,MKT-M1-P1.2-CONFIG – Marketing Configuration
+T03 Define content pillars,,MKT-M1-P1.2-CONFIG – Marketing Configuration
+T04 Define shitpost vs insight ratio,,MKT-M1-P1.2-CONFIG – Marketing Configuration
+T05 Configuration approval,,MKT-M1-P1.2-CONFIG – Marketing Configuration
+T01 Align messaging with product reality,,MKT-M1-P1.3-VERIFY – Messaging Verification
+T02 Validate claims & positioning,,MKT-M1-P1.3-VERIFY – Messaging Verification
+T03 Validate target audience fit,,MKT-M1-P1.3-VERIFY – Messaging Verification
+T04 Identify overpromises,,MKT-M1-P1.3-VERIFY – Messaging Verification
+T05 Verification signoff,,MKT-M1-P1.3-VERIFY – Messaging Verification
+T01 Define content metrics,,MKT-M2-P2.1-DATA – Marketing Data & Metrics
+T02 Define funnel attribution,,MKT-M2-P2.1-DATA – Marketing Data & Metrics
+T03 Define engagement KPIs,,MKT-M2-P2.1-DATA – Marketing Data & Metrics
+T04 Define weekly reporting,,MKT-M2-P2.1-DATA – Marketing Data & Metrics
+T05 Metrics signoff,,MKT-M2-P2.1-DATA – Marketing Data & Metrics
+T01 Validate blog performance,,MKT-M2-P2.2-VALIDATE – Content Validation
+T02 Validate social engagement,,MKT-M2-P2.2-VALIDATE – Content Validation
+T03 Validate traffic quality,,MKT-M2-P2.2-VALIDATE – Content Validation
+T04 Validate product interest signals,,MKT-M2-P2.2-VALIDATE – Content Validation
+T05 Validation approval,,MKT-M2-P2.2-VALIDATE – Content Validation
+T01 Identify low-performing posts,,MKT-M2-P2.2-DEBUG – Messaging Debug
+T02 Diagnose messaging failures,,MKT-M2-P2.2-DEBUG – Messaging Debug
+T03 Adjust tone or framing,,MKT-M2-P2.2-DEBUG – Messaging Debug
+T04 Retest revised messaging,,MKT-M2-P2.2-DEBUG – Messaging Debug
+T05 Debug sign-off,,MKT-M2-P2.2-DEBUG – Messaging Debug
+T01 Track weekly content metrics,,MKT-M3-P3.1-OBS – Marketing Observability
+T02 Monitor audience growth,,MKT-M3-P3.1-OBS – Marketing Observability
+T03 Monitor engagement trends,,MKT-M3-P3.1-OBS – Marketing Observability
+T04 Identify breakout content,,MKT-M3-P3.1-OBS – Marketing Observability
+T05 Observability sign-off,,MKT-M3-P3.1-OBS – Marketing Observability
+T01 Document brand voice,,MKT-M3-P3.3-DOCS – Marketing Documentation
+T02 Document content formats,,MKT-M3-P3.3-DOCS – Marketing Documentation
+T03 Document posting guidelines,,MKT-M3-P3.3-DOCS – Marketing Documentation
+T04 Document promotion playbooks,,MKT-M3-P3.3-DOCS – Marketing Documentation
+T05 Documentation approval,,MKT-M3-P3.3-DOCS – Marketing Documentation
+T01 Publish weekly product update,,MKT-M3-P3.3-UPDATES – Build in Public & Updates
+T02 Share build-in-public thread,,MKT-M3-P3.3-UPDATES – Build in Public & Updates
+T03 Publish dev blog entry,,MKT-M3-P3.3-UPDATES – Build in Public & Updates
+T04 Cross-post & promote,,MKT-M3-P3.3-UPDATES – Build in Public & Updates
+T05 Weekly update signoff,,MKT-M3-P3.3-UPDATES – Build in Public & Updates
