@@ -1,5 +1,0 @@
-filters: 'resource_state != "archived"'
-views:
-  - type: cards
-    name: Library
-    order: [file.name, resource_role, authority, review_due]

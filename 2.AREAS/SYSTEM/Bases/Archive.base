@@ -1,5 +1,0 @@
-filters: 'status == "archived"'
-views:
-  - type: table
-    name: Archive
-    order: [file.name, archived_at, archive_reason]

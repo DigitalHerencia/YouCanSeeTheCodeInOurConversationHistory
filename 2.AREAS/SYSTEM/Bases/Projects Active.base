@@ -1,0 +1,20 @@
+filters:
+  and:
+    - 'type == "project"'
+    - 'file.inFolder("1.PROJECTS")'
+    - 'status != "done"'
+    - 'status != "cancelled"'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Projects Active"
+    order:
+      - file.name
+      - status
+      - priority
+      - target_end
+      - progress
+      - health
+      - next_action
