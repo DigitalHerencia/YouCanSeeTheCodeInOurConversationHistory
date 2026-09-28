@@ -1,11 +1,11 @@
 ---
 type: document
 document_type: RFC
-id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
-project: <% tp.user.hearthProject(tp) %>
+id:
+project:
 status: proposed
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/document, type/decision]
 ---
 # RFC — {{TITLE}}
@@ -26,11 +26,5 @@ tags: [type/document, type/decision]
 
 ## Decision Record
 
-## Human controls
-Status: `INPUT[select(option(draft), option(review), option(approved), option(superseded), option(archived)):status]` · Review status: `INPUT[select(option(pending), option(in-review), option(approved), option(rejected)):review_status]`
-
 ## Acceptance Criteria
 - [ ]
-
-
-

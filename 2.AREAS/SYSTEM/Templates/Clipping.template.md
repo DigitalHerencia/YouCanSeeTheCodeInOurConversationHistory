@@ -6,8 +6,8 @@ capture_source: web-clipper
 source_url:
 author:
 published:
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/resource]
 ---
 # Web Clipping — {{TITLE}}
@@ -31,6 +31,3 @@ tags: [type/resource]
 - [ ] extract Evergreen
 - [ ] extract Pattern
 - [ ] attach to Project
-
-
-

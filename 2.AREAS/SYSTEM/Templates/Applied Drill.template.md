@@ -1,11 +1,11 @@
 ---
 type: codelab
 codelab_kind: applied-drill
-id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+id:
 task:
 lesson:
 module:
-project: <% tp.user.hearthProject(tp) %>
+project:
 learning_objective:
 pattern_target: []
 difficulty: 1
@@ -13,8 +13,8 @@ confidence: 0
 mastery: 0
 mastery_state: not-started
 attempt_count: 0
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/codelab]
 ---
 # Applied Drill — {{TITLE}}
@@ -40,6 +40,3 @@ tags: [type/codelab]
 ## Reflection
 
 ## Mastery
-
-
-

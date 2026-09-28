@@ -2,8 +2,8 @@
 type: meeting
 meeting_type: post-mortem
 date:
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/meeting]
 ---
 
@@ -22,6 +22,3 @@ tags: [type/meeting]
 ## Future Work
 
 ## Action Items
-
-
-

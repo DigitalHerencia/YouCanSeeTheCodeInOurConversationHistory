@@ -2,8 +2,8 @@
 type: zettel-workbench
 state: inbox
 capture_source:
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/resource]
 ---
 
@@ -26,6 +26,3 @@ Raw material.
 - [ ] extract pattern
 - [ ] attach to project
 - [ ] attach to Code Lab
-
-
-

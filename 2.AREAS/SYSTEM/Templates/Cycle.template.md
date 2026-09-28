@@ -1,13 +1,13 @@
 ---
 type: cycle
-id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+id:
 title:
 status: planned
 start:
 end:
 goal:
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/cycle]
 ---
 # {{TITLE}}
@@ -32,6 +32,3 @@ tags: [type/cycle]
 - [ ]
 
 ## Review
-
-
-

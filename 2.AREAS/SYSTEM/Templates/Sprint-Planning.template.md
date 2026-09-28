@@ -4,8 +4,8 @@ meeting_type: sprint-planning
 date:
 cycle:
 sprint:
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/meeting]
 ---
 # Sprint Planning — {{DATE}}
@@ -22,6 +22,3 @@ tags: [type/meeting]
 ## Commitments
 
 ## Notes
-
-
-

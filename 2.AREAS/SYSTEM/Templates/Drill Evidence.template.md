@@ -1,13 +1,13 @@
 ---
 type: evidence
 evidence_kind: codelab
-id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+id:
 task:
 lesson:
-project: <% tp.user.hearthProject(tp) %>
+project:
 result: passed
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/evidence]
 ---
 
@@ -24,6 +24,3 @@ tags: [type/evidence]
 ## Interpretation
 
 ## Limits
-
-
-

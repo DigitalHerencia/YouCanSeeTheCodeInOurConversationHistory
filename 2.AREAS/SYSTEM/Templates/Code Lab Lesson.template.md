@@ -1,16 +1,16 @@
 ---
 type: codelab
 codelab_kind: lesson
-id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+id:
 module:
 devcycle:
-project: <% tp.user.hearthProject(tp) %>
+project:
 status: not-started
 mastery_state: not-started
 mastery: 0
 confidence: 0
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/codelab]
 ---
 
@@ -38,10 +38,4 @@ What part of the real project is being built?
 
 ## Reflection
 
-## Human controls
-Mastery: `INPUT[number:mastery]` · Confidence: `INPUT[number:confidence]` · State: `INPUT[select(option(not-started), option(in-progress), option(in-review), option(mastered)):mastery_state]` · Next review: `INPUT[date:next_review]`
-
 ## Mastery
-
-
-

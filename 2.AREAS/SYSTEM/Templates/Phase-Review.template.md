@@ -1,13 +1,13 @@
 ---
 type: review
 review_kind: phase
-id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
-project: <% tp.user.hearthProject(tp) %>
-milestone: <% tp.user.hearthMilestone(tp) %>
-phase: <% tp.user.hearthPhase(tp) %>
+id:
+project:
+milestone:
+phase:
 status: proposed
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/review]
 ---
 # Phase Review — {{TITLE}}
@@ -38,6 +38,3 @@ tags: [type/review]
 - [ ] Passed
 - [ ] Failed
 - [ ] Blocked
-
-
-

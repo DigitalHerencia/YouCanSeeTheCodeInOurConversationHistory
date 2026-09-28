@@ -1,32 +1,25 @@
 ---
 type: meeting
-meeting_type: standup
-cadence: Daily
-source_identity: 335a4e63bf2381149addf83ed2b61861
-source_path: "3.RESOURCES/Digital Herencia/Meetings/Daily Standup @April 1, 2026 335a4e63bf2381149addf83ed2b61861.md"
-date: <% tp.date.now("YYYY-MM-DD") %>
-created: <% tp.date.now("YYYY-MM-DD") %>
-project: <% tp.user.hearthProject(tp) %>
+meeting_type: daily-standup
+date:
+project:
+created:
+updated:
 tags: [type/meeting]
 ---
-# Daily Standup — <% tp.date.now("YYYY-MM-DD") %>
+# Daily Standup — {{DATE}}
 
-Use for an explicitly scheduled session. Select only TaskNotes work already in the relevant project/phase. The cadence definition itself does not schedule or create a note.
+## Yesterday
+<!-- generated from completed TaskNotes items -->
 
-## What did we do yesterday?
-Record verified discussion, decisions, and linked source work.
-## What are we doing today?
-Record verified discussion, decisions, and linked source work.
-## Potential blockers?
-Record verified discussion, decisions, and linked source work.
-## Action items
-| Owner | TaskNotes task | Due |
-|---|---|---|
-| Owner | TaskNotes task | Due |
-|---|---|---|
+## Today
+<!-- generated from current focus / next executable work -->
 
-## Source provenance
-Canonical example: [[]] ($uuid)
+## Potential Blockers
+<!-- generated from explicit active blockers -->
 
+## Decisions / Notes
 
-
+## Action Items
+| Action | Owner | Due | Source |
+|---|---|---|---|

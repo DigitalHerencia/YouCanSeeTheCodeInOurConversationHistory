@@ -1,12 +1,12 @@
 ---
 type: knowledge
 knowledge_kind: evergreen
-id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+id:
 authority: canonical
 status: active
 source_links: []
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/evidence]
 ---
 # {{TITLE}}
@@ -24,6 +24,3 @@ tags: [type/evidence]
 ## Sources / Evidence
 
 ## Applied In
-
-
-

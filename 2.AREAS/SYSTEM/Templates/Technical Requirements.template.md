@@ -1,12 +1,12 @@
 ---
 type: document
 document_type: Technical Requirements
-id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
-project: <% tp.user.hearthProject(tp) %>
+id:
+project:
 status: draft
 authority: project-specific
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/document]
 ---
 
@@ -56,6 +56,3 @@ tags: [type/document]
 - E2E:
 - Architecture:
 - Build:
-
-
-

@@ -1,11 +1,11 @@
 ---
 type: pattern
-id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+id:
 technology:
 source:
 status: active
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/pattern]
 ---
 # {{TITLE}}
@@ -28,6 +28,3 @@ What looks similar but violates the intended contract?
 ## Applied In
 
 ## Learned From
-
-
-

@@ -1,14 +1,14 @@
 ---
 type: sprint
-id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+id:
 cycle:
 number:
 status: planned
 start:
 end:
 goal:
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/sprint]
 ---
 # Sprint {{NUMBER}} — {{TITLE}}
@@ -28,6 +28,3 @@ tags: [type/sprint]
 - [ ]
 
 ## Sprint Review
-
-
-

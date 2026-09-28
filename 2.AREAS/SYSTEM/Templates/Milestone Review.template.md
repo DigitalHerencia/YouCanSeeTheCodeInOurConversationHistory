@@ -1,12 +1,12 @@
 ---
 type: review
 review_kind: milestone
-id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
-project: <% tp.user.hearthProject(tp) %>
-milestone: <% tp.user.hearthMilestone(tp) %>
+id:
+project:
+milestone:
 status: proposed
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/review]
 ---
 # Milestone Review — {{TITLE}}
@@ -33,6 +33,3 @@ What is now demonstrably true?
 - [ ] Passed
 - [ ] Failed
 - [ ] Blocked
-
-
-

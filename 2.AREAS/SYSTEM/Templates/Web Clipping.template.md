@@ -2,8 +2,8 @@
 type: zettel-workbench
 state: web-clipping
 capture_source: web-clipper
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/resource]
 ---
 
@@ -21,6 +21,3 @@ tags: [type/resource]
 ## Notes
 
 ## Processing Destination
-
-
-

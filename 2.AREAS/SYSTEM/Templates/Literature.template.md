@@ -5,8 +5,8 @@ resource_type: book
 source_url:
 author:
 published:
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/resource]
 ---
 # Literature Note — {{TITLE}}
@@ -30,6 +30,3 @@ tags: [type/resource]
 - [ ] extract evergreen note
 - [ ] extract pattern
 - [ ] link to project
-
-
-

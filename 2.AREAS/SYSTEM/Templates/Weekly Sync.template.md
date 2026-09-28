@@ -1,32 +1,23 @@
 ---
 type: meeting
 meeting_type: weekly-sync
-cadence: Weekly
-source_identity: 33fa4e63bf23810ebff4c7a8ed2d4f97
-source_path: "3.RESOURCES/Digital Herencia/Meetings/Weekly Sync @April 11, 2026 33fa4e63bf23810ebff4c7a8ed2d4f97.md"
-date: <% tp.date.now("YYYY-MM-DD") %>
-created: <% tp.date.now("YYYY-MM-DD") %>
-project: <% tp.user.hearthProject(tp) %>
+date:
+created:
+updated:
 tags: [type/meeting]
 ---
-# Weekly Sync — <% tp.date.now("YYYY-MM-DD") %>
+# Weekly Sync — {{DATE}}
 
-Use for an explicitly scheduled session. Select only TaskNotes work already in the relevant project/phase. The cadence definition itself does not schedule or create a note.
+## What Happened Last Week?
+<!-- generated summary available on demand -->
 
-## What happened last week?
-Record verified discussion, decisions, and linked source work.
-## What are we doing this week?
-Record verified discussion, decisions, and linked source work.
-## Potential blockers?
-Record verified discussion, decisions, and linked source work.
+## What Are We Doing This Week?
+<!-- generated project/focus summary -->
+
+## Potential Blockers
+
+## Decisions
+
 ## Action Items
-| Owner | TaskNotes task | Due |
+| Action | Owner | Due |
 |---|---|---|
-| Owner | TaskNotes task | Due |
-|---|---|---|
-
-## Source provenance
-Canonical example: [[]] ($uuid)
-
-
-

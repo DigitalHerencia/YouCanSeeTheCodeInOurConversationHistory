@@ -1,8 +1,8 @@
 ---
 type: phase
-id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
-project: <% tp.user.hearthProject(tp) %>
-milestone: <% tp.user.hearthMilestone(tp) %>
+id:
+project:
+milestone:
 number:
 title:
 status: backlog
@@ -10,8 +10,8 @@ sprint:
 risk:
 start:
 end:
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/phase]
 ---
 
@@ -34,6 +34,3 @@ What bounded outcome should this phase produce?
 - What was validated?
 - What remains?
 - What advances next?
-
-
-

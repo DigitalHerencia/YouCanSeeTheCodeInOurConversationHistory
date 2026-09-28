@@ -2,8 +2,8 @@
 type: meeting
 meeting_type: weekly-sync
 date:
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/meeting]
 ---
 # Weekly Sync — {{DATE}}
@@ -21,6 +21,3 @@ tags: [type/meeting]
 ## Action Items
 | Action | Owner | Due |
 |---|---|---|
-
-
-

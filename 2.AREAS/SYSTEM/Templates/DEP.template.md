@@ -1,11 +1,11 @@
 ---
 type: document
 document_type: deployment-plan
-id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
-project: <% tp.user.hearthProject(tp) %>
+id:
+project:
 status: draft
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/document]
 ---
 # Deployment Plan — {{TITLE}}
@@ -28,6 +28,3 @@ tags: [type/document]
 ## Post-Deployment Verification
 
 ## Evidence
-
-
-

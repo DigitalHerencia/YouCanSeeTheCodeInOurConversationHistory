@@ -1,13 +1,13 @@
 ---
 type: codelab
 action_kind: test
-id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
-project: <% tp.user.hearthProject(tp) %>
+id:
+project:
 module:
 lesson:
 status: planned
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/codelab, type/evidence]
 ---
 # Code Lab Test — {{TITLE}}
@@ -25,6 +25,3 @@ tags: [type/codelab, type/evidence]
 ## Evidence
 
 ## Interpretation
-
-
-

@@ -1,44 +1,62 @@
 ---
 type: project
-title: <% tp.file.title %>
-project_type: <% await tp.system.suggester(["OPS","PROD","DES","ENG","MKT","RES"],["OPS","PROD","DES","ENG","MKT","RES"]) %>
-project_code: <% await tp.system.prompt("Approved project work code (TEAM-M#-PHASE-SLUG)") %>
+id:
+title:
+project_type:
+starter_ontology:
+project_code:
 status: backlog
-priority: normal
-target_end: null
-current_focus: ""
-blocker: ""
+priority: medium
+target_start:
+target_end:
+current_focus:
+blocker:
 codelab_enabled: false
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/project]
 ---
-# <% tp.file.title %>
 
-## Human controls
-Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(review), option(done), option(cancelled)):status]` · Priority: `INPUT[select(option(low), option(normal), option(high)):priority]` · Target: `INPUT[date:target_end]`
-Focus: `INPUT[text:current_focus]` · Blocker: `INPUT[text:blocker]` · Code Lab enabled: `INPUT[toggle:codelab_enabled]`
+# {{TITLE}}
 
-## Purpose and approved outcome
-Describe the owner-approved project outcome and cite the requirement or decision that authorizes it. No requirements are inferred during creation.
+<!-- META BIND: status, priority, target dates, current focus, blocker, codelab_enabled -->
 
-## Acceptance
-- [ ] Each project outcome has a measurable acceptance condition.
-- [ ] Constraints, assumptions, and dependencies link to source evidence.
+## Purpose
+What outcome does this project create?
 
-## Current state
-<!-- HEARTH:BEGIN PROJECT-STATE -->
-Reconciled automatically from linked milestone, phase, and TaskNotes records.
-<!-- HEARTH:END PROJECT-STATE -->
+## Success Criteria
+What must be true for the project to be complete?
+
+## Charter
+### Context
+### Why Now
+### Constraints
+### Decisions
+### Inputs
+### Outputs
+### Downstream Consumers
+
+## Current State
+<!-- HEARTH:GENERATED:PROJECT-STATE:START -->
+<!-- milestone / phase / progress / health / next action -->
+<!-- HEARTH:GENERATED:PROJECT-STATE:END -->
+
+## Milestones
+<!-- HEARTH:GENERATED:MILESTONES:START -->
+<!-- HEARTH:GENERATED:MILESTONES:END -->
 
 ## Execution
-- Board: [[Board]]
-- Milestone, phase, and tasks are reconciled from this project’s source relations.
 ![[Active Project Tasks.base]]
 
-## Documents and evidence
+## Documents
 ![[Active Project Documents.base]]
+
+## Evidence
 ![[Active Project Evidence.base]]
 
+## Resources
+![[Active Project Resources.base]]
 
-
+## Code Lab
+<!-- HEARTH:GENERATED:CODELAB:START -->
+<!-- HEARTH:GENERATED:CODELAB:END -->

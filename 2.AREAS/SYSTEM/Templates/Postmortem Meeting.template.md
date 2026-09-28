@@ -2,9 +2,9 @@
 type: meeting
 meeting_type: post-mortem
 date:
-project: <% tp.user.hearthProject(tp) %>
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+project:
+created:
+updated:
 tags: [type/meeting, type/review]
 ---
 # Post-mortem — {{DATE}}
@@ -24,6 +24,3 @@ tags: [type/meeting, type/review]
 ## Action Items
 | Action | Owner | Due | Verification |
 |---|---|---|---|
-
-
-

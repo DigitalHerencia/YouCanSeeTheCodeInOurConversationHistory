@@ -1,13 +1,13 @@
 ---
 type: codelab
 codelab_kind: learning-journal
-id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
-project: <% tp.user.hearthProject(tp) %>
+id:
+project:
 module:
 lesson:
 date:
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created:
+updated:
 tags: [type/codelab]
 ---
 # Learning Journal — {{DATE}}
@@ -27,6 +27,3 @@ tags: [type/codelab]
 ## Production Evidence
 
 ## Next Applied Step
-
-
-
