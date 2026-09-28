@@ -262,16 +262,6 @@
           "w": 6,
           "id": "cc-blocked",
           "x": 0
-        },
-        {
-          "title": "Repairs",
-          "h": 5,
-          "y": 6,
-          "target": "2.AREAS/SYSTEM/Bases/Repair Queue.base",
-          "kind": "embed",
-          "w": 6,
-          "id": "cc-repair",
-          "x": 6
         }
       ]
     },
