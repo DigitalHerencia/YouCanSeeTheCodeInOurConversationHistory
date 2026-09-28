@@ -17,6 +17,9 @@ tags: [type/phase]
 
 # {{TITLE}}
 
+## Human controls
+Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(review), option(done), option(cancelled)):status]` · Target: `INPUT[date:end]` · Risk: `INPUT[select(option(unknown), option(low), option(medium), option(high)):risk]`
+
 ## Goal
 What bounded outcome should this phase produce?
 
