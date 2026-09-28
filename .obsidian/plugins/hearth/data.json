@@ -176,16 +176,6 @@
           "x": 0
         },
         {
-          "title": "Projects",
-          "h": 3,
-          "y": 0,
-          "target": "2.AREAS/SYSTEM/Bases/Projects Active.base",
-          "kind": "embed",
-          "w": 8,
-          "id": "project-active",
-          "x": 4
-        },
-        {
           "title": "Project tasks",
           "h": 6,
           "y": 3,
@@ -415,95 +405,9 @@
       "iconLucide": "git-branch"
     },
     {
-      "showSearch": false,
+      "showSearch": true,
       "id": "dash-home",
-      "cards": [
-        {
-          "title": "Today",
-          "h": 6,
-          "y": 0,
-          "target": "2.AREAS/DAILY/Today.md",
-          "kind": "embed",
-          "w": 8,
-          "id": "home-daily",
-          "x": 0,
-          "fx": 0,
-          "fw": 0.6633333333333334,
-          "fy": 0,
-          "fh": 404
-        },
-        {
-          "title": "Navigate",
-          "links": [
-            {
-              "label": "Command Center",
-              "id": "nav-cc",
-              "type": "note",
-              "icon": "command",
-              "target": "Hearth/Command Center.md"
-            },
-            {
-              "label": "Projects",
-              "id": "nav-project",
-              "type": "note",
-              "icon": "folder-kanban",
-              "target": "Hearth/Project Command Center.md"
-            },
-            {
-              "label": "ZETTLECASTEN",
-              "id": "nav-zk",
-              "type": "note",
-              "icon": "inbox",
-              "target": "Hearth/ZETTLECASTEN.md"
-            },
-            {
-              "label": "Library",
-              "id": "nav-lib",
-              "type": "note",
-              "icon": "library",
-              "target": "Hearth/Library.md"
-            },
-            {
-              "label": "Code Lab",
-              "id": "nav-lab",
-              "type": "note",
-              "icon": "graduation-cap",
-              "target": "Hearth/Code Lab.md"
-            },
-            {
-              "label": "Git & Vault",
-              "id": "nav-git",
-              "type": "note",
-              "icon": "git-branch",
-              "target": "Hearth/Git and Vault.md"
-            }
-          ],
-          "h": 6,
-          "y": 0,
-          "kind": "links",
-          "w": 4,
-          "id": "home-nav",
-          "x": 8,
-          "fx": 0.6733333333333335,
-          "fw": 0.3266666666666667,
-          "fy": 0,
-          "fh": 404
-        },
-        {
-          "title": "Active projects",
-          "h": 5,
-          "y": 6,
-          "target": "2.AREAS/SYSTEM/Bases/Projects Active.base",
-          "kind": "embed",
-          "w": 12,
-          "id": "home-projects",
-          "x": 0,
-          "fx": 0,
-          "fw": 1,
-          "fy": 420,
-          "fh": 334
-        }
-      ],
+      "cards": [],
       "backgroundLayout": "full",
       "iconLucide": "house",
       "background": {

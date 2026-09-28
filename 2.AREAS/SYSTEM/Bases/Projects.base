@@ -1,5 +1,0 @@
-filters: 'type == "project"'
-views:
-  - type: table
-    name: Projects
-    order: [file.name, status, progress, health, next_action, target_end]

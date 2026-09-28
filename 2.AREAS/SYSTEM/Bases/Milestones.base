@@ -1,5 +1,0 @@
-filters: 'type == "milestone"'
-views:
-  - type: cards
-    name: Milestones
-    order: [file.name, status, progress, risk]
