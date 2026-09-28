@@ -3,7 +3,7 @@ type: codelab
 codelab_kind: module
 id: MOD-001
 ontology: CRM / Pipeline Tracker
-application_path: 
+application_path: "app/(tenant)/crm"
 mastery_state: not-started
 confidence: 0
 next_review: null
