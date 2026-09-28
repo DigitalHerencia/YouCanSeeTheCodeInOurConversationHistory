@@ -34,7 +34,7 @@ async function render(app,date,note){
     const due=task=>task.fm.due===date?0:task.fm.due&&task.fm.due<date?1:task.fm.due?2:3;
     return rank(a)-rank(b)||due(a)-due(b)||priority(a)-priority(b)||String(a.fm.created||'').localeCompare(String(b.fm.created||''));
   });
-  const todayTasks=ranked.filter(task=>task.fm.scheduled===date||task.fm.due===date||status(task.fm.status)==='in-progress'||status(task.fm.status)==='ready').slice(0,5);
+  const todayTasks=ranked.filter(task=>task.fm.scheduled===date||task.fm.due===date||status(task.fm.status)==='in-progress'||status(task.fm.status)==='ready').slice(0,3);
   const dueSoon=active.filter(task=>task.fm.due&&task.fm.due>=date&&task.fm.due<=new Date(new Date(`${date}T12:00:00Z`).getTime()+7*86400000).toISOString().slice(0,10));
   const overdue=active.filter(task=>task.fm.due&&task.fm.due<date);
   const blockers=active.filter(task=>status(task.fm.status)==='blocked'||task.fm.blocker);

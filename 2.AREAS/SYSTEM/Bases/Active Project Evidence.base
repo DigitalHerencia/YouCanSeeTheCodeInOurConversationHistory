@@ -2,7 +2,7 @@ filters:
   and:
     - 'type == "evidence"'
     - 'file.inFolder("2.AREAS/SYSTEM/Code Lab/Evidence")'
-    - 'project != null'
+    - 'file.hasLink(this.project)'
 properties:
   file.name:
     displayName: Name

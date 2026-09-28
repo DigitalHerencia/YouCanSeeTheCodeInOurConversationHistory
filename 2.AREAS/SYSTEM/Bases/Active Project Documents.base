@@ -2,7 +2,7 @@ filters:
   and:
     - 'type == "document"'
     - 'file.inFolder("1.PROJECTS")'
-    - 'project != null'
+    - 'file.hasLink(this.project)'
 properties:
   file.name:
     displayName: Name
