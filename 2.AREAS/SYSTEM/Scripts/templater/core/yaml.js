@@ -1,0 +1,1 @@
+function frontmatter(text){const m=String(text).match(/^---\s*\r?\n([\s\S]*?)\r?\n---\s*(?:\r?\n|$)/);return m?m[1]:''}function scalar(text,key){const m=String(text).match(new RegExp(`^${key}:\\s*(.*)$`,'m'));return m?m[1].trim().replace(/^['"]|['"]$/g,''):null}function list(v){return Array.isArray(v)?v:v?[v]:[]}module.exports={frontmatter,scalar,list};

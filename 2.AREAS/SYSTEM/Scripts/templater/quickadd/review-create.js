@@ -1,0 +1,1 @@
+module.exports=async p=>{const root=p.app.vault.adapter.getBasePath(),api=p.app.plugins.plugins.quickadd.api,selected=await api.suggester(['Phase','Milestone'],['Phase','Milestone']);if(!selected)return;return require(root+'/2.AREAS/SYSTEM/Scripts/templater/review-create.js')(p.tp,selected)};

@@ -1,8 +1,8 @@
 # Canonical Template Filename Index
 
-The complete Codex package contains 55 exact canonical template filenames required by the Hearth specification.
+Every filename below is required by the Hearth specification and is materialized in this package.
 
-Execution:
+## Execution
 Project.template.md
 Milestone.template.md
 Phase.template.md
@@ -20,7 +20,7 @@ Task Bridge.template.md
 Phase-Review.template.md
 Milestone-Review.template.md
 
-Meetings:
+## Meetings
 Daily Standup.template.md
 Engineering Meeting.template.md
 Design Meeting.template.md
@@ -29,7 +29,7 @@ Weekly-Sync.template.md
 Sprint-Planning.template.md
 Postmortem Meeting.template.md
 
-Engineering:
+## Engineering
 PRD.template.md
 TR.template.md
 ARC.template.md
@@ -47,7 +47,7 @@ RFC.template.md
 SOP.template.md
 PM.template.md
 
-Knowledge / Resource:
+## Knowledge / Resource
 Zettel Workbench.template.md
 Fleeting Note.template.md
 Literature.template.md
@@ -58,7 +58,7 @@ Evergreen.template.md
 MOC.template.md
 Pattern.template.md
 
-Code Lab:
+## Code Lab
 Module.template.md
 Lesson.template.md
 Applied Drill.template.md

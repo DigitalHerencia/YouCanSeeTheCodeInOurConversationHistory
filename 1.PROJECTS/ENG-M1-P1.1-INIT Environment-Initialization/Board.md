@@ -13,4 +13,8 @@ Milestone cards are project-local; TaskNotes remains task execution truth.
 
 
 ## Done
+- [[1.PROJECTS/ENG-M1-P1.1-INIT Environment-Initialization/Milestone M1]]/Milestone M1]]
 - [[Milestone M1]]
+
+
+

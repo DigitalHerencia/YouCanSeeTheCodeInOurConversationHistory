@@ -1,0 +1,19 @@
+filters:
+  and:
+    - 'type == "task"'
+    - 'file.inFolder("2.AREAS/SYSTEM/_Tasks")'
+    - 'due < today() && status != "done" && status != "cancelled"'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Tasks Overdue"
+    order:
+      - file.name
+      - status
+      - priority
+      - due
+      - project
+      - phase
+      - blocker

@@ -1,20 +1,24 @@
 ---
 type: migration-report
-source: Notion export and canonical Ticketing SOP
+source: Canonical Notion task pages and Projects export
+updated: 2026-09-26
 ---
 # Migration Relation Repair Queue
 
-All 40 exported task records were migrated to TaskNotes. The Tasks CSV has no Project relation field. A canonical Ticketing SOP explicitly places 21 exact task-title matches beneath project codes that exist in the Projects export; those 21 relationships are linked and cite the SOP in each task note.
+The canonical page under `3.RESOURCES/Digital Herencia/Tasks/` is the authoritative source for each task identity and its explicit Project relation. Duplicate Team exports and task titles are not used to reconstruct relationships.
 
-The handoff manifest explicitly confirms six relationless tasks. The remaining 13 tasks have no project relation in either the Tasks CSV or an exact same-project Ticketing SOP entry. No relations are inferred from ticket code, title similarity, or neighboring records.
+## Confirmed migration state
+- Projects: 11, each matched by canonical Project page identity and exported row.
+- TaskNotes tasks: 40, each matched by canonical Task page title and 32-character source identity.
+- Explicit Project relations: 34, linked to the matching Project, Milestone, and Phase records.
+- Manifest-confirmed unlinked tasks: 6, left without project/milestone/phase.
 
-## Manifest-confirmed relationless tasks
-- T02 Execute IP assignments
-- T02 Validate assumptions & constraints
-- T02 Validate user journeys
-- T02 TypeScript strict config
-- T02 Set up Twitter profile
-- T05 128. longest consecutive sequence
+## Repair items
+- [[2.AREAS/SYSTEM/_Tasks/NOTION-TASK-035 T02-Execute-IP-assignments]] — T02 Execute IP assignments (not done)
+- [[2.AREAS/SYSTEM/_Tasks/NOTION-TASK-036 T02-Validate-assumptions-constraints]] — T02 Validate assumptions & constraints (not done)
+- [[2.AREAS/SYSTEM/_Tasks/NOTION-TASK-037 T02-Validate-user-journeys]] — T02 Validate user journeys (not done)
+- [[2.AREAS/SYSTEM/_Tasks/NOTION-TASK-038 T02-TypeScript-strict-config]] — T02 TypeScript strict config (not done)
+- [[2.AREAS/SYSTEM/_Tasks/NOTION-TASK-039 T02-Set-up-Twitter-profile]] — T02 Set up Twitter profile (not done)
+- [[2.AREAS/SYSTEM/_Tasks/NOTION-TASK-040 T05-128-longest-consecutive-sequence]] — T05 128. longest consecutive sequence (done)
 
-## Additional unresolved source relations
-13 records have migration_relation_state: source-relation-missing; see the Repair Queue Base. Recover the original relation-preserving Notion export before assigning parent links.
+Each item keeps its exact source path and source identity. Add a parent only after authoritative relation evidence is found.

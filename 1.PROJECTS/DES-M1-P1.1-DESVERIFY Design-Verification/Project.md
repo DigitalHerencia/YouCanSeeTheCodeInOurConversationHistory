@@ -1,8 +1,11 @@
 ---
-type: project
-id: DES-M1-P1.1-DESVERIFY
+type: project
+source_path: "3.RESOURCES/Digital Herencia/Projects/DES-M1-P1 1-DESVERIFY – Design Verification 2e2a4e63bf23801b90d1d80b3b282226.md"
+schema_version: 1
+source_identity: 2e2a4e63bf23801b90d1d80b3b282226
+project_type: DES
+id: DES-M1-009
 project_code: DES-M1-P1.1-DESVERIFY
-domain: DES
 status: in-progress
 target_start: 2026-01-08
 target_end: 2026-01-22
@@ -39,3 +42,5 @@ Record owner-approved objective and acceptance criteria.
 <!-- hearth:generated:start -->
 Milestone: [[Milestone M1]] · Phase: [[Phase P1.1]]
 <!-- hearth:generated:end -->
+
+

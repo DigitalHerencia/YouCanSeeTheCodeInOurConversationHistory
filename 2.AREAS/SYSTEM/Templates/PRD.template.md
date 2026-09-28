@@ -1,30 +1,58 @@
 ---
-type: resource
-status: backlog
-priority: normal
-created: {{date:YYYY-MM-DD}}
-updated: {{date:YYYY-MM-DD}}
+type: document
+document_type: PRD
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+project: <% tp.user.hearthProject(tp) %>
+status: draft
+authority: project-specific
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/document]
 ---
-# {{title}}
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+# Product Requirements Document — {{TITLE}}
 
-## Context and starter content
-- Source / provenance: add the originating note, issue, or conversation.
-- Outcome: state the observable result.
-- Constraints and dependencies: link only verified relations.
+## 1. Problem
+Describe the problem and the evidence establishing it.
 
-## Acceptance criteria
-- [ ] Outcome is explicit and reviewable.
-- [ ] Required evidence or output is linked.
+## 2. Users and Actors
+| Actor | Context | Need | Constraint |
+|---|---|---|---|
 
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
+## 3. Outcome
+Define the measurable change this work must create.
 
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->
+## 4. Scope
+### In Scope
+### Explicitly Deferred
+
+## 5. User Journeys
+| Journey | Trigger | Steps | Success |
+|---|---|---|---|
+
+## 6. Functional Requirements
+| ID | Requirement | Rationale | Acceptance |
+|---|---|---|---|
+| PRD-{{N}}.FR-001 |  |  |  |
+
+## 7. Non-Functional Requirements
+| ID | Requirement | Measurement |
+|---|---|---|
+| PRD-{{N}}.NFR-001 |  |  |
+
+## 8. Risks and Assumptions
+| Item | Evidence | Treatment |
+|---|---|---|
+
+## 9. Acceptance Criteria
+- [ ]
+
+## 10. Traceability
+- Source:
+- Requirements:
+- Design:
+- Technical Requirements:
+- Evidence:
+
+
+

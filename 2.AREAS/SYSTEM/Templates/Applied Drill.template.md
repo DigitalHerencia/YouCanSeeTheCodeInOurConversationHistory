@@ -1,35 +1,45 @@
 ---
-type: applied-drill
-task: ""
-module: ""
-mastery_state: not-started
+type: codelab
+codelab_kind: applied-drill
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+task:
+lesson:
+module:
+project: <% tp.user.hearthProject(tp) %>
+learning_objective:
+pattern_target: []
+difficulty: 1
 confidence: 0
-source: Code Space
+mastery: 0
+mastery_state: not-started
+attempt_count: 0
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/codelab]
 ---
-# Applied Drill — {{VALUE}}
+# Applied Drill — {{TITLE}}
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+## Real Work Context
 
-## Real TaskNotes task
-`INPUT[text:task]`
+## Learning Objective
 
-Link an existing TaskNotes task that already has a verified Project relation. Do not create a duplicate task or infer a relation from title similarity.
+## Why This Task Is the Drill
 
-## Applied work
-Implement or review the linked task in [[2.AREAS/SYSTEM/Code Space/Code Space]]. Record exact files, behavior, and source contract touched.
+## Pattern Target
 
-## Acceptance criteria
-- [ ] Work is attached to an existing TaskNotes task.
-- [ ] Acceptance criteria come from that task or its linked Project source.
-- [ ] Evidence and review outcome are linked.
+## Acceptance Criteria
+- [ ]
 
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
+## Hints / Reference Boundaries
 
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->
+## Attempts
+<!-- append attempts; do not overwrite -->
+
+## Production Evidence
+
+## Reflection
+
+## Mastery
+
+
+

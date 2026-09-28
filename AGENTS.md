@@ -3,22 +3,43 @@
 This repository is the target vault for the Hearth implementation.
 
 ## Authority
-1. Owner-provided Hearth specification and explicit system decisions.
-2. CODEX-GOAL.md.
-3. The Hearth handoff package under .codex/hearth/.
-4. Source assets under 3.RESOURCES/Digital Herencia/, 3.RESOURCES/template/, and the TypeScripture books.
-5. Existing installed-plugin configuration and vault implementation.
 
-## Execution
-Execute the specified implementation. Do not redesign the system, invent alternative ontologies, invent plugin capabilities, or create generic fallback templates.
+1. Owner-provided Hearth specification and explicit system decisions.
+2. `CODEX-GOAL.md`.
+3. The Hearth handoff package and contracts.
+4. Source assets under `3.RESOURCES/Digital Herencia/`, `3.RESOURCES/template/`, and the TypeScripture books.
+5. Existing installed-plugin configuration and current vault implementation.
+
+## Execution mode
+
+Execute the specified implementation. Do not redesign the system.
 
 Do not ask the owner to choose among alternatives already defined by the handoff.
 
-Use bounded source inspection. Then implement, validate, repair failures, and report verified evidence.
+Do not invent plugin capabilities.
 
-## Quality
-All human-controlled state must be exposed through Meta Bind. Derived state must be automated. Daily refresh must preserve human-authored regions. Workflows must be idempotent. TaskNotes remains execution truth. Generated links must resolve.
+Do not create generic fallback templates.
 
-Templates are operational documents with starter content, context, provenance, acceptance criteria, and generated sections—not empty headings.
+Do not create duplicate task stores or parallel ontologies.
 
-Stop only for a genuine source contradiction or a capability limitation that prevents faithful implementation; record the exact blocker and do not silently substitute another design.
+Do not require manual maintenance of machine-derived state.
+
+Use bounded source inspection against the paths in the source manifest. Then implement, validate, repair failures, and record evidence.
+
+## Quality bar
+
+Templates are operational documents with starter prose, contextual generation, provenance, acceptance criteria, and human sections—not empty headings.
+
+All human-controlled state must be exposed through Meta Bind.
+
+Derived state must be automated.
+
+Daily refresh must preserve human-authored content.
+
+Workflows must be idempotent.
+
+TaskNotes remains execution truth.
+
+Generated links must resolve.
+
+Stop only for a genuine source contradiction or an actual runtime capability limitation that prevents faithful implementation. Record the exact blocker and do not silently substitute a different design.

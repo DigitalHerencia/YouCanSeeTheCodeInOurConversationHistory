@@ -1,0 +1,18 @@
+filters:
+  and:
+    - 'type == "evidence"'
+    - 'file.inFolder("2.AREAS/SYSTEM/Code Lab/Evidence")'
+    - 'project != null'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Active Project Evidence"
+    order:
+      - file.name
+      - task
+      - project
+      - lesson
+      - result
+      - created

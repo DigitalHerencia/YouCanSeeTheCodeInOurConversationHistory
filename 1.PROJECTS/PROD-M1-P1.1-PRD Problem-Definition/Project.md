@@ -1,8 +1,11 @@
 ---
-type: project
-id: PROD-M1-P1.1-PRD
+type: project
+source_path: "3.RESOURCES/Digital Herencia/Projects/PROD-M1-P1 1-PRD – Problem Definition 2dba4e63bf2380289bf7ff2b34b540bf.md"
+schema_version: 1
+source_identity: 2dba4e63bf2380289bf7ff2b34b540bf
+project_type: PROD
+id: PROD-M1-002
 project_code: PROD-M1-P1.1-PRD
-domain: PROD
 status: done
 target_start: 2026-01-01
 target_end: 2026-01-15
@@ -39,3 +42,5 @@ Record owner-approved objective and acceptance criteria.
 <!-- hearth:generated:start -->
 Milestone: [[Milestone M1]] · Phase: [[Phase P1.1]]
 <!-- hearth:generated:end -->
+
+

@@ -1,8 +1,11 @@
 ---
-type: project
-id: PROD-M1-P1.1-VERIFY
+type: project
+source_path: "3.RESOURCES/Digital Herencia/Projects/PROD-M1-P1 1-VERIFY – PRD Verification 2e2a4e63bf238046b0b3fdfbea5966b6.md"
+schema_version: 1
+source_identity: 2e2a4e63bf238046b0b3fdfbea5966b6
+project_type: PROD
+id: PROD-M1-008
 project_code: PROD-M1-P1.1-VERIFY
-domain: PROD
 status: in-progress
 target_start: 2026-01-08
 target_end: 2026-01-22
@@ -39,3 +42,5 @@ Record owner-approved objective and acceptance criteria.
 <!-- hearth:generated:start -->
 Milestone: [[Milestone M1]] · Phase: [[Phase P1.1]]
 <!-- hearth:generated:end -->
+
+

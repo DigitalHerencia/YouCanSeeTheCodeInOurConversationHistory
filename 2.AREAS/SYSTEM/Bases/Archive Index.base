@@ -1,0 +1,17 @@
+filters:
+  and:
+    - 'file.inFolder("4.ARCHIVE")'
+    - 'archive_state == "archived"'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Archive Index"
+    order:
+      - file.name
+      - type
+      - archive_state
+      - archived_at
+      - archived_from
+      - archive_reason

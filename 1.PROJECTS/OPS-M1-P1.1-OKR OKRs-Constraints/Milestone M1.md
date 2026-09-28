@@ -1,7 +1,12 @@
 ---
+[: "["
+p: "r"
 type: milestone
-id: OPS-M1-P1.1-OKR-M1
-project: "[[Project]]"
+source_identity: 2dba4e63bf2380fe9cbfdd8d6d1b5b62
+source_path: "3.RESOURCES/Digital Herencia/Projects/OPS-M1-P1 1-OKR – OKRs & Constraints 2dba4e63bf2380fe9cbfdd8d6d1b5b62.md"
+schema_version: 1
+id: OPS-M1-001-M1
+project: "[[1.PROJECTS/
 status: done
 objective: ""
 start: 2026-01-01
@@ -15,6 +20,8 @@ counts:
   completed: 5
   open: 0
 ---
+[: "["
+p: "r"
 # M1 — Foundation & Pre-Production
 
 ## Owner controls
@@ -28,3 +35,6 @@ Confirm milestone outcome and acceptance.
 
 ## Phases
 - [[Phase P1.1]]
+
+
+

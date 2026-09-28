@@ -1,28 +1,32 @@
 ---
 type: task
-id: TASK-818355A2-B2D1-4B15-B742-A369113F4547
+id: TASK-2DFA4E63BF23804C85AAF442446361EA
 source_task_code: TO3
-task_code: MKT-M1-P1.1-POS-T03
 status: done
 priority: none
-notion_created_at: January 5, 2026 10:41 AM
-created: 2026-09-26
+created: January 5, 2026 10:41 AM
 updated: 2026-09-26
-completed_at: 2026-01-05
-project: "[[1.PROJECTS/MKT-M1-P1.1-POS Positioning/Project]]"
-milestone: "[[1.PROJECTS/MKT-M1-P1.1-POS Positioning/Milestone M1]]"
-phase: "[[1.PROJECTS/MKT-M1-P1.1-POS Positioning/Phase P1.1]]"
-source: Notion export
+source: Notion canonical task page
+source_path: "3.RESOURCES/Digital Herencia/Tasks/T03 Educational content 2dfa4e63bf23804c85aaf442446361ea.md"
+source_identity: 2dfa4e63bf23804c85aaf442446361ea
 provenance: "[[3.RESOURCES/Digital Herencia/Tasks 2d5a4e63bf23816fa217ef754ce4a70e_all.csv]]"
 tags:
   - type/task
   - hearth/migration
 title: T03 Educational content
-dateCreated: 2026-01-05
-migration_relation_state: verified-ticketing-source
-relation_source: "[[3.RESOURCES/Digital Herencia/SOPs/Ticketing 2d8a4e63bf2380dd9a04cbbb762b9c7c]]"
-project_code: MKT-M1-P1.1-POS
+migration_relation_state: explicit-source-project-page
 ---
+completed_at: null
+phase: "[[1.PROJECTS/MKT-M1-P1.1-POS Positioning/Phase P1.1]]"
+project: "[[1.PROJECTS/MKT-M1-P1.1-POS Positioning/Project]]"
+project_code: MKT-M1-P1.1-POS
+task_code: "TO3"
+ticket_code: MKT-M1-P1.1-POS-TO3
+milestone: "[[1.PROJECTS/MKT-M1-P1.1-POS Positioning/Milestone M1]]"
+## Source provenance
+- Canonical task page: [[3.RESOURCES/Digital Herencia/Tasks/T03 Educational content 2dfa4e63bf23804c85aaf442446361ea]]
+- Source identity: 2dfa4e63bf23804c85aaf442446361ea
+- Project relation: explicit on canonical source page
 
 ## Owner controls
 - Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]`
@@ -31,6 +35,16 @@ project_code: MKT-M1-P1.1-POS
 
 # T03 Educational content
 
-Imported verbatim from Notion. TaskNotes execution record; project relation omitted because source export provides no relation.
+Imported verbatim from Notion. TaskNotes execution record. Canonical Notion task page contains an explicit Project relation; the linked project is recorded in frontmatter.
 
 Source created: January 5, 2026 10:41 AM.
+
+
+
+
+
+
+
+
+
+

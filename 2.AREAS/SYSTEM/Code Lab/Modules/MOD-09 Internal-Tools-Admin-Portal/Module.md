@@ -1,7 +1,16 @@
 ---
 type: module
-id: MOD-09
-title: Internal Tools / Admin Portal
+id: MOD-009
+ontology: "Internal Tools / Admin Portal"
+application_path: "app/(tenant)/admin"
+project: "[[1.PROJECTS/ENG-M1-P1.2-CONFIG Project-Configuration/Project]]"
+mastery_state: not-started
+mastery: 0
+confidence: 0
+next_review: null
+created: 2026-09-26
+updated: 2026-09-26
+tags: [type/codelab]
 mastery_state: not-started
 mastery: 0
 confidence: 0
@@ -15,7 +24,7 @@ source: "[[3.RESOURCES/template/context/Ontologies.Canonical-Catalog]]"
 The real Code Space application is the applied curriculum. Use existing Maximal Template code and its approved contracts.
 
 ## Curriculum source
-[[4.ARCHIVE/40.ARCHIVE.CODEPENDENTCODING/40.ARCHIVE.CODEPENDENTCODING.Dev-Cycles.Source-Document]] · Maximal Template ontology catalog: [[3.RESOURCES/template/context/Ontologies.Canonical-Catalog]].
+[[3.RESOURCES/Digital Herencia/SOPs/Dev 2dba4e63bf23803aafc0c58095ec268f]] · Maximal Template ontology catalog: [[3.RESOURCES/template/context/Ontologies.Canonical-Catalog]].
 
 
 ## Canonical Maximal Template ontology source
@@ -219,3 +228,4 @@ Complete lesson gates with linked Drill Evidence; use a Milestone Review for ass
 - [[MOD-09-15 Documentation]]
 - [[MOD-09-16 Deploy]]
 - [[MOD-09-17 Updates]]
+

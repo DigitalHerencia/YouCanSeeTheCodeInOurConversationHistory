@@ -1,6 +1,8 @@
 ---
 type: dashboard
 ---
-# Git and Vault
+# Git & Vault Stats
 
-Vault version control is provided by installed Obsidian Git. Code Space exposes its configured repository mount. Check repo status in those plugin surfaces; do not duplicate source code into the vault.
+Use Hearth's Git and vault statistics cards for repository status, changes, history, file counts, and activity.
+
+The external Code Space mount is configured by the installed plugin at `2.AREAS/SYSTEM/_mounts/CodependentCoding`.

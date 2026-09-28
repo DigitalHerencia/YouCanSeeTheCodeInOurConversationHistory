@@ -12,23 +12,27 @@
   },
   "folderMappings": [
     {
-      "folder": "AMOEBA",
-      "toolbar": "00000000-0000-4000-8000-000000000003"
-    },
-    {
       "folder": "1.PROJECTS",
       "toolbar": "00000000-0000-4000-8000-000000000004"
+    },
+    {
+      "folder": "2.AREAS/DAILY",
+      "toolbar": "00000000-0000-4000-8000-000000000001"
+    },
+    {
+      "folder": "2.AREAS/ZETTLECASTEN",
+      "toolbar": "00000000-0000-4000-8000-000000000006"
     },
     {
       "folder": "3.RESOURCES",
       "toolbar": "00000000-0000-4000-8000-000000000002"
     },
     {
-      "folder": "ZETTLECASTEN",
-      "toolbar": "00000000-0000-4000-8000-000000000002"
+      "folder": "2.AREAS/SYSTEM",
+      "toolbar": "00000000-0000-4000-8000-000000000005"
     },
     {
-      "folder": "SYSTEM",
+      "folder": "4.ARCHIVE",
       "toolbar": "00000000-0000-4000-8000-000000000005"
     }
   ],
@@ -201,7 +205,7 @@
           }
         }
       },
-      "updated": "2026-09-09T00:00:00.000Z"
+      "updated": "2026-09-09T00:00:00Z"
     },
     {
       "uuid": "00000000-0000-4000-8000-000000000002",
@@ -414,7 +418,7 @@
           }
         }
       },
-      "updated": "2026-09-09T00:00:00.000Z"
+      "updated": "2026-09-09T00:00:00Z"
     },
     {
       "uuid": "00000000-0000-4000-8000-000000000003",
@@ -563,7 +567,7 @@
           }
         }
       },
-      "updated": "2026-09-09T00:00:00.000Z"
+      "updated": "2026-09-09T00:00:00Z"
     },
     {
       "uuid": "00000000-0000-4000-8000-000000000004",
@@ -575,121 +579,111 @@
         "even",
         "sticky"
       ],
-      "description": "Project management controls",
+      "description": "Project, milestone, and phase actions",
       "hasCommand": false,
       "icon": "kanban-square",
       "items": [
         {
-          "uuid": "40000000-0000-4000-8000-000000000001",
-          "icon": "square-check-big",
-          "label": "TASK",
-          "tooltip": "Create TaskNote",
-          "hasCommand": false,
-          "inGallery": false,
-          "link": "",
+          "icon": "square-plus",
+          "hasCommand": true,
+          "uuid": "hearth-toolbar-project-task",
           "linkAttr": {
-            "commandCheck": false,
-            "commandId": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000003",
             "hasVars": false,
-            "type": "command"
+            "type": "command",
+            "commandCheck": true,
+            "commandId": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000003"
           },
+          "tooltip": "Create TaskNotes task in this project/phase context",
+          "label": "NEW TASK",
           "visibility": {
+            "viewMode": "all",
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
             "desktop": {
               "components": [
                 "icon",
                 "label"
               ]
             },
-            "mobile": {
-              "components": [
-                "icon"
-              ]
-            },
             "tablet": {
               "components": [
-                "icon"
+                "icon",
+                "label"
               ]
-            },
-            "viewMode": "all"
-          }
+            }
+          },
+          "inGallery": false
         },
         {
-          "uuid": "40000000-0000-4000-8000-000000000002",
-          "icon": "kanban-square",
-          "label": "KANBAN",
-          "tooltip": "Kanban commands",
-          "hasCommand": false,
-          "inGallery": false,
-          "link": "",
+          "icon": "milestone",
+          "hasCommand": true,
+          "uuid": "hearth-toolbar-milestone",
           "linkAttr": {
-            "commandCheck": false,
-            "commandId": "",
             "hasVars": false,
-            "type": "javascript"
+            "type": "command",
+            "commandCheck": true,
+            "commandId": "quickadd:choice:hearth-111"
           },
-          "plugin": "",
-          "scriptConfig": {
-            "expression": "const items = Object.values(app.commands.commands).filter(c => /kanban/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'kanban-square'})); return await ntb.menu(items);",
-            "pluginFunction": "evaluate"
-          },
+          "tooltip": "Add a project milestone",
+          "label": "MILESTONE",
           "visibility": {
+            "viewMode": "all",
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
             "desktop": {
               "components": [
                 "icon",
                 "label"
               ]
             },
-            "mobile": {
-              "components": [
-                "icon"
-              ]
-            },
             "tablet": {
               "components": [
-                "icon"
+                "icon",
+                "label"
               ]
-            },
-            "viewMode": "all"
-          }
+            }
+          },
+          "inGallery": false
         },
         {
-          "uuid": "40000000-0000-4000-8000-000000000003",
-          "icon": "git-branch",
-          "label": "GIT",
-          "tooltip": "Git commands",
-          "hasCommand": false,
-          "inGallery": false,
-          "link": "",
+          "icon": "layers",
+          "hasCommand": true,
+          "uuid": "hearth-toolbar-phase",
           "linkAttr": {
-            "commandCheck": false,
-            "commandId": "",
             "hasVars": false,
-            "type": "javascript"
+            "type": "command",
+            "commandCheck": true,
+            "commandId": "quickadd:choice:hearth-112"
           },
-          "plugin": "",
-          "scriptConfig": {
-            "expression": "const items = Object.values(app.commands.commands).filter(c => /git/i.test(c.name)).map(c => ({type:'command',value:c.id,label:c.name,icon:'git-branch'})); return await ntb.menu(items);",
-            "pluginFunction": "evaluate"
-          },
+          "tooltip": "Add a phase to current milestone",
+          "label": "PHASE",
           "visibility": {
+            "viewMode": "all",
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
             "desktop": {
               "components": [
                 "icon",
                 "label"
               ]
             },
-            "mobile": {
-              "components": [
-                "icon"
-              ]
-            },
             "tablet": {
               "components": [
-                "icon"
+                "icon",
+                "label"
               ]
-            },
-            "viewMode": "all"
-          }
+            }
+          },
+          "inGallery": false
         }
       ],
       "mobileStyles": [],
@@ -711,7 +705,7 @@
           }
         }
       },
-      "updated": "2026-09-09T00:00:00.000Z"
+      "updated": "2026-09-09T00:00:00Z"
     },
     {
       "uuid": "00000000-0000-4000-8000-000000000005",
@@ -859,7 +853,80 @@
           }
         }
       },
-      "updated": "2026-09-09T00:00:00.000Z"
+      "updated": "2026-09-09T00:00:00Z"
+    },
+    {
+      "name": "Zettelkasten",
+      "description": "Capture and process knowledge",
+      "icon": "inbox",
+      "uuid": "00000000-0000-4000-8000-000000000006",
+      "commandPosition": "float",
+      "items": [
+        {
+          "label": "CAPTURE",
+          "hasCommand": true,
+          "linkAttr": {
+            "hasVars": false,
+            "type": "command",
+            "commandCheck": true,
+            "commandId": "quickadd:choice:hearth-132"
+          },
+          "visibility": {
+            "viewMode": "all",
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            }
+          },
+          "icon": "inbox",
+          "uuid": "hearth-zk-capture"
+        },
+        {
+          "label": "PROCESS",
+          "hasCommand": true,
+          "linkAttr": {
+            "hasVars": false,
+            "type": "command",
+            "commandCheck": true,
+            "commandId": "quickadd:choice:hearth-142"
+          },
+          "visibility": {
+            "viewMode": "all",
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            }
+          },
+          "icon": "sparkles",
+          "uuid": "hearth-zk-process"
+        }
+      ]
     }
   ],
   "version": 20260703.1,

@@ -1,35 +1,39 @@
 ---
-type: project
-status: backlog
-priority: normal
-created: {{date:YYYY-MM-DD}}
-updated: {{date:YYYY-MM-DD}}
+type: codelab
+codelab_kind: module
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+ontology:
+project: <% tp.user.hearthProject(tp) %>
+status: not-started
+mastery: 0
+confidence: 0
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/codelab]
 ---
-# {{title}}
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+# {{TITLE}}
+
+## Ontology
+
+## Primary Surfaces
+
+## Shared Foundation
+
+## Lessons
+<!-- HEARTH:GENERATED:LESSONS:START -->
+<!-- HEARTH:GENERATED:LESSONS:END -->
+
+## Assessment
+
+## Evidence
 
 
-## Owner controls
-- Mastery state: `INPUT[select(option(not-started), option(in-progress), option(mastered), option(review)):mastery_state]` · Mastery: `INPUT[number:mastery]`
-- Confidence: `INPUT[number:confidence]` · Last attempted: `INPUT[date:last_attempted]` · Next review: `INPUT[date:next_review]`
 
-## Context and starter content
-- Source / provenance: add the originating note, issue, or conversation.
-- Outcome: state the observable result.
-- Constraints and dependencies: link only verified relations.
 
-## Acceptance criteria
-- [ ] Outcome is explicit and reviewable.
-- [ ] Required evidence or output is linked.
+## Human controls
+Mastery: `INPUT[number:mastery]` · Confidence: `INPUT[number:confidence]` · State: `INPUT[select(option(not-started), option(in-progress), option(in-review), option(mastered)):mastery_state]` · Next review: `INPUT[date:next_review]`
 
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
-
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->
+## Acceptance
+- [ ] All 17 DevCycle lessons are present.
+- [ ] Each mastery claim links to a real TaskNotes drill and observed evidence.

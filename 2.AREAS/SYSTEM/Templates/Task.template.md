@@ -1,36 +1,40 @@
 ---
 type: task
-status: backlog
-priority: normal
-created: {{date:YYYY-MM-DD}}
-updated: {{date:YYYY-MM-DD}}
+status: ready
+project: <% tp.user.hearthProject(tp) %>
+milestone: <% tp.user.hearthMilestone(tp) %>
+phase: <% tp.user.hearthPhase(tp) %>
+ticket_code:
+source_requirement:
+source_document:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/task]
 ---
-# {{title}}
+# Task Context — {{TITLE}}
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+> Create execution tasks through TaskNotes. This template is contextual support and must not create a second task database.
+
+## Objective
+
+## Human controls
+Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]` · Priority: `INPUT[select(option(none), option(low), option(normal), option(high)):priority]` · Due: `INPUT[date:due]` · Scheduled: `INPUT[date:scheduled]` · Blocker: `INPUT[text:blocker]`
+
+## Acceptance Criteria
+- [ ] 
+
+## Project Context
+- Project:
+- Milestone:
+- Phase:
+
+## Upstream
+
+## Expected Output
+
+## Evidence Plan
+
+## Handoff
 
 
-## Owner controls
-- Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]`
-- Priority: `INPUT[select(option(none), option(low), option(normal), option(high)):priority]` · Due: `INPUT[date:due]` · Scheduled: `INPUT[date:scheduled]`
-- Estimate: `INPUT[number:estimate]` · Blocker: `INPUT[text:blocker]` · Mastery: `INPUT[number:mastery]` · Confidence: `INPUT[number:confidence]`
 
-## Context and starter content
-- Source / provenance: add the originating note, issue, or conversation.
-- Outcome: state the observable result.
-- Constraints and dependencies: link only verified relations.
-
-## Acceptance criteria
-- [ ] Outcome is explicit and reviewable.
-- [ ] Required evidence or output is linked.
-
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
-
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->

@@ -1,27 +1,33 @@
 ---
 type: task
-id: TASK-FFA0B837-3BD1-40C2-9328-0BF7435CF31A
+id: TASK-2E2A4E63BF2380F5814FF852E4ECD6DA
 source_task_code: T01
-task_code: ""
 status: done
 priority: none
-notion_created_at: January 8, 2026 10:27 AM
-created: 2026-09-26
+created: January 8, 2026 10:27 AM
 updated: 2026-09-26
-completed_at: 2026-01-08
-project: ""
-milestone: ""
-phase: ""
-source: Notion export
+source: Notion canonical task page
+source_path: "3.RESOURCES/Digital Herencia/Tasks/T01 Cross-check PRD vs TechReq 2e2a4e63bf2380f5814ff852e4ecd6da.md"
+source_identity: 2e2a4e63bf2380f5814ff852e4ecd6da
 provenance: "[[3.RESOURCES/Digital Herencia/Tasks 2d5a4e63bf23816fa217ef754ce4a70e_all.csv]]"
 tags:
   - type/task
   - hearth/migration
   - hearth/repair
 title: T01 Cross-check PRD vs TechReq
-dateCreated: 2026-01-08
-migration_relation_state: source-relation-missing
+migration_relation_state: explicit-source-project-page
 ---
+completed_at: null
+phase: "[[1.PROJECTS/PROD-M1-P1.1-VERIFY PRD-Verification/Phase P1.1]]"
+project: "[[1.PROJECTS/PROD-M1-P1.1-VERIFY PRD-Verification/Project]]"
+project_code: PROD-M1-P1.1-VERIFY
+task_code: "T01"
+ticket_code: PROD-M1-P1.1-VERIFY-T01
+milestone: "[[1.PROJECTS/PROD-M1-P1.1-VERIFY PRD-Verification/Milestone M1]]"
+## Source provenance
+- Canonical task page: [[3.RESOURCES/Digital Herencia/Tasks/T01 Cross-check PRD vs TechReq 2e2a4e63bf2380f5814ff852e4ecd6da]]
+- Source identity: 2e2a4e63bf2380f5814ff852e4ecd6da
+- Project relation: explicit on canonical source page
 
 ## Owner controls
 - Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]`
@@ -30,6 +36,16 @@ migration_relation_state: source-relation-missing
 
 # T01 Cross-check PRD vs TechReq
 
-Imported verbatim from Notion. TaskNotes execution record; project relation omitted because source export provides no relation.
+Imported verbatim from Notion. TaskNotes execution record. Canonical Notion task page contains an explicit Project relation; the linked project is recorded in frontmatter.
 
 Source created: January 8, 2026 10:27 AM.
+
+
+
+
+
+
+
+
+
+

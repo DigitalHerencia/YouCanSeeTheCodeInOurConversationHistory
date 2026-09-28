@@ -1,27 +1,33 @@
 ---
 type: task
-id: TASK-84CCDDBF-5394-4F33-9231-3CEA6B41AF22
+id: TASK-2DCA4E63BF238021B0ABC69624FA900E
 source_task_code: TO2
-task_code: ""
 status: done
 priority: none
-notion_created_at: January 2, 2026 9:34 AM
-created: 2026-09-26
+created: January 2, 2026 9:34 AM
 updated: 2026-09-26
-completed_at: 2026-01-02
-project: ""
-milestone: ""
-phase: ""
-source: Notion export
+source: Notion canonical task page
+source_path: "3.RESOURCES/Digital Herencia/Tasks/T02 Validate PRD & TechReq presence 2dca4e63bf238021b0abc69624fa900e.md"
+source_identity: 2dca4e63bf238021b0abc69624fa900e
 provenance: "[[3.RESOURCES/Digital Herencia/Tasks 2d5a4e63bf23816fa217ef754ce4a70e_all.csv]]"
 tags:
   - type/task
   - hearth/migration
   - hearth/repair
 title: T02 Validate PRD & TechReq presence
-dateCreated: 2026-01-02
-migration_relation_state: source-relation-missing
+migration_relation_state: explicit-source-project-page
 ---
+completed_at: null
+phase: "[[1.PROJECTS/ENG-M1-P1.1-INIT Environment-Initialization/Phase P1.1]]"
+project: "[[1.PROJECTS/ENG-M1-P1.1-INIT Environment-Initialization/Project]]"
+project_code: ENG-M1-P1.1-INIT
+task_code: "TO2"
+ticket_code: ENG-M1-P1.1-INIT-TO2
+milestone: "[[1.PROJECTS/ENG-M1-P1.1-INIT Environment-Initialization/Milestone M1]]"
+## Source provenance
+- Canonical task page: [[3.RESOURCES/Digital Herencia/Tasks/T02 Validate PRD & TechReq presence 2dca4e63bf238021b0abc69624fa900e]]
+- Source identity: 2dca4e63bf238021b0abc69624fa900e
+- Project relation: explicit on canonical source page
 
 ## Owner controls
 - Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]`
@@ -30,6 +36,16 @@ migration_relation_state: source-relation-missing
 
 # T02 Validate PRD & TechReq presence
 
-Imported verbatim from Notion. TaskNotes execution record; project relation omitted because source export provides no relation.
+Imported verbatim from Notion. TaskNotes execution record. Canonical Notion task page contains an explicit Project relation; the linked project is recorded in frontmatter.
 
 Source created: January 2, 2026 9:34 AM.
+
+
+
+
+
+
+
+
+
+

@@ -1,30 +1,36 @@
 ---
-type: resource
-status: backlog
-priority: normal
-created: {{date:YYYY-MM-DD}}
-updated: {{date:YYYY-MM-DD}}
+type: zettel-workbench
+state: web-clipping
+resource_type: article
+capture_source: web-clipper
+source_url:
+author:
+published:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/resource]
 ---
-# {{title}}
+# Web Clipping — {{TITLE}}
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+## Source
+- URL:
+- Author:
+- Published:
 
-## Context and starter content
-- Source / provenance: add the originating note, issue, or conversation.
-- Outcome: state the observable result.
-- Constraints and dependencies: link only verified relations.
+## Captured Material
 
-## Acceptance criteria
-- [ ] Outcome is explicit and reviewable.
-- [ ] Required evidence or output is linked.
+## Claims Worth Keeping
 
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
+## Context / Counterpoints
 
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->
+## Related Notes
+
+## Processing
+- [ ] discard
+- [ ] retain as Resource
+- [ ] extract Evergreen
+- [ ] extract Pattern
+- [ ] attach to Project
+
+
+

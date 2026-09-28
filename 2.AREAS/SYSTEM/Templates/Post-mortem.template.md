@@ -1,21 +1,27 @@
 ---
 type: meeting
-meeting_type: "Post-mortem"
-cadence: Biweekly
-date: {{date:YYYY-MM-DD}}
+meeting_type: post-mortem
+date:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/meeting]
 ---
-# Post-mortem — {{date:YYYY-MM-DD}}
 
-## Purpose and agenda
-Record decisions needed for this session.
+# Post-mortem — {{DATE}}
 
-## Attendees and notes
-<!-- hearth:human:start -->
+## User Facing Impact
 
-<!-- hearth:human:end -->
+## Timeline
 
-## Decisions and actions
-Record decisions and link actions to TaskNotes.
+## Relevant Metrics
 
-## Provenance
-Canonical cadence: [[2.AREAS/DAILY/Cadence]].
+## Cause Analysis
+
+## Resolution
+
+## Future Work
+
+## Action Items
+
+
+

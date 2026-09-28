@@ -1,0 +1,540 @@
+{
+  "manifestConfirmedOrphans": [
+    "TASK-2E5A4E63BF2380B19103FD08FE86D224",
+    "TASK-2E5A4E63BF23806990C2CFC3564976CC",
+    "TASK-2E5A4E63BF2380D887D9FC32BA25E803",
+    "TASK-2E5A4E63BF238059958CC1CB66EFE93D",
+    "TASK-2E5A4E63BF238066B4C7D5A899195BBE",
+    "TASK-2E5A4E63BF2380F68521C3862767D0F5"
+  ],
+  "projectCount": 11,
+  "tasks": [
+    {
+      "projectId": "MKT-M1-P1.1-PUBSETUP",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf2380698689d11e6c08dec2",
+      "id": "TASK-2E2A4E63BF2380698689D11E6C08DEC2",
+      "title": "T01 Audit existing social presence",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T01 Audit existing social presence 2e2a4e63bf2380698689d11e6c08dec2.md",
+      "taskCode": "T01",
+      "done": true
+    },
+    {
+      "projectId": "ENG-M1-P1.1-INIT",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dba4e63bf2380ac84eef2264b2caf5c",
+      "id": "TASK-2DBA4E63BF2380AC84EEF2264B2CAF5C",
+      "title": "T01 Audit workspace & repo state",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T01 Audit workspace & repo state 2dba4e63bf2380ac84eef2264b2caf5c.md",
+      "taskCode": "T01",
+      "done": true
+    },
+    {
+      "projectId": "RES-M1-P1.1-A&S",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dba4e63bf238078bfcbd06cbd73c125",
+      "id": "TASK-2DBA4E63BF238078BFCBD06CBD73C125",
+      "title": "T01 Core concepts & complexity",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T01 Core concepts & complexity 2dba4e63bf238078bfcbd06cbd73c125.md",
+      "taskCode": "T01",
+      "done": true
+    },
+    {
+      "projectId": "DES-M1-P1.1-UXARCH",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dba4e63bf238057bd45f4e86bb80939",
+      "id": "TASK-2DBA4E63BF238057BD45F4E86BB80939",
+      "title": "T01 Core user flows",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T01 Core user flows 2dba4e63bf238057bd45f4e86bb80939.md",
+      "taskCode": "T01",
+      "done": true
+    },
+    {
+      "projectId": "PROD-M1-P1.1-VERIFY",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf2380f5814ff852e4ecd6da",
+      "id": "TASK-2E2A4E63BF2380F5814FF852E4ECD6DA",
+      "title": "T01 Cross-check PRD vs TechReq",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T01 Cross-check PRD vs TechReq 2e2a4e63bf2380f5814ff852e4ecd6da.md",
+      "taskCode": "T01",
+      "done": true
+    },
+    {
+      "projectId": "DES-M1-P1.1-DESVERIFY",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf23807ea26dff39ad8b11fb",
+      "id": "TASK-2E2A4E63BF23807EA26DFF39AD8B11FB",
+      "title": "T01 Cross-check UX against PRD",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T01 Cross-check UX against PRD 2e2a4e63bf23807ea26dff39ad8b11fb.md",
+      "taskCode": "T01",
+      "done": true
+    },
+    {
+      "projectId": "OPS-M1-P1.1-OKR",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dba4e63bf2380849285e2e13c44f5ce",
+      "id": "TASK-2DBA4E63BF2380849285E2E13C44F5CE",
+      "title": "T01 Define company objectives",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T01 Define company objectives 2dba4e63bf2380849285e2e13c44f5ce.md",
+      "taskCode": "T01",
+      "done": true
+    },
+    {
+      "projectId": "OPS-M1-P1.1-GOV",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf2380c2ba50fd331519ddde",
+      "id": "TASK-2E2A4E63BF2380C2BA50FD331519DDDE",
+      "title": "T01 Draft operating agreement",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T01 Draft operating agreement 2e2a4e63bf2380c2ba50fd331519ddde.md",
+      "taskCode": "T01",
+      "done": true
+    },
+    {
+      "projectId": "ENG-M1-P1.2-CONFIG",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf23809c95e5f4f6e1c268c5",
+      "id": "TASK-2E2A4E63BF23809C95E5F4F6E1C268C5",
+      "title": "T01 ESLint / Prettier config",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T01 ESLint Prettier config 2e2a4e63bf23809c95e5f4f6e1c268c5.md",
+      "taskCode": "T01",
+      "done": true
+    },
+    {
+      "projectId": "PROD-M1-P1.1-PRD",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dba4e63bf2380b1a6e6e85c75e8f710",
+      "id": "TASK-2DBA4E63BF2380B1A6E6E85C75E8F710",
+      "title": "T01 Market synthesis",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T01 Market synthesis 2dba4e63bf2380b1a6e6e85c75e8f710.md",
+      "taskCode": "T01",
+      "done": true
+    },
+    {
+      "projectId": "MKT-M1-P1.1-POS",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dba4e63bf2380b2af97d0b0210e9f17",
+      "id": "TASK-2DBA4E63BF2380B2AF97D0B0210E9F17",
+      "title": "T01 Positioning statement",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T01 Positioning statement 2dba4e63bf2380b2af97d0b0210e9f17.md",
+      "taskCode": "T01",
+      "done": true
+    },
+    {
+      "projectId": "OPS-M1-P1.1-OKR",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dca4e63bf2380158ef6ced6391a75f2",
+      "id": "TASK-2DCA4E63BF2380158EF6CED6391A75F2",
+      "title": "T02 Define key results",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T02 Define key results 2dca4e63bf2380158ef6ced6391a75f2.md",
+      "taskCode": "TO2",
+      "done": true
+    },
+    {
+      "projectId": null,
+      "relationState": "manifest-confirmed-orphan",
+      "sourceIdentity": "2e5a4e63bf2380b19103fd08fe86d224",
+      "id": "TASK-2E5A4E63BF2380B19103FD08FE86D224",
+      "title": "T02 Execute IP assignments",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T02 Execute IP assignments 2e5a4e63bf2380b19103fd08fe86d224.md",
+      "taskCode": "",
+      "done": false
+    },
+    {
+      "projectId": "DES-M1-P1.1-UXARCH",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dca4e63bf2380c2a786e8bb473b9554",
+      "id": "TASK-2DCA4E63BF2380C2A786E8BB473B9554",
+      "title": "T02 Information architecture",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T02 Information architecture 2dca4e63bf2380c2a786e8bb473b9554.md",
+      "taskCode": "TO2",
+      "done": true
+    },
+    {
+      "projectId": "MKT-M1-P1.1-POS",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dca4e63bf2380728fc0dbe2dfe9b47f",
+      "id": "TASK-2DCA4E63BF2380728FC0DBE2DFE9B47F",
+      "title": "T02 Messaging framework",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T02 Messaging framework 2dca4e63bf2380728fc0dbe2dfe9b47f.md",
+      "taskCode": "TO2",
+      "done": true
+    },
+    {
+      "projectId": null,
+      "relationState": "manifest-confirmed-orphan",
+      "sourceIdentity": "2e5a4e63bf23806990c2cfc3564976cc",
+      "id": "TASK-2E5A4E63BF23806990C2CFC3564976CC",
+      "title": "T02 Set up Twitter profile",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T02 Set up Twitter profile 2e5a4e63bf23806990c2cfc3564976cc.md",
+      "taskCode": "",
+      "done": false
+    },
+    {
+      "projectId": "RES-M1-P1.1-A&S",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dca4e63bf2380688eafd817f254f13d",
+      "id": "TASK-2DCA4E63BF2380688EAFD817F254F13D",
+      "title": "T02 Sliding window patterns",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T02 Sliding window patterns 2dca4e63bf2380688eafd817f254f13d.md",
+      "taskCode": "TO2",
+      "done": false
+    },
+    {
+      "projectId": "PROD-M1-P1.1-PRD",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dca4e63bf23800dad5bdfb13d26ae01",
+      "id": "TASK-2DCA4E63BF23800DAD5BDFB13D26AE01",
+      "title": "T02 Tenant & RBAC assumptions",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T02 Tenant & RBAC assumptions 2dca4e63bf23800dad5bdfb13d26ae01.md",
+      "taskCode": "TO2",
+      "done": true
+    },
+    {
+      "projectId": null,
+      "relationState": "manifest-confirmed-orphan",
+      "sourceIdentity": "2e5a4e63bf2380d887d9fc32ba25e803",
+      "id": "TASK-2E5A4E63BF2380D887D9FC32BA25E803",
+      "title": "T02 TypeScript strict config",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T02 TypeScript strict config 2e5a4e63bf2380d887d9fc32ba25e803.md",
+      "taskCode": "",
+      "done": false
+    },
+    {
+      "projectId": null,
+      "relationState": "manifest-confirmed-orphan",
+      "sourceIdentity": "2e5a4e63bf238059958cc1cb66efe93d",
+      "id": "TASK-2E5A4E63BF238059958CC1CB66EFE93D",
+      "title": "T02 Validate assumptions & constraints",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T02 Validate assumptions & constraints 2e5a4e63bf238059958cc1cb66efe93d.md",
+      "taskCode": "",
+      "done": false
+    },
+    {
+      "projectId": "ENG-M1-P1.1-INIT",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dca4e63bf238021b0abc69624fa900e",
+      "id": "TASK-2DCA4E63BF238021B0ABC69624FA900E",
+      "title": "T02 Validate PRD & TechReq presence",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T02 Validate PRD & TechReq presence 2dca4e63bf238021b0abc69624fa900e.md",
+      "taskCode": "TO2",
+      "done": true
+    },
+    {
+      "projectId": null,
+      "relationState": "manifest-confirmed-orphan",
+      "sourceIdentity": "2e5a4e63bf238066b4c7d5a899195bbe",
+      "id": "TASK-2E5A4E63BF238066B4C7D5A899195BBE",
+      "title": "T02 Validate user journeys",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T02 Validate user journeys 2e5a4e63bf238066b4c7d5a899195bbe.md",
+      "taskCode": "",
+      "done": false
+    },
+    {
+      "projectId": "OPS-M1-P1.1-OKR",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dfa4e63bf23803db5ccc36ba2f4c606",
+      "id": "TASK-2DFA4E63BF23803DB5CCC36BA2F4C606",
+      "title": "T03 Align team OKRs",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T03 Align team OKRs 2dfa4e63bf23803db5ccc36ba2f4c606.md",
+      "taskCode": "TO3",
+      "done": true
+    },
+    {
+      "projectId": "DES-M1-P1.1-UXARCH",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dfa4e63bf238005aa28c5b615f70591",
+      "id": "TASK-2DFA4E63BF238005AA28C5B615F70591",
+      "title": "T03 Design system alignment",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T03 Design system alignment 2dfa4e63bf238005aa28c5b615f70591.md",
+      "taskCode": "TO3",
+      "done": true
+    },
+    {
+      "projectId": "PROD-M1-P1.1-PRD",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dfa4e63bf2380138fc9edd08638bfd8",
+      "id": "TASK-2DFA4E63BF2380138FC9EDD08638BFD8",
+      "title": "T03 Draft PRDs",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T03 Draft PRDs 2dfa4e63bf2380138fc9edd08638bfd8.md",
+      "taskCode": "TO3",
+      "done": true
+    },
+    {
+      "projectId": "MKT-M1-P1.1-POS",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dfa4e63bf23804c85aaf442446361ea",
+      "id": "TASK-2DFA4E63BF23804C85AAF442446361EA",
+      "title": "T03 Educational content",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T03 Educational content 2dfa4e63bf23804c85aaf442446361ea.md",
+      "taskCode": "TO3",
+      "done": true
+    },
+    {
+      "projectId": "RES-M1-P1.1-A&S",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf23802086d8ca830a5e9a8f",
+      "id": "TASK-2E2A4E63BF23802086D8CA830A5E9A8F",
+      "title": "T03 Two pointer patterns",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T03 Two pointer patterns 2e2a4e63bf23802086d8ca830a5e9a8f.md",
+      "taskCode": "TO3",
+      "done": true
+    },
+    {
+      "projectId": "ENG-M1-P1.1-INIT",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2dfa4e63bf2380a5bff7e944b70bacdb",
+      "id": "TASK-2DFA4E63BF2380A5BFF7E944B70BACDB",
+      "title": "T03 Validate MCP & tooling availability",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T03 Validate MCP & tooling availability 2dfa4e63bf2380a5bff7e944b70bacdb.md",
+      "taskCode": "TO3",
+      "done": true
+    },
+    {
+      "projectId": "OPS-M1-P1.1-OKR",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf2380f9afa7c29d36c6e9bb",
+      "id": "TASK-2E2A4E63BF2380F9AFA7C29D36C6E9BB",
+      "title": "T04 Align budgets to OKRs",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T04 Align budgets to OKRs 2e2a4e63bf2380f9afa7c29d36c6e9bb.md",
+      "taskCode": "T04",
+      "done": true
+    },
+    {
+      "projectId": "ENG-M1-P1.1-INIT",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf2380498e23fc508ec58dba",
+      "id": "TASK-2E2A4E63BF2380498E23FC508EC58DBA",
+      "title": "T04 Environment readiness report",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T04 Environment readiness report 2e2a4e63bf2380498e23fc508ec58dba.md",
+      "taskCode": "T04",
+      "done": true
+    },
+    {
+      "projectId": "RES-M1-P1.1-A&S",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf2380778601de9cb859f907",
+      "id": "TASK-2E2A4E63BF2380778601DE9CB859F907",
+      "title": "T04 Implementation drills",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T04 Implementation drills 2e2a4e63bf2380778601de9cb859f907.md",
+      "taskCode": "T04",
+      "done": true
+    },
+    {
+      "projectId": "DES-M1-P1.1-UXARCH",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf23804da8edd48c2fed4dd8",
+      "id": "TASK-2E2A4E63BF23804DA8EDD48C2FED4DD8",
+      "title": "T04 Low-fidelity prototypes",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T04 Low-fidelity prototypes 2e2a4e63bf23804da8edd48c2fed4dd8.md",
+      "taskCode": "T04",
+      "done": true
+    },
+    {
+      "projectId": "PROD-M1-P1.1-PRD",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf2380889703e969877da590",
+      "id": "TASK-2E2A4E63BF2380889703E969877DA590",
+      "title": "T04 Pricing & packaging",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T04 Pricing & packaging 2e2a4e63bf2380889703e969877da590.md",
+      "taskCode": "T04",
+      "done": true
+    },
+    {
+      "projectId": "MKT-M1-P1.1-POS",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf2380dabb9ce1d4cfe7841d",
+      "id": "TASK-2E2A4E63BF2380DABB9CE1D4CFE7841D",
+      "title": "T04 Social signal monitoring",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T04 Social signal monitoring 2e2a4e63bf2380dabb9ce1d4cfe7841d.md",
+      "taskCode": "T04",
+      "done": true
+    },
+    {
+      "projectId": null,
+      "relationState": "manifest-confirmed-orphan",
+      "sourceIdentity": "2e5a4e63bf2380f68521c3862767d0f5",
+      "id": "TASK-2E5A4E63BF2380F68521C3862767D0F5",
+      "title": "T05 128. longest consecutive sequence",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T05 128 longest consecutive sequence 2e5a4e63bf2380f68521c3862767d0f5.md",
+      "taskCode": "",
+      "done": true
+    },
+    {
+      "projectId": "PROD-M1-P1.1-PRD",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf23807082c9caf65e5400ea",
+      "id": "TASK-2E2A4E63BF23807082C9CAF65E5400EA",
+      "title": "T05 Feasibility review",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T05 Feasibility review 2e2a4e63bf23807082c9caf65e5400ea.md",
+      "taskCode": "T05",
+      "done": true
+    },
+    {
+      "projectId": "DES-M1-P1.1-UXARCH",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf23800a99e4c7b5c9df23f4",
+      "id": "TASK-2E2A4E63BF23800A99E4C7B5C9DF23F4",
+      "title": "T05 Handoff to Engineering",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T05 Handoff to Engineering 2e2a4e63bf23800a99e4c7b5c9df23f4.md",
+      "taskCode": "T05",
+      "done": true
+    },
+    {
+      "projectId": "ENG-M1-P1.1-INIT",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf2380ffbd02f291cbe9c72a",
+      "id": "TASK-2E2A4E63BF2380FFBD02F291CBE9C72A",
+      "title": "T05 Initialization sign-off",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T05 Initialization sign-off 2e2a4e63bf2380ffbd02f291cbe9c72a.md",
+      "taskCode": "T05",
+      "done": true
+    },
+    {
+      "projectId": "MKT-M1-P1.1-POS",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf2380219472c3beea03edaf",
+      "id": "TASK-2E2A4E63BF2380219472C3BEEA03EDAF",
+      "title": "T05 Product language feedback",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T05 Product language feedback 2e2a4e63bf2380219472c3beea03edaf.md",
+      "taskCode": "T05",
+      "done": true
+    },
+    {
+      "projectId": "OPS-M1-P1.1-OKR",
+      "relationState": "explicit-source-project-page",
+      "sourceIdentity": "2e2a4e63bf23807f807adaf8aabba5e6",
+      "id": "TASK-2E2A4E63BF23807F807ADAF8AABBA5E6",
+      "title": "T05 Publish OKRs",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Tasks/T05 Publish OKRs 2e2a4e63bf23807f807adaf8aabba5e6.md",
+      "taskCode": "T05",
+      "done": true
+    }
+  ],
+  "taskCount": 40,
+  "sourceRoot": "3.RESOURCES/Digital Herencia/",
+  "schemaVersion": 1,
+  "projects": [
+    {
+      "milestone": "M1",
+      "phase": "P1.1",
+      "domain": "OPS",
+      "workDates": "January 1, 2026 → January 15, 2026",
+      "sourceIdentity": "2dba4e63bf2380fe9cbfdd8d6d1b5b62",
+      "projectPath": "1.PROJECTS/OPS-M1-P1.1-OKR OKRs-Constraints/Project.md",
+      "sourceStatus": "Done",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Projects/OPS-M1-P1 1-OKR – OKRs & Constraints 2dba4e63bf2380fe9cbfdd8d6d1b5b62.md",
+      "id": "OPS-M1-P1.1-OKR"
+    },
+    {
+      "milestone": "M1",
+      "phase": "P1.1",
+      "domain": "PROD",
+      "workDates": "January 1, 2026 → January 15, 2026",
+      "sourceIdentity": "2dba4e63bf2380289bf7ff2b34b540bf",
+      "projectPath": "1.PROJECTS/PROD-M1-P1.1-PRD Problem-Definition/Project.md",
+      "sourceStatus": "Done",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Projects/PROD-M1-P1 1-PRD – Problem Definition 2dba4e63bf2380289bf7ff2b34b540bf.md",
+      "id": "PROD-M1-P1.1-PRD"
+    },
+    {
+      "milestone": "M1",
+      "phase": "P1.1",
+      "domain": "RES",
+      "workDates": "January 1, 2026 → January 15, 2026",
+      "sourceIdentity": "2dba4e63bf238078b705e88338208ff2",
+      "projectPath": "1.PROJECTS/RES-M1-P1.1-A&S Arrays-Strings/Project.md",
+      "sourceStatus": "Done",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Projects/RES-M1-P1 1-A&S - Arrays & Strings 2dba4e63bf238078b705e88338208ff2.md",
+      "id": "RES-M1-P1.1-A&S"
+    },
+    {
+      "milestone": "M1",
+      "phase": "P1.1",
+      "domain": "MKT",
+      "workDates": "January 1, 2026 → January 15, 2026",
+      "sourceIdentity": "2dba4e63bf23809c80fec53225354dfe",
+      "projectPath": "1.PROJECTS/MKT-M1-P1.1-POS Positioning/Project.md",
+      "sourceStatus": "Done",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Projects/MKT-M1-P1 1-POS – Positioning 2dba4e63bf23809c80fec53225354dfe.md",
+      "id": "MKT-M1-P1.1-POS"
+    },
+    {
+      "milestone": "M1",
+      "phase": "P1.1",
+      "domain": "DES",
+      "workDates": "January 1, 2026 → January 15, 2026",
+      "sourceIdentity": "2dba4e63bf2380248131e5d5013a6474",
+      "projectPath": "1.PROJECTS/DES-M1-P1.1-UXARCH UX-Architecture/Project.md",
+      "sourceStatus": "Done",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Projects/DES-M1-P1 1-UXARCH – UX Architecture 2dba4e63bf2380248131e5d5013a6474.md",
+      "id": "DES-M1-P1.1-UXARCH"
+    },
+    {
+      "milestone": "M1",
+      "phase": "P1.1",
+      "domain": "ENG",
+      "workDates": "January 1, 2026 → January 15, 2026",
+      "sourceIdentity": "2dba4e63bf2380f283d3f693dbe0139a",
+      "projectPath": "1.PROJECTS/ENG-M1-P1.1-INIT Environment-Initialization/Project.md",
+      "sourceStatus": "Done",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Projects/ENG-M1-P1 1-INIT – Environment Initialization 2dba4e63bf2380f283d3f693dbe0139a.md",
+      "id": "ENG-M1-P1.1-INIT"
+    },
+    {
+      "milestone": "M1",
+      "phase": "P1.1",
+      "domain": "OPS",
+      "workDates": "January 8, 2026 → January 22, 2026",
+      "sourceIdentity": "2e2a4e63bf238096812cd2e4ae8179ab",
+      "projectPath": "1.PROJECTS/OPS-M1-P1.1-GOV LLC-Governance/Project.md",
+      "sourceStatus": "In progress",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Projects/OPS-M1-P1 1-GOV – LLC & Governance 2e2a4e63bf238096812cd2e4ae8179ab.md",
+      "id": "OPS-M1-P1.1-GOV"
+    },
+    {
+      "milestone": "M1",
+      "phase": "P1.1",
+      "domain": "PROD",
+      "workDates": "January 8, 2026 → January 22, 2026",
+      "sourceIdentity": "2e2a4e63bf238046b0b3fdfbea5966b6",
+      "projectPath": "1.PROJECTS/PROD-M1-P1.1-VERIFY PRD-Verification/Project.md",
+      "sourceStatus": "In progress",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Projects/PROD-M1-P1 1-VERIFY – PRD Verification 2e2a4e63bf238046b0b3fdfbea5966b6.md",
+      "id": "PROD-M1-P1.1-VERIFY"
+    },
+    {
+      "milestone": "M1",
+      "phase": "P1.1",
+      "domain": "DES",
+      "workDates": "January 8, 2026 → January 22, 2026",
+      "sourceIdentity": "2e2a4e63bf23801b90d1d80b3b282226",
+      "projectPath": "1.PROJECTS/DES-M1-P1.1-DESVERIFY Design-Verification/Project.md",
+      "sourceStatus": "In progress",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Projects/DES-M1-P1 1-DESVERIFY – Design Verification 2e2a4e63bf23801b90d1d80b3b282226.md",
+      "id": "DES-M1-P1.1-DESVERIFY"
+    },
+    {
+      "milestone": "M1",
+      "phase": "P1.2",
+      "domain": "ENG",
+      "workDates": "January 8, 2026 → January 22, 2026",
+      "sourceIdentity": "2e2a4e63bf238072bdfce4c99c21b316",
+      "projectPath": "1.PROJECTS/ENG-M1-P1.2-CONFIG Project-Configuration/Project.md",
+      "sourceStatus": "In progress",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Projects/ENG-M1-P1 2-CONFIG – Project Configuration 2e2a4e63bf238072bdfce4c99c21b316.md",
+      "id": "ENG-M1-P1.2-CONFIG"
+    },
+    {
+      "milestone": "M1",
+      "phase": "P1.1",
+      "domain": "MKT",
+      "workDates": "January 8, 2026 → January 22, 2026",
+      "sourceIdentity": "2e2a4e63bf2380138c42efc10739edb9",
+      "projectPath": "1.PROJECTS/MKT-M1-P1.1-PUBSETUP Public-Presence-Setup/Project.md",
+      "sourceStatus": "In progress",
+      "sourcePath": "3.RESOURCES/Digital Herencia/Projects/MKT-M1-P1 1-PUBSETUP – Public Presence Setup 2e2a4e63bf2380138c42efc10739edb9.md",
+      "id": "MKT-M1-P1.1-PUBSETUP"
+    }
+  ],
+  "explicitProjectRelations": 34
+}

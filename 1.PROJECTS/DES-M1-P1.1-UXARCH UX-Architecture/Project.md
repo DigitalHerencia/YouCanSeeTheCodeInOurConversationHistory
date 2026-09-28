@@ -1,8 +1,11 @@
 ---
-type: project
-id: DES-M1-P1.1-UXARCH
+type: project
+source_path: "3.RESOURCES/Digital Herencia/Projects/DES-M1-P1 1-UXARCH – UX Architecture 2dba4e63bf2380248131e5d5013a6474.md"
+schema_version: 1
+source_identity: 2dba4e63bf2380248131e5d5013a6474
+project_type: DES
+id: DES-M1-005
 project_code: DES-M1-P1.1-UXARCH
-domain: DES
 status: done
 target_start: 2026-01-01
 target_end: 2026-01-15
@@ -39,3 +42,5 @@ Record owner-approved objective and acceptance criteria.
 <!-- hearth:generated:start -->
 Milestone: [[Milestone M1]] · Phase: [[Phase P1.1]]
 <!-- hearth:generated:end -->
+
+

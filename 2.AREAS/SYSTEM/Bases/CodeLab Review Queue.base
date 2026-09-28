@@ -1,0 +1,17 @@
+filters:
+  and:
+    - 'type == "codelab"'
+    - 'file.inFolder("2.AREAS/SYSTEM/Code Lab")'
+    - 'next_review <= today() && mastery_state != "mastered"'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "CodeLab Review Queue"
+    order:
+      - file.name
+      - codelab_kind
+      - module
+      - mastery_state
+      - next_review

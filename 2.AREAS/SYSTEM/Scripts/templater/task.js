@@ -1,0 +1,24 @@
+const {PATHS}=require('./core/config');
+const {wiki}=require('./core/paths');
+const {nextSequential,slug}=require('./core/ids');
+const {resolve}=require('./core/links');
+const {run}=require('./core/reconcile');
+module.exports=async context=>{
+ const app=context.app||context,api=context.quickAddApi||app.plugins.plugins.quickadd?.api,active=app.workspace.getActiveFile();
+ if(!api)throw new Error('QuickAdd API unavailable.');
+ if(!active)throw new Error('Open a project or phase note before creating a TaskNotes task.');
+ const fm=app.metadataCache.getFileCache(active)?.frontmatter||{};
+ const project=resolve(app,fm.type==='project'?wiki(active.path):fm.project,active);
+ const phase=resolve(app,fm.type==='phase'?wiki(active.path):fm.phase,active);
+ const milestone=resolve(app,fm.type==='milestone'?wiki(active.path):fm.milestone,active)||(phase?resolve(app,app.metadataCache.getFileCache(phase)?.frontmatter?.milestone,phase):null);
+ if(!project&&!phase&&!milestone)throw new Error('Task creation requires an explicit project, milestone, or phase context.');
+ const title=await api.inputPrompt('Task','One executable unit with an observable result.');if(!title)return 'Task creation cancelled.';
+ const files=app.vault.getMarkdownFiles().map(file=>({file,frontmatter:app.metadataCache.getFileCache(file)?.frontmatter||{}})),id=nextSequential(files,'HTASK-',4),safe=slug(title).toLowerCase(),path=`${PATHS.taskFolder}/${id} ${safe}.md`;
+ const projectFm=project?app.metadataCache.getFileCache(project)?.frontmatter||{}:{};
+ const phaseFm=phase?app.metadataCache.getFileCache(phase)?.frontmatter||{}:{};
+ const code=projectFm.project_code||'';
+ const projectLink=project?wiki(project.path):'',milestoneLink=milestone?wiki(milestone.path):'',phaseLink=phase?wiki(phase.path):'';
+ if(app.vault.getAbstractFileByPath(path))throw new Error(`Task already exists: ${path}`);
+ await app.vault.create(path,`---\ntype: task\nid: ${id}\nstatus: backlog\npriority: normal\ndue: null\nscheduled: null\nproject: ${JSON.stringify(projectLink)}\nmilestone: ${JSON.stringify(milestoneLink)}\nphase: ${JSON.stringify(phaseLink)}\nticket_code: ${code?`${code}-T${id.slice(-2)}`:id}\nproject_code: ${JSON.stringify(code)}\ncreated: ${new Date().toISOString().slice(0,10)}\nupdated: ${new Date().toISOString().slice(0,10)}\ntags: [type/task]\n---\n# ${title}\n\n## Outcome\nDescribe the observable result. Link its requirement or source document.\n\n## Acceptance criteria\n- [ ] Define an observable completion condition.\n\n## Execution notes\n\n## Evidence\n\n## Human controls\nStatus: \`INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]\` · Priority: \`INPUT[select(option(low), option(normal), option(high), option(urgent)):priority]\` · Due: \`INPUT[date:due]\` · Scheduled: \`INPUT[date:scheduled]\` · Blocker: \`INPUT[text:blocker]\`\n`);
+ await run(app);return `Created TaskNotes execution record ${id}${phaseFm.number?` in ${phaseFm.number}`:''}.`;
+};

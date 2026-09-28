@@ -1,7 +1,12 @@
 ---
-type: milestone
-id: ENG-M1-P1.1-INIT-M1
-project: '[[Project]]'
+[: "["
+p: "r"
+type: milestone
+source_identity: 2dba4e63bf2380f283d3f693dbe0139a
+source_path: "3.RESOURCES/Digital Herencia/Projects/ENG-M1-P1 1-INIT – Environment Initialization 2dba4e63bf2380f283d3f693dbe0139a.md"
+schema_version: 1
+id: ENG-M1-006-M1
+project: "[[1.PROJECTS/
 status: done
 objective: ''
 start: 2026-01-01
@@ -15,6 +20,8 @@ counts:
   completed: 0
   open: 0
 ---
+[: "["
+p: "r"
 # M1 — Foundation & Pre-Production
 
 ## Owner controls
@@ -28,3 +35,6 @@ Confirm milestone outcome and acceptance.
 
 ## Phases
 - [[Phase P1.1]]
+
+
+

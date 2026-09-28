@@ -1,0 +1,17 @@
+filters:
+  and:
+    - 'type == "document"'
+    - 'file.inFolder("1.PROJECTS")'
+    - 'review_status == "needs-review"'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Documents Review"
+    order:
+      - file.name
+      - project
+      - review_status
+      - review_due
+      - updated

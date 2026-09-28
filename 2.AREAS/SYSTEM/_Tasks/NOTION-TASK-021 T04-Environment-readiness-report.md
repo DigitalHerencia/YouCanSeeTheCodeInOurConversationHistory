@@ -1,27 +1,33 @@
 ---
 type: task
-id: TASK-980AD31A-27D9-48C1-BD1C-8BF6949D4B70
+id: TASK-2E2A4E63BF2380498E23FC508EC58DBA
 source_task_code: T04
-task_code: ""
 status: done
 priority: none
-notion_created_at: January 8, 2026 7:17 AM
-created: 2026-09-26
+created: January 8, 2026 7:17 AM
 updated: 2026-09-26
-completed_at: 2026-01-08
-project: ""
-milestone: ""
-phase: ""
-source: Notion export
+source: Notion canonical task page
+source_path: "3.RESOURCES/Digital Herencia/Tasks/T04 Environment readiness report 2e2a4e63bf2380498e23fc508ec58dba.md"
+source_identity: 2e2a4e63bf2380498e23fc508ec58dba
 provenance: "[[3.RESOURCES/Digital Herencia/Tasks 2d5a4e63bf23816fa217ef754ce4a70e_all.csv]]"
 tags:
   - type/task
   - hearth/migration
   - hearth/repair
 title: T04 Environment readiness report
-dateCreated: 2026-01-08
-migration_relation_state: source-relation-missing
+migration_relation_state: explicit-source-project-page
 ---
+completed_at: null
+phase: "[[1.PROJECTS/ENG-M1-P1.1-INIT Environment-Initialization/Phase P1.1]]"
+project: "[[1.PROJECTS/ENG-M1-P1.1-INIT Environment-Initialization/Project]]"
+project_code: ENG-M1-P1.1-INIT
+task_code: "T04"
+ticket_code: ENG-M1-P1.1-INIT-T04
+milestone: "[[1.PROJECTS/ENG-M1-P1.1-INIT Environment-Initialization/Milestone M1]]"
+## Source provenance
+- Canonical task page: [[3.RESOURCES/Digital Herencia/Tasks/T04 Environment readiness report 2e2a4e63bf2380498e23fc508ec58dba]]
+- Source identity: 2e2a4e63bf2380498e23fc508ec58dba
+- Project relation: explicit on canonical source page
 
 ## Owner controls
 - Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]`
@@ -30,6 +36,16 @@ migration_relation_state: source-relation-missing
 
 # T04 Environment readiness report
 
-Imported verbatim from Notion. TaskNotes execution record; project relation omitted because source export provides no relation.
+Imported verbatim from Notion. TaskNotes execution record. Canonical Notion task page contains an explicit Project relation; the linked project is recorded in frontmatter.
 
 Source created: January 8, 2026 7:17 AM.
+
+
+
+
+
+
+
+
+
+

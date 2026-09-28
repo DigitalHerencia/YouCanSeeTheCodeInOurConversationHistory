@@ -1,0 +1,18 @@
+filters:
+  and:
+    - 'type == "zettel-workbench"'
+    - 'file.inFolder("2.AREAS/ZETTLECASTEN/Inbox")'
+    - 'state == "inbox"'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Resources Inbox"
+    order:
+      - file.name
+      - resource_type
+      - authority
+      - resource_state
+      - created
+

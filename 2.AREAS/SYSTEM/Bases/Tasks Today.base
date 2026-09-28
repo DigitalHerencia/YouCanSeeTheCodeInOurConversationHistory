@@ -1,0 +1,19 @@
+filters:
+  and:
+    - 'type == "task"'
+    - 'file.inFolder("2.AREAS/SYSTEM/_Tasks")'
+    - 'scheduled == today()'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Tasks Today"
+    order:
+      - file.name
+      - status
+      - priority
+      - scheduled
+      - due
+      - project
+      - phase

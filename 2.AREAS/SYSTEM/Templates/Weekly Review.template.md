@@ -1,30 +1,48 @@
 ---
-type: resource
-status: backlog
-priority: normal
-created: {{date:YYYY-MM-DD}}
-updated: {{date:YYYY-MM-DD}}
+type: review
+review_kind: weekly
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+week:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/review]
 ---
-# {{title}}
+# Weekly Review — {{WEEK}}
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+## Generated Operating Summary
+### Completed
+### In Progress
+### Overdue
+### Blocked
+### Upcoming
 
-## Context and starter content
-- Source / provenance: add the originating note, issue, or conversation.
-- Outcome: state the observable result.
-- Constraints and dependencies: link only verified relations.
+## Project Movement
+| Project | Previous State | Current State | Evidence |
+|---|---|---|---|
 
-## Acceptance criteria
-- [ ] Outcome is explicit and reviewable.
-- [ ] Required evidence or output is linked.
+## Decisions Required
 
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
+## Resource / Zettelkasten Processing
 
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->
+## Code Lab Progress
+
+## What Worked
+
+## What Did Not
+
+## Next Week
+### Focus
+### Risks
+### Reviews / Gates
+
+## System Health
+
+
+
+
+## Human controls
+Review state: `INPUT[select(option(draft), option(review), option(complete)):status]`
+
+## Acceptance
+- [ ] Generated sections are refreshed from current task/project state.
+- [ ] Decisions and next actions link to authoritative notes.

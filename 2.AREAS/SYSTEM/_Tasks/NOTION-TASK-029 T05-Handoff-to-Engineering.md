@@ -1,28 +1,32 @@
 ---
 type: task
-id: TASK-6FA3ADFA-E393-4645-A9D3-B9B751DDFB86
+id: TASK-2E2A4E63BF23800A99E4C7B5C9DF23F4
 source_task_code: T05
-task_code: DES-M1-P1.1-UXARCH-T05
 status: done
 priority: none
-notion_created_at: January 8, 2026 10:28 AM
-created: 2026-09-26
+created: January 8, 2026 10:28 AM
 updated: 2026-09-26
-completed_at: 2026-01-08
-project: "[[1.PROJECTS/DES-M1-P1.1-UXARCH UX-Architecture/Project]]"
-milestone: "[[1.PROJECTS/DES-M1-P1.1-UXARCH UX-Architecture/Milestone M1]]"
-phase: "[[1.PROJECTS/DES-M1-P1.1-UXARCH UX-Architecture/Phase P1.1]]"
-source: Notion export
+source: Notion canonical task page
+source_path: "3.RESOURCES/Digital Herencia/Tasks/T05 Handoff to Engineering 2e2a4e63bf23800a99e4c7b5c9df23f4.md"
+source_identity: 2e2a4e63bf23800a99e4c7b5c9df23f4
 provenance: "[[3.RESOURCES/Digital Herencia/Tasks 2d5a4e63bf23816fa217ef754ce4a70e_all.csv]]"
 tags:
   - type/task
   - hearth/migration
 title: T05 Handoff to Engineering
-dateCreated: 2026-01-08
-migration_relation_state: verified-ticketing-source
-relation_source: "[[3.RESOURCES/Digital Herencia/SOPs/Ticketing 2d8a4e63bf2380dd9a04cbbb762b9c7c]]"
-project_code: DES-M1-P1.1-UXARCH
+migration_relation_state: explicit-source-project-page
 ---
+completed_at: null
+phase: "[[1.PROJECTS/DES-M1-P1.1-UXARCH UX-Architecture/Phase P1.1]]"
+project: "[[1.PROJECTS/DES-M1-P1.1-UXARCH UX-Architecture/Project]]"
+project_code: DES-M1-P1.1-UXARCH
+task_code: "T05"
+ticket_code: DES-M1-P1.1-UXARCH-T05
+milestone: "[[1.PROJECTS/DES-M1-P1.1-UXARCH UX-Architecture/Milestone M1]]"
+## Source provenance
+- Canonical task page: [[3.RESOURCES/Digital Herencia/Tasks/T05 Handoff to Engineering 2e2a4e63bf23800a99e4c7b5c9df23f4]]
+- Source identity: 2e2a4e63bf23800a99e4c7b5c9df23f4
+- Project relation: explicit on canonical source page
 
 ## Owner controls
 - Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]`
@@ -31,6 +35,16 @@ project_code: DES-M1-P1.1-UXARCH
 
 # T05 Handoff to Engineering
 
-Imported verbatim from Notion. TaskNotes execution record; project relation omitted because source export provides no relation.
+Imported verbatim from Notion. TaskNotes execution record. Canonical Notion task page contains an explicit Project relation; the linked project is recorded in frontmatter.
 
 Source created: January 8, 2026 10:28 AM.
+
+
+
+
+
+
+
+
+
+

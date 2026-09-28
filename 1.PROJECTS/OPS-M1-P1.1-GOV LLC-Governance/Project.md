@@ -1,8 +1,11 @@
 ---
-type: project
-id: OPS-M1-P1.1-GOV
+type: project
+source_path: "3.RESOURCES/Digital Herencia/Projects/OPS-M1-P1 1-GOV – LLC & Governance 2e2a4e63bf238096812cd2e4ae8179ab.md"
+schema_version: 1
+source_identity: 2e2a4e63bf238096812cd2e4ae8179ab
+project_type: OPS
+id: OPS-M1-007
 project_code: OPS-M1-P1.1-GOV
-domain: OPS
 status: in-progress
 target_start: 2026-01-08
 target_end: 2026-01-22
@@ -39,3 +42,5 @@ Record owner-approved objective and acceptance criteria.
 <!-- hearth:generated:start -->
 Milestone: [[Milestone M1]] · Phase: [[Phase P1.1]]
 <!-- hearth:generated:end -->
+
+

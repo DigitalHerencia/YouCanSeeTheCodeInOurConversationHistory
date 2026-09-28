@@ -1,0 +1,15 @@
+filters:
+  and:
+    - 'type == "note"'
+    - 'file.inFolder("1.PROJECTS")'
+    - 'project != null'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Active Project Notes"
+    order:
+      - file.name
+      - project
+      - updated

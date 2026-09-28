@@ -76,8 +76,8 @@
   "hiddenFilters": [],
   "dashboards": [
     {
-      "id": "dash-home",
-      "name": "Digital Herencia",
+      "id": "hearth-code-lab",
+      "name": "Code Lab",
       "fitToPage": true,
       "showSearch": true,
       "header": {
@@ -97,8 +97,49 @@
         "blur": 0
       },
       "backgroundLayout": "full",
-      "iconLucide": "terminal-square",
-      "cards": []
+      "iconLucide": "graduation-cap",
+      "cards": [
+        {
+          "title": "Current lessons",
+          "h": 6,
+          "y": 0,
+          "target": "2.AREAS/SYSTEM/Bases/CodeLab Current.base",
+          "kind": "embed",
+          "w": 8,
+          "id": "lab-current",
+          "x": 0
+        },
+        {
+          "title": "Mastery",
+          "h": 6,
+          "y": 0,
+          "target": "2.AREAS/SYSTEM/Bases/CodeLab Mastery.base",
+          "kind": "embed",
+          "w": 4,
+          "id": "lab-mastery",
+          "x": 8
+        },
+        {
+          "title": "Review queue",
+          "h": 5,
+          "y": 6,
+          "target": "2.AREAS/SYSTEM/Bases/CodeLab Review Queue.base",
+          "kind": "embed",
+          "w": 6,
+          "id": "lab-review",
+          "x": 0
+        },
+        {
+          "title": "Code Space",
+          "h": 5,
+          "y": 6,
+          "target": "2.AREAS/SYSTEM/Code Space/Code Space.md",
+          "kind": "embed",
+          "w": 6,
+          "id": "lab-space",
+          "x": 6
+        }
+      ]
     },
     {
       "id": "dash-projects",
@@ -125,391 +166,398 @@
       "iconLucide": "kanban-square",
       "cards": [
         {
-          "id": "projects-list",
-          "kind": "embed",
-          "title": "Projects",
-          "target": "2.AREAS/SYSTEM/Bases/Projects.base",
-          "baseView": "Projects",
-          "x": 4,
-          "y": 0,
-          "w": 8,
+          "title": "Selected project",
           "h": 3,
-          "fx": 0.3366666666666667,
-          "fw": 0.6633333333333334,
-          "fy": 0,
-          "fh": 194
+          "y": 0,
+          "target": "2.AREAS/SYSTEM/State/Project Context.md",
+          "kind": "embed",
+          "w": 4,
+          "id": "project-context",
+          "x": 0
         },
         {
-          "id": "projects-tasks",
-          "kind": "tasks",
-          "title": "TaskNotes",
-          "tasks": {
-            "source": "tasknotes",
-            "layout": "kanban",
-            "folderScope": "whitelist",
-            "folders": [
-              "2.AREAS/SYSTEM/_Tasks"
-            ],
-            "showCompleted": false,
-            "taskNotesDoneStatuses": [
-              "done",
-              "cancelled"
-            ],
-            "kanbanOrder": [
-              "backlog",
-              "ready",
-              "in-progress",
-              "blocked",
-              "done",
-              "cancelled"
-            ]
-          },
-          "x": 0,
+          "title": "Projects",
+          "h": 3,
+          "y": 0,
+          "target": "2.AREAS/SYSTEM/Bases/Projects Active.base",
+          "kind": "embed",
+          "w": 8,
+          "id": "project-active",
+          "x": 4
+        },
+        {
+          "title": "Project tasks",
+          "h": 6,
           "y": 3,
-          "w": 12,
-          "h": 7,
-          "fx": 0,
-          "fw": 1,
-          "fy": 210,
-          "fh": 474,
-          "target": ""
+          "target": "2.AREAS/SYSTEM/Bases/Active Project Tasks.base",
+          "kind": "embed",
+          "w": 8,
+          "id": "project-tasks",
+          "x": 0
         },
         {
-          "id": "projects-launcher",
-          "kind": "commands",
-          "title": "Work",
           "commands": [
             {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000002",
-              "name": "Project",
-              "icon": "folder-plus"
-            },
-            {
-              "id": "tasknotes:create-new-task",
               "name": "Task",
+              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000003",
               "icon": "square-plus"
             },
             {
+              "name": "Task board",
               "id": "tasknotes:open-kanban-view",
-              "name": "Full Task Board",
               "icon": "columns-3"
+            },
+            {
+              "name": "Project",
+              "id": "quickadd:choice:hearth-204ab83d",
+              "icon": "folder-plus"
             }
           ],
-          "x": 0,
-          "y": 0,
-          "w": 4,
-          "h": 3,
-          "tileSize": 48,
-          "fx": 0,
-          "fw": 0.3266666666666667,
-          "fy": 0,
-          "fh": 194,
-          "target": ""
+          "id": "project-actions",
+          "kind": "commands",
+          "title": "Work"
         }
       ]
     },
     {
-      "id": "dash-mtw1u9o8-4376",
-      "name": "Digital Herencia copy",
-      "cards": [
-        {
-          "id": "card-mtw1u9o8-4052",
-          "kind": "commands",
-          "title": "Capture",
-          "commands": [
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000001",
-              "name": "Amoeba",
-              "icon": "spline",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000002",
-              "name": "Project",
-              "icon": "target",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000003",
-              "name": "Task",
-              "icon": "square-check-big",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000004",
-              "name": "Clipping",
-              "icon": "paperclip",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000005",
-              "name": "AI Thread",
-              "icon": "messages-square",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000006",
-              "name": "Drill",
-              "icon": "braces",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "daily-notes",
-              "name": "Daily",
-              "icon": "calendar-days",
-              "sizeW": 96,
-              "sizeH": 44
-            }
-          ],
-          "tileSize": 48,
-          "x": 0,
-          "y": 0,
-          "w": 12,
-          "h": 4,
-          "fx": 0,
-          "fw": 1,
-          "fy": 0,
-          "fh": 264,
-          "target": ""
-        },
-        {
-          "id": "card-mtw1u9o9-905",
-          "kind": "links",
-          "title": "Navigate",
-          "x": 0,
-          "y": 4,
-          "w": 4,
-          "h": 6,
-          "links": [
-            {
-              "id": "5048a3f7-1f9a-4ac3-9534-726cba3016ed",
-              "label": "Projects",
-              "icon": "target",
-              "target": "1.PROJECTS/README.md",
-              "type": "note",
-              "sizeW": 76,
-              "sizeH": 48
-            },
-            {
-              "id": "36eb47a5-4165-413d-b26c-2d8b2cb41838",
-              "label": "Amoeba",
-              "icon": "spline",
-              "target": "AMOEBA/README.md",
-              "type": "note",
-              "sizeW": 76,
-              "sizeH": 48
-            },
-            {
-              "id": "3e1d6756-b62e-46b4-8aff-ab45b597a38d",
-              "label": "Habits",
-              "icon": "repeat-2",
-              "target": "HABITS/Habits.md",
-              "type": "note",
-              "sizeW": 76,
-              "sizeH": 48
-            },
-            {
-              "id": "4f30921d-9d15-499e-afb0-dabefd509027",
-              "label": "Guide",
-              "icon": "book-open",
-              "target": "SYSTEM/Start Here.md",
-              "type": "note",
-              "sizeW": 76,
-              "sizeH": 48
-            }
-          ],
-          "tileSize": 48,
-          "fx": 0,
-          "fw": 0.3266666666666667,
-          "fy": 280,
-          "fh": 404,
-          "target": ""
-        },
-        {
-          "id": "card-mtw1u9o9-7357",
-          "kind": "embed",
-          "title": "Active projects",
-          "target": "2.AREAS/SYSTEM/Bases/Projects.base",
-          "baseView": "Projects",
-          "x": 4,
-          "y": 4,
-          "w": 8,
-          "h": 6,
-          "fx": 0.3366666666666667,
-          "fw": 0.6633333333333334,
-          "fy": 280,
-          "fh": 404
-        }
-      ],
-      "iconLucide": "drafting-compass",
+      "id": "hearth-command-center",
+      "name": "Command Center",
       "fitToPage": true,
-      "showSearch": false,
+      "showSearch": true,
       "header": {
-        "showTitle": false,
+        "showTitle": true,
+        "title": "DIGITAL HERENCIA",
+        "logoIcon": "terminal-square",
         "align": "center",
-        "titleScale": 0.8,
-        "logoScale": 0.8,
+        "titleScale": 1.1,
+        "logoScale": 1.1,
         "marginTop": 0,
-        "spacingBelow": 8
+        "spacingBelow": 50
       },
       "background": {
         "kind": "image",
-        "value": "3.RESOURCES/assets/BG4.jpg",
-        "opacity": 1,
+        "value": "3.RESOURCES/assets/Digital Herencia Desert BG.jpg",
+        "opacity": 0.56,
         "blur": 0
       },
-      "backgroundLayout": "full"
-    },
-    {
-      "id": "dash-mtvsxtnj-7603",
-      "name": "Home copy",
+      "backgroundLayout": "full",
+      "iconLucide": "command",
       "cards": [
         {
-          "kind": "embed",
-          "title": "",
-          "target": "Hearth/Home.md",
-          "x": 0,
+          "title": "Daily Snapshot",
+          "h": 6,
           "y": 0,
-          "w": 4,
-          "h": 12,
-          "id": "card-mtvsxtnj-9483",
-          "editable": false,
-          "livePreview": true,
-          "showOpenButton": false,
-          "fx": 0,
-          "fw": 0.3266666666666667,
-          "fy": 0,
-          "fh": 824
+          "target": "2.AREAS/DAILY/Today.md",
+          "kind": "embed",
+          "w": 8,
+          "id": "cc-snapshot",
+          "x": 0
         },
         {
-          "kind": "embed",
-          "title": "Projects",
-          "target": "2.AREAS/SYSTEM/Bases/Projects.base",
-          "baseView": "Projects",
-          "x": 4,
-          "y": 0,
-          "w": 4,
+          "title": "Today tasks",
           "h": 6,
-          "id": "card-mtvsxtnj-4634",
-          "editable": true,
-          "livePreview": true,
-          "showOpenButton": true,
-          "fx": 0.3366666666666667,
-          "fw": 0.3266666666666667,
+          "y": 0,
+          "target": "2.AREAS/SYSTEM/Bases/Tasks Today.base",
+          "kind": "embed",
+          "w": 4,
+          "id": "cc-today",
+          "x": 8
+        },
+        {
+          "title": "Blockers",
+          "h": 5,
+          "y": 6,
+          "target": "2.AREAS/SYSTEM/Bases/Tasks Blocked.base",
+          "kind": "embed",
+          "w": 6,
+          "id": "cc-blocked",
+          "x": 0
+        },
+        {
+          "title": "Repairs",
+          "h": 5,
+          "y": 6,
+          "target": "2.AREAS/SYSTEM/Bases/Repair Queue.base",
+          "kind": "embed",
+          "w": 6,
+          "id": "cc-repair",
+          "x": 6
+        }
+      ]
+    },
+    {
+      "showSearch": false,
+      "fitToPage": true,
+      "background": {
+        "blur": 0,
+        "value": "3.RESOURCES/assets/Digital Herencia Desert BG.jpg",
+        "kind": "image",
+        "opacity": 0.56
+      },
+      "backgroundLayout": "full",
+      "cards": [
+        {
+          "title": "Repository",
+          "h": 3,
+          "y": 0,
+          "target": "",
+          "w": 12,
+          "x": 0,
+          "id": "git-actions",
+          "git": {
+            "logLimit": 6,
+            "actions": [
+              "commitAndSync",
+              "commit",
+              "push",
+              "pull",
+              "fetch",
+              "sourceControl",
+              "history"
+            ],
+            "sections": [
+              "status",
+              "actions"
+            ],
+            "commitScope": "smart",
+            "changeLimit": 6,
+            "showPaths": true,
+            "actionStyle": "labelled"
+          },
+          "kind": "git"
+        },
+        {
+          "title": "Changes",
+          "h": 4,
+          "y": 3,
+          "target": "",
+          "w": 6,
+          "x": 0,
+          "id": "git-changes",
+          "git": {
+            "logLimit": 6,
+            "actions": [
+              "commitAndSync",
+              "commit",
+              "push",
+              "pull",
+              "fetch",
+              "sourceControl",
+              "history"
+            ],
+            "sections": [
+              "changes"
+            ],
+            "commitScope": "smart",
+            "changeLimit": 8,
+            "showPaths": true,
+            "actionStyle": "labelled"
+          },
+          "kind": "git"
+        },
+        {
+          "title": "History",
+          "h": 4,
+          "y": 3,
+          "target": "",
+          "w": 6,
+          "x": 6,
+          "id": "git-log",
+          "git": {
+            "logLimit": 6,
+            "actions": [
+              "history"
+            ],
+            "sections": [
+              "log"
+            ],
+            "commitScope": "smart",
+            "changeLimit": 6,
+            "showPaths": true,
+            "actionStyle": "labelled"
+          },
+          "kind": "git"
+        },
+        {
+          "title": "Vault",
+          "h": 3,
+          "y": 7,
+          "target": "",
+          "kind": "stats",
+          "w": 6,
+          "id": "git-stats",
+          "x": 0
+        },
+        {
+          "title": "Activity",
+          "h": 3,
+          "heatmap": {},
+          "target": "",
+          "w": 6,
+          "x": 6,
+          "id": "git-heatmap",
+          "y": 7,
+          "kind": "heatmap"
+        }
+      ],
+      "id": "dash-git",
+      "name": "Git & Vault Stats",
+      "header": {
+        "logoIcon": "git-branch",
+        "showTitle": true,
+        "title": "Git & Vault Stats",
+        "titleScale": 1,
+        "align": "center",
+        "marginTop": 0,
+        "logoScale": 1,
+        "spacingBelow": 12
+      },
+      "iconLucide": "git-branch"
+    },
+    {
+      "showSearch": false,
+      "id": "dash-home",
+      "cards": [
+        {
+          "title": "Today",
+          "h": 6,
+          "y": 0,
+          "target": "2.AREAS/DAILY/Today.md",
+          "kind": "embed",
+          "w": 8,
+          "id": "home-daily",
+          "x": 0,
+          "fx": 0,
+          "fw": 0.6633333333333334,
           "fy": 0,
           "fh": 404
         },
         {
-          "kind": "embed",
-          "title": "Learning",
-          "target": "2.AREAS/SYSTEM/Bases/Code Lab.base",
-          "baseView": "Study Queue",
-          "x": 8,
-          "y": 0,
-          "w": 4,
+          "title": "Navigate",
+          "links": [
+            {
+              "label": "Command Center",
+              "id": "nav-cc",
+              "type": "note",
+              "icon": "command",
+              "target": "Hearth/Command Center.md"
+            },
+            {
+              "label": "Projects",
+              "id": "nav-project",
+              "type": "note",
+              "icon": "folder-kanban",
+              "target": "Hearth/Project Command Center.md"
+            },
+            {
+              "label": "ZETTLECASTEN",
+              "id": "nav-zk",
+              "type": "note",
+              "icon": "inbox",
+              "target": "Hearth/ZETTLECASTEN.md"
+            },
+            {
+              "label": "Library",
+              "id": "nav-lib",
+              "type": "note",
+              "icon": "library",
+              "target": "Hearth/Library.md"
+            },
+            {
+              "label": "Code Lab",
+              "id": "nav-lab",
+              "type": "note",
+              "icon": "graduation-cap",
+              "target": "Hearth/Code Lab.md"
+            },
+            {
+              "label": "Git & Vault",
+              "id": "nav-git",
+              "type": "note",
+              "icon": "git-branch",
+              "target": "Hearth/Git and Vault.md"
+            }
+          ],
           "h": 6,
-          "id": "card-mtvsxtnj-8906",
-          "editable": true,
-          "livePreview": true,
-          "showOpenButton": true,
+          "y": 0,
+          "kind": "links",
+          "w": 4,
+          "id": "home-nav",
+          "x": 8,
           "fx": 0.6733333333333335,
           "fw": 0.3266666666666667,
           "fy": 0,
           "fh": 404
         },
         {
-          "id": "card-mtvsxtnj-8177",
-          "kind": "commands",
-          "title": "Capture",
-          "commands": [
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000001",
-              "name": "Amoeba",
-              "icon": "spline",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000002",
-              "name": "Project",
-              "icon": "target",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000003",
-              "name": "Task",
-              "icon": "square-check-big",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000004",
-              "name": "Clipping",
-              "icon": "paperclip",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000005",
-              "name": "AI Thread",
-              "icon": "messages-square",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000006",
-              "name": "Drill",
-              "icon": "braces",
-              "sizeW": 96,
-              "sizeH": 44
-            },
-            {
-              "id": "daily-notes",
-              "name": "Daily",
-              "icon": "calendar-days",
-              "sizeW": 96,
-              "sizeH": 44
-            }
-          ],
-          "tileSize": 48,
-          "x": 4,
+          "title": "Active projects",
+          "h": 5,
           "y": 6,
-          "w": 8,
-          "h": 6,
-          "fx": 0.3366666666666667,
-          "fw": 0.6633333333333334,
+          "target": "2.AREAS/SYSTEM/Bases/Projects Active.base",
+          "kind": "embed",
+          "w": 12,
+          "id": "home-projects",
+          "x": 0,
+          "fx": 0,
+          "fw": 1,
           "fy": 420,
-          "fh": 404,
-          "target": ""
+          "fh": 334
         }
       ],
+      "backgroundLayout": "full",
       "iconLucide": "house",
-      "fitToPage": true,
-      "showSearch": false,
-      "header": {
-        "showTitle": false,
-        "title": "Digital Herencia",
-        "logoIcon": "terminal-square",
-        "align": "center",
-        "titleScale": 1,
-        "logoScale": 1,
-        "marginTop": 0,
-        "spacingBelow": 10
-      },
       "background": {
         "kind": "image",
-        "value": "3.RESOURCES/assets/BG4.jpg",
-        "opacity": 1,
+        "value": "3.RESOURCES/assets/Digital Herencia Desert BG.jpg",
+        "opacity": 0.56,
         "blur": 0
       },
-      "backgroundLayout": "full"
+      "header": {
+        "spacingBelow": 12,
+        "titleScale": 1,
+        "showTitle": true,
+        "align": "center",
+        "logoIcon": "flame",
+        "title": "HEARTH",
+        "marginTop": 0,
+        "logoScale": 1
+      },
+      "fitToPage": true,
+      "name": "Home"
+    },
+    {
+      "iconLucide": "inbox",
+      "name": "ZETTLECASTEN",
+      "cards": [
+        {
+          "title": "Capture queue",
+          "h": 7,
+          "y": 0,
+          "target": "2.AREAS/SYSTEM/Bases/Resources Inbox.base",
+          "kind": "embed",
+          "w": 7,
+          "id": "zk-inbox",
+          "x": 0
+        },
+        {
+          "commands": [
+            {
+              "icon": "inbox",
+              "name": "Capture Resource",
+              "id": "quickadd:choice:hearth-f8810117"
+            },
+            {
+              "icon": "sparkles",
+              "name": "Process Inbox",
+              "id": "quickadd:choice:hearth-62749706"
+            }
+          ],
+          "id": "zk-actions",
+          "kind": "commands",
+          "title": "Capture and process"
+        }
+      ],
+      "id": "hearth-zettle"
     },
     {
       "id": "dash-library",
@@ -536,347 +584,49 @@
       "iconLucide": "library",
       "cards": [
         {
+          "title": "Active resources",
+          "h": 6,
+          "y": 0,
+          "target": "2.AREAS/SYSTEM/Bases/Resources Active.base",
           "kind": "embed",
-          "title": "",
-          "target": "Hearth/Library.md",
-          "x": 0,
-          "y": 0,
-          "w": 12,
-          "h": 12,
-          "id": "library-main",
-          "editable": false,
-          "livePreview": true,
-          "showOpenButton": false,
-          "fx": 0,
-          "fw": 1,
-          "fy": 0,
-          "fh": 824
-        }
-      ]
-    },
-    {
-      "id": "dash-learning",
-      "name": "Learning",
-      "fitToPage": true,
-      "showSearch": false,
-      "header": {
-        "showTitle": true,
-        "title": "TypeScript Learning",
-        "logoIcon": "braces",
-        "align": "center",
-        "titleScale": 1,
-        "logoScale": 1,
-        "marginTop": 0,
-        "spacingBelow": 10
-      },
-      "background": {
-        "kind": "image",
-        "value": "3.RESOURCES/assets/BG4.jpg",
-        "opacity": 1,
-        "blur": 0
-      },
-      "backgroundLayout": "full",
-      "iconLucide": "graduation-cap",
-      "cards": [
-        {
-          "kind": "embed",
-          "title": "",
-          "target": "Hearth/Learning.md",
-          "x": 0,
-          "y": 0,
-          "w": 12,
-          "h": 12,
-          "id": "learning-main",
-          "editable": false,
-          "livePreview": true,
-          "showOpenButton": false,
-          "fx": 0,
-          "fw": 1,
-          "fy": 0,
-          "fh": 824
-        }
-      ]
-    },
-    {
-      "id": "dash-git",
-      "name": "Git and Vault",
-      "fitToPage": true,
-      "showSearch": false,
-      "header": {
-        "showTitle": false,
-        "title": "Git",
-        "logoIcon": "git-branch",
-        "align": "center",
-        "titleScale": 1,
-        "logoScale": 1,
-        "marginTop": 0,
-        "spacingBelow": 8
-      },
-      "background": {
-        "kind": "image",
-        "value": "3.RESOURCES/assets/BG4.jpg",
-        "opacity": 1,
-        "blur": 0
-      },
-      "backgroundLayout": "full",
-      "iconLucide": "git-branch",
-      "cards": [
-        {
-          "id": "git-actions",
-          "kind": "git",
-          "title": "Repository",
-          "git": {
-            "sections": [
-              "status",
-              "actions"
-            ],
-            "actions": [
-              "commitAndSync",
-              "commit",
-              "push",
-              "pull",
-              "fetch",
-              "sourceControl",
-              "history"
-            ],
-            "actionStyle": "labelled",
-            "changeLimit": 6,
-            "logLimit": 6,
-            "showPaths": true,
-            "commitScope": "smart"
-          },
-          "x": 0,
-          "y": 0,
-          "w": 12,
-          "h": 3,
-          "fx": 0,
-          "fw": 1,
-          "fy": 0,
-          "fh": 194,
-          "target": ""
+          "w": 8,
+          "id": "library-active",
+          "x": 0
         },
         {
-          "id": "git-changes",
-          "kind": "git",
-          "title": "Changes",
-          "git": {
-            "sections": [
-              "changes"
-            ],
-            "actions": [
-              "commitAndSync",
-              "commit",
-              "push",
-              "pull",
-              "fetch",
-              "sourceControl",
-              "history"
-            ],
-            "actionStyle": "labelled",
-            "changeLimit": 3,
-            "logLimit": 6,
-            "showPaths": true,
-            "commitScope": "smart"
-          },
-          "x": 0,
-          "y": 3,
-          "w": 6,
-          "h": 4,
-          "fx": 0,
-          "fw": 0.495,
-          "fy": 210,
-          "fh": 264,
-          "target": ""
+          "title": "Review and capture",
+          "h": 6,
+          "y": 0,
+          "target": "2.AREAS/SYSTEM/Bases/Resources Inbox.base",
+          "kind": "embed",
+          "w": 4,
+          "id": "library-inbox",
+          "x": 8
         },
         {
-          "id": "git-log",
-          "kind": "git",
-          "title": "History",
-          "git": {
-            "sections": [
-              "log"
-            ],
-            "actions": [
-              "commitAndSync",
-              "commit",
-              "push",
-              "pull",
-              "fetch",
-              "sourceControl",
-              "history"
-            ],
-            "actionStyle": "labelled",
-            "changeLimit": 6,
-            "logLimit": 3,
-            "showPaths": true,
-            "commitScope": "smart"
-          },
-          "x": 6,
-          "y": 3,
+          "title": "Superseded",
+          "h": 5,
+          "y": 6,
+          "target": "2.AREAS/SYSTEM/Bases/Resources Superseded.base",
+          "kind": "embed",
           "w": 6,
-          "h": 4,
-          "fx": 0.5050000000000001,
-          "fw": 0.495,
-          "fy": 210,
-          "fh": 264,
-          "target": ""
+          "id": "library-old",
+          "x": 0
         },
         {
-          "id": "git-stats",
-          "kind": "stats",
-          "title": "Vault",
-          "x": 0,
-          "y": 7,
+          "title": "Archive",
+          "h": 5,
+          "y": 6,
+          "target": "2.AREAS/SYSTEM/Bases/Archive Index.base",
+          "kind": "embed",
           "w": 6,
-          "h": 3,
-          "fx": 0,
-          "fw": 0.495,
-          "fy": 490,
-          "fh": 194,
-          "target": ""
-        },
-        {
-          "id": "git-heatmap",
-          "kind": "heatmap",
-          "title": "Activity",
-          "heatmap": {},
-          "x": 6,
-          "y": 7,
-          "w": 6,
-          "h": 3,
-          "fx": 0.5050000000000001,
-          "fw": 0.495,
-          "fy": 490,
-          "fh": 194,
-          "target": ""
-        }
-      ]
-    },
-    {
-      "id": "hearth-command-center",
-      "name": "Command Center",
-      "fitToPage": true,
-      "showSearch": true,
-      "header": {
-        "showTitle": true,
-        "title": "DIGITAL HERENCIA",
-        "logoIcon": "terminal-square",
-        "align": "center",
-        "titleScale": 1.1,
-        "logoScale": 1.1,
-        "marginTop": 0,
-        "spacingBelow": 50
-      },
-      "background": {
-        "kind": "image",
-        "value": "3.RESOURCES/assets/Digital Herencia Desert BG.jpg",
-        "opacity": 0.56,
-        "blur": 0
-      },
-      "backgroundLayout": "full",
-      "iconLucide": "terminal-square",
-      "cards": [
-        {
-          "id": "hearth-command-center",
-          "kind": "embed",
-          "title": "Command Center",
-          "target": "Hearth/Command Center.md",
-          "baseView": "Active",
-          "x": 0,
-          "y": 0,
-          "w": 12,
-          "h": 8,
-          "fx": 0,
-          "fw": 1,
-          "fy": 0,
-          "fh": 1
-        }
-      ]
-    },
-    {
-      "id": "hearth-code-lab",
-      "name": "Code Lab",
-      "fitToPage": true,
-      "showSearch": true,
-      "header": {
-        "showTitle": true,
-        "title": "DIGITAL HERENCIA",
-        "logoIcon": "terminal-square",
-        "align": "center",
-        "titleScale": 1.1,
-        "logoScale": 1.1,
-        "marginTop": 0,
-        "spacingBelow": 50
-      },
-      "background": {
-        "kind": "image",
-        "value": "3.RESOURCES/assets/Digital Herencia Desert BG.jpg",
-        "opacity": 0.56,
-        "blur": 0
-      },
-      "backgroundLayout": "full",
-      "iconLucide": "terminal-square",
-      "cards": [
-        {
-          "id": "hearth-code-lab",
-          "kind": "embed",
-          "title": "Code Lab",
-          "target": "2.AREAS/SYSTEM/Code Lab/Code Lab.md",
-          "baseView": "Active",
-          "x": 0,
-          "y": 0,
-          "w": 12,
-          "h": 8,
-          "fx": 0,
-          "fw": 1,
-          "fy": 0,
-          "fh": 1
-        }
-      ]
-    },
-    {
-      "id": "hearth-code-space",
-      "name": "Code Space",
-      "fitToPage": true,
-      "showSearch": true,
-      "header": {
-        "showTitle": true,
-        "title": "DIGITAL HERENCIA",
-        "logoIcon": "terminal-square",
-        "align": "center",
-        "titleScale": 1.1,
-        "logoScale": 1.1,
-        "marginTop": 0,
-        "spacingBelow": 50
-      },
-      "background": {
-        "kind": "image",
-        "value": "3.RESOURCES/assets/Digital Herencia Desert BG.jpg",
-        "opacity": 0.56,
-        "blur": 0
-      },
-      "backgroundLayout": "full",
-      "iconLucide": "terminal-square",
-      "cards": [
-        {
-          "id": "hearth-code-space",
-          "kind": "embed",
-          "title": "Code Space",
-          "target": "2.AREAS/SYSTEM/Code Space/Code Space.md",
-          "baseView": "Active",
-          "x": 0,
-          "y": 0,
-          "w": 12,
-          "h": 8,
-          "fx": 0,
-          "fw": 1,
-          "fy": 0,
-          "fh": 1
+          "id": "library-archive",
+          "x": 6
         }
       ]
     }
   ],
-  "activeDashboardId": "hearth-code-space",
+  "activeDashboardId": "dash-home",
   "pinnedCards": [],
   "gridColumns": 12,
   "rowHeight": 54,

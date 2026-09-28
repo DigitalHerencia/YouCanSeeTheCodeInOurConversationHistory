@@ -1,7 +1,12 @@
 ---
+[: "["
+p: "r"
 type: milestone
-id: OPS-M1-P1.1-GOV-M1
-project: "[[Project]]"
+source_identity: 2e2a4e63bf238096812cd2e4ae8179ab
+source_path: "3.RESOURCES/Digital Herencia/Projects/OPS-M1-P1 1-GOV – LLC & Governance 2e2a4e63bf238096812cd2e4ae8179ab.md"
+schema_version: 1
+id: OPS-M1-007-M1
+project: "[[1.PROJECTS/
 status: in-progress
 objective: ""
 start: 2026-01-08
@@ -15,6 +20,8 @@ counts:
   completed: 1
   open: 0
 ---
+[: "["
+p: "r"
 # M1 — Foundation & Pre-Production
 
 ## Owner controls
@@ -28,3 +35,6 @@ Confirm milestone outcome and acceptance.
 
 ## Phases
 - [[Phase P1.1]]
+
+
+

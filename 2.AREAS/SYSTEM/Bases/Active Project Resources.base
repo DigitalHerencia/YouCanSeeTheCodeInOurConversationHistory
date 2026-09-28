@@ -1,0 +1,17 @@
+filters:
+  and:
+    - 'type == "resource"'
+    - 'file.inFolder("3.RESOURCES")'
+    - 'project_links != null'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Active Project Resources"
+    order:
+      - file.name
+      - resource_state
+      - authority
+      - review_due
+      - project_links

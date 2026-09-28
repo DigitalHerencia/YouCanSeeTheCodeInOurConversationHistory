@@ -1,9 +1,11 @@
 ---
-type: phase
-id: PROD-M1-P1.1-VERIFY-P1.1
-project: '[[Project]]'
-milestone: '[[Milestone M1]]'
+type: phase
+number: P1.1
+id: PROD-M1-008-P1.1
+project: "[[1.PROJECTS/PROD-M1-P1.1-VERIFY PRD-Verification/Project]]"
+milestone: "[[1.PROJECTS/PROD-M1-P1.1-VERIFY PRD-Verification/Milestone M1]]"
 status: in-progress
+target_end: 2026-01-22
 sprint: ''
 risk: unknown
 progress: 0
@@ -24,3 +26,6 @@ Execution is projected from related TaskNotes records. Relations are only set wh
 ## Generated task rollup
 <!-- hearth:generated:start -->
 <!-- hearth:generated:end -->
+
+
+

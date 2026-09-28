@@ -1,0 +1,30 @@
+{
+  "bases": [
+    "Active Project Tasks",
+    "Active Project Calendar",
+    "Active Project Documents",
+    "Active Project Resources",
+    "Active Project Evidence",
+    "Active Project Notes",
+    "Projects Active",
+    "Projects Review",
+    "Tasks Today",
+    "Tasks Overdue",
+    "Tasks Blocked",
+    "Tasks Recently Completed",
+    "Requirements Untested",
+    "Documents Review",
+    "Resources Inbox",
+    "Resources Active",
+    "Resources Superseded",
+    "Archive Index",
+    "CodeLab Current",
+    "CodeLab Mastery",
+    "CodeLab Review Queue",
+    "Patterns by Technology",
+    "Daily Notes Recent",
+    "Weekly Reviews"
+  ],
+  "taskFolder": "2.AREAS/SYSTEM/_Tasks",
+  "projectPortfolio": false
+}

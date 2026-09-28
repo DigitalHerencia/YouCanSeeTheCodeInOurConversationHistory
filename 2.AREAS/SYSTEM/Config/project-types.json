@@ -1,0 +1,8 @@
+{
+  "OPS": { "label": "Operations", "scope": "Business, finance, customers, revenue, governance, and OKRs" },
+  "PROD": { "label": "Product", "scope": "Product truth, scope, roadmap, requirements, and acceptance" },
+  "DES": { "label": "Design", "scope": "UX, UI, accessibility, interaction, and design systems" },
+  "ENG": { "label": "Engineering", "scope": "Architecture, implementation, security, performance, and observability" },
+  "MKT": { "label": "Marketing", "scope": "Positioning, messaging, demand, campaigns, and growth" },
+  "RES": { "label": "Research", "scope": "Research, knowledge acquisition, technical learning, and Code Lab source work" }
+}

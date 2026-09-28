@@ -1,8 +1,11 @@
 ---
-type: project
-id: OPS-M1-P1.1-OKR
+type: project
+source_path: "3.RESOURCES/Digital Herencia/Projects/OPS-M1-P1 1-OKR – OKRs & Constraints 2dba4e63bf2380fe9cbfdd8d6d1b5b62.md"
+schema_version: 1
+source_identity: 2dba4e63bf2380fe9cbfdd8d6d1b5b62
+project_type: OPS
+id: OPS-M1-001
 project_code: OPS-M1-P1.1-OKR
-domain: OPS
 status: done
 target_start: 2026-01-01
 target_end: 2026-01-15
@@ -39,3 +42,5 @@ Record owner-approved objective and acceptance criteria.
 <!-- hearth:generated:start -->
 Milestone: [[Milestone M1]] · Phase: [[Phase P1.1]]
 <!-- hearth:generated:end -->
+
+

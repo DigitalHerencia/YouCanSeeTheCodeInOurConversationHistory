@@ -1,30 +1,27 @@
 ---
-type: resource
-status: backlog
-priority: normal
-created: {{date:YYYY-MM-DD}}
-updated: {{date:YYYY-MM-DD}}
+type: project-board
+project: <% tp.user.hearthProject(tp) %>
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/kanban]
 ---
-# {{title}}
+# <% tp.file.title %> — Milestone Board
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+This project-local Kanban moves **Milestone note links only**. Run `Hearth: Reconcile Project Board` after moving a card; the workflow writes the new human-selected status to the milestone note. Phase/task execution stays in TaskNotes.
 
-## Context and starter content
-- Source / provenance: add the originating note, issue, or conversation.
-- Outcome: state the observable result.
-- Constraints and dependencies: link only verified relations.
+## Backlog
 
-## Acceptance criteria
-- [ ] Outcome is explicit and reviewable.
-- [ ] Required evidence or output is linked.
+## Ready
 
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
+## In Progress
 
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->
+## Review
+
+## Done
+
+## Cancelled
+
+## Board rules
+- Keep every milestone in exactly one column.
+- Link its authoritative milestone note; do not create task cards here.
+- A Milestone Review with linked evidence is the completion gate.

@@ -1,0 +1,17 @@
+filters:
+  and:
+    - 'type == "requirement"'
+    - 'file.inFolder("1.PROJECTS")'
+    - 'review_status != "verified"'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Requirements Untested"
+    order:
+      - file.name
+      - project
+      - status
+      - acceptance
+      - validated_by
