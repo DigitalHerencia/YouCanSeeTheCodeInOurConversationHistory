@@ -1,15 +1,17 @@
 ---
-type: module
+type: codelab
+codelab_kind: module
 id: MOD-001
-ontology: "CRM / Pipeline Tracker"
-source_path: "3.RESOURCES/template/app/(tenant)/crm"
+ontology: CRM / Pipeline Tracker
+application_path: 
 mastery_state: not-started
-mastery: 0
 confidence: 0
-last_attempted: ""
-next_review: ""
-source: "[[3.RESOURCES/template/app/(tenant)/crm]]"
+next_review: null
+created: 2026-09-26
+updated: 2026-09-28
+tags: [type/codelab, type/module]
 ---
+
 # CRM / Pipeline Tracker
 
 ## Applied application

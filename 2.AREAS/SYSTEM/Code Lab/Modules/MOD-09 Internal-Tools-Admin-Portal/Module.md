@@ -1,23 +1,17 @@
 ---
-type: module
+type: codelab
+codelab_kind: module
 id: MOD-009
-ontology: "Internal Tools / Admin Portal"
+ontology: Internal Tools / Admin Portal
 application_path: "app/(tenant)/admin"
-project: "[[1.PROJECTS/ENG-M1-P1.2-CONFIG Project-Configuration/Project]]"
 mastery_state: not-started
-mastery: 0
 confidence: 0
 next_review: null
 created: 2026-09-26
-updated: 2026-09-26
-tags: [type/codelab]
-mastery_state: not-started
-mastery: 0
-confidence: 0
-last_attempted: ""
-next_review: ""
-source: "[[3.RESOURCES/template/context/Ontologies.Canonical-Catalog]]"
+updated: 2026-09-28
+tags: [type/codelab, type/module]
 ---
+
 # Internal Tools / Admin Portal
 
 ## Applied application
