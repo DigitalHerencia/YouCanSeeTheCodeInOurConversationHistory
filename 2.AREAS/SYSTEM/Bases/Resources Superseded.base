@@ -1,0 +1,16 @@
+filters:
+  and:
+    - 'type == "resource"'
+    - 'file.inFolder("3.RESOURCES")'
+    - 'resource_state == "superseded"'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Resources Superseded"
+    order:
+      - file.name
+      - superseded_by
+      - updated
+      - source_path

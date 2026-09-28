@@ -1,8 +1,11 @@
 ---
-type: project
-id: ENG-M1-P1.2-CONFIG
+type: project
+source_path: "3.RESOURCES/Digital Herencia/Projects/ENG-M1-P1 2-CONFIG – Project Configuration 2e2a4e63bf238072bdfce4c99c21b316.md"
+schema_version: 1
+source_identity: 2e2a4e63bf238072bdfce4c99c21b316
+project_type: ENG
+id: ENG-M1-010
 project_code: ENG-M1-P1.2-CONFIG
-domain: ENG
 status: in-progress
 target_start: 2026-01-08
 target_end: 2026-01-22
@@ -39,3 +42,5 @@ Record owner-approved objective and acceptance criteria.
 <!-- hearth:generated:start -->
 Milestone: [[Milestone M1]] · Phase: [[Phase P1.2]]
 <!-- hearth:generated:end -->
+
+

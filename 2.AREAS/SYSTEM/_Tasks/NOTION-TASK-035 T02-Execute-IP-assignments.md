@@ -1,27 +1,26 @@
 ---
 type: task
-id: TASK-829E4B3C-9F75-4A35-82DE-EA09B56B7BD5
-source_task_code: "''"
-task_code: ""
+id: TASK-2E5A4E63BF2380B19103FD08FE86D224
+
 status: backlog
 priority: none
-notion_created_at: January 10, 2026 6:25 PM
-created: 2026-09-26
+created: January 10, 2026 6:25 PM
 updated: 2026-09-26
-completed_at:
-project: ""
-milestone: ""
-phase: ""
-source: Notion export
+source: Notion canonical task page
+source_path: "3.RESOURCES/Digital Herencia/Tasks/T02 Execute IP assignments 2e5a4e63bf2380b19103fd08fe86d224.md"
+source_identity: 2e5a4e63bf2380b19103fd08fe86d224
 provenance: "[[3.RESOURCES/Digital Herencia/Tasks 2d5a4e63bf23816fa217ef754ce4a70e_all.csv]]"
 tags:
   - type/task
   - hearth/migration
   - hearth/repair
 title: T02 Execute IP assignments
-dateCreated: 2026-01-10
-migration_relation_state: manifest-relationless
+migration_relation_state: manifest-confirmed-orphan
 ---
+## Source provenance
+- Canonical task page: [[3.RESOURCES/Digital Herencia/Tasks/T02 Execute IP assignments 2e5a4e63bf2380b19103fd08fe86d224]]
+- Source identity: 2e5a4e63bf2380b19103fd08fe86d224
+- Project relation: absent; manifest-confirmed repair case
 
 ## Owner controls
 - Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]`
@@ -30,6 +29,16 @@ migration_relation_state: manifest-relationless
 
 # T02 Execute IP assignments
 
-Imported verbatim from Notion. TaskNotes execution record; project relation omitted because source export provides no relation.
+Imported verbatim from Notion. TaskNotes execution record. Canonical Notion task page has no Project relation; retained unassigned per migration manifest.
 
 Source created: January 10, 2026 6:25 PM.
+
+
+
+
+
+
+
+
+
+

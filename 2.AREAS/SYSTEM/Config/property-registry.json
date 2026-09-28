@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "source": "Hearth Property Registry v0.1 and Hearth System Engineering Specification v0.4, with the v0.5 addendum",
+  "properties": {
+    "universal": { "machine": ["id", "type", "created", "updated", "schema_version", "last_reconciled"], "user": ["title"] },
+    "project": { "user": ["status", "priority", "target_end", "current_focus", "blocker", "codelab_enabled"], "machine": ["id", "type", "project_type", "starter_ontology", "project_code", "project_slug", "source_identity", "source_path", "milestone", "phase"], "computed": ["progress", "health", "current_milestone", "current_phase", "next_action", "open_blocker_count", "open_task_count", "completed_task_count", "milestone_count", "phase_count", "completion_date", "last_activity", "next_review", "codelab_progress"] },
+    "milestone": { "user": ["status", "target_end"], "machine": ["id", "project", "number", "order", "project_code", "phases", "board_placement", "source_identity", "source_path"], "computed": ["progress", "health", "next_action", "open_blocker_count", "open_task_count", "completed_task_count"] },
+    "phase": { "user": ["status", "target_end", "risk"], "machine": ["id", "project", "milestone", "number", "order", "start", "tasks", "module", "lesson", "source_identity", "source_path"], "computed": ["progress", "health", "next_action", "open_blocker_count", "open_task_count", "completed_task_count"] },
+    "task": { "user": ["status", "priority", "due", "scheduled", "blocker"], "machine": ["id", "type", "project", "milestone", "phase", "ticket_code", "project_code", "source_requirement", "source_document", "produced", "evidence", "source_path", "source_identity", "codelab_module", "codelab_lesson", "drill_mode", "learning_objective"], "computed": ["completed_at", "updated", "last_reconciled"] },
+    "document": { "user": ["status", "review_status"], "machine": ["id", "type", "project", "milestone", "phase", "source_task", "traces_to", "implements", "satisfies", "validated_by", "supersedes", "superseded_by"] },
+    "resource": { "user": ["resource_state", "resource_role", "review_due"], "machine": ["id", "type", "resource_type", "source_kind", "authority", "source_url", "creator", "published", "accessed", "version", "project_links", "knowledge_links", "codelab_links", "related_patterns", "superseded_by", "capture_source", "source_path", "source_identity", "archive_state", "archived_at", "archived_from", "archive_reason"] },
+    "codelab": { "user": ["mastery_state", "confidence", "next_review"], "machine": ["id", "ontology", "module", "lesson", "project", "pattern_target", "attempt_count", "last_attempted", "mastery", "production_evidence"] },
+    "daily": { "user": ["focus_project", "focus_domain"], "machine": ["id", "type", "date", "status", "created", "updated", "last_reconciled"] }
+  }
+}

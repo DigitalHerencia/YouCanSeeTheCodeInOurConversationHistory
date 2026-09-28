@@ -1,27 +1,33 @@
 ---
 type: task
-id: TASK-C187C452-95AD-4EF9-8E45-C2DDFB5E63F9
+id: TASK-2E2A4E63BF23809C95E5F4F6E1C268C5
 source_task_code: T01
-task_code: ""
 status: done
 priority: none
-notion_created_at: January 8, 2026 10:28 AM
-created: 2026-09-26
+created: January 8, 2026 10:28 AM
 updated: 2026-09-26
-completed_at: 2026-01-08
-project: ""
-milestone: ""
-phase: ""
-source: Notion export
+source: Notion canonical task page
+source_path: "3.RESOURCES/Digital Herencia/Tasks/T01 ESLint Prettier config 2e2a4e63bf23809c95e5f4f6e1c268c5.md"
+source_identity: 2e2a4e63bf23809c95e5f4f6e1c268c5
 provenance: "[[3.RESOURCES/Digital Herencia/Tasks 2d5a4e63bf23816fa217ef754ce4a70e_all.csv]]"
 tags:
   - type/task
   - hearth/migration
   - hearth/repair
 title: T01 ESLint / Prettier config
-dateCreated: 2026-01-08
-migration_relation_state: source-relation-missing
+migration_relation_state: explicit-source-project-page
 ---
+completed_at: null
+phase: "[[1.PROJECTS/ENG-M1-P1.2-CONFIG Project-Configuration/Phase P1.2]]"
+project: "[[1.PROJECTS/ENG-M1-P1.2-CONFIG Project-Configuration/Project]]"
+project_code: ENG-M1-P1.2-CONFIG
+task_code: "T01"
+ticket_code: ENG-M1-P1.2-CONFIG-T01
+milestone: "[[1.PROJECTS/ENG-M1-P1.2-CONFIG Project-Configuration/Milestone M1]]"
+## Source provenance
+- Canonical task page: [[3.RESOURCES/Digital Herencia/Tasks/T01 ESLint Prettier config 2e2a4e63bf23809c95e5f4f6e1c268c5]]
+- Source identity: 2e2a4e63bf23809c95e5f4f6e1c268c5
+- Project relation: explicit on canonical source page
 
 ## Owner controls
 - Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]`
@@ -30,6 +36,16 @@ migration_relation_state: source-relation-missing
 
 # T01 ESLint / Prettier config
 
-Imported verbatim from Notion. TaskNotes execution record; project relation omitted because source export provides no relation.
+Imported verbatim from Notion. TaskNotes execution record. Canonical Notion task page contains an explicit Project relation; the linked project is recorded in frontmatter.
 
 Source created: January 8, 2026 10:28 AM.
+
+
+
+
+
+
+
+
+
+

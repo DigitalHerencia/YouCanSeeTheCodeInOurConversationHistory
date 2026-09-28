@@ -1,7 +1,15 @@
 ---
 type: lesson
-id: MOD-05-02
+id: LESS-005.02
 module: "[[Module]]"
+project: "[[1.PROJECTS/ENG-M1-P1.2-CONFIG Project-Configuration/Project]]"
+mastery_state: not-started
+mastery: 0
+confidence: 0
+next_review: null
+created: 2026-09-26
+updated: 2026-09-26
+tags: [type/codelab]
 lesson: "Scaffolding"
 mastery_state: not-started
 mastery: 0
@@ -12,10 +20,10 @@ next_review: ""
 # Scaffolding
 
 ## Doctrine
-Use the corresponding source DevCycle for this lesson and the current project contract. Verify against the live Maximal Template implementation; record deviations explicitly.
+Apply this DevCycle to its real Maximal Template surface. Record actual changed paths, checks, evidence, and remaining constraints.
 
 ## DevCycle source
-[[4.ARCHIVE/40.ARCHIVE.CODEPENDENTCODING/40.ARCHIVE.CODEPENDENTCODING.Dev-Cycles.Source-Document#Scaffolding DevCycle Instructions]]
+[[3.RESOURCES/Digital Herencia/SOPs/Dev 2dba4e63bf23803aafc0c58095ec268f.md#Scaffolding DevCycle Instructions]]
 
 These instructions define the **Scaffolding** phase. Scaffolding transforms the validated PRD + TechReq into a concrete project structure using the rules of the project’s technology stack. This phase remains language-agnostic at the instruction level; the stack-specific agent handles technical implementation.
 
@@ -104,8 +112,11 @@ These instructions define the complete behavior of the Scaffolding DevCycle.
 
 
 ## Applied drill
-Link an existing project TaskNotes record; do not create a parallel task.
+Link the TaskNotes task that implements this DevCycle.
 
-## Lesson gate
-- [ ] Evidence linked
-- [ ] Review outcome recorded
+## Human controls
+Mastery: `INPUT[number:mastery]` · Confidence: `INPUT[number:confidence]` · State: `INPUT[select(option(not-started), option(in-progress), option(in-review), option(mastered)):mastery_state]` · Review: `INPUT[date:next_review]`
+
+
+
+

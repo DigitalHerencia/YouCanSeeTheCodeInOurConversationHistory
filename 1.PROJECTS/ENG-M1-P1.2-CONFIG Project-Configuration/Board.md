@@ -10,7 +10,11 @@ Milestone cards are project-local; TaskNotes remains task execution truth.
 
 
 ## In Progress
+- [[1.PROJECTS/ENG-M1-P1.2-CONFIG Project-Configuration/Milestone M1]]/Milestone M1]]
 - [[Milestone M1]]
 
 ## Done
+
+
+
 

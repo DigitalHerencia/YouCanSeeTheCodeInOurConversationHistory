@@ -1,27 +1,33 @@
 ---
 type: task
-id: TASK-0FCC2592-4A36-4450-81B6-4256F830D193
+id: TASK-2E2A4E63BF2380698689D11E6C08DEC2
 source_task_code: T01
-task_code: ""
 status: done
 priority: none
-notion_created_at: January 8, 2026 10:29 AM
-created: 2026-09-26
+created: January 8, 2026 10:29 AM
 updated: 2026-09-26
-completed_at: 2026-01-08
-project: ""
-milestone: ""
-phase: ""
-source: Notion export
+source: Notion canonical task page
+source_path: "3.RESOURCES/Digital Herencia/Tasks/T01 Audit existing social presence 2e2a4e63bf2380698689d11e6c08dec2.md"
+source_identity: 2e2a4e63bf2380698689d11e6c08dec2
 provenance: "[[3.RESOURCES/Digital Herencia/Tasks 2d5a4e63bf23816fa217ef754ce4a70e_all.csv]]"
 tags:
   - type/task
   - hearth/migration
   - hearth/repair
 title: T01 Audit existing social presence
-dateCreated: 2026-01-08
-migration_relation_state: source-relation-missing
+migration_relation_state: explicit-source-project-page
 ---
+completed_at: null
+phase: "[[1.PROJECTS/MKT-M1-P1.1-PUBSETUP Public-Presence-Setup/Phase P1.1]]"
+project: "[[1.PROJECTS/MKT-M1-P1.1-PUBSETUP Public-Presence-Setup/Project]]"
+project_code: MKT-M1-P1.1-PUBSETUP
+task_code: "T01"
+ticket_code: MKT-M1-P1.1-PUBSETUP-T01
+milestone: "[[1.PROJECTS/MKT-M1-P1.1-PUBSETUP Public-Presence-Setup/Milestone M1]]"
+## Source provenance
+- Canonical task page: [[3.RESOURCES/Digital Herencia/Tasks/T01 Audit existing social presence 2e2a4e63bf2380698689d11e6c08dec2]]
+- Source identity: 2e2a4e63bf2380698689d11e6c08dec2
+- Project relation: explicit on canonical source page
 
 ## Owner controls
 - Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]`
@@ -30,6 +36,16 @@ migration_relation_state: source-relation-missing
 
 # T01 Audit existing social presence
 
-Imported verbatim from Notion. TaskNotes execution record; project relation omitted because source export provides no relation.
+Imported verbatim from Notion. TaskNotes execution record. Canonical Notion task page contains an explicit Project relation; the linked project is recorded in frontmatter.
 
 Source created: January 8, 2026 10:29 AM.
+
+
+
+
+
+
+
+
+
+

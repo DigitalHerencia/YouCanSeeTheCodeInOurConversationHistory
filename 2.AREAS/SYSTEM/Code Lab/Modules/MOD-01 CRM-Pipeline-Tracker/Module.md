@@ -1,13 +1,14 @@
 ---
 type: module
-id: MOD-01
-title: CRM / Pipeline Tracker
+id: MOD-001
+ontology: "CRM / Pipeline Tracker"
+source_path: "3.RESOURCES/template/app/(tenant)/crm"
 mastery_state: not-started
 mastery: 0
 confidence: 0
 last_attempted: ""
 next_review: ""
-source: "[[3.RESOURCES/template/context/Ontologies.Canonical-Catalog]]"
+source: "[[3.RESOURCES/template/app/(tenant)/crm]]"
 ---
 # CRM / Pipeline Tracker
 
@@ -15,7 +16,7 @@ source: "[[3.RESOURCES/template/context/Ontologies.Canonical-Catalog]]"
 The real Code Space application is the applied curriculum. Use existing Maximal Template code and its approved contracts.
 
 ## Curriculum source
-[[4.ARCHIVE/40.ARCHIVE.CODEPENDENTCODING/40.ARCHIVE.CODEPENDENTCODING.Dev-Cycles.Source-Document]] · Maximal Template ontology catalog: [[3.RESOURCES/template/context/Ontologies.Canonical-Catalog]].
+[[3.RESOURCES/Digital Herencia/SOPs/Dev 2dba4e63bf23803aafc0c58095ec268f]] · Maximal Template ontology catalog: [[3.RESOURCES/template/context/Ontologies.Canonical-Catalog]].
 
 
 ## Canonical Maximal Template ontology source
@@ -128,3 +129,29 @@ Complete lesson gates with linked Drill Evidence; use a Milestone Review for ass
 - [[MOD-01-15 Documentation]]
 - [[MOD-01-16 Deploy]]
 - [[MOD-01-17 Updates]]
+
+
+
+
+## CRM Golden Slice
+
+Source contract: [[3.RESOURCES/template/context/specs/04.crm-golden-vertical-slice]]. The CRM is a tenant surface. Preserve thin tenant-gated routes, server feature → workflow → fetcher/action boundaries, CRM templates/client companions, and existing schemas/types/selects/DTOs. Resource-level authorization is verified at server boundaries; UI rendering does not prove tenant isolation.
+
+- Routes: `3.RESOURCES/template/app/(tenant)/crm/`
+- Feature: [[3.RESOURCES/template/features/crm/crmPipelineFeature.tsx]]
+- Workflow: [[3.RESOURCES/template/lib/workflows/crmWorkflows.ts]]
+- Fetchers: [[3.RESOURCES/template/lib/fetchers/crmFetchers.ts]]
+- Actions: [[3.RESOURCES/template/lib/actions/crmActions.ts]]
+- Schemas: [[3.RESOURCES/template/schemas/crmSchemas.ts]]
+- Types: [[3.RESOURCES/template/types/crmTypes.ts]]
+- Code Space mount: `2.AREAS/SYSTEM/_mounts/CodependentCoding` via installed configuration.
+
+## Acceptance trace
+
+- [ ] Tenant-gated thin routes remain intact.
+- [ ] Server feature composes workflow and CRM template.
+- [ ] Reads remain in fetchers; mutation entrypoints remain in actions.
+- [ ] Existing schemas/types/selects/DTOs and authz are reused.
+- [ ] Evidence cites actual checks and changed files; do not assert unrun validation.
+
+

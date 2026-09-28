@@ -1,33 +1,35 @@
 ---
 type: task-bridge
-status: backlog
-priority: normal
-created: {{date:YYYY-MM-DD}}
-updated: {{date:YYYY-MM-DD}}
+project: <% tp.user.hearthProject(tp) %>
+milestone: <% tp.user.hearthMilestone(tp) %>
+phase: <% tp.user.hearthPhase(tp) %>
+source_requirement:
+source_document:
+ticket_code:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 ---
-# Task Bridge — {{VALUE}}
+# Task Context — {{TITLE}}
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+This note is contextual support for a TaskNotes task. TaskNotes remains the task record.
 
-## TaskNotes execution record
-Link the existing task note in 2.AREAS/SYSTEM/_Tasks. This bridge records project context and acceptance; it is not a second task.
+## Execution Context
+- Project:
+- Milestone:
+- Phase:
+- Ticket:
 
-## Context and starter content
-- Source / provenance: add the originating note, issue, or conversation.
-- Outcome: state the observable result.
-- Constraints and dependencies: link only verified relations.
+## Objective
 
-## Acceptance criteria
-- [ ] Outcome is explicit and reviewable.
-- [ ] Required evidence or output is linked.
+## Acceptance Criteria
 
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
+## Upstream
 
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->
+## Expected Output
+
+## Evidence Plan
+
+## Handoff / Next Action
+
+
+

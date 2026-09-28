@@ -1,8 +1,11 @@
 ---
-type: project
-id: MKT-M1-P1.1-PUBSETUP
+type: project
+source_path: "3.RESOURCES/Digital Herencia/Projects/MKT-M1-P1 1-PUBSETUP – Public Presence Setup 2e2a4e63bf2380138c42efc10739edb9.md"
+schema_version: 1
+source_identity: 2e2a4e63bf2380138c42efc10739edb9
+project_type: MKT
+id: MKT-M1-011
 project_code: MKT-M1-P1.1-PUBSETUP
-domain: MKT
 status: in-progress
 target_start: 2026-01-08
 target_end: 2026-01-22
@@ -39,3 +42,5 @@ Record owner-approved objective and acceptance criteria.
 <!-- hearth:generated:start -->
 Milestone: [[Milestone M1]] · Phase: [[Phase P1.1]]
 <!-- hearth:generated:end -->
+
+

@@ -1,30 +1,32 @@
 ---
-type: resource
-status: backlog
-priority: normal
-created: {{date:YYYY-MM-DD}}
-updated: {{date:YYYY-MM-DD}}
+type: codelab
+codelab_kind: learning-journal
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+project: <% tp.user.hearthProject(tp) %>
+module:
+lesson:
+date:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/codelab]
 ---
-# {{title}}
+# Learning Journal — {{DATE}}
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+## What I Built
 
-## Context and starter content
-- Source / provenance: add the originating note, issue, or conversation.
-- Outcome: state the observable result.
-- Constraints and dependencies: link only verified relations.
+## What I Understand Now
 
-## Acceptance criteria
-- [ ] Outcome is explicit and reviewable.
-- [ ] Required evidence or output is linked.
+## What I Still Do Not Understand
 
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
+## Errors That Taught Me Something
 
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->
+## Patterns I Can Explain
+
+## Patterns I Can Implement
+
+## Production Evidence
+
+## Next Applied Step
+
+
+

@@ -1,21 +1,28 @@
 ---
 type: meeting
-meeting_type: "Sprint Planning"
+meeting_type: sprint-planning
 cadence: Biweekly
-date: {{date:YYYY-MM-DD}}
+source_identity: 33fa4e63bf23815cbd2dcc5c27982e55
+source_path: "3.RESOURCES/Digital Herencia/Meetings/Sprint Planning @April 11, 2026 33fa4e63bf23815cbd2dcc5c27982e55.md"
+date: <% tp.date.now("YYYY-MM-DD") %>
+created: <% tp.date.now("YYYY-MM-DD") %>
+project: <% tp.user.hearthProject(tp) %>
+tags: [type/meeting]
 ---
-# Sprint Planning — {{date:YYYY-MM-DD}}
+# Sprint Planning — <% tp.date.now("YYYY-MM-DD") %>
 
-## Purpose and agenda
-Record decisions needed for this session.
+Use for an explicitly scheduled session. Select only TaskNotes work already in the relevant project/phase. The cadence definition itself does not schedule or create a note.
 
-## Attendees and notes
-<!-- hearth:human:start -->
+## Sprint Goal
+Record verified discussion, decisions, and linked source work.
+## Sprint Backlog
+Choose existing TaskNotes tasks; do not create duplicate backlog entries.
+## Team & Roles
+Record verified discussion, decisions, and linked source work.
+## Notes
+Record verified discussion, decisions, and linked source work.
+## Source provenance
+Canonical example: [[]] ($uuid)
 
-<!-- hearth:human:end -->
 
-## Decisions and actions
-Record decisions and link actions to TaskNotes.
 
-## Provenance
-Canonical cadence: [[2.AREAS/DAILY/Cadence]].

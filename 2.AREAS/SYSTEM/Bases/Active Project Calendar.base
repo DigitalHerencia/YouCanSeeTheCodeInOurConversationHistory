@@ -1,0 +1,18 @@
+filters:
+  and:
+    - 'type == "task"'
+    - 'file.inFolder("2.AREAS/SYSTEM/_Tasks")'
+    - 'project != null'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Active Project Calendar"
+    order:
+      - file.name
+      - project
+      - scheduled
+      - due
+      - status
+      - priority

@@ -1,9 +1,11 @@
 ---
 type: phase
-id: DES-M1-P1.1-UXARCH-P1.1
-project: "[[Project]]"
-milestone: "[[Milestone M1]]"
+number: P1.1
+id: DES-M1-005-P1.1
+project: "[[1.PROJECTS/DES-M1-P1.1-UXARCH UX-Architecture/Project]]"
+milestone: "[[1.PROJECTS/DES-M1-P1.1-UXARCH UX-Architecture/Milestone M1]]"
 status: done
+target_end: 2026-01-15
 sprint: ""
 risk: unknown
 progress: 100
@@ -24,3 +26,6 @@ Execution is projected from related TaskNotes records. Relations are only set wh
 ## Generated task rollup
 <!-- hearth:generated:start -->
 <!-- hearth:generated:end -->
+
+
+

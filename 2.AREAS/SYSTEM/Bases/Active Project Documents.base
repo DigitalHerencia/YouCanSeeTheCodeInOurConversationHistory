@@ -1,0 +1,17 @@
+filters:
+  and:
+    - 'type == "document"'
+    - 'file.inFolder("1.PROJECTS")'
+    - 'project != null'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Active Project Documents"
+    order:
+      - file.name
+      - project
+      - status
+      - review_due
+      - updated

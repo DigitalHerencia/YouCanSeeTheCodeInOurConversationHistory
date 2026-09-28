@@ -1,7 +1,15 @@
 ---
 type: lesson
-id: MOD-03-16
+id: LESS-003.16
 module: "[[Module]]"
+project: "[[1.PROJECTS/ENG-M1-P1.2-CONFIG Project-Configuration/Project]]"
+mastery_state: not-started
+mastery: 0
+confidence: 0
+next_review: null
+created: 2026-09-26
+updated: 2026-09-26
+tags: [type/codelab]
 lesson: "Deploy"
 mastery_state: not-started
 mastery: 0
@@ -12,10 +20,10 @@ next_review: ""
 # Deploy
 
 ## Doctrine
-Use the corresponding source DevCycle for this lesson and the current project contract. Verify against the live Maximal Template implementation; record deviations explicitly.
+Apply this DevCycle to its real Maximal Template surface. Record actual changed paths, checks, evidence, and remaining constraints.
 
 ## DevCycle source
-[[4.ARCHIVE/40.ARCHIVE.CODEPENDENTCODING/40.ARCHIVE.CODEPENDENTCODING.Dev-Cycles.Source-Document#Deploy DevCycle Instructions]]
+[[3.RESOURCES/Digital Herencia/SOPs/Dev 2dba4e63bf23803aafc0c58095ec268f.md#Deploy DevCycle Instructions]]
 
 The **Deploy** DevCycle defines the universal workflow for releasing the application into a production environment. This phase ensures reliable shipping, post-deploy validation, and rollback readiness. It is fully stack-agnostic at the instruction level.
 
@@ -99,8 +107,11 @@ These instructions define the complete behavior of the Deploy DevCycle.
 
 
 ## Applied drill
-Link an existing project TaskNotes record; do not create a parallel task.
+Link the TaskNotes task that implements this DevCycle.
 
-## Lesson gate
-- [ ] Evidence linked
-- [ ] Review outcome recorded
+## Human controls
+Mastery: `INPUT[number:mastery]` · Confidence: `INPUT[number:confidence]` · State: `INPUT[select(option(not-started), option(in-progress), option(in-review), option(mastered)):mastery_state]` · Review: `INPUT[date:next_review]`
+
+
+
+

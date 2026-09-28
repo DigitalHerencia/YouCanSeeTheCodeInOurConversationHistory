@@ -1,7 +1,15 @@
 ---
 type: lesson
-id: MOD-07-03
+id: LESS-007.03
 module: "[[Module]]"
+project: "[[1.PROJECTS/ENG-M1-P1.2-CONFIG Project-Configuration/Project]]"
+mastery_state: not-started
+mastery: 0
+confidence: 0
+next_review: null
+created: 2026-09-26
+updated: 2026-09-26
+tags: [type/codelab]
 lesson: "Configuration"
 mastery_state: not-started
 mastery: 0
@@ -12,10 +20,10 @@ next_review: ""
 # Configuration
 
 ## Doctrine
-Use the corresponding source DevCycle for this lesson and the current project contract. Verify against the live Maximal Template implementation; record deviations explicitly.
+Apply this DevCycle to its real Maximal Template surface. Record actual changed paths, checks, evidence, and remaining constraints.
 
 ## DevCycle source
-[[4.ARCHIVE/40.ARCHIVE.CODEPENDENTCODING/40.ARCHIVE.CODEPENDENTCODING.Dev-Cycles.Source-Document#Configuration DevCycle Instructions]]
+[[3.RESOURCES/Digital Herencia/SOPs/Dev 2dba4e63bf23803aafc0c58095ec268f.md#Configuration DevCycle Instructions]]
 
 These instructions define the **Configuration** phase. Configuration finalizes project-level settings, tooling, and metadata required for reliable development. This phase remains language-agnostic; stack-specific implementation is handled by the custom agent.
 
@@ -100,8 +108,11 @@ These instructions define the complete behavior of the Configuration DevCycle.
 
 
 ## Applied drill
-Link an existing project TaskNotes record; do not create a parallel task.
+Link the TaskNotes task that implements this DevCycle.
 
-## Lesson gate
-- [ ] Evidence linked
-- [ ] Review outcome recorded
+## Human controls
+Mastery: `INPUT[number:mastery]` · Confidence: `INPUT[number:confidence]` · State: `INPUT[select(option(not-started), option(in-progress), option(in-review), option(mastered)):mastery_state]` · Review: `INPUT[date:next_review]`
+
+
+
+

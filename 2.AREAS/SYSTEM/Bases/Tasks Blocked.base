@@ -1,0 +1,18 @@
+filters:
+  and:
+    - 'type == "task"'
+    - 'file.inFolder("2.AREAS/SYSTEM/_Tasks")'
+    - 'status == "blocked"'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Tasks Blocked"
+    order:
+      - file.name
+      - status
+      - priority
+      - blocker
+      - project
+      - phase

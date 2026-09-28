@@ -1,7 +1,12 @@
 ---
-type: milestone
-id: PROD-M1-P1.1-VERIFY-M1
-project: '[[Project]]'
+[: "["
+p: "r"
+type: milestone
+source_identity: 2e2a4e63bf238046b0b3fdfbea5966b6
+source_path: "3.RESOURCES/Digital Herencia/Projects/PROD-M1-P1 1-VERIFY – PRD Verification 2e2a4e63bf238046b0b3fdfbea5966b6.md"
+schema_version: 1
+id: PROD-M1-008-M1
+project: "[[1.PROJECTS/
 status: in-progress
 objective: ''
 start: 2026-01-08
@@ -15,6 +20,8 @@ counts:
   completed: 0
   open: 0
 ---
+[: "["
+p: "r"
 # M1 — Foundation & Pre-Production
 
 ## Owner controls
@@ -28,3 +35,6 @@ Confirm milestone outcome and acceptance.
 
 ## Phases
 - [[Phase P1.1]]
+
+
+

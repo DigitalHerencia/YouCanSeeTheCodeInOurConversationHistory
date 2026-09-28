@@ -1,0 +1,17 @@
+filters:
+  and:
+    - 'type == "review"'
+    - 'file.inFolder("2.AREAS/DAILY")'
+    - 'review_kind == "weekly"'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Weekly Reviews"
+    order:
+      - file.name
+      - project
+      - status
+      - created
+      - updated

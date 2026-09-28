@@ -1,35 +1,59 @@
 ---
 type: resource
-status: backlog
-priority: normal
-created: {{date:YYYY-MM-DD}}
-updated: {{date:YYYY-MM-DD}}
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+resource_type:
+resource_state: triage
+source_kind:
+authority:
+resource_role:
+source_url:
+creator:
+published:
+accessed:
+version:
+license:
+project_links: []
+knowledge_links: []
+codelab_links: []
+related_patterns: []
+last_verified:
+review_due:
+superseded_by:
+capture_source:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/resource]
 ---
-# {{title}}
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+# {{TITLE}}
+
+## Human controls
+State: `INPUT[select(option(inbox), option(triage), option(active), option(reference), option(retained), option(superseded), option(archived)):resource_state]` · Authority: `INPUT[select(option(canonical), option(authoritative), option(supporting), option(exploratory)):authority]` · Role: `INPUT[select(option(evidence), option(reference), option(tutorial), option(pattern), option(inspiration), option(source), option(dependency), option(example)):resource_role]` · Review: `INPUT[date:review_due]`
+
+## Source
+- URL:
+- Creator:
+- Published:
+- Accessed:
+
+## Why Retained
+
+## Key Claims
+- 
+
+## Useful Notes
+- 
+
+## Linked Knowledge
+
+## Applied To
+
+## Verification
+- Authority:
+- Version:
+- Last verified:
+- Review due:
 
 
-## Owner controls
-- State: `INPUT[select(option(inbox), option(processing), option(processed), option(archived)):resource_state]` · Authority: `INPUT[text:authority]`
-- Role: `INPUT[text:resource_role]` · Review due: `INPUT[date:review_due]` · Superseded by: `INPUT[text:superseded_by]`
 
-## Context and starter content
-- Source / provenance: add the originating note, issue, or conversation.
-- Outcome: state the observable result.
-- Constraints and dependencies: link only verified relations.
 
-## Acceptance criteria
-- [ ] Outcome is explicit and reviewable.
-- [ ] Required evidence or output is linked.
-
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
-
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->

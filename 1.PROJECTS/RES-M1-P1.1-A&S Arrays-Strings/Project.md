@@ -1,8 +1,11 @@
 ---
-type: project
-id: RES-M1-P1.1-A&S
+type: project
+source_path: "3.RESOURCES/Digital Herencia/Projects/RES-M1-P1 1-A&S - Arrays & Strings 2dba4e63bf238078b705e88338208ff2.md"
+schema_version: 1
+source_identity: 2dba4e63bf238078b705e88338208ff2
+project_type: RES
+id: RES-M1-003
 project_code: RES-M1-P1.1-A&S
-domain: RES
 status: done
 target_start: 2026-01-01
 target_end: 2026-01-15
@@ -39,3 +42,5 @@ Record owner-approved objective and acceptance criteria.
 <!-- hearth:generated:start -->
 Milestone: [[Milestone M1]] · Phase: [[Phase P1.1]]
 <!-- hearth:generated:end -->
+
+

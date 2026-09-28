@@ -1,0 +1,1 @@
+const {PATHS,REGISTRIES}=require('./config');async function load(app,name){if(!REGISTRIES.includes(name))throw new Error(`Unknown Hearth registry: ${name}`);const f=app.vault.getAbstractFileByPath(`${PATHS.config}/${name}.json`);if(!f)throw new Error(`Missing Hearth registry: ${name}`);return JSON.parse(await app.vault.read(f));}module.exports={load};

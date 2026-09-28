@@ -1,8 +1,11 @@
 ---
-type: project
-id: ENG-M1-P1.1-INIT
+type: project
+source_path: "3.RESOURCES/Digital Herencia/Projects/ENG-M1-P1 1-INIT – Environment Initialization 2dba4e63bf2380f283d3f693dbe0139a.md"
+schema_version: 1
+source_identity: 2dba4e63bf2380f283d3f693dbe0139a
+project_type: ENG
+id: ENG-M1-006
 project_code: ENG-M1-P1.1-INIT
-domain: ENG
 status: done
 target_start: 2026-01-01
 target_end: 2026-01-15
@@ -39,3 +42,5 @@ Record owner-approved objective and acceptance criteria.
 <!-- hearth:generated:start -->
 Milestone: [[Milestone M1]] · Phase: [[Phase P1.1]]
 <!-- hearth:generated:end -->
+
+

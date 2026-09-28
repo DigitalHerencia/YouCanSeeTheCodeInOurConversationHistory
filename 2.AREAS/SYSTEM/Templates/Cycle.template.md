@@ -1,30 +1,37 @@
 ---
-type: resource
-status: backlog
-priority: normal
-created: {{date:YYYY-MM-DD}}
-updated: {{date:YYYY-MM-DD}}
+type: cycle
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+title:
+status: planned
+start:
+end:
+goal:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/cycle]
 ---
-# {{title}}
+# {{TITLE}}
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+## Cycle Goal
 
-## Context and starter content
-- Source / provenance: add the originating note, issue, or conversation.
-- Outcome: state the observable result.
-- Constraints and dependencies: link only verified relations.
+## Dates
+- Start:
+- End:
 
-## Acceptance criteria
-- [ ] Outcome is explicit and reviewable.
-- [ ] Required evidence or output is linked.
+## Active Projects
+<!-- generated -->
 
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
+## Milestones / Phase Windows
+<!-- generated -->
 
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->
+## Planned Focus
+
+## Capacity / Constraints
+
+## Exit Criteria
+- [ ]
+
+## Review
+
+
+

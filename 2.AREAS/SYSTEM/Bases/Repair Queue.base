@@ -1,5 +1,12 @@
-filters: 'type == "task" && (migration_relation_state == "manifest-relationless" || migration_relation_state == "source-relation-missing")'
+filters:
+  and:
+    - file.inFolder("2.AREAS/SYSTEM/_Tasks")
+    - file.hasTag("hearth/repair")
+    - migration_relation_state == "manifest-confirmed-orphan"
+properties:
+  file.name:
+    displayName: Task
 views:
   - type: table
-    name: Relation Repair
-    order: [file.name, migration_relation_state, task_code, provenance]
+    name: Unlinked source tasks
+    order: [file.name, status, source_path, source_identity]

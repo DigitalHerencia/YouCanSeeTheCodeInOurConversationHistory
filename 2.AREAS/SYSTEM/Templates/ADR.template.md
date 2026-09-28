@@ -1,30 +1,31 @@
 ---
-type: resource
-status: backlog
-priority: normal
-created: {{date:YYYY-MM-DD}}
-updated: {{date:YYYY-MM-DD}}
+type: decision
+document_type: ADR
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+project: <% tp.user.hearthProject(tp) %>
+status: proposed
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/decision]
 ---
-# {{title}}
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+# ADR {{ID}} — {{TITLE}}
 
-## Context and starter content
-- Source / provenance: add the originating note, issue, or conversation.
-- Outcome: state the observable result.
-- Constraints and dependencies: link only verified relations.
+## Context
 
-## Acceptance criteria
-- [ ] Outcome is explicit and reviewable.
-- [ ] Required evidence or output is linked.
+## Decision
 
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
+## Alternatives
+| Option | Benefit | Cost | Decision |
+|---|---|---|---|
 
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->
+## Consequences
+
+## Invariants
+
+## Evidence
+
+## Status
+
+
+

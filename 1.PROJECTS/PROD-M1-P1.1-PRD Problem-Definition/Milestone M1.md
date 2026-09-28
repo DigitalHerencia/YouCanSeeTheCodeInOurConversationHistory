@@ -1,7 +1,12 @@
 ---
+[: "["
+p: "r"
 type: milestone
-id: PROD-M1-P1.1-PRD-M1
-project: "[[Project]]"
+source_identity: 2dba4e63bf2380289bf7ff2b34b540bf
+source_path: "3.RESOURCES/Digital Herencia/Projects/PROD-M1-P1 1-PRD – Problem Definition 2dba4e63bf2380289bf7ff2b34b540bf.md"
+schema_version: 1
+id: PROD-M1-002-M1
+project: "[[1.PROJECTS/
 status: done
 objective: ""
 start: 2026-01-01
@@ -15,6 +20,8 @@ counts:
   completed: 5
   open: 0
 ---
+[: "["
+p: "r"
 # M1 — Foundation & Pre-Production
 
 ## Owner controls
@@ -28,3 +35,6 @@ Confirm milestone outcome and acceptance.
 
 ## Phases
 - [[Phase P1.1]]
+
+
+

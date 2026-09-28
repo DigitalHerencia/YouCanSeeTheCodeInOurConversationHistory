@@ -1,9 +1,0 @@
-{
-  "id": "hearth-automation",
-  "name": "Hearth Automation",
-  "version": "1.0.0",
-  "minAppVersion": "1.8.7",
-  "description": "Reconciles Hearth-derived state from explicit TaskNotes relations and refreshes Daily snapshots while preserving human notes.",
-  "author": "DevNotes vault",
-  "isDesktopOnly": false
-}

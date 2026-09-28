@@ -1,36 +1,37 @@
 ---
-type: project
+type: milestone
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+project: <% tp.user.hearthProject(tp) %>
+number:
+title:
 status: backlog
-priority: normal
-created: {{date:YYYY-MM-DD}}
-updated: {{date:YYYY-MM-DD}}
+objective:
+start:
+end:
+risk:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/milestone]
 ---
-# {{title}}
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+# {{TITLE}}
+
+## Objective
+What validated product/business state does this milestone represent?
+
+## Entry Criteria
+- 
+
+## Exit Criteria
+- 
+
+## Phases
+<!-- HEARTH:GENERATED:PHASES:START -->
+<!-- HEARTH:GENERATED:PHASES:END -->
+
+## Review
+<!-- HEARTH:GENERATED:REVIEW:START -->
+<!-- HEARTH:GENERATED:REVIEW:END -->
 
 
-## Owner controls
-- Status: `INPUT[select(option(backlog), option(active), option(done), option(archived)):status]`
-- Objective: `INPUT[text:objective]` · Start: `INPUT[date:start]` · End: `INPUT[date:end]`
-- Risk: `INPUT[select(option(unknown), option(low), option(medium), option(high)):risk]`
 
-## Context and starter content
-- Source / provenance: add the originating note, issue, or conversation.
-- Outcome: state the observable result.
-- Constraints and dependencies: link only verified relations.
-
-## Acceptance criteria
-- [ ] Outcome is explicit and reviewable.
-- [ ] Required evidence or output is linked.
-
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
-
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->

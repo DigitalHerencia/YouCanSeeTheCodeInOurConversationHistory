@@ -1,27 +1,33 @@
 ---
 type: task
-id: TASK-F0E24214-DEF2-4319-B46A-3DA23BB02C4A
+id: TASK-2E2A4E63BF23802086D8CA830A5E9A8F
 source_task_code: TO3
-task_code: ""
 status: done
 priority: none
-notion_created_at: January 8, 2026 7:18 AM
-created: 2026-09-26
+created: January 8, 2026 7:18 AM
 updated: 2026-09-26
-completed_at: 2026-01-08
-project: ""
-milestone: ""
-phase: ""
-source: Notion export
+source: Notion canonical task page
+source_path: "3.RESOURCES/Digital Herencia/Tasks/T03 Two pointer patterns 2e2a4e63bf23802086d8ca830a5e9a8f.md"
+source_identity: 2e2a4e63bf23802086d8ca830a5e9a8f
 provenance: "[[3.RESOURCES/Digital Herencia/Tasks 2d5a4e63bf23816fa217ef754ce4a70e_all.csv]]"
 tags:
   - type/task
   - hearth/migration
   - hearth/repair
 title: T03 Two pointer patterns
-dateCreated: 2026-01-08
-migration_relation_state: source-relation-missing
+migration_relation_state: explicit-source-project-page
 ---
+completed_at: null
+phase: "[[1.PROJECTS/RES-M1-P1.1-A&S Arrays-Strings/Phase P1.1]]"
+project: "[[1.PROJECTS/RES-M1-P1.1-A&S Arrays-Strings/Project]]"
+project_code: RES-M1-P1.1-A&S
+task_code: "TO3"
+ticket_code: RES-M1-P1.1-A&S-TO3
+milestone: "[[1.PROJECTS/RES-M1-P1.1-A&S Arrays-Strings/Milestone M1]]"
+## Source provenance
+- Canonical task page: [[3.RESOURCES/Digital Herencia/Tasks/T03 Two pointer patterns 2e2a4e63bf23802086d8ca830a5e9a8f]]
+- Source identity: 2e2a4e63bf23802086d8ca830a5e9a8f
+- Project relation: explicit on canonical source page
 
 ## Owner controls
 - Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]`
@@ -30,6 +36,16 @@ migration_relation_state: source-relation-missing
 
 # T03 Two pointer patterns
 
-Imported verbatim from Notion. TaskNotes execution record; project relation omitted because source export provides no relation.
+Imported verbatim from Notion. TaskNotes execution record. Canonical Notion task page contains an explicit Project relation; the linked project is recorded in frontmatter.
 
 Source created: January 8, 2026 7:18 AM.
+
+
+
+
+
+
+
+
+
+

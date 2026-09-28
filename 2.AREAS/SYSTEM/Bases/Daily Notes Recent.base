@@ -1,0 +1,16 @@
+filters:
+  and:
+    - 'type == "daily"'
+    - 'file.inFolder("2.AREAS/DAILY")'
+    - 'type == "daily"'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Daily Notes Recent"
+    order:
+      - file.name
+      - focus_project
+      - focus_domain
+      - updated

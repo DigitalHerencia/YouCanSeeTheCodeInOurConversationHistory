@@ -10,36 +10,28 @@
   "user_scripts_folder": "2.AREAS/SYSTEM/Scripts/templater",
   "folder_templates": [
     {
-      "folder": "1.PROJECTS",
-      "template": "2.AREAS/SYSTEM/Templates/Project.template.md"
-    },
-    {
-      "folder": "AMOEBA",
-      "template": "SYSTEM/Templates/Amoeba.template.md"
-    },
-    {
       "folder": "2.AREAS/DAILY",
       "template": "2.AREAS/SYSTEM/Templates/Daily.template.md"
-    },
-    {
-      "folder": "ZETTLECASTEN/Clippings",
-      "template": "SYSTEM/Templates/Zettel Clipping.template.md"
-    },
-    {
-      "folder": "ZETTLECASTEN/AI Threads",
-      "template": "SYSTEM/Templates/AI Thread.template.md"
-    },
-    {
-      "folder": "3.RESOURCES/Stack Syntax/Drills",
-      "template": "SYSTEM/Templates/Stack Syntax Drill.template.md"
     },
     {
       "folder": "2.AREAS/ZETTLECASTEN/Inbox",
       "template": "2.AREAS/SYSTEM/Templates/Zettel Workbench.template.md"
     },
     {
-      "folder": "2.AREAS/ZETTLECASTEN/Processing",
-      "template": "2.AREAS/SYSTEM/Templates/Evergreen.template.md"
+      "folder": "2.AREAS/ZETTLECASTEN/Fleeting",
+      "template": "2.AREAS/SYSTEM/Templates/Fleeting Note.template.md"
+    },
+    {
+      "folder": "2.AREAS/ZETTLECASTEN/Clippings",
+      "template": "2.AREAS/SYSTEM/Templates/Web Clipping.template.md"
+    },
+    {
+      "folder": "2.AREAS/ZETTLECASTEN/AI Threads",
+      "template": "2.AREAS/SYSTEM/Templates/AI Thread.template.md"
+    },
+    {
+      "folder": "2.AREAS/ZETTLECASTEN/Literature",
+      "template": "2.AREAS/SYSTEM/Templates/Literature.template.md"
     }
   ],
   "file_templates": [],
@@ -50,13 +42,14 @@
   "intellisense_render": "1",
   "ignore_folders_on_creation": [
     {
-      "folder": "SYSTEM"
-    },
-    {
       "folder": "2.AREAS/SYSTEM/_Tasks"
     },
     {
-      "folder": "_mounts"
+      "folder": "2.AREAS/SYSTEM/_mounts"
+    },
+    {
+      "folder": "4.ARCHIVE"
     }
   ]
 }
+

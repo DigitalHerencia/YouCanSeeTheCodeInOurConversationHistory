@@ -1,30 +1,31 @@
 ---
-type: resource
-status: backlog
-priority: normal
-created: {{date:YYYY-MM-DD}}
-updated: {{date:YYYY-MM-DD}}
+type: zettel-workbench
+state: inbox
+capture_source:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/resource]
 ---
-# {{title}}
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+# {{TITLE}}
 
-## Context and starter content
-- Source / provenance: add the originating note, issue, or conversation.
-- Outcome: state the observable result.
-- Constraints and dependencies: link only verified relations.
+## Capture
+Raw material.
 
-## Acceptance criteria
-- [ ] Outcome is explicit and reviewable.
-- [ ] Required evidence or output is linked.
+## Smallest Useful Claim
 
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
+## Why It Matters
 
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->
+## Candidate Links
+
+## Processing
+- [ ] discard
+- [ ] merge
+- [ ] convert to durable resource
+- [ ] extract evergreen knowledge
+- [ ] extract pattern
+- [ ] attach to project
+- [ ] attach to Code Lab
+
+
+

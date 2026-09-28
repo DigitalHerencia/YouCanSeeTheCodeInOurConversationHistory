@@ -1,39 +1,44 @@
 ---
 type: project
+title: <% tp.file.title %>
+project_type: <% await tp.system.suggester(["OPS","PROD","DES","ENG","MKT","RES"],["OPS","PROD","DES","ENG","MKT","RES"]) %>
+project_code: <% await tp.system.prompt("Approved project work code (TEAM-M#-PHASE-SLUG)") %>
 status: backlog
-created: {{date:YYYY-MM-DD}}
-updated: {{date:YYYY-MM-DD}}
+priority: normal
+target_end: null
+current_focus: ""
+blocker: ""
+codelab_enabled: false
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/project]
 ---
-# {{VALUE}}
+# <% tp.file.title %>
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+## Human controls
+Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(review), option(done), option(cancelled)):status]` · Priority: `INPUT[select(option(low), option(normal), option(high)):priority]` · Target: `INPUT[date:target_end]`
+Focus: `INPUT[text:current_focus]` · Blocker: `INPUT[text:blocker]` · Code Lab enabled: `INPUT[toggle:codelab_enabled]`
+
+## Purpose and approved outcome
+Describe the owner-approved project outcome and cite the requirement or decision that authorizes it. No requirements are inferred during creation.
+
+## Acceptance
+- [ ] Each project outcome has a measurable acceptance condition.
+- [ ] Constraints, assumptions, and dependencies link to source evidence.
+
+## Current state
+<!-- HEARTH:BEGIN PROJECT-STATE -->
+Reconciled automatically from linked milestone, phase, and TaskNotes records.
+<!-- HEARTH:END PROJECT-STATE -->
+
+## Execution
+- Board: [[Board]]
+- Milestone, phase, and tasks are reconciled from this project’s source relations.
+![[Active Project Tasks.base]]
+
+## Documents and evidence
+![[Active Project Documents.base]]
+![[Active Project Evidence.base]]
 
 
-## Owner controls
-- Status: `INPUT[select(option(backlog), option(active), option(done), option(archived)):status]`
-- Priority: `INPUT[select(option(none), option(low), option(normal), option(high)):priority]`
-- Target start: `INPUT[date:target_start]` · Target end: `INPUT[date:target_end]`
-- Current focus: `INPUT[text:current_focus]` · Blocker: `INPUT[text:blocker]`
-- Code Lab enabled: `INPUT[toggle:codelab_enabled]`
 
-## Context and starter content
-- Source / provenance: add the originating note, issue, or conversation.
-- Outcome: state the observable result.
-- Constraints and dependencies: link only verified relations.
-
-## Acceptance criteria
-- [ ] Outcome is explicit and reviewable.
-- [ ] Required evidence or output is linked.
-
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
-
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->
-
-<%* await tp.user.hearth_create_project(tp); tR += ""; %>

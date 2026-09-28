@@ -1,28 +1,32 @@
 ---
 type: task
-id: TASK-2376736A-EAF4-454A-8A24-872743A2932D
+id: TASK-2E2A4E63BF2380F9AFA7C29D36C6E9BB
 source_task_code: T04
-task_code: OPS-M1-P1.1-OKR-T04
 status: done
 priority: none
-notion_created_at: January 8, 2026 7:16 AM
-created: 2026-09-26
+created: January 8, 2026 7:16 AM
 updated: 2026-09-26
-completed_at: 2026-01-08
-project: "[[1.PROJECTS/OPS-M1-P1.1-OKR OKRs-Constraints/Project]]"
-milestone: "[[1.PROJECTS/OPS-M1-P1.1-OKR OKRs-Constraints/Milestone M1]]"
-phase: "[[1.PROJECTS/OPS-M1-P1.1-OKR OKRs-Constraints/Phase P1.1]]"
-source: Notion export
+source: Notion canonical task page
+source_path: "3.RESOURCES/Digital Herencia/Tasks/T04 Align budgets to OKRs 2e2a4e63bf2380f9afa7c29d36c6e9bb.md"
+source_identity: 2e2a4e63bf2380f9afa7c29d36c6e9bb
 provenance: "[[3.RESOURCES/Digital Herencia/Tasks 2d5a4e63bf23816fa217ef754ce4a70e_all.csv]]"
 tags:
   - type/task
   - hearth/migration
 title: T04 Align budgets to OKRs
-dateCreated: 2026-01-08
-migration_relation_state: verified-ticketing-source
-relation_source: "[[3.RESOURCES/Digital Herencia/SOPs/Ticketing 2d8a4e63bf2380dd9a04cbbb762b9c7c]]"
-project_code: OPS-M1-P1.1-OKR
+migration_relation_state: explicit-source-project-page
 ---
+completed_at: null
+phase: "[[1.PROJECTS/OPS-M1-P1.1-OKR OKRs-Constraints/Phase P1.1]]"
+project: "[[1.PROJECTS/OPS-M1-P1.1-OKR OKRs-Constraints/Project]]"
+project_code: OPS-M1-P1.1-OKR
+task_code: "T04"
+ticket_code: OPS-M1-P1.1-OKR-T04
+milestone: "[[1.PROJECTS/OPS-M1-P1.1-OKR OKRs-Constraints/Milestone M1]]"
+## Source provenance
+- Canonical task page: [[3.RESOURCES/Digital Herencia/Tasks/T04 Align budgets to OKRs 2e2a4e63bf2380f9afa7c29d36c6e9bb]]
+- Source identity: 2e2a4e63bf2380f9afa7c29d36c6e9bb
+- Project relation: explicit on canonical source page
 
 ## Owner controls
 - Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]`
@@ -31,6 +35,16 @@ project_code: OPS-M1-P1.1-OKR
 
 # T04 Align budgets to OKRs
 
-Imported verbatim from Notion. TaskNotes execution record; project relation omitted because source export provides no relation.
+Imported verbatim from Notion. TaskNotes execution record. Canonical Notion task page contains an explicit Project relation; the linked project is recorded in frontmatter.
 
 Source created: January 8, 2026 7:16 AM.
+
+
+
+
+
+
+
+
+
+

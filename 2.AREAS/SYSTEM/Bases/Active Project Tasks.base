@@ -1,0 +1,22 @@
+filters:
+  and:
+    - 'type == "task"'
+    - 'file.inFolder("2.AREAS/SYSTEM/_Tasks")'
+    - 'file.hasLink(this.project)' 
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "Active Project Tasks"
+    order:
+      - project
+      - phase
+      - milestone
+      - status
+      - priority
+      - due
+      - scheduled
+      - estimate
+      - blocker
+

@@ -1,30 +1,45 @@
 ---
-type: resource
-status: backlog
-priority: normal
-created: {{date:YYYY-MM-DD}}
-updated: {{date:YYYY-MM-DD}}
+type: document
+document_type: document
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+project: <% tp.user.hearthProject(tp) %>
+status: draft
+authority: project-specific
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/document]
 ---
-# {{title}}
+# {{TITLE}}
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+## Purpose
+What durable decision, requirement, specification, or report does this document own?
 
-## Context and starter content
-- Source / provenance: add the originating note, issue, or conversation.
-- Outcome: state the observable result.
-- Constraints and dependencies: link only verified relations.
+## Source Context
+- Project:
+- Milestone:
+- Phase:
+- Upstream documents:
+- Source requirements:
 
-## Acceptance criteria
-- [ ] Outcome is explicit and reviewable.
-- [ ] Required evidence or output is linked.
+## Content
 
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
+## Decisions and Invariants
 
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->
+## Human controls
+Status: `INPUT[select(option(draft), option(review), option(approved), option(superseded), option(archived)):status]` · Review status: `INPUT[select(option(pending), option(in-review), option(approved), option(rejected)):review_status]`
+
+## Acceptance Criteria
+- [ ] The document's purpose is satisfied.
+- [ ] Required upstream context is linked.
+- [ ] Claims have an identified source or rationale.
+
+## Downstream Use
+- Implemented by:
+- Validated by:
+- Handoff to:
+
+## Evidence
+
+
+
+

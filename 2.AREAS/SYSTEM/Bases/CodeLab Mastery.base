@@ -1,0 +1,18 @@
+filters:
+  and:
+    - 'type == "codelab"'
+    - 'file.inFolder("2.AREAS/SYSTEM/Code Lab")'
+    - 'mastery_state == "mastered"'
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: "CodeLab Mastery"
+    order:
+      - file.name
+      - codelab_kind
+      - module
+      - mastery
+      - confidence
+      - last_attempted

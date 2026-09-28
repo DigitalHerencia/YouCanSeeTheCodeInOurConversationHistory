@@ -1,35 +1,39 @@
 ---
-type: project
+type: phase
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+project: <% tp.user.hearthProject(tp) %>
+milestone: <% tp.user.hearthMilestone(tp) %>
+number:
+title:
 status: backlog
-priority: normal
-created: {{date:YYYY-MM-DD}}
-updated: {{date:YYYY-MM-DD}}
+sprint:
+risk:
+start:
+end:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [type/phase]
 ---
-# {{title}}
 
-> [!info] Purpose
-> Record the source, decision context, and intended outcome before execution. Keep human-authored sections intact during generated refresh.
+# {{TITLE}}
+
+## Goal
+What bounded outcome should this phase produce?
+
+## Entry Criteria
+- 
+
+## Exit Criteria
+- 
+
+## Tasks
+![[Active Project Tasks.base]]
+
+## Review
+- What changed?
+- What was validated?
+- What remains?
+- What advances next?
 
 
-## Owner controls
-- Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(done), option(blocked)):status]`
-- Sprint: `INPUT[text:sprint]` · Risk: `INPUT[select(option(unknown), option(low), option(medium), option(high)):risk]`
 
-## Context and starter content
-- Source / provenance: add the originating note, issue, or conversation.
-- Outcome: state the observable result.
-- Constraints and dependencies: link only verified relations.
-
-## Acceptance criteria
-- [ ] Outcome is explicit and reviewable.
-- [ ] Required evidence or output is linked.
-
-## Human input
-<!-- hearth:human:start -->
-Add owner-authored context here.
-<!-- hearth:human:end -->
-
-## Generated state
-<!-- hearth:generated:start -->
-Refreshed by Hearth.
-<!-- hearth:generated:end -->
