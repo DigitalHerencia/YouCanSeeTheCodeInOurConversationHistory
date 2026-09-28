@@ -31,7 +31,7 @@
     "defaultDueTime": "none",
     "defaultScheduledDate": "none",
     "defaultScheduledTime": "none",
-    "bodyTemplate": "2.AREAS/SYSTEM/templates/Task Bridge.template.md",
+    "bodyTemplate": "2.AREAS/SYSTEM/Templates/Task Bridge.template.md",
     "useBodyTemplate": true,
     "occurrenceBodyTemplate": "",
     "useOccurrenceBodyTemplate": false,

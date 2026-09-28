@@ -1477,7 +1477,7 @@
             "type": "UserScript",
             "variables": "\"preset\":\"{\"ontologyId\":\"MOD-001\",\"projectType\":\"ENG\"}\"",
             "id": "0a7459a2-3fe1-4bfe-ac73-8df98e104d5b",
-            "path": "project-create.js"
+            "path": "project-create"
           }
         ],
         "id": "3df14601-7833-42f7-8c6d-3d8b11552265",
@@ -1497,7 +1497,7 @@
             "type": "UserScript",
             "variables": "\"preset\":\"{\"ontologyId\":\"MOD-002\",\"projectType\":\"ENG\"}\"",
             "id": "26d895e1-8003-4a73-b5f9-e84e26674955",
-            "path": "project-create.js"
+            "path": "project-create"
           }
         ],
         "id": "1c55ddb7-0d0a-428e-b0e1-fb197f7c7d9b",
@@ -1517,7 +1517,7 @@
             "type": "UserScript",
             "variables": "\"preset\":\"{\"ontologyId\":\"MOD-003\",\"projectType\":\"ENG\"}\"",
             "id": "139e1ab1-ca00-4814-9dec-3c32c4b33589",
-            "path": "project-create.js"
+            "path": "project-create"
           }
         ],
         "id": "86b86573-187c-4aa0-9421-a8cf7b682f4e",
@@ -1537,7 +1537,7 @@
             "type": "UserScript",
             "variables": "\"preset\":\"{\"ontologyId\":\"MOD-004\",\"projectType\":\"MKT\"}\"",
             "id": "a3cf55fc-8639-45ab-86ea-8c204d9e716a",
-            "path": "project-create.js"
+            "path": "project-create"
           }
         ],
         "id": "30967c71-a923-4f2d-8b0a-aaeddab909b4",
@@ -1557,7 +1557,7 @@
             "type": "UserScript",
             "variables": "\"preset\":\"{\"ontologyId\":\"MOD-005\",\"projectType\":\"ENG\"}\"",
             "id": "bb529634-a5de-4793-a059-c0ee4d29bc4d",
-            "path": "project-create.js"
+            "path": "project-create"
           }
         ],
         "id": "e763eacc-07a8-4065-83ea-6b3c38ccb368",
@@ -1577,7 +1577,7 @@
             "type": "UserScript",
             "variables": "\"preset\":\"{\"ontologyId\":\"MOD-006\",\"projectType\":\"MKT\"}\"",
             "id": "b05a3196-b88a-42e8-bf6f-67751896b6fd",
-            "path": "project-create.js"
+            "path": "project-create"
           }
         ],
         "id": "1578051f-93e8-4b5b-b87c-f37ab04e52ab",
@@ -1597,7 +1597,7 @@
             "type": "UserScript",
             "variables": "\"preset\":\"{\"ontologyId\":\"MOD-007\",\"projectType\":\"ENG\"}\"",
             "id": "3a015ad2-bfbe-4bfd-a3a8-913f6653563e",
-            "path": "project-create.js"
+            "path": "project-create"
           }
         ],
         "id": "9ffb8bb8-0185-427d-9cce-32606730a044",
@@ -1617,7 +1617,7 @@
             "type": "UserScript",
             "variables": "\"preset\":\"{\"ontologyId\":\"MOD-008\",\"projectType\":\"ENG\"}\"",
             "id": "57e2d346-0c67-437c-b509-2ce9b6aa547c",
-            "path": "project-create.js"
+            "path": "project-create"
           }
         ],
         "id": "b204b6ad-e1bc-4acf-a58c-116f97c96565",
@@ -1637,7 +1637,7 @@
             "type": "UserScript",
             "variables": "\"preset\":\"{\"ontologyId\":\"MOD-009\",\"projectType\":\"ENG\"}\"",
             "id": "b62274ae-f4a7-4b29-a45b-981e15924fba",
-            "path": "project-create.js"
+            "path": "project-create"
           }
         ],
         "id": "ff8e518c-ef8c-4e7b-94de-71abbdafd7ff",
