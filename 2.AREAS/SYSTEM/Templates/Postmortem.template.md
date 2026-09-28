@@ -1,11 +1,11 @@
 ---
 type: document
 document_type: postmortem
-id:
-project:
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+project: <% tp.user.hearthProject(tp) %>
 status: draft
-created:
-updated:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [type/document, type/review]
 ---
 # Post-mortem — {{TITLE}}
@@ -32,3 +32,6 @@ tags: [type/document, type/review]
 |---|---|---|---|
 
 ## Evidence
+
+
+

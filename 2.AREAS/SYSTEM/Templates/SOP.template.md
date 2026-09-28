@@ -1,12 +1,12 @@
 ---
 type: document
 document_type: SOP
-id:
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
 owning_domain:
 status: draft
 authority: operational
-created:
-updated:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [type/document]
 ---
 # SOP — {{TITLE}}
@@ -36,3 +36,6 @@ tags: [type/document]
 ## Ownership and Handoff
 
 ## Review Cadence
+
+
+

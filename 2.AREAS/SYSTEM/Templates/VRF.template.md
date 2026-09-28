@@ -1,11 +1,11 @@
 ---
 type: document
 document_type: verification-report
-id:
-project:
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+project: <% tp.user.hearthProject(tp) %>
 status: draft
-created:
-updated:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [type/document, type/evidence]
 ---
 # Verification Report — {{TITLE}}
@@ -30,3 +30,6 @@ tags: [type/document, type/evidence]
 - [ ] Verified
 - [ ] Partially verified
 - [ ] Blocked
+
+
+

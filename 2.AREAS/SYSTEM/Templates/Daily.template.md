@@ -1,57 +1,65 @@
 ---
 type: daily
 id: DLY-<% tp.date.now("YYYY-MM-DD") %>
-tags: [type/daily]
 created: <% tp.date.now("YYYY-MM-DD") %>
+focus_project: null
+focus_domain: null
+tags: [type/daily]
 ---
-
 # <% tp.date.now("dddd, MMMM D, YYYY") %>
 
-> [!info] Operating Snapshot
-> Generated from current vault state. Human sections are preserved during refresh.
+Operating snapshot generated from current TaskNotes, project, cadence, knowledge, and Code Lab state. Refresh replaces only HEARTH regions.
 
+## Context
+<!-- HEARTH:BEGIN CONTEXT -->
+<!-- HEARTH:END CONTEXT -->
 ## Yesterday
-<!-- HEARTH:GENERATED:YESTERDAY:START -->
-<%* tR += await tp.user.hearth.dailyYesterday(tp); %>
-<!-- HEARTH:GENERATED:YESTERDAY:END -->
-
+<!-- HEARTH:BEGIN YESTERDAY -->
+<!-- HEARTH:END YESTERDAY -->
 ## Today
-<!-- HEARTH:GENERATED:TODAY:START -->
-<%* tR += await tp.user.hearth.dailyToday(tp); %>
-<!-- HEARTH:GENERATED:TODAY:END -->
-
+<!-- HEARTH:BEGIN TODAY -->
+<!-- HEARTH:END TODAY -->
+## Deadlines
+<!-- HEARTH:BEGIN DEADLINES -->
+<!-- HEARTH:END DEADLINES -->
 ## Blockers
-<!-- HEARTH:GENERATED:BLOCKERS:START -->
-<%* tR += await tp.user.hearth.dailyBlockers(tp); %>
-<!-- HEARTH:GENERATED:BLOCKERS:END -->
-
-## Deadlines & Reviews
-<!-- HEARTH:GENERATED:DEADLINES:START -->
-<%* tR += await tp.user.hearth.dailyDeadlines(tp); %>
-<!-- HEARTH:GENERATED:DEADLINES:END -->
-
+<!-- HEARTH:BEGIN BLOCKERS -->
+<!-- HEARTH:END BLOCKERS -->
 ## Cadence
-<!-- HEARTH:GENERATED:CADENCE:START -->
-<%* tR += await tp.user.hearth.dailyCadence(tp); %>
-<!-- HEARTH:GENERATED:CADENCE:END -->
-
-## Current Work
-<!-- HEARTH:GENERATED:WORK:START -->
-<%* tR += await tp.user.hearth.dailyWorkContext(tp); %>
-<!-- HEARTH:GENERATED:WORK:END -->
-
+<!-- HEARTH:BEGIN CADENCE -->
+<!-- HEARTH:END CADENCE -->
+## Recent Outputs
+<!-- HEARTH:BEGIN OUTPUTS -->
+<!-- HEARTH:END OUTPUTS -->
+## Zettelkasten and Resource Reviews
+<!-- HEARTH:BEGIN KNOWLEDGE -->
+<!-- HEARTH:END KNOWLEDGE -->
 ## Code Lab
-<!-- HEARTH:GENERATED:CODELAB:START -->
-<%* tR += await tp.user.hearth.dailyCodeLab(tp); %>
-<!-- HEARTH:GENERATED:CODELAB:END -->
+<!-- HEARTH:BEGIN CODELAB -->
+<!-- HEARTH:END CODELAB -->
+## System Health
+<!-- HEARTH:BEGIN HEALTH -->
+<!-- HEARTH:END HEALTH -->
 
+## Carry Forward
+<!-- HEARTH:BEGIN CARRY -->
+<!-- HEARTH:END CARRY -->
+
+## Human controls
+Focus project: `INPUT[text:focus_project]` · Domain: `INPUT[select(option(OPS), option(PROD), option(DES), option(ENG), option(MKT), option(RES)):focus_domain]`
+
+## Decisions
+<!-- HUMAN:DECISIONS:START -->
+<!-- HUMAN:DECISIONS:END -->
 ## Notes
 <!-- HUMAN:NOTES:START -->
-
 <!-- HUMAN:NOTES:END -->
-
+## Reflection
+<!-- HUMAN:REFLECTION:START -->
+<!-- HUMAN:REFLECTION:END -->
 ## Shutdown
 <!-- HUMAN:SHUTDOWN:START -->
-What changed? What remains? What should start first next workday?
-
+What changed? What remains? What starts first next workday?
 <!-- HUMAN:SHUTDOWN:END -->
+
+

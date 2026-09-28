@@ -1,8 +1,8 @@
 ---
 type: zettel-workbench
 state: fleeting
-created:
-updated:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [type/resource]
 ---
 
@@ -13,3 +13,6 @@ tags: [type/resource]
 ## Context
 
 ## Next Handling
+
+
+

@@ -1,7 +1,7 @@
 ---
 type: milestone
-id:
-project:
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+project: <% tp.user.hearthProject(tp) %>
 number:
 title:
 status: backlog
@@ -9,8 +9,8 @@ objective:
 start:
 end:
 risk:
-created:
-updated:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [type/milestone]
 ---
 
@@ -32,3 +32,6 @@ What validated product/business state does this milestone represent?
 ## Review
 <!-- HEARTH:GENERATED:REVIEW:START -->
 <!-- HEARTH:GENERATED:REVIEW:END -->
+
+
+

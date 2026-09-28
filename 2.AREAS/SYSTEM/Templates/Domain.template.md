@@ -1,11 +1,11 @@
 ---
 type: domain
-id:
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
 domain_code:
 title:
 status: active
-created:
-updated:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [type/domain]
 ---
 # {{TITLE}}
@@ -23,3 +23,6 @@ tags: [type/domain]
 ## Outputs and Handoffs
 
 ## Notes
+
+
+

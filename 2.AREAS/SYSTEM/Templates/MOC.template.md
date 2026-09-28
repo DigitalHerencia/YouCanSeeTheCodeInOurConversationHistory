@@ -3,8 +3,8 @@ type: knowledge
 knowledge_kind: moc
 topic:
 status: active
-created:
-updated:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [type/evidence]
 ---
 # Map of Content — {{TITLE}}
@@ -21,3 +21,6 @@ tags: [type/evidence]
 <!-- generated -->
 
 ## Open Questions
+
+
+

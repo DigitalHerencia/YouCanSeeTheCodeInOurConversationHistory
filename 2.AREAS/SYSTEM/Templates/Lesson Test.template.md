@@ -1,12 +1,12 @@
 ---
 type: codelab
 action_kind: lesson-test
-id:
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
 lesson:
-project:
+project: <% tp.user.hearthProject(tp) %>
 status: planned
-created:
-updated:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [type/codelab, type/evidence]
 ---
 # Lesson Test — {{TITLE}}
@@ -29,3 +29,6 @@ tags: [type/codelab, type/evidence]
 - [ ] Failed
 
 ## Reflection
+
+
+

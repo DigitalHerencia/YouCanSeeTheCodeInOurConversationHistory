@@ -1,12 +1,12 @@
 ---
 type: document
 document_type: PRD
-id:
-project:
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+project: <% tp.user.hearthProject(tp) %>
 status: draft
 authority: project-specific
-created:
-updated:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [type/document]
 ---
 
@@ -53,3 +53,6 @@ Define the measurable change this work must create.
 - Design:
 - Technical Requirements:
 - Evidence:
+
+
+

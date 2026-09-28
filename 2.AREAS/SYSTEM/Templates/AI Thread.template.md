@@ -2,8 +2,8 @@
 type: zettel-workbench
 state: ai-thread
 capture_source: ai
-created:
-updated:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [type/resource, source/personal]
 ---
 
@@ -20,3 +20,6 @@ tags: [type/resource, source/personal]
 ## Evidence Needed
 
 ## Processing Destination
+
+
+

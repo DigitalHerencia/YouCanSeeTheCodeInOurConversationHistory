@@ -1,12 +1,12 @@
 ---
 type: codelab
 action_kind: module-assessment
-id:
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
 module:
-project:
+project: <% tp.user.hearthProject(tp) %>
 status: planned
-created:
-updated:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [type/codelab, type/evidence]
 ---
 # Module Assessment — {{TITLE}}
@@ -27,3 +27,6 @@ tags: [type/codelab, type/evidence]
 - [ ] Demonstrated
 - [ ] Needs review
 - [ ] Not demonstrated
+
+
+

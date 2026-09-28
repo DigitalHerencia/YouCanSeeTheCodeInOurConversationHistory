@@ -1,11 +1,11 @@
 ---
 type: document
 document_type: UXD
-id:
-project:
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+project: <% tp.user.hearthProject(tp) %>
 status: draft
-created:
-updated:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [type/document]
 ---
 # UX Design — {{TITLE}}
@@ -27,3 +27,6 @@ tags: [type/document]
 ## Handoff to Engineering
 
 ## Validation
+
+
+

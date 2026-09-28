@@ -1,11 +1,11 @@
 ---
 type: document
 document_type: runbook
-id:
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
 owning_domain:
 status: active
-created:
-updated:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [type/document]
 ---
 # Runbook — {{TITLE}}
@@ -30,3 +30,6 @@ tags: [type/document]
 ## Escalation
 
 ## Evidence
+
+
+

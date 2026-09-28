@@ -1,13 +1,13 @@
 ---
 type: requirement
-id:
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
 requirement_kind:
-project:
+project: <% tp.user.hearthProject(tp) %>
 document:
 status: draft
 priority: medium
-created:
-updated:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [type/requirement]
 ---
 # {{ID}} — {{TITLE}}
@@ -33,3 +33,6 @@ What system surface does it constrain?
 
 ## Validation Evidence
 - validated_by:
+
+
+

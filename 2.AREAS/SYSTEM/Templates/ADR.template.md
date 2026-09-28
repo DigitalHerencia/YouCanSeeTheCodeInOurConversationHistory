@@ -1,11 +1,11 @@
 ---
 type: decision
 document_type: ADR
-id:
-project:
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+project: <% tp.user.hearthProject(tp) %>
 status: proposed
-created:
-updated:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [type/decision]
 ---
 
@@ -26,3 +26,6 @@ tags: [type/decision]
 ## Evidence
 
 ## Status
+
+
+

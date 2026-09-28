@@ -1,13 +1,13 @@
 ---
 type: evidence
-id:
+id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
 evidence_kind:
-project:
+project: <% tp.user.hearthProject(tp) %>
 requirement:
 task:
 result:
-created:
-updated:
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [type/evidence]
 ---
 # {{ID}} — {{TITLE}}
@@ -30,3 +30,6 @@ What does the evidence establish, and what does it not establish?
 - Document:
 - Task:
 - Commit:
+
+
+
