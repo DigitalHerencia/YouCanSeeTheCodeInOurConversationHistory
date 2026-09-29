@@ -1,1 +1,0 @@
-module.exports=async tp=>{const result=await require('./core/reconcile').run(tp.app);return `Reconciled ${result.projects} projects, ${result.milestones} milestones, ${result.phases} phases, and ${result.tasks} TaskNotes tasks.`};

@@ -1,0 +1,26 @@
+{
+  "extensions": "py, c, cpp, h, hpp, js, ts, jsx, tsx, json, mjs, cjs, css, scss, sass, less, html, htm, rs, go, java, sql, php, rb, sh, yaml, xml, cs, yml, prisma",
+  "showLineNumbers": true,
+  "editorFontSize": 18,
+  "embedFontSize": 15,
+  "maxEmbedLines": 40,
+  "newFileFolderPath": "",
+  "newFileLocationMode": "current",
+  "dashboardState": {
+    "searchQuery": "",
+    "filterExt": [],
+    "filterFolder": [],
+    "sortBy": "date",
+    "sortDesc": true
+  },
+  "enableExternalMounts": true,
+  "externalMounts": [
+    {
+      "id": "devnotes-codependent-workspace",
+      "sourcePath": "D:\\TheCodependentCodingWebAppArchitecture",
+      "mountPath": "_mounts/CodependentCoding"
+    }
+  ],
+  "externalMountLinkType": "junction",
+  "ignoredFiles": []
+}

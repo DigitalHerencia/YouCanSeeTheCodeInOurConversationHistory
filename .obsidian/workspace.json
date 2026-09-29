@@ -1,0 +1,312 @@
+{
+  "main": {
+    "id": "b6d237810f2d8a2a",
+    "type": "split",
+    "children": [
+      {
+        "id": "cf38d1fb057e5b0c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6b816a84475eecc6",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "hearth-home-view",
+              "state": {},
+              "pinned": true,
+              "icon": "lucide-layout-dashboard",
+              "title": "Home"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "53124409eb55f2c8",
+    "type": "split",
+    "children": [
+      {
+        "id": "ea8bbd3825de8741",
+        "type": "tabs",
+        "dimension": 73.19034852546918,
+        "children": [
+          {
+            "id": "c4c877b3aa7a0983",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "a0dcca94e85b89b6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "4a56c2a69f79a9d5",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      },
+      {
+        "id": "88ab593478d53fa7",
+        "type": "tabs",
+        "dimension": 26.809651474530828,
+        "children": [
+          {
+            "id": "57a4f364a8f5286a",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "16c6fc1c4220b89d",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
+          },
+          {
+            "id": "d35b9404bd53168a",
+            "type": "leaf",
+            "state": {
+              "type": "code-space-dashboard",
+              "state": {},
+              "icon": "code-glyph",
+              "title": "Code space"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 468.889892578125
+  },
+  "right": {
+    "id": "ccfaa394d329b3d1",
+    "type": "split",
+    "children": [
+      {
+        "id": "4cb251eeef3fe43d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "762a510688ccc018",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "e1dab984f86c7297",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "9876507f4dbf210d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "f30e7205fd90ff0e",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "7e6caed96e50c239",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ],
+        "currentTab": 4
+      },
+      {
+        "id": "b0256f3484303fab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "37b956c66690418b",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 409.2999267578125,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "hearth:Open Hearth home": false,
+      "canvas:Create new canvas": true,
+      "switcher:Open quick switcher": true,
+      "graph:Open graph view": false,
+      "templates:Insert template": true,
+      "command-palette:Open command palette": false,
+      "daily-notes:Open today's daily note": false,
+      "markdown-importer:Open format converter": false,
+      "zk-prefixer:Create new unique note": false,
+      "workspaces:Manage workspace layouts": false,
+      "bases:Create new base": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": true,
+      "templater-obsidian:Templater": false,
+      "obsidian-git:Open Git source control": false,
+      "callout-studio:Quick insert block callout": false,
+      "code-space:Open code space dashboard": false,
+      "obsidian-kanban:Create new board": true,
+      "tasknotes:Open mini calendar view": false,
+      "tasknotes:Open calendar view": true,
+      "tasknotes:Open tasks view": false,
+      "tasknotes:Open agenda view": false,
+      "tasknotes:Open Kanban board": false,
+      "tasknotes:Open Pomodoro timer": false,
+      "tasknotes:Open Pomodoro statistics": false,
+      "tasknotes:Create new task": false,
+      "iconic:Open rulebook": false
+    }
+  },
+  "active": "6b816a84475eecc6",
+  "lastOpenFiles": [
+    "2.AREAS/ZETTLECASTEN/Inbox/Inbox.md",
+    "2.AREAS/SYSTEM/Assets/Digital Herencia Logo.jpg",
+    "2.AREAS/SYSTEM/Assets/pro.jpg",
+    "2.AREAS/SYSTEM/Assets/oh-high-mark.webp",
+    "2.AREAS/SYSTEM/Assets/Here's another thing that I saw coming but never would have guessed it..jpeg",
+    "2.AREAS/SYSTEM/Assets/Grey.avif",
+    "2.AREAS/SYSTEM/Assets/Digital Herencia Logo (2).jpg",
+    "2.AREAS/CODE",
+    "2.AREAS/BLOG/50.BLOG.Who_Dijkstra_Actually_Was.md",
+    "2.AREAS/BLOG/50.BLOG.User_2478e-The_Model_Can’T_Keep_Up_Anymore.md",
+    "2.AREAS/BLOG/50.BLOG.Undead_Dev.md",
+    "2.AREAS/BLOG/50.BLOG.Tinder_Dev_Roast_Mode.md",
+    "2.AREAS/BLOG/50.BLOG.Threat_Model.md",
+    "2.AREAS/BLOG/50.BLOG.Thinking_vs_Execution_vs_Machines.md",
+    "2.AREAS/BLOG/50.BLOG.The_Vibes_Development_System_-_A_Practical_Architecture.md",
+    "2.AREAS/BLOG/50.BLOG.The_United_States_Circuit_Court_Of_Frontend_Violations.md",
+    "2.AREAS/BLOG/50.BLOG.The_Stupid_Lesson.md",
+    "2.AREAS/BLOG/50.BLOG.The_Speed_of_Absurdity_&_The_Sophisticated_Stupidity_Principle.md",
+    "2.AREAS/BLOG/50.BLOG.The_Night_Chatgpt_Taught_Me_Pr_Also_Means_Public_Relations.md",
+    "2.AREAS/BLOG/50.BLOG.The_Dev_Mixtape_That_Crashed_My_Context_Window.md",
+    "2.AREAS/BLOG/50.BLOG.System_Identity.md",
+    "2.AREAS/BLOG/50.BLOG.So_Should_You_Use_Obsidian.md",
+    "2.AREAS/BLOG/50.BLOG.Regrets-Cigarettes-Neural-Nets.Map.md",
+    "2.AREAS/BLOG/50.BLOG.Q1_2026_Devfluencer_Campaign_Plan.md",
+    "2.AREAS/BLOG/50.BLOG.Pure_Weapon-Grade_Attitude.md",
+    "2.AREAS/BLOG/50.BLOG.Possessed_By_A_Product_Roadmap.md",
+    "2.AREAS/BLOG/50.BLOG.On_The_Emergence_Of_User-Induced_Model_Destabilization_(Uimd).md",
+    "2.AREAS/BLOG/50.BLOG.Now_That's_What_I_Call_Dev_Ops.md",
+    "2.AREAS/BLOG/50.BLOG.My_Internship_Was_Just_Submitting_Roast_Prs_To_Dev_Influencer_Repos.md",
+    "2.AREAS/BLOG/50.BLOG.Monday-Agency_And_Growth.md",
+    "2.AREAS/BLOG/50.BLOG.Maximum_Pettiness_Per_Syllable.md",
+    "2.AREAS/BLOG/50.BLOG.Managing_Human_Relationships_In_Notion.md",
+    "2.AREAS/BLOG/50.BLOG.Loaded_Vibes.md",
+    "2.AREAS/BLOG",
+    "2.AREAS/CODE_LAB",
+    "codex/templates",
+    "codex/hearth",
+    "codex",
+    "2.AREAS/SYSTEM/templates",
+    "templates",
+    "3.RESOURCES/Digital Herencia/Teams/Research Team/LeetCode Blind 75 Tracker",
+    "3.RESOURCES/Digital Herencia/Teams/Marketing Team/Marketing Projects/Product update @Today/Launch calendar 2d2a4e63bf238117957fdb9633205bdf_all.csv",
+    "2.AREAS/SYSTEM/HEARTH/Digital Herencia.canvas",
+    "3.RESOURCES/assets/BG4.jpg",
+    "3.RESOURCES/assets/BG3.jpg",
+    "3.RESOURCES/assets/BG.jpg",
+    "3.RESOURCES/assets/black_logo.png",
+    "Untitled.canvas",
+    "obsidian/Canvases/codependent-coding.workspace.canvas"
+  ]
+}
