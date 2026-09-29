@@ -18,8 +18,33 @@
               "icon": "lucide-layout-dashboard",
               "title": "Home"
             }
+          },
+          {
+            "id": "3ca308fa4eb97815",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1.PROJECTS/Obsidian Setup/Obsidian Setup.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Obsidian Setup"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -119,7 +144,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 444.059814453125
+    "width": 444.059814453125,
+    "collapsed": true
   },
   "right": {
     "id": "ccfaa394d329b3d1",
@@ -195,6 +221,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "1.PROJECTS/Obsidian Setup/Obsidian Setup.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -224,8 +251,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 409.2999267578125,
-    "collapsed": true
+    "width": 409.2999267578125
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -257,7 +283,7 @@
       "iconic:Open rulebook": false
     }
   },
-  "active": "6b816a84475eecc6",
+  "active": "3ca308fa4eb97815",
   "lastOpenFiles": [
     "4.ARCHIVE/Notion/Portfolio/T01 Define company objectives/OKR Tracker/KR1 1 2dba4e63bf23802cba4cc14ceb2f4129.md",
     "4.ARCHIVE/Notion/Portfolio/T01 Define company objectives/OKR Tracker/Enforce meeting → decision → task as the only exec 2dba4e63bf238015a340d0fe122c054b.md",

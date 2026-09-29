@@ -1,890 +1,2722 @@
+# Obsidian Vault 
 
-# Obsidian Setup
+This is the implementation layer for the Obsidian system.
 
-## Enterprise Document Framework Overview
+## System scope
 
-In a professional enterprise setting, a product launch or major feature roll-out requires a comprehensive document suite to align cross-functional teams, manage risk, and ensure operational readiness. 
- 
-Beyond the PRD and technical requirements, you should include the following core documents, categorized by their primary business function: 
- 
- 1. Strategy & Alignment Documents 
- 
-    - **Product Vision & Strategy Document:** A high-level document aligning leadership on the long-term direction, market differentiators, and competitive landscape analysis. 
-    - **Business Case / Return on Investment (ROI) Analysis:** Outlines financial projections, cost of development, resource allocation, and expected revenue or cost savings to justify funding. 
- 
- 2. Design, Data, & Architecture 
- 
-    - **UX/UI Design Specification:** Links to finalized user journeys, interactive wireframes, and design system components hosted on design platforms. 
-    - **Architecture Design Document (ADD) / RFC (Request for Comments):** A deep-dive engineering blueprint detailing system topologies, distributed system patterns, and infrastructure scaling plans. 
-    - **Data Dictionary & Schema Design:** Outlines the data governance strategy, master data tracking, and analytical tracking plans for data warehousing platforms. 
- 
- 3. Compliance, Security, & Risk Management 
- 
-    - **Security & Compliance Assessment:** Documents data privacy safeguards, encryption standards, and adherence to enterprise compliance frameworks (such as SOC 2, ISO 27001, GDPR, or HIPAA). 
-    - **Disaster Recovery (DR) & Business Continuity Plan:** Defines service level objectives (SLOs), failover architectures, backup frequencies, and recovery time objectives (RTO). 
-    - **Threat Model:** Identifies potential security vectors, entry points, and mitigation strategies for enterprise-grade protection. 
- 
- 4. Go-To-Market (GTM) & Operational Readiness 
- 
-    - **Go-To-Market (GTM) Strategy:** Orchestrated alongside product marketing to map out positioning, pricing tiers, distribution channels, and sales enablement assets. 
-    - **Customer Support Runbook / Playbook:** Equips customer success and support staff with troubleshooting flows, escalation matrices, and FAQs before customer exposure. 
-    - **Legal terms & Privacy Policy Updates:** Updates to customer-facing master service agreements (MSAs) or privacy terms necessitated by the new features. 
- 
-| Document                | Primary Owner                      | Target Audience                       | Core Purpose                                        |
-| ----------------------- | ---------------------------------- | ------------------------------------- | --------------------------------------------------- |
-| **Business Case**       | Product Management / Finance       | Executives, Stakeholders              | Secure funding and operational approval.            |
-| **UX/UI Design Spec**   | Product Design                     | Engineering, QA, Product              | Deliver pixel-perfect user experiences.             |
-| **Architecture / RFC**  | Enterprise Architects / Tech Leads | Engineering Team                      | Align on infrastructure and code design.            |
-| **Security Assessment** | Infosec / Compliance Officer       | Legal, Executives, Enterprise Clients | Mitigate data liabilities and meet legal mandates.  |
-| **GTM Strategy**        | Product Marketing Manager          | Sales, Account Management, Marketing  | Coordinate a commercially successful market launch. |
-| **Support Runbook**     | Customer Operations                | Support Tiers 1-3                     | Ensure rapid resolution of user issues post-launch. |
-### Folder structure
+The system uses PARA as the organizational foundation and Hearth as the UI layer.
 
-A suggested folder structure:
+The seven primary dashboards are:
+
+1. Home
+2. Command 
+3. Project
+4. Library
+5. Code
+6. ZettleKasten
+7. Vault 
+
+## Architecture
+
+| Responsibility         | Source of truth      |
+| ---------------------- | -------------------- |
+| Durable organization   | PARA folders         |
+| Daily record           | Daily Notes          |
+| Tasks                  | TaskNotes            |
+| Project documentation  | Project folders      |
+| Structured views       | Bases                |
+| Interactive properties | Meta Bind            |
+| Guided creation        | QuickAdd             |
+| Note generation        | Templater            |
+| Dashboard composition  | Hearth               |
+| Visual project flow    | Kanban               |
+| Web capture            | Obsidian Web Clipper |
+| Version control        | Obsidian Git         |
+| Code workspace         | CodeSpace            |
+
+A plugin may display or manipulate information owned by another layer, but it should not create a competing source of truth.
+
+## Projects 
+
+A project normally owns:
+
+- Project Hub
+- Project KanBan Board
+- requirements/specifications
+- decisions
+- investigations
+- implementation plans
+- project notes
+
+TaskNotes task records remain in the central task folder.
+## Zettlekasten 
+
+The ingestion area is a queue.
+
+The intended lifecycle is:
+
+Capture → Inbox → Triage → Resources
+
+Processed material should not remain indefinitely in the Inbox.
+
+## Code
+
+Code Lab activities connect to real implementation.
+
+Examples include:
+
+- fetchers;
+- actions;
+- Stripe integrations;
+- shared `cn` components;
+- feature orchestration;
+- production debugging.
+
+Repository code remains in the repository. Markdown notes capture the learning, decisions, patterns, and evidence.
+
+# Obsidian Vault Implementation Guide
+
+This document is the operational implementation guide for the approved Obsidian vault architecture.
+
+It assumes the template files have already been generated and focuses on:
+
+- exact folder placement;
+- Obsidian configuration;
+- plugin configuration;
+- template wiring;
+- task wiring;
+- Bases;
+- Meta Bind;
+- QuickAdd;
+- Note Toolbar;
+- Hearth;
+- Kanban;
+- Web Clipper;
+- Coding Lab;
+- Git;
+- testing;
+- troubleshooting;
+- rollback.
+
+The implementation target is:
+
+1. Home
+2. Command Center
+3. Project Command Center
+4. Library
+5. Coding Lab
+6. Ingestion
+7. Git & Vault Stats
+
+---
+
+# Architecture rules
+
+Before configuring anything, establish these rules.
+
+### Rule 1 — TaskNotes owns tasks
+
+A task is one Markdown task record.
+
+Do not create a second task record in:
+
+- a project note;
+- a Daily Note;
+- Hearth;
+- Kanban;
+- a dashboard Base.
+
+Those surfaces may display or link to the task.
+
+### Rule 2 — Daily Notes own the daily record
+
+Daily Notes are chronological records of work.
+
+Do not create a separate daily note for every project.
+
+A project can be referenced from the Daily Note and project tasks can be associated with the project.
+
+### Rule 3 — Project folders own project documentation
+
+Project-specific documents belong inside the project folder.
+
+### Rule 4 — Bases is a view layer
+
+Bases should expose existing Markdown properties.
+
+Do not build a hidden database beside the Markdown notes.
+
+### Rule 5 — Meta Bind is an interaction layer
+
+Meta Bind changes properties through controls.
+
+It should not become a database.
+
+### Rule 6 — QuickAdd is the workflow launcher
+
+QuickAdd handles guided creation and capture.
+
+### Rule 7 — Templater generates notes
+
+Templater handles template logic and prompts.
+
+### Rule 8 — Hearth composes dashboards
+
+Hearth should surface existing information.
+
+It should not become another place where information has to be manually maintained.
+
+### Rule 9 — Kanban is visual flow
+
+Kanban is a project visualization layer.
+
+TaskNotes remains the actionable task record.
+
+### Rule 10 — Ingestion is temporary
+
+Anything captured into the Inbox must eventually be:
+
+- retained somewhere durable;
+- converted into a task;
+- attached to a project;
+- archived;
+- or discarded.
+
+---
+# Implementation
+
+## Phase 1 — Establish the folders
+
+Preserve the existing PARA structure where it already exists.
+
+A practical target is:
 
 ```text
-Enterprise Product Launch/
-├── 00 - Launch Hub/
-│   └── Launch Overview.md
-├── 01 - Strategy & Alignment/
-│   ├── Product Vision & Strategy.md
-│   └── Business Case & ROI.md
-├── 02 - Design, Data & Architecture/
-│   ├── UX UI Design Specification.md
-│   ├── Architecture Design RFC.md
-│   └── Data Dictionary & Schema.md
-├── 03 - Security & Risk/
-│   ├── Security & Compliance Assessment.md
-│   ├── Disaster Recovery & Continuity Plan.md
-│   └── Threat Model.md
-├── 04 - GTM & Operations/
-│   ├── Go-To-Market Strategy.md
-│   ├── Customer Support Runbook.md
-│   └── Legal & Privacy Updates.md
-└── _Templates/
-    ├── T - Launch Overview.md
-    ├── T - Product Vision & Strategy.md
-    ├── T - Business Case & ROI.md
-    ├── T - UX UI Design Specification.md
-    ├── T - Architecture Design RFC.md
-    ├── T - Data Dictionary & Schema.md
-    ├── T - Security & Compliance Assessment.md
-    ├── T - Disaster Recovery & Continuity Plan.md
-    ├── T - Threat Model.md
-    ├── T - Go-To-Market Strategy.md
-    ├── T - Customer Support Runbook.md
-    └── T - Legal & Privacy Updates.md
+0.SYSTEM/
+  Dashboards/
+  State/
+  Templates/
+    Daily/
+    Projects/
+    Tasks/
+    Knowledge/
+    Ingestion/
+    Coding Lab/
+  Scripts/
+
+1.PROJECTS/
+
+2.AREAS/
+  Coding Lab/
+
+3.RESOURCES/
+  Knowledge/
+  Reference/
+
+4.ARCHIVE/
+
+5.TASKS/
+  Tasks/
+
+6.INGESTION/
+  Inbox/
+  Processed/
+
+7.DAILY/
+````
+
+Do not create duplicate top-level folders if the existing vault already uses equivalent folders.
+
+For example, if the vault already has:
+
+```text
+1.PROJECTS/
+2.AREAS/
+3.RESOURCES/
+4.ARCHIVE/
+```
+
+keep those folders.
+
+Only add the missing system-specific folders.
+
+---
+## Phase 2 — Properties
+
+Open:
+
+`Settings → Properties`
+
+Ensure Properties is enabled.
+
+The system intentionally uses a small metadata vocabulary.
+
+Common properties are:
+
+```yaml
+type:
+created:
+status:
+project:
+tags:
+```
+
+Do not put every property on every note.
+
+Properties exist because a workflow needs them.
+
+Examples:
+
+Project:
+
+```yaml
+---
+type: project
+created: 2026-09-24
+status: active
+---
+```
+
+Concept:
+
+```yaml
+---
+type: concept
+created: 2026-09-24
+tags:
+  - knowledge
+---
+```
+
+Learning:
+
+```yaml
+---
+type: learning
+created: 2026-09-24
+status: active
+---
+```
+
+Task properties are controlled primarily through TaskNotes.
+
+Obsidian Properties supports structured property types including text, lists, numbers, checkboxes, dates, date-times, and tags. When a property contains a note link, use the appropriate quoted link representation in YAML.
+
+---
+
+## Phase 2B — Daily Notes
+
+Open:
+
+`Settings → Daily notes`
+
+Set:
+
+Date format:
+
+```text
+YYYY-MM-DD
+```
+
+New file location:
+
+```text
+7.DAILY/
+```
+
+or the corresponding Daily folder in the existing vault.
+
+Template:
+
+Select the approved:
+
+```text
+Daily Note
+```
+
+template.
+
+Do not create project-specific Daily Notes.
+
+---
+
+## Phase 3 — Templater
+
+Open:
+
+`Settings → Templater`
+
+Set:
+
+`Template folder location`
+
+to:
+
+```text
+0.SYSTEM/Templates
+```
+
+If your actual template folder is elsewhere, use that path.
+
+Templater supports a template folder, folder-based templates, and prompts/suggesters.
+
+---
+
+## Phase 4 — Template placement
+
+Put the approved templates into:
+
+```text
+0.SYSTEM/Templates/
+```
+
+organized as:
+
+```text
+Daily/
+  Daily Note
+  Daily Standup
+  Weekly Review
+
+Projects/
+  Project Hub
+  Project Check-in
+  Requirements - Feature Specification
+  Decision Record
+  Technical Investigation
+  Implementation Plan
+
+Tasks/
+  Task
+  Project Task Capture
+  Board Setup
+
+Knowledge/
+  Concept Note
+  Reference - Literature Note
+  Evergreen Note
+  Reading - Resource Note
+
+Ingestion/
+  Web Clipping
+  Quick Capture
+  AI Conversation
+  Inbox Triage
+
+Coding Lab/
+  Skill Reference
+  Implementation Exercise
+  Mastery - Evidence Record
+  Debugging - Learning Log
+```
+
+Use the actual filenames supplied in the existing template package.
+
+Do not rename files unless necessary.
+
+---
+## Phase 5 — Automatic template insertion
+
+Do not immediately enable global automatic template insertion.
+
+First make manual template creation work.
+
+Then, if desired, configure folder-specific templates.
+
+Example:
+
+```text
+1.PROJECTS/
+```
+
+can automatically receive the Project Hub template.
+
+The folder rule should not automatically create every possible document.
+
+Use automation only where the behavior is deterministic.
+
+Templater supports folder templates and applies the most-specific applicable rule.
+
+---
+
+## Phase 6 — Daily Notes
+
+Create today's Daily Note.
+
+Verify:
+
+```text
+7.DAILY/YYYY-MM-DD.md
+```
+
+or the equivalent path.
+
+Check:
+
+- correct date;
+    
+- correct template;
+    
+- expected headings;
+    
+- expected properties;
+    
+- no project-specific Daily Note.
+
+The Daily Note is the canonical daily record.
+
+The Daily Standup template is a workflow document, not a replacement for the Daily Note.
+
+The Weekly Review template is a review document, not a replacement for either.
+
+---
+
+## Phase 7 — TaskNotes
+
+Open:
+
+`Settings → TaskNotes`
+
+TaskNotes should use a central task folder.
+
+Recommended:
+
+```text
+5.TASKS/Tasks
+```
+
+If the existing vault has another canonical task folder, use it consistently.
+
+TaskNotes uses one Markdown note per task and supports structured task frontmatter. Its current documentation also integrates task views with Bases.
+
+---
+
+## Phase 8 — Task properties
+
+Use the TaskNotes property configuration rather than inventing a parallel task schema.
+
+The representative record is:
+
+```yaml
+---
+tags:
+  - task
+title: Example task
+status: todo
+priority: normal
+due:
+scheduled:
+projects:
+  - "[[Example Project]]"
+---
+```
+
+The exact accepted status and priority values should come from the values configured in your TaskNotes installation.
+
+TaskNotes documentation currently uses a `projects` property containing links to project notes.
+
+---
+
+## Phase 9 — QuickAdd
+
+Open:
+
+`Settings → QuickAdd`
+
+Create these choices:
+
+```text
+Capture — Quick Capture
+Capture — Project Task
+
+Create — Project
+Create — Project Document
+Create — Decision Record
+Create — Knowledge Note
+Create — Learning Note
+Create — Weekly Review
+
+Process — Inbox Triage
+```
+
+QuickAdd provides Template, Capture, and Macro choices. Captures can write content or properties, while Macros can chain multiple operations.
+
+---
+
+## Phase 10 — Quick Capture
+
+Create a Capture choice.
+
+Purpose:
+
+Capture a short item without building a full note.
+
+Possible destination:
+
+```text
+6.INGESTION/Inbox
+```
+
+Use the supplied Quick Capture template where appropriate.
+
+---
+
+## Phase 11 — Project Task
+
+Create a task-capture workflow.
+
+Desired sequence:
+
+```text
+Prompt for task
+      ↓
+Select project
+      ↓
+Create TaskNotes task
+      ↓
+Open task or return to source
+```
+
+If the installed TaskNotes release exposes a supported QuickAdd integration, prefer it.
+
+Do not manually maintain a second task schema if TaskNotes can perform the creation.
+
+QuickAdd supports dynamic capture paths and property capture, making it appropriate for guided creation workflows.
+
+---
+
+## Phase 12 — New Project
+
+Create a Macro.
+
+Desired sequence:
+
+```text
+Prompt for project name
+        ↓
+Create project folder
+        ↓
+Create Project Hub
+        ↓
+Optionally create Project Board
+        ↓
+Open Project Hub
+```
+
+Project path:
+
+```text
+1.PROJECTS/<Project Name>/
+```
+
+Initial project contents:
+
+```text
+Project Name/
+  Project Hub.md
+  Project Board.md
 ```
 
 ---
-## Automation ideas worth considering
 
-### 1. A guided “Add Software Project” QuickAdd workflow
+## Phase 13 — Project Document
 
-Rather than creating a folder and one note, the command could act as a small project wizard:
+This choice should ask which document is needed.
 
-1. Ask for project name, project type, priority, target date, and a short description.
-2. Generate a stable project ID and create the project folder.
-3. Create the project hub, PRD, Technical Requirements, and selected supporting documents from canonical templates.
-4. Create a Kanban board and connect it to the project.
-5. Create an initial TaskNotes task such as “Define project scope,” linked to the project and PRD.
-6. Open the project hub with useful navigation and toolbar actions.
-
-I’d make project type a key input. A software product, internal tool, automation, and infrastructure project may share a core structure but need different documentation. QuickAdd could offer a full launch suite or a lean project setup, instead of forcing every project to inherit every document.
-
-### 2. Treat the Project Hub as the control center
-
-The project hub should be the one place you visit to understand the project. It should link to the PRD, Technical Requirements, architecture, decisions, board, and task views.
-
-Where possible, show live information from Bases or TaskNotes rather than copying status into multiple notes. For example, task completion should come from TaskNotes—not a manually maintained progress percentage in the project note.
-### 3. Make documentation traceable to tasks
-
-I’d use a lightweight traceability model rather than trying to turn every document into a task list.
-
-- **Project ID** ties all project artifacts together.
-- **Requirement IDs** (for example, `REQ-001`) identify requirements in the PRD or Technical Requirements.
-- **TaskNotes tasks** carry the project link and, when relevant, one or more requirement/document links.
-- **Kanban** visualizes execution; it should not become a second source of task truth.
-- **Decision records** capture important choices and link back to the requirement or architecture they affect.
-
-That gives you a path from project → requirement → task → decision/evidence. It also makes it easier to answer “What work is left for this requirement?” without manually cross-linking everything each time.
-
-### 4. Add project lifecycle commands—not just project creation
-
-A few focused QuickAdd commands could make the system more useful day-to-day:
-
-| Command | Purpose |
-|---|---|
-| Add Software Project | Create the project hub, docs, board, and starter tasks |
-| Add Requirement | Create a uniquely identified requirement and link it to the PRD/technical docs |
-| Add Project Task | Create a TaskNotes task pre-linked to the active project |
-| Add Decision (ADR) | Record a decision and connect it to affected requirements |
-| Project Check-in | Create a dated update with progress, blockers, risks, and next steps |
-| Archive Project | Mark complete/archived and move it out of active project views |
-
-These should be designed around your existing plugins and templates, not layered on as a separate project-management system.
-
-### 5. Use Note Toolbar for context-aware actions
-
-I’d configure Note Toolbar actions based on the note type, so the available actions are relevant to what you’re viewing.
-
-For example:
-
-- **Project hub:** Add task, add requirement, add decision, create check-in, open board.
-- **PRD / Technical Requirements:** Add requirement, create implementation task, create linked decision.
-- **Task note:** Open parent project, open linked requirement, open related documentation.
-- **Decision / ADR:** Link affected requirements, create follow-up task.
-
-The important optimization is reducing navigation and repetitive metadata entry. A “Create task” action from a requirement should ideally prefill the project and requirement links rather than making you select them again.
-
-### 6. Add safeguards so automation stays reliable
-
-A few design choices will prevent the workflow from becoming fragile:
-
-- **Stable IDs:** Generate project, requirement, and decision IDs consistently.
-- **Safe re-runs:** If project creation is interrupted, rerunning it should not overwrite existing documents or duplicate the board and tasks.
-- **Selective document generation:** Support a full suite and a lean suite, with optional docs added later.
-- **Canonical templates:** Update templates centrally, but don’t silently overwrite documents already created for active projects.
-- **Validation:** Check that required files and links exist after project creation.
-- **Explicit ownership:** TaskNotes owns task status; the board visualizes work; the project hub summarizes it.
-
-I’d also consider a project health view that surfaces overdue tasks, blocked work, missing PRD/technical requirements, stale check-ins, and unlinked tasks. That could become a global Base rather than another manually maintained dashboard.
-
-## Proposed architecture
-
-| Layer | Responsibility |
-|---|---|
-| `2.AREAS/SYSTEM/Templates/` | Canonical templates |
-| `1.PROJECTS/<Project>/` | Generated project workspace and docs |
-| QuickAdd | Project wizard and lifecycle commands |
-| Templater | Dynamic content, IDs, paths, and links |
-| TaskNotes | Task creation and task metadata |
-| Kanban | Board-based visualization |
-| Bases | Project/task dashboards and rollups |
-| Note Toolbar | Context-aware shortcuts |
-
-## 1. Make Hearth a real interface—not just a pretty homepage
-
-I’d give Hearth a visual language closer to a developer cockpit, a game progression screen, and a personal knowledge observatory. Not a wall of links.
-
-The goal is for every dashboard card to answer at least one question:
-
-- What should I work on next?
-- What am I making progress on?
-- What have I been learning?
-- What needs attention?
-- What did I discover that I can use somewhere else?
-
-### The Hearth home screen
-
-Imagine opening Obsidian to a full-width command center:
-
-- **A personalized greeting + daily mission:** “Today’s focus: finish the TypeScript parser drill.”
-- **Active project cards:** cover art, project health, next milestone, progress, and a “Resume” action.
-- **Today’s tasks:** TaskNotes tasks filtered by due date, priority, and project.
-- **Sprint strip:** a compact calendar/timeline showing deadlines, planned focus blocks, and recent check-ins.
-- **Continue where you left off:** recently edited project, last coding drill, last book/article, last AI thread.
-- **Capture bar:** one-click capture for an idea, task, bug, snippet, clipping, or fleeting note.
-- **Discovery card:** an old note, an unlinked concept, or a connection between two projects.
-- **Progress visualization:** streaks, completed drills, shipped milestones, and learning activity.
-
-The important design principle: **Hearth should show you a small, changing set of useful things—not every note you own.**
-
-Aesthetically, I’d explore a dark graphite base, restrained neon accents, high-quality project cover images, small status indicators, custom SVG icons, progress rings, and cards with subtle depth. Different dashboard zones could have their own visual identity without making the vault feel like five unrelated themes.
-
-## 2. The missing piece: a traceability system
-
-The word you're reaching for is probably **traceability**: being able to follow an idea, task, requirement, or learning exercise back to the project or goal it supports.
-
-I’d design a lightweight **Project Lineage** system. Think of it as a relationship map that Hearth can use to assemble dashboards automatically.
-
-### The relationship model
+Available document types:
 
 ```text
-LIFE / LEARNING GOAL
-        │
-        ▼
-     PROJECT
-        │
-        ├── Milestones
-        │     └── Deliverables
-        │
-        ├── Requirements / Features
-        │     └── TaskNotes tasks
-        │
-        ├── Technical decisions (ADRs)
-        │
-        ├── Coding drills / experiments
-        │
-        ├── Research / source notes
-        │
-        └── Project journal / check-ins
+Project Check-in
+Requirements / Feature Specification
+Decision Record
+Technical Investigation
+Implementation Plan
 ```
 
-For example, a project called **TypeScript Syntax Lab** might connect to:
+The choice should then invoke the corresponding Templater template.
 
-- A milestone: “Implement a parser for a small expression language.”
-- A feature: “Tokenize arithmetic expressions.”
-- A task: “Write tokenizer tests for nested parentheses.”
-- A coding drill: “Implement a recursive descent parser.”
-- A concept note: “Operator precedence.”
-- A decision record: “Use a discriminated union for token types.”
-- A reflection: “I struggled with recursive parsing; revisit this next week.”
-
-Now Hearth can display more than a list of tasks. It can show how the project is progressing, what knowledge it depends on, what you practiced, and what you learned.
-
-### Keep the metadata small
-
-I would avoid a massive property schema. The minimum useful relationship could be:
-
-| Property | Purpose |
-|---|---|
-| `project` | Link to the owning project |
-| `type` | Distinguish task, drill, decision, requirement, etc. |
-| `status` | Current lifecycle state |
-| `due` | Optional date for time-sensitive items |
-
-For project-owned notes, `project` is the key relationship. For a project note itself, it doesn't need to point to itself. The project can instead be the root of its own linked workspace.
-
-Use a stable project ID only if you need it for automation, imports, or integrations. A readable Obsidian link should remain the human-facing relationship.
-
-**One rule I would protect:** every task created from a project context inherits that project automatically. If you create a task from the global Hearth dashboard, the capture flow asks you to choose a project—or explicitly mark it as personal/unassigned. No silent orphan tasks.
-
-QuickAdd is a natural fit for this: its macros can chain prompts, templates, scripts, and captures, and its capture actions can add entries without taking you away from your current note. 
-### The wild idea: a Project Control Card
-
-Every project gets a visual card that acts like a mini application:
-
-**TypeScript Syntax Lab**  
-`LEARNING PROJECT · ACTIVE`
-
-- Progress bar: milestones completed
-- Next milestone: parser implementation
-- Open tasks: 7
-- Overdue tasks: 1
-- Last worked on: yesterday
-- Knowledge notes: 14
-- Coding drills: 9
-- Recent decision: discriminated unions
-- “Resume project” button
-- “Add task” button
-- “Log progress” button
-- “Open project map” button
-
-The card isn't a separate database. It’s a rendered view of the project note and its linked material. Bases can power dynamic views, while Meta Bind can expose editable property controls and buttons inside notes. 
-
-
----
-
-## 3. Make every dashboard feel like a different workspace
-
-Rather than one giant dashboard with every feature, I’d create a small set of **Hearth rooms**. Each has a distinct purpose, layout, and visual identity—but they all draw from the same underlying notes and relationships.
-
-| Hearth room | What it feels like | Core components |
-|---|---|---|
-| **Command** | Your daily cockpit | Today’s mission, tasks, calendar, capture, active projects |
-| **Projects** | A portfolio tracker | Project cards, milestones, health, blockers, project timeline |
-| **Library** | A visual knowledge garden | Topics, books, clippings, concepts, recent discoveries |
-| **Coding Lab** | A developer training environment | Curriculum map, drills, tests, practice streak, code snippets |
-| **Activity** | A personal progress observatory | Git activity, completed work, learning history, vault growth |
-| **Inbox** | A triage station | Unprocessed clippings, loose files, fleeting notes, AI threads |
-
-### A few features that could make these rooms genuinely fun
-
-**Project constellation.** Instead of only a project list, show a visual constellation of projects and their related knowledge. Clicking a project reveals its connected concepts, decisions, drills, and tasks.
-
-**Skill tree.** Build a TypeScript learning map where concepts unlock or connect to increasingly advanced drills. Track “introduced,” “practiced,” “used in a project,” and “comfortable explaining” rather than just marking a topic complete.
-
-**Knowledge atlas.** Display your strongest concepts as a visual map. A concept used in three projects should look different from a concept captured once and never revisited.
-
-**Ship log.** A timeline of things you completed, built, learned, fixed, or published. Not just task completions—actual evidence of progress.
-
-**Project radar.** A dashboard that flags projects with no recent activity, unresolved blockers, overdue milestones, or lots of open tasks. It should help you decide whether to resume, rescope, pause, or archive a project—not shame you for being inactive.
-
-**Random rediscovery.** A “Pull a thread” button surfaces an older note, then shows its backlinks, related projects, and nearby concepts. The objective is to make your existing knowledge feel useful again.
-
-## 4. Turn note-taking into a side effect of doing the work
-
-If note-taking feels like a separate chore, the system will be difficult to sustain. I’d make the default workflow capture information as part of actions you already want to take.
+The destination should be inside the active project folder.
 
 For example:
 
-| You do this | Hearth quietly does this |
-|---|---|
-| Start a project | Creates the project hub, links its workspace, and adds starter milestones |
-| Add a task from a project | Links the task to the project and optionally to a milestone |
-| Finish a coding drill | Logs the result, links the drill to its concept, and updates the learning dashboard |
-| Save a web clipping | Routes it to the inbox with source metadata and a processing action |
-| Finish a work session | Offers a tiny check-in: what changed, what’s next, what’s blocked |
-| Make a technical decision | Creates a linked decision record, if it’s worth preserving |
-| Complete a milestone | Updates the project view and adds a ship-log entry |
+```text
+1.PROJECTS/
+  Example Project/
+    Decisions/
+      ADR - Example.md
+```
 
-The system should distinguish between **required structure** and **optional enrichment**. Project ownership and task status may be important for the dashboard to work. A long reflection, a summary, or a set of tags should usually be optional.
-
-### Daily notes as a standup—not a diary
-
-I’d make your daily note a compact operating log with four questions:
-
-1. What is the one meaningful outcome I want today?
-2. What are the 1–3 tasks that support it?
-3. What’s blocked or likely to derail me?
-4. What did I actually accomplish?
-
-The morning flow could be a guided “Start My Day” action. It checks your active project, due tasks, calendar, and previous check-in, then helps you choose a realistic focus. At the end of the day, a short “Close My Day” action captures progress and carries unfinished work forward without duplicating tasks.
-
-The daily note becomes a **timeline of decisions and progress**, not a second task manager. TaskNotes remains responsible for task state; the daily note records context and reflection.
-
-I’d also give you a “low-energy mode”: one question, one next action, no elaborate planning. A system that only works when you’re motivated is not a dependable system.
+or the exact folder convention established by the supplied templates.
 
 ---
 
-## 5. Make the visual layer do real work
+## Phase 14 — Knowledge Note
 
-You mentioned wanting pictures, visual snippets, and a system that looks good enough to make you want to use it. I’d treat visual design as a core feature—not a coat of paint applied at the end.
+Use a Template choice.
 
-### A few visual concepts
+Available templates:
 
-**Project cover art.** Each project gets a banner or generated cover with a consistent design system. A coding project might have abstract terminal-inspired artwork; a research project might use a more editorial, reference-library aesthetic.
+```text
+Concept Note
+Reference / Literature Note
+Evergreen Note
+Reading / Resource Note
+```
 
-**Milestone progress rings.** A visual indicator for completed milestones, with the next milestone clearly labeled. Avoid pretending a project is “73% complete” if that number has no defensible meaning.
+The destination should be the appropriate durable resource location.
 
-**Skill-tree nodes.** Concepts and drills appear as nodes with clear states: unseen, learning, practiced, applied. Clicking a node opens the note or its related drills.
+Do not route permanent knowledge into the ingestion queue unless it still requires triage.
 
-**Knowledge cards with thumbnails.** Web clippings, books, and reference notes show a cover, source, topic, and a one-line reason you saved them.
+---
 
-**Custom iconography.** Give project types, task types, and Hearth rooms a consistent icon set. Use icons to improve scanning—not as decoration on every line.
+## Phase 15 — Learning Note
 
-**Contextual visual accents.** A project dashboard might use its cover art as a subtle accent. The Coding Lab could use a different accent color from the Library, while retaining shared typography, spacing, and card components.
+Use a Template choice.
 
-**Visual state changes.** When a project moves from active to paused, its card should visibly change. When a milestone is completed, the card should feel different. Small, restrained feedback can make progress feel tangible.
+Available templates:
 
-## 6. The technical architecture I’d explore
+```text
+Skill Reference
+Implementation Exercise
+Mastery / Evidence Record
+Debugging / Learning Log
+```
 
-I’d separate the system into three layers:
+These belong to Coding Lab.
+
+---
+
+## Phase 16 — Bases
+
+Open:
+
+`Settings → Core plugins → Bases`
+
+Create reusable Base views.
+
+Recommended views:
+
+```text
+Active Projects
+Open Tasks
+Tasks by Project
+Knowledge Index
+Coding Lab
+Ingestion Queue
+```
+
+Bases views can be configured in Obsidian and saved as `.base` files for reuse and embedding.
+
+---
+### Active Projects
+
+Use the project folder and/or property structure as the filter.
+
+A project note can have:
+
+```yaml
+---
+type: project
+status: active
+---
+```
+
+The Base should return active project records.
+
+Suggested columns:
+
+```text
+File
+Status
+Created
+Project
+Tags
+```
+
+Do not add properties solely to support this view if folder structure already supplies the distinction.
+
+---
+
+### Open Tasks
+
+TaskNotes exposes task properties through Bases.
+
+Common mappings include:
+
+```text
+note.status
+note.priority
+note.due
+note.scheduled
+note.projects
+note.contexts
+file.tags
+file.tasks
+```
+
+TaskNotes' current Base integration documents these property mappings and supports filters/grouping through Bases.
+
+Use:
+
+```text
+note.status
+note.priority
+note.due
+note.projects
+```
+
+as the initial useful fields.
+
+Filter out completed tasks.
+
+Sort by:
+
+1. due date;
+    
+2. priority;
+    
+3. project.
+
+Adjust the exact filter syntax through the Base UI rather than assuming a query string from another version.
+
+---
+
+### Tasks by Project
+
+Create a task view grouped by:
+
+```text
+note.projects
+```
+
+This provides project-level visibility without duplicating tasks.
+
+The resulting conceptual structure is:
+
+```text
+Project A
+  Task 1
+  Task 2
+
+Project B
+  Task 3
+  Task 4
+```
+
+The underlying files remain in:
+
+```text
+5.TASKS/Tasks/
+```
+
+---
+
+### Knowledge Index
+
+Use the minimal type property.
+
+Example:
+
+```text
+type = concept
+OR
+type = reference
+OR
+type = evergreen
+```
+
+Do not add an artificial `database_id` or similar identifier.
+
+The Markdown file itself is the record.
+
+---
+
+### Coding Lab
+
+Filter on the Coding Lab location and/or types:
+
+```text
+skill
+learning
+evidence
+debugging
+```
+
+Use whatever exact values the supplied templates establish.
+
+Suggested fields:
+
+```text
+File
+Type
+Status
+Project
+Tags
+Created
+```
+
+---
+
+### Ingestion Queue
+
+Filter:
+
+```text
+6.INGESTION/Inbox/
+```
+
+or equivalent.
+
+Useful fields:
+
+```text
+File
+Created
+Type
+Source
+Status
+Tags
+```
+
+Only unprocessed material should appear.
+
+Processed items should leave the active queue.
+
+---
+
+## Phase 17 - Note Toolbar
+
+Open:
+
+`Settings → Note Toolbar`
+
+Use it as the contextual action surface.
+
+Note Toolbar supports commands, file/folder links, URIs, menus, groups, scripts, and display rules based on folders/properties.
+
+---
+
+### Global toolbar
+
+Useful global actions:
+
+```text
+Home
+Command Center
+Project Command Center
+Library
+Coding Lab
+Ingestion
+Git & Vault Stats
+```
+
+Do not put every command into every toolbar.
+
+---
+
+### Project toolbar
+
+Project-context toolbar:
+
+```text
+Project Hub
+Project Board
+New Task
+Project Check-in
+Decision
+Investigation
+Implementation Plan
+```
+
+Configure it so it appears only in project context.
+
+Use folder/property display rules.
+
+---
+
+## Phase 18 - Hearth
+
+Open Hearth.
+
+Create seven dashboards:
+
+```text
+Home
+Command Center
+Project Command Center
+Library
+Coding Lab
+Ingestion
+Git & Vault Stats
+```
+
+Hearth is the composition layer. Its documented capabilities include multiple dashboards and dashboard cards/views for notes, Bases, Kanban, calendars, tasks, and related plugin views.
+
+---
+
+### Home
+
+Purpose:
+
+```text
+Landing page
+Navigation
+Search
+Identity
+```
+
+Keep this dashboard visually sparse.
+
+Suggested sections:
+
+```text
+Search
+
+Command Center
+Project Command Center
+Library
+Coding Lab
+Ingestion
+Git & Vault Stats
+```
+
+Do not put task tables here.
+
+---
+
+### Command Center
+
+Include:
+
+```text
+Today
+Daily Note
+Open Tasks
+Due Soon
+Scheduled Work
+Daily Standup
+Weekly Review
+```
+
+Use existing Bases/TaskNotes views.
+
+Do not manually type today's tasks into the dashboard.
+
+---
+
+### Project Command Center
+
+Desired sections:
+
+```text
+Selected Project
+Project Summary
+
+Project Tasks
+Project Board
+Project Schedule
+Project Check-ins
+
+Requirements
+Decisions
+Investigations
+Implementation Plans
+Project Notes
+```
+
+Build each component independently before embedding it.
+
+---
+
+### Library
+
+Include:
+
+```text
+Graph
+Backlinks
+Tags
+Bookmarks
+Knowledge Index
+Reference Index
+```
+
+The Library is for navigating and curating knowledge.
+
+---
+
+### Coding Lab
+
+Include:
+
+```text
+Skill Tree
+Current Skills
+Implementation Exercises
+Mastery / Evidence
+Debugging Logs
+Production Connections
+```
+
+Add links to relevant Books of Knowledge and repository implementation work.
+
+---
+
+### Ingestion
+
+Include:
+
+```text
+Inbox
+Unprocessed Clippings
+Quick Capture
+Inbox Triage
+Processed
+```
+
+The Inbox view should contain only active material.
+
+---
+
+### Git & Vault Stats
+
+Include:
+
+```text
+Git instructions
+Commit
+Sync
+Repository status
+Vault health
+Useful property views
+Recent changes
+```
+
+Keep this dashboard operational rather than decorative.
+
+---
+
+## Phase 19 - Projects 
+
+A normal project can use:
+
+```text
+1.PROJECTS/
+  Project Name/
+    Project Hub.md
+    Project Board.md
+    Requirements/
+    Decisions/
+    Investigations/
+    Implementation/
+    Notes/
+```
+
+---
+
+### Project Hub
+
+The Project Hub is the project context layer.
+
+It should expose:
+
+```text
+Project summary
+Status
+Objectives
+Current focus
+Key decisions
+Open tasks
+Board
+Documentation
+Notes
+Check-ins
+```
+
+It should link to existing records.
+
+It should not become a second task database.
+
+---
+### Kanban
+
+Create a Kanban board from the project folder.
+
+Use:
+
+```text
+Backlog
+Next
+In Progress
+Blocked
+Review
+Done
+```
+
+Kanban provides a visual board/list/table surface, but do not treat its cards as a replacement for TaskNotes task records.
+
+If the board cannot directly display TaskNotes records:
+
+- keep project-level workflow cards on the board;
+    
+- link cards to TaskNotes records where needed;
+    
+- keep the actionable task record in TaskNotes.
+
+Never create a second task database merely to make the Kanban look complete.
+
+---
+
+## Phase 20 - Web Clipper
+
+Install the official Obsidian Web Clipper browser extension.
+
+Configure capture destination:
+
+```text
+6.INGESTION/Inbox
+```
+
+Use the supplied clipping template.
+
+Obsidian Web Clipper supports templates, variables, filters, properties, folders, and selected/highlighted content and saves captured material as Markdown.
+
+---
+
+### Web Clipper workflow
+
+The intended flow is:
+
+```text
+Web page
+   ↓
+Web Clipper
+   ↓
+6.INGESTION/Inbox
+   ↓
+Inbox Triage
+   ↓
+Decision
+ ┌─┼───────────────┐
+ ↓ ↓               ↓
+Resource Project   Task
+ ↓   ↓              ↓
+Library Project    TaskNotes
+
+or:
+
+Archive
+or
+Discard
+```
+
+Do not leave processed clippings in Inbox.
+
+---
+
+## Phase 21 - Inbox Triage
+
+The Inbox Triage template should help decide:
+
+```text
+Keep?
+Where does it belong?
+Does it create a task?
+Does it belong to a project?
+Is it knowledge?
+Is it reference material?
+Should it be archived?
+Should it be discarded?
+```
+
+The triage note is temporary workflow documentation.
+
+Once processed, the durable information belongs in its proper location.
+
+---
+
+## Phase 22 - Coding Lab
+
+Use the established Coding Lab location:
+
+```text
+2.AREAS/Coding Lab/
+```
+
+or the equivalent existing Area.
+
+The four note types are:
+
+```text
+Skill Reference
+Implementation Exercise
+Mastery / Evidence Record
+Debugging / Learning Log
+```
+
+---
+
+### Skill Reference
+
+Purpose:
+
+Document a skill as a reusable technical reference.
+
+Include:
+
+```text
+What it is
+Why it matters
+Core concepts
+Patterns
+Common mistakes
+Production examples
+Related skills
+Evidence
+```
+
+---
+
+### Implementation Exercise
+
+Exercises should be production-oriented.
+
+Examples:
+
+```text
+Build a fetcher
+Implement an action
+Add a Stripe integration
+Create a reusable cn-based component
+Orchestrate a feature
+Debug a real integration
+```
+
+The point is to acquire transferable implementation skill.
+
+Avoid generating a large catalog of toy exercises when production work can supply the evidence.
+
+---
+
+### Mastery / Evidence
+
+Evidence should connect the skill to actual work.
+
+Useful evidence:
+
+```text
+Repository path
+Project
+Implementation
+PR/commit
+Problem solved
+What changed
+What was learned
+Remaining gaps
+```
+
+Do not duplicate repository source code into the vault.
+
+---
+
+### Debugging Log
+
+Use this for real debugging.
+
+Suggested structure:
+
+```text
+Problem
+Symptoms
+Context
+Hypotheses
+Tests
+Evidence
+Root cause
+Fix
+What changed
+Reusable lesson
+Related skill
+```
+
+A debugging log can link back to:
+
+- project;
+    
+- task;
+    
+- Skill Reference;
+    
+- implementation evidence.
+
+---
+
+## Phase 23 - Obsidian Git
+
+Install and enable Obsidian Git.
+
+Initialize/connect the vault repository.
+
+During initial implementation, use manual synchronization.
+
+Obsidian Git supports source control operations including commit, pull, push, history, diffs, and commit-and-sync workflows.
+
+---
+
+### Initial workflow
+
+Use:
+
+```text
+Make changes
+    ↓
+Review
+    ↓
+Commit
+    ↓
+Pull
+    ↓
+Push
+```
+
+Do not enable aggressive automatic synchronization while the architecture is still being built.
+
+First establish a known-good commit.
+
+---
+### Git ignore policy
+
+Review:
+
+```text
+.gitignore
+```
+
+Decide intentionally which Obsidian configuration should be versioned.
+
+Do not blindly ignore all of `.obsidian/` if reproducible configuration is part of the objective.
+
+At the same time, exclude volatile workspace/cache state when appropriate.
+
+The repository should represent the intentional vault system, not transient application state.
+
+---
+
+## Phase 24 - Iconic and Callout Studio
+
+
+Configure:
+
+- icons;
+    
+- callout styles;
+    
+- visual hierarchy;
+    
+- dashboard navigation;
+    
+- heading consistency.
+
+---
+# Obsidian Vault Configuration Reference
+
+## 1. Canonical responsibilities
 
 | Layer | Responsibility |
 |---|---|
-| **Vault data** | Markdown notes, properties, links, task records, images |
-| **Workflow engine** | QuickAdd, Templater, TaskNotes, Meta Bind, Kanban |
-| **Hearth interface** | Custom dashboards, cards, navigation, visualizations, global search |
-
-The vault data is the source of truth. Workflows create and update it. Hearth presents it.
-
-This makes it possible to avoid relying on Obsidian’s native navigation without having to reinvent every underlying capability. For example, Hearth could embed or present Bases views as project cards, while QuickAdd handles creation and Meta Bind handles inline status updates. Bases supports multiple layouts and editable property-backed views, making it a useful data layer for this kind of interface. 
-
-I’d be careful about one distinction: **a dashboard can display a task, but it should not create a second, competing version of that task.** TaskNotes should own task state. Kanban should visualize the workstreams you want on a board. Project notes should own project context. Hearth should unify those views.
-
-The same applies to calendars, Git statistics, and coding drills: integrate their data into Hearth, but avoid creating parallel systems that need to be manually reconciled.
-
-## 7. Make the graph useful, not just pretty
-
-A graph view is compelling, but a giant hairball of every note is not especially actionable.
-
-I’d explore a **Project Knowledge Graph** that can be filtered to show:
-
-- One project and all of its related notes
-- Concepts used by multiple projects
-- Coding drills connected to concepts and implementations
-- Research that informed a decision
-- Notes that have no project or topic connection
-- Potentially useful connections between otherwise separate areas
-
-The real payoff is not “look at all my notes.” It’s “this concept I learned while doing a drill is relevant to a problem in my current project.”
-
-I’d also add a **connection prompt** when creating or processing a note: “Does this relate to a project, concept, or existing note?” Search and suggestions should make this a one-click action, not a mandatory research assignment.
-
-## 8. How I’d keep this from becoming another never-ending setup project
-
-I would not try to build every Hearth room, automation, graph, and visual component before the system becomes useful.
-
-Instead, I’d work toward three increasingly capable experiences:
-
-**First: The daily-use Hearth.** A home dashboard, reliable task capture, project-linked tasks, and a guided daily check-in. It needs to be useful even if the rest of the vault is messy.
-
-**Second: The project operating system.** Project cards, milestones, linked tasks, project-specific dashboards, and a clean workflow for creating and updating project material.
-
-**Third: The knowledge and motivation layer.** Skill trees, knowledge graphs, rediscovery, ship logs, Git activity, richer visual cards, and more advanced insights.
-
-Each stage should deliver a benefit you can feel before the next one begins. That’s the antidote to spending months building a productivity system without getting much productivity out of it.
+| PARA | Durable organization |
+| Daily Notes | Daily record |
+| Templater | Note generation |
+| QuickAdd | Guided workflows |
+| TaskNotes | Task records |
+| Bases | Structured views |
+| Meta Bind | Interactive properties |
+| Note Toolbar | Contextual actions |
+| Hearth | Dashboard composition |
+| Kanban | Visual project flow |
+| Web Clipper | Web capture |
+| Obsidian Git | Version control |
+| Code Space / Codespaces | Code workspace |
 
 ---
 
-## The next design question
+## 2. Seven dashboards
+
+```text
+Home
+Command
+Projects
+Library
+Code
+Zettlekasten
+Vault
+````
+
+---
+
+## 3. Folder model
 
-Before we narrow down architecture, I want to understand what would make Hearth feel rewarding enough that you actually want to open it every day.
+```text
+0.SYSTEM/
+  Dashboards/
+  State/
+  Templates/
+    Daily/
+    Projects/
+    Tasks/
+    Knowledge/
+    Ingestion/
+    Coding Lab/
+  Scripts/
 
-**Which of these would give you the biggest “holy shit, this is actually useful” reaction?**
+1.PROJECTS/
 
-**A. The Command Center** — Open Hearth and immediately know what to work on, what’s coming up, and how to start.
+2.AREAS/
+  Coding Lab/
 
-**B. The Project Cockpit** — Every project feels like its own polished workspace, with tasks, milestones, notes, and progress all connected.
+3.RESOURCES/
+  Knowledge/
+  Reference/
 
-**C. The Coding Skill Tree** — Your TypeScript and tech-stack learning feels like a game-like progression system, with drills, projects, and visible mastery.
+4.ARCHIVE/
 
-**D. The Knowledge Observatory** — See your notes, projects, and ideas connecting in unexpected ways, and discover useful things you forgot you knew.
+5.TASKS/
+  Tasks/
 
-**E. The whole integrated experience** — But with one of those as the primary attraction.
+6.INGESTION/
+  Inbox/
+  Processed/
 
-You can pick one, combine them, or tell me none of them captures what you’re imagining. I’m not treating this as a commitment to build only that feature; I’m trying to identify the experience that makes the whole system worth using.
+7.DAILY/
+```
 
-[User]
-E. But let’s plan detailed implementation first then generate assets like templates and images required afterwards i will configure the plugins and finally  I will implement myself 
+Adapt numbering to the existing vault if required.
 
-[Assistant]
-Understood. We’ll treat this as an **integrated Hearth system**, not a collection of disconnected dashboards.
+---
 
-The workflow will be:
+## 4. Template families
 
-1. **Design and plan the complete system** — architecture, dashboards, data relationships, workflows, plugin responsibilities, automation, visual design, and implementation sequence.
-2. **Review and refine the plan** — identify dependencies, risks, and anything that would make the system unnecessarily complicated.
-3. **Generate the assets** — templates, dashboard content, CSS snippets, scripts, visual assets, and other files the design actually requires.
-4. **Configure plugins** — I’ll provide the settings, commands, and configuration steps for you to apply.
-5. **You implement the system** — in your vault, at your pace, using the plan and generated assets as the build guide.
+### Daily
 
-I won’t make changes to your vault during brainstorming. We’ll also keep the build modular, so you can get a working Hearth early instead of having to finish the entire ecosystem before it becomes useful.
+```text
+Daily Note
+Daily Standup
+Weekly Review
+```
 
-The design process is architectural in scope. We’ll settle the major decisions through focused questions, then produce a detailed written specification for your review before moving into the implementation plan.
+### Projects
 
+```text
+Project Hub
+Project Check-in
+Requirements / Feature Specification
+Decision Record
+Technical Investigation
+Implementation Plan
+```
 
+### Tasks
 
-[Assistant]
-### First: define Hearth’s core experience
+```text
+Task
+Project Task Capture
+Board Setup
+```
 
-I’d organize Hearth around one shared system, with different dashboards acting as specialized views into it. The project relationship model, task system, learning system, and knowledge graph should reinforce one another rather than require separate maintenance.
+### Knowledge
 
-One decision will shape nearly everything else: **what should Hearth do for you the moment you open it?**
+```text
+Concept Note
+Reference / Literature Note
+Evergreen Note
+Reading / Resource Note
+```
 
-- **A. Orient me** — Show today’s priorities, calendar, and next actions.
-- **B. Get me moving** — Put a “Start Working” action front and center, then guide me into a task or project.
-- **C. Show me my progress** — Surface active projects, completed work, learning progress, and recent wins.
-- **D. Spark curiosity** — Lead with visual knowledge connections, discoveries, and things worth exploring.
-- **E. Adaptive home** — A personalized dashboard that changes based on time of day, active projects, due tasks, and recent activity.
+### Ingestion
 
-My initial design hypothesis is **E, with A and B as the dominant functions**: Hearth orients you, then makes it easy to start. Progress and discovery provide the motivation to return.
+```text
+Web Clipping
+Quick Capture
+AI Conversation
+Inbox Triage
+```
 
-Does that match what you want from the home screen, or would you weight those differently?
+### Coding Lab
 
-[User]
-I have dashboards setup but only the first one is canonical it is a header and search clean with bg image….the others can be edited but the git dashboard is pretty good already…look at the repo to inspect existing dashboards and bases then report back with recommendations to address your question 
+```text
+Skill Reference
+Implementation Exercise
+Mastery / Evidence Record
+Debugging / Learning Log
+```
 
-[Assistant]
-I’ll use the existing dashboards as the starting point rather than designing a replacement home screen from scratch. The canonical header-and-search dashboard and the already-polished Git dashboard are constraints to preserve; the other dashboards and Bases should tell us what Hearth already supports, what can be reused, and where the gaps are.
+---
 
-I’ll focus the review on dashboard files, embedded Bases, navigation patterns, and the data each view expects. Then I’ll recommend how the home screen should orient you and get you moving **within the setup you already have**, without changing anything in the vault.
+## 5. Minimal metadata
 
+Use only when relevant.
 
+```yaml
+type:
+created:
+status:
+project:
+tags:
+```
 
-[Assistant]
-## Repository findings: Hearth already has a foundation
+Do not require every template to contain every property.
 
-The repo confirms that Hearth is not a blank slate. Its saved configuration already contains multiple dashboards, and the Hearth plugin itself supports the kind of multi-board, card-based interface you want. The plugin supports embedded notes and Bases, TaskNotes task cards, command launchers, calendars, Git cards, and per-dashboard backgrounds and layouts. citeturn0search1
+---
 
-A few concrete things I can verify from the committed configuration:
+## 6. Project metadata
 
-- The canonical `Digital Herencia` dashboard is configured with the title, terminal-style icon, desert background, and search—but **no cards**. That aligns with your description of it as a clean landing page.
-- The `Projects` dashboard already embeds the `Projects.base`, includes a TaskNotes Kanban card scoped to `1.PROJECTS/_Tasks`, and has QuickAdd/TaskNotes launch actions.
-- A `Digital Herencia copy` dashboard already experiments with a Capture command card and an Active Projects Base.
-- Another saved `Home copy` dashboard embeds a Home note, the Active Projects Base, and a Learning Base.
+Representative:
 
-That tells me the right direction is likely to **evolve and consolidate the existing dashboards**, not replace the canonical landing page or start over.
+```yaml
+---
+type: project
+created: 2026-09-24
+status: active
+---
+```
 
+Folder placement is normally sufficient to establish project ownership.
 
+---
 
-[Assistant]
-## Bases audit: what is already modeled
+## 7. Task metadata
 
-The Bases are especially useful because they reveal the intended data structure behind the dashboards.
+Representative TaskNotes record:
 
-| Base | Current behavior | Recommendation |
-|---|---|---|
-| `Projects.base` | Filters project notes under `1.PROJECTS`, excludes archived projects, and provides Active and Roadmap table views | Keep as the project directory; consider a visual card view for Hearth |
-| `Tasks.base` | Filters TaskNotes under `1.PROJECTS/_Tasks`, excludes done/cancelled tasks, and displays status, priority, due date, and project | Make this the global task source for Hearth |
-| `Learning.base` | Filters TypeScript-tagged resources under `3.RESOURCES`, with a Study Queue view | Expand it into a curriculum/learning view without losing the simple queue |
-| `Stack Syntax Drills.base` | Has views for all drills, status, domain, difficulty, practice calendar, and topic progress | This is already a strong basis for the Coding Lab |
-| `Library.base` | Includes non-archived resources under `3.RESOURCES`, with table and card views | Use its card view as the visual foundation for the Library |
-| `Inbox.base` | Targets `2.AREAS/ZETTLECASTEN/Inbox` | Turn it into a processing station with explicit triage actions |
+```yaml
+---
+tags:
+  - task
+title: Example task
+status: todo
+priority: normal
+due:
+scheduled:
+projects:
+  - "[[Example Project]]"
+---
+```
 
-## Recommendations based on the repo
+Use the exact TaskNotes status and priority values configured in the installation.
 
-### 1. Preserve the canonical landing page
+---
 
-I would **not turn your canonical dashboard into a dense productivity dashboard**.
+## 8. TaskNotes property mappings
 
-Its clean header, search, and background already serve a purpose: a calm, visually striking entry point into the vault. Keep it as the launch surface.
+Common mappings:
 
-Instead, make the dashboard switcher your custom navigation system:
+```text
+note.status
+note.priority
+note.due
+note.scheduled
+note.projects
+note.contexts
+file.tags
+file.tasks
+```
 
-- **Home** — canonical landing page; search and clean visual identity.
-- **Command** — daily priorities, calendar, next actions, capture, and active work.
-- **Projects** — project portfolio and TaskNotes workspace.
-- **Coding Lab** — TypeScript curriculum, drills, and practice history.
-- **Library** — resources, clippings, and knowledge discovery.
-- **Git / Activity** — preserve your existing Git dashboard and expand only where useful.
+These are used when configuring Bases views.
 
-This is a proposed role map, not a recommendation to create six new dashboards. Some may already exist in the saved configuration and should be reused or consolidated.
+Verify the installed TaskNotes version before treating any mapping as immutable.
 
-### 2. Evolve the existing `Home copy` into the Command dashboard
+---
+## 9. Project structure
 
-Of the dashboard configurations I inspected, `Home copy` is the closest starting point for an operational home: it already embeds a Home note, Active Projects, Learning, and Capture.
+Normal:
 
-I’d evaluate it as the candidate for your Command dashboard—not overwrite it immediately.
+```text
+1.PROJECTS/
+  Project Name/
+    Project Hub.md
+    Project Board.md
+    Requirements/
+    Decisions/
+    Investigations/
+    Implementation/
+    Notes/
+```
 
-The goal would be to add only the elements that help you start and sustain work:
+Minimum:
 
-- A compact daily standup card
-- Today’s TaskNotes view
-- A calendar or upcoming-deadlines strip
-- Active project cards
-- A “Start Focus” action
-- A small “Continue where you left off” area
+```text
+1.PROJECTS/
+  Project Name/
+    Project Hub.md
+```
 
-The dashboard should answer: **“What matters right now, and what’s the next click?”**
+Subfolders are created only when useful.
 
-### 3. Keep the Git dashboard specialized
+---
 
-Since you already like the Git dashboard, I’d preserve it as a dedicated Activity/DevOps workspace. The Command dashboard can show a compact Git pulse—recent commits, sync status, or activity—while the Git dashboard retains the deeper view.
+## 10. Kanban lanes
 
-This avoids turning the daily home into a dashboard that tries to show everything.
+Default:
 
-### 4. Make project context the connective tissue
+```text
+Backlog
+Next
+In Progress
+Blocked
+Review
+Done
+```
 
-The Projects dashboard should become the primary place to manage work, but every task, drill, decision, and project-related research note should be able to trace back to its project.
+Kanban is visual flow.
 
-I’d prioritize a reliable project-linking convention and context-aware QuickAdd flows before adding complex rollups or graph visualizations. Otherwise, the dashboards may look polished while showing incomplete or inconsistent relationships.
+TaskNotes is actionable task storage.
 
-### 5. Treat Hearth as the UI, not the database
+---
 
-Hearth’s existing support for multiple dashboards, embedded Bases, task cards, and command launchers makes it well suited to your goal. 
-## The likely architecture
+## 11. QuickAdd choices
 
-The main technical challenge is not selecting a project—it’s getting every dashboard component to react to the same selection.
+```text
+Capture — Quick Capture
+Capture — Project Task
 
-Obsidian Bases supports filters that reference properties of the note containing the embedded Base, and Meta Bind can provide interactive inputs bound to note properties. That gives us a plausible foundation for a selector-driven dashboard. Hearth itself supports live widgets, including embeds, tasks, calendars, and Kanban integrations. citeturn0search2turn0search12turn0search3turn0search6
+Create — Project
+Create — Project Document
+Create — Decision Record
+Create — Knowledge Note
+Create — Learning Note
+Create — Weekly Review
 
-A possible design:
+Process — Inbox Triage
+```
 
-1. The Project Command Center has a `selected_project` property.
-2. A dropdown or project-picker control changes that property.
-3. The task list and project overview filter against that selected project.
-4. The dashboard surfaces the selected project’s `Project.md`, board, milestones, and relevant links.
-5. Switching the selection updates the workspace without creating or opening a separate Hearth dashboard.
+---
 
+## 12. QuickAdd responsibilities
 
+### Capture
 
-[Assistant]
-## The main implementation caveat
+Small additions.
 
-**I would not assume every Hearth card can dynamically change its source just because the project picker changes.**
+### Template
 
-Bases filtering is promising for task and project data. But a Hearth embed, TaskNotes view, calendar, or Kanban card may have its own configuration rules. Some cards may accept a dynamic filter; others may require a fixed file path or query. The exact behavior needs to be verified against Hearth’s current card integrations and the plugins’ capabilities.
+Simple note creation.
 
-## Three implementation levels
+### Macro
 
-| Approach | How it works | Trade-off |
-|---|---|---|
-| Hearth + Bases + Meta Bind | Selector updates a dashboard property; supported Bases views filter from it | Least custom code, but not every card may respond |
-| Hearth + custom JavaScript/plugin logic | A shared project state drives more dashboard components | More flexible, but adds maintenance and testing |
-| Project quick-switcher | Selecting a project opens its own notes/board, while the dashboard remains mostly fixed | Reliable fallback, but less seamless |
+Multi-step workflows.
 
-Meta Bind supports inputs and buttons, including actions that can run JavaScript, so it could participate in a more customized solution. 
-### Project Command Center — Updated Requirements
+Project creation is a Macro.
 
-The dashboard will have a project filter at the top. Once a project is selected, the dashboard displays that project’s information and tools.
+---
 
-| Component | Expected behavior |
-|---|---|
-| Project picker | Select a project and remember the last selection |
-| Tasks | Show tasks associated with the selected project |
-| Kanban | Display that project’s Kanban board |
-| Calendar | Show the selected project’s deadlines, milestones, and scheduled work |
-| Daily standup | Surface the daily standup note with project-relevant context |
-| Project documentation | Link to the project’s `Project.md`, requirements, specifications, and other core docs |
-| Project notes | Show or link to notes associated with the selected project |
+## 13. Project creation sequence
 
-### Core behavior
+```text
+Prompt project name
+       ↓
+Create project folder
+       ↓
+Create Project Hub
+       ↓
+Create Project Board 
+       ↓
+Open Project Hub
+```
 
-Changing the project selection should update the project-specific dashboard sections together, without requiring a separate Hearth dashboard for each project.
 
-Each project retains its own notes, tasks, and Kanban board. The Command Center is the shared interface for accessing them.
+---
 
-### Project asset placement — agreed convention
+## 14. Project document sequence
 
-| Asset type | Storage rule |
-|---|---|
-| Project documentation | Inside that project’s folder |
-| Project-generated notes | Inside that project’s folder |
-| Project-specific Kanban board | Inside that project’s folder |
-| TaskNotes task notes | In the dedicated TaskNotes task folder required by the plugin |
-| Bases | In the central Bases folder |
-| Templates | In the central Templates folder |
-| Daily standup notes | In the existing Daily Notes location, generated through Daily Notes + Templater |
+```text
+Project
+  ↓
+Project Document
+  ↓
+Select document type
+  ↓
+Apply Templater template
+  ↓
+Save inside project folder
+```
 
-The Coding Lab’s curriculum can be structured as a **project-based learning path**:
+Types:
 
-`Skill → Concept → Guided Exercise → Independent Challenge → Project Application → Mastery`
+```text
+Project Check-in
+Requirements / Feature Specification
+Decision Record
+Technical Investigation
+Implementation Plan
+```
 
-The progression tree would show prerequisites, unlocked skills, current focus, and demonstrated mastery. Projects become the practical application of the curriculum, while the curriculum itself remains reusable across projects.
+---
 
-### Updated planning scope
+## 15. Bases views
 
-We now have three major dashboard designs to develop:
+Required:
 
-1. **Project Command Center** — Project picker, project tasks, Kanban, calendar, standup context, and project documentation.
-2. **Library** — Knowledge discovery, backlinks, graph exploration, resources, clippings, images, and project connections.
-3. **Coding Lab** — Project-based TypeScript curriculum, skill tree, exercises, progression, and mastery tracking.
+```text
+Active Projects
+Open Tasks
+Tasks by Project
+Knowledge Index
+Coding Lab
+Ingestion Queue
+```
 
-The Command Center’s technical feasibility pass remains important, but we should not let its implementation details consume the whole planning process.
+Optional:
 
-## Library: knowledge management workspace
+```text
+Recent Notes
+Recently Modified Projects
+Upcoming Deadlines
+Learning by Status
+```
 
-The Library should combine a vault-wide knowledge map with tools for curating the knowledge graph.
+Only add optional views when they solve a real workflow problem.
 
-- **Global graph:** a way to see and navigate relationships across the entire vault, not just one folder or project.
-- **Backlinks and outgoing links:** inspect how notes connect, identify weakly connected notes, and create useful relationships.
-- **Tag management:** review, normalize, and apply tags so the vault stays organized.
-- **Bookmarks:** surface important notes, searches, and graph views.
-- **Contextual actions:** use Note Toolbar, Meta Bind, and Obsidian’s native features where appropriate to create links, edit metadata, and navigate related notes.
+---
 
-## Coding Lab: learn the code you actually ship
+## 16. Active Projects Base
 
-The curriculum should be derived from your **TypeScript Book of Knowledge, Book of Implementation, and golden prototypes** in the repository.
+Primary discriminator:
 
-Rather than creating practice-only projects, the Coding Lab should connect to active production work:
+```text
+type = project
+```
 
-1. A real project requires a fetcher, action, Stripe integration, shared `cn` component, or feature orchestration.
-2. The Code Lab identifies the relevant skill and reference implementation.
-3. You study the golden prototype and work through the implementation in the actual project, using Codespaces.
-4. You test, compare, and document what you learned.
-5. The skill tree tracks progress and mastery, while the production code remains in the project repository.
+Secondary:
 
-That makes the curriculum **capability-based and embedded in real work**, not a separate sequence of toy apps. The progression tree should represent skills and prerequisites across your full app-generation process, with links to source material, prototypes, actual implementations, and evidence of mastery.
+```text
+status = active
+```
 
-## Updated dashboard map
+Suggested fields:
 
-| Dashboard | Primary purpose |
-|---|---|
-| Home | Clean landing page and navigation |
-| Command Center | Daily planning, tasks, standup, and productivity |
-| Project Command Center | One selected project’s tasks, Kanban, calendar, standup context, and documentation |
-| Library | Vault-wide graph, backlinks, tags, bookmarks, and knowledge curation |
-| Coding Lab | Production-oriented curriculum, skill tree, golden prototypes, and mastery |
-| Ingestion | Process incoming clippings, pasted content, files, and other material |
-| Git & Vault Stats | Git workflow, sync, and vault health/statistics |
+```text
+File
+Status
+Created
+Tags
+```
 
-## Canonical plugin responsibilities
+---
 
-| Function | System of record / tool |
-|---|---|
-| Dashboards | Hearth |
-| Tasks and task metadata | TaskNotes |
-| Kanban boards | Obsidian Kanban |
-| Interactive properties | Meta Bind |
-| Structured views and queries | Obsidian Bases |
-| Tags, backlinks, bookmarks, graph | Obsidian core |
-| Contextual buttons and menus | Note Toolbar |
-| Templates | Templater |
-| Guided note creation | QuickAdd |
-| Web clipping | Official Obsidian Web Clipper browser extension |
-| Git and vault versioning | Obsidian Git plugin |
-| Production coding environment | GitHub Codespaces |
+## 17. Open Tasks Base
 
-I’ll treat this as the preferred stack. Any proposed custom code needs to fill a demonstrated gap—not duplicate an existing plugin’s job.
+Suggested fields:
 
-## What this means for the full design
+```text
+note.status
+note.priority
+note.due
+note.scheduled
+note.projects
+```
 
-- **Library:** Obsidian’s native graph, backlinks, tags, and bookmarks, surfaced through Hearth and supported by contextual Note Toolbar actions and Bases views.
-- **Ingestion:** Web Clipper, QuickAdd, Templater, Bases, and Note Toolbar working together to capture, triage, classify, link, and process incoming material.
-- **Coding Lab:** A skill tree derived from the actual TypeScript Book of Knowledge and Book of Implementation in your repository, connected to active project work and Codespaces.
-- **Project Command Center:** Hearth as the unified interface, with TaskNotes, Kanban, Bases, and the daily-note workflow supplying the project-specific information.
+Filter out completed tasks.
 
-## Proposed implementation-plan structure
+Sort:
 
-I’ll organize the plan into workstreams, with dependencies and validation steps, so you can implement it in a controlled order.
+```text
+Due
+Priority
+Project
+```
 
-| Phase | Workstream | Deliverable |
-|---|---|---|
-| 0 | Vault audit | Plugin inventory, current dashboards, Bases, templates, QuickAdd macros, folders, and conflicts |
-| 1 | Shared architecture | Folder conventions, metadata rules, plugin responsibilities, icon/callout conventions |
-| 2 | Home + navigation | Clean startup Home, dashboard navigation, Note Toolbar actions |
-| 3 | Command Center | Daily workflow, standup, tasks, calendar, and review |
-| 4 | Project Command Center | Project picker and project-specific tasks, Kanban, calendar, standup, and documentation |
-| 5 | Library | Vault-wide graph, backlinks, tags, bookmarks, and knowledge curation |
-| 6 | Ingestion | Capture triage, classification, linking, and processing workflows |
-| 7 | Coding Lab | Books-derived curriculum, production skill tree, project-linked practice, Codespaces workflow, and mastery tracking |
-| 8 | Git & Vault Stats | Preserve the existing Git dashboard and integrate vault health/statistics |
-| 9 | Validation + handoff | Test checklist, rollback guidance, setup sequence, and final implementation checklist |
+---
 
-The phases are ordered to reduce rework. For example, we should settle project/task relationships before building the Project Command Center, and inspect the TypeScript books before designing the Coding Lab tree.
-## 1. The design baseline
+## 18. Tasks by Project Base
 
-These decisions are settled unless you later change them.
+Group:
 
-| Area | Design decision |
-|---|---|
-| Architecture | Design from scratch; don’t let existing dashboard layouts dictate the result |
-| Folder structure | PARA remains the organizational foundation |
-| Dashboards | Hearth |
-| Tasks | TaskNotes |
-| Kanban | Obsidian Kanban |
-| Structured data | Obsidian Bases |
-| Interactive properties | Meta Bind |
-| Contextual actions | Note Toolbar |
-| Templates | Templater |
-| Guided creation | QuickAdd |
-| Knowledge organization | Obsidian tags, backlinks, bookmarks, and graph |
-| Web capture | Official Obsidian Web Clipper |
-| Icons | Iconic |
-| Callouts | Callout Studio |
-| Version control | Obsidian Git |
-| Production coding | Codespaces / Code Space |
-| Daily notes | Daily Notes + Templater |
+```text
+note.projects
+```
 
-The plan will avoid unnecessary plugins, duplicate sources of truth, and metadata added solely for the sake of having metadata.
+The task files remain in:
 
-## 2. The dashboard system
+```text
+5.TASKS/Tasks/
+```
 
-The design will include seven distinct destinations:
+---
 
-1. **Home** — clean landing page, visual identity, search, and navigation.
-2. **Command Center** — daily planning, standup, tasks, deadlines, review, and productivity.
-3. **Project Command Center** — persistent project picker; selected project’s tasks, Kanban, calendar, standup context, documentation, and notes.
-4. **Library** — vault-wide graph, backlinks, tags, bookmarks, and knowledge curation.
-5. **Coding Lab** — production-oriented TypeScript curriculum, skill tree, golden prototypes, real project practice, and mastery.
-6. **Ingestion** — process clippings, pasted text, files, images, and other incoming material.
-7. **Git & Vault Stats** — Git workflow, sync, and vault health, designed around your existing Git use case.
+## 19. Knowledge Base
 
-The Coding Lab curriculum will follow your Books of Knowledge and Implementation—not a generic course. The Library will focus on actively maintaining and connecting knowledge, rather than simply displaying notes.
+Possible types:
 
-## 3. How we’ll avoid getting bogged down
+```text
+concept
+reference
+evergreen
+reading
+```
 
-I’ll use sensible defaults for low-impact decisions instead of asking you to approve every field, button, or plugin setting.
+Use the exact values established by the supplied templates.
 
-| Topic                 | Default approach                                                                                       |
-| --------------------- | ------------------------------------------------------------------------------------------------------ |
-| Properties            | Minimal; use Meta Bind for interactive property controls                                               |
-| Tags                  | Primary flexible classification system                                                                 |
-| Project relationships | Explicit, consistent links that support TaskNotes and Bases filtering                                  |
-| Storage               | Plugin-required folders for plugin assets; project folders for project documentation and boards        |
-| Dashboards            | One reusable Hearth dashboard per workspace, not one per project                                       |
-| Navigation            | Hearth for major destinations; Note Toolbar for contextual actions                                     |
-| Templates             | Reusable, modular templates with QuickAdd workflows where guided creation helps                        |
-| Automation            | Prefer native plugin features; add scripts only when they solve a verified gap                         |
-| Safety                | Avoid overwriting existing notes; include backups, test cases, and rollback instructions               |
-| Visual design         | Defer detailed images, icons, and styling until the functional architecture and templates are approved |
+---
 
-## 4. What remains before generating the implementation package
+## 20. Coding Lab Base
 
-There are only three substantial planning gates left.
+Possible types:
 
-**Gate 1 — Template architecture**
+```text
+skill
+exercise
+evidence
+debugging
+```
 
-We need to decide which note types deserve templates, what information each should contain, and which QuickAdd workflows should create them. I’ll propose the template inventory first, then we can review it before generating the actual files.
+Suggested fields:
 
-The initial template families will likely include:
+```text
+File
+Type
+Status
+Project
+Tags
+Created
+```
 
-| Family | Candidate templates |
-|---|---|
-| Daily workflow | Daily note, standup/review sections |
-| Projects | Project hub, project check-in, requirements/specification, decision/ADR |
-| Tasks | TaskNotes-compatible task creation and project association |
-| Knowledge | Concept note, reference/literature note, evergreen note |
-| Ingestion | Web clipping, pasted content, AI conversation, inbox-processing note |
-| Coding Lab | Skill reference, implementation exercise, mastery/evidence record |
-| Production work | Technical investigation, implementation plan, debugging/learning record |
+---
 
-These are candidates, not a final list. We should avoid making a separate template for every conceivable note type.
+## 21. Ingestion Base
 
-**Gate 2 — Dashboard and workflow specification**
+Scope:
 
-I’ll turn the seven dashboards into concrete layouts and workflows: what appears on each screen, what it reads from, what actions it offers, and how the plugins interact. I’ll flag anything that needs a proof of concept, particularly the dynamic project picker and curriculum progression.
+```text
+6.INGESTION/Inbox/
+```
 
-**Gate 3 — Generate the implementation guide and assets**
+Only active/unprocessed items.
 
-After the template architecture is reviewed, I’ll generate the detailed hand-built implementation guide and the reusable files. The guide will be organized in the order you should actually build the system, not merely by plugin.
+---
 
-It will include a completion checklist so you can work through it across multiple sessions without losing your place.
-## Proposed template architecture
+## 22. Meta Bind
 
-I recommend organizing templates into six functional groups. The templates live centrally; QuickAdd, Templater, TaskNotes, and Web Clipper determine how each is created. Generated notes are stored in their appropriate PARA or system location.
+Primary purpose:
 
-### 1. Daily workflow
+Interactive property editing.
 
-| Template | Purpose | Created by |
-|---|---|---|
-| Daily Note | Daily log, priorities, linked tasks, notes, and review | Daily Notes + Templater |
-| Daily Standup | What I’m doing, completed, blocked, and next; supports project context | Templater, from Daily Note |
-| Weekly Review | Review progress, overdue tasks, active projects, and next-week priorities | QuickAdd + Templater |
+Initial proof:
 
-The daily note remains the canonical daily record. The Project Command Center can surface project-relevant standup entries without creating a separate daily note for every project.
+```text
+selected_project
+```
 
-### 2. Project documentation
+Target:
 
-These templates form the project’s documentation toolkit. A project can use only the ones it needs.
+```text
+0.SYSTEM/State/Project Dashboard State.md
+```
 
-| Template | Purpose |
-|---|---|
-| Project Hub | Project overview, goals, status, milestones, linked docs, board, and tasks |
-| Project Check-in | Progress update, blockers, decisions, and next steps |
-| Requirements / Feature Specification | Problem, users, requirements, acceptance criteria, constraints |
-| Decision Record (ADR) | Context, options, decision, rationale, consequences |
-| Technical Investigation | Question, evidence, findings, recommendation, follow-up |
-| Implementation Plan | Scope, approach, dependencies, test plan, rollout, and tasks |
+Success condition:
 
-**Optional launch-document pack:** Your 12-document Enterprise Product Launch suite fits here as a specialized pack. It can be generated for major launches or feature rollouts without burdening smaller projects. Its templates will be preserved as a separate, reusable suite rather than made part of every project’s default creation flow.
+Changing the control changes and persists the frontmatter value.
 
-### 3. Tasks and execution
+---
 
-| Template / workflow | Purpose | Created by |
-|---|---|---|
-| Task | Task title, status, priority, due date, project relationship, and details | TaskNotes |
-| Project Task Capture | Create a task already associated with the selected project | QuickAdd + TaskNotes |
-| Board Setup | Create a project-local Kanban board and link it to the Project Hub | QuickAdd + Templater |
+## 23. Note Toolbar
 
-TaskNotes remains the task source of truth. The project relationship should use the TaskNotes-supported `projects` property, linked to the project note. The board stays inside the project folder; task notes stay in TaskNotes’ configured central folder.
+### Global
 
-### 4. Knowledge and reference
+```text
+Home
+Command Center
+Project Command Center
+Library
+Coding Lab
+Ingestion
+Git & Vault Stats
+```
 
-| Template | Purpose |
-|---|---|
-| Concept Note | Explain a concept in your own words and connect it to related knowledge |
-| Reference / Literature Note | Capture source details, summary, claims, and useful excerpts |
-| Evergreen Note | Develop a durable, standalone idea with links to related notes |
-| Reading / Resource Note | Track a book, course, article, or other learning resource |
+### Project
 
-These templates support the Library dashboard. They should use a small, consistent metadata set and rely on links and tags for discovery rather than adding a property for every possible classification.
+```text
+Project Hub
+Project Board
+New Task
+Project Check-in
+Decision
+Investigation
+Implementation Plan
+```
 
-### 5. Ingestion and triage
+Use folder/property rules.
 
-| Template / workflow | Purpose | Created by |
-|---|---|---|
-| Web Clipping | Preserve clipped source content and metadata | Obsidian Web Clipper |
-| Quick Capture | Capture an idea or loose information with minimal friction | QuickAdd |
-| AI Conversation | Record source, context, useful insights, and follow-up | QuickAdd + Templater |
-| Inbox Triage | Decide whether to link, convert, move, archive, or discard an item | QuickAdd + Templater |
+---
 
-Ingestion is a processing queue—not a second knowledge library. Once processed, content should move to its durable home or be archived/discarded.
+## 25. Hearth — Home
 
-### 6. Coding Lab and production learning
+```text
+Navigation
+Search
+Identity
+```
 
-| Template | Purpose |
-|---|---|
-| Skill Reference | Explain a code pattern, its use cases, constraints, and prerequisites |
-| Implementation Exercise | Practice a pattern in a real production project |
-| Mastery / Evidence Record | Capture implementation links, tests, review evidence, and remaining gaps |
-| Debugging / Learning Log | Record the issue, investigation, root cause, fix, and reusable lesson |
+Sparse.
 
-The Coding Lab curriculum will be derived from your Books of Knowledge and Implementation in the repository. It should connect each skill to actual production work—such as fetchers, actions, Stripe integrations, shared `cn` components, and feature orchestration—rather than relying on disconnected toy exercises.
+---
 
-## Shared template conventions
+## 26. Hearth — Command Center
 
-I propose that templates share a small common metadata foundation where relevant:
+```text
+Today
+Daily Note
+Open Tasks
+Due Soon
+Scheduled Work
+Daily Standup
+Weekly Review
+```
 
-- `type`: the note’s role, such as `project`, `decision`, `concept`, or `learning`
-- `created`: creation date
-- `status`: only where a meaningful lifecycle exists
-- `project`: project link when the note lives outside its project folder but belongs to a project
-- `tags`: flexible classification
+---
 
-Not every template needs every property. For project notes, folder placement is the default project association. For daily notes, learning notes, and clippings that belong to a project but live elsewhere, a project link or tag can provide the connection.
+## 27. Hearth — Project Command Center
 
-Meta Bind will handle interactive property editing. Bases will provide structured views. Hearth will compose dashboards. QuickAdd will guide creation, while Templater handles prompts and note generation. These roles should remain distinct.
+```text
+Project Selector
+Selected Project
+Project Summary
+Project Tasks
+Project Board
+Project Schedule
+Project Check-ins
+Requirements
+Decisions
+Investigations
+Implementation Plans
+Project Notes
+```
+
+---
+
+## 28. Hearth — Library
+
+```text
+Graph
+Backlinks
+Tags
+Bookmarks
+Knowledge Index
+Reference Index
+```
+
+---
+
+## 29. Hearth — Coding Lab
+
+```text
+Skill Tree
+Current Skills
+Implementation Exercises
+Mastery / Evidence
+Debugging
+Production Connections
+```
+
+---
+
+## 30 Hearth — Ingestion
+
+```text
+Inbox
+Unprocessed Clippings
+Quick Capture
+Inbox Triage
+Processed
+```
+
+---
+
+## 31. Hearth — Git & Vault Stats
+
+```text
+Git instructions
+Commit
+Sync
+Repository status
+Vault health
+Recent changes
+Useful views
+```
+
+---
+
+## 32. Web Clipper
+
+Destination:
+
+```text
+6.INGESTION/Inbox
+```
+
+Workflow:
+
+```text
+Capture
+  ↓
+Inbox
+  ↓
+Triage
+  ↓
+Durable home
+Task
+Archive
+Discard
+```
+
+---
+
+## 33. Coding Lab location
+
+Recommended:
+
+```text
+2.AREAS/Coding Lab/
+```
+
+---
+
+## 34. Coding Lab types
+
+```text
+Skill Reference
+Implementation Exercise
+Mastery / Evidence Record
+Debugging / Learning Log
+```
+
+---
+
+## 35. Coding Lab evidence
+
+Evidence should connect to real implementation.
+
+Examples:
+
+```text
+Fetcher
+Action
+Stripe integration
+cn component
+Feature orchestration
+Production debugging
+```
+
+---
+
+## 36. Git
+
+Initial mode:
+
+```text
+Manual
+```
+
+Workflow:
+
+```text
+Review
+  ↓
+Commit
+  ↓
+Pull
+  ↓
+Push
+```
+
+Do not enable aggressive automatic synchronization until the vault is stable.
+
+---
+
+## 37. Visual plugins
+
+Configure last:
+
+```text
+Iconic
+Callout Studio
+Hearth styling
+```
+
+---
+
+# Obsidian Checklist
+
+## 0. Backup
+
+- [ ] Full vault backup exists.
+- [ ] Backup is independent of the working vault.
+- [ ] Backup can be reopened.
+- [ ] Existing notes are not being overwritten.
+- [ ] Existing folder structure has been preserved.
+- [ ] Current Git state is known.
+
+---
+
+## 1. Core Obsidian
+
+- [ ] Daily Notes enabled.
+- [ ] Properties enabled.
+- [ ] Bases enabled.
+- [ ] Search works.
+- [ ] Backlinks work.
+- [ ] Bookmarks work.
+- [ ] Graph view works.
+- [ ] Attachment destination is correct.
+
+---
+
+## 2. Folder structure
+
+- [ ] System folder exists.
+- [ ] Template folder exists.
+- [ ] State folder exists.
+- [ ] Projects folder exists.
+- [ ] Tasks folder exists.
+- [ ] Ingestion folder exists.
+- [ ] Daily folder exists.
+- [ ] Coding Lab location exists.
+- [ ] Existing PARA folders remain intact.
+
+---
+
+## 3. Templater
+
+- [ ] Templater enabled.
+- [ ] Template folder is correct.
+- [ ] Daily Note generates.
+- [ ] Daily Standup generates.
+- [ ] Weekly Review generates.
+- [ ] Project Hub generates.
+- [ ] Project Check-in generates.
+- [ ] Feature Specification generates.
+- [ ] Decision Record generates.
+- [ ] Technical Investigation generates.
+- [ ] Implementation Plan generates.
+- [ ] Task generates.
+- [ ] Project Task Capture generates.
+- [ ] Concept Note generates.
+- [ ] Reference Note generates.
+- [ ] Evergreen Note generates.
+- [ ] Reading Note generates.
+- [ ] Web Clipping generates.
+- [ ] Quick Capture generates.
+- [ ] AI Conversation generates.
+- [ ] Inbox Triage generates.
+- [ ] Skill Reference generates.
+- [ ] Implementation Exercise generates.
+- [ ] Mastery/Evidence generates.
+- [ ] Debugging Log generates.
+- [ ] Prompts appear.
+- [ ] Prompt values persist.
+- [ ] No raw Templater syntax remains.
+
+---
+
+## 4. Daily Notes
+
+- [ ] Daily Note uses the approved template.
+- [ ] Date format is correct.
+- [ ] Daily Note lands in the correct folder.
+- [ ] No duplicate project Daily Note is created.
+- [ ] Project tasks can be associated from the Daily Note workflow.
+
+---
+
+## 5. TaskNotes
+
+- [ ] TaskNotes enabled.
+- [ ] Central task folder configured.
+- [ ] Task note can be created.
+- [ ] Task has status.
+- [ ] Task has priority.
+- [ ] Task has due date where required.
+- [ ] Task has scheduled date where required.
+- [ ] Task has project link where required.
+- [ ] Task is recognized by TaskNotes.
+- [ ] Task appears in TaskNotes list.
+- [ ] Changing project changes project association.
+- [ ] Completed tasks can be filtered.
+- [ ] No duplicate task record exists elsewhere.
+
+---
+
+## 6. Project integration
+
+Create a test project:
+
+```text
+Test Project
+````
+
+Verify:
+
+-  Project folder exists.
+    
+-  Project Hub exists.
+    
+-  Project Board exists where intended.
+    
+-  Project has correct type/status.
+    
+-  Project task points to the project.
+    
+-  Project Base finds the project.
+    
+-  Task Base finds the project task.
+    
+-  Tasks by Project groups the task correctly.
+
+---
+
+## 7. QuickAdd
+
+-  Quick Capture works.
+    
+-  Project Task works.
+    
+-  New Project works.
+    
+-  New Project Document works.
+    
+-  Decision Record works.
+    
+-  Knowledge Note works.
+    
+-  Learning Note works.
+    
+-  Weekly Review works.
+    
+-  Inbox Triage works.
+
+---
+
+## 8. QuickAdd — project creation
+
+Run New Project.
+
+Verify:
+
+-  Project name prompt appears.
+    
+-  Project folder is created.
+    
+-  Project Hub is created.
+    
+-  Project Board is created only if intended.
+    
+-  Project Hub opens.
+    
+-  No unnecessary launch documentation is generated.
+    
+-  No duplicate project is created.
+
+---
+
+## 9. Meta Bind
+
+-  Meta Bind enabled.
+    
+-  Test input is visible.
+    
+-  Input changes frontmatter.
+    
+-  Property persists after reopening.
+    
+-  Invalid values are prevented or handled appropriately.
+
+---
+
+## 10. Note Toolbar
+
+-  Global toolbar appears where intended.
+    
+-  Project toolbar appears in project context.
+    
+-  Project Hub command works.
+    
+-  Project Board command works.
+    
+-  New Task command works.
+    
+-  Project Check-in command works.
+    
+-  Decision command works.
+    
+-  Investigation command works.
+    
+-  Implementation Plan command works.
+    
+-  Dashboard links work.
+    
+-  Irrelevant commands are not shown everywhere.
+
+---
+
+## 11. Bases
+
+### Active Projects
+
+-  Returns projects.
+    
+-  Excludes irrelevant notes.
+    
+-  Status filtering works.
+
+### Open Tasks
+
+-  Returns active tasks.
+    
+-  Excludes completed tasks.
+    
+-  Due date displays correctly.
+    
+-  Project displays correctly.
+
+### Tasks by Project
+
+-  Tasks group correctly.
+    
+-  Unassigned tasks remain visible where intended.
+
+### Knowledge
+
+-  Concept notes appear.
+    
+-  Reference notes appear.
+    
+-  Evergreen notes appear.
+    
+-  Reading/resource notes appear.
+
+### Coding Lab
+
+-  Skill notes appear.
+    
+-  Exercise notes appear.
+    
+-  Evidence notes appear.
+    
+-  Debugging notes appear.
+
+### Ingestion
+
+-  Inbox items appear.
+    
+-  Processed items are excluded.
+    
+-  Archive items are excluded.
+
+---
+
+## 12. Hearth
+
+### Home
+
+-  Dashboard opens.
+    
+-  Navigation works.
+    
+-  Search works.
+
+### Command Center
+
+-  Daily Note visible.
+    
+-  Open Tasks visible.
+    
+-  Due work visible.
+    
+-  Standup link works.
+    
+-  Weekly Review link works.
+
+### Project Command Center
+
+-  Project context opens.
+    
+-  Project summary works.
+    
+-  Tasks appear.
+    
+-  Board opens.
+    
+-  Documentation links work.
+    
+-  Check-in context works.
+    
+-  Project selector proof passes or fallback is documented.
+
+### Library
+
+-  Graph works.
+    
+-  Backlinks work.
+    
+-  Tags work.
+    
+-  Bookmarks work.
+    
+-  Knowledge Base works.
+
+### Coding Lab
+
+-  Skill view works.
+    
+-  Exercise view works.
+    
+-  Evidence view works.
+    
+-  Debugging view works.
+
+### Ingestion
+
+-  Inbox visible.
+    
+-  Clippings visible.
+    
+-  Triage available.
+    
+-  Processed area accessible.
+
+### Git & Vault Stats
+
+-  Git instructions visible.
+    
+-  Repository workflow documented.
+    
+-  Vault health views work.
+
+---
+
+## 14. Kanban
+
+-  Project Board opens.
+    
+-  Backlog lane exists.
+    
+-  Next lane exists.
+    
+-  In Progress lane exists.
+    
+-  Blocked lane exists.
+    
+-  Review lane exists.
+    
+-  Done lane exists.
+    
+-  Cards can move.
+    
+-  Board is stored in the project folder.
+    
+-  Actionable tasks remain TaskNotes records.
+    
+-  No second task database exists.
+
+---
+
+## 15. Web Clipper
+
+-  Browser extension installed.
+    
+-  Capture works.
+    
+-  Capture destination is Inbox.
+    
+-  Template is applied.
+    
+-  Source information is retained.
+    
+-  Selected/highlighted content behaves as intended.
+    
+-  Captured note appears in Ingestion Base.
+
+---
+
+## 16. Ingestion
+
+Run:
+
+```text
+Capture
+  ↓
+Inbox
+  ↓
+Triage
+```
+
+Verify every disposition works:
+
+-  Durable resource.
+    
+-  Project note.
+    
+-  Task.
+    
+-  Archive.
+    
+-  Discard.
+
+Then verify:
+
+-  Processed item leaves active Inbox.
+    
+-  No duplicate permanent clipping library is created.
+
+---
+
+## 17. Coding Lab
+
+-  Skill Reference opens.
+    
+-  Implementation Exercise opens.
+    
+-  Mastery/Evidence opens.
+    
+-  Debugging Log opens.
+    
+-  Skill can link to production work.
+    
+-  Evidence can reference repository implementation.
+    
+-  Repository source code is not duplicated into the vault unnecessarily.
+
+---
+
+## 18. Git
+
+-  Repository exists.
+    
+-  Vault is connected.
+    
+-  Initial known-good commit exists.
+    
+-  Commit works.
+    
+-  Pull works.
+    
+-  Push works.
+    
+-  Restore from Git is understood.
+    
+-  `.gitignore` is intentional.
+    
+-  Automatic sync is not causing unwanted churn.
+
+---
+
+# Final completion checklist
+
+## Architecture
+
+-  PARA remains the organizational foundation.
+    
+-  Seven dashboards exist.
+    
+-  Sources of truth remain distinct.
+    
+-  No unnecessary plugin has been added.
+
+## Daily workflow
+
+-  Daily Note works.
+    
+-  Daily Standup works.
+    
+-  Weekly Review works.
+
+## Projects
+
+-  Project creation works.
+    
+-  Project Hub works.
+    
+-  Project Board works.
+    
+-  Project documentation works.
+    
+-  Project tasks associate correctly.
+
+## Tasks
+
+-  TaskNotes is the only actionable task source of truth.
+    
+-  Bases exposes tasks.
+    
+-  Project grouping works.
+
+## Knowledge
+
+-  Library works.
+    
+-  Knowledge Base works.
+    
+-  Backlinks work.
+    
+-  Graph works.
+    
+-  Tags work.
+    
+-  Bookmarks work.
+
+## Coding Lab
+
+-  Skill Reference works.
+    
+-  Implementation Exercise works.
+    
+-  Mastery/Evidence works.
+    
+-  Debugging Log works.
+    
+-  Production evidence can be linked.
+
+## Ingestion
+
+-  Web Clipper works.
+    
+-  Quick Capture works.
+    
+-  Inbox works.
+    
+-  Triage works.
+    
+-  Processed items leave Inbox.
+
+## Interaction
+
+-  Meta Bind works.
+    
+-  Note Toolbar works.
+    
+-  QuickAdd works.
+
+## Dashboards
+
+-  Home works.
+    
+-  Command Center works.
+    
+-  Project Command Center works.
+    
+-  Library works.
+    
+-  Coding Lab works.
+    
+-  Ingestion works.
+    
+-  Git & Vault Stats works.
+
+## Version control
+
+-  Git works.
+    
+-  Commit works.
+    
+-  Pull works.
+    
+-  Push works.
