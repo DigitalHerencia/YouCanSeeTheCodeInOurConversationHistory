@@ -125,7 +125,7 @@
     },
     {
       "id": "dash-projects",
-      "name": "Project Command Center",
+      "name": "Projects",
       "fitToPage": true,
       "showSearch": false,
       "header": {
@@ -341,7 +341,7 @@
         }
       ],
       "id": "dash-git",
-      "name": "Git & Vault Stats",
+      "name": "Vault",
       "header": {
         "showTitle": false,
         "titleScale": 1,
@@ -350,7 +350,7 @@
         "logoScale": 1,
         "spacingBelow": 12
       },
-      "iconLucide": "git-branch"
+      "iconLucide": "github"
     }
   ],
   "activeDashboardId": "dash-git",

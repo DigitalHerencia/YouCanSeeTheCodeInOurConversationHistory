@@ -4,13 +4,11 @@
   "preferredDateFormat": "hhmma dddd, MMMM Do, Y ",
   "firstWeekday": "Monday",
   "syncInterval": 200,
-  "enableJs": false,
+  "enableJs": true,
   "viewFieldDisplayNullAsEmpty": true,
   "enableSyntaxHighlighting": true,
   "enableEditorRightClickMenu": true,
   "inputFieldTemplates": [],
   "buttonTemplates": [],
-  "excludedFolders": [
-    "3.RESOURCES/assets"
-  ]
+  "excludedFolders": []
 }
