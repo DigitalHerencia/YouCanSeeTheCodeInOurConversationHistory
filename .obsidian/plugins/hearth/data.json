@@ -88,7 +88,7 @@
     },
     {
       "id": "hearth-command-center",
-      "name": "Command",
+      "name": "Command Center",
       "fitToPage": true,
       "showSearch": false,
       "header": {
@@ -111,7 +111,7 @@
     },
     {
       "id": "dash-projects",
-      "name": "Projects",
+      "name": "Project Command Center",
       "fitToPage": true,
       "showSearch": false,
       "header": {
@@ -136,7 +136,7 @@
     },
     {
       "id": "hearth-code-lab",
-      "name": "Code",
+      "name": "Code Lab",
       "fitToPage": true,
       "showSearch": false,
       "header": {
@@ -159,7 +159,7 @@
     },
     {
       "iconLucide": "inbox",
-      "name": "ZETTLECASTEN",
+      "name": "Zettelkasten",
       "cards": [],
       "id": "hearth-zettle",
       "header": {
