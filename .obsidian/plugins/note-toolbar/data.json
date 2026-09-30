@@ -140,8 +140,8 @@
           "inGallery": false,
           "link": "",
           "linkAttr": {
-            "commandCheck": false,
-            "commandId": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000003",
+            "commandCheck": true,
+            "commandId": "quickadd:choice:hearth-f8810117",
             "hasVars": false,
             "type": "command"
           },
