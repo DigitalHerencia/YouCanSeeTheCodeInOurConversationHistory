@@ -2,7 +2,8 @@ module.exports = async ({ app, quickAddApi, obsidian }) => {
   const name = (await quickAddApi.inputPrompt("Project name"))?.trim();
   if (!name) return;
 
-  const type = await quickAddApi.suggester(
+  const preset = variables?.preset ? JSON.parse(variables.preset) : {};
+  const type = preset.projectType || await quickAddApi.suggester(
     ["Operations", "Product", "Design", "Engineering", "Marketing"],
     ["OPS", "PROD", "DES", "ENG", "MKT"],
     "Project type"
