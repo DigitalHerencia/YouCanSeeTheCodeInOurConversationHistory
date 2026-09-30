@@ -2,7 +2,7 @@
 type: milestone
 id: <% await tp.system.prompt("Milestone ID") %>
 project: <% await tp.system.prompt("Project") %>
-number: <% tp.frontmatter.id %>
+number: <% await tp.system.prompt("Milestone ID") %>
 title: <% tp.file.title %>
 status: backlog
 target_end:
