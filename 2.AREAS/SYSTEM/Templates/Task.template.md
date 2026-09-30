@@ -26,6 +26,10 @@ Status: `INPUT[select(option(backlog), option(ready), option(in-progress), optio
 ## Acceptance Criteria
 - [ ] 
 
+## Controls
+Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(review), option(done), option(cancelled)):status]`  
+Priority: `INPUT[select(option(low), option(normal), option(high)):priority]`
+
 ## Project Context
 - Project:
 - Milestone:
