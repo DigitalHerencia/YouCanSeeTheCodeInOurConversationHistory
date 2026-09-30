@@ -1,6 +1,6 @@
 {
   "workspaces": {
-    "DevNotes Command Center": {
+    "Command Center": {
       "main": {
         "id": "4f4887822ee2542d",
         "type": "split",
@@ -308,5 +308,5 @@
       "mtime": "2026-08-24T17:19:14-06:00"
     }
   },
-  "active": "DevNotes Command Center"
+  "active": "Command Center"
 }
