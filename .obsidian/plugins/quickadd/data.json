@@ -1090,7 +1090,7 @@
             "name": "Review Pattern",
             "type": "UserScript",
             "id": "1b5bbede-8fb6-4fb5-bc55-08bc9577ca73",
-            "path": "pattern"
+            "path": "review-pattern"
           }
         ],
         "id": "6fd53f24-e018-401d-88f2-12f1d0653330"
