@@ -2,11 +2,17 @@
 type: task
 task_id:
 project_id:
+project: <% await tp.system.prompt("Project") %>
+milestone: <% await tp.system.prompt("Milestone ID") %>
+phase: <% await tp.system.prompt("Phase ID") %>
+roadmap: <% await tp.system.prompt("RoadMap code") %>
 status: ready
-project: <% tp.user.hearthProject(tp) %>
-milestone: <% tp.user.hearthMilestone(tp) %>
-phase: <% tp.user.hearthPhase(tp) %>
-roadmap:
+priority: normal
+dependency:
+deliverable:
+due:
+scheduled:
+blocker:
 source_requirement:
 source_document:
 created: <% tp.date.now("YYYY-MM-DD") %>
@@ -14,27 +20,26 @@ updated: <% tp.date.now("YYYY-MM-DD") %>
 tags:
   - type/task
 ---
-# Task Context — {{TITLE}}
 
-> Create execution tasks through TaskNotes. This template is contextual support and must not create a second task database.
-
-## Objective
-
-## Human controls
-Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(done), option(cancelled)):status]` · Priority: `INPUT[select(option(none), option(low), option(normal), option(high)):priority]` · Due: `INPUT[date:due]` · Scheduled: `INPUT[date:scheduled]` · Blocker: `INPUT[text:blocker]`
-
-## Acceptance Criteria
-- [ ] 
+# <% tp.file.title %>
 
 ## Controls
 Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(review), option(done), option(cancelled)):status]`  
-Priority: `INPUT[select(option(low), option(normal), option(high)):priority]`
+Priority: `INPUT[select(option(low), option(normal), option(high)):priority]`  
+Due: `INPUT[date:due]`  
+Scheduled: `INPUT[date:scheduled]`  
+Blocker: `INPUT[text:blocker]`
+
+## Objective
+
+## Acceptance Criteria
+- [ ]
 
 ## Project Context
-- Project:
-- Milestone:
-- Phase:
-- RoadMap:
+- Project: <% tp.frontmatter.project %>
+- Milestone: <% tp.frontmatter.milestone %>
+- Phase: <% tp.frontmatter.phase %>
+- RoadMap: <% tp.frontmatter.roadmap %>
 
 ## Upstream
 
@@ -43,6 +48,3 @@ Priority: `INPUT[select(option(low), option(normal), option(high)):priority]`
 ## Evidence Plan
 
 ## Handoff
-
-
-
