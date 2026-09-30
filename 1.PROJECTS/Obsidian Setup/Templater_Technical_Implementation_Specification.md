@@ -944,13 +944,7 @@ Those belong to TaskNotes and the surfaces consuming TaskNotes.
 
 Kanban owns visual project flow.
 
-Templater may create a project board using:
-
-```text
-Board.template.md
-```
-
-if that template is confirmed to be the canonical board initialization mechanism.
+Templater does not own Kanban board creation. QuickAdd generates milestone-specific board files directly.
 
 Templater does not manage the board after creation.
 
