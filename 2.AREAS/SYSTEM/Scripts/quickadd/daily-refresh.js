@@ -1,7 +1,9 @@
 module.exports = async ({ app, obsidian }) => {
-  const command=app.commands.findCommand("daily-notes");
-  const file=app.vault.getAbstractFileByPath("2.AREAS/DAILY");
+  const command=Object.values(app.commands.commands).find(c=>/daily notes.*open|open.*daily note/i.test(c.name));
   if(command)await app.commands.executeCommandById(command.id);
-  else if(file instanceof obsidian.TFolder)await app.workspace.getLeaf(false).openFile(file);
+  else {
+    const folder=app.vault.getAbstractFileByPath("2.AREAS/DAILY");
+    if(folder instanceof obsidian.TFolder)await app.workspace.getLeaf(false).openFile(folder);
+  }
   new obsidian.Notice("Daily workspace opened.");
 };
