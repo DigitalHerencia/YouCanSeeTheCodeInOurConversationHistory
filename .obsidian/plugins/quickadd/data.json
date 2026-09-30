@@ -659,7 +659,7 @@
         "chooseWhenCreatingNote": false,
         "enabled": true,
         "folders": [
-          "2.AREAS/ZETTLECASTEN/Evergreen"
+          "3.RESOURCES/Knowledge"
         ],
         "chooseFromSubfolders": false
       },
@@ -693,7 +693,7 @@
         "chooseWhenCreatingNote": false,
         "enabled": true,
         "folders": [
-          "2.AREAS/ZETTLECASTEN/Patterns"
+          "2.AREAS/CODE/Patterns"
         ],
         "chooseFromSubfolders": false
       },
