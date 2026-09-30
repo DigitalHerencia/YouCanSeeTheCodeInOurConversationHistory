@@ -12,6 +12,10 @@ tags:
   - content/social
 ---
 
+## Controls
+Status: `INPUT[select(option(idea), option(draft), option(review), option(ready), option(scheduled), option(published), option(archived)):status]`  
+Platform: `INPUT[text:platform]`  
+Scheduled: `INPUT[date:scheduled]`
 # <% tp.file.title %>
 
 ## Hook
