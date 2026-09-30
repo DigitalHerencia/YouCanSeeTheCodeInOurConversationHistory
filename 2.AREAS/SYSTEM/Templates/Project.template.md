@@ -1,6 +1,6 @@
 ---
 type: project
-project_id: <% tp.user.hearthId(tp, tp.file.title) %>
+project_id: <% await tp.system.prompt("Project ID") %>
 project: <% tp.file.title %>
 project_type: <% await tp.system.suggester(["Operations","Product","Design","Engineering","Marketing"],["OPS","PROD","DES","ENG","MKT"]) %>
 status: backlog
