@@ -91,7 +91,7 @@ module.exports = async ({ app, quickAddApi, obsidian, variables }) => {
     }
 
     board.push("", "## Ready", "", "## In Progress", "", "## Review", "", "## Done", "", "## Cancelled", "");
-    await app.vault.create(root + "/Kanban/" + mid + " — " + mtitle + ".md", board.join("\\n"));
+    await app.vault.create(root + "/Kanban/" + mid + " — " + mtitle + ".md", board.join("\n"));
   }
 
   const prd = await createFromTemplate("2.AREAS/SYSTEM/Templates/PRD.template.md", root + "/Artifacts", "PRD — " + name);
