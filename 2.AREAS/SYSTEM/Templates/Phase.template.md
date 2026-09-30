@@ -3,6 +3,7 @@ type: phase
 id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
 project: <% tp.user.hearthProject(tp) %>
 milestone: <% tp.user.hearthMilestone(tp) %>
+roadmap:
 number:
 title:
 status: backlog
@@ -18,7 +19,7 @@ tags:
 ## Human controls
 Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(review), option(done), option(cancelled)):status]` · Target: `INPUT[date:end]` · Risk: `INPUT[select(option(unknown), option(low), option(medium), option(high)):risk]`
 
-## Goal
+## Purpose
 What bounded outcome should this phase produce?
 
 ## Entry Criteria
@@ -26,6 +27,8 @@ What bounded outcome should this phase produce?
 
 ## Exit Criteria
 - 
+
+## RoadMap
 
 ## Tasks
 ![[Active Project Tasks.base]]
