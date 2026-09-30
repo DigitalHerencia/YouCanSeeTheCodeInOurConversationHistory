@@ -1,4 +1,4 @@
-module.exports = async ({ app, quickAddApi, obsidian }) => {
+module.exports = async ({ app, quickAddApi, obsidian, variables }) => {
   const name = (await quickAddApi.inputPrompt("Project name"))?.trim();
   if (!name) return;
 
@@ -73,7 +73,7 @@ module.exports = async ({ app, quickAddApi, obsidian }) => {
       const pf = await createFromTemplate("2.AREAS/SYSTEM/Templates/Phase.template.md", root + "/Phases", pid + " — " + ptitle);
       await app.fileManager.processFrontMatter(pf, fm => { fm.id = pid; fm.number = pid; fm.title = ptitle; fm.project = name; fm.milestone = mid; });
       let pc = await app.vault.read(pf);
-      pc = pc.replace("## Goal\nWhat bounded outcome should this phase produce?", "## Purpose\n" + purpose + "\n\n## RoadMap\n");
+      pc = pc.replace("## Purpose\nWhat bounded outcome should this phase produce?", "## Purpose\n" + purpose + "\n\n## RoadMap\n");
       await app.vault.modify(pf, pc);
 
       const rid = projectId + "-" + mid + "-" + pid;
