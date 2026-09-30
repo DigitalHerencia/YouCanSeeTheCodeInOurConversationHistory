@@ -12,7 +12,9 @@
   "baseFontSize": 18,
   "enabledCssSnippets": [
     "reform-core",
-    "callouts",
-    "mode-neo-modern"
+    "mode-neo-modern",
+    "codex-vercel",
+    "mode-vaporwave",
+    "callouts"
   ]
 }
