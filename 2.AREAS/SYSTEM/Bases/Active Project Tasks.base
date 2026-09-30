@@ -2,7 +2,7 @@ filters:
   and:
     - 'type == "task"'
     - 'file.inFolder("2.AREAS/SYSTEM/_Tasks")'
-    - 'file.hasLink(this.project)' 
+    - 'project == this.project'
 properties:
   file.name:
     displayName: Name
