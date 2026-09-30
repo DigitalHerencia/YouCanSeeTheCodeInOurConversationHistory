@@ -13,19 +13,15 @@ module.exports = async ({ app, quickAddApi, obsidian, variables }) => {
   const root = "1.PROJECTS/" + name;
   if (app.vault.getAbstractFileByPath(root)) throw new Error("Project already exists: " + root);
 
-  for (const folder of [
-    root,
-    root + "/Milestones",
-    root + "/Phases",
-    root + "/RoadMaps",
-    root + "/Kanban",
-    root + "/Artifacts"
-  ]) await app.vault.createFolder(folder);
+  for (const folder of [root, root + "/Milestones", root + "/Phases", root + "/RoadMaps", root + "/Kanban", root + "/Artifacts"]) {
+    await app.vault.createFolder(folder);
+  }
 
   const projectId = type + "-" + name.toUpperCase().replace(/[^A-Z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   const today = window.moment().format("YYYY-MM-DD");
 
-  await app.vault.create(root + "/" + name + ".md",
+  await app.vault.create(
+    root + "/" + name + ".md",
     "---\n" +
     "type: project\nproject_id: " + projectId + "\nproject: " + name + "\nproject_type: " + type + "\n" +
     "status: backlog\npriority: normal\ncreated: " + today + "\nupdated: " + today + "\n" +
@@ -64,21 +60,36 @@ module.exports = async ({ app, quickAddApi, obsidian, variables }) => {
     ]]
   ];
 
-  for (const milestone of milestones) {\n    for (const phase of milestone[2]) {\n      phase.push((await quickAddApi.inputPrompt("RoadMap code for " + milestone[0] + " / " + phase[0]))?.trim());\n    }\n  }\n\n  for (const [mid, mtitle, phases] of milestones) {
+  for (const milestone of milestones) {
+    for (const phase of milestone[2]) {
+      const roadmapCode = (await quickAddApi.inputPrompt("RoadMap code for " + milestone[0] + " / " + phase[0]))?.trim();
+      if (!roadmapCode) return;
+      phase.push(roadmapCode);
+    }
+  }
+
+  for (const [mid, mtitle, phases] of milestones) {
     const mf = await createFromTemplate("2.AREAS/SYSTEM/Templates/Milestone.template.md", root + "/Milestones", mid + " — " + mtitle);
-    await app.fileManager.processFrontMatter(mf, fm => { fm.id = mid; fm.number = mid; fm.title = mtitle; fm.project = name; });
+    await app.fileManager.processFrontMatter(mf, fm => {
+      fm.id = mid; fm.number = mid; fm.title = mtitle; fm.project = name;
+    });
 
     const board = ["---", "kanban-plugin: board", "archive: false", "tags:", "  - type/kanban", "---", "", "# " + mid + " — " + mtitle, "", "## Backlog"];
+
     for (const [pid, ptitle, purpose, roadmapCode] of phases) {
       const pf = await createFromTemplate("2.AREAS/SYSTEM/Templates/Phase.template.md", root + "/Phases", pid + " — " + ptitle);
-      await app.fileManager.processFrontMatter(pf, fm => { fm.id = pid; fm.number = pid; fm.title = ptitle; fm.project = name; fm.milestone = mid; });
+      await app.fileManager.processFrontMatter(pf, fm => {
+        fm.id = pid; fm.number = pid; fm.title = ptitle; fm.project = name; fm.milestone = mid; fm.roadmap_code = roadmapCode;
+      });
       let pc = await app.vault.read(pf);
       pc = pc.replace("## Purpose\nWhat bounded outcome should this phase produce?", "## Purpose\n" + purpose + "\n\n## RoadMap\n");
       await app.vault.modify(pf, pc);
 
-      const rid = projectId + "-" + mid + "-" + pid;
+      const rid = projectId + "-" + mid + "-" + pid + "-" + roadmapCode;
       const rf = await createFromTemplate("2.AREAS/SYSTEM/Templates/RoadMap.template.md", root + "/RoadMaps", rid + " — " + ptitle);
-      await app.fileManager.processFrontMatter(rf, fm => { fm.roadmap_id = rid; fm.project_id = projectId; fm.project = name; fm.milestone = mid; fm.phase = pid; fm.roadmap_code = roadmapCode; fm.title = ptitle; });
+      await app.fileManager.processFrontMatter(rf, fm => {
+        fm.roadmap_id = rid; fm.project_id = projectId; fm.project = name; fm.milestone = mid; fm.phase = pid; fm.roadmap_code = roadmapCode; fm.title = ptitle;
+      });
       board.push("- [[" + pid + " — " + ptitle + "]]");
     }
 
@@ -88,6 +99,7 @@ module.exports = async ({ app, quickAddApi, obsidian, variables }) => {
 
   const prd = await createFromTemplate("2.AREAS/SYSTEM/Templates/PRD.template.md", root + "/Artifacts", "PRD — " + name);
   await app.fileManager.processFrontMatter(prd, fm => { fm.project = name; fm.project_id = projectId; });
+
   const trd = await createFromTemplate("2.AREAS/SYSTEM/Templates/Technical Requirements.template.md", root + "/Artifacts", "Technical Requirements — " + name);
   await app.fileManager.processFrontMatter(trd, fm => { fm.project = name; fm.project_id = projectId; });
 
