@@ -69,32 +69,29 @@ module.exports = async ({ app, quickAddApi, obsidian, variables }) => {
   }
 
   for (const [mid, mtitle, phases] of milestones) {
-    const mf = await createFromTemplate("2.AREAS/SYSTEM/Templates/Milestone.template.md", root + "/Milestones", mid + " — " + mtitle);
-    await app.fileManager.processFrontMatter(mf, fm => {
-      fm.id = mid; fm.number = mid; fm.title = mtitle; fm.project = name;
-    });
+    const milestonePath = root + "/Milestones/" + mid + " — " + mtitle + ".md";
+    await app.vault.create(milestonePath,
+      "---\ntype: milestone\nid: " + mid + "\nproject: " + name + "\nnumber: " + mid + "\ntitle: " + mtitle + "\nstatus: backlog\ntags:\n  - type/milestone\n---\n\n# " + mid + " — " + mtitle + "\n\n## Objective\n\n## Phases\n"
+    );
 
     const board = ["---", "kanban-plugin: board", "archive: false", "tags:", "  - type/kanban", "---", "", "# " + mid + " — " + mtitle, "", "## Backlog"];
 
     for (const [pid, ptitle, purpose, roadmapCode] of phases) {
-      const pf = await createFromTemplate("2.AREAS/SYSTEM/Templates/Phase.template.md", root + "/Phases", pid + " — " + ptitle);
-      await app.fileManager.processFrontMatter(pf, fm => {
-        fm.id = pid; fm.number = pid; fm.title = ptitle; fm.project = name; fm.milestone = mid; fm.roadmap_code = roadmapCode;
-      });
-      let pc = await app.vault.read(pf);
-      pc = pc.replace("## Purpose\nWhat bounded outcome should this phase produce?", "## Purpose\n" + purpose + "\n\n## RoadMap\n");
-      await app.vault.modify(pf, pc);
+      const phasePath = root + "/Phases/" + pid + " — " + ptitle + ".md";
+      await app.vault.create(phasePath,
+        "---\ntype: phase\nid: " + pid + "\nproject: " + name + "\nmilestone: " + mid + "\nroadmap_code: " + roadmapCode + "\ntitle: " + ptitle + "\nstatus: backlog\ntags:\n  - type/phase\n---\n\n# " + pid + " — " + ptitle + "\n\n## Purpose\n" + purpose + "\n\n## Key Activities\n\n## Primary Outputs\n\n## RoadMap\n\n## Tasks\n"
+      );
 
       const rid = projectId + "-" + mid + "-" + pid + "-" + roadmapCode;
-      const rf = await createFromTemplate("2.AREAS/SYSTEM/Templates/RoadMap.template.md", root + "/RoadMaps", rid + " — " + ptitle);
-      await app.fileManager.processFrontMatter(rf, fm => {
-        fm.roadmap_id = rid; fm.project_id = projectId; fm.project = name; fm.milestone = mid; fm.phase = pid; fm.roadmap_code = roadmapCode; fm.title = ptitle;
-      });
+      const roadmapPath = root + "/RoadMaps/" + rid + " — " + ptitle + ".md";
+      await app.vault.create(roadmapPath,
+        "---\ntype: roadmap\nroadmap_id: " + rid + "\nproject_id: " + projectId + "\nproject: " + name + "\nmilestone: " + mid + "\nphase: " + pid + "\nroadmap_code: " + roadmapCode + "\ntitle: " + ptitle + "\nstatus: ready\ntags:\n  - type/roadmap\n---\n\n# " + rid + " — " + ptitle + "\n\n## Purpose\n" + purpose + "\n\n## Key Activities\n\n## Primary Outputs\n\n## Tasks\n\n## Inputs\n\n## Dependencies\n\n## Downstream Consumers\n"
+      );
       board.push("- [[" + pid + " — " + ptitle + "]]");
     }
 
     board.push("", "## Ready", "", "## In Progress", "", "## Review", "", "## Done", "", "## Cancelled", "");
-    await app.vault.create(root + "/Kanban/" + mid + " — " + mtitle + ".md", board.join("\n"));
+    await app.vault.create(root + "/Kanban/" + mid + " — " + mtitle + ".md", board.join("\\n"));
   }
 
   const prd = await createFromTemplate("2.AREAS/SYSTEM/Templates/PRD.template.md", root + "/Artifacts", "PRD — " + name);
