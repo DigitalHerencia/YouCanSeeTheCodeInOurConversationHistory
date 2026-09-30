@@ -77,3 +77,60 @@ Owns table editing.
 ## Conflict rule
 
 When two plugins can perform the same action, the plugin named above owns the workflow. Other plugins may surface the action but must not create competing behavior.
+
+
+## Approved configuration
+
+Templater:
+- Templates folder: `2.AREAS/SYSTEM/Templates`
+- User scripts: `2.AREAS/SYSTEM/Scripts/templater`
+- Ignore `_Tasks`, `_mounts`, and `4.ARCHIVE` on automatic file creation.
+
+QuickAdd:
+- New Project generates the complete project skeleton.
+- Milestone, Phase, RoadMap, and Task workflows use the canonical hierarchy.
+- Project starter variants are removed.
+- Duplicate creation/reconcile workflows are removed.
+
+TaskNotes:
+- Task folder: `2.AREAS/SYSTEM/_Tasks`
+- Task identity: `type/task`
+- Body template: `Task Bridge.template.md`
+- TaskNotes manages task views and lifecycle after creation.
+
+Kanban:
+- Boards live inside project folders.
+- One board per milestone.
+- Phase cards only.
+
+Bases:
+- All reusable Bases live in `2.AREAS/SYSTEM/Bases`.
+- Bases query Markdown properties; they do not create a parallel record store.
+
+Hearth:
+- Home is the default dashboard.
+- Command Center and Project Command Center remain separate.
+- Project Command Center has one selected project.
+- Vault is the Git/statistics dashboard.
+
+Git:
+- Repository status and history remain available from Hearth and the Git view.
+- Git is not used to create or mutate project/task metadata.
+
+Linter:
+- Runs on save.
+- Formats YAML/Markdown without rewriting semantic content.
+
+Meta Bind:
+- Interactive inputs are used for mutable workflow state.
+- Stable IDs are not exposed as routine editable controls.
+
+Note Toolbar:
+- Folder mappings select contextual toolbars.
+- Project, Zettelkasten, System, Blog, Social, Code Lab, Daily, Resources, and Archive contexts have explicit mappings.
+
+Callout Studio:
+- Semantic callout catalog is limited to workflow, evidence, decision, traceability, and guidance use cases.
+
+Iconic:
+- Top-level PARA folders and active Area folders use explicit semantic icons.
