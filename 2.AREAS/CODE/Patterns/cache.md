@@ -1,18 +1,23 @@
 ---
-title: "codependentcoding.simple.block.template"
+title: codependentcoding.simple.block.template
 type: simple
 scope: file
 project: Codependent Coding
 domain: cache
-artifact: "codependentcoding.simple.block.template"
+artifact: codependentcoding.simple.block.template
 kind: simple
-namespace: "codependentcoding.simples.cache.codependentcoding.simple.block.template"
+namespace: codependentcoding.simples.cache.codependentcoding.simple.block.template
 status: draft
 authority: working-note
 parent: "[[codependentcoding.webapp-architecture.master.source-document]]"
-depends_on: ["[[The Maximal Template™ Demo Doctrine]]"]
+depends_on:
+  - "[[The Maximal Template™ Demo Doctrine]]"
 supersedes: []
-tags: [codependent-coding/simples, simples/cache, cache/lifecycle, status/draft]
+tags:
+  - codependent-coding/simples
+  - simples/cache
+  - cache/lifecycle
+  - status/draft
 created: 2026-08-25
 updated: 2026-08-25
 simple_type: cache

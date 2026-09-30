@@ -1,18 +1,23 @@
 ---
-title: "codependentcoding.simple.utility.template"
+title: codependentcoding.simple.utility.template
 type: simple
 scope: file
 project: Codependent Coding
 domain: webhook
-artifact: "codependentcoding.simple.utility.template"
+artifact: codependentcoding.simple.utility.template
 kind: simple
-namespace: "codependentcoding.simples.webhook.codependentcoding.simple.utility.template"
+namespace: codependentcoding.simples.webhook.codependentcoding.simple.utility.template
 status: draft
 authority: working-note
 parent: "[[codependentcoding.webapp-architecture.master.source-document]]"
-depends_on: ["[[The Maximal Template™ Demo Doctrine]]"]
+depends_on:
+  - "[[The Maximal Template™ Demo Doctrine]]"
 supersedes: []
-tags: [codependent-coding/simples, simples/webhook, http/webhook, status/draft]
+tags:
+  - codependent-coding/simples
+  - simples/webhook
+  - http/webhook
+  - status/draft
 created: 2026-08-25
 updated: 2026-08-25
 simple_type: webhook

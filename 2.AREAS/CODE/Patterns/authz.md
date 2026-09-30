@@ -1,18 +1,23 @@
 ---
-title: "codependentcoding.simple.auth.template"
+title: codependentcoding.simple.auth.template
 type: simple
 scope: file
 project: Codependent Coding
 domain: authorization
-artifact: "codependentcoding.simple.auth.template"
+artifact: codependentcoding.simple.auth.template
 kind: simple
-namespace: "codependentcoding.simples.authz.codependentcoding.simple.auth.template"
+namespace: codependentcoding.simples.authz.codependentcoding.simple.auth.template
 status: draft
 authority: working-note
 parent: "[[codependentcoding.webapp-architecture.master.source-document]]"
-depends_on: ["[[The Maximal Template™ Demo Doctrine]]"]
+depends_on:
+  - "[[The Maximal Template™ Demo Doctrine]]"
 supersedes: []
-tags: [codependent-coding/simples, simples/authz, security/authorization, status/draft]
+tags:
+  - codependent-coding/simples
+  - simples/authz
+  - security/authorization
+  - status/draft
 created: 2026-08-25
 updated: 2026-08-25
 simple_type: authz

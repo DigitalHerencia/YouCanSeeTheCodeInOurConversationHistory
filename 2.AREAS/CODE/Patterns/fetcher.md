@@ -1,12 +1,12 @@
 ---
-title: "codependentcoding.simple.dto-mapper.template"
+title: codependentcoding.simple.dto-mapper.template
 type: simple
 scope: file
 project: Codependent Coding
 domain:
-artifact: "codependentcoding.simple.dto-mapper.template"
+artifact: codependentcoding.simple.dto-mapper.template
 kind: simple
-namespace: "codependentcoding.simples.fetcher.codependentcoding.simple.dto.mapper.template"
+namespace: codependentcoding.simples.fetcher.codependentcoding.simple.dto.mapper.template
 status: draft
 authority: working-note
 parent: "[[codependentcoding.webapp-architecture.master.source-document]]"

@@ -3,11 +3,12 @@ type: meeting
 meeting_type: design
 cadence: Daily
 source_identity: 335a4e63bf2381969e40eba8d10bc6bb
-source_path: "3.RESOURCES/Digital Herencia/Meetings/Design Meeting @April 1, 2026 335a4e63bf2381969e40eba8d10bc6bb.md"
+source_path: 3.RESOURCES/Digital Herencia/Meetings/Design Meeting @April 1, 2026 335a4e63bf2381969e40eba8d10bc6bb.md
 date: <% tp.date.now("YYYY-MM-DD") %>
 created: <% tp.date.now("YYYY-MM-DD") %>
 project: <% tp.user.hearthProject(tp) %>
-tags: [type/meeting]
+tags:
+  - type/meeting
 ---
 # Design Meeting — <% tp.date.now("YYYY-MM-DD") %>
 

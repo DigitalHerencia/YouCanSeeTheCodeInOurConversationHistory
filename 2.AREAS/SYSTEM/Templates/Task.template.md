@@ -9,7 +9,8 @@ source_requirement:
 source_document:
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/task]
+tags:
+  - type/task
 ---
 # Task Context — {{TITLE}}
 

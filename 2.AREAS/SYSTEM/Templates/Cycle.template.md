@@ -8,7 +8,8 @@ end:
 goal:
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/cycle]
+tags:
+  - type/cycle
 ---
 # {{TITLE}}
 

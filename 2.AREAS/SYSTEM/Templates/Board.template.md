@@ -3,7 +3,8 @@ type: project-board
 project: <% tp.user.hearthProject(tp) %>
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/kanban]
+tags:
+  - type/kanban
 ---
 # <% tp.file.title %> — Milestone Board
 

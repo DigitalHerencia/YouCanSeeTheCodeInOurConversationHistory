@@ -119,8 +119,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 750.0541381835938,
-    "collapsed": true
+    "width": 750.0541381835938
   },
   "right": {
     "id": "ccfaa394d329b3d1",
@@ -196,6 +195,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -260,6 +260,15 @@
   },
   "active": "6b816a84475eecc6",
   "lastOpenFiles": [
+    "1.PROJECTS/Obsidian Setup/software_engineering_document_suite.md",
+    "1.PROJECTS/Obsidian Setup/Code_Lab_Model.md",
+    "1.PROJECTS/Obsidian Setup/Zettlekasten_Model.md",
+    "1.PROJECTS/Obsidian Setup/Library_Blog_Social_Model.md",
+    "1.PROJECTS/Obsidian Setup/Resources_Archive_Model.md",
+    "README.md",
+    "1.PROJECTS/Obsidian Setup/Code_Lab_Model.md.crdownload",
+    "1.PROJECTS/Obsidian Setup/Project_Model.md",
+    "1.PROJECTS/Obsidian Setup/Project_Model.md.crdownload",
     "2.AREAS/CODE/ROADMAPS/Design Roadmap/DES-M1-P1 1-DESVERIFY – Design Verification 2daa4e63bf2381ca876bc5677d4d215f.md",
     "2.AREAS/BLOG/Who_Dijkstra_Actually_Was.md",
     "2.AREAS/BLOG/User_2478e-The_Model_Can’T_Keep_Up_Anymore.md",
@@ -279,13 +288,6 @@
     "2.AREAS/BLOG/Q1_2026_Devfluencer_Campaign_Plan.md",
     "2.AREAS/BLOG/Pure_Weapon-Grade_Attitude.md",
     "2.AREAS/BLOG/Possessed_By_A_Product_Roadmap.md",
-    "2.AREAS/BLOG/On_The_Emergence_Of_User-Induced_Model_Destabilization_(Uimd).md",
-    "2.AREAS/BLOG/Now_That's_What_I_Call_Dev_Ops.md",
-    "2.AREAS/BLOG/My_Internship_Was_Just_Submitting_Roast_Prs_To_Dev_Influencer_Repos.md",
-    "2.AREAS/BLOG/Monday-Agency_And_Growth.md",
-    "2.AREAS/BLOG/Maximum_Pettiness_Per_Syllable.md",
-    "2.AREAS/BLOG/Managing_Human_Relationships_In_Notion.md",
-    "2.AREAS/BLOG/Loaded_Vibes.md",
     "2.AREAS/CODE/Domains/app/(tenant)/projects/[projectId]/tasks/[taskId]/edit/page.tsx",
     "2.AREAS/CODE/Domains/app/(tenant)/support/knowledge-base/[articleId]/edit/page.tsx",
     "2.AREAS/CODE/Domains/app/(tenant)/projects/[projectId]/tasks/[taskId]/page.tsx",
@@ -294,8 +296,6 @@
     "2.AREAS/CODE/Domains/app/(tenant)/marketing/campaigns/[campaignId]/edit/page.tsx",
     "2.AREAS/CODE/Domains/app/(tenant)/marketing/audiences/[audienceId]/edit/page.tsx",
     "2.AREAS/CODE/Domains/app/(tenant)/crm/leads/[leadId]/edit/page.tsx",
-    "2.AREAS/CODE/Domains/app/(tenant)/crm/contacts/[contactId]/edit/page.tsx",
-    "2.AREAS/CODE/Domains/app/(tenant)/admin/users/[userId]/edit/page.tsx",
     "2.AREAS/CODE/Domains/public/seperator.png",
     "2.AREAS/CODE/Domains/public/Maximal Template Logo.jpg",
     "2.AREAS/CODE/Domains/public/logo cloud.png",

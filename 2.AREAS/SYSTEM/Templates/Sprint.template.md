@@ -9,7 +9,8 @@ end:
 goal:
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/sprint]
+tags:
+  - type/sprint
 ---
 # Sprint {{NUMBER}} — {{TITLE}}
 

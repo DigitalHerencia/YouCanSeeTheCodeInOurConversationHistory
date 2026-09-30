@@ -8,7 +8,9 @@ lesson:
 status: planned
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/codelab, type/evidence]
+tags:
+  - type/codelab
+  - type/evidence
 ---
 # Code Lab Test — {{TITLE}}
 

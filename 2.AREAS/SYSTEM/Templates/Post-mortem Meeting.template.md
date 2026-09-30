@@ -3,11 +3,12 @@ type: meeting
 meeting_type: post-mortem
 cadence: Biweekly
 source_identity: 33fa4e63bf238173a73cf95015e42726
-source_path: "3.RESOURCES/Digital Herencia/Meetings/Post-mortem @April 11, 2026 33fa4e63bf238173a73cf95015e42726.md"
+source_path: 3.RESOURCES/Digital Herencia/Meetings/Post-mortem @April 11, 2026 33fa4e63bf238173a73cf95015e42726.md
 date: <% tp.date.now("YYYY-MM-DD") %>
 created: <% tp.date.now("YYYY-MM-DD") %>
 project: <% tp.user.hearthProject(tp) %>
-tags: [type/meeting]
+tags:
+  - type/meeting
 ---
 # Post-mortem — <% tp.date.now("YYYY-MM-DD") %>
 

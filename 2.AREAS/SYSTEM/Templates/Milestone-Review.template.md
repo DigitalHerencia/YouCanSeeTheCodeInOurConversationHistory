@@ -7,7 +7,8 @@ milestone: <% tp.user.hearthMilestone(tp) %>
 status: proposed
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/review]
+tags:
+  - type/review
 ---
 # Milestone Review — {{TITLE}}
 

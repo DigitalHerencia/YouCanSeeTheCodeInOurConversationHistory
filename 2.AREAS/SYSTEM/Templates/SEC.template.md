@@ -6,7 +6,8 @@ project: <% tp.user.hearthProject(tp) %>
 status: draft
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/document]
+tags:
+  - type/document
 ---
 
 # Security Review — {{TITLE}}

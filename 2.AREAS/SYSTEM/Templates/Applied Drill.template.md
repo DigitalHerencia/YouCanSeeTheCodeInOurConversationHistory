@@ -15,7 +15,8 @@ mastery_state: not-started
 attempt_count: 0
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/codelab]
+tags:
+  - type/codelab
 ---
 # Applied Drill — {{TITLE}}
 

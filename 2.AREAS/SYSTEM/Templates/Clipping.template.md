@@ -8,7 +8,8 @@ author:
 published:
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/resource]
+tags:
+  - type/resource
 ---
 # Web Clipping — {{TITLE}}
 

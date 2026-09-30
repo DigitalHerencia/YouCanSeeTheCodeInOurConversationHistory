@@ -1,14 +1,14 @@
 ---
-title: "Creative Co-Creation and Branching"
-source: "https://chatgpt.com/c/69ee582c-bb58-83e8-8752-8b1ef020886f"
+title: Creative Co-Creation and Branching
+source: https://chatgpt.com/c/69ee582c-bb58-83e8-8752-8b1ef020886f
 created: 2026-04-26
-description: "ChatGPT conversation with 5 messages"
+description: ChatGPT conversation with 5 messages
 tags:
-  - "Obsidian"
-  - "ChatGPT"
-  - "Notes"
-  - "CodependentCoding"
-  - "ConvOS"
+  - Obsidian
+  - ChatGPT
+  - Notes
+  - CodependentCoding
+  - ConvOS
 ---
 Treat branches as:
 

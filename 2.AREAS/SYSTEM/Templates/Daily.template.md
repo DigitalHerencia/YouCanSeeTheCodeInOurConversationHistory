@@ -2,9 +2,10 @@
 type: daily
 id: DLY-<% tp.date.now("YYYY-MM-DD") %>
 created: <% tp.date.now("YYYY-MM-DD") %>
-focus_project: null
-focus_domain: null
-tags: [type/daily]
+focus_project:
+focus_domain:
+tags:
+  - type/daily
 ---
 # <% tp.date.now("dddd, MMMM D, YYYY") %>
 

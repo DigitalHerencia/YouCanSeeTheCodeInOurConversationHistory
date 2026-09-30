@@ -1,12 +1,12 @@
 ---
-title: "codependentcoding.simple.prisma-lifecycle.template"
+title: codependentcoding.simple.prisma-lifecycle.template
 type: simple
 scope: file
 project: Codependent Coding
 domain:
-artifact: "codependentcoding.simple.prisma-lifecycle.template"
+artifact: codependentcoding.simple.prisma-lifecycle.template
 kind: simple
-namespace: "codependentcoding.simples.route.codependentcoding.simple.prisma.lifecycle.template"
+namespace: codependentcoding.simples.route.codependentcoding.simple.prisma.lifecycle.template
 status: draft
 authority: working-note
 parent: "[[codependentcoding.webapp-architecture.master.source-document]]"

@@ -8,7 +8,8 @@ phase: <% tp.user.hearthPhase(tp) %>
 status: proposed
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/review]
+tags:
+  - type/review
 ---
 # Phase Review — {{TITLE}}
 

@@ -1,18 +1,23 @@
 ---
-title: "codependentcoding.simple.transaction.template"
+title: codependentcoding.simple.transaction.template
 type: simple
 scope: file
 project: Codependent Coding
 domain: types
-artifact: "codependentcoding.simple.transaction.template"
+artifact: codependentcoding.simple.transaction.template
 kind: simple
-namespace: "codependentcoding.simples.type.codependentcoding.simple.transaction.template"
+namespace: codependentcoding.simples.type.codependentcoding.simple.transaction.template
 status: draft
 authority: working-note
 parent: "[[codependentcoding.webapp-architecture.master.source-document]]"
-depends_on: ["[[The Maximal Template™ Demo Doctrine]]"]
+depends_on:
+  - "[[The Maximal Template™ Demo Doctrine]]"
 supersedes: []
-tags: [codependent-coding/simples, simples/type, types/compile-time, status/draft]
+tags:
+  - codependent-coding/simples
+  - simples/type
+  - types/compile-time
+  - status/draft
 created: 2026-08-25
 updated: 2026-08-25
 simple_type: type

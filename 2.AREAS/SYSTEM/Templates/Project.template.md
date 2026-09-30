@@ -5,13 +5,14 @@ project_type: <% await tp.system.suggester(["OPS","PROD","DES","ENG","MKT","RES"
 project_code: <% await tp.system.prompt("Approved project work code (TEAM-M#-PHASE-SLUG)") %>
 status: backlog
 priority: normal
-target_end: null
+target_end:
 current_focus: ""
 blocker: ""
 codelab_enabled: false
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/project]
+tags:
+  - type/project
 ---
 # <% tp.file.title %>
 

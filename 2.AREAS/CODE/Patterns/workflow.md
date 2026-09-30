@@ -1,12 +1,12 @@
 ---
-title: "codependentcoding.simple.webhook.template"
+title: codependentcoding.simple.webhook.template
 type: simple
 scope: file
 project: Codependent Coding
 domain:
-artifact: "codependentcoding.simple.webhook.template"
+artifact: codependentcoding.simple.webhook.template
 kind: simple
-namespace: "codependentcoding.simples.workflow.codependentcoding.simple.webhook.template"
+namespace: codependentcoding.simples.workflow.codependentcoding.simple.webhook.template
 status: draft
 authority: working-note
 parent: "[[codependentcoding.webapp-architecture.master.source-document]]"

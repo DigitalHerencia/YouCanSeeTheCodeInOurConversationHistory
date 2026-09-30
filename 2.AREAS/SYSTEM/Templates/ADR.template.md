@@ -6,7 +6,8 @@ project: <% tp.user.hearthProject(tp) %>
 status: proposed
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/decision]
+tags:
+  - type/decision
 ---
 
 # ADR {{ID}} — {{TITLE}}

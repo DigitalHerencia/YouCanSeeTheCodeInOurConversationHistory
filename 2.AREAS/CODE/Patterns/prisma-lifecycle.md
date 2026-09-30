@@ -1,18 +1,23 @@
 ---
-title: "codependentcoding.simple.primitive.template"
+title: codependentcoding.simple.primitive.template
 type: simple
 scope: file
 project: Codependent Coding
 domain: prisma
-artifact: "codependentcoding.simple.primitive.template"
+artifact: codependentcoding.simple.primitive.template
 kind: simple
-namespace: "codependentcoding.simples.prisma.codependentcoding.simple.primitive.template"
+namespace: codependentcoding.simples.prisma.codependentcoding.simple.primitive.template
 status: draft
 authority: working-note
 parent: "[[codependentcoding.webapp-architecture.master.source-document]]"
-depends_on: ["[[The Maximal Template™ Demo Doctrine]]"]
+depends_on:
+  - "[[The Maximal Template™ Demo Doctrine]]"
 supersedes: []
-tags: [codependent-coding/simples, simples/prisma, database/prisma-lifecycle, status/draft]
+tags:
+  - codependent-coding/simples
+  - simples/prisma
+  - database/prisma-lifecycle
+  - status/draft
 created: 2026-08-25
 updated: 2026-08-25
 simple_type: prisma-lifecycle

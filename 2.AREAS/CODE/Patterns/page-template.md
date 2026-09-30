@@ -1,18 +1,23 @@
 ---
-title: "codependentcoding.simple.integration.template"
+title: codependentcoding.simple.integration.template
 type: simple
 scope: file
 project: Codependent Coding
 domain: presentation
-artifact: "codependentcoding.simple.integration.template"
+artifact: codependentcoding.simple.integration.template
 kind: simple
-namespace: "codependentcoding.simples.page-template.codependentcoding.simple.integration.template"
+namespace: codependentcoding.simples.page-template.codependentcoding.simple.integration.template
 status: draft
 authority: working-note
 parent: "[[codependentcoding.webapp-architecture.master.source-document]]"
-depends_on: ["[[The Maximal Template™ Demo Doctrine]]"]
+depends_on:
+  - "[[The Maximal Template™ Demo Doctrine]]"
 supersedes: []
-tags: [codependent-coding/simples, simples/page-template, presentation/template, status/draft]
+tags:
+  - codependent-coding/simples
+  - simples/page-template
+  - presentation/template
+  - status/draft
 created: 2026-08-25
 updated: 2026-08-25
 simple_type: page-template

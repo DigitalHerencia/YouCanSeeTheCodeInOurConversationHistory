@@ -1,18 +1,23 @@
 ---
-title: "codependentcoding.simple.constant.template"
+title: codependentcoding.simple.constant.template
 type: simple
 scope: file
 project: Codependent Coding
 domain: database
-artifact: "codependentcoding.simple.constant.template"
+artifact: codependentcoding.simple.constant.template
 kind: simple
-namespace: "codependentcoding.simples.database.codependentcoding.simple.constant.template"
+namespace: codependentcoding.simples.database.codependentcoding.simple.constant.template
 status: draft
 authority: working-note
 parent: "[[codependentcoding.webapp-architecture.master.source-document]]"
-depends_on: ["[[The Maximal Template™ Demo Doctrine]]"]
+depends_on:
+  - "[[The Maximal Template™ Demo Doctrine]]"
 supersedes: []
-tags: [codependent-coding/simples, simples/database, database/runtime, status/draft]
+tags:
+  - codependent-coding/simples
+  - simples/database
+  - database/runtime
+  - status/draft
 created: 2026-08-25
 updated: 2026-08-25
 simple_type: database

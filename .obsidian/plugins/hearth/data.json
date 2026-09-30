@@ -363,7 +363,7 @@
   "taskNotesDueField": "due",
   "taskNotesPriorityField": "priority",
   "taskNotesDoneValue": "done",
-  "taskFieldsEnabled": true,
+  "taskFieldsEnabled": false,
   "taskFields": [
     "status",
     "priority",

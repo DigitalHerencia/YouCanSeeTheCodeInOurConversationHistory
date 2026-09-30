@@ -3,11 +3,12 @@ type: meeting
 meeting_type: sprint-planning
 cadence: Biweekly
 source_identity: 33fa4e63bf23815cbd2dcc5c27982e55
-source_path: "3.RESOURCES/Digital Herencia/Meetings/Sprint Planning @April 11, 2026 33fa4e63bf23815cbd2dcc5c27982e55.md"
+source_path: 3.RESOURCES/Digital Herencia/Meetings/Sprint Planning @April 11, 2026 33fa4e63bf23815cbd2dcc5c27982e55.md
 date: <% tp.date.now("YYYY-MM-DD") %>
 created: <% tp.date.now("YYYY-MM-DD") %>
 project: <% tp.user.hearthProject(tp) %>
-tags: [type/meeting]
+tags:
+  - type/meeting
 ---
 # Sprint Planning — <% tp.date.now("YYYY-MM-DD") %>
 

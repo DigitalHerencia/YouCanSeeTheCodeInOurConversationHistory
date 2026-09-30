@@ -1,12 +1,12 @@
 ---
-title: "work-package.contract"
+title: work-package.contract
 type: simple
 scope: file
 project: Codependent Coding
 domain:
-artifact: "work-package.contract"
+artifact: work-package.contract
 kind: simple
-namespace: "codependentcoding.simples.action.work.package.contract"
+namespace: codependentcoding.simples.action.work.package.contract
 status: draft
 authority: working-note
 parent: "[[codependentcoding.webapp-architecture.master.source-document]]"

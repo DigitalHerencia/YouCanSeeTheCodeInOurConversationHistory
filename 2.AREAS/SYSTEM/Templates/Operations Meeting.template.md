@@ -3,11 +3,12 @@ type: meeting
 meeting_type: operations
 cadence: Daily
 source_identity: 335a4e63bf2381779660c2f841223158
-source_path: "3.RESOURCES/Digital Herencia/Meetings/Operations Meeting @April 1, 2026 335a4e63bf2381779660c2f841223158.md"
+source_path: 3.RESOURCES/Digital Herencia/Meetings/Operations Meeting @April 1, 2026 335a4e63bf2381779660c2f841223158.md
 date: <% tp.date.now("YYYY-MM-DD") %>
 created: <% tp.date.now("YYYY-MM-DD") %>
 project: <% tp.user.hearthProject(tp) %>
-tags: [type/meeting]
+tags:
+  - type/meeting
 ---
 # Operations Meeting — <% tp.date.now("YYYY-MM-DD") %>
 

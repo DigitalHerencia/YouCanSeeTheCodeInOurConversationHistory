@@ -5,7 +5,8 @@ id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
 week:
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/review]
+tags:
+  - type/review
 ---
 # Weekly Review — {{WEEK}}
 

@@ -5,7 +5,9 @@ date:
 project: <% tp.user.hearthProject(tp) %>
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/meeting, type/review]
+tags:
+  - type/meeting
+  - type/review
 ---
 # Post-mortem — {{DATE}}
 

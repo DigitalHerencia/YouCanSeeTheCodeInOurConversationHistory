@@ -7,7 +7,8 @@ status: active
 source_links: []
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/evidence]
+tags:
+  - type/evidence
 ---
 # {{TITLE}}
 

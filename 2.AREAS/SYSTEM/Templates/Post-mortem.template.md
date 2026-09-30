@@ -4,7 +4,8 @@ meeting_type: post-mortem
 date:
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/meeting]
+tags:
+  - type/meeting
 ---
 
 # Post-mortem — {{DATE}}

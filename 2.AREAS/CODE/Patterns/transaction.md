@@ -1,12 +1,12 @@
 ---
-title: "codependentcoding.simple.template"
+title: codependentcoding.simple.template
 type: simple
 scope: file
 project: Codependent Coding
 domain: database
-artifact: "codependentcoding.simple.template"
+artifact: codependentcoding.simple.template
 kind: simple
-namespace: "codependentcoding.simples.transaction.codependentcoding.simple.template"
+namespace: codependentcoding.simples.transaction.codependentcoding.simple.template
 status: draft
 authority: working-note
 parent: "[[codependentcoding.webapp-architecture.master.source-document]]"

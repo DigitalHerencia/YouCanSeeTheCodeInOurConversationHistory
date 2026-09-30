@@ -7,7 +7,8 @@ status: draft
 authority: operational
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/document]
+tags:
+  - type/document
 ---
 # SOP — {{TITLE}}
 

@@ -3,11 +3,12 @@ type: meeting
 meeting_type: weekly-sync
 cadence: Weekly
 source_identity: 33fa4e63bf23810ebff4c7a8ed2d4f97
-source_path: "3.RESOURCES/Digital Herencia/Meetings/Weekly Sync @April 11, 2026 33fa4e63bf23810ebff4c7a8ed2d4f97.md"
+source_path: 3.RESOURCES/Digital Herencia/Meetings/Weekly Sync @April 11, 2026 33fa4e63bf23810ebff4c7a8ed2d4f97.md
 date: <% tp.date.now("YYYY-MM-DD") %>
 created: <% tp.date.now("YYYY-MM-DD") %>
 project: <% tp.user.hearthProject(tp) %>
-tags: [type/meeting]
+tags:
+  - type/meeting
 ---
 # Weekly Sync — <% tp.date.now("YYYY-MM-DD") %>
 

@@ -1,18 +1,23 @@
 ---
-title: "codependentcoding.simple.route.template"
+title: codependentcoding.simple.route.template
 type: simple
 scope: file
 project: Codependent Coding
 domain: validation
-artifact: "codependentcoding.simple.route.template"
+artifact: codependentcoding.simple.route.template
 kind: simple
-namespace: "codependentcoding.simples.schema.codependentcoding.simple.route.template"
+namespace: codependentcoding.simples.schema.codependentcoding.simple.route.template
 status: draft
 authority: working-note
 parent: "[[codependentcoding.webapp-architecture.master.source-document]]"
-depends_on: ["[[The Maximal Template™ Demo Doctrine]]"]
+depends_on:
+  - "[[The Maximal Template™ Demo Doctrine]]"
 supersedes: []
-tags: [codependent-coding/simples, simples/schema, validation/runtime, status/draft]
+tags:
+  - codependent-coding/simples
+  - simples/schema
+  - validation/runtime
+  - status/draft
 created: 2026-08-25
 updated: 2026-08-25
 simple_type: schema

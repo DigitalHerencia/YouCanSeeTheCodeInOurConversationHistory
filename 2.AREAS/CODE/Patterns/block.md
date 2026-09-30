@@ -1,12 +1,12 @@
 ---
-title: "codependentcoding.simple.authz.template"
+title: codependentcoding.simple.authz.template
 type: simple
 scope: file
 project: Codependent Coding
 domain: presentation
-artifact: "codependentcoding.simple.authz.template"
+artifact: codependentcoding.simple.authz.template
 kind: simple
-namespace: "codependentcoding.simples.block.codependentcoding.simple.authz.template"
+namespace: codependentcoding.simples.block.codependentcoding.simple.authz.template
 status: draft
 authority: working-note
 parent: "[[codependentcoding.webapp-architecture.master.source-document]]"

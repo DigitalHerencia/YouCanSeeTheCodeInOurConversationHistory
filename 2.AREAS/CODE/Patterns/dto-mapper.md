@@ -1,18 +1,23 @@
 ---
-title: "codependentcoding.simple.feature.template"
+title: codependentcoding.simple.feature.template
 type: simple
 scope: file
 project: Codependent Coding
 domain: data-transport
-artifact: "codependentcoding.simple.feature.template"
+artifact: codependentcoding.simple.feature.template
 kind: simple
-namespace: "codependentcoding.simples.dto.codependentcoding.simple.feature.template"
+namespace: codependentcoding.simples.dto.codependentcoding.simple.feature.template
 status: draft
 authority: working-note
 parent: "[[codependentcoding.webapp-architecture.master.source-document]]"
-depends_on: ["[[The Maximal Template™ Demo Doctrine]]"]
+depends_on:
+  - "[[The Maximal Template™ Demo Doctrine]]"
 supersedes: []
-tags: [codependent-coding/simples, simples/dto-mapper, data/transport, status/draft]
+tags:
+  - codependent-coding/simples
+  - simples/dto-mapper
+  - data/transport
+  - status/draft
 created: 2026-08-25
 updated: 2026-08-25
 simple_type: dto-mapper

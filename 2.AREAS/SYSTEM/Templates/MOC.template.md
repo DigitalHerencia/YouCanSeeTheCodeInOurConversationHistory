@@ -5,7 +5,8 @@ topic:
 status: active
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
-tags: [type/evidence]
+tags:
+  - type/evidence
 ---
 # Map of Content — {{TITLE}}
 
