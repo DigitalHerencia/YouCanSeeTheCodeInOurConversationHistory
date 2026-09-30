@@ -34,20 +34,6 @@
       "target": "hearth:new-note"
     },
     {
-      "id": "action-new-drawing",
-      "label": "New drawing",
-      "icon": "pen-tool",
-      "type": "command",
-      "target": "hearth:new-drawing"
-    },
-    {
-      "id": "action-record-voice",
-      "label": "Record voice",
-      "icon": "mic",
-      "type": "command",
-      "target": "hearth:record-voice"
-    },
-    {
       "id": "action-daily-note",
       "label": "Daily note",
       "icon": "calendar",
@@ -353,7 +339,7 @@
       "iconLucide": "github"
     }
   ],
-  "activeDashboardId": "dash-git",
+  "activeDashboardId": "dash-home",
   "pinnedCards": [],
   "gridColumns": 12,
   "rowHeight": 54,
