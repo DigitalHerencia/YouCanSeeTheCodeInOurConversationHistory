@@ -1,5 +1,5 @@
 ---
-type: cycle
+type: dev-cycle
 id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
 title:
 status: planned
@@ -13,7 +13,7 @@ tags:
 ---
 # {{TITLE}}
 
-## Cycle Goal
+## Dev Cycle
 
 ## Dates
 - Start:
@@ -22,7 +22,7 @@ tags:
 ## Active Projects
 <!-- generated -->
 
-## Milestones / Phase Windows
+## Development Windows
 <!-- generated -->
 
 ## Planned Focus
