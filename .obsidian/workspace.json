@@ -18,6 +18,54 @@
               "icon": "lucide-layout-dashboard",
               "title": "Home"
             }
+          },
+          {
+            "id": "b6294e29ed5ca54a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1.PROJECTS/Obsidian Setup/Code_Lab_Model.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Code_Lab_Model"
+            }
+          },
+          {
+            "id": "1b0d936b6203f4c3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1.PROJECTS/Obsidian Setup/CodeSpace_Technical_Implementation_Specification.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "CodeSpace_Technical_Implementation_Specification"
+            }
           }
         ]
       }
@@ -40,7 +88,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false,
+                "autoReveal": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -260,8 +308,17 @@
   },
   "active": "6b816a84475eecc6",
   "lastOpenFiles": [
-    "1.PROJECTS/Obsidian Setup/software_engineering_document_suite.md",
+    "1.PROJECTS/Obsidian Setup/CodeSpace_Technical_Implementation_Specification.md",
     "1.PROJECTS/Obsidian Setup/Code_Lab_Model.md",
+    "1.PROJECTS/Obsidian Setup/Kanban_Technical_Implementation_Specification.md",
+    "1.PROJECTS/Obsidian Setup/TaskNotes_Technical_Implementation_Specification.md",
+    "2.AREAS/SYSTEM/Templates/MOC.template.md",
+    "2.AREAS/SYSTEM/Templates/Fleeting Note.template.md",
+    "2.AREAS/SYSTEM/Templates/Learning Journal.template.md",
+    "1.PROJECTS/Obsidian Setup/MetaBind_Technical_Implementation_Specification.md",
+    "1.PROJECTS/Obsidian Setup/Templater_Technical_Implementation_Specification.md",
+    "1.PROJECTS/Obsidian Setup/QuickAdd_Technical_Implementation_Specification.md",
+    "1.PROJECTS/Obsidian Setup/software_engineering_document_suite.md",
     "1.PROJECTS/Obsidian Setup/Zettlekasten_Model.md",
     "1.PROJECTS/Obsidian Setup/Library_Blog_Social_Model.md",
     "1.PROJECTS/Obsidian Setup/Resources_Archive_Model.md",
@@ -279,15 +336,6 @@
     "2.AREAS/BLOG/The_Vibes_Development_System_-_A_Practical_Architecture.md",
     "2.AREAS/BLOG/The_United_States_Circuit_Court_Of_Frontend_Violations.md",
     "2.AREAS/BLOG/The_Stupid_Lesson.md",
-    "2.AREAS/BLOG/The_Speed_of_Absurdity_&_The_Sophisticated_Stupidity_Principle.md",
-    "2.AREAS/BLOG/The_Night_Chatgpt_Taught_Me_Pr_Also_Means_Public_Relations.md",
-    "2.AREAS/BLOG/The_Dev_Mixtape_That_Crashed_My_Context_Window.md",
-    "2.AREAS/BLOG/System_Identity.md",
-    "2.AREAS/BLOG/So_Should_You_Use_Obsidian.md",
-    "2.AREAS/BLOG/Regrets-Cigarettes-Neural-Nets.Map.md",
-    "2.AREAS/BLOG/Q1_2026_Devfluencer_Campaign_Plan.md",
-    "2.AREAS/BLOG/Pure_Weapon-Grade_Attitude.md",
-    "2.AREAS/BLOG/Possessed_By_A_Product_Roadmap.md",
     "2.AREAS/CODE/Domains/app/(tenant)/projects/[projectId]/tasks/[taskId]/edit/page.tsx",
     "2.AREAS/CODE/Domains/app/(tenant)/support/knowledge-base/[articleId]/edit/page.tsx",
     "2.AREAS/CODE/Domains/app/(tenant)/projects/[projectId]/tasks/[taskId]/page.tsx",
