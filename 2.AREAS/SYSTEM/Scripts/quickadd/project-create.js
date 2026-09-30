@@ -44,19 +44,19 @@ module.exports = async ({ app, quickAddApi, obsidian, variables }) => {
 
   const milestones = [
     ["M1", "Foundation & Architecture", [
-      ["P1.1", "Product Discovery & Business Definition", "Validate problem and define scope."],
-      ["P1.2", "Platform & Operations Scaffolding", "Establish technical and operational foundations."],
-      ["P1.3", "Internal Alpha Validation", "Validate system integration end-to-end."]
+      ["P1.1", "Product Discovery & Business Definition", "Validate problem and define scope.", "Market/customer problem synthesis; ICP/persona definition; pricing/packaging hypotheses; risk/compliance identification; success criteria.", "PRD; initial roadmap; feature-gating assumptions; business constraints."],
+      ["P1.2", "Platform & Operations Scaffolding", "Establish technical and operational foundations.", "Repo and CI/CD setup; auth and tenant scaffolding; DB schema baseline; design system alignment; operational tooling.", "Running dev environment; core system integrations; design primitives; operational readiness baseline."],
+      ["P1.3", "Internal Alpha Validation", "Validate system integration end-to-end.", "Internal-only deployment; integration testing; security posture validation; UX flow validation; observability baseline.", "Internal alpha environment; known-risk register; Go/No-Go recommendation."]
     ]],
     ["M2", "MVP Build & Launch", [
-      ["P2.1", "Core Feature Implementation", "Build MVP feature set."],
-      ["P2.2", "QA & Launch Readiness", "Reduce launch risk."],
-      ["P2.3", "Soft Launch & Feedback Loop", "Validate real-world usage."]
+      ["P2.1", "Core Feature Implementation", "Build MVP feature set.", "Core workflows; RBAC/billing; MVP UI; feature flagging; critical-path tests.", "Feature-complete MVP; deployment-ready builds; release notes."],
+      ["P2.2", "QA & Launch Readiness", "Reduce launch risk.", "Regression; performance/load; billing edge cases; accessibility; incident readiness.", "Launch approval; rollback plan; monitoring dashboards."],
+      ["P2.3", "Soft Launch & Feedback Loop", "Validate real-world usage.", "Controlled public release; onboarding; CRM feedback; usage analytics; rapid iteration.", "Feedback reports; conversion metrics; MVP validation assessment."]
     ]],
     ["M3", "Expansion & Hardening", [
-      ["P3.1", "Feature Expansion", "Deliver high-value enhancements."],
-      ["P3.2", "Platform Hardening & Security", "Improve reliability and security."],
-      ["P3.3", "Growth Enablement", "Support scale and repeatability."]
+      ["P3.1", "Feature Expansion", "Deliver high-value enhancements.", "Advanced features; enterprise readiness; config/admin tooling; export/reporting.", "Expanded feature set; updated docs; upsell-ready capabilities."],
+      ["P3.2", "Platform Hardening & Security", "Improve reliability and security.", "Performance optimization; security patching; permission audits; observability; cost optimization.", "Hardened platform; security/performance reports; reduced operational risk."],
+      ["P3.3", "Growth Enablement", "Support scale and repeatability.", "Marketing automation; sales enablement; customer lifecycle optimization; retention/expansion.", "Growth campaigns; refined positioning; scalable operating model."]
     ]]
   ];
 
