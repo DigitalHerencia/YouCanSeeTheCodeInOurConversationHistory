@@ -1,10 +1,12 @@
 ---
 type: task
+task_id:
+project_id:
 status: ready
 project: <% tp.user.hearthProject(tp) %>
 milestone: <% tp.user.hearthMilestone(tp) %>
 phase: <% tp.user.hearthPhase(tp) %>
-ticket_code:
+roadmap:
 source_requirement:
 source_document:
 created: <% tp.date.now("YYYY-MM-DD") %>
@@ -28,6 +30,7 @@ Status: `INPUT[select(option(backlog), option(ready), option(in-progress), optio
 - Project:
 - Milestone:
 - Phase:
+- RoadMap:
 
 ## Upstream
 
