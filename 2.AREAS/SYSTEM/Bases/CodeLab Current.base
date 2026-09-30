@@ -1,7 +1,7 @@
 filters:
   and:
-    - 'type == "codelab"'
-    - 'file.inFolder("2.AREAS/SYSTEM/Code Lab")'
+    - 'type != "lesson"'
+    - 'file.inFolder("2.AREAS/CODE")'
     - 'mastery_state != "mastered"'
 properties:
   file.name:
@@ -11,9 +11,9 @@ views:
     name: "CodeLab Current"
     order:
       - file.name
-      - codelab_kind
-      - module
-      - devcycle
-      - mastery_state
-      - mastery
-      - confidence
+      - type
+      - domain
+      - dev_cycle
+      - standard
+      - pattern
+      - status
