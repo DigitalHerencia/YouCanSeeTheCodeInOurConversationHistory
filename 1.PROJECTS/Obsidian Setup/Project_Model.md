@@ -10,11 +10,12 @@ The hierarchy is:
 Project
 └── Milestone
     └── Phase
-        └── Task / Ticket
-            └── Project Artifact
+        └── RoadMap
+            └── Task / Ticket
+                └── Project Artifact
 ```
 
-A Project is the container for a body of work. A Milestone is a major stage of that work. A Phase is a defined segment of work within a Milestone. A Task or Ticket is an executable unit of work within a Phase. Project artifacts are the documents and other outputs produced while completing that work.
+A Project is the container for a body of work. A Milestone is a major stage of that work. A Phase is a defined segment of work within a Milestone. A RoadMap is the concrete execution plan for a Phase. A Task or Ticket is an executable unit of work within a RoadMap. Project artifacts are the documents and other outputs produced while completing that work.
 
 The model is intentionally separate from the Code Lab model. Projects describe work being performed. Code Lab describes the engineering knowledge and reusable implementation patterns used to perform that work.
 
@@ -72,11 +73,17 @@ The Project Kanban board uses Milestones as its major organizational units. Each
 
 A Phase is a defined segment of work within a Milestone.
 
-Phases contain the Tasks/Tickets required to complete that segment of the project.
+Phases contain one or more RoadMaps that define the concrete execution plan for the phase.
+
+### RoadMap
+
+A RoadMap is the concrete execution plan for a Phase. The canonical RoadMap files in `2.AREAS/SYSTEM/RoadMaps` are the prototype references used to define the shape, purpose, key activities, primary outputs, and task sequence of project work.
+
+A RoadMap is identified by the project/milestone/phase/roadmap code used by the Ticketing SOP.
 
 ### Task / Ticket
 
-A Task or Ticket is an executable unit of project work.
+A Task or Ticket is an executable unit of project work within a RoadMap.
 
 Every ticket is represented by a TaskNote in:
 
@@ -84,7 +91,7 @@ Every ticket is represented by a TaskNote in:
 2.AREAS/SYSTEM/_Tasks
 ```
 
-TaskNotes carry the project, Milestone, Phase, status, dependency, and deliverable context needed to execute the ticket.
+TaskNotes carry the project, Milestone, Phase, RoadMap, status, dependency, and deliverable context needed to execute the ticket.
 
 Canonical Task properties:
 
@@ -111,6 +118,8 @@ Project Definition
 Milestone Definition
         ↓
 Phase Definition
+        ↓
+RoadMap Definition
         ↓
 Task / Ticket Creation
         ↓
@@ -542,29 +551,29 @@ Deliverable
 
 ## Kanban
 
-Each Project has a project-local Kanban board.
+Each Project has one Kanban Board for each Milestone.
 
-The board organizes the Project's Milestones and Phases as the project roadmap. It is not a replacement for the TaskNote hierarchy.
+Each milestone board contains cards for that milestone's Phases only. Tasks are never Kanban cards.
 
 Conceptually:
 
 ```text
-Project Kanban
-    ├── Milestone
-    │   ├── Phase
-    │   ├── Phase
-    │   └── Phase
-    ├── Milestone
-    │   ├── Phase
-    │   ├── Phase
-    │   └── Phase
-    └── Milestone
-        ├── Phase
-        ├── Phase
-        └── Phase
+Project
+├── M1 Board
+│   ├── P1.1 Phase card
+│   ├── P1.2 Phase card
+│   └── P1.3 Phase card
+├── M2 Board
+│   ├── P2.1 Phase card
+│   ├── P2.2 Phase card
+│   └── P2.3 Phase card
+└── M3 Board
+    ├── P3.1 Phase card
+    ├── P3.2 Phase card
+    └── P3.3 Phase card
 ```
 
-Tasks remain individual TaskNotes beneath their corresponding Phase.
+Tasks remain individual TaskNotes beneath their corresponding RoadMap.
 
 ## Project Map
 
