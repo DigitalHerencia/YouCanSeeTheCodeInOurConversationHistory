@@ -1,0 +1,17 @@
+filters:
+  and:
+    - 'type == "social-post"'
+    - 'file.inFolder("2.AREAS/SOCIAL")'
+    - 'status != "published"'
+properties:
+  file.name:
+    displayName: Title
+views:
+  - type: table
+    name: "Social Editorial"
+    order:
+      - file.name
+      - platform
+      - status
+      - scheduled
+      - updated
