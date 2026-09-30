@@ -18,33 +18,8 @@
               "icon": "lucide-layout-dashboard",
               "title": "Home"
             }
-          },
-          {
-            "id": "3ca308fa4eb97815",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1.PROJECTS/Obsidian Setup/Obsidian Setup.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Obsidian Setup"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -144,7 +119,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 444.059814453125,
+    "width": 750.0541381835938,
     "collapsed": true
   },
   "right": {
@@ -221,7 +196,6 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1.PROJECTS/Obsidian Setup/Obsidian Setup.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -251,7 +225,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 409.2999267578125
+    "width": 409.2999267578125,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -283,55 +258,55 @@
       "iconic:Open rulebook": false
     }
   },
-  "active": "3ca308fa4eb97815",
+  "active": "6b816a84475eecc6",
   "lastOpenFiles": [
-    "4.ARCHIVE/Notion/Portfolio/T01 Define company objectives/OKR Tracker/KR1 1 2dba4e63bf23802cba4cc14ceb2f4129.md",
-    "4.ARCHIVE/Notion/Portfolio/T01 Define company objectives/OKR Tracker/Enforce meeting → decision → task as the only exec 2dba4e63bf238015a340d0fe122c054b.md",
-    "4.ARCHIVE/Notion/Portfolio/T01 Define company objectives/OKR Tracker/Create execution confidence through visibility, no 2dba4e63bf238098bf1bf19f24a5e77f.md",
-    "4.ARCHIVE/Notion/Portfolio/ENG-M1-P1 1-INIT – Environment Initialization/Technical Requirements Document (TRD) (1)/Tangia 2e5a4e63bf238125a24bd435b336a8c3.md",
-    "4.ARCHIVE/Notion/Portfolio/ENG-M1-P1 1-INIT – Environment Initialization/Product Requirements Document (PRD) (1)/Tangia 2e5a4e63bf2381ccb627ccf3a8da39b8.md",
-    "4.ARCHIVE/Notion/Portfolio/ENG-M1-P1 1-INIT – Environment Initialization/Copilot Instructions for Competitive Advantage Pla/Tangia 2e5a4e63bf238122acfcda6a18b901e3.md",
     "2.AREAS/CODE/ROADMAPS/Design Roadmap/DES-M1-P1 1-DESVERIFY – Design Verification 2daa4e63bf2381ca876bc5677d4d215f.md",
-    "1.PROJECTS/Obsidian Setup/enterprise_strategy_engineering_operational_suite.md",
-    "1.PROJECTS/Obsidian Setup/Obsidian Setup.md",
-    "1.PROJECTS/Obsidian Setup/enterprise_strategy_engineering_operational_suite.md.crdownload",
-    "1.PROJECTS/Obsidian Setup/software_engineering_document_suite.md",
-    "1.PROJECTS/Obsidian Setup/software_engineering_document_suite.md.crdownload",
-    "1.PROJECTS/Obsidian Setup.md",
-    "1.PROJECTS/Obsidian Setup",
-    "1.PROJECTS/New folder",
-    "2.AREAS/SYSTEM/SOPs/Cycles 2d8a4e63bf23800a8dbeff4b4ae1cd19.md",
-    "2.AREAS/SYSTEM/Templates/Design Meeting.template.md",
-    "2.AREAS/ZETTLECASTEN/Inbox/Inbox.md",
+    "2.AREAS/BLOG/Who_Dijkstra_Actually_Was.md",
+    "2.AREAS/BLOG/User_2478e-The_Model_Can’T_Keep_Up_Anymore.md",
+    "2.AREAS/BLOG/Undead_Dev.md",
+    "2.AREAS/BLOG/Tinder_Dev_Roast_Mode.md",
+    "2.AREAS/BLOG/Threat_Model.md",
+    "2.AREAS/BLOG/Thinking_vs_Execution_vs_Machines.md",
+    "2.AREAS/BLOG/The_Vibes_Development_System_-_A_Practical_Architecture.md",
+    "2.AREAS/BLOG/The_United_States_Circuit_Court_Of_Frontend_Violations.md",
+    "2.AREAS/BLOG/The_Stupid_Lesson.md",
+    "2.AREAS/BLOG/The_Speed_of_Absurdity_&_The_Sophisticated_Stupidity_Principle.md",
+    "2.AREAS/BLOG/The_Night_Chatgpt_Taught_Me_Pr_Also_Means_Public_Relations.md",
+    "2.AREAS/BLOG/The_Dev_Mixtape_That_Crashed_My_Context_Window.md",
+    "2.AREAS/BLOG/System_Identity.md",
+    "2.AREAS/BLOG/So_Should_You_Use_Obsidian.md",
+    "2.AREAS/BLOG/Regrets-Cigarettes-Neural-Nets.Map.md",
+    "2.AREAS/BLOG/Q1_2026_Devfluencer_Campaign_Plan.md",
+    "2.AREAS/BLOG/Pure_Weapon-Grade_Attitude.md",
+    "2.AREAS/BLOG/Possessed_By_A_Product_Roadmap.md",
+    "2.AREAS/BLOG/On_The_Emergence_Of_User-Induced_Model_Destabilization_(Uimd).md",
+    "2.AREAS/BLOG/Now_That's_What_I_Call_Dev_Ops.md",
+    "2.AREAS/BLOG/My_Internship_Was_Just_Submitting_Roast_Prs_To_Dev_Influencer_Repos.md",
+    "2.AREAS/BLOG/Monday-Agency_And_Growth.md",
+    "2.AREAS/BLOG/Maximum_Pettiness_Per_Syllable.md",
+    "2.AREAS/BLOG/Managing_Human_Relationships_In_Notion.md",
+    "2.AREAS/BLOG/Loaded_Vibes.md",
+    "2.AREAS/CODE/Domains/app/(tenant)/projects/[projectId]/tasks/[taskId]/edit/page.tsx",
+    "2.AREAS/CODE/Domains/app/(tenant)/support/knowledge-base/[articleId]/edit/page.tsx",
+    "2.AREAS/CODE/Domains/app/(tenant)/projects/[projectId]/tasks/[taskId]/page.tsx",
+    "2.AREAS/CODE/Domains/app/(tenant)/projects/[projectId]/tasks/[taskId]/edit",
+    "2.AREAS/CODE/Domains/app/(tenant)/projects/[projectId]/tasks/new/page.tsx",
+    "2.AREAS/CODE/Domains/app/(tenant)/marketing/campaigns/[campaignId]/edit/page.tsx",
+    "2.AREAS/CODE/Domains/app/(tenant)/marketing/audiences/[audienceId]/edit/page.tsx",
+    "2.AREAS/CODE/Domains/app/(tenant)/crm/leads/[leadId]/edit/page.tsx",
+    "2.AREAS/CODE/Domains/app/(tenant)/crm/contacts/[contactId]/edit/page.tsx",
+    "2.AREAS/CODE/Domains/app/(tenant)/admin/users/[userId]/edit/page.tsx",
+    "2.AREAS/CODE/Domains/public/seperator.png",
+    "2.AREAS/CODE/Domains/public/Maximal Template Logo.jpg",
+    "2.AREAS/CODE/Domains/public/logo cloud.png",
+    "2.AREAS/CODE/Domains/public/favicon.png",
+    "2.AREAS/CODE/Template/public/seperator.png",
+    "2.AREAS/CODE/Template/public/Maximal Template Logo.jpg",
+    "2.AREAS/CODE/Template/public/logo cloud.png",
+    "2.AREAS/CODE/Template/public/favicon.png",
     "2.AREAS/SYSTEM/Assets/Digital Herencia Logo.jpg",
-    "2.AREAS/SYSTEM/Assets/pro.jpg",
-    "2.AREAS/SYSTEM/Assets/oh-high-mark.webp",
-    "2.AREAS/SYSTEM/Assets/Here's another thing that I saw coming but never would have guessed it..jpeg",
-    "2.AREAS/SYSTEM/Assets/Grey.avif",
     "2.AREAS/SYSTEM/Assets/Digital Herencia Logo (2).jpg",
-    "2.AREAS/CODE",
-    "2.AREAS/BLOG/50.BLOG.Who_Dijkstra_Actually_Was.md",
-    "2.AREAS/BLOG/50.BLOG.User_2478e-The_Model_Can’T_Keep_Up_Anymore.md",
-    "2.AREAS/BLOG/50.BLOG.Undead_Dev.md",
-    "2.AREAS/BLOG/50.BLOG.Tinder_Dev_Roast_Mode.md",
-    "2.AREAS/BLOG/50.BLOG.Threat_Model.md",
-    "2.AREAS/BLOG/50.BLOG.Thinking_vs_Execution_vs_Machines.md",
-    "2.AREAS/BLOG/50.BLOG.The_Vibes_Development_System_-_A_Practical_Architecture.md",
-    "2.AREAS/BLOG/50.BLOG.The_United_States_Circuit_Court_Of_Frontend_Violations.md",
-    "2.AREAS/BLOG/50.BLOG.The_Stupid_Lesson.md",
-    "2.AREAS/BLOG/50.BLOG.The_Speed_of_Absurdity_&_The_Sophisticated_Stupidity_Principle.md",
-    "2.AREAS/BLOG/50.BLOG.The_Night_Chatgpt_Taught_Me_Pr_Also_Means_Public_Relations.md",
-    "2.AREAS/BLOG/50.BLOG.The_Dev_Mixtape_That_Crashed_My_Context_Window.md",
-    "2.AREAS/BLOG",
-    "2.AREAS/CODE_LAB",
-    "codex/templates",
-    "codex/hearth",
-    "codex",
     "2.AREAS/SYSTEM/HEARTH/Digital Herencia.canvas",
-    "3.RESOURCES/assets/BG4.jpg",
-    "3.RESOURCES/assets/BG3.jpg",
-    "3.RESOURCES/assets/BG.jpg",
-    "3.RESOURCES/assets/black_logo.png",
     "Untitled.canvas",
     "obsidian/Canvases/codependent-coding.workspace.canvas"
   ]
