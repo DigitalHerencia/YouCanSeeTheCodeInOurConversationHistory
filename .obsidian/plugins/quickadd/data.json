@@ -1953,6 +1953,25 @@
       "runOnStartup": false,
       "command": true,
       "id": "hearth-125"
+    },
+    {
+      "name": "Add RoadMap",
+      "type": "Macro",
+      "macro": {
+        "name": "Add RoadMap",
+        "commands": [
+          {
+            "name": "Add RoadMap",
+            "type": "UserScript",
+            "id": "hearth-126",
+            "path": "roadmap"
+          }
+        ],
+        "id": "hearth-roadmap"
+      },
+      "runOnStartup": false,
+      "command": true,
+      "id": "hearth-126"
     }
   ],
   "inputPrompt": "single-line",
