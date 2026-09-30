@@ -17,6 +17,9 @@ tags:
 ## Human controls
 Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(review), option(done), option(cancelled)):status]` · Target: `INPUT[date:target_end]` · Risk: `INPUT[select(option(unknown), option(low), option(medium), option(high)):risk]`
 
+## Controls
+Status: `INPUT[select(option(backlog), option(in-progress), option(review), option(done), option(cancelled)):status]`
+
 ## Objective
 What validated product/business state does this milestone represent?
 
