@@ -433,7 +433,7 @@ Milestone
   ↓
 Phase
   ↓
-Goal
+RoadMap
   ↓
 Task
 ```
@@ -446,7 +446,7 @@ At minimum, Templater must support initialization of:
 Project
 Milestone
 Phase
-Goal
+RoadMap
 Task
 ```
 
@@ -459,7 +459,7 @@ Phase.template.md
 Task.template.md
 ```
 
-A canonical Goal template must be established if Goals are represented as individual notes rather than only sections/records within another document.
+A canonical RoadMap template must be established if RoadMaps are represented as individual notes rather than only sections/records within another document.
 
 This is a template-model decision that should be resolved before automation.
 
@@ -478,7 +478,7 @@ Project
   │      │
   │      └── Phase
   │             │
-  │             └── Goal
+  │             └── RoadMap
   │                    │
   │                    └── Task
 ```
