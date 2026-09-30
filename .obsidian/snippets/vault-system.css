@@ -1,0 +1,69 @@
+/* Canonical Hearth / Vercel-vaporwave vault surface */
+:root {
+  --vault-bg: #09090b;
+  --vault-panel: rgba(17, 17, 24, .82);
+  --vault-panel-strong: rgba(24, 24, 34, .94);
+  --vault-border: rgba(255,255,255,.08);
+  --vault-text: #f4f4f5;
+  --vault-muted: #a1a1aa;
+  --vault-accent: #a78bfa;
+  --vault-cyan: #67e8f9;
+  --vault-pink: #f0abfc;
+  --vault-radius: 10px;
+}
+
+body {
+  --background-primary: var(--vault-bg);
+  --background-secondary: #0f0f13;
+  --background-secondary-alt: #14141a;
+  --background-modifier-border: var(--vault-border);
+  --text-normal: var(--vault-text);
+  --text-muted: var(--vault-muted);
+  --interactive-accent: var(--vault-accent);
+  --radius-s: 6px;
+  --radius-m: var(--vault-radius);
+  --radius-l: 14px;
+  --line-width: 760px;
+  --line-height-normal: 1.65;
+}
+
+.markdown-reading-view,
+.markdown-source-view {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+.metadata-container {
+  border: 1px solid var(--vault-border);
+  border-radius: var(--vault-radius);
+  background: var(--vault-panel);
+}
+
+.callout {
+  border: 1px solid var(--vault-border);
+  background: var(--vault-panel);
+  border-radius: var(--vault-radius);
+}
+
+.workspace-tab-header-container {
+  border-bottom: 1px solid var(--vault-border);
+}
+
+.workspace-tab-header.is-active {
+  background: var(--vault-panel-strong);
+}
+
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  background: rgba(167,139,250,.10);
+}
+
+.cm-editor,
+.markdown-preview-view {
+  font-variant-ligatures: common-ligatures;
+}
+
+.Hearth,
+.hearth-card {
+  border: 1px solid var(--vault-border);
+  border-radius: var(--vault-radius);
+}
