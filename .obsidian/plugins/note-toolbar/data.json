@@ -102,12 +102,12 @@
           "tooltip": "Open Hearth home",
           "hasCommand": false,
           "inGallery": false,
-          "link": "Hearth/Home.md",
+          "link": "",
           "linkAttr": {
             "commandCheck": false,
-            "commandId": "",
+            "commandId": "hearth:Open Hearth home",
             "hasVars": false,
-            "type": "file",
+            "type": "command",
             "target": "tab"
           },
           "visibility": {
@@ -599,6 +599,42 @@
       "hasCommand": false,
       "icon": "kanban-square",
       "items": [
+        {
+          "icon": "layout-dashboard",
+          "hasCommand": false,
+          "uuid": "hearth-toolbar-project-center",
+          "linkAttr": {
+            "commandCheck": false,
+            "commandId": "",
+            "hasVars": false,
+            "type": "file",
+            "target": "tab"
+          },
+          "tooltip": "Open selected-project Command Center",
+          "label": "PROJECT CENTER",
+          "visibility": {
+            "viewMode": "all",
+            "mobile": {
+              "components": [
+                "icon"
+              ]
+            },
+            "desktop": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            },
+            "tablet": {
+              "components": [
+                "icon",
+                "label"
+              ]
+            }
+          },
+          "inGallery": false,
+          "link": "2.AREAS/SYSTEM/Dashboards/Project Command Center.md"
+        },
         {
           "icon": "square-plus",
           "hasCommand": true,
