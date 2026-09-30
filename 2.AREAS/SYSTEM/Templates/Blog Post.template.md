@@ -10,6 +10,9 @@ tags:
   - content/blog
 ---
 
+## Controls
+Status: `INPUT[select(option(idea), option(draft), option(review), option(ready), option(scheduled), option(published), option(archived)):status]`  
+Scheduled: `INPUT[date:scheduled]`
 # <% tp.file.title %>
 
 ## Thesis
