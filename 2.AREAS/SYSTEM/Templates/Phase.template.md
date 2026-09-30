@@ -1,8 +1,8 @@
 ---
 type: phase
 id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
-project: <% tp.user.hearthProject(tp) %>
-milestone: <% tp.user.hearthMilestone(tp) %>
+project: <% await tp.system.prompt("Project") %>
+milestone: <% await tp.system.prompt("Milestone ID") %>
 roadmap:
 number:
 title:
