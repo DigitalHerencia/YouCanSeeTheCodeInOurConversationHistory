@@ -36,7 +36,7 @@
   "fileRules": [],
   "folderRules": [
     {
-      "id": "cb7c9447-5cdb-4716-a053-7f2e9f967ab8",
+      "id": "vault-rule-01",
       "name": "1.PROJECTS",
       "icon": "target",
       "color": "#a78bfa",
@@ -51,7 +51,7 @@
       "enabled": true
     },
     {
-      "id": "95dc023a-8ce1-4e2f-8a3d-a2ed3c133acb",
+      "id": "vault-rule-02",
       "name": "2.AREAS",
       "icon": "layers",
       "color": "#60a5fa",
@@ -66,7 +66,7 @@
       "enabled": true
     },
     {
-      "id": "835d48bf-430c-4beb-aa93-1cff97bc4b59",
+      "id": "vault-rule-03",
       "name": "3.RESOURCES",
       "icon": "library",
       "color": "#2dd4bf",
@@ -81,7 +81,7 @@
       "enabled": true
     },
     {
-      "id": "27389827-1dde-4ff2-8df2-d400444280a1",
+      "id": "vault-rule-04",
       "name": "4.ARCHIVE",
       "icon": "archive",
       "color": "#94a3b8",
@@ -96,23 +96,8 @@
       "enabled": true
     },
     {
-      "id": "e5bd68ab-20a9-4d9f-ba4d-d32b89a4a22e",
-      "name": "AMOEBA",
-      "icon": "spline",
-      "color": "#fb923c",
-      "match": "all",
-      "conditions": [
-        {
-          "source": "path",
-          "operator": "is",
-          "value": "AMOEBA"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "id": "eab2e19f-c864-448d-b8d5-2e2ea31d0458",
-      "name": "DAILY",
+      "id": "vault-rule-05",
+      "name": "2.AREAS/DAILY",
       "icon": "calendar-days",
       "color": "#facc15",
       "match": "all",
@@ -120,59 +105,29 @@
         {
           "source": "path",
           "operator": "is",
-          "value": "DAILY"
+          "value": "2.AREAS/DAILY"
         }
       ],
       "enabled": true
     },
     {
-      "id": "3d11a819-a293-40ba-98db-75dee7539378",
-      "name": "HABITS",
-      "icon": "repeat-2",
-      "color": "#4ade80",
+      "id": "vault-rule-06",
+      "name": "2.AREAS/CODE",
+      "icon": "code-2",
+      "color": "#67e8f9",
       "match": "all",
       "conditions": [
         {
           "source": "path",
           "operator": "is",
-          "value": "HABITS"
+          "value": "2.AREAS/CODE"
         }
       ],
       "enabled": true
     },
     {
-      "id": "065676f6-b05d-46cd-8e23-099aa9f8cb4c",
-      "name": "HEARTH",
-      "icon": "layout-dashboard",
-      "color": "#c084fc",
-      "match": "all",
-      "conditions": [
-        {
-          "source": "path",
-          "operator": "is",
-          "value": "HEARTH"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "id": "8aa0daf5-2b11-4a48-a995-4949b79c158c",
-      "name": "SYSTEM",
-      "icon": "settings-2",
-      "color": "#94a3b8",
-      "match": "all",
-      "conditions": [
-        {
-          "source": "path",
-          "operator": "is",
-          "value": "SYSTEM"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "id": "00c3cc8c-dd0c-4e72-9114-7012485f8126",
-      "name": "ZETTLECASTEN",
+      "id": "vault-rule-07",
+      "name": "2.AREAS/ZETTLECASTEN",
       "icon": "network",
       "color": "#22d3ee",
       "match": "all",
@@ -180,7 +135,67 @@
         {
           "source": "path",
           "operator": "is",
-          "value": "ZETTLECASTEN"
+          "value": "2.AREAS/ZETTLECASTEN"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "id": "vault-rule-08",
+      "name": "2.AREAS/LIBRARY",
+      "icon": "library-big",
+      "color": "#c4b5fd",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "path",
+          "operator": "is",
+          "value": "2.AREAS/LIBRARY"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "id": "vault-rule-09",
+      "name": "2.AREAS/BLOG",
+      "icon": "pen-line",
+      "color": "#f0abfc",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "path",
+          "operator": "is",
+          "value": "2.AREAS/BLOG"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "id": "vault-rule-10",
+      "name": "2.AREAS/SOCIAL",
+      "icon": "share-2",
+      "color": "#fb7185",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "path",
+          "operator": "is",
+          "value": "2.AREAS/SOCIAL"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "id": "vault-rule-11",
+      "name": "2.AREAS/SYSTEM",
+      "icon": "settings-2",
+      "color": "#94a3b8",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "path",
+          "operator": "is",
+          "value": "2.AREAS/SYSTEM"
         }
       ],
       "enabled": true
