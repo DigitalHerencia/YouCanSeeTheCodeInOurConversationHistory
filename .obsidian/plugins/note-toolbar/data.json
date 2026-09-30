@@ -34,6 +34,22 @@
     {
       "folder": "4.ARCHIVE",
       "toolbar": "00000000-0000-4000-8000-000000000005"
+    },
+    {
+      "folder": "2.AREAS/BLOG",
+      "toolbar": "00000000-0000-4000-8000-000000000001"
+    },
+    {
+      "folder": "2.AREAS/SOCIAL",
+      "toolbar": "00000000-0000-4000-8000-000000000001"
+    },
+    {
+      "folder": "2.AREAS/CODE",
+      "toolbar": "00000000-0000-4000-8000-000000000005"
+    },
+    {
+      "folder": "2.AREAS/LIBRARY",
+      "toolbar": "00000000-0000-4000-8000-000000000005"
     }
   ],
   "icon": "circle-ellipsis",
@@ -125,7 +141,7 @@
           "link": "",
           "linkAttr": {
             "commandCheck": false,
-            "commandId": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000001",
+            "commandId": "quickadd:choice:91c8f3a1-b5de-4e66-9a10-000000000003",
             "hasVars": false,
             "type": "command"
           },
@@ -625,7 +641,7 @@
             "hasVars": false,
             "type": "command",
             "commandCheck": true,
-            "commandId": "quickadd:choice:hearth-111"
+            "commandId": "quickadd:choice:hearth-7fb735a5"
           },
           "tooltip": "Add a project milestone",
           "label": "MILESTONE",
@@ -659,7 +675,7 @@
             "hasVars": false,
             "type": "command",
             "commandCheck": true,
-            "commandId": "quickadd:choice:hearth-112"
+            "commandId": "quickadd:choice:hearth-3ea43cbc"
           },
           "tooltip": "Add a phase to current milestone",
           "label": "PHASE",
@@ -869,7 +885,7 @@
             "hasVars": false,
             "type": "command",
             "commandCheck": true,
-            "commandId": "quickadd:choice:hearth-132"
+            "commandId": "quickadd:choice:hearth-035"
           },
           "visibility": {
             "viewMode": "all",
@@ -901,7 +917,7 @@
             "hasVars": false,
             "type": "command",
             "commandCheck": true,
-            "commandId": "quickadd:choice:hearth-142"
+            "commandId": "quickadd:choice:hearth-62749706"
           },
           "visibility": {
             "viewMode": "all",
