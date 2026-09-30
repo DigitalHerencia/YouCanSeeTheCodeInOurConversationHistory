@@ -1,47 +1,36 @@
 ---
 type: phase
-id: <% tp.user.hearthId(tp, "{{TITLE}}") %>
+id: <% await tp.system.prompt("Phase ID") %>
 project: <% await tp.system.prompt("Project") %>
 milestone: <% await tp.system.prompt("Milestone ID") %>
-roadmap:
-number:
-title:
+roadmap_code:
+title: <% tp.file.title %>
 status: backlog
-risk:
+priority: normal
+target_end:
+risk: unknown
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
 tags:
   - type/phase
 ---
 
-# {{TITLE}}
-
-## Human controls
-Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(review), option(done), option(cancelled)):status]` · Target: `INPUT[date:end]` · Risk: `INPUT[select(option(unknown), option(low), option(medium), option(high)):risk]`
+# <% tp.file.title %>
 
 ## Controls
 Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(review), option(done), option(cancelled)):status]`  
-Priority: `INPUT[select(option(low), option(normal), option(high)):priority]`
+Priority: `INPUT[select(option(low), option(normal), option(high)):priority]`  
+Target: `INPUT[date:target_end]`  
+Risk: `INPUT[select(option(unknown), option(low), option(medium), option(high)):risk]`
 
 ## Purpose
-What bounded outcome should this phase produce?
 
-## Entry Criteria
-- 
+## Key Activities
 
-## Exit Criteria
-- 
+## Primary Outputs
 
 ## RoadMap
 
 ## Tasks
-![[Active Project Tasks.base]]
 
 ## Review
-- What changed?
-- What was validated?
-- What remains?
-- What advances next?
-
-
-
