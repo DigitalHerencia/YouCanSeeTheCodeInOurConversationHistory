@@ -37,7 +37,7 @@ Anything that is not clearly Product, Design, Engineering, or Marketing defaults
 
 ### Project
 
-A Project defines the overall body of work and provides the context in which Milestones, Phases, Tasks, and project artifacts exist.
+A Project defines the overall body of work and provides the context in which Milestones, Phases, RoadMaps, Tasks, and project artifacts exist.
 
 Canonical Project properties:
 
@@ -57,7 +57,7 @@ Project implementation:
 - QuickAdd creates the project structure.
 - Templater generates project documents from templates in `2.AREAS/SYSTEM/Templates`.
 - The project note maps the project hierarchy and links to its related objects and artifacts.
-- A project-local Kanban board represents the project's Milestones and Phases.
+- Each Milestone has its own project-local Kanban board, and each board contains Phase cards only.
 - A Resources note maps related material from `3.RESOURCES`.
 - A Codebase note maps the Code Lab material and mounted repository files used by the project.
 - A Posts note maps related material from `2.AREAS/BLOG` and `2.AREAS/SOCIAL`.
@@ -67,7 +67,7 @@ Project implementation:
 
 A Milestone is a major stage of project execution.
 
-The Project Kanban board uses Milestones as its major organizational units. Each Milestone contains Phases, and the Phases represent the work segments displayed and managed within that Milestone.
+Each Milestone has a dedicated Kanban board. The board contains that Milestone's Phase cards only. RoadMaps and Tasks remain below the Phase level.
 
 ### Phase
 
