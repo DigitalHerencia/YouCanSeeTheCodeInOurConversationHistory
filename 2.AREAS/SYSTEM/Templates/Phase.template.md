@@ -19,6 +19,10 @@ tags:
 ## Human controls
 Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(blocked), option(review), option(done), option(cancelled)):status]` · Target: `INPUT[date:end]` · Risk: `INPUT[select(option(unknown), option(low), option(medium), option(high)):risk]`
 
+## Controls
+Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(review), option(done), option(cancelled)):status]`  
+Priority: `INPUT[select(option(low), option(normal), option(high)):priority]`
+
 ## Purpose
 What bounded outcome should this phase produce?
 
