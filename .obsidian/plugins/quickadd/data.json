@@ -1407,6 +1407,40 @@
       "runOnStartup": false,
       "command": true,
       "id": "hearth-126"
+    },
+    {
+      "name": "New Blog Draft",
+      "id": "hearth-blog-001",
+      "type": "Template",
+      "templatePath": "2.AREAS/SYSTEM/Templates/Blog Post.template.md",
+      "openFile": true,
+      "folder": {
+        "createInSameFolderAsActiveFile": false,
+        "chooseWhenCreatingNote": false,
+        "enabled": true,
+        "folders": [
+          "2.AREAS/BLOG/Drafts"
+        ],
+        "chooseFromSubfolders": false
+      },
+      "command": true
+    },
+    {
+      "name": "New Social Draft",
+      "id": "hearth-social-001",
+      "type": "Template",
+      "templatePath": "2.AREAS/SYSTEM/Templates/Social Post.template.md",
+      "openFile": true,
+      "folder": {
+        "createInSameFolderAsActiveFile": false,
+        "chooseWhenCreatingNote": false,
+        "enabled": true,
+        "folders": [
+          "2.AREAS/SOCIAL/Drafts"
+        ],
+        "chooseFromSubfolders": false
+      },
+      "command": true
     }
   ],
   "inputPrompt": "single-line",
