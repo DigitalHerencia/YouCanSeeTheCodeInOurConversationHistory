@@ -76,16 +76,16 @@ module.exports = async ({ app, quickAddApi, obsidian, variables }) => {
 
     const board = ["---", "kanban-plugin: board", "archive: false", "tags:", "  - type/kanban", "---", "", "# " + mid + " — " + mtitle, "", "## Backlog"];
 
-    for (const [pid, ptitle, purpose, roadmapCode] of phases) {
+    for (const [pid, ptitle, purpose, activities, outputs, roadmapCode] of phases) {
       const phasePath = root + "/Phases/" + pid + " — " + ptitle + ".md";
       await app.vault.create(phasePath,
-        "---\ntype: phase\nid: " + pid + "\nproject: " + name + "\nmilestone: " + mid + "\nroadmap_code: " + roadmapCode + "\ntitle: " + ptitle + "\nstatus: backlog\ntags:\n  - type/phase\n---\n\n# " + pid + " — " + ptitle + "\n\n## Purpose\n" + purpose + "\n\n## Key Activities\n\n## Primary Outputs\n\n## RoadMap\n\n## Tasks\n"
+        "---\ntype: phase\nid: " + pid + "\nproject: " + name + "\nmilestone: " + mid + "\nroadmap_code: " + roadmapCode + "\ntitle: " + ptitle + "\nstatus: backlog\ntags:\n  - type/phase\n---\n\n# " + pid + " — " + ptitle + "\n\n## Purpose\n" + purpose + "\n\n## Key Activities\n" + activities + "\n\n## Primary Outputs\n" + outputs + "\n\n## RoadMap\n\n## Tasks\n"
       );
 
       const rid = projectId + "-" + mid + "-" + pid + "-" + roadmapCode;
       const roadmapPath = root + "/RoadMaps/" + rid + " — " + ptitle + ".md";
       await app.vault.create(roadmapPath,
-        "---\ntype: roadmap\nroadmap_id: " + rid + "\nproject_id: " + projectId + "\nproject: " + name + "\nmilestone: " + mid + "\nphase: " + pid + "\nroadmap_code: " + roadmapCode + "\ntitle: " + ptitle + "\nstatus: ready\ntags:\n  - type/roadmap\n---\n\n# " + rid + " — " + ptitle + "\n\n## Purpose\n" + purpose + "\n\n## Key Activities\n\n## Primary Outputs\n\n## Tasks\n\n## Inputs\n\n## Dependencies\n\n## Downstream Consumers\n"
+        "---\ntype: roadmap\nroadmap_id: " + rid + "\nproject_id: " + projectId + "\nproject: " + name + "\nmilestone: " + mid + "\nphase: " + pid + "\nroadmap_code: " + roadmapCode + "\ntitle: " + ptitle + "\nstatus: ready\ntags:\n  - type/roadmap\n---\n\n# " + rid + " — " + ptitle + "\n\n## Purpose\n" + purpose + "\n\n## Key Activities\n" + activities + "\n\n## Primary Outputs\n" + outputs + "\n\n## Tasks\n\n## Inputs\n\n## Dependencies\n\n## Downstream Consumers\n"
       );
       board.push("- [[" + pid + " — " + ptitle + "]]");
     }
