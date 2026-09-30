@@ -156,7 +156,7 @@ QuickAdd
 │   ├── Open Project
 │   ├── Create Milestone
 │   ├── Create Phase
-│   ├── Create Goal
+│   ├── Create RoadMap
 │   ├── Create Task
 │   └── Create Artifact
 │
@@ -246,7 +246,7 @@ Milestone
    ↓
 Phase
    ↓
-Goal
+RoadMap
    ↓
 Task
 ```
@@ -977,7 +977,7 @@ CREATE
 ├── New Project
 ├── New Milestone
 ├── New Phase
-├── New Goal
+├── New RoadMap
 ├── New Task
 ├── New Project Artifact
 ├── New Resource
