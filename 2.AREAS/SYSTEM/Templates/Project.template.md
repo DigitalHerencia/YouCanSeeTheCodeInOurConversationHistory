@@ -1,8 +1,8 @@
 ---
 type: project
-title: <% tp.file.title %>
-project_type: <% await tp.system.suggester(["OPS","PROD","DES","ENG","MKT","RES"],["OPS","PROD","DES","ENG","MKT","RES"]) %>
-project_code: <% await tp.system.prompt("Approved project work code (TEAM-M#-PHASE-SLUG)") %>
+project_id: <% tp.user.hearthId(tp, tp.file.title) %>
+project: <% tp.file.title %>
+project_type: <% await tp.system.suggester(["Operations","Product","Design","Engineering","Marketing"],["OPS","PROD","DES","ENG","MKT"]) %>
 status: backlog
 priority: normal
 target_end:
