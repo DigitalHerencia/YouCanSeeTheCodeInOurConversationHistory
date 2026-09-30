@@ -64,12 +64,12 @@ module.exports = async ({ app, quickAddApi, obsidian, variables }) => {
     ]]
   ];
 
-  for (const [mid, mtitle, phases] of milestones) {
+  for (const milestone of milestones) {\n    for (const phase of milestone[2]) {\n      phase.push((await quickAddApi.inputPrompt("RoadMap code for " + milestone[0] + " / " + phase[0]))?.trim());\n    }\n  }\n\n  for (const [mid, mtitle, phases] of milestones) {
     const mf = await createFromTemplate("2.AREAS/SYSTEM/Templates/Milestone.template.md", root + "/Milestones", mid + " — " + mtitle);
     await app.fileManager.processFrontMatter(mf, fm => { fm.id = mid; fm.number = mid; fm.title = mtitle; fm.project = name; });
 
     const board = ["---", "kanban-plugin: board", "archive: false", "tags:", "  - type/kanban", "---", "", "# " + mid + " — " + mtitle, "", "## Backlog"];
-    for (const [pid, ptitle, purpose] of phases) {
+    for (const [pid, ptitle, purpose, roadmapCode] of phases) {
       const pf = await createFromTemplate("2.AREAS/SYSTEM/Templates/Phase.template.md", root + "/Phases", pid + " — " + ptitle);
       await app.fileManager.processFrontMatter(pf, fm => { fm.id = pid; fm.number = pid; fm.title = ptitle; fm.project = name; fm.milestone = mid; });
       let pc = await app.vault.read(pf);
@@ -78,7 +78,7 @@ module.exports = async ({ app, quickAddApi, obsidian, variables }) => {
 
       const rid = projectId + "-" + mid + "-" + pid;
       const rf = await createFromTemplate("2.AREAS/SYSTEM/Templates/RoadMap.template.md", root + "/RoadMaps", rid + " — " + ptitle);
-      await app.fileManager.processFrontMatter(rf, fm => { fm.roadmap_id = rid; fm.project_id = projectId; fm.project = name; fm.milestone = mid; fm.phase = pid; fm.title = ptitle; });
+      await app.fileManager.processFrontMatter(rf, fm => { fm.roadmap_id = rid; fm.project_id = projectId; fm.project = name; fm.milestone = mid; fm.phase = pid; fm.roadmap_code = roadmapCode; fm.title = ptitle; });
       board.push("- [[" + pid + " — " + ptitle + "]]");
     }
 
