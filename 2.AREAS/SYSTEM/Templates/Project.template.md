@@ -27,6 +27,11 @@ Describe the owner-approved project outcome and cite the requirement or decision
 - [ ] Each project outcome has a measurable acceptance condition.
 - [ ] Constraints, assumptions, and dependencies link to source evidence.
 
+## Controls
+Status: `INPUT[select(option(backlog), option(ready), option(in-progress), option(review), option(done), option(cancelled)):status]`  
+Priority: `INPUT[select(option(low), option(normal), option(high)):priority]`  
+Target: `INPUT[date:target_end]`
+
 ## Current state
 <!-- HEARTH:BEGIN PROJECT-STATE -->
 Reconciled automatically from linked milestone, phase, and TaskNotes records.
