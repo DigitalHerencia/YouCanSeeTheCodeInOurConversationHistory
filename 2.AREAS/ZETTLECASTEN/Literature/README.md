@@ -1,0 +1,3 @@
+# Literature
+
+Literature-derived notes.
