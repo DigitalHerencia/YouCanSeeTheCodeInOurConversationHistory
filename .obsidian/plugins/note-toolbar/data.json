@@ -61,9 +61,139 @@
     "startup-help-welcome": true
   },
   "ribbon": [],
-  "rules": [],
+  "rules": [
+    {
+      "id": "b27fedfd-d6c2-4e33-aefb-c1b29fe42ef0",
+      "conjunction": "and",
+      "conditions": [
+        {
+          "id": "fd73b8c5-c65a-424e-931d-b3daff6beaef",
+          "field": "folder",
+          "operator": "is",
+          "value": "1.PROJECTS"
+        }
+      ],
+      "toolbar": "00000000-0000-4000-8000-000000000004"
+    },
+    {
+      "id": "c0705637-75f7-4a18-8051-a14eb8a57edc",
+      "conjunction": "and",
+      "conditions": [
+        {
+          "id": "c2cdde89-354c-4d89-87bd-a4c1b9c83304",
+          "field": "folder",
+          "operator": "is",
+          "value": "2.AREAS/DAILY"
+        }
+      ],
+      "toolbar": "00000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "e148ce7a-f354-405f-9bc7-45f96f2bfd32",
+      "conjunction": "and",
+      "conditions": [
+        {
+          "id": "cfd62dff-37a8-4e0b-8724-6f300166be77",
+          "field": "folder",
+          "operator": "is",
+          "value": "2.AREAS/ZETTLECASTEN"
+        }
+      ],
+      "toolbar": "00000000-0000-4000-8000-000000000006"
+    },
+    {
+      "id": "a51edc74-9ba7-4b40-8a50-590f75778045",
+      "conjunction": "and",
+      "conditions": [
+        {
+          "id": "adaa154f-f1de-4bbd-a82e-53b607715006",
+          "field": "folder",
+          "operator": "is",
+          "value": "3.RESOURCES"
+        }
+      ],
+      "toolbar": "00000000-0000-4000-8000-000000000002"
+    },
+    {
+      "id": "b7995940-9bec-4fbd-8b34-14af15ce9ac5",
+      "conjunction": "and",
+      "conditions": [
+        {
+          "id": "f495b69d-0ed5-4640-85cc-d4e990e5f7df",
+          "field": "folder",
+          "operator": "is",
+          "value": "2.AREAS/SYSTEM"
+        }
+      ],
+      "toolbar": "00000000-0000-4000-8000-000000000005"
+    },
+    {
+      "id": "acd6f49b-c27a-406e-a22f-9f2e6ed7623e",
+      "conjunction": "and",
+      "conditions": [
+        {
+          "id": "bb5b48f1-a842-4a60-a8de-de15082883cd",
+          "field": "folder",
+          "operator": "is",
+          "value": "4.ARCHIVE"
+        }
+      ],
+      "toolbar": "00000000-0000-4000-8000-000000000005"
+    },
+    {
+      "id": "e2de098f-eaea-4d84-8e2b-72ef7efdaa87",
+      "conjunction": "and",
+      "conditions": [
+        {
+          "id": "def4a9f0-5bcf-488d-8889-9b35330c2591",
+          "field": "folder",
+          "operator": "is",
+          "value": "2.AREAS/BLOG"
+        }
+      ],
+      "toolbar": "00000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "f08bbb73-5be8-4c95-a745-f943bcebe077",
+      "conjunction": "and",
+      "conditions": [
+        {
+          "id": "aff91e82-172b-472d-927b-e52e7b20b0e9",
+          "field": "folder",
+          "operator": "is",
+          "value": "2.AREAS/SOCIAL"
+        }
+      ],
+      "toolbar": "00000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "ea7f3e5d-c2df-4ab4-a21c-69c14d8db219",
+      "conjunction": "and",
+      "conditions": [
+        {
+          "id": "c3ee0dc7-c54e-46b6-82cd-928f41ea3209",
+          "field": "folder",
+          "operator": "is",
+          "value": "2.AREAS/CODE"
+        }
+      ],
+      "toolbar": "00000000-0000-4000-8000-000000000005"
+    },
+    {
+      "id": "afb54218-6a37-4038-9c15-170cabc93672",
+      "conjunction": "and",
+      "conditions": [
+        {
+          "id": "be72162b-fe97-403e-b83a-9154b4e868e0",
+          "field": "folder",
+          "operator": "is",
+          "value": "2.AREAS/LIBRARY"
+        }
+      ],
+      "toolbar": "00000000-0000-4000-8000-000000000005"
+    }
+  ],
   "scriptingEnabled": true,
-  "showEditInFabMenu": true,
   "showLaunchpad": true,
   "showToolbarIn": {
     "audio": false,
@@ -981,7 +1111,8 @@
       ]
     }
   ],
-  "version": 20260703.1,
+  "version": 20260812.1,
   "webviewerToolbar": null,
-  "whatsnew_version": "0"
+  "whatsnew_version": "0",
+  "showEditInFabMenu": true
 }

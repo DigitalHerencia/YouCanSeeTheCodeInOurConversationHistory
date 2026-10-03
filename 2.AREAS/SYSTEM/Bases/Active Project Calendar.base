@@ -1,14 +1,14 @@
 filters:
   and:
-    - 'type == "task"'
-    - 'file.inFolder("2.AREAS/SYSTEM/_Tasks")'
-    - 'file.hasLink(this.project)'
+    - type == "task"
+    - file.inFolder("2.AREAS/SYSTEM/_Tasks")
+    - file.hasLink(this.project)
 properties:
   file.name:
     displayName: Name
 views:
   - type: table
-    name: "Active Project Calendar"
+    name: Active Project Calendar
     order:
       - file.name
       - project

@@ -276,10 +276,10 @@
     }
   ],
   "recurrenceMigrated": false,
-  "lastSeenVersion": "4.12.4",
+  "lastSeenVersion": "4.13.8",
   "showReleaseNotesOnUpdate": true,
   "checkForUpdatesOnStartup": true,
-  "lastNotifiedReleaseVersion": "4.13.6",
+  "lastNotifiedReleaseVersion": "4.13.8",
   "starterNoteCreated": true,
   "showTrackedTasksInStatusBar": false,
   "autoStopTimeTrackingOnComplete": true,
@@ -515,7 +515,8 @@
     "isRunning": false,
     "timeRemaining": 1500
   },
-  "lastPomodoroDate": "2026-09-10",
+  "lastPomodoroDate": "2026-10-03",
   "taskFolder": "2.AREAS/SYSTEM/_Tasks",
-  "taskFolderPath": "2.AREAS/SYSTEM/_Tasks"
+  "taskFolderPath": "2.AREAS/SYSTEM/_Tasks",
+  "completionMenuAsSubmenu": true
 }

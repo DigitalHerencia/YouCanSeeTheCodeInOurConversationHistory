@@ -31,7 +31,7 @@
       {
         "id": "ea8bbd3825de8741",
         "type": "tabs",
-        "dimension": 73.19034852546918,
+        "dimension": 50.87248322147651,
         "children": [
           {
             "id": "c4c877b3aa7a0983",
@@ -83,7 +83,7 @@
       {
         "id": "88ab593478d53fa7",
         "type": "tabs",
-        "dimension": 26.809651474530828,
+        "dimension": 49.127516778523486,
         "children": [
           {
             "id": "57a4f364a8f5286a",
@@ -119,7 +119,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 750.0541381835938
+    "width": 403.1632080078125,
+    "collapsed": true
   },
   "right": {
     "id": "ccfaa394d329b3d1",
@@ -195,13 +196,25 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
               "title": "Outline"
+            }
+          },
+          {
+            "id": "1f6ec90f78eb6df0",
+            "type": "leaf",
+            "state": {
+              "type": "callout-studio-occurrences",
+              "state": {
+                "ids": [],
+                "allTypes": true
+              },
+              "icon": "callout-studio-statistics",
+              "title": "Find callouts"
             }
           }
         ],
@@ -225,8 +238,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 409.2999267578125,
-    "collapsed": true
+    "width": 409.2999267578125
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -260,42 +272,42 @@
   },
   "active": "6b816a84475eecc6",
   "lastOpenFiles": [
+    "1.PROJECTS/Test/Test.md",
+    "1.PROJECTS/Test/Codebase.md",
+    "1.PROJECTS/Test/Posts.md",
+    "1.PROJECTS/Test/Resources.md",
+    "1.PROJECTS/Test/Artifacts",
+    "1.PROJECTS/Test/Kanban",
+    "1.PROJECTS/Test/RoadMaps",
+    "1.PROJECTS/Test/Phases",
+    "1.PROJECTS/Test/Milestones",
+    "1.PROJECTS/Test",
+    "2.AREAS/SYSTEM/Scripts/quickadd/project-create.js",
+    "2.AREAS/SYSTEM/Bases/Blog Editorial.base",
+    "2.AREAS/SYSTEM/Bases/Active Project Calendar.base",
+    "2.AREAS/SYSTEM/_Tasks/README.md",
     "2.AREAS/SYSTEM/_Tasks/Untitled.md",
-    "1.PROJECTS/Obsidian Setup/CodeSpace_Technical_Implementation_Specification.md",
-    "1.PROJECTS/Obsidian Setup/Code_Lab_Model.md",
+    "2.AREAS/SYSTEM/Templates/ADR.template.md",
     "1.PROJECTS/Obsidian Setup/Kanban_Technical_Implementation_Specification.md",
-    "1.PROJECTS/Obsidian Setup/TaskNotes_Technical_Implementation_Specification.md",
-    "2.AREAS/SYSTEM/Templates/MOC.template.md",
-    "2.AREAS/SYSTEM/Templates/Fleeting Note.template.md",
-    "2.AREAS/SYSTEM/Templates/Learning Journal.template.md",
-    "1.PROJECTS/Obsidian Setup/MetaBind_Technical_Implementation_Specification.md",
-    "1.PROJECTS/Obsidian Setup/Templater_Technical_Implementation_Specification.md",
-    "1.PROJECTS/Obsidian Setup/QuickAdd_Technical_Implementation_Specification.md",
-    "1.PROJECTS/Obsidian Setup/software_engineering_document_suite.md",
-    "1.PROJECTS/Obsidian Setup/Zettlekasten_Model.md",
-    "1.PROJECTS/Obsidian Setup/Library_Blog_Social_Model.md",
-    "1.PROJECTS/Obsidian Setup/Resources_Archive_Model.md",
-    "README.md",
-    "1.PROJECTS/Obsidian Setup/Code_Lab_Model.md.crdownload",
-    "1.PROJECTS/Obsidian Setup/Project_Model.md",
-    "1.PROJECTS/Obsidian Setup/Project_Model.md.crdownload",
-    "2.AREAS/CODE/ROADMAPS/Design Roadmap/DES-M1-P1 1-DESVERIFY – Design Verification 2daa4e63bf2381ca876bc5677d4d215f.md",
-    "2.AREAS/BLOG/Who_Dijkstra_Actually_Was.md",
-    "2.AREAS/BLOG/User_2478e-The_Model_Can’T_Keep_Up_Anymore.md",
-    "2.AREAS/BLOG/Undead_Dev.md",
-    "2.AREAS/BLOG/Tinder_Dev_Roast_Mode.md",
-    "2.AREAS/BLOG/Threat_Model.md",
-    "2.AREAS/BLOG/Thinking_vs_Execution_vs_Machines.md",
-    "2.AREAS/BLOG/The_Vibes_Development_System_-_A_Practical_Architecture.md",
-    "2.AREAS/BLOG/The_United_States_Circuit_Court_Of_Frontend_Violations.md",
-    "2.AREAS/CODE/Domains/app/(tenant)/projects/[projectId]/tasks/[taskId]/edit/page.tsx",
-    "2.AREAS/CODE/Domains/app/(tenant)/support/knowledge-base/[articleId]/edit/page.tsx",
-    "2.AREAS/CODE/Domains/app/(tenant)/projects/[projectId]/tasks/[taskId]/page.tsx",
-    "2.AREAS/CODE/Domains/app/(tenant)/projects/[projectId]/tasks/[taskId]/edit",
-    "2.AREAS/CODE/Domains/app/(tenant)/projects/[projectId]/tasks/new/page.tsx",
-    "2.AREAS/CODE/Domains/app/(tenant)/marketing/campaigns/[campaignId]/edit/page.tsx",
-    "2.AREAS/CODE/Domains/app/(tenant)/marketing/audiences/[audienceId]/edit/page.tsx",
-    "2.AREAS/CODE/Domains/app/(tenant)/crm/leads/[leadId]/edit/page.tsx",
+    "2.AREAS/BLOG/Drafts/Bob's_Your_Uncle.md",
+    "4.ARCHIVE/Tasks/README.md",
+    "4.ARCHIVE/Tasks",
+    "4.ARCHIVE/Resources/README.md",
+    "2.AREAS/SYSTEM/Dashboards/Command Center.md",
+    "2.AREAS/SYSTEM/Dashboards/Project Command Center.md",
+    "2.AREAS/SOCIAL/Scheduled/README.md",
+    "2.AREAS/SOCIAL/Review/README.md",
+    "2.AREAS/SOCIAL/Published/README.md",
+    "2.AREAS/SOCIAL/Ideas/README.md",
+    "2.AREAS/SOCIAL/Drafts/README.md",
+    "2.AREAS/CODE/Lessons/README.md",
+    "2.AREAS/CODE/Evidence/README.md",
+    "2.AREAS/CODE/Drills/README.md",
+    "2.AREAS/BLOG/Scheduled/README.md",
+    "2.AREAS/BLOG/Review/README.md",
+    "2.AREAS/ZETTLECASTEN/Literature/README.md",
+    "2.AREAS/SYSTEM/SOPs/README.md",
+    "2.AREAS/SYSTEM/SOPs/09-Technical-Stack.md",
     "2.AREAS/CODE/Domains/public/seperator.png",
     "2.AREAS/CODE/Domains/public/Maximal Template Logo.jpg",
     "2.AREAS/CODE/Domains/public/logo cloud.png",

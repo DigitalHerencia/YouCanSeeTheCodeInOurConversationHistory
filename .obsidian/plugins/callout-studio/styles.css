@@ -32,6 +32,142 @@
 	initial-value: #7d7d7d;
 }
 
+/* ─── The secondary ("grey") button ───────────────────────────────
+   One face, one hover, one border, read by every non-CTA button this
+   plugin draws: the settings tab's five neutral buttons and Discover,
+   every window's Cancel, and the two segmented rows (border sides,
+   gradient direction). Declared here so that "what does a grey button
+   look like" has a single answer instead of six.
+
+   **Why the hover is a `color-mix` and not `--background-modifier-hover`.**
+   That token is not a colour, it is a *translucent mono overlay* —
+   `rgba(var(--mono-rgb-100), 0.067)`, so black at 6.7% under
+   `.theme-light` and white at 6.7% under `.theme-dark`. Two things follow
+   from that, and both were live bugs:
+
+   - Being translucent, it composites against whatever is *behind* the
+     button rather than against the button's own fill. A button resting on
+     `--background-modifier-form-field` (`--color-base-25`, #2a2a2a) over a
+     #1e1e1e pane hovered to #2d2d2d — a luminance change of 0.3%, which is
+     nothing. That is why **Scan for callouts had no hover in dark mode at
+     all** while looking correct in light, where the same rule lands
+     #ffffff → #eeeeee.
+   - Being mono, it always moves *away* from the background. That is right
+     for a row highlight and wrong for a button face, which wants a fixed
+     step off its own resting colour.
+
+   So the step is mixed into the resting fill directly. `--interactive-normal`
+   is Obsidian's own button face — white (`--color-base-00`) in light, grey
+   (`--color-base-30`, #363636) in dark, which is exactly the resting look
+   that was already wanted — and `--mono-rgb-100` supplies the direction the
+   active theme reads as "more contrast":
+
+       light   #ffffff → #ebebeb   Δlum −17.2%   (was −4.4% via native, −14.5% via the overlay)
+       dark    #363636 → #464646   Δlum  +2.5%   (was +0.3% — the invisible one)
+
+   Both are comfortably perceptible, and the dark half *lightens*, which is
+   the rule this refactor exists to make true everywhere. A theme that
+   restyles `--interactive-normal` gets a hover derived from its own colour
+   rather than one we picked, so this stays theme-compatible by construction.
+
+   Call sites read these with a fallback so that a theme which somehow
+   invalidates the `color-mix` degrades to Obsidian's native pair rather
+   than to no hover at all. */
+.callout-studio-settings,
+.cs-modal,
+.callout-studio-editor,
+.cs-occurrences-view,
+.cs-portable-view {
+	--cs-btn-face: var(--interactive-normal);
+	--cs-btn-face-hover: color-mix(
+		in srgb,
+		var(--interactive-normal) 92%,
+		rgb(var(--mono-rgb-100))
+	);
+	--cs-btn-border: var(--background-modifier-border);
+	--cs-btn-border-hover: var(--background-modifier-border-hover);
+	--cs-btn-accent-face-hover: color-mix(
+		in srgb,
+		var(--interactive-accent) 92%,
+		rgb(var(--mono-rgb-100))
+	);
+
+	/* The danger half of the same idea, and it fails for a different reason than
+	   the greys did. Obsidian *does* ship a hover for red buttons —
+
+	       button.mod-warning       { background-color: var(--background-modifier-error) }
+	       button.mod-warning:hover { background-color: var(--background-modifier-error-hover) }
+
+	   — but under `body` it defines both of those tokens as the same colour:
+
+	       --background-modifier-error: var(--color-red);
+	       --background-modifier-error-hover: var(--color-red);
+
+	   so the rule matches, fires, and paints the colour that is already there.
+	   Delete, Replace and "Reset everything" are not missing a hover rule; they
+	   are running one that resolves to a no-op, Δlum 0.0% in *both* themes. That
+	   is why they feel dead next to Cancel while looking, in the stylesheet, like
+	   they are handled — and why the fix is a token of ours, not a rule of ours.
+
+	   Mixed at the same 92% as `--cs-btn-face-hover`, with `--mono-rgb-100` for
+	   direction, so it darkens in light and lightens in dark like everything else
+	   here. Measured in CIEDE2000 against the grey face it sits beside (which is
+	   4.10 light, 5.26 dark):
+
+	       light   #e93147 → #d62d41   ΔE00 4.19   white text 4.20:1 → 4.87:1
+	       dark    #fb464c → #fb555a   ΔE00 2.84   white text 3.45:1 → 3.20:1
+
+	   Light matches the grey almost exactly. Dark is deliberately the smaller
+	   step: a saturated red is already the most prominent thing on the surface,
+	   and driving it to the grey's ΔE00 needs ~86%, which costs white-text
+	   contrast (3.01:1) on a fill Obsidian already ships below AA. If you retune
+	   this, measure in ΔE00 — plain CIE76 scores these two 6.5 and 7.4 and calls
+	   them matched, which is wrong in exactly the saturated region a red lives
+	   in, and near-neutral greys are the case where the two happen to agree. */
+	--cs-btn-danger-face-hover: color-mix(
+		in srgb,
+		var(--background-modifier-error) 92%,
+		rgb(var(--mono-rgb-100))
+	);
+}
+
+/* Obsidian's accent hover can move toward a lighter purple in the light theme.
+   Derive the hover from the resting accent instead: the theme's mono endpoint
+   is black in light mode and white in dark mode, so the direction is stable
+   without hard-coding either theme's accent colour. */
+@media (hover: hover) {
+	.callout-studio-settings
+		button.mod-cta:not(
+			.mod-warning,
+			.mod-destructive,
+			:disabled,
+			.cs-btn-disabled
+		):hover,
+	.cs-modal
+		button.mod-cta:not(
+			.mod-warning,
+			.mod-destructive,
+			:disabled,
+			.cs-btn-disabled
+		):hover,
+	.callout-studio-editor
+		button.mod-cta:not(
+			.mod-warning,
+			.mod-destructive,
+			:disabled,
+			.cs-btn-disabled
+		):hover {
+		background-color: var(
+			--cs-btn-accent-face-hover,
+			var(--interactive-accent-hover)
+		);
+		border-color: var(
+			--cs-btn-accent-face-hover,
+			var(--interactive-accent-hover)
+		);
+	}
+}
+
 /* ─── Settings Panel ──────────────────────────────────────────── */
 
 .callout-studio-settings {
@@ -63,31 +199,734 @@
 }
 
 /* Section dividers: add spacing + thin top border above every heading
-   except the main plugin title and the "My callout types" sub-header */
+   except the main plugin title and the "My callout types" sub-header.
+
+   `:not(.cs-sticky-heading)` keeps this off the three callout-list headings.
+   Those are the ones that pin, and a heading that pins cannot carry its own
+   section divider: 36px of padding and a border-top belong to the *gap between
+   two sections*, and on a pinned box they become a rule frozen against the top
+   edge of the pane with a hole under it. Their wrapper carries it instead — see
+   `.cs-sticky-section.cs-section-divider` below. This rule still dresses the
+   eight sections underneath them, which are not wrapped. */
 .callout-studio-settings
 	.setting-item.setting-item-heading:not(.cs-header-row):not(
 		.cs-subheader-row
-	) {
+	):not(.cs-sticky-heading) {
 	margin-top: 36px;
 	padding-top: 36px;
 	border-top: 1px solid var(--background-modifier-border);
 	border-radius: 0;
 }
 
-/* Subheading row: "My callout types" + Add new */
+/* The theme section's description: naming the active theme, right after the
+   sticky heading that says "Callouts from your theme" but not part of it —
+   see `.cs-theme-desc` in CalloutListsSection.ts for why. It is a plain row
+   like any other, so it scrolls out of view under that heading's opaque,
+   pinned band instead of staying glued beside the title for as long as the
+   section is on screen. Only the top gap needs restoring: the same
+   `--size-4-1` a description gets when Obsidian doesn't zero it out from
+   sitting directly under a heading's own name. */
+.callout-studio-settings .cs-theme-desc.setting-item-description {
+	margin: 0;
+	padding-top: var(--size-4-1);
+	padding-bottom: var(--size-4-2);
+}
+
+/* Subheading row: "My callout types" + Add new + manual discovery, "Saved
+   color palettes" + New palette, and the theme heading, which has no actions.
+
+   `flex-wrap` is on the shared rule rather than on the one section that used to
+   carry it, because the choice a narrow pane offers is the same for both rows:
+   crush the title, or move the buttons. Obsidian's own answer is to crush —
+   `.setting-item` is `nowrap`, so the info box shrinks until "Saved color
+   palettes (1)" is stacking one word per line beside a button that never
+   moved. Wrapping picks the other answer for these rows only: the actions drop
+   whole to the next line and the title gets the width back.
+
+   Nothing else is needed to *trigger* it. Line breaking measures each item at
+   its flex base size — max-content for both of these — so the break happens at
+   the width where the full title and the full button group stop fitting side by
+   side, which is the width where crushing would otherwise start. No breakpoint
+   to pick and none to keep in step with a translation.
+
+   `row-gap` is left to Obsidian (`--size-4-3`); the callout-list heading below
+   tightens it to 8px along with its column gap. */
 .callout-studio-settings .cs-subheader-row.setting-item {
 	padding-top: 4px;
 	padding-bottom: 2px;
 	border-top: none;
 	min-height: 0;
+	flex-wrap: wrap;
 }
 
+/* ...and once wrapped, the actions stay on the trailing side — the right under
+   LTR, the left under RTL — instead of falling back to the start of the line
+   the way a wrapped flex item does by default.
+
+   `margin-inline-start: auto` is what does it, and it is inert on the line it
+   is not needed on: auto margins are only fed the free space that survives
+   flexing, and on an unwrapped row the info box (or, on the palettes row,
+   Obsidian's own growing control) has already taken all of it. So one
+   declaration covers both states without a query — zero when the row is one
+   line, the whole gap when the actions have a line to themselves. */
+.callout-studio-settings .cs-subheader-row .setting-item-control {
+	margin-inline-start: auto;
+}
+
+/* `center`, not `baseline`: the name now leads with a chevron, and a baseline
+   row would hang the icon below the text it points at. */
 .callout-studio-settings .cs-subheader-row .setting-item-name {
 	display: flex;
-	align-items: baseline;
+	align-items: center;
 	gap: 6px;
 	font-size: 1.05em;
 	font-weight: 600;
+}
+
+/* Wrap against the actual settings pane width, including a narrow desktop
+   pane, mobile, long translations, and enlarged text. The actions stay outside
+   the fold control and stay visible while its list is collapsed.
+
+   `flex-wrap` used to be declared here as well. It moved up to
+   `.cs-subheader-row`, which this row also carries, so the two headings that
+   wrap now read their wrapping from one place; what is left here is only what
+   is true of this row and not of the palettes one — a tighter gap, and the two
+   axes it is measured on. */
+.callout-studio-settings .cs-callout-list-heading.setting-item {
+	flex-direction: row;
+	align-items: center;
+	gap: 8px 16px;
+}
+
+.callout-studio-settings .cs-callout-list-heading .setting-item-info {
+	flex: 1 1 12rem;
+	min-width: 0;
+	margin-inline-end: 0;
+}
+
+.callout-studio-settings .cs-callout-list-heading .setting-item-name {
+	white-space: normal;
+	overflow-wrap: anywhere;
+}
+
+/* Two buttons, three layouts, one declaration each.
+
+   `wrap-reverse` is the stacking order. When the pair no longer fits on one
+   line it breaks into two, and the reversed cross axis puts the *last* line on
+   top — which is **Add new callout**, because the CTA is last in the DOM (see
+   sections/calloutListsScaffold.ts: last is what lands it on the row's outer
+   edge while the two are still side by side). So the accent button leads the
+   stack and **Scan for callouts** sits under it, which is the same ranking the
+   horizontal row states by putting the CTA furthest out. Reversing the wrap
+   rather than the DOM is what lets one order serve both: nothing about the
+   side-by-side row changes, and a single-line control has no second line for
+   `wrap-reverse` to act on.
+
+   `justify-content` is the alignment, restated rather than inherited from
+   Obsidian's `.setting-item-control`: it is per-line, so it is what holds a
+   stacked **Scan** to the trailing edge under a stacked **Add**, and it is
+   direction-relative — `flex-end` is the right under LTR and the left under
+   RTL, with no `[dir]` rule to write. A theme that flattens the control's
+   alignment would otherwise leave the stack hanging off the leading edge.
+
+   The buttons keep their content width there (`flex: 0 1 auto` below), so they
+   stack as two right-aligned buttons, not as two full-width bars. */
+.callout-studio-settings .cs-callout-list-heading .setting-item-control {
+	display: flex;
+	flex: 0 1 auto;
+	flex-wrap: wrap-reverse;
+	justify-content: flex-end;
+	gap: 8px;
+	min-width: 0;
+	max-width: 100%;
+}
+
+/* Wrapping, not sizing. `--input-height` is Obsidian's own answer to how tall a
+   button is, and it already resolves to 30px on desktop and 44px
+   (`--touch-size-m`) on mobile — so borrowing it as a *minimum* keeps both of
+   these buttons exactly as tall as "New palette", and as every other button in
+   the tab, on each platform, while `height: auto` still lets a long translation
+   wrap to a second line rather than spill out of a fixed box. A hardcoded 44px
+   used to sit here: it bought the phone nothing it did not already have from
+   `--input-height`, and on desktop it made these the only oversized buttons in
+   the tab.
+
+   All three, deliberately. What separates them is colour, not size — Add and
+   New palette wear `.mod-cta`, Discover wears `.cs-settings-neutral-btn` — and
+   nothing here should be what makes them different heights.
+
+   Scoped to `.cs-subheader-row` rather than to the callout-list heading alone,
+   because the shrinking half matters just as much on the palettes row and it
+   was not getting it. Obsidian's `button` is `white-space: nowrap` with a fixed
+   `height`, so its min-content width is the whole label: **New palette** could
+   not shrink, and a long translation of it ("Neue Farbpalette erstellen") ran
+   off the trailing edge of the pane instead of wrapping inside its own box —
+   both before this row could wrap and after. `min-inline-size: 0` plus
+   `overflow-wrap: anywhere` is what makes the button narrower than its longest
+   word, and it is the same fix the two buttons beside it already had. */
+.callout-studio-settings .cs-subheader-row .setting-item-control > button {
+	flex: 0 1 auto;
+	min-inline-size: 0;
+	max-inline-size: 100%;
+	min-block-size: var(--input-height);
+	height: auto;
+	white-space: normal;
+	overflow-wrap: anywhere;
+}
+
+/* ─── Foldable section headings ───────────────────────────────── */
+
+/* The chevron's footprint, declared once on the foldable headings: its own
+   box, and the gap between it and the text it sits beside. Both numbers are
+   read back below — by the chevron, which is sized to them, and by the
+   headings, which offset themselves by their sum. One source, so the two
+   can't drift apart.
+
+   `em`, not px: a custom property is substituted where it is *used*, so each
+   heading resolves this against its own font-size and gets a chevron and a
+   gutter in proportion to its own type. That is what lets the three sections
+   share one rule instead of carrying one offset each. */
+.callout-studio-settings .cs-collapsible-heading {
+	--cs-disclosure-size: 1em;
+	--cs-disclosure-gap: 6px;
+}
+
+/* One shared chevron for the foldable settings headings, which cannot be
+   <details>/<summary> because "My callout types" carries the Add-new button
+   and a <summary> wrapping a button is a button that folds the section. See
+   sections/sectionDisclosure.ts.
+
+   The name element is the control, not the row: it spans the title line and
+   stops short of .setting-item-control, so the CTA stays pressable and the
+   button's accessible name stays "My callout types (4)" rather than the whole
+   row including a paragraph of description. Specificity is (0,3,0) so it also
+   reaches "Built-in callouts", which has no .cs-subheader-row. */
+.callout-studio-settings .cs-collapsible-heading .setting-item-name {
+	display: flex;
+	align-items: center;
+	gap: var(--cs-disclosure-gap);
+	cursor: pointer;
+	/* The chevron is *added to the left of* the title, not *inserted before*
+	   it: the whole title line shifts start-ward by exactly the chevron's
+	   footprint, so the chevron fills the space that opens up and the first
+	   glyph of the title — and the "(N)" trailing it — lands back on the x it
+	   had before there was anything to fold. Both terms come from the tokens
+	   above, which is also what keeps this honest at any type size: grow the
+	   chevron and the offset grows with it.
+
+	   It hangs into the row's own padding (`--size-4-4`), not into content, and
+	   nothing between here and the settings pane clips: `.setting-item-name`'s
+	   `overflow: hidden` is escaped by moving the box rather than by
+	   overflowing it, and `.setting-item-info` has no overflow of its own. */
+	margin-inline-start: calc(
+		-1 * (var(--cs-disclosure-size) + var(--cs-disclosure-gap))
+	);
+}
+
+.callout-studio-settings .cs-collapsible-heading .setting-item-name:hover {
+	color: var(--text-normal);
+}
+
+/* It is reachable by Tab and answers Enter and Space, so it has to show where
+   the keyboard is. The ring follows the shifted box, so it frames the chevron
+   and the title together — the control is both. */
+.callout-studio-settings
+	.cs-collapsible-heading
+	.setting-item-name:focus-visible {
+	outline: 2px solid var(--background-modifier-border-focus);
+	outline-offset: 2px;
+	border-radius: var(--radius-s);
+}
+
+/* Sized from the token rather than left to the SVG. The heading's offset is
+   computed from that same number, so the two only stay in step if the box is
+   this wide whatever `--icon-size` Obsidian or a theme hands the icon. */
+.cs-disclosure-chevron {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: 0 0 auto;
+	inline-size: var(--cs-disclosure-size);
+	block-size: var(--cs-disclosure-size);
+	transition: transform 120ms ease;
+}
+
+.cs-disclosure-chevron svg {
+	width: 100%;
+	height: 100%;
+}
+
+.cs-collapsible-heading .cs-disclosure-chevron {
+	transform: rotate(90deg);
+}
+
+.cs-collapsible-heading.is-collapsed .cs-disclosure-chevron {
+	transform: rotate(0deg);
+}
+
+/* The chevron points at the content, so it flips with the writing direction. */
+[dir="rtl"] .cs-collapsible-heading .cs-disclosure-chevron {
+	transform: scaleX(-1) rotate(90deg);
+}
+
+[dir="rtl"] .cs-collapsible-heading.is-collapsed .cs-disclosure-chevron {
+	transform: scaleX(-1) rotate(0deg);
+}
+
+/* Folded away by the user. Deliberately not `cs-hidden`: the theme section
+   hides itself with that when it has no rows, and one class toggled for two
+   reasons means whichever ran last decides — a fold would reopen an empty
+   section, or an empty section would reopen a folded one. The two are on
+   different elements now as well (the section wrapper hides, the body folds),
+   which makes that collision impossible rather than merely avoided. */
+.cs-section-body.is-collapsed {
+	display: none;
+}
+
+/* The theme section's description is a sibling of its heading now, not a
+   descendant of it (see `.cs-theme-desc` above and CalloutListsSection.ts) —
+   it lives outside `.cs-section-body` too, so folding the body alone would
+   leave it behind. Reached as the row right after the heading it folds
+   with, since nesting no longer gets there. */
+.callout-studio-settings
+	.cs-collapsible-heading.is-collapsed
+	+ .cs-theme-desc {
+	display: none;
+}
+
+/* ─── Sticky section headings ─────────────────────────────────── */
+
+/* The three callout-list headings pin to the top of the settings pane while
+   their own rows scroll under them, hand over to the next section's heading,
+   and leave with the last of their own rows rather than hanging over the eight
+   settings sections below.
+
+   All of that is the wrapper. A sticky box is clamped to its own containing
+   block, so a heading wrapped with its rows sticks for exactly as long as those
+   rows last and no longer. These three used to be flat siblings of each other
+   and of everything under them — one containing block between them, which would
+   have pinned all three at the same offset, stacked them, and never let any of
+   them go. See sections/CalloutListsSection.ts. */
+
+/* A sticky `top` is measured from the scrollport's *content* box, not its
+   border box — verified in Chromium, not assumed — and Obsidian gives this pane
+   `padding-top: var(--size-4-12)`. Left alone, `top: 0` would park the band 48px
+   down with rows scrolling visibly through the strip above it.
+
+   Obsidian answers this on its own sticky page the same way, and this is a copy
+   of it: `.setting-page.vertical-tab-content { padding-top: 0 }` beside
+   `.setting-page-titlebar { position: sticky; top: 0 }`. The space is handed to
+   the title row instead (`.cs-header-row`'s `margin-top`), so the tab starts
+   exactly where it did.
+
+   The weight is the rest of the rule, and it is not defensive padding. This
+   pane IS `.vertical-tab-content` — the plugin renders straight into the
+   scroller — so the reset lands on the very element a theme styles, at the
+   `(0,1,0)` a bare `.vertical-tab-content` also carries, and the theme sheet
+   loads *after* this one. Measured across the 257 themes installed in this
+   vault, 26 declare padding on this element and 20 of those put a *top* inset
+   back: ITS Theme (`padding: 35px`) and NotSwift (`padding-top: 60px`) at
+   (0,1,0), Notation 2 at (0,2,1), LYT Mode and Sodalite at (0,3,0), flexcyon at
+   (0,5,1) and (0,6,1), Maple at (0,7,1) — and Elegance with
+   `padding-top: 20px !important`. Every one of them un-sticks all four pinned
+   headings identically: the band parks that far down and the strip above it is
+   bare pane with rows sliding through it, which reads as the pane clipping
+   early rather than as a header.
+
+   Hence `!important`, against the house style of this file and for the reason
+   the house style itself names: added specificity was not an option here twice
+   over. Elegance's `!important` is on this same property and nothing but
+   another `!important` outranks one (see `.hmd-inactive-line`'s `font-size`,
+   which keeps its own for exactly that reason), and Maple's ordinary rule sits
+   at (0,7,1) — a selector this plugin could only match by naming five of
+   Obsidian's own modal classes and breaking the next time one of them is
+   renamed. The class is still tripled, to (0,4,1), so this also clears any
+   future important rule below that weight. `padding-top` only, on this
+   plugin's own pane, on this plugin's own tab: a theme's settings styling is
+   untouched everywhere else, and the space this takes is handed straight back
+   on the title row.
+
+   Two notes on what it does and does not reach. flexcyon writes
+   `padding-block-start`; logical and physical padding longhands cascade in one
+   slot, so this single declaration answers that spelling too and no alias needs
+   listing. A `border-top` on the pane insets the content box the same way
+   (TerraFlow puts a 1px glass frame there) and is deliberately left alone —
+   zeroing one side of a theme's border is a worse trade than a hairline.
+
+   A phone is left out, and now says so rather than leaving it to Obsidian's
+   (0,5,0) phone rule happening to outrank this one, which an `!important` would
+   have quietly reversed. There the pane sits at the very top of the modal and
+   its much larger `padding-top` reserves that band for the floating back and
+   close buttons over it at --layer-modal, so keeping the padding is what puts
+   content *below* the chrome instead of in the notch behind it. Nothing pins
+   there either — `.cs-sticky-heading` goes `position: static` below — so the
+   reset would buy nothing and cost the chrome its room. */
+body:not(.is-phone)
+	.callout-studio-settings.callout-studio-settings.callout-studio-settings {
+	padding-top: 0 !important;
+}
+
+.callout-studio-settings {
+	/* The space under *every* section, named because *where* it is spent is the
+	   whole point and a bare number invites it back to the wrong place: it
+	   belongs to the section above (see `.cs-section-body` below), never
+	   between the two wrappers and never on the heading underneath. It is the
+	   section's whole trailing gap, not a share of it — nothing a section ends
+	   with adds any of its own, which is what makes a list, a Load more button
+	   and a line of empty-state text all sit the same distance above the
+	   divider. 40px leaves the last row of one section 65px from the title of
+	   the next: 40 here, the divider hairline, and the band's 24px of top
+	   padding. */
+	--cs-section-gap: 40px;
+	/* The sticky heading's own top padding, named for the same reason as the
+	   gap above: it is read from a second place — the `.cs-subheader-row`
+	   spacer rule below — that has to subtract exactly what the band adds, or
+	   the first section's heading ends up spaced twice. A bare number in both
+	   spots is how that drifted silently through two rounds of "make the band
+	   roomier" before anyone noticed: the padding moved, the subtraction did
+	   not. One variable can't disagree with itself. */
+	--cs-sticky-heading-pad-top: var(--size-4-6);
+}
+
+.callout-studio-settings .cs-header-row.setting-item {
+	margin-top: var(--size-4-12);
+}
+
+.is-phone .callout-studio-settings .cs-header-row.setting-item {
+	margin-top: 0;
+}
+
+.callout-studio-settings .cs-sticky-section {
+	/* Carries the pane's own paint down one level, so the band below can take it
+	   from here. See the heading's `background-color`. */
+	background-color: inherit;
+}
+
+/* The divider between two sections — a hairline and nothing else. The 36px the
+   other headings get cannot be used here in either of the two places it could
+   go: on the heading it is part of the box that pins, which freezes a rule
+   against the top edge of the pane; between the wrappers it is a band where the
+   section above has already let go and the one below has not yet caught, so the
+   header blinks out and back rather than handing over. The space it replaces is
+   inside the section above instead — see `.cs-section-body` below. */
+.callout-studio-settings .cs-sticky-section.cs-section-divider {
+	border-top: 1px solid var(--background-modifier-border);
+	border-radius: 0;
+}
+
+/* "Saved color palettes" is the one pinned section whose section above
+   ("Fallback callout") is not itself pinned, so no body carries a
+   --cs-section-gap down to its divider the way "My callout types"' body does for
+   "Built-in callouts". The wrapper makes up that gap itself — safe only because
+   nothing hands over to it, so the space just scrolls. It is *leading* space, so
+   a wrapper margin (survives a fold), not a `--cs-section-gap` spender on a body
+   (folds away with it). The `0.75em` subtracted is exactly Obsidian's
+   `.setting-item` block padding: the Fallback dropdown row directly above already
+   contributes that much below its own text, so the wrapper only owes the
+   remainder to land the last-row-to-divider gap on the same 40px the trio gets. */
+.callout-studio-settings .cs-sticky-section.cs-palettes-section {
+	margin-top: calc(var(--cs-section-gap) - 0.75em);
+}
+
+/* The gap under a section, on the section's own body — one element, one
+   variable, for all three of them.
+
+   The body is the only box that answers every question the gap has to answer at
+   once. It is *inside* the wrapper, so a sticky heading stays pinned the whole
+   way across the gap instead of letting go at its last row and leaving a band
+   with nothing pinned to it (a sticky box is clamped to its containing block,
+   which is the wrapper's content box — space outside that box is space the
+   heading has already left). And it is `display: none` when the section is
+   folded, so a folded section contributes no trailing gap at all and its band
+   sits on the next divider with only its own bottom padding between them, which
+   is what makes the folded state match across the three as well.
+
+   Padding, because padding is unambiguously inside that containing block. */
+.callout-studio-settings
+	.cs-sticky-section:not(.cs-sticky-section-last)
+	> .cs-section-body {
+	padding-bottom: var(--cs-section-gap);
+}
+
+/* The last section spends the same variable on the same element as a *margin*,
+   and both halves of that sentence are load-bearing.
+
+   Margin, because below this one the sections are unwrapped and nothing is
+   pinning: it has to let its rows end and go with them rather than hang over
+   them (requirement 4). A bottom margin on the last in-flow child collapses out
+   through the wrapper — which has no bottom padding, no bottom border and is not
+   a formatting-context root, and must not gain one — so the space lands outside
+   the containing block and the heading releases on the last row exactly as
+   before, while the gap itself still measures the same 40px as the two above.
+
+   The same element as the other two, because that is what makes this gap fold
+   away with the section. It used to live on the *next* heading's `margin-top`,
+   which cannot see the fold: collapsed, "Built-in callouts" carried 40px it had
+   no content to justify, stacked under the band's own bottom padding, and was
+   the one folded section that did not sit on its divider like the others. */
+.callout-studio-settings .cs-sticky-section-last > .cs-section-body {
+	margin-bottom: var(--cs-section-gap);
+}
+
+/* …and nothing a section *ends with* may carry trailing space of its own, or
+   the variable above stops being the whole of the gap. The list's 24px bottom
+   margin and the empty state's 12px bottom padding are what made one section
+   measure three different distances to the same divider depending on whether it
+   ended in rows, a Load more button or a line of text — and what put the two
+   paged sections 24px lower than the built-in one, which only escaped it because
+   its list margin collapsed away into the following heading's instead of adding
+   to a padding.
+
+   Dropped here rather than at the source: both are correct for a list that ends
+   *mid-section*, which is what the Saved color palettes list does — the Unlinked
+   colors groups follow it inside the same body. */
+.callout-studio-settings
+	.cs-sticky-section
+	> .cs-section-body
+	> .callout-studio-callout-list,
+.callout-studio-settings
+	.cs-sticky-section
+	> .cs-section-body
+	> .callout-studio-empty-state {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+/* The plain heading right after the last sticky section — "Fallback callout"
+   today — would otherwise fall back to the generic divider rule near the top of
+   this file: 36px + 36px, sized for two headings that both carry their own
+   margin. Its top gap comes from the section above now, like every other
+   section's does, so all this has left to do is take that generic margin back
+   off and spend the band's own top padding under the hairline — which is what
+   puts its title exactly as far below the divider as a sticky heading's is. */
+.callout-studio-settings
+	.cs-sticky-section-last
+	+ .setting-item.setting-item-heading:not(.cs-header-row):not(
+		.cs-subheader-row
+	):not(.cs-sticky-heading) {
+	margin-top: 0;
+	padding-top: var(--cs-sticky-heading-pad-top);
+}
+
+/* Folded shut, a section has no gap under it at all, and that is deliberate.
+   The gap cannot follow the heading down there: a sticky box is constrained by
+   its *margin* box, so a bottom margin travels with it and buys no extra pinned
+   distance — measured, not assumed. Anything left between a folded heading and
+   the next one is therefore a band with nothing pinned to it, and the headings
+   blink out and back instead of handing over. So folded sections sit directly on
+   one another, separated by the same hairline that separates them open — all
+   three of them, which is what putting the last one's gap on its own body
+   (above) bought: the gap disappears with the body it is written on, so no
+   folded section can be left carrying space for content it is not showing. */
+
+.callout-studio-settings .cs-sticky-heading.setting-item {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	/* Not `var(--cs-surface, …)`, and the exception is deliberate. That pair is
+	   defined inside `.cs-modal` and nowhere else, by contract — and this band is
+	   not in a window, it is *on* the settings pane, whose paint Obsidian changes
+	   by device: --background-primary on the desktop, --settings-background
+	   under .is-mobile — itself --background-secondary, --background-primary or
+	   --background-primary-alt depending on phone, tablet and scheme. `inherit`
+	   is whichever of those actually applied. It is the same failure `modalSurfaces` exists for —
+	   an opaque band coming out as a stripe on a platform nobody looked at —
+	   answered by not naming a colour at all instead of by a token that has to be
+	   kept in step with four of Obsidian's.
+
+	   Only as opaque as what it copies, though, and on a good number of the
+	   themes installed here it copies nothing: the `::before`/`::after` pair
+	   below is the floor under this declaration, not a decoration on it. */
+	background-color: inherit;
+	/* Padding, not margin: the band is opaque only where it paints, and rows have
+	   to pass under it right up to the first one. Same on all three, so the band
+	   is one height whichever section you are in — the gaps *between* sections
+	   are the section's job now, not the heading's. Roomier than a plain
+	   `setting-item-heading`'s on purpose: this one has to read as a solid bar
+	   pinned above scrolling rows, not just a label, so it carries more air
+	   above and below the title than a heading that never leaves its place in
+	   the flow needs — more above than below, since the divider hairline sits
+	   flush against the band's top edge with nothing else to separate it from
+	   the title, while the first row below at least starts a new row of its
+	   own. */
+	padding-block: var(--cs-sticky-heading-pad-top) var(--size-4-5);
+	/* Both margins flattened. `margin-bottom`: the gap under a section belongs to
+	   its body, not its heading (see `--cs-section-gap`). `margin-top`: Obsidian
+	   gives a `.setting-item-heading` a `0.75em` top margin whenever it follows a
+	   `.setting-item` sibling *or* sits in a `<div>` right after one — which is
+	   exactly the palettes wrapper's position under the Fallback dropdown row. On
+	   a band that has to sit flush against its divider hairline that margin opens
+	   an 11px strip of bare pane between the line and the paint. The trio never
+	   trips it (each wrapper follows another `<div>`); zeroing it here covers the
+	   fourth and any future reordering. The first section's own 4px top nudge
+	   outranks this and is unaffected. */
+	margin-block: 0;
+	/* Obsidian's own `.setting-item-heading` carries a corner radius — the
+	   plain headings below these three lose it via the `:not(.cs-sticky-heading)`
+	   rule near the top of this file, and these were left out of that `:not()`,
+	   so they kept it. Wrong on a band that pins flush against the top edge of
+	   the pane: a rounded top corner there reads as a gap the content peeks
+	   through, not as a rounded box. */
+	border-radius: 0;
+}
+
+/* The floor under that inherited paint, and the only thing standing between a
+   *pinned* band and a theme that leaves it see-through. `inherit` is exactly as
+   opaque as the thing it copies, and copying is not enough: replayed through a
+   headless Chrome against the running Obsidian's own `app.css`, this sheet and
+   one theme at a time — the 257 installed in the development vault, in both
+   colour schemes — the band comes out transparent under a good many of them, in
+   two ways.
+
+   In most of those the pane itself is not opaque, so the chain has nothing to
+   carry down: Sodalite paints `.vertical-tab-content` `transparent` and puts the
+   surface on the container behind it, TerraFlow's dark pane is glass, and
+   Velocity, Zen, Cupertino, Encore, Dune, Rose Red, Baseline, Agate, Cyber
+   Glow, Ultra Lobster, Transient, Blur, Transparent and Glass Robo are
+   see-through one way or another. In the rest the pane is opaque and the band's
+   own paint is beaten: Elegance and Lagom both write `background-color:
+   transparent !important` on `.setting-item-heading` — at (0,2,0) and, nested
+   under `.mod-settings`, at this rule's own (0,3,0) — and Micro Mike wins a
+   (0,3,0) tie through
+   `.modal.mod-settings :is(h1, …, .setting-item-heading)`, because the theme
+   sheet loads after this one. Either way rows scroll visibly through a heading
+   that is pinned exactly right.
+
+   `!important` is not the answer to the second group and would not have been
+   the answer to the first: Lagom's is already at this rule's specificity, so
+   winning means out-specifying the next theme rather than that one, forever, on
+   a property where being wrong paints a stripe. So the two answers are stacked
+   instead of chosen between. `::before` lays a floor; `::after` repaints over it
+   everything the band itself would have painted. Where that paint is opaque —
+   the great majority of themes, and every platform with no theme installed —
+   the `::after` covers the floor completely and nothing about the band changes;
+   where it is not, the theme's own tint composites over the floor instead of
+   over the rows. Nothing in that contests a cascade: a theme that wins the
+   band's `background-color` wins the `::after` along with it and simply leaves
+   more of the floor showing, and of the 257 themes not one paints or positions
+   a pseudo-element on a settings heading (Elegance's `*::before` is the only
+   universal one, and it sets animation timings inside a reduced-motion
+   query).
+
+   `background: inherit` on the `::after`, not `background-color`: the whole
+   stack travels one layer up, image included, so Micro Mike's heading gradient
+   still paints — over a floor now, rather than over the rows.
+
+   The floor is the theme's *own* surface tokens, stacked, and never a colour
+   invented here. `--settings-background` on top, because it is not another
+   guess at what the pane is painted: it is the token core paints it *with* —
+   `.is-mobile .modal.mod-settings .vertical-tab-content { background-color:
+   var(--settings-background) }` — and on the desktop it is defined as
+   `--modal-background`, which is `--background-primary`, which is exactly what
+   the desktop rule paints. Measured with no theme installed, on the desktop, a
+   tablet and a phone, in both schemes, the floor comes out the pane's own
+   colour every time; `--modal-background` would not, because on a dark tablet
+   core points the two at different tokens (`--background-primary-alt` for the
+   pane, `--background-secondary` for the modal). `--modal-background` is kept
+   as its fallback rather than as the answer, for a core old enough not to
+   define the newer name — this plugin's `minAppVersion` is 1.7.2. And
+   `--background-primary` underneath
+   both, because a theme is free to make the settings surface glass — Velocity's
+   `--modal-background` is `oklch(… / 0.625)` — and a translucent floor is no
+   floor at all.
+
+   That reaches all but a few. The ones left over are the themes that name no
+   opaque surface anywhere: Blur and Transparent set `--background-primary`
+   itself transparent, Transient's `--modal-background` is `#0c0c11ee`, and Rose
+   Red's *is* a `linear-gradient`, which makes the wrapper above invalid and
+   leaves only the last layer. Nothing further is available here, and that is
+   the right place to stop: the only floor that could not itself be see-through is a
+   colour this stylesheet invented, and on a theme that has deliberately made
+   every surface in its window transparent it would be the one opaque thing in
+   it. A theme that means it keeps its see-through band.
+
+   Both at `z-index: -1`. The band is sticky with a `z-index`, so it is a
+   stacking context of its own, and a negative-z child paints above its
+   background but below its content — without it the pair would cover the title.
+   The rows still pass under one thing rather than three: the whole band,
+   pseudo-elements included, sits at the band's `z-index: 1` in the pane.
+
+   Not on a phone. There the band is `position: static` (below) and so not a
+   containing block, which would size both pseudo-elements to the viewport
+   instead of to the band. Nothing pins there, so there is nothing to be opaque
+   for. */
+body:not(.is-phone)
+	.callout-studio-settings
+	.cs-sticky-heading.setting-item::before,
+body:not(.is-phone)
+	.callout-studio-settings
+	.cs-sticky-heading.setting-item::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+}
+
+body:not(.is-phone)
+	.callout-studio-settings
+	.cs-sticky-heading.setting-item::before {
+	--cs-band-floor: var(--settings-background, var(--modal-background));
+	background-color: var(--background-primary);
+	background-image: linear-gradient(
+		var(--cs-band-floor),
+		var(--cs-band-floor)
+	);
+}
+
+body:not(.is-phone)
+	.callout-studio-settings
+	.cs-sticky-heading.setting-item::after {
+	background: inherit;
+}
+
+/* Folded, a section has nothing below its heading — `.cs-section-body` is
+   `display: none` — so the next thing down is either another folded heading's
+   band or, for the last one, an unrelated section. Either way the bottom
+   padding is now facing the exact situation the *top* padding was made larger
+   for: a hairline with nothing else beside it, not a row lending its own
+   weight the way an open section's first row does. Matching it to the top
+   value keeps a folded heading's title centred between the divider above it
+   and the one below it (where either exists), instead of sitting closer to
+   the bottom one. `cs-collapsible-heading` and `cs-sticky-heading` are the
+   same element (`attachSectionDisclosure` toggles `is-collapsed` on
+   `setting.settingEl`, the element `stickySection.ts` already put
+   `cs-sticky-heading` on), so this needs no third class to reach. */
+.callout-studio-settings .cs-sticky-heading.is-collapsed {
+	padding-bottom: var(--cs-sticky-heading-pad-top);
+}
+
+/* Not on a phone, and Obsidian's own sticky settings header makes the same call
+   one line away (`.is-phone .setting-page-titlebar { display: none }`).
+
+   There the pane sits at the very top of the modal and reserves the band over it
+   — for the floating back and close buttons at --layer-modal — with its own
+   `padding-top` rather than by starting lower. A sticky offset is measured from
+   the scrollport's *content* box, so a band pinned there parks below that
+   reserved strip, and padding does not clip: rows go on scrolling through the
+   strip *above* the pinned heading, which reads as a glitch rather than as a
+   header. Pinning flush instead only trades it for a title under the ✕. There is
+   no third answer that leaves the unpinned layout alone, so the phone keeps the
+   plain headings it already had. */
+.is-phone .callout-studio-settings .cs-sticky-heading.setting-item {
+	position: static;
+}
+
+/* Obsidian hands a heading its top gap through a sibling selector
+   (`.vertical-tab-content .setting-item ~ .setting-item-heading`), which stops
+   matching the moment the heading is inside a wrapper. Put back what it gave —
+   less the padding that moved into the band, plus the 4px `.cs-subheader-row`
+   used to carry itself — for the first of the three, which has no divider above
+   it to space it. The subtracted term is `--cs-sticky-heading-pad-top`, not a
+   number of its own: it has to track whatever the band's top padding actually
+   is, or this either double-spaces the first heading or eats into Obsidian's
+   own gap the moment one changes without the other. */
+.callout-studio-settings
+	.cs-sticky-section:not(.cs-section-divider)
+	> .cs-subheader-row.setting-item {
+	margin-top: calc(
+		var(--size-4-6) - var(--cs-sticky-heading-pad-top) + 4px
+	);
 }
 
 .callout-studio-settings .cs-subheader-row .setting-item-info {
@@ -95,19 +934,40 @@
 	padding-bottom: 0;
 }
 
+/* The tab's grey buttons — Discover, Import, Export, Reset, and the two in
+   Data management. `--background-modifier-form-field` used to sit here, and it
+   is an *input* token: `--color-base-25` in dark, which is both darker than a
+   button ought to be and, fatally, the colour the old hover composited to. See
+   the token block at the top of this file for the arithmetic.
+
+   `box-shadow: none` stays — it suppresses the button shadow themes hang on
+   `--input-shadow` — but it is no longer allowed to swallow the focus ring,
+   which is what grouping `:focus-visible` in with `:hover` used to do. This
+   selector is (0,3,0) against Obsidian's own (0,1,1) `button:focus-visible`,
+   so `box-shadow: none` beat it and these six buttons focused invisibly. They
+   now restate the ring themselves, in the grey the rest of the plugin uses. */
 .callout-studio-settings .cs-settings-neutral-btn {
-	background: var(--background-modifier-form-field);
-	border: 1px solid var(--background-modifier-border);
+	background-color: var(--cs-btn-face, var(--interactive-normal));
+	border: 1px solid var(--cs-btn-border, var(--background-modifier-border));
 	color: var(--text-normal);
 	box-shadow: none;
 }
 
-.callout-studio-settings .cs-settings-neutral-btn:hover,
+/* `@media (hover: hover)` mirrors how Obsidian guards its own `button:hover`,
+   and keeps a tapped button on a phone from staying lit until the next tap.
+   `:not(:disabled)` because Discover disables itself for the length of a scan
+   and a disabled control must not answer the pointer. */
+@media (hover: hover) {
+	.callout-studio-settings .cs-settings-neutral-btn:hover:not(:disabled) {
+		background-color: var(--cs-btn-face-hover, var(--interactive-hover));
+		border-color: var(--cs-btn-border-hover, var(--background-modifier-border-hover));
+		color: var(--text-normal);
+		box-shadow: none;
+	}
+}
+
 .callout-studio-settings .cs-settings-neutral-btn:focus-visible {
-	background: var(--background-modifier-hover);
-	border-color: var(--background-modifier-border-hover);
-	color: var(--text-normal);
-	box-shadow: none;
+	box-shadow: 0 0 0 3px var(--background-modifier-border-focus);
 }
 
 /* Obsidian centers a setting row's control by default, but several themes
@@ -127,11 +987,30 @@
 
 /* ─── Callout List Rows ───────────────────────────────────────── */
 
+/* The bottom margin is for a list that ends *mid-section* — the Saved color
+   palettes one, and the Quick insert window's. A list that ends a section
+   gives it up again: there the trailing
+   space is the section's, spent once on `.cs-section-body` so that rows, a Load
+   more button and an empty state all sit the same distance above the divider.
+   See `--cs-section-gap`. */
 .callout-studio-callout-list {
 	display: flex;
 	flex-direction: column;
 	gap: 2px;
 	margin-bottom: 24px;
+}
+
+/* The last child of the list rather than a sibling of it, which is what puts it
+   *inside* whatever trailing space the list is sitting in — so the button ends
+   a section at exactly the distance a last row would, with no spacing of its
+   own to keep in step. Nothing above it is faded: these rows carry live
+   controls, and dimming an interactive row to hint that more follow reads as
+   "disabled". The button's own count says how many are hidden, which is the
+   fact a gradient could only gesture at. */
+.callout-studio-load-more {
+	display: flex;
+	justify-content: center;
+	padding-top: 16px;
 }
 
 /* The row is a pill on whatever it sits on, and it sits on two different
@@ -315,7 +1194,38 @@
 	margin-bottom: 4px;
 }
 
+/* Category resets share the trailing toggle column, including on phones where
+   ordinary settings rows stack. Keep the heading and its action on one row. */
+.cs-menu-customize .setting-item.cs-reset-heading,
+.cs-command-builder .setting-item.cs-reset-heading {
+	flex-direction: row;
+	align-items: center;
+}
+
+.cs-menu-customize .cs-reset-heading .setting-item-control,
+.cs-command-builder .cs-reset-heading .setting-item-control {
+	flex: 0 0 var(--toggle-width, 40px);
+	justify-content: center;
+	margin: 0;
+	margin-inline-start: auto;
+	margin-inline-end: 12px;
+	padding: 0;
+}
+
+/* A count that arrives after its menu opens appears without flashing progress copy. */
+@media (prefers-reduced-motion: no-preference) {
+	.cs-usage-menu-count {
+		animation: cs-fade-in 180ms ease-out;
+	}
+}
+
 /* Rows reuse .callout-studio-row; this only tweaks the menu-specific bits. */
+.cs-menu-row .callout-studio-row-name {
+	/* The shared 22ch cap is for callout names. Menu actions should use the
+	   whole row and ellipsize only when the handle and toggle truly need it. */
+	max-width: none;
+}
+
 .cs-menu-row.is-disabled {
 	opacity: 0.55;
 }
@@ -397,13 +1307,24 @@
    rather than restating a number, which is what makes the phone case a single
    override below instead of one per control.
 
+   220px used to be arbitrary. It is now the icon-adjustment column's own width
+   (`.callout-studio-preview-panel`'s second grid track, below) so the three
+   rows' controls end on the SAME edge the icon-adjustment boxes do, not just
+   on each other — both sit flush against the panel's shared right edge, so
+   matching width is exactly what makes the left edges line up too. The
+   701-760px override further down mirrors the panel's own column width at
+   its one other fixed-px breakpoint, for the same reason; below that the
+   panel stacks to a full-width single column, which a `.setting-item` row
+   here has nothing to match (see the note there), so 260px just keeps
+   going.
+
    (A `.callout-studio-editor .modal-content { padding: 16px }` rule used to sit
    here and never matched anything: `contentEl` IS the `.modal-content` element
    the class is added to, so the descendant combinator had nothing to descend
    into. The modal's real padding lives on `.cs-modal > .modal-content` in the
    modal chrome block further down.) */
 .callout-studio-editor {
-	--cs-editor-control-width: 220px;
+	--cs-editor-control-width: 260px;
 }
 
 /* On phone Obsidian stacks every setting row and forces its controls to full
@@ -415,34 +1336,35 @@
 	--cs-editor-control-width: 100%;
 }
 
-/* The display name field. `.cs-tag-input-field` is excluded because it is also a
-   text input inside a control column — but it is the flexible half of the IDs
-   row, and the width belongs to the wrapper around it, not to the field. Our 4
-   classes + 1 type outrank Obsidian's phone rule above (3 classes + 1 type),
-   and on phone the variable resolves to 100% anyway, so the two agree.
+/* Below 701px the preview panel stacks to one column (see the `max-width:
+   700px` query near the panel's own rules) — but the three rows above it do
+   NOT: unlike `.is-phone`, that stacking is Obsidian's own `.setting-item`
+   layout and is gated on the device class alone, not on width. A row here
+   stays name-beside-control at any desktop width, so there is no full-width
+   control slot to match the now-stacked panel into — re-pointing the
+   variable to 100% at this width (tried first) fights that layout and the
+   control overlaps the label instead of aligning with anything. Nothing
+   past the 701-760px override below is a real fix for that: the base
+   260px above simply keeps applying underneath it, same as the flat 220px
+   did before this change. */
 
-   The rest of the box model (border, padding, height) and the focus/disabled
-   states are copied from `.cs-tag-input-field` on purpose: this field sits
-   directly above the Callout IDs field, and the two looked like different
-   controls when one used Obsidian's bare input style and the other the
-   deliberately-styled tag field. */
-.callout-studio-editor
-	.setting-item-control
-	input[type="text"]:not(.cs-tag-input-field) {
-	width: var(--cs-editor-control-width);
-	border: 1px solid var(--background-modifier-border);
-	border-radius: var(--radius-s);
-	background: var(--background-modifier-form-field);
-	padding: 6px 10px;
-	min-height: 36px;
-	box-sizing: border-box;
+/* The panel's second column narrows to 250px between 701 and 760px (see the
+   matching query near the panel's own rules) rather than jumping straight
+   to a stack. Follow it here, or the three rows' right edge would still
+   line up but their shared width would drift 10px wider than the boxes
+   they're meant to match. */
+@media (min-width: 701px) and (max-width: 760px) {
+	.callout-studio-editor {
+		--cs-editor-control-width: 250px;
+	}
 }
 
+/* Width belongs to the display-name field; the IDs wrapper and combobox
+   manage their own width. Shared .cs-text-control rules paint the field. */
 .callout-studio-editor
 	.setting-item-control
-	input[type="text"]:not(.cs-tag-input-field):focus {
-	border-color: var(--interactive-accent);
-	box-shadow: 0 0 0 2px rgba(var(--interactive-accent-rgb), 0.2);
+	input[type="text"]:not(.cs-tag-input-field, .cs-combobox-input) {
+	width: var(--cs-editor-control-width);
 }
 
 /* A greyed-out control still has to read as a control, which means it has to
@@ -455,7 +1377,7 @@
    the token is always in scope here and the fallback never fires. */
 .callout-studio-editor
 	.setting-item-control
-	input[type="text"]:not(.cs-tag-input-field):disabled {
+	input[type="text"]:not(.cs-tag-input-field, .cs-combobox-input):disabled {
 	color: var(--text-faint);
 	opacity: 0.5;
 	cursor: not-allowed;
@@ -514,6 +1436,18 @@
 
 .cs-live-preview-body.cs-live-preview-editable .cm-scroller {
 	overflow: visible;
+}
+
+/* A theme-owned preview keeps its final blank document line as a safe place to
+   park CodeMirror's caret outside the callout, but does not show that line as
+   extra space. No other preview receives this opt-in class. */
+.cs-live-preview-body.cs-live-preview-editable.cs-live-preview-collapse-trailing-line
+	.cm-content
+	> .cm-line:last-child {
+	height: 0;
+	min-height: 0;
+	line-height: 0;
+	overflow: hidden;
 }
 
 /* Fallback (static render) path: contain reading-view chrome inside the card and
@@ -611,9 +1545,18 @@
 	box-shadow: none;
 	color: var(--text-normal);
 	cursor: pointer;
+	/* `box-shadow` rides along because the hover/press state below paints its
+	   ring with it. Whether it actually eases depends on what is underneath:
+	   Obsidian's `--input-shadow` is an *inset* hairline plus a drop shadow, and
+	   a list that shape is not interpolable with a flat ring, so on desktop with
+	   the default theme the ring still arrives at once (measured: it reads its
+	   target value on frame 0). On the phone — and under any theme that nulls
+	   `--input-shadow` — the resting shadow is `none`, which interpolates, and
+	   the ring fades in with the border instead of landing on top of it. */
 	transition:
 		border-color 120ms ease,
-		background-color 120ms ease;
+		background-color 120ms ease,
+		box-shadow 120ms ease;
 }
 
 /* Obsidian stretches every non-`clickable-icon` button in a setting row to the
@@ -626,26 +1569,70 @@
 	width: 44px;
 }
 
-.cs-icon-tile:hover,
+/* ── Hover, press and focus ──
+
+   The tile is a box the user edits without typing into, and it sits directly
+   below the Display name and Callout IDs fields, so it borrows *their* focus
+   treatment rather than inventing one: the 1px border recolours to
+   `--background-modifier-border-focus` and a 2px ring in the same grey sits on
+   top of it, which the eye reads as 3px of grey edge. That is the contract in
+   "How an input field focuses" (`docs/internals-docs/16-settings-ui-and-modals.md`),
+   and this row now answers to it like the two above it. It used to light
+   `--interactive-accent`, which made it the one purple-lit control in a modal
+   of grey-lit ones.
+
+   ── Why the box needs four classes and the fill does not ──
+
+   `box-shadow` is contested three ways: `button:not(.clickable-icon)` (0,1,1)
+   sets `--input-shadow`, `button:hover` (0,1,1) sets `--input-shadow-hover`,
+   and `button:not(.clickable-icon).mobile-tap` (0,2,1) sets it again the moment
+   a finger lands. A one-class rule is (0,1,0), so the ring would simply never
+   appear — the same trap, and the same fix, as the ⓧ badge further down.
+   `background-color` is contested only at (0,1,1), which a plain
+   `.cs-icon-tile:hover` clears on its own.
+
+   `border-color`, never the `border` shorthand: the empty state swaps
+   `border-style` to dashed at (0,2,0) and a shorthand here would silently
+   solidify it.
+
+   The fill also *has* to stay at (0,2,0). The empty state paints
+   `background-color: transparent` at the same weight further down the file and
+   wins the tie on source order, which is the only thing keeping the dashed
+   "add one" box from filling in under the pointer; raising this rule would
+   quietly undo that.
+
+   Only `:focus-visible` lives out here, because a keyboard reaches this tile on
+   every device. `:hover` and the touch press are in the two device-gated blocks
+   below. */
+.callout-studio-editor
+	.setting-item
+	.setting-item-control
+	button.cs-icon-tile:focus-visible {
+	outline: none;
+	border-color: var(--background-modifier-border-focus);
+	box-shadow: 0 0 0 var(--input-border-width-focus)
+		var(--background-modifier-border-focus);
+}
+
 .cs-icon-tile:focus-visible {
-	border-color: var(--interactive-accent);
 	background-color: var(--background-modifier-hover);
 }
 
-.cs-icon-tile:focus-visible {
-	outline: none;
-	box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
-}
-
-/* The pencil shares the box rather than covering it: fading the artwork out
+/* The glyph shares the box rather than covering it: fading the artwork out
    under it needs no opaque layer, so it cannot mismatch the tile's background
-   in one theme or the other. */
+   in one theme or the other. (Two glyphs, in fact — the swap arrows normally,
+   a `+` when the callout draws no icon at all.)
+
+   `--text-muted` is Obsidian's own icon grey: `--icon-color` is defined as
+   exactly this token, so every `clickable-icon` in the window is already
+   wearing it. It replaces `--text-accent`, which put the one purple mark in a
+   modal that otherwise reserves the accent for the callout being edited. */
 .cs-icon-tile-edit {
 	position: absolute;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: var(--text-accent);
+	color: var(--text-muted);
 	opacity: 0;
 	transform: scale(0.8);
 	pointer-events: none;
@@ -659,12 +1646,43 @@
 	height: 16px;
 }
 
-/* Behind `hover: hover` so a touch device never matches it. Not a nicety: iOS
-   Safari applies :hover on the first tap of an element that has hover styles
-   ("sticky hover"), which here would blank the artwork and swap in the swap
-   arrow on the way into the picker. A phone has no pointer to reveal anything
-   with, so it simply keeps showing the drawing — which is the content. */
-@media (hover: hover) {
+/* The swap arrows run a hair larger than the `+` that shares this slot: the
+   drift below reads better with a little more glyph to move, and the two are
+   never on screen together to look uneven against each other. (0,3,1) over the
+   (0,1,1) rule above.) */
+.cs-icon-tile-wrap:not(.is-empty) .cs-icon-tile-edit svg {
+	width: 18px;
+	height: 18px;
+}
+
+/* ── Desktop cursors only ──
+
+   Every hover-driven change this tile makes lives in this one block, gated on
+   `hover: hover` AND `pointer: fine`. Not a nicety: iOS Safari applies :hover
+   on the first tap of an element that has hover styles ("sticky hover"), which
+   here would blank the artwork, swap in the arrows and leave them there on the
+   way into the picker. `pointer: fine` rules out the rest — a stylus, and the
+   hybrid laptops that answer `hover: hover` from a touchscreen. A finger has
+   nothing to *reveal* anything with, only something to commit with, so touch
+   keeps showing the drawing — which is the content — and gets its feedback
+   from the press block below instead. */
+@media (hover: hover) and (pointer: fine) {
+	/* Same declarations as the `:focus-visible` rule above, and the same four
+	   classes for the same reason; they are apart because only this half may
+	   reach a pointer. */
+	.callout-studio-editor
+		.setting-item
+		.setting-item-control
+		button.cs-icon-tile:hover {
+		border-color: var(--background-modifier-border-focus);
+		box-shadow: 0 0 0 var(--input-border-width-focus)
+			var(--background-modifier-border-focus);
+	}
+
+	.cs-icon-tile:hover {
+		background-color: var(--background-modifier-hover);
+	}
+
 	.cs-icon-tile:hover .callout-studio-icon-preview,
 	.cs-icon-tile:focus-visible .callout-studio-icon-preview {
 		opacity: 0;
@@ -674,6 +1692,112 @@
 	.cs-icon-tile:focus-visible .cs-icon-tile-edit {
 		opacity: 1;
 		transform: none;
+	}
+}
+
+/* ── Touch and other coarse pointers ──
+
+   Exactly the complement of the query above, written as a comma list rather
+   than `not ((hover: hover) and (pointer: fine))`: Safari only learned that
+   boolean form in 16.4, and this is the block whose whole job is the phone.
+
+   With no hover to carry the box, the press carries it — the same grey border
+   and ring, for as long as the finger is down and not one frame longer.
+   Self-clearing is the point: nothing stays lit behind a tap that opened a
+   picker on top of it.
+
+   `.mobile-tap` beside `:active` is Obsidian's own press class (added to every
+   `a, button, .tappable, …` on touchstart, removed on release) and it is the
+   dependable half on iOS, where `:active` fires only for elements the engine
+   has already decided are tappable. Both need the four classes: Obsidian paints
+   `button:not(.clickable-icon).mobile-tap` at (0,2,1) with a fill and a shadow
+   of its own, and a lighter rule loses the ring to it.
+
+   Deliberately no artwork swap and no drift loop here — see the block above. */
+@media (hover: none), (pointer: coarse) {
+	.callout-studio-editor
+		.setting-item
+		.setting-item-control
+		button.cs-icon-tile:active,
+	.callout-studio-editor
+		.setting-item
+		.setting-item-control
+		button.cs-icon-tile.mobile-tap {
+		border-color: var(--background-modifier-border-focus);
+		box-shadow: 0 0 0 var(--input-border-width-focus)
+			var(--background-modifier-border-focus);
+	}
+}
+
+/* ── The swap arrows drift apart, and back ──
+
+   The glyph revealed above is Lucide's `arrow-left-right`, and Obsidian builds
+   it as four bare <path> children of the <svg>, in drawing order: the top
+   arrow's head and shaft (pointing left), then the bottom arrow's head and
+   shaft (pointing right). No <g>, no wrapper — which is what lets a plain
+   `:nth-child()` split hand one arrow to each keyframe set and slide them
+   apart, each in the direction it already points, then back. Forever, gently:
+   3.5 user units on a 24-unit viewBox drawn at 18px is about 2.6 device pixels,
+   enough to read as "these two trade places", too little to pull the eye off
+   the form.
+
+   `translateX` on an SVG child resolves in that child's own user coordinate
+   system, so there is no `transform-box` or `transform-origin` to get wrong —
+   a pure translation has no origin.
+
+   Scoped off the empty state because the glyph there is `plus`, whose two
+   paths would take the split as one arrow each and pull the + apart.
+
+   `prefers-reduced-motion: no-preference` in the query rather than an
+   `animation: none` in the `reduce` block below: these selectors are (0,6,1)
+   and an override would have to restate every one of them to outrank it. A
+   loop that never starts needs no stopping. */
+@keyframes cs-icon-swap-lead {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(-3.5px);
+	}
+}
+
+@keyframes cs-icon-swap-trail {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(3.5px);
+	}
+}
+
+@media (hover: hover) and (pointer: fine) and
+	(prefers-reduced-motion: no-preference) {
+	.cs-icon-tile-wrap:not(.is-empty)
+		.cs-icon-tile:hover
+		.cs-icon-tile-edit
+		svg
+		> :nth-child(-n + 2),
+	.cs-icon-tile-wrap:not(.is-empty)
+		.cs-icon-tile:focus-visible
+		.cs-icon-tile-edit
+		svg
+		> :nth-child(-n + 2) {
+		animation: cs-icon-swap-lead 1.05s ease-in-out infinite;
+	}
+
+	.cs-icon-tile-wrap:not(.is-empty)
+		.cs-icon-tile:hover
+		.cs-icon-tile-edit
+		svg
+		> :nth-child(n + 3),
+	.cs-icon-tile-wrap:not(.is-empty)
+		.cs-icon-tile:focus-visible
+		.cs-icon-tile-edit
+		svg
+		> :nth-child(n + 3) {
+		animation: cs-icon-swap-trail 1.05s ease-in-out infinite;
 	}
 }
 
@@ -809,8 +1933,14 @@
    picker returned focus to the tile and the badge stayed lit with the pointer
    nowhere near it, until something else was clicked. `:focus-visible` is only
    set when the browser judges focus should be *shown*, i.e. keyboard
-   navigation, which is the case this rule exists for in the first place. */
-@media (hover: hover) {
+   navigation, which is the case this rule exists for in the first place.
+
+   The device gate moved to `(hover: hover) and (pointer: fine)` with the tile's
+   own hover rules, and the permanent-badge block below moved with it to stay
+   its exact complement — a coarse pointer that also reports `hover: hover` must
+   land in one of the two, and the badge it lands on should be the tappable
+   one. */
+@media (hover: hover) and (pointer: fine) {
 	.cs-icon-tile-wrap:hover .cs-icon-tile-clear,
 	.cs-icon-tile:focus-visible + .cs-icon-tile-clear,
 	.cs-icon-tile-clear:focus-visible {
@@ -819,11 +1949,15 @@
 	}
 }
 
-/* No hover exists here, so the badge is permanent — the iPhone equivalent of
+/* No usable hover here, so the badge is permanent — the iPhone equivalent of
    jiggle mode, minus the mode. Bigger, and with `::after` padding the tap area
    out past the 22px circle, since half of it hangs off the tile and the half
-   that does not would otherwise be competing for taps with the picker. */
-@media (hover: none) {
+   that does not would otherwise be competing for taps with the picker.
+
+   The comma list is the complement of the reveal block's query above; see the
+   press block up by the tile for why it is spelled this way and not with
+   `not (…)`. */
+@media (hover: none), (pointer: coarse) {
 	/* Four classes again, and here it is the size that needs them: this is the
 	   phone, where `.is-phone .setting-item-control button:not(.clickable-icon)`
 	   (0,3,1) sets `width: 100%` and its sibling sets `padding: 10px`. A badge
@@ -874,13 +2008,21 @@
 	color: var(--text-faint);
 }
 
-@media (hover: hover) {
+/* Warming `--text-faint` to the same `--text-muted` the swap arrows wear, so
+   the two states of one glyph slot agree; it used to warm to `--text-accent`,
+   the last purple left in this component. Same device gate as every other
+   hover rule here. */
+@media (hover: hover) and (pointer: fine) {
 	.cs-icon-tile-wrap.is-empty .cs-icon-tile:hover .cs-icon-tile-edit,
 	.cs-icon-tile-wrap.is-empty .cs-icon-tile:focus-visible .cs-icon-tile-edit {
-		color: var(--text-accent);
+		color: var(--text-muted);
 	}
 }
 
+/* Transitions only. The swap arrows' drift loop is not switched off here — it
+   is never switched *on*, by a `prefers-reduced-motion: no-preference` in its
+   own query above, because its selectors are far too specific to override from
+   a block this shape. */
 @media (prefers-reduced-motion: reduce) {
 	.cs-icon-tile,
 	.cs-icon-tile-edit,
@@ -1199,9 +2341,108 @@ button.callout-studio-icon-picker-loading {
 	font-size: var(--font-ui-small);
 }
 
+/* Cancel, and every other neutral action a window's footer carries. These are
+   built as bare `<button>`s — no class — so until now they fell straight
+   through to `app.css` and hovered `--interactive-normal` → `--interactive-hover`,
+   which in light mode is #ffffff → #fafafa: a 4.4% luminance step that reads as
+   nothing happening. That is the "Cancel does not change on hover" report, and
+   it is the same family of bug as Discover's, reached from the opposite side.
+
+   Giving them the shared face rather than a class of their own keeps the
+   call sites bare — there is no `cs-` class to remember to add to the next
+   window's Cancel, and none of the five that exist today had to change.
+
+   The `:not()` is a **list**, so its specificity is that of its most specific
+   argument (0,1,0) rather than the sum of three — the selector stays (0,3,1),
+   enough to outrank Obsidian's (0,1,1) `button:hover` without `!important`.
+   It carves out the coloured variants, which own their own faces: `.mod-cta`
+   (Save, Confirm), `.mod-warning` (Delete, Replace) and `.mod-destructive`.
+
+   Scoped `.cs-modal > .cs-modal-footer` — the bar `applyModalChrome()` builds
+   — so this cannot reach a button in a core Obsidian dialog, or even one in
+   the body of our own windows. */
+.cs-modal
+	> .cs-modal-footer
+	button:not(.mod-cta, .mod-warning, .mod-destructive) {
+	background-color: var(--cs-btn-face, var(--interactive-normal));
+	border: 1px solid var(--cs-btn-border, var(--background-modifier-border));
+	color: var(--text-normal);
+	box-shadow: none;
+}
+
+@media (hover: hover) {
+	.cs-modal
+		> .cs-modal-footer
+		button:not(.mod-cta, .mod-warning, .mod-destructive):not(
+			:disabled,
+			.cs-btn-disabled
+		):hover {
+		background-color: var(--cs-btn-face-hover, var(--interactive-hover));
+		border-color: var(--cs-btn-border-hover, var(--background-modifier-border-hover));
+		color: var(--text-normal);
+		box-shadow: none;
+	}
+}
+
+.cs-modal
+	> .cs-modal-footer
+	button:not(.mod-cta, .mod-warning, .mod-destructive):focus-visible {
+	box-shadow: 0 0 0 3px var(--background-modifier-border-focus);
+}
+
 .cs-modal > .cs-modal-footer button.cs-btn-disabled {
 	opacity: 0.4;
 	cursor: not-allowed;
+}
+
+/* ── Red buttons answer the pointer ──────────────────────────────
+   The variants the carve-out above hands back to Obsidian: Delete (a callout,
+   a user image), Replace, "Start fresh", the settings tab's "Reset everything"
+   (`ButtonComponent.setWarning()` is `mod-destructive mod-cta` in Obsidian
+   1.13), and any `ConfirmModal` that keeps the older `mod-warning` class. They rest on
+   Obsidian's red and — because `--background-modifier-error` and
+   `--background-modifier-error-hover` are the same colour, see
+   `--cs-btn-danger-face-hover` above — hover to it too. This rule is the only
+   thing that makes them move.
+
+   **The resting fill is deliberately left alone.** A theme that restyles
+	   `.mod-warning` or `.mod-destructive` keeps its own red, and mixing from
+   `--background-modifier-error` means a theme that retunes *that* gets a hover
+   derived from its colour. Claiming the resting fill at this weight would beat
+	   any theme painting either class directly.
+
+	   `body:not(.is-mobile)` because Obsidian's mobile warning/destructive
+	   treatment deliberately drops the red fill for grey-with-red-text, and a
+	   tablet with a pointer attached satisfies `hover: hover` while still carrying
+	   `.is-mobile` — without the guard those two meet and a grey button hovers red.
+
+   Scoped to the same three roots as the token, so a red button in a core
+   Obsidian dialog is untouched. (0,5,2) against Obsidian's (0,2,1), so it
+   lands without `!important`. */
+@media (hover: hover) {
+	body:not(.is-mobile)
+		.callout-studio-settings
+		button:is(.mod-warning, .mod-destructive):not(
+			:disabled,
+			.cs-btn-disabled
+		):hover,
+	body:not(.is-mobile)
+		.cs-modal
+		button:is(.mod-warning, .mod-destructive):not(
+			:disabled,
+			.cs-btn-disabled
+		):hover,
+	body:not(.is-mobile)
+		.callout-studio-editor
+		button:is(.mod-warning, .mod-destructive):not(
+			:disabled,
+			.cs-btn-disabled
+		):hover {
+		background-color: var(
+			--cs-btn-danger-face-hover,
+			var(--background-modifier-error-hover)
+		);
+	}
 }
 
 /* ── Stacked windows on mobile ────────────────────────────────────
@@ -1276,6 +2517,11 @@ button.callout-studio-icon-picker-loading {
 
 .callout-studio-preview-panel {
 	display: grid;
+	/* 260px, not a round number picked for this panel alone: it is also
+	   `--cs-editor-control-width` (see the callout editor's top-of-file rule),
+	   which is what lines the display-name/IDs/colour rows' right column up
+	   with the icon-adjustment boxes below it. The 701-760px override further
+	   down repeats the pairing — change one side, change the other. */
 	grid-template-columns: minmax(0, 400px) 260px;
 	gap: 12px;
 	margin: 0 0 16px;
@@ -1338,6 +2584,42 @@ button.callout-studio-icon-picker-loading {
 	padding: 6px 10px;
 	background: var(--cs-surface-raised, var(--background-secondary));
 	border-radius: 7px 7px 0 0;
+}
+
+/* Reset buttons sit outside the header's line box: revealing one must never
+   change the colored strip's height or move the sliders below it. Logical
+   positioning also keeps the action at the trailing edge in RTL languages. */
+.cs-icon-adjust-header,
+.callout-studio-adjust-header.cs-reset-header {
+	position: relative;
+	box-sizing: border-box;
+	padding-inline-end: 36px;
+}
+
+.cs-icon-adjust-header > span {
+	display: block;
+}
+
+.cs-icon-adjust-header > .cs-icon-adjust-reset,
+.callout-studio-adjust-header > .cs-header-reset {
+	position: absolute;
+	inset-inline-end: 6px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	min-height: 0;
+	padding: 2px;
+	margin: 0;
+	--icon-size: 14px;
+}
+
+.cs-icon-adjust-reset.cs-hidden,
+.cs-header-reset.cs-hidden {
+	display: none;
 }
 
 /* Slider rows: roomy label above full-width slider */
@@ -1454,9 +2736,9 @@ button.callout-studio-icon-picker-loading {
 	position: relative;
 }
 
-/* The shared control width is put on the Color row's control COLUMN, not on the
-   dropdown inside it — because that column holds two things once a built-in has
-   been customized (dropdown + revert button) and the width belongs to the pair.
+/* The shared control width is put on the IDs / Color control COLUMNS, not on
+   their inner controls — because either column holds two things once a built-in
+   has been customized (field + revert button) and the width belongs to the pair.
    Pinning the pair is what keeps the row's right edge on the same line as the
    display-name and IDs fields whether or not the button is there: the button
    takes its slice out of the shared width and the dropdown flexes into the
@@ -1465,10 +2747,32 @@ button.callout-studio-icon-picker-loading {
 
    `flex: 0 0 auto` because Obsidian's own `.setting-item-control` is a growing
    flex item — left alone it would ignore the width and fill the row. */
+.callout-studio-editor .cs-callout-ids-setting .setting-item-control,
 .callout-studio-editor .cs-color-setting .setting-item-control {
 	flex: 0 0 auto;
 	width: var(--cs-editor-control-width);
 	max-width: 100%;
+}
+
+/* TagInput normally owns the whole fixed control width. Inside the IDs setting
+   the column owns it instead, so a conditional reset button takes its slice
+   from the field rather than widening the row or overflowing on phone. */
+.callout-studio-editor .cs-callout-ids-setting .cs-tag-wrapper {
+	flex: 1 1 auto;
+	width: auto;
+	min-width: 0;
+}
+
+/* The IDs control is taller than its text field once chips wrap underneath it.
+   Obsidian normally centres an ExtraButton against that whole column, which
+   makes the reset arrow drift downward as aliases are added. Pin it to the top
+   and centre its 24px box inside the field's 36px first row instead. */
+.callout-studio-editor
+	.cs-callout-ids-setting
+	.setting-item-control
+	> .extra-setting-button {
+	align-self: flex-start;
+	margin-block-start: 6px;
 }
 
 /* `width: auto` + `flex: 1` rather than a width of its own: whatever the column
@@ -1484,7 +2788,7 @@ button.callout-studio-icon-picker-loading {
 	min-width: 0;
 }
 
-/* The "revert to default" buttons on the Colors and Icon rows — shown only once
+/* The "revert to default" buttons on the IDs, Colors and Icon rows — shown once
    a built-in has actually diverged, so they join a row that was already laid
    out without them. They are the one thing in that row that must not absorb the
    difference: a squeezed icon button is still a button, a squeezed 24px
@@ -1497,32 +2801,6 @@ button.callout-studio-icon-picker-loading {
 
 .cs-palette-trigger {
 	width: 100%;
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	padding: 6px 8px;
-	border-radius: var(--radius-s);
-	border: 1px solid var(--background-modifier-border);
-	background-color: var(--cs-surface-raised, var(--background-secondary));
-	color: var(--text-normal);
-	font-size: var(--font-ui-small);
-	cursor: pointer;
-	text-align: start;
-}
-
-.cs-palette-trigger:hover,
-.cs-palette-trigger.is-open {
-	background-color: var(--background-modifier-hover);
-}
-
-/* `flex-shrink: 0` because the trigger is a fixed width now and something has
-   to give when the name is long — and it must be the name, not the swatch. A
-   gradient palette draws three overlapping circles (~35px); left shrinkable,
-   they would be squeezed toward the 22px floor and the back one clipped. */
-.cs-palette-trigger-circles {
-	display: inline-flex;
-	flex-shrink: 0;
-	min-width: 22px;
 }
 
 /* `min-width: 0` is not redundant next to `flex: 1`: the flex BASIS is 0 but
@@ -1537,35 +2815,17 @@ button.callout-studio-icon-picker-loading {
 	white-space: nowrap;
 }
 
-/* Sits at the far end in both directions — margin-inline-start, not
-   margin-left, so RTL puts it on the left. Same treatment as the icon picker's
-   source button, which this control is deliberately a twin of. */
-.cs-palette-trigger-caret {
-	display: flex;
-	flex-shrink: 0;
-	align-items: center;
-	margin-inline-start: auto;
-	color: var(--text-muted);
-}
-
-.cs-palette-trigger-caret .svg-icon {
-	width: var(--icon-xs);
-	height: var(--icon-xs);
-}
-
 /* Opens at the trigger's own width, every time. Pinning BOTH inset-inline edges
    is the whole trick — with only the start edge the popup is shrink-to-fit and
    free to disagree with its trigger, which is how it ended up narrower than the
-   button that opened it and read as clipped. (This is what the icon picker's
-   `.icon-picker-source-menu` does, and why that one looks right.) A `min-width`
+   button that opened it and read as clipped. The shared `.cs-combobox-menu`
+   pins the same edges. A `min-width`
    would reintroduce exactly that disagreement, so there isn't one. */
 .cs-palette-menu {
 	position: absolute;
 	top: calc(100% + 4px);
 	inset-inline-start: 0;
 	inset-inline-end: 0;
-	max-height: 320px;
-	overflow-y: auto;
 	z-index: 1000;
 	padding: 6px 0;
 	border-radius: var(--radius-s);
@@ -1606,41 +2866,34 @@ button.callout-studio-icon-picker-loading {
 	bottom: calc(100% + 4px);
 }
 
-.cs-palette-menu-group-label {
-	padding: 4px 12px;
-	font-size: var(--font-ui-smaller);
-	color: var(--text-faint);
-	text-transform: uppercase;
-	letter-spacing: 0.04em;
-	text-align: start;
-}
 
-/* Separates each later group from the one above it. Skipped on the first
-   label — the menu's own top edge already delimits it, so a divider there
-   would just duplicate the border a pixel below. */
-.cs-palette-menu-group-label:not(:first-child) {
-	margin-top: 6px;
-	padding-top: 10px;
-	border-top: 1px solid var(--background-modifier-border);
-}
-
+/* `padding` is the row spacing: a list of colour swatches needs more air than a
+   list of words to read as separate rows rather than one striped block. */
 .cs-palette-menu-item {
 	display: flex;
 	align-items: center;
 	gap: 10px;
-	padding: 6px 12px;
+	padding: 9px 12px;
 	cursor: pointer;
 	color: var(--text-normal);
 	font-size: var(--font-ui-small);
 }
 
+/* The fold menu has no arrow navigation; combobox rows take their pointer
+   highlight from .is-active so stationary :hover cannot compete with arrows. */
 .cs-palette-menu-item.is-active,
-.cs-palette-menu-item:hover {
+:where(.cs-fold-menu) .cs-palette-menu-item:hover {
 	background-color: var(--background-modifier-hover);
 }
 
 .cs-palette-menu-item.is-selected {
 	background-color: var(--background-secondary-alt);
+}
+
+/* The committed Fold option must still answer the pointer. Shared listboxes
+   use .is-active for this state below. */
+.cs-fold-menu .cs-palette-menu-item.is-selected:hover {
+	background-color: color-mix(in srgb, var(--background-secondary-alt) 86%, var(--text-normal));
 }
 
 /* Same `min-width: 0` as the trigger's label, for the same reason: the menu is
@@ -1661,6 +2914,19 @@ button.callout-studio-icon-picker-loading {
 	display: inline-flex;
 	align-items: center;
 	flex-shrink: 0;
+	/* The three circles below stack front-to-back with `z-index: 2/1/0` of their
+	   own — fine on their own, except none of this widget's ancestors otherwise
+	   establish a stacking context, so those values are not scoped to the widget
+	   at all: they are compared directly against whatever else is in the nearest
+	   real stacking context, which on the three sticky callout lists is the
+	   pinned `.cs-sticky-heading` (`z-index: 1`). Without this, the front circle
+	   (`z-index: 2`) outranks the header it is supposed to scroll under, and a
+	   row passing beneath the band shows its circles floating on top of it.
+	   `isolation: isolate` scopes the 0/1/2 stack to this element without
+	   touching layout, position, or the scrollport — unlike the properties
+	   `.cs-sticky-section` is forbidden from carrying (see
+	   `modalBodyLayers.test.ts`), this is safe to add here. */
+	isolation: isolate;
 }
 
 .cs-color-circle {
@@ -1782,12 +3048,24 @@ button.callout-studio-icon-picker-loading {
 	margin-bottom: 4px;
 }
 
+/* Full width, sitting directly on the list it filters. */
+.callout-studio-replace-search {
+	width: 100%;
+	margin-bottom: 8px;
+}
+
 .callout-studio-replace-list {
 	max-height: 240px;
 	overflow-y: auto;
 	border: 1px solid var(--background-modifier-border);
 	border-radius: var(--radius-s);
 	margin-bottom: 12px;
+}
+
+/* The shared empty state is a page-level block elsewhere; in this list it only
+   needs to fill the space one row would have. */
+.callout-studio-replace-list .callout-studio-empty-state {
+	padding: 8px 12px;
 }
 
 .callout-studio-replace-item {
@@ -1862,6 +3140,9 @@ button.callout-studio-icon-picker-loading {
 	align-items: center;
 	gap: 8px;
 	padding: 6px 8px;
+	min-width: 0;
+	overflow-x: hidden;
+	width: 100%;
 }
 
 .callout-studio-suggestion-icon {
@@ -1882,22 +3163,532 @@ button.callout-studio-icon-picker-loading {
 .callout-studio-suggestion-text {
 	flex: 1;
 	min-width: 0;
+	max-width: 100%;
+	overflow-x: hidden;
 }
 
 .callout-studio-suggestion-name {
+	min-width: 0;
+	width: 100%;
 	font-size: var(--font-ui-medium);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .callout-studio-suggestion-id {
 	font-size: var(--font-ui-smaller);
 	color: var(--text-muted);
 	font-family: var(--font-monospace);
+	min-width: 0;
+	max-width: 100%;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.callout-studio-suggestion-id-truncated {
+	max-width: 100%;
+	width: 100%;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 
 /* Characters around the matched run of an id/alias fade out. */
 .callout-studio-suggestion-id-dim {
 	color: var(--text-faint);
+}
+
+/* ─── Combobox (type-to-filter picker) ───────────────────────── */
+
+.suggestion.callout-studio-suggestion-list {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+/* Deliberately placed right under the suggestion rules above: the popup draws
+   its rows with those very classes, so the two live together and cannot drift
+   into looking like two different lists. */
+
+.cs-combobox {
+	position: relative;
+	/* The settings-tab control column is a flex row that ends flush right; a
+	   fixed-width control would sit in it as a stub, so this fills it. */
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+/* Selection controls and standalone text fields share one face and geometry.
+   Explicit opt-in leaves action buttons and the combobox's inner input alone.
+   Repeated classes beat Obsidian's native input/select/button chrome. */
+.cs-dropdown-control.cs-dropdown-control.cs-dropdown-control,
+.cs-text-control.cs-text-control.cs-text-control.cs-text-control {
+	height: auto;
+	min-height: max(36px, var(--input-height));
+	box-sizing: border-box;
+	padding: 6px 10px;
+	border: 1px solid var(--cs-btn-border, var(--background-modifier-border));
+	border-radius: var(--radius-s);
+	corner-shape: round;
+	background: var(--cs-btn-face, var(--interactive-normal));
+	color: var(--text-normal);
+	box-shadow: none;
+	font-family: inherit;
+	font-size: var(--font-ui-small);
+	font-weight: var(--font-normal);
+	line-height: var(--line-height-tight);
+	text-align: start;
+}
+
+.cs-dropdown-control.cs-dropdown-control.cs-dropdown-control {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+}
+
+.cs-text-control.cs-text-control.cs-text-control.cs-text-control {
+	cursor: text;
+}
+
+@media (hover: hover) {
+	.cs-dropdown-control.cs-dropdown-control:not(:disabled):not(:has(:disabled)):hover,
+	.cs-text-control.cs-text-control:not(:disabled):hover {
+		background-color: var(--cs-btn-face-hover, var(--interactive-hover));
+	}
+}
+
+/* Keep the same fill while a menu is open or the user is editing a field. */
+.cs-dropdown-control.cs-dropdown-control.is-open,
+.cs-dropdown-control.cs-dropdown-control.mobile-tap:not(:disabled),
+.cs-dropdown-control.cs-dropdown-control:not(:disabled):not(:has(:disabled)):focus-within,
+.cs-text-control.cs-text-control:not(:disabled):focus,
+.cs-text-control.cs-text-control:not(:disabled):active {
+	background-color: var(--cs-btn-face-hover, var(--interactive-hover));
+}
+
+/* Validation owns the red border/ring even while an invalid field is focused. */
+.cs-dropdown-control.cs-dropdown-control.cs-dropdown-control:focus-within,
+.cs-text-control.cs-text-control.cs-text-control.cs-text-control:not(:disabled):not(.cs-input-invalid):focus {
+	border-color: var(--background-modifier-border-focus);
+	box-shadow: 0 0 0 var(--input-border-width-focus)
+		var(--background-modifier-border-focus);
+	outline: none;
+}
+
+.cs-dropdown-control.cs-dropdown-control:disabled,
+.cs-text-control.cs-text-control.cs-text-control.cs-text-control:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.cs-text-control.cs-text-control.cs-text-control.cs-text-control::placeholder {
+	color: var(--text-faint);
+}
+
+/* Plain choices share the listbox popup. A hidden stack gives the trigger the
+   width of its longest translated option without giving the input a fixed size. */
+.cs-select-dropdown.cs-combobox {
+	display: inline-grid;
+	flex: 0 1 auto;
+	vertical-align: middle;
+	min-inline-size: 0;
+	max-inline-size: 100%;
+}
+
+.cs-dropdown-width-sizer {
+	display: grid;
+	block-size: 0;
+	overflow: hidden;
+	visibility: hidden;
+	font-size: var(--font-ui-small);
+	font-weight: var(--font-normal);
+}
+
+.cs-dropdown-width-sizer > span {
+	grid-area: 1 / 1;
+	padding-inline: 11px calc(19px + var(--icon-xs));
+	white-space: nowrap;
+}
+
+.cs-select-dropdown .cs-combobox-lead {
+	display: none;
+}
+
+.cs-select-dropdown .cs-combobox-input {
+	width: 0;
+	text-overflow: ellipsis;
+}
+
+.setting-item-control > .cs-select-dropdown {
+	width: 100%;
+}
+
+/* The combobox's inner input has no separate face or ring. */
+.cs-combobox-control {
+	min-width: 0;
+}
+
+/* Sized like `.callout-studio-suggestion-icon` so the chosen item beside the
+   input is the same size as the same item down in the list. */
+.cs-combobox-lead {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	flex-shrink: 0;
+}
+
+.cs-palette-combobox .cs-combobox-lead {
+	width: auto;
+	justify-content: flex-start;
+	min-width: 20px;
+}
+
+.cs-combobox-lead svg {
+	width: 16px;
+	height: 16px;
+}
+
+/* Nothing chosen: no empty box holding a gap open. */
+.cs-combobox.is-empty .cs-combobox-lead {
+	display: none;
+}
+
+/* **Descendant-qualified on purpose — do not flatten this to
+   `.cs-combobox-input`.** Obsidian styles `input[type='text']` with a
+   background, a border, padding and a radius, and that selector's specificity
+   (0,1,1) BEATS a lone class (0,1,0): a bare `.cs-combobox-input` rule loses,
+   which is exactly how the field ended up drawn as a second box inside this
+   one. Two classes (0,2,0) win, so the input paints as nothing at all.
+
+   `min-width: 0` is not redundant beside `flex: 1` — the basis is 0 but
+   `min-width` still defaults to `auto`, which floors the field at its content
+   width and lets a long name push the caret out of the control. */
+.cs-combobox-control input[type="text"].cs-combobox-input {
+	flex: 1;
+	min-width: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+	outline: none;
+	padding: 0;
+	height: auto;
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+	font-family: inherit;
+	text-align: start;
+	/* The control is the button; the text inside it is just text. */
+	cursor: inherit;
+}
+
+/* The wrapper paints the hover/focus state; its inner input stays transparent
+   and never opts into .cs-text-control or adds a second focus ring. */
+.cs-combobox-control input[type="text"].cs-combobox-input:hover,
+.cs-combobox-control input[type="text"].cs-combobox-input:active,
+.cs-combobox-control input[type="text"].cs-combobox-input:focus,
+.cs-combobox-control input[type="text"].cs-combobox-input:focus-visible {
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	outline: none;
+}
+
+.cs-combobox-control .cs-combobox-input::placeholder {
+	color: var(--text-faint);
+}
+
+.cs-combobox.is-select-only .cs-combobox-input {
+	caret-color: transparent;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+/* margin-inline-start, not margin-left: RTL puts the caret on the left. */
+.cs-dropdown-caret {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	margin-inline-start: auto;
+	color: var(--text-muted);
+	pointer-events: none;
+}
+
+.cs-dropdown-caret .svg-icon {
+	width: var(--icon-xs);
+	height: var(--icon-xs);
+}
+
+/* Both inset-inline edges pinned, for the reason spelled out at
+   `.cs-palette-menu`: with only the start edge the popup is shrink-to-fit and
+   free to end up narrower than the field that opened it. */
+.cs-combobox-menu {
+	position: absolute;
+	top: calc(100% + 4px);
+	inset-inline-start: 0;
+	inset-inline-end: 0;
+	max-width: 100%;
+	z-index: 1000;
+	padding: 0;
+	border-radius: var(--radius-s);
+	border: 1px solid var(--background-modifier-border);
+	background-color: var(--cs-surface, var(--background-primary));
+	box-shadow:
+		0 8px 18px rgba(0, 0, 0, 0.22),
+		0 2px 6px rgba(0, 0, 0, 0.18);
+	outline: none;
+	text-align: start;
+}
+
+/* Every custom dropdown uses one bounded scroll surface. The fallback is the
+   normal desktop limit; long menus lower the custom property live when the
+   viewport or a clipping ancestor leaves less room above or below the control. */
+.cs-scrollable-dropdown-menu {
+	box-sizing: border-box;
+	max-height: var(--cs-combobox-menu-max-height, 320px);
+	transform: translateX(var(--cs-dropdown-menu-offset-x, 0px));
+	overflow-x: hidden;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+}
+
+/* The source picker declares its own width later in this stylesheet. */
+.cs-scrollable-dropdown-menu.cs-scrollable-dropdown-menu {
+	max-width: min(100%, var(--cs-dropdown-menu-max-width, 100%));
+}
+
+.cs-scrollable-dropdown-menu.cs-dropdown-menu-above {
+	top: auto;
+	bottom: calc(100% + 4px);
+}
+
+.cs-combobox-menu-hidden {
+	display: none;
+}
+
+/* Same treatment as `.cs-palette-menu-group-label`, which this replaced. */
+.cs-combobox-group {
+	position: relative;
+}
+
+.cs-combobox-group-label {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	background: var(--cs-surface, var(--background-primary));
+	padding: 4px 12px;
+	font-size: var(--font-ui-smaller);
+	line-height: var(--line-height-normal);
+	color: var(--text-faint);
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	text-align: start;
+}
+
+/* Separates each later group from the one above. Skipped on the first, whose
+   top edge is the menu's own. */
+.cs-combobox-group + .cs-combobox-group {
+	margin-top: 6px;
+	border-top: 1px solid var(--background-modifier-border);
+}
+
+/* Start the scrollport flush with the heading so scrolled rows cannot show in
+   a strip above it. Arrow-key scrolling also reserves the pinned heading. */
+.cs-combobox-menu:has(.cs-combobox-group) {
+	padding-block-start: 0;
+	scroll-padding-block-start: calc(var(--font-ui-smaller) * var(--line-height-normal) + 8px);
+}
+
+.cs-combobox-option {
+	cursor: pointer;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+/* Both pointer and keyboard put their highlight on this one class. A stationary
+   pointer must not leave a second :hover highlight behind after an arrow key. */
+.cs-combobox-option.is-active {
+	background-color: var(--background-modifier-hover);
+}
+
+.cs-combobox-option.is-selected {
+	background-color: var(--background-secondary-alt);
+}
+
+/* Both states can be present on one row. Without this more specific rule the
+   later selected fill hides the active pointer/keyboard highlight. */
+.cs-combobox-option.is-selected.is-active {
+	background-color: color-mix(in srgb, var(--background-secondary-alt) 86%, var(--text-normal));
+}
+
+.cs-language-option-label,
+.cs-dropdown-option-label {
+	display: block;
+	padding: 6px 12px;
+	overflow: hidden;
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-align: start;
+}
+
+.cs-language-setting .cs-combobox-lead {
+	display: none;
+}
+
+/* The menu is absolute and therefore cannot make the closed language picker
+   wide enough for its labels. This hidden stack restores that intrinsic-size
+   information: every translated option occupies the same grid cell, so the
+   widest one sets the width. The inline padding reserves the control's own
+   padding, gap and caret. */
+/* The width belongs to the pair, just like the editor's Color row. A visible
+   reset takes room from the picker, keeping the control column's edge fixed. */
+.cs-reset-setting .setting-item-control {
+	flex: 0 0 auto;
+	inline-size: 260px;
+	max-inline-size: 100%;
+	min-width: 0;
+	gap: 8px;
+}
+
+.cs-reset-setting .setting-item-info {
+	min-width: 0;
+}
+
+.cs-reset-setting .setting-item-control > .cs-combobox {
+	flex: 1 1 0;
+	inline-size: auto;
+	min-inline-size: 0;
+}
+
+.cs-reset-setting .setting-item-control > .extra-setting-button {
+	flex: 0 0 auto;
+}
+
+.cs-language-setting .setting-item-control {
+	flex: 0 1 var(--cs-language-picker-width, auto);
+	inline-size: var(--cs-language-picker-width, max-content);
+	max-inline-size: 100%;
+}
+
+.cs-language-width-sizer {
+	display: grid;
+	block-size: 0;
+	overflow: hidden;
+	visibility: hidden;
+	font-size: var(--font-ui-small);
+}
+
+.cs-language-width-sizer > span {
+	grid-area: 1 / 1;
+	padding-inline: 10px 34px;
+	white-space: nowrap;
+}
+
+/* The renderer adds this class only while Obsidian has actually stacked the
+   setting row. Reading the real layout keeps this custom control aligned with
+   core and with themes without duplicating a breakpoint that can drift. */
+.cs-language-setting-stacked .setting-item-control {
+	flex-basis: auto;
+	inline-size: 100%;
+	max-inline-size: 100%;
+}
+
+.is-phone .cs-reset-setting .setting-item-control {
+	inline-size: 100%;
+}
+
+.cs-combobox-footer-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 8px;
+	cursor: pointer;
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+.cs-combobox-footer-row:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+/* The footer is not arrow-navigable, but its hover must also yield while an
+   option is keyboard-active under a stationary pointer. */
+.cs-combobox-menu.is-keyboard-active .cs-combobox-footer-row:hover {
+	background-color: transparent;
+	color: var(--text-muted);
+}
+
+.cs-combobox-footer-row-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	flex-shrink: 0;
+}
+
+.cs-combobox-footer-row-icon .svg-icon {
+	width: var(--icon-s);
+	height: var(--icon-s);
+}
+
+.cs-combobox-footer-row-label {
+	flex: 1;
+	min-width: 0;
+}
+
+/* All five command pickers share one control width. They become full-width
+   when Obsidian stacks setting rows on a phone. */
+.cs-command-field {
+	--cs-command-control-width: 180px;
+}
+
+.is-phone .cs-command-field {
+	--cs-command-control-width: 100%;
+}
+
+.cs-command-field .setting-item-control {
+	flex: 0 0 auto;
+	width: var(--cs-command-control-width);
+	max-width: 100%;
+}
+
+.cs-command-field .setting-item-control > .cs-combobox {
+	width: 100%;
+	min-width: 0;
+}
+
+/* Match the breathing room of the All formats list in selection menus. */
+.cs-command-field .cs-select-dropdown .cs-combobox-option,
+.cs-palette-bgstyle-setting .cs-combobox-option {
+	padding: 8px 12px;
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+}
+
+/* The shared empty state is a page-level block elsewhere; inside a popup it
+   only needs to fill one row. */
+.cs-combobox-menu .callout-studio-empty-state {
+	padding: 8px 12px;
+}
+
+.cs-combobox.is-disabled .cs-combobox-control {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+/* A fixed 320px is most of a phone screen with the keyboard up. */
+@media (max-width: 600px) {
+	.cs-scrollable-dropdown-menu {
+		max-height: min(50vh, var(--cs-combobox-menu-max-height, 320px));
+	}
 }
 
 /* ─── Icon Picker Modal ──────────────────────────────────────── */
@@ -1930,6 +3721,9 @@ button.callout-studio-icon-picker-loading {
 	gap: 8px;
 	border-bottom: 1px solid var(--background-modifier-border);
 	padding: 10px var(--cs-modal-inset);
+	/* Match the scrollable toolbar's visible width without shifting both
+	   controls toward the start of the modal when a scrollbar is present. */
+	padding-inline: calc(var(--cs-modal-inset) + var(--cs-icon-grid-scrollbar, 0px));
 	flex-shrink: 0;
 	background: var(--cs-surface, var(--background-primary));
 }
@@ -1940,99 +3734,22 @@ button.callout-studio-icon-picker-loading {
 	font-weight: var(--font-medium);
 }
 
-/* Wraps the button + menu so the menu can anchor to it (position: relative)
-   and always open at the button's own width, regardless of the mouse. */
+/* Source and toolbar filters share the same control and popup geometry. */
 .icon-picker-source-dropdown {
 	flex: 1;
-	position: relative;
 	min-width: 0;
-}
-
-/* A button rather than a <select>, because the list it opens carries an icon
-   and a description per row, and an <option> can hold neither. */
-.icon-picker-source-button {
-	display: flex;
-	width: 100%;
-	align-items: center;
-	gap: 8px;
-	min-width: 0;
-	text-align: start;
-	cursor: pointer;
-}
-
-.icon-picker-source-emblem,
-.icon-picker-source-chevron {
-	display: flex;
-	flex-shrink: 0;
-	align-items: center;
-	color: var(--text-muted);
-}
-
-.icon-picker-source-emblem .svg-icon {
-	width: var(--icon-s);
-	height: var(--icon-s);
-}
-
-/* The chevron sits at the far end in both directions — margin-inline-start,
-   not margin-left, so RTL puts it on the left. */
-.icon-picker-source-chevron {
-	margin-inline-start: auto;
-}
-
-.icon-picker-source-chevron .svg-icon {
-	width: var(--icon-xs);
-	height: var(--icon-xs);
-}
-
-.icon-picker-source-current {
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
-
-/* Opens directly under the button, at the button's own width — an absolutely
-   positioned div anchored to .icon-picker-source-dropdown, not a menu that
-   follows the mouse. */
-.icon-picker-source-menu {
-	position: absolute;
-	top: calc(100% + 4px);
-	inset-inline-start: 0;
-	inset-inline-end: 0;
-	max-height: 320px;
-	overflow-y: auto;
-	z-index: 1000;
-	padding: 6px 0;
-	border-radius: var(--radius-s);
-	border: 1px solid var(--background-modifier-border);
-	background-color: var(--cs-surface, var(--background-primary));
-	box-shadow:
-		0 8px 18px rgba(0, 0, 0, 0.22),
-		0 2px 6px rgba(0, 0, 0, 0.18);
-	outline: none;
-}
-
-.icon-picker-source-menu-hidden {
-	display: none;
 }
 
 .icon-picker-source-menu-item {
 	display: flex;
 	align-items: center;
 	gap: 0.75em;
-	padding: 6px 12px;
+	padding: 8px 12px;
 	cursor: pointer;
 }
 
-/* Hover/keyboard-focus gets the same subtle tint as everywhere else; the
-   current source stays visibly marked underneath it via a stronger fill —
-   same pairing as the color palette dropdown's .is-active/.is-selected. */
-.icon-picker-source-menu-item.is-active,
-.icon-picker-source-menu-item:hover {
-	background-color: var(--background-modifier-hover);
-}
-
-.icon-picker-source-menu-item.is-selected {
-	background-color: var(--background-secondary-alt);
+.icon-picker-source-menu-item + .icon-picker-source-menu-item {
+	border-top: var(--border-width) solid var(--background-modifier-border);
 }
 
 .icon-picker-source-menu-item-emblem {
@@ -2062,7 +3779,35 @@ button.callout-studio-icon-picker-loading {
 .cs-source-text {
 	display: flex;
 	flex-direction: column;
-	row-gap: 0.25em;
+	row-gap: 0.1em;
+	min-width: 0;
+}
+
+.cs-source-name-row {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.4em;
+}
+
+/* Informational rather than warning-coloured: the row is available, and
+   choosing it opens the existing one-time download prompt. */
+.callout-studio-icon-picker .cs-source-download-badge {
+	display: inline-flex;
+	align-items: center;
+	padding: 1px 6px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 999px;
+	background: transparent;
+	color: #737373;
+	font-size: var(--font-ui-smaller);
+	font-weight: var(--font-normal);
+	line-height: 1.25;
+	white-space: nowrap;
+}
+
+.theme-dark .callout-studio-icon-picker .cs-source-download-badge {
+	color: #a3a3a3;
 }
 
 .cs-source-desc {
@@ -2174,7 +3919,10 @@ button.callout-studio-icon-picker-loading {
 	flex: 1;
 	min-height: 0;
 	overflow-y: auto;
+	/* Keep the controls still when filtering removes the grid's scrollbar. */
+	scrollbar-gutter: stable;
 	padding: 0 var(--cs-modal-inset) 12px;
+	padding-inline-start: calc(var(--cs-modal-inset) + var(--cs-icon-grid-scrollbar, 0px));
 }
 
 .icon-picker-toolbar {
@@ -2189,15 +3937,68 @@ button.callout-studio-icon-picker-loading {
 	flex-wrap: wrap;
 }
 
-.icon-picker-toolbar input {
-	flex: 1;
-	min-width: 150px;
+.icon-picker-toolbar .icon-picker-search-input {
+	flex: 1 1 140px;
+	min-width: 120px;
+	height: 36px;
+	box-sizing: border-box;
 	padding: 6px 10px;
 }
 
-.icon-picker-toolbar select {
-	padding: 6px 8px;
+.icon-picker-filter {
+	flex: 0 1 100px;
+	min-width: 0;
+}
+
+.icon-picker-category-picker,
+.icon-picker-skin-tone-picker {
+	flex-basis: 140px;
+}
+
+/* Tabler has two filters beside search. Keep search the widest control, but
+   share some of its spare width with style and category. */
+@media (min-width: 601px) {
+	.icon-picker-toolbar:has(> .icon-picker-tablerStyle-select) > .icon-picker-search-input {
+		flex: 8 1 120px;
+		min-width: 112px;
+	}
+
+	.icon-picker-toolbar:has(> .icon-picker-tablerStyle-select) > .icon-picker-filter {
+		flex: 1 1 auto;
+	}
+}
+
+/* Material has three filters. Give search its own row so the selected style,
+   weight and category can keep their full labels at desktop modal widths too. */
+.icon-picker-toolbar:has(> .icon-picker-weight-select) > .icon-picker-search-input {
+	flex: 1 0 100%;
+}
+
+.icon-picker-toolbar:has(> .icon-picker-weight-select) > .icon-picker-filter {
+	flex-grow: 1;
+}
+
+.icon-picker-filter:not(.icon-picker-skin-tone-picker) .cs-combobox-lead {
+	display: none;
+}
+
+.icon-picker-filter .cs-combobox-option {
+	padding: 8px 12px;
+}
+
+.icon-picker-skin-tone-picker .cs-combobox-option {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.icon-picker-skin-tone-sample {
 	flex-shrink: 0;
+	font-size: 18px;
+}
+
+.icon-picker-skin-tone-label {
+	min-width: 0;
 }
 
 /* Locked while the source still has to be downloaded — see PackPanel */
@@ -2206,16 +4007,20 @@ button.callout-studio-icon-picker-loading {
 }
 
 .icon-picker-toolbar.is-disabled input,
-.icon-picker-toolbar.is-disabled select,
+.icon-picker-toolbar.is-disabled .cs-dropdown-control,
 .icon-picker-toolbar.is-disabled button {
 	cursor: not-allowed;
 }
 
-/* On narrow screens, search takes full width and selects wrap below */
+/* On narrow screens, search takes full width and listboxes wrap below. */
 @media (max-width: 600px) {
-	.icon-picker-toolbar input {
+	.icon-picker-toolbar .icon-picker-search-input {
 		flex-basis: 100%;
 		min-width: 100%;
+	}
+
+	.icon-picker-filter {
+		flex-grow: 1;
 	}
 }
 
@@ -2405,44 +4210,118 @@ button.callout-studio-icon-picker-loading {
 	box-shadow: 0 0 0 2px var(--interactive-accent);
 }
 
-/* Room for that ring, and pictures need more air between them than the
-   monochrome glyphs the 4px default was measured for. Top padding keeps the
-   ring on row 1 from being clipped by the scroll container's edge. */
+/* Space around each image also leaves room for its corner delete badge. */
 .icon-picker-image-panel .icon-picker-grid {
-	gap: 8px;
-	padding-top: 3px;
+	gap: 18px;
+	padding: 14px;
+}
+
+.icon-picker-image-panel .icon-picker-cell-wrap {
+	position: relative;
+	width: 42px;
+	height: 42px;
+}
+
+.icon-picker-image-panel .icon-picker-grid.is-loaded > .icon-picker-cell-wrap > .icon-picker-cell {
+	animation: cs-grid-fade-in 0.25s ease-out both;
 }
 
 /* ── "Your images" panel ───────────────────────────────────────────── */
 
-/* The real file input never shows; the styled button beside it drives it. */
+/* The real file input never shows; the icon beside search drives it. */
 .icon-picker-image-input {
 	display: none;
 }
 
-.icon-picker-image-add,
-.icon-picker-image-delete {
-	display: inline-flex;
+.icon-picker-image-panel .icon-picker-toolbar {
 	align-items: center;
-	gap: 6px;
-	flex-shrink: 0;
+	flex-wrap: nowrap;
 }
 
-/* Delete stays in place with nothing selected rather than coming and going, so
-   it needs to read as unavailable on its own — mod-warning keeps its colour
-   otherwise, and a red button that ignores clicks looks broken. */
-.icon-picker-image-delete:disabled {
-	opacity: 0.5;
-	cursor: not-allowed;
+.icon-picker-image-panel .icon-picker-toolbar .icon-picker-search-input {
+	flex: 1 1 auto;
+	min-width: 0;
 }
 
-.icon-picker-image-btn-icon {
-	display: inline-flex;
+.icon-picker-image-panel button.icon-picker-image-add {
+	flex: 0 0 36px;
+	width: 36px;
+	height: 36px;
+	padding: 8px;
+	border: 0;
+	border-radius: var(--radius-s);
+	background: transparent;
+	box-shadow: none;
+	color: var(--text-muted);
 }
 
-.icon-picker-image-btn-icon svg {
-	width: 1em;
-	height: 1em;
+.icon-picker-image-panel button.icon-picker-image-add:hover,
+.icon-picker-image-panel button.icon-picker-image-add:focus-visible {
+	background: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+.icon-picker-image-panel button.icon-picker-image-delete {
+	position: absolute;
+	z-index: 1;
+	inset-block-start: -9px;
+	inset-inline-start: -9px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 18px;
+	height: 18px;
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	background: var(--color-red, #e93147);
+	box-shadow: 0 0 0 1.5px var(--cs-surface, var(--background-primary));
+	color: #fff;
+	cursor: pointer;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 120ms ease, background-color 120ms ease;
+}
+
+.icon-picker-image-panel button.icon-picker-image-delete:hover {
+	background: color-mix(in oklch, var(--color-red, #e93147) 85%, black);
+}
+
+.icon-picker-image-panel .icon-picker-image-delete svg {
+	width: 12px;
+	height: 12px;
+	color: inherit;
+}
+
+.icon-picker-image-panel button.icon-picker-image-delete:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 1.5px var(--cs-surface, var(--background-primary)),
+		0 0 0 3.5px var(--background-modifier-border-focus);
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.icon-picker-image-panel .icon-picker-cell-wrap:hover .icon-picker-image-delete,
+	.icon-picker-image-panel .icon-picker-cell:focus-visible + .icon-picker-image-delete,
+	.icon-picker-image-panel .icon-picker-image-delete:focus-visible {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+@media (hover: none), (pointer: coarse) {
+	.icon-picker-image-panel button.icon-picker-image-delete {
+		inset-block-start: -11px;
+		inset-inline-start: -11px;
+		width: 22px;
+		height: 22px;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.icon-picker-image-panel .icon-picker-image-delete svg {
+		width: 14px;
+		height: 14px;
+	}
 }
 
 /* Dropping a file anywhere on the panel adds it, so no separate drop zone takes
@@ -2469,36 +4348,10 @@ button.callout-studio-icon-picker-loading {
 	min-height: 120px;
 }
 
-/* Skin-tone selector — swatches previewing a sample glyph per tone */
-.icon-picker-skin-row {
+.icon-picker-image-panel .icon-picker-body:has(.icon-picker-empty) {
 	display: flex;
-	align-items: center;
-	gap: 2px;
-	flex-shrink: 0;
-}
-
-.icon-picker-skin-btn {
-	display: flex;
-	align-items: center;
+	flex-direction: column;
 	justify-content: center;
-	width: 32px;
-	height: 32px;
-	padding: 0;
-	font-size: 18px;
-	line-height: 1;
-	border-radius: var(--radius-s);
-	background-color: transparent;
-	box-shadow: none;
-	cursor: pointer;
-}
-
-.icon-picker-skin-btn:hover {
-	background-color: var(--background-modifier-hover);
-}
-
-.icon-picker-skin-btn.is-active {
-	background-color: var(--background-modifier-hover);
-	box-shadow: inset 0 0 0 2px var(--interactive-accent);
 }
 
 /* One per group in the pooled list (own cursor, own button), or the whole
@@ -2529,6 +4382,30 @@ button.callout-studio-icon-picker-loading {
 	white-space: normal;
 	max-width: 320px;
 	margin: 0 auto;
+}
+
+.icon-picker-image-panel .icon-picker-image-empty {
+	flex-direction: column;
+	gap: 4px;
+	max-width: min(100%, 440px);
+	color: var(--text-normal);
+}
+
+.icon-picker-image-empty-title {
+	color: var(--text-normal);
+	font-size: var(--font-ui-medium);
+	font-weight: 600;
+}
+
+.icon-picker-image-empty-hint {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+.icon-picker-image-empty-formats {
+	margin-top: 12px;
+	color: var(--text-faint);
+	font-size: var(--font-ui-smaller);
 }
 
 .icon-picker-error {
@@ -2574,18 +4451,6 @@ button.callout-studio-icon-picker-loading {
 	outline-offset: -2px;
 }
 
-.icon-picker-toolbar input:focus-visible,
-.icon-picker-toolbar select:focus-visible {
-	outline: 2px solid var(--text-accent);
-	outline-offset: -1px;
-}
-
-/* Minimum 32px touch targets */
-.icon-picker-toolbar input,
-.icon-picker-toolbar select {
-	min-height: 32px;
-}
-
 /* ─── Tag Input (Aliases) ─────────────────────────────────────── */
 
 /* The wrapper carries the row's width, not the field inside it — the field has
@@ -2601,9 +4466,10 @@ button.callout-studio-icon-picker-loading {
 	max-width: 100%;
 }
 
-/* Invalid text input (e.g. duplicate palette name) — red like an ID error */
-input.cs-input-invalid,
-input.cs-input-invalid:focus {
+/* Keep validation visible above both the shared resting face and Obsidian's
+   hover rules. The normal focus ring explicitly excludes invalid fields. */
+input.cs-input-invalid.cs-input-invalid.cs-input-invalid.cs-input-invalid,
+input.cs-input-invalid.cs-input-invalid.cs-input-invalid.cs-input-invalid:focus {
 	border-color: var(--text-error);
 	box-shadow: 0 0 0 1px var(--text-error);
 }
@@ -2620,18 +4486,28 @@ input.cs-input-invalid:focus {
 		max-height 0.3s ease;
 }
 
+/*
+ * max-height, not height: auto, so the reveal/collapse can transition (auto
+ * can't be animated) and the row still shrinks back to 0 the moment the
+ * class comes off. The ceiling has to clear three wrapped lines, not one:
+ * these one-sentence messages (duplicate palette name, duplicate ID, "You
+ * already have a command that does exactly this.") run longer in several
+ * locales than in English, and on a narrow mobile control column they wrap
+ * well before a desktop row would — a tight cap here clipped the wrapped
+ * line's last word instead of growing to show it.
+ */
 .cs-tag-error.is-visible {
 	opacity: 1;
 	min-height: 1.2em;
-	max-height: 2em;
+	max-height: 4.5em;
 	margin-top: 4px;
 }
 
 /*
  * The duplicate-color error stands alone in the palette editor's options
- * column rather than inside a setting's info block, so it needs room for the
- * sentence to wrap around its inline "use it instead" link — the 2em ceiling
- * above is sized for the one-line ID errors.
+ * column rather than inside a setting's info block, so it needs even more
+ * room than the base ceiling above: its sentence has to wrap around an
+ * inline "use it instead" link too.
  */
 .cs-palette-color-error.is-visible {
 	max-height: 6em;
@@ -2649,7 +4525,7 @@ input.cs-input-invalid:focus {
    is *exactly* the field's fill rather than a colour that merely usually
    matches it. */
 .cs-tag-input-row {
-	--cs-tag-field-bg: var(--background-modifier-form-field);
+	--cs-tag-field-bg: var(--cs-btn-face, var(--interactive-normal));
 	/* Width of the end-cap the + sits in. The field's trailing padding is
 	   derived from it below, so the two can never drift apart. */
 	--cs-tag-add-size: 28px;
@@ -2658,42 +4534,30 @@ input.cs-input-invalid:focus {
 	align-items: center;
 }
 
-/* The trailing padding is what actually keeps text out from under the +: the
-   text run simply stops before the button and scrolls there instead. It is
-   reserved unconditionally, not only while the button is showing, so the first
-   keystroke doesn't shove the caret sideways — and it costs nothing visible
-   when the field is empty, since the field is still full width and only the
-   placeholder (never longer than a few words) shares the space.
+/* Change the field and the opaque + overlay together, including when the
+   pointer is over the overlay rather than over the input underneath it. */
+@media (hover: hover) {
+	.cs-tag-input-row:has(> input:not(:disabled)):hover {
+		--cs-tag-field-bg: var(--cs-btn-face-hover, var(--interactive-hover));
+	}
+}
 
-   `+ 5px`: the slot sits 1px inside the border, so this clears it by 4px. */
-.cs-tag-input-row > .cs-tag-input-field {
+.cs-tag-input-row:has(> input:not(:disabled)):focus-within,
+.cs-tag-input-row:has(> input:not(:disabled):active) {
+	--cs-tag-field-bg: var(--cs-btn-face-hover, var(--interactive-hover));
+}
+
+/* Reserve the trailing slot even while the + is hidden, so typing the first
+   character never moves the caret sideways. The shared control owns chrome. */
+.cs-tag-input-row > input[type="text"].cs-tag-input-field.cs-text-control {
 	flex: 1 1 auto;
 	min-width: 80px;
-	border: 1px solid var(--background-modifier-border);
-	border-radius: var(--radius-s);
 	background: var(--cs-tag-field-bg);
-	color: var(--text-normal);
-	font-size: var(--font-ui-small);
-	padding: 6px 10px;
 	padding-inline-end: calc(var(--cs-tag-add-size) + 5px);
-	min-height: 36px;
-	outline: none;
-	box-sizing: border-box;
 }
 
-.cs-tag-input-row > .cs-tag-input-field:focus {
-	border-color: var(--interactive-accent);
-	box-shadow: 0 0 0 2px rgba(var(--interactive-accent-rgb), 0.2);
-}
-
-/* The same raised shade as the display-name field above it, for the same
-   reason: the two sit one on top of the other in the callout editor and were
-   deliberately styled to match, so a fix to one that skipped the other would
-   split them apart on exactly the platform the fix is for. The only host of a
-   `.cs-tag-input-row` is that editor (src/ui/TagInput.ts), which is a chromed
-   window — but the fallback stays, because it is what makes the token safe to
-   name from a rule whose selector does not say so. */
-.cs-tag-input-row > .cs-tag-input-field:disabled {
+/* Disabled IDs retain the same raised fill as the disabled display name. */
+.cs-tag-input-row > input[type="text"].cs-tag-input-field:disabled {
 	color: var(--text-faint);
 	opacity: 0.5;
 	cursor: not-allowed;
@@ -2977,13 +4841,35 @@ input.cs-input-invalid:focus {
 	padding-top: 18px;
 }
 
-.cs-border-side-btn {
+/* All / Top / Right / Bottom / Left. A segmented control, but its segments are
+   secondary buttons and they now say so: the resting face is the shared grey
+   rather than `transparent`. Transparent is what made the old hover misbehave —
+   with no fill of its own, a segment showed the group box behind it, so the
+   translucent `--background-modifier-hover` composited against *that* and moved
+   whichever way the theme's mono direction pointed. Under `.theme-light` that
+   is black at 6.7%, i.e. #ffffff → #eeeeee: the reported "these get darker".
+
+   Sharing the face fixes the direction and the inconsistency in one move —
+   these segments now rest and hover exactly as Cancel and Discover do — and it
+   sharpens the control, since an unselected segment reads as a button rather
+   than as a gap between borders. */
+/* The class is doubled, and it has to be. Obsidian paints every button from
+   `button:not(.clickable-icon) { background-color: var(--interactive-normal) }`,
+   which is (0,1,1) — so a single-class rule here is (0,1,0) and *loses the
+   resting fill outright*. That is not new; it is why the `background:
+   transparent` this rule used to carry never actually took effect, and why the
+   old hover looked like it was darkening from a transparent base when it was
+   really darkening from Obsidian's grey one. Doubling to (0,2,0) is the same
+   trick `.cs-gradient-dir-btn` already uses against the mobile core rules
+   further down this file, and it is what puts `--cs-btn-face` genuinely in
+   charge rather than agreeing with core by coincidence. */
+.cs-border-side-btn.cs-border-side-btn {
 	font-size: var(--font-ui-smaller);
 	padding: 3px 10px;
 	min-height: 24px;
-	border: 1px solid var(--background-modifier-border);
+	border: 1px solid var(--cs-btn-border, var(--background-modifier-border));
 	border-radius: 6px;
-	background: transparent;
+	background: var(--cs-btn-face, var(--interactive-normal));
 	color: var(--text-muted);
 	cursor: pointer;
 	transition:
@@ -2992,14 +4878,44 @@ input.cs-input-invalid:focus {
 		border-color 0.12s ease;
 }
 
-.cs-border-side-btn:hover {
-	background: var(--background-modifier-hover);
-}
-
+/* Selected. Declared *before* the hover rules on purpose: this and
+   `.cs-border-side-btn:hover` are both (0,2,0), so at equal specificity the
+   later rule wins the source-order tie-break. It used to sit after, which meant
+   a selected segment swallowed its own hover and answered the pointer with
+   nothing at all — the one segment in the row that felt dead. */
 .cs-border-side-btn.is-active {
 	background: var(--interactive-accent);
 	color: var(--text-on-accent);
 	border-color: var(--interactive-accent);
+}
+
+@media (hover: hover) {
+	.cs-border-side-btn:hover {
+		background: var(--cs-btn-face-hover, var(--interactive-hover));
+		border-color: var(--cs-btn-border-hover, var(--background-modifier-border-hover));
+		color: var(--text-normal);
+	}
+
+	/* Selected + hovered. Keeping the accent is what keeps "selected" legible
+	   while the pointer is over it — a hovered selection must not read as an
+	   unselected segment — so the feedback is the same theme-aware step within
+	   the accent as every other purple button. */
+	.cs-border-side-btn.is-active:hover {
+		background: var(
+			--cs-btn-accent-face-hover,
+			var(--interactive-accent-hover)
+		);
+		border-color: var(
+			--cs-btn-accent-face-hover,
+			var(--interactive-accent-hover)
+		);
+		color: var(--text-on-accent);
+	}
+}
+
+.cs-border-side-btn:focus-visible {
+	box-shadow: 0 0 0 3px var(--background-modifier-border-focus);
+	outline: none;
 }
 
 .cs-hidden {
@@ -3100,6 +5016,8 @@ input.cs-input-invalid:focus {
 	.callout-studio-preview-panel {
 		grid-template-columns: minmax(0, 1fr) 250px;
 	}
+	/* Paired with the callout editor's own `--cs-editor-control-width` override
+	   at this same range — see the top-of-file rule. */
 }
 
 /* ─── Custom Color Palettes ─────────────────────────────────── */
@@ -3134,26 +5052,6 @@ input.cs-input-invalid:focus {
 	height: 11px;
 }
 
-/* "+ New color…" entry pinned at the bottom of the palette menu */
-.cs-palette-menu-new-color {
-	border-top: 1px solid var(--background-modifier-border);
-	margin-top: 4px;
-	color: var(--text-muted);
-}
-
-.cs-palette-new-color-icon {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 16px;
-	line-height: 0;
-	flex-shrink: 0;
-}
-
-.cs-palette-new-color-icon svg {
-	width: 14px;
-	height: 14px;
-}
 
 /* ─── Custom commands ─────────────────────────────────────────────────── */
 
@@ -3248,8 +5146,37 @@ input.cs-input-invalid:focus {
 }
 
 /* Editor: the generated command name, shown as the user picks. */
+
+/* The card is the last thing in the form, so the eye reads it as one more line
+   of the stack above it and wants the same hairline between them that every
+   pair of Settings gets. Both halves of the gap are Obsidian's own
+   `.setting-item` block padding (`0.75em`): the last option row already pays
+   the half above the rule, and this wrapper pays the half below, so the line
+   sits centred exactly as it does between two rows.
+
+   `em`, not a pixel value, because that is what `.setting-item` uses — the
+   wrapper is a sibling of those rows and inherits the same font size, so the
+   two gaps stay equal at any UI font scale.
+
+   The rule lives on this wrapper rather than on the card because the card
+   carries a full border of its own: a `border-top` there would thicken into
+   the box's own edge and read as part of the card, not as the line between
+   two rows. */
+.cs-command-preview-row {
+	border-top: 1px solid var(--background-modifier-border);
+	padding-top: 0.75em;
+}
+
+/* The phone re-spaces every row of its own accord — `.is-phone .setting-item`
+   is `padding: 1em 0` with `border-width: var(--border-width)` — so the wrapper
+   follows it there instead of holding a desktop gap the rows above no longer
+   use, which would leave the rule sitting high between them. */
+.is-phone .cs-command-preview-row {
+	border-top-width: var(--border-width);
+	padding-top: 1em;
+}
+
 .cs-command-preview {
-	margin-top: 16px;
 	padding: 10px 12px;
 	border: 1px solid var(--background-modifier-border);
 	border-radius: var(--radius-s);
@@ -3286,16 +5213,23 @@ input.cs-input-invalid:focus {
 	margin-top: 4px;
 }
 
-/* Saved palettes list (settings section). Its rows are .callout-studio-rows,
-   so they sit on the same 2px rhythm as the callout list above them rather
-   than on a looser one of their own. */
-.cs-palette-list {
-	display: flex;
-	flex-direction: column;
-	gap: 2px;
-	margin-bottom: 12px;
+/* "Paused: your theme supplies this callout…" under a command's name in the
+   list. Warning-coloured like the editor's notice above, because it is the
+   same fact reported after the fact — but a plain line rather than a pill: the
+   command has not gone wrong, it is waiting, and a badge silhouette here would
+   read as an error beside rows that carry hotkey chips in the very same spot. */
+.cs-command-suspended {
+	color: var(--text-warning);
+	font-size: var(--font-ui-smaller);
+	margin-top: 2px;
 }
 
+/* Saved palettes list (settings section). The list itself is a
+   .callout-studio-callout-list — the same paged-list container the three
+   callout lists above it use — so its rows sit on the same 2px rhythm
+   without a dedicated container rule of their own. What is still specific to
+   a palette row is below: it is a .callout-studio-row like any other, but its
+   name and its swatch behave differently from a callout's. */
 .cs-palette-list-row .cs-palette-list-name {
 	flex: 1;
 	min-width: 0;
@@ -3372,9 +5306,7 @@ input.cs-input-invalid:focus {
 	max-width: 100%;
 }
 
-/* `min-width: 0` matters on the select: a `<select>` refuses to shrink below
-   its widest option by default, which would push it past the shared edge the
-   moment a translation runs long. */
+/* Let both controls shrink within the shared column for long translations. */
 .callout-studio-palette-editor
 	.cs-palette-name-setting
 	.setting-item-control
@@ -3382,7 +5314,7 @@ input.cs-input-invalid:focus {
 .callout-studio-palette-editor
 	.cs-palette-bgstyle-setting
 	.setting-item-control
-	select {
+	.cs-select-dropdown {
 	width: 100%;
 	min-width: 0;
 }
@@ -3510,9 +5442,18 @@ input.cs-input-invalid:focus {
 .cs-gradient-dir-row {
 	display: flex;
 	gap: 4px;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 }
-.cs-gradient-dir-btn {
+/* The gradient direction arrows — the plugin's other segmented control, and
+   the third variation on one button. It rested on `--cs-surface-raised`, which
+   is a *surface* token: right for a group box's header strip, wrong for a
+   control, and different again from the two rows above. Its hover moved only
+   `color`, so the face never answered the pointer at all — not the wrong
+   direction like the border sides, simply absent. Both now come from the
+   shared pair. */
+/* Doubled for the same reason as `.cs-border-side-btn` above — (0,1,1) core
+   rule, (0,1,0) single-class rule, core wins the face. */
+.cs-gradient-dir-btn.cs-gradient-dir-btn {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -3520,19 +5461,44 @@ input.cs-input-invalid:focus {
 	height: 26px;
 	padding: 0;
 	box-shadow: none;
-	background: var(--cs-surface-raised, var(--background-secondary));
-	border: 1px solid var(--background-modifier-border);
+	background: var(--cs-btn-face, var(--interactive-normal));
+	border: 1px solid var(--cs-btn-border, var(--background-modifier-border));
 	border-radius: var(--radius-s, 4px);
 	color: var(--text-muted);
 	cursor: pointer;
+	transition:
+		background 0.12s ease,
+		color 0.12s ease,
+		border-color 0.12s ease;
 }
-.cs-gradient-dir-btn:hover {
-	color: var(--text-normal);
-}
+/* Before the hover rules, for the tie-break reason given on
+   `.cs-border-side-btn.is-active` above. */
 .cs-gradient-dir-btn.is-active {
 	background: var(--interactive-accent);
 	border-color: var(--interactive-accent);
 	color: var(--text-on-accent);
+}
+@media (hover: hover) {
+	.cs-gradient-dir-btn:hover {
+		background: var(--cs-btn-face-hover, var(--interactive-hover));
+		border-color: var(--cs-btn-border-hover, var(--background-modifier-border-hover));
+		color: var(--text-normal);
+	}
+	.cs-gradient-dir-btn.is-active:hover {
+		background: var(
+			--cs-btn-accent-face-hover,
+			var(--interactive-accent-hover)
+		);
+		border-color: var(
+			--cs-btn-accent-face-hover,
+			var(--interactive-accent-hover)
+		);
+		color: var(--text-on-accent);
+	}
+}
+.cs-gradient-dir-btn:focus-visible {
+	box-shadow: 0 0 0 3px var(--background-modifier-border-focus);
+	outline: none;
 }
 .cs-gradient-dir-btn .svg-icon {
 	width: 14px;
@@ -3542,28 +5508,19 @@ input.cs-input-invalid:focus {
    column: `.is-phone …button:not(.clickable-icon) { width: 100% }` and
    `.is-tablet button:not(.clickable-icon) { padding: var(--size-4-1)
    var(--size-4-5) }` (4px 20px). Both outrank our base .cs-gradient-dir-btn
-   rule, so on phone/iPad the three arrows get smeared full-width / ballooned
-   and wrap into a vertical stack, while the 40px of forced horizontal padding
-   squeezes the centered 14px arrow out of its 26px box — the icons vanish.
-   Reassert our fixed square size and zero padding; doubling the
-   .cs-gradient-dir-btn class makes a 4-class selector that beats both core
-   rules without !important, and .is-mobile covers phone and tablet alike.
-   Desktop lacks these body classes, so it's untouched. */
+   rule, so on phone/iPad the three arrows get smeared full-width / ballooned,
+   while the 40px of forced horizontal padding squeezes the centered 14px
+   arrow out of its 26px box — the icons vanish. (The row's own
+   `flex-wrap: nowrap` above stops them stacking regardless, but without this
+   reassertion they'd still render oversized/blank.) Reassert our fixed
+   square size and zero padding; doubling the .cs-gradient-dir-btn class
+   makes a 4-class selector that beats both core rules without !important,
+   and .is-mobile covers phone and tablet alike. Desktop lacks these body
+   classes, so it's untouched. */
 .is-mobile .cs-gradient-dir-row .cs-gradient-dir-btn.cs-gradient-dir-btn {
 	width: 26px;
 	flex: 0 0 26px;
 	padding: 0;
-}
-
-/* ─── Icon Picker Weight Select ─────────────────────────────── */
-
-.icon-picker-weight-select {
-	padding: 4px 8px;
-	border-radius: 4px;
-	border: 1px solid var(--background-modifier-border);
-	background: var(--cs-surface-raised, var(--background-secondary));
-	color: var(--text-normal);
-	font-size: var(--font-small);
 }
 
 /* Phase 7: name + fallback tag */
@@ -3598,6 +5555,67 @@ input.cs-input-invalid:focus {
 	   whole pills instead. */
 	white-space: nowrap;
 	flex-shrink: 0;
+}
+
+/* ── A theme's own callout icon, reproduced ─────────────────────────────────
+   Two of the five rungs in `manager/theme/themeAppearance.ts` cannot be drawn
+   by cloning a node, so they are rebuilt here from what was measured.
+
+   The mask rung is for the six installed themes that paint `.callout-icon`
+   through `mask-image`: there is no SVG to copy, only a stencil over a painted
+   box, so the box is what gets reproduced. `currentColor` keeps it tracking
+   whatever accent the surrounding row sets, exactly as a cloned SVG does. */
+.cs-theme-icon-mask {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-color: currentColor;
+	-webkit-mask-image: var(--cs-theme-mask);
+	mask-image: var(--cs-theme-mask);
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	mask-position: center;
+	-webkit-mask-size: contain;
+	mask-size: contain;
+}
+
+/* The glyph rung, for the three themes that draw their icon as `::before`
+   content. A pseudo-element cannot be cloned, so its text becomes real text —
+   carrying the font that made it a glyph rather than three stray letters. */
+.cs-theme-icon-glyph {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1em;
+	height: 1em;
+	line-height: 1;
+	font-size: 1em;
+}
+
+/* The offscreen callout the probe measures.
+
+   `visibility: hidden`, never `display: none`: a display-none subtree has no
+   used values for the properties that matter, so masks and backgrounds come
+   back empty and every theme would read as unknown. Parked far off-canvas so
+   nothing of it reaches the page, and `contain` keeps a box that is laid out
+   but never seen from provoking layout work anywhere else. */
+.cs-theme-probe {
+	position: fixed;
+	top: 0;
+	left: -10000px;
+	width: 600px;
+	visibility: hidden;
+	pointer-events: none;
+	contain: layout style;
+}
+
+/* Theme callout preview window */
+.cs-theme-preview-note {
+	margin: 0 0 var(--size-4-2);
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	line-height: 1.5;
 }
 
 /* Phase 7: delete-without-replace styling */
@@ -3672,10 +5690,8 @@ input.cs-input-invalid:focus {
 }
 
 /* ─── Import source / export format chooser modals ────────── */
-/* One widget, two windows: Import picks a source, Export picks a format, and
- * both are a column of clickable rows. Shared as selector lists rather than
- * renamed to something neutral — the import names are load-bearing in a lot of
- * places, and duplicating the rule blocks is how the two would drift apart. */
+/* Import picks a source and Export picks a format, each from a column of
+   option boxes (below) that act the moment one is clicked. */
 .callout-studio-import-source-modal,
 .callout-studio-export-format-modal {
 	max-width: 480px;
@@ -3683,50 +5699,144 @@ input.cs-input-invalid:focus {
 .cs-import-file-input {
 	display: none;
 }
-.cs-import-source-list,
-.cs-export-format-list {
+
+/* ─── Option boxes ────────────────────────────────────────────── */
+/* One box, three windows: Import's source chooser, Export's format chooser and
+   the plugin import window's three options all draw it with
+   settings/optionBox.ts, so they look, hover and answer a click alike. What a
+   click means is each window's own — a chooser's box acts at once, a plugin
+   import box is chosen (`is-selected`) or filled — and that is the one thing
+   these rules tell apart.
+
+   Unpainted at rest — a border and nothing else — so it needs no
+   --cs-surface / --cs-surface-raised pairing to stay right on mobile dark;
+   every tint below is a colour mixed with transparent, which sits on either. */
+
+/* No top margin of its own: the body's padding is the air above the first
+   box. Export used to get away with one because its list is the body's first
+   child and so caught `.cs-modal > .modal-content > :first-child`; Import's
+   hidden file input comes first, so the reset missed its list and the margin
+   showed. */
+.cs-option-list {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
-	margin-top: 0.5rem;
 }
-.cs-import-source-item,
-.cs-export-format-item {
+.cs-option-box {
 	display: flex;
 	align-items: center;
 	gap: 0.75rem;
 	padding: 0.6rem 0.75rem;
 	border: 1px solid var(--background-modifier-border);
 	border-radius: 6px;
+}
+.cs-option-box[tabindex="0"] {
 	cursor: pointer;
 }
-.cs-import-source-item:hover,
-.cs-export-format-item:hover {
-	background: var(--background-modifier-hover);
+.cs-option-box:focus-visible {
+	outline: 2px solid var(--background-modifier-border-focus);
+	outline-offset: 2px;
 }
-.cs-import-source-item-icon,
-.cs-export-format-item-icon {
+/* The A file box shows where a dragged file will land, including when that
+   option is already selected. */
+.cs-option-box.is-drop-target {
+	outline: 2px dashed var(--interactive-accent);
+	outline-offset: 2px;
+}
+/* The chosen box in the plugin import window — the one its footer Import acts
+   on. Two pixels of accent (the inset shadow doubles the border without
+   moving anything) and a faint accent wash. It is the only accent a box ever
+   wears, so a hovered box, which stays neutral, never reads as a second
+   selection beside it. */
+.cs-option-box.is-selected {
+	border-color: var(--interactive-accent);
+	box-shadow: inset 0 0 0 1px var(--interactive-accent);
+	background: color-mix(in srgb, var(--interactive-accent) 8%, transparent);
+}
+/* Behind `(hover: hover)`, as Obsidian guards its own button hovers, so a
+   tapped box on a phone doesn't stay lit. */
+@media (hover: hover) {
+	/* A box that takes clicks answers the pointer with a light wash and a
+	   firmer border, both neutral. The wash is Obsidian's own hover tint, the
+	   one its lists and menus use. The border skips
+	   `--background-modifier-border-hover`, a single base step from the
+	   resting border and too close to see (#e4e4e4 to #dadada in the default
+	   light theme), for the focus grey, the step past it. */
+	.cs-option-box[tabindex="0"]:not(.is-selected):hover {
+		border-color: var(--background-modifier-border-focus);
+		background: var(--background-modifier-hover);
+	}
+	/* The chosen box lightens its wash a step, as Obsidian's accent buttons
+	   lighten on hover. `--interactive-accent-hover` is the lighter accent in
+	   both themes; lighter still means more of it over a dark window and less
+	   of it over a light one. */
+	.theme-dark .cs-option-box.is-selected:hover {
+		background: color-mix(in srgb, var(--interactive-accent-hover) 12%, transparent);
+	}
+	.theme-light .cs-option-box.is-selected:hover {
+		background: color-mix(in srgb, var(--interactive-accent-hover) 4%, transparent);
+	}
+	/* Keep the Recommended pill distinct from an unselected row's hover wash.
+	   A selected, purple box keeps the pill's resting fill. */
+	.cs-option-box[tabindex="0"]:not(.is-selected):hover .cs-recommended-badge {
+		background: var(--background-modifier-border-focus);
+	}
+}
+/* Nothing to choose: the plugin import window's vault box once the other
+   plugin turns out not to be installed, or to hold nothing to import. Greyed
+   throughout, and the pointer says the box won't take a click; with no
+   tabindex, no hover above reaches it. A reason that is a problem to fix —
+   the settings file is there but can't be read — keeps its warning colour. */
+.cs-option-box.is-disabled {
+	cursor: not-allowed;
+}
+.cs-option-box.is-disabled .cs-option-box-icon,
+.cs-option-box.is-disabled .cs-option-box-title,
+.cs-option-box.is-disabled .cs-option-box-desc:not(.is-warning) {
+	color: var(--text-faint);
+}
+.cs-option-box-icon {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: var(--text-accent);
 	flex-shrink: 0;
 }
-.cs-import-source-item-text,
-.cs-export-format-item-text {
+.cs-option-box-icon .svg-icon {
+	color: inherit;
+}
+.cs-option-box-text {
 	display: flex;
 	flex-direction: column;
 	gap: 0.1rem;
+	/* Takes the slack, and lets a long status line or file name wrap instead
+	   of widening the box. */
+	flex: 1;
+	min-width: 0;
 }
-.cs-import-source-item-title,
-.cs-export-format-item-title {
+/* The title and, when there is one, the Recommended pill. */
+.cs-option-box-head {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.25rem 0.5rem;
+}
+.cs-option-box-title {
+	min-width: 0;
 	font-weight: 600;
 	color: var(--text-normal);
 }
-.cs-import-source-item-desc,
-.cs-export-format-item-desc {
+.cs-option-box-desc {
 	font-size: 0.85em;
 	color: var(--text-muted);
+}
+.cs-option-box-desc.is-warning {
+	color: var(--text-warning);
+}
+/* A file name rather than a label: it breaks anywhere instead of widening the
+   box. */
+.cs-option-box-name {
+	overflow-wrap: anywhere;
 }
 
 /* ─── Quick insert window (the ribbon icon) ─────────────────── */
@@ -3737,11 +5847,26 @@ input.cs-input-invalid:focus {
 	--dialog-width: 560px;
 }
 
+/* The generic modal body owns a top inset, but a sticky child measures `top: 0`
+   from below that inset. Leaving it there creates a transparent strip through
+   which rows keep scrolling. Quick Insert moves the resting inset onto its
+   intro instead, so the scrollport itself begins at the header rule. */
+.cs-quick-insert.cs-modal > .modal-content {
+	padding-top: 0;
+}
+
+.cs-quick-insert.cs-modal
+	> .modal-content
+	> .setting-item-description:first-child {
+	padding-top: var(--size-4-4);
+}
+
 /* Sticky at top: 0 and nowhere else. A positive offset parks this opaque band
    below the header's rule, which then eats the rows scrolling behind it — the
    same trap `.callout-studio-preview-col` documents. It is painted with the
    window's own surface, never --background-primary, because those are not the
-   same colour on an iPad in dark mode. */
+   same colour on an iPad in dark mode. The small painted top inset protects the
+   autofocused search field's focus ring without reopening a transparent gap. */
 .cs-quick-insert-toolbar {
 	position: sticky;
 	top: 0;
@@ -3750,6 +5875,7 @@ input.cs-input-invalid:focus {
 	gap: 8px;
 	flex-wrap: wrap;
 	align-items: center;
+	padding-top: 12px;
 	padding-bottom: 12px;
 	background: var(--cs-surface, var(--background-primary));
 }
@@ -3759,15 +5885,20 @@ input.cs-input-invalid:focus {
 	min-width: 150px;
 }
 
-.cs-quick-insert-filter {
+.cs-quick-insert-toolbar .cs-select-dropdown {
 	flex-shrink: 0;
+	max-width: 100%;
+}
+
+.cs-quick-insert-filter {
+	max-width: 100%;
 }
 
 /* Both controls take the full row on a phone, where 150px of search plus a
    dropdown does not fit side by side. */
 @media (max-width: 600px) {
 	.cs-quick-insert-search,
-	.cs-quick-insert-filter {
+	.cs-quick-insert-toolbar .cs-select-dropdown {
 		flex-basis: 100%;
 		min-width: 100%;
 	}
@@ -3817,7 +5948,7 @@ input.cs-input-invalid:focus {
    NOT painted --background-primary the way .cs-live-preview-body is: that is a
    card standing apart from the modal, this is a row inside it, and the two
    variables are the same colour everywhere except mobile dark — where painting
-   it would turn every row into a pure-black stripe (see CLAUDE.md) for a
+   it would turn every row into a pure-black stripe (see AGENTS.md) for a
    fidelity nobody can see. Translucent tints composite over the modal surface
    instead, which is the same colour a note's would.
 
@@ -3851,7 +5982,7 @@ input.cs-input-invalid:focus {
    arrowing through the rows and pointing at them never compete.
 
    A ring, never a fill. Every callout background in this plugin is a
-   translucent tint by design (there is no opaque option — see CLAUDE.md), so
+   translucent tint by design (there is no opaque option — see AGENTS.md), so
    ANYTHING painted behind a row composites into the callout and changes the
    colour the row exists to show. The accent shade that used to sit here tinted
    every preview purple; a neutral grey would have been a quieter version of the
@@ -3862,9 +5993,12 @@ input.cs-input-invalid:focus {
 	box-shadow: inset 0 0 0 1px var(--background-modifier-border-hover);
 }
 
-/* ─── Plugin import modals (Admonition, Callout Manager) ───── */
-/* One widget, two windows: both offer ready-made sources as rows with a paste
-   box underneath, so the rules are shared rather than copied per modal. */
+/* ─── Plugin import window (Admonition, Callout Manager) ────── */
+/* One window, two sources: PluginImportModal draws both, so the rules are
+   shared rather than copied per plugin. The per-plugin classes stay on the
+   window as styling hooks a user's snippet may already target. Its three
+   options — this vault, a file, the clipboard — are option boxes (see
+   "Option boxes" above) in a `role="radiogroup"`. */
 .callout-studio-cm-import-modal,
 .callout-studio-adm-import-modal {
 	max-width: 560px;
@@ -3873,346 +6007,962 @@ input.cs-input-invalid:focus {
 	margin-top: 0;
 	color: var(--text-muted);
 }
-/* One row per ready-made source (this vault, a file). The paste box below is
-   the fallback, so these read as offers rather than as a list of steps.
-   Deliberately unpainted — a border and nothing else — so it needs no
-   --cs-surface / --cs-surface-raised pairing to stay right on mobile dark. */
-.cs-import-row {
-	display: flex;
-	align-items: center;
-	gap: 0.75rem;
-	padding: 0.6rem 0.75rem;
-	margin-bottom: 0.5rem;
-	border: 1px solid var(--background-modifier-border);
-	border-radius: 6px;
+
+/* The probe is a local file read and usually settles within a frame or two.
+   Held back briefly so that case never flashes "Looking for…" before the
+   result replaces it; a slow probe still shows it. */
+.cs-option-box.is-checking .cs-option-box-desc {
+	animation: cs-import-reveal 0.2s ease-out 0.25s both;
 }
-.cs-import-row-icon {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: var(--text-accent);
-	flex-shrink: 0;
+@keyframes cs-import-reveal {
+	from {
+		opacity: 0;
+	}
 }
-.cs-import-row-text {
-	display: flex;
-	flex-direction: column;
-	gap: 0.1rem;
-	/* Takes the slack so the button sits against the right edge, and lets a
-	   long status line wrap instead of pushing the button out of the row. */
-	flex: 1;
-	min-width: 0;
-}
-.cs-import-row-title {
-	font-weight: 600;
-	color: var(--text-normal);
-}
-.cs-import-row-desc {
-	font-size: 0.85em;
-	color: var(--text-muted);
-}
-.cs-import-row button {
-	flex-shrink: 0;
-}
-.cs-import-paste-label {
-	margin-bottom: 0.35rem;
-	color: var(--text-muted);
-}
-/* 160px, not the 220px the Callout Manager box used while it was the whole
-   window: both modals now carry rows above it, and the taller box pushes the
-   pinned footer off a short window. */
-.cs-import-textarea {
-	width: 100%;
-	min-height: 160px;
-	font-family: var(--font-monospace);
-	font-size: 0.85em;
-	resize: vertical;
+@media (prefers-reduced-motion: reduce) {
+	.cs-option-box.is-checking .cs-option-box-desc {
+		animation-duration: 1ms;
+	}
 }
 
-/* ─── Vault statistics modal ───────────────────────────────── */
-.callout-studio-vault-stats-modal {
-	max-width: 760px;
+/* Says what the vault probe found, and why a paste brought nothing back, to a
+   screen reader only. */
+.cs-import-announcer {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
 }
 
-.callout-studio-vault-stats .cs-vault-stats-summary {
-	display: grid;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
-	gap: 8px;
-	margin-bottom: 14px;
-}
-
-.callout-studio-vault-stats .cs-vault-stats-metric {
-	padding: 10px 12px;
-	border: 1px solid var(--background-modifier-border);
-	border-radius: 6px;
-	background: var(--cs-surface-raised, var(--background-secondary));
-}
-
-.callout-studio-vault-stats .cs-vault-stats-metric-value {
-	font-size: 1.35em;
-	font-weight: 700;
-	line-height: 1.1;
-	color: var(--text-normal);
-}
-
-.callout-studio-vault-stats .cs-vault-stats-metric-label {
-	margin-top: 3px;
-	font-size: var(--font-ui-smaller);
-	color: var(--text-muted);
-}
-
-.callout-studio-vault-stats .cs-vault-stats-list {
-	max-height: 50vh;
-	overflow-y: auto;
-	border: 1px solid var(--background-modifier-border);
-	border-radius: 6px;
-	background: var(--cs-surface, var(--background-primary));
-}
-
-/* Three columns, all always on: type, the per-role chips, files. Source and
-   Count were dropped rather than made narrower — the chips already carry the
-   split, and their sum is the count. The chips themselves used to be a cell
-   spanning the row that opened on hover, which made the row change height
-   under the pointer. */
-.callout-studio-vault-stats .cs-vault-stats-row {
-	display: grid;
-	grid-template-columns: minmax(110px, 1fr) minmax(170px, 1.4fr) minmax(56px, 0.35fr);
-	gap: 10px;
-	align-items: center;
-	padding: 8px 10px;
-	border-bottom: 1px solid var(--background-modifier-border-hover);
-}
-
-.callout-studio-vault-stats .cs-vault-stats-row:last-child {
-	border-bottom: none;
-}
-
-/* Opaque on purpose — rows scroll under it — and a step off the list's own
-   `--cs-surface` paint, which is why it takes the raised token rather than
-   `--background-secondary`. */
-.callout-studio-vault-stats .cs-vault-stats-header {
-	position: sticky;
-	top: 0;
-	z-index: 1;
-	font-size: var(--font-ui-smaller);
-	font-weight: 700;
-	color: var(--text-muted);
-	background: var(--cs-surface-raised, var(--background-secondary));
-}
-
-.callout-studio-vault-stats .cs-vault-stats-type {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	min-width: 0;
-	max-width: 100%;
-	font-size: var(--font-ui-smaller);
-}
-
-.callout-studio-vault-stats .cs-vault-stats-type-icon {
+/* ─── Recommended pill ────────────────────────────────────────── */
+/* On an option's title line: the export chooser's backup, and the plugin
+   import window's "This vault" once there is something in it. Grey on
+   purpose — a recommendation, not a state. At rest it uses the border tone;
+   when its selectable box is hovered, its fill deepens to the clearer border
+   tone so it stays distinct from the row's hover wash. */
+.cs-recommended-badge {
 	display: inline-flex;
 	align-items: center;
-	justify-content: center;
-	width: 20px;
-	height: 20px;
-	flex: 0 0 20px;
-	font-size: 16px;
-}
-
-.callout-studio-vault-stats .cs-vault-stats-type-icon svg {
-	width: 16px;
-	height: 16px;
-}
-
-.callout-studio-vault-stats .cs-vault-stats-type-icon.is-unknown {
-	color: var(--text-faint);
-}
-
-/* The raw `[!id]`, so a row can be found in a note. Monospace because that is
-   what it is — text the user types, not a name we chose. */
-.callout-studio-vault-stats .cs-vault-stats-type-id {
-	min-width: 0;
-	overflow: hidden;
-	text-overflow: ellipsis;
+	gap: 0.25em;
+	padding-block: 1px;
+	padding-inline: 6px 8px;
+	border-radius: 999px;
+	background: var(--background-modifier-border);
+	color: var(--text-muted);
+	font-size: calc(var(--font-ui-smaller) - 1px);
+	font-weight: var(--font-normal);
+	line-height: 1.4;
 	white-space: nowrap;
-	font-family: var(--font-monospace);
+}
+.cs-recommended-badge-icon {
+	display: flex;
+	--icon-size: 10px;
+	--icon-stroke: var(--icon-xs-stroke-width);
+}
+/* Centred on the word's capitals rather than on the font's line box. A face
+   whose line box runs deep below the baseline — most Hebrew ones, which keep
+   room there for vowel points — otherwise sets the word visibly high in the
+   pill. Trimmed to cap height and baseline, the word leaves the pill's
+   height to its padding and the icon. An installer too old for `text-box`
+   keeps the line box. */
+@supports (text-box: trim-both cap alphabetic) {
+	.cs-recommended-badge {
+		padding-block: 4px;
+	}
+	.cs-recommended-badge-text {
+		text-box: trim-both cap alphabetic;
+	}
 }
 
-/* Only two rows in the whole table carry one — an id nothing defines, and an id
-   that counted under another callout's aliases — so it sits beside the id
-   rather than in a column of its own, which is what the Source column was. */
-.callout-studio-vault-stats .cs-vault-stats-type-note {
-	flex: 0 1 auto;
-	min-width: 0;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	color: var(--text-faint);
-	font-size: var(--font-smallest);
+/* ── Icon licenses & credits modal ───────────────────────────── */
+.modal.callout-studio-credits-modal {
+	--dialog-width: 620px;
+	width: min(var(--dialog-width), 95vw);
+	max-width: min(var(--dialog-width), 95vw);
 }
 
-.callout-studio-vault-stats .cs-vault-stats-files {
-	font-variant-numeric: tabular-nums;
-	text-align: start;
+.callout-studio-credits-content {
+	color: var(--text-muted);
+	font-size: var(--font-ui-smaller);
 }
 
-/* The exact numbers, as an ordinary column. No transition and no reveal: a row
-   that grows under the pointer is the thing this replaced. */
-.callout-studio-vault-stats .cs-vault-stats-roles {
+.callout-studio-credits-intro {
+	line-height: 1.55;
+}
+
+.callout-studio-credits-intro {
+	margin: 0 0 var(--size-4-4);
+}
+
+.callout-studio-credit {
+	margin-block: var(--size-2-3);
+	padding: var(--size-4-3) var(--size-4-4);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+	background: var(--cs-surface-raised, var(--background-secondary));
+	line-height: 1.5;
+}
+
+.callout-studio-credit-name {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 4px;
-	min-width: 0;
-}
-
-.callout-studio-vault-stats .cs-vault-stats-role-chip {
-	padding: 1px 6px;
-	border-radius: var(--radius-s);
-	background: var(--background-modifier-hover);
-	color: var(--text-muted);
-	font-size: var(--font-smallest);
-	line-height: 1.5;
-	white-space: nowrap;
-}
-
-.callout-studio-vault-stats .cs-vault-stats-empty {
-	margin: 0.5rem 0 1rem;
-	color: var(--text-muted);
-}
-
-@media (max-width: 620px) {
-	.callout-studio-vault-stats .cs-vault-stats-summary {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-	}
-
-	.callout-studio-vault-stats .cs-vault-stats-header {
-		display: none;
-	}
-
-	.callout-studio-vault-stats .cs-vault-stats-row {
-		grid-template-columns: minmax(0, 1fr) auto;
-		gap: 4px 10px;
-	}
-
-	/* Type over chips down the left, the file count on the right. The chips wrap
-	   inside their own line rather than pushing the row wider, which is why they
-	   keep `min-width: 0`. */
-	.callout-studio-vault-stats .cs-vault-stats-type,
-	.callout-studio-vault-stats .cs-vault-stats-roles {
-		grid-column: 1;
-	}
-
-	.callout-studio-vault-stats .cs-vault-stats-files {
-		grid-column: 2;
-		grid-row: 1;
-		color: var(--text-muted);
-		font-size: var(--font-ui-smaller);
-	}
-}
-
-/* ── Icon licences & credits ────────────────────────────────── */
-.callout-studio-credits {
-	margin-top: 2rem;
-	padding-top: 1rem;
-	border-top: 1px solid var(--background-modifier-border);
-	color: var(--text-muted);
-	font-size: var(--font-ui-smaller);
-}
-.callout-studio-credits-summary {
-	display: flex;
-	align-items: center;
-	gap: 0.4em;
-	cursor: pointer;
+	align-items: baseline;
+	gap: 0.2em 0.4em;
+	margin: 0 0 var(--size-2-1);
 	color: var(--text-normal);
-	font-size: var(--font-ui-small);
+	font-size: inherit;
 	font-weight: var(--font-medium);
-	list-style: none;
+	line-height: inherit;
 }
-.callout-studio-credits-summary::-webkit-details-marker {
-	display: none;
-}
-.callout-studio-credits-chevron {
-	display: inline-flex;
-	transition: transform 120ms ease;
-}
-.callout-studio-credits-chevron svg {
-	width: 1em;
-	height: 1em;
-}
-.callout-studio-credits[open] .callout-studio-credits-chevron {
-	transform: rotate(90deg);
-}
-/* The chevron points at the content, so it flips with the writing direction. */
-[dir="rtl"] .callout-studio-credits-chevron {
-	transform: scaleX(-1);
-}
-[dir="rtl"] .callout-studio-credits[open] .callout-studio-credits-chevron {
-	transform: scaleX(-1) rotate(90deg);
-}
-.callout-studio-credits-intro,
-.callout-studio-credits-more {
-	margin: 0.6em 0;
-	line-height: 1.5;
-}
-.callout-studio-credit {
-	margin: 0.9em 0;
-	padding-inline-start: 0.8em;
-	border-inline-start: 2px solid var(--background-modifier-border);
-	line-height: 1.5;
-}
-.callout-studio-credit-name {
-	color: var(--text-normal);
-	font-weight: var(--font-medium);
-}
+
 .callout-studio-credit-version,
 .callout-studio-credit-scope {
 	color: var(--text-faint);
 	font-weight: normal;
 }
-.callout-studio-credit-modifications {
-	margin-top: 0.25em;
+
+.callout-studio-credit-license + .callout-studio-credit-license {
+	margin-top: var(--size-2-1);
+}
+
+.callout-studio-credit-modifications,
+.callout-studio-credit-notice {
+	margin-top: var(--size-2-2);
 	color: var(--text-faint);
 }
-.callout-studio-credit-notice {
-	margin-top: 0.4em;
-	padding: 0.4em 0.6em;
-	border-radius: var(--radius-s);
-	background-color: var(--background-modifier-hover);
-	color: var(--text-muted);
-}
-.callout-studio-credits a {
+
+.callout-studio-credits-content a {
 	color: var(--text-accent);
 	text-decoration: none;
 }
-.callout-studio-credits a:hover {
-	text-decoration: underline;
+
+@media (hover: hover) {
+	.callout-studio-credits-content a:hover {
+		color: var(--text-accent-hover);
+		text-decoration: underline;
+	}
+}
+
+.callout-studio-credits-content a:focus-visible {
+	border-radius: var(--radius-s);
+	outline: 2px solid var(--text-accent);
+	outline-offset: 2px;
 }
 
 /* ── Footer ─────────────────────────────────────────────────── */
-/* Always immediately follows .callout-studio-credits (see SettingsTab.ts),
- * which already opens its own full-strength divider above it — a second
- * 2rem/1rem divider back-to-back left a big empty gap under the collapsed
- * "Icon licences and credits" summary, so this one is kept lighter. */
+/* Obsidian's settings pane carries its own trailing inset. The footer already
+   owns the space after its final row, so keeping both would leave a much
+   larger gap below the footer than above its first row. Phones retain the
+   native inset because it may also reserve space for device chrome. */
+body:not(.is-phone)
+	.callout-studio-settings.callout-studio-settings.callout-studio-settings {
+	padding-bottom: 0 !important;
+}
+
 .callout-studio-footer {
-	margin-top: 1rem;
-	padding-top: 0.75rem;
-	border-top: 1px solid var(--background-modifier-border);
-	text-align: center;
+	inline-size: min(100%, 44rem);
+	margin: var(--size-4-8) auto 0;
+	padding-block: var(--size-4-4) var(--size-4-3);
+	padding-inline: var(--size-4-2);
+	border-block-start: 1px solid var(--background-modifier-border);
 	color: var(--text-muted);
-	font-size: 0.85em;
+	font-weight: 300;
+	text-align: center;
 }
-.callout-studio-footer-links {
-	margin-bottom: 0;
+
+.callout-studio-footer-contact {
+	max-inline-size: 40rem;
+	margin: 0 auto;
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	line-height: 1.4;
 }
+
+.callout-studio-footer-contact-links {
+	display: block;
+	margin-block-start: 0.3em;
+}
+
+.callout-studio-footer-contact-link {
+	white-space: nowrap;
+	color: var(--text-normal);
+	font-weight: var(--font-medium);
+	text-decoration-line: none;
+	text-decoration-color: var(--text-faint);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.16em;
+	transition:
+		color 120ms ease,
+		text-decoration-color 120ms ease;
+}
+
+.callout-studio-footer-contact-links
+	.callout-studio-footer-contact-link:first-of-type {
+	margin-inline-end: 0.35em;
+}
+
+.callout-studio-footer-contact-links
+	.callout-studio-footer-contact-link:last-of-type {
+	margin-inline-start: 0.35em;
+}
+
+@media (hover: hover) {
+	.callout-studio-footer-contact-link:hover {
+		color: var(--text-accent);
+		text-decoration-line: underline;
+		text-decoration-color: currentColor;
+	}
+}
+
+.callout-studio-footer-contact-link:focus-visible {
+	border-radius: var(--radius-s);
+	outline: 2px solid var(--text-accent);
+	outline-offset: 2px;
+}
+
+.callout-studio-footer-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	column-gap: 2px;
+	row-gap: 0;
+	margin-block-start: var(--size-4-4);
+	padding-block-start: var(--size-4-3);
+	border-block-start: 1px solid var(--background-modifier-border);
+	color: var(--text-faint);
+	font-size: var(--font-smallest);
+	line-height: 1.25;
+}
+
+.callout-studio-footer-meta > * {
+	display: inline-flex;
+	align-items: center;
+	min-inline-size: 0;
+}
+
+.callout-studio-footer .callout-studio-footer-meta-link {
+	appearance: none;
+	min-block-size: 24px;
+	block-size: auto;
+	padding: 0 1px;
+	border: 0;
+	border-radius: var(--radius-s);
+	background: transparent;
+	color: var(--text-faint);
+	box-shadow: none;
+	font: inherit;
+	line-height: inherit;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+@media (hover: hover) {
+	.callout-studio-footer .callout-studio-footer-meta-link:hover {
+		background: transparent;
+		color: var(--text-accent);
+		text-decoration: underline;
+	}
+}
+
+.callout-studio-footer .callout-studio-footer-meta-link:focus-visible {
+	outline: 2px solid var(--text-accent);
+	outline-offset: 2px;
+	box-shadow: none;
+}
+
+.callout-studio-footer-version {
+	color: var(--text-faint);
+	font-variant-numeric: tabular-nums;
+}
+
+.callout-studio-footer-meta-separator {
+	color: var(--text-faint);
+	user-select: none;
+}
+
 .cs-reset-warning {
 	color: var(--text-error);
 	font-weight: bold;
 }
-.callout-studio-footer a {
-	color: var(--text-accent);
-	text-decoration: none;
+
+/* Optional conversion help and inline replacement editing in the review sidebar. */
+.cs-portable-modal {
+	width: min(700px, 94vw);
 }
-.callout-studio-footer a:hover {
-	text-decoration: underline;
+
+.cs-portable-rules {
+	margin-block: var(--size-4-3);
+}
+
+.cs-portable-rules table {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	font-size: var(--font-small);
+}
+
+.cs-portable-rules th {
+	color: var(--text-muted);
+	font-weight: var(--font-normal);
+	text-align: start;
+	padding: 0 var(--size-4-2) var(--size-4-1);
+}
+
+.cs-portable-rules td {
+	padding: var(--size-4-2);
+	border-block-start: 1px solid var(--background-modifier-border);
+	background: var(--cs-surface-raised, var(--background-secondary));
+}
+
+.cs-portable-rules code {
+	display: block;
+	padding: 0;
+	background: transparent;
+	direction: ltr;
+	unicode-bidi: isolate;
+	text-align: start;
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+	font-size: inherit;
+}
+
+.cs-portable-warning {
+	margin-block: var(--size-4-3) 0;
+	padding: var(--size-4-2) var(--size-4-3);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+	color: var(--text-muted);
+	font-size: var(--font-small);
+}
+
+.cs-portable-inline {
+	min-inline-size: 0;
+}
+
+.cs-portable-custom-editor {
+	display: flex;
+	align-items: baseline;
+	gap: 0.4em;
+	min-inline-size: 0;
+}
+
+.cs-portable-input-grow {
+	display: grid;
+	flex: 1 1 0;
+	min-inline-size: 0;
+	border-radius: var(--radius-s);
+	background: color-mix(in srgb, var(--interactive-accent) 8%, transparent);
+	box-shadow: 0 0 0 1px color-mix(in srgb, var(--interactive-accent) 25%, transparent);
+}
+
+.cs-portable-input-grow:focus-within {
+	background: color-mix(in srgb, var(--interactive-accent) 12%, transparent);
+	box-shadow: 0 0 0 1px color-mix(in srgb, var(--interactive-accent) 50%, transparent);
+}
+
+.cs-portable-input-mirror,
+.cs-portable-inline textarea.cs-portable-custom-input {
+	grid-area: 1 / 1;
+	box-sizing: border-box;
+	inline-size: 100%;
+	min-inline-size: 0;
+	min-block-size: 1.5em;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+	color: var(--text-normal);
+	font-family: var(--font-monospace);
+	font-size: var(--font-ui-small);
+	font-weight: var(--font-normal);
+	line-height: 1.5;
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+	/* Match the LTR Markdown preview's text origin, including RTL input. */
+	text-align: left;
+}
+
+.cs-portable-input-mirror {
+	visibility: hidden;
+}
+
+.cs-portable-inline textarea.cs-portable-custom-input {
+	block-size: 100%;
+	resize: none;
+	overflow: hidden;
+	caret-color: var(--text-accent);
+	color: color-mix(in srgb, var(--text-normal) 85%, var(--text-accent));
+}
+
+.cs-portable-inline textarea.cs-portable-custom-input:focus {
+	border: 0;
+	outline: none;
+	box-shadow: none;
+}
+
+.cs-portable-custom-markers {
+	flex: 0 0 auto;
+	color: var(--text-faint);
+	font-family: var(--font-monospace);
+	font-size: var(--font-ui-small);
+	white-space: pre;
+}
+
+.cs-portable-custom-error {
+	margin-block-start: var(--size-4-2);
+	color: var(--text-error);
+	font-size: var(--font-ui-small);
+}
+
+.cs-portable-custom-error:empty {
+	display: none;
+}
+
+.cs-portable-custom-badge {
+	display: inline-block;
+	margin-inline-start: var(--size-4-2);
+	border-radius: var(--radius-s);
+	padding: 1px 6px;
+	background: color-mix(in srgb, var(--color-purple) 12%, transparent);
+	color: var(--color-purple);
+	font-size: var(--font-ui-smaller);
+}
+
+/* Both vault sidebars share file groups, cards and a bounded row-major grid. */
+.cs-sidebar-file {
+	min-inline-size: 0;
+	padding-block-end: var(--size-4-4);
+}
+
+.cs-sidebar-file-heading {
+	position: sticky;
+	top: 0;
+	z-index: 2;
+	display: flex;
+	align-items: baseline;
+	gap: var(--size-4-2);
+	margin: 0;
+	padding-block: var(--size-4-3);
+	background: var(--cs-surface-raised, var(--background-secondary));
+	font-size: var(--font-ui-small);
+	font-weight: var(--font-medium);
+	line-height: 1.4;
+}
+
+.cs-sidebar-file-name {
+	min-inline-size: 0;
+	overflow-wrap: anywhere;
+	unicode-bidi: plaintext;
+}
+
+.cs-sidebar-file-count {
+	margin-inline-start: 0.4em;
+	color: var(--text-muted);
+	font-size: var(--font-ui-smaller);
+	font-weight: var(--font-normal);
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+
+button.cs-sidebar-file-link {
+	display: block;
+	min-inline-size: 0;
+	block-size: auto;
+	padding: 0;
+	border: 0;
+	border-radius: var(--radius-s);
+	background: transparent;
+	box-shadow: none;
+	color: inherit;
+	font: inherit;
+	text-align: start;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	cursor: pointer;
+}
+
+button.cs-sidebar-file-link:hover {
+	color: var(--text-accent);
+}
+
+button.cs-sidebar-file-link:focus-visible {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: 3px;
+}
+
+.cs-sidebar-file.is-active-file .cs-sidebar-file-name {
+	color: var(--text-accent);
+}
+
+.cs-sidebar-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	grid-auto-flow: row;
+	align-items: stretch;
+	gap: var(--size-4-2);
+	/* Physical left-to-right row order is shared by RTL and LTR panes. */
+	direction: ltr;
+}
+
+.cs-sidebar-result {
+	min-inline-size: 0;
+	margin: 0;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+	background: var(--cs-surface-raised, var(--background-secondary));
+	box-shadow: none;
+	text-align: start;
+	white-space: normal;
+	overflow-wrap: anywhere;
+}
+
+[dir="rtl"] .cs-sidebar-result {
+	direction: rtl;
+}
+
+button.cs-sidebar-result {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: flex-start;
+	gap: var(--size-4-2);
+	inline-size: 100%;
+	block-size: auto;
+	min-block-size: var(--input-height);
+	padding: var(--size-4-3);
+	color: var(--text-normal);
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.cs-sidebar-result:hover {
+		border-color: var(--background-modifier-border-focus);
+		background: var(--background-modifier-hover);
+	}
+}
+
+.cs-sidebar-result[aria-current="true"] {
+	border-color: var(--interactive-accent);
+	background: var(--background-modifier-active-hover);
+}
+
+.cs-sidebar-result:focus-visible {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: 2px;
+}
+
+.cs-sidebar-result:active,
+.cs-sidebar-result:focus:not(:focus-visible) {
+	outline: none;
+	box-shadow: none;
+}
+
+.cs-sidebar-location {
+	display: block;
+	color: var(--text-muted);
+	font-family: var(--font-interface);
+	font-size: var(--font-ui-smaller);
+	font-weight: var(--font-medium);
+	line-height: 1.4;
+	font-variant-numeric: tabular-nums;
+}
+
+@container cs-sidebar (min-width: 680px) {
+	.cs-sidebar-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+.view-content.cs-portable-view,
+.view-content.cs-occurrences-view {
+	container: cs-sidebar / inline-size;
+	display: flex;
+	flex-direction: column;
+	min-block-size: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+/* Both headers stay outside their scrolling results; their height may wrap. */
+.cs-sidebar-toolbar {
+	flex: none;
+	display: grid;
+	gap: var(--size-4-3);
+	box-sizing: border-box;
+	inline-size: min(100%, 1032px);
+	margin-inline: auto;
+	padding: var(--size-4-4) var(--size-4-4) 0;
+	border-block-end: 1px solid var(--background-modifier-border);
+}
+
+.cs-sidebar-title {
+	margin: 0;
+	font-size: var(--font-ui-large);
+	font-weight: var(--font-semibold);
+	line-height: 1.3;
+}
+
+.cs-sidebar-subtitle {
+	margin: 0;
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	line-height: 1.5;
+}
+
+.cs-sidebar-summary {
+	min-block-size: 1.5em;
+	padding-block: var(--size-4-3);
+	border-block-start: 1px solid var(--background-modifier-border);
+	color: var(--text-muted);
+	font-size: var(--font-ui-smaller);
+	font-variant-numeric: tabular-nums;
+	line-height: 1.5;
+}
+
+.cs-portable-title-row {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-2);
+}
+
+.cs-portable-help {
+	flex: none;
+	margin-inline-start: auto;
+	color: var(--text-muted);
+}
+
+.cs-portable-intro-actions {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-4);
+}
+
+.cs-portable-intro-actions .cs-sidebar-subtitle {
+	flex: 1 1 0;
+	min-inline-size: 0;
+}
+
+.cs-portable-intro-actions button {
+	flex: 0 1 auto;
+	max-inline-size: 42%;
+	min-inline-size: 0;
+	block-size: auto;
+	min-block-size: var(--input-height);
+	padding: var(--size-4-2);
+	font-size: var(--font-ui-smaller);
+	line-height: 1.3;
+	white-space: normal;
+	overflow-wrap: anywhere;
+}
+
+.cs-portable-review-summary {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-2);
+}
+
+.cs-portable-review-summary input[type="checkbox"] {
+	flex: none;
+	align-self: center;
+	margin: 0;
+	inset: 0;
+}
+
+.cs-portable-review-summary input[type="checkbox"]:indeterminate {
+	appearance: none;
+	border-color: var(--checkbox-color);
+	background-color: var(--checkbox-color);
+	background-image: linear-gradient(var(--checkbox-marker-color), var(--checkbox-marker-color));
+	background-size: 60% 2px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.cs-portable-review-summary input[type="checkbox"]:indeterminate::after {
+	display: none;
+}
+
+.cs-portable-summary-text {
+	min-inline-size: 0;
+}
+
+.cs-portable-results-shell {
+	position: relative;
+	flex: 1 1 0;
+	min-block-size: 0;
+}
+
+.cs-portable-results-scroll {
+	block-size: 100%;
+	box-sizing: border-box;
+	overflow: auto;
+	padding: 0 var(--size-4-4) var(--size-4-3);
+}
+
+.cs-portable-change-list,
+.cs-portable-hint,
+.cs-portable-review-status {
+	max-inline-size: 1000px;
+	margin-inline: auto;
+}
+
+.cs-portable-review-status {
+	margin-block-start: var(--size-4-3);
+	padding: var(--size-4-3);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	overflow-wrap: anywhere;
+}
+
+.cs-portable-hint:empty,
+.cs-portable-review-status:empty,
+.cs-portable-view [hidden] {
+	display: none;
+}
+
+.cs-portable-refresh-overlay {
+	position: absolute;
+	inset: 0;
+	z-index: 3;
+	display: grid;
+	place-content: center;
+	padding: var(--size-4-6);
+	background: color-mix(in srgb, var(--cs-surface-raised, var(--background-secondary)) 70%, transparent);
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	text-align: center;
+}
+
+.cs-portable-results-shell.is-stale .cs-portable-change-list {
+	pointer-events: none;
+}
+
+.cs-portable-results-shell.is-busy .cs-portable-change-list {
+	opacity: 0.4;
+	filter: blur(1px);
+}
+
+.cs-portable-change {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	align-items: stretch;
+	gap: var(--size-4-2);
+	min-inline-size: 0;
+}
+
+.cs-portable-change input[type="checkbox"] {
+	align-self: start;
+	margin: var(--size-4-3) 0 0;
+}
+
+[dir="rtl"] .cs-sidebar-selectable {
+	direction: rtl;
+}
+
+.cs-portable-change-body {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-2-1);
+	min-width: 0;
+	block-size: 100%;
+	padding: var(--size-4-3);
+}
+
+.cs-portable-change.is-editing .cs-portable-change-body {
+	border-color: var(--interactive-accent);
+	background: var(--background-modifier-active-hover);
+}
+
+button.cs-portable-source,
+button.cs-portable-after-button {
+	display: block;
+	inline-size: 100%;
+	min-inline-size: 0;
+	block-size: auto;
+	min-block-size: 1.5em;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: var(--radius-s);
+	background: transparent;
+	box-shadow: none;
+	color: inherit;
+	text-align: start;
+	white-space: normal;
+}
+
+button.cs-portable-source {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: var(--size-4-2);
+	cursor: pointer;
+}
+
+button.cs-portable-after-button {
+	cursor: text;
+	transition: background-color 140ms ease, box-shadow 140ms ease;
+}
+
+button.cs-portable-after-button:not(:disabled):hover {
+	background: color-mix(in srgb, var(--interactive-accent) 8%, transparent);
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--interactive-accent) 8%, transparent);
+}
+
+button.cs-portable-after-button:not(:disabled):hover .cs-portable-after {
+	color: var(--text-accent);
+}
+
+button.cs-portable-source:focus-visible,
+button.cs-portable-after-button:focus-visible {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: 3px;
+}
+
+.cs-portable-change .cs-portable-change-location {
+	padding-inline-end: 60px;
+}
+
+.cs-portable-card-actions {
+	position: absolute;
+	inset-block-start: var(--size-4-2);
+	inset-inline-end: var(--size-4-2);
+	display: flex;
+	align-items: center;
+	gap: var(--size-2-1);
+	transition: opacity 160ms ease;
+}
+
+.cs-portable-card-actions button {
+	--icon-size: 12px;
+	padding: var(--size-4-1);
+	color: var(--text-muted);
+}
+
+.cs-portable-card-actions button svg {
+	inline-size: 12px;
+	block-size: 12px;
+}
+
+.cs-portable-card-actions button[hidden] {
+	display: none;
+}
+
+.cs-portable-card-actions button:hover {
+	color: var(--text-normal);
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.cs-portable-card-actions {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.cs-portable-change:hover .cs-portable-card-actions,
+	.cs-portable-change:focus-within .cs-portable-card-actions,
+	.cs-portable-change.is-editing .cs-portable-card-actions {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.cs-portable-card-actions,
+	button.cs-portable-after-button {
+		transition: none;
+	}
+}
+
+.cs-portable-change-location {
+	margin: 0;
+}
+
+.cs-portable-diff-line {
+	display: grid;
+	/* Both rows use the same em width, even inside a host-styled button. */
+	font-size: var(--font-ui-small);
+	inline-size: 100%;
+	min-inline-size: 0;
+	grid-template-columns: 3.5em minmax(0, 1fr);
+	align-items: baseline;
+	gap: var(--size-4-2);
+}
+
+.cs-portable-diff-label {
+	color: var(--text-faint);
+	font-family: var(--font-interface);
+	font-size: var(--font-ui-smaller);
+	font-weight: var(--font-normal);
+	line-height: 1.5;
+}
+
+.cs-portable-before,
+.cs-portable-after {
+	display: block;
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	color: var(--text-normal);
+	font-family: var(--font-monospace);
+	font-size: var(--font-ui-small);
+	font-weight: var(--font-normal);
+	line-height: 1.5;
+	direction: ltr;
+	unicode-bidi: isolate;
+	text-align: start;
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+}
+
+.cs-portable-before {
+	color: var(--text-muted);
+}
+
+.cs-portable-change-note,
+.cs-portable-hint {
+	margin-block: var(--size-4-2) 0;
+	color: var(--text-muted);
+	font-size: var(--font-ui-smaller);
+	font-weight: var(--font-normal);
+	line-height: 1.5;
+}
+
+.cs-portable-link-change {
+	min-inline-size: 0;
+}
+
+.cs-portable-more,
+.cs-portable-retry {
+	display: block;
+	margin: var(--size-4-3) auto;
+}
+
+@media (max-width: 420px) {
+	.callout-studio-footer {
+		padding-inline: 0;
+	}
+
+	.callout-studio-footer-meta {
+		column-gap: var(--size-4-3);
+		row-gap: 0;
+	}
+
+	.callout-studio-footer-meta-separator {
+		display: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.callout-studio-footer-contact-link {
+		transition: none;
+	}
 }
 
 /* ══ Regular callout title ═════════════════════════════════════ */
@@ -4247,45 +6997,16 @@ input.cs-input-invalid:focus {
 	   Inline → Global callout style); the icon tracks it via its 1em sizing. */
 	font-size: calc(0.9em * var(--cs-inline-scale, 1));
 	line-height: 1.4;
-	/* Centred on the line, not hung off its baseline — the answer to "shrink
-	   the font scale and the pill stays welded to the bottom of the line".
-
-	   With `vertical-align: baseline` this box's baseline is its ICON'S BOTTOM
-	   EDGE: CSS Flexbox §8.5 gives a flex container the baseline of its first
-	   item (with `align-items: center` no item is baseline-aligned, so the
-	   first one's own baseline is used), that item is the icon box, and a
-	   replaced <svg>'s baseline is its bottom margin edge. So the pill's bottom
-	   was pinned near the baseline and every bit of shrinking came off the top.
-	   `middle` anchors the box's CENTRE instead — parent baseline plus half its
-	   x-height — so a small pill contracts around a fixed point and floats.
-
-	   Two knock-on effects, both wanted: at the default scale the pill settles
-	   ~2px lower than it used to (its text baseline lands on the paragraph's,
-	   where before it rode ~0.12em above it), and the box's top no longer
-	   reaches as far above the line, so it is LESS likely to grow a line's
-	   height than the old anchoring was — which matters inside .cm-line, where
-	   a taller inline box is something CodeMirror has to measure. */
+	/* Anchor the whole pill at the surrounding line's visual middle at every
+	   font scale. CSS `middle` lands slightly below the line box's optical
+	   center, so the second variable supplies a small upward correction. The
+	   injector compensates that em value when the pill is scaled, keeping the
+	   correction constant relative to the surrounding text. */
 	vertical-align: middle;
-	/* Optical lift on top of that centring, and the one hand-tuned number in
-	   the pill.
-
-	   `middle` is not the middle of the line: it anchors the box to the
-	   baseline plus half the parent's X-HEIGHT, while the line box's own centre
-	   sits at baseline + (descent − ascent) / 2. Those two points differ by
-	   (ascent − descent) / 2 − x-height / 2 — around 0.09em, ~1.4px at 16px
-	   text, and always on the low side. (The fold chevron met the same constant
-	   and answered it with a flex strut; a pill has no container to be centred
-	   in, so it takes the offset directly.)
-
-	   Deliberately absolute rather than em: it corrects for where letters sit
-	   in their line box, not for the pill's own size, so it must NOT grow with
-	   the inline font scale. Deliberately not a setting either — change it
-	   here. `position: relative` and not a margin (which would change the line
-	   box and make CodeMirror re-measure) and not a transform (spoken for by
-	   the cs-token-in entrance animation, which would overwrite it mid-flight). */
-	--cs-inline-lift: 1px;
+	--cs-inline-lift: 0em;
+	--cs-inline-center-lift: 0.1em;
 	position: relative;
-	top: calc(-1 * var(--cs-inline-lift));
+	top: calc(-1 * var(--cs-inline-lift) - var(--cs-inline-center-lift));
 	background-color: color-mix(in oklch, var(--cs-accent, #086ddd) 12%, transparent);
 	font-weight: var(--font-medium, 500);
 	white-space: nowrap;
@@ -4860,10 +7581,24 @@ body.cs-anim-window .cs-heading-callout:not(.cm-line) {
 
 /* Neutral demo callout shown in the per-role style popups: its Lucide square
    icon is filled with the accent color so it reads as a solid swatch rather
-   than an outline, on all three surfaces (regular / heading / inline). */
-.callout[data-callout="global-style-demo"] > .callout-title > .callout-icon svg,
-.cs-heading-token[data-callout="global-style-demo"] .cs-callout-icon svg,
-.cs-inline-callout[data-callout="global-style-demo"] .cs-callout-icon svg {
+   than an outline, on all three surfaces (regular / heading / inline).
+
+   Scoped to this modal, not keyed on the id alone. The welcome splash reserves
+   the same id for its own demo (see settings/welcomeDemo.ts) but draws an
+   outline `sparkles`, which this rule would flood-fill into a blob. */
+.cs-role-style-modal
+	.callout[data-callout="global-style-demo"]
+	> .callout-title
+	> .callout-icon
+	svg,
+.cs-role-style-modal
+	.cs-heading-token[data-callout="global-style-demo"]
+	.cs-callout-icon
+	svg,
+.cs-role-style-modal
+	.cs-inline-callout[data-callout="global-style-demo"]
+	.cs-callout-icon
+	svg {
 	fill: currentColor;
 }
 
@@ -4876,9 +7611,7 @@ body.cs-anim-window .cs-heading-callout:not(.cm-line) {
 	max-width: min(760px, 95vw);
 }
 
-/* Two-column body: explanation on the left, a live preview on the right.
-   Shared by the welcome splash and the External style window — same shape,
-   same stacking breakpoint, so they stay in step. */
+/* Two-column body: explanation on the left, a live preview on the right. */
 .cs-split-panel {
 	display: grid;
 	grid-template-columns: 1fr 1.2fr;
@@ -4895,16 +7628,6 @@ body.cs-anim-window .cs-heading-callout:not(.cm-line) {
 	min-width: 0;
 }
 
-.cs-welcome-icon {
-	color: var(--interactive-accent);
-	line-height: 0;
-}
-
-.cs-welcome-icon .svg-icon {
-	width: 2.4em;
-	height: 2.4em;
-}
-
 .cs-welcome-title {
 	margin: 8px 0 0;
 	font-size: 1.6em;
@@ -4916,6 +7639,15 @@ body.cs-anim-window .cs-heading-callout:not(.cm-line) {
 	margin: 0;
 	font-size: var(--font-ui-medium);
 	color: var(--text-muted);
+	line-height: 1.5;
+}
+
+/* Shown only on a launch that found no settings file: it may be a new device
+   whose synced settings have not arrived yet. */
+.cs-welcome-sync-note {
+	margin: var(--size-4-3) 0 0;
+	font-size: var(--font-ui-small);
+	color: var(--text-faint);
 	line-height: 1.5;
 }
 
@@ -4935,77 +7667,146 @@ body.cs-anim-window .cs-heading-callout:not(.cm-line) {
 	overflow-y: auto;
 }
 
+/* ── The splash's demo callout, pinned against the active theme ──────
+
+   The splash demonstrates all three roles at once, and it used to do it with
+   the real built-ins `tip`, `warning` and `note` — exactly the ids a theme
+   restyles by name. Moving to the splash's own `demo` id
+   (settings/welcomeDemo.ts) settles that half: no theme has a rule for an id it
+   has never heard of.
+
+   It does not settle the other half. A theme's *generic* selectors still reach
+   the examples — `.callout { ... !important }` for the block role, and plain
+   heading rules for the heading role, which is the worse case: the injected
+   `.cs-heading-callout` / `.cs-inline-callout` rules carry no `!important` at
+   all, on purpose (see CSSInjector's note on keeping them user-overridable), so
+   a theme wins those without a fight. On several popular themes that made the
+   heading and inline examples unreadable.
+
+   Hence this block. It restates what the injected sheet already says, with
+   enough weight to survive a theme: among `!important` author declarations the
+   higher specificity wins, and repeating a compound buys that the same way
+   manager/theme/studioWeight.ts does. Scoped to `.cs-welcome-modal` and keyed
+   on the demo id, so it can reach nothing else — and that scope is load-bearing
+   here rather than tidiness, because `demo` is a name a user may legitimately
+   own (see WELCOME_DEMO_ID). Their `[!demo]` callouts keep their own colours
+   everywhere outside this modal. */
+
+.cs-welcome-modal {
+	--cs-welcome-demo-accent: #7c3aed;
+}
+
+.theme-dark .cs-welcome-modal {
+	--cs-welcome-demo-accent: #a78bfa;
+}
+
+/* ONE tint for all three roles, and it is `.cs-heading-callout`'s and
+   `.cs-inline-callout`'s own default formula copied verbatim from further up
+   this file — same 12%, same oklch space. That is what makes the comment above
+   ("restates what the injected sheet already says") true rather than
+   approximate: the hardening changes the *weight* of the plugin's answer, never
+   the answer. The three examples therefore sit on the same wash as each other
+   and as every real callout of this colour elsewhere in the vault.
+
+   Translucent rather than opaque for the reason the whole plugin is: an opaque
+   fill stops following the theme's surface and breaks nested callouts. It is
+   also why the inline pill is a tint and not the solid violet lozenge it was
+   for one revision — a solid pill is a look the plugin gives no other inline
+   callout, so the splash was demonstrating something users would never
+   reproduce. */
+.modal.cs-welcome-modal {
+	--cs-welcome-demo-tint: color-mix(
+		in oklch,
+		var(--cs-welcome-demo-accent) 12%,
+		transparent
+	);
+}
+
+/* Block role. Three `.callout` units + the modal scope clears any realistic
+   theme rule.
+
+   `--callout-color` is deliberately NOT restated here. Its format is
+   version-dependent — a bare RGB triplet on ≤1.12, a full colour on 1.13+ (see
+   utils/calloutColorFormat) — so a hex hard-coded in a static sheet is wrong on
+   one of them, and CSSInjector already emits the right one at two selectors,
+   which no theme's generic `.callout` rule reaches. */
+.modal.cs-welcome-modal .callout.callout.callout[data-callout="demo"] {
+	--cs-accent: var(--cs-welcome-demo-accent) !important;
+	background-color: var(--cs-welcome-demo-tint) !important;
+	border-color: color-mix(
+		in oklch,
+		var(--cs-welcome-demo-accent) 35%,
+		transparent
+	) !important;
+}
+
+.modal.cs-welcome-modal
+	.callout.callout.callout[data-callout="demo"]
+	> .callout-title {
+	color: var(--cs-welcome-demo-accent) !important;
+}
+
+.modal.cs-welcome-modal
+	.callout.callout.callout[data-callout="demo"]
+	> .callout-content {
+	color: var(--text-normal) !important;
+}
+
+/* Heading role. The one a theme reaches most easily, because it is wrapping a
+   real `<hN>` and themes style headings hard — colour, weight, size, sometimes
+   a background of their own. */
+.modal.cs-welcome-modal
+	.cs-heading-callout.cs-heading-callout[data-callout="demo"] {
+	--cs-accent: var(--cs-welcome-demo-accent) !important;
+	background-color: var(--cs-welcome-demo-tint) !important;
+	color: var(--cs-welcome-demo-accent) !important;
+}
+
+.modal.cs-welcome-modal
+	.cs-heading-callout.cs-heading-callout[data-callout="demo"]
+	.cs-heading-title,
+.modal.cs-welcome-modal
+	.cs-heading-callout.cs-heading-callout[data-callout="demo"]
+	.cs-callout-name {
+	color: var(--cs-welcome-demo-accent) !important;
+	-webkit-text-fill-color: var(--cs-welcome-demo-accent) !important;
+}
+
+/* Inline role. No border: the pill has never had one, and the splash's job is
+   to show what the user will get. `-webkit-text-fill-color` is restated
+   alongside `color` because that is the property the pill's gradient title
+   sweep uses, and it is the one a print sheet or a theme can set without
+   touching `color` at all. */
+.modal.cs-welcome-modal
+	.cs-inline-callout.cs-inline-callout[data-callout="demo"] {
+	--cs-accent: var(--cs-welcome-demo-accent) !important;
+	background-color: var(--cs-welcome-demo-tint) !important;
+	color: var(--cs-welcome-demo-accent) !important;
+	-webkit-text-fill-color: var(--cs-welcome-demo-accent) !important;
+}
+
+/* Icons. `currentColor` is what the injector's mask fills with, so setting
+   `color` above is most of this — these pin the elements that carry their own.
+   All three roles now sit on the same tint, so all three icons are the accent. */
+.modal.cs-welcome-modal
+	.callout.callout.callout[data-callout="demo"]
+	> .callout-title
+	> .callout-icon,
+.modal.cs-welcome-modal
+	.cs-heading-callout.cs-heading-callout[data-callout="demo"]
+	.cs-callout-icon,
+.modal.cs-welcome-modal
+	.cs-inline-callout.cs-inline-callout[data-callout="demo"]
+	.cs-callout-icon {
+	color: var(--cs-welcome-demo-accent) !important;
+}
+
 @media (max-width: 640px) {
 	.cs-split-panel {
 		grid-template-columns: 1fr;
 	}
 }
 
-/* ══ External style window ═════════════════════════════════════ */
-/* Opens instead of the callout editor for a callout handed to the theme
-   (see ExternalStyleModal). Left column explains, right column proves it
-   with a real preview rendered by the theme's own CSS. */
-
-.modal.cs-external-modal {
-	width: min(760px, 95vw);
-	max-width: min(760px, 95vw);
-}
-
-.cs-external-left {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	gap: 10px;
-	min-width: 0;
-}
-
-.cs-external-lead {
-	margin: 0;
-	font-size: var(--font-ui-medium);
-	color: var(--text-normal);
-	line-height: 1.5;
-}
-
-.cs-external-what {
-	margin: 6px 0 0;
-	font-size: var(--font-ui-small);
-	font-weight: 600;
-	color: var(--text-muted);
-}
-
-.cs-external-list {
-	margin: 0;
-	padding-inline-start: 1.2em;
-	display: flex;
-	flex-direction: column;
-	gap: 6px;
-	font-size: var(--font-ui-small);
-	color: var(--text-muted);
-	line-height: 1.5;
-}
-
-.cs-external-right {
-	min-width: 0;
-	display: flex;
-	flex-direction: column;
-}
-
-.cs-external-right .cs-live-preview-container {
-	flex: 1;
-}
-
-.cs-external-right .cs-live-preview-body {
-	min-height: 200px;
-	max-height: 340px;
-	overflow-y: auto;
-}
-
-/* Settings row for an externally styled callout. Dimmed as a whole so the
-   row reads as "not ours"; its icon slot is left empty and its color
-   swatches are omitted entirely (see CalloutRowRenderer). */
-.callout-studio-row.is-external-style {
-	opacity: 0.65;
-}
 
 /* A language the user has picked but that could not be downloaded yet. Styled
    as a notice rather than an error: the plugin is fully usable in English, and
@@ -5022,4 +7823,349 @@ body.cs-anim-window .cs-heading-callout:not(.cm-line) {
 	color: var(--text-faint);
 	font-size: var(--font-ui-smaller);
 	text-align: center;
+}
+
+/* The way out of a frozen session, offered inside the notice that announces one
+   (see manager/settingsBoot.ts). A notice is not a place a user expects to be
+   able to act, so this has to read unmistakably as a control rather than as more
+   prose — hence the block display and the underline. */
+.cs-notice-action {
+	display: inline-block;
+	margin-top: 8px;
+	color: var(--text-on-accent);
+	font-weight: var(--font-semibold);
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/* A session that is not writing its settings file, said on the page where the
+   user is actually making changes (see settings/sections/ReadOnlyBanner.ts).
+   The launch notice that announces the same thing is long gone by then. Styled
+   as a warning rather than an error: nothing is broken, and in the common case
+   — a sync client mid-swap — it resolves itself. */
+.cs-readonly-banner {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	/* The card sits directly under the "Callout Studio" title row, which already
+	   carries 8px of `padding-bottom`, so a small top margin is enough to keep
+	   it off the title; the larger bottom margin separates it from the first
+	   section heading below. */
+	margin: 4px 0 16px;
+	padding: 12px 14px;
+	/* A thin outline on all four sides rather than a bar down one edge. The bar
+	   only marked the side it was on, so the block ran off into the page on the
+	   other three, and it changed sides between an LTR and an RTL locale. A
+	   closed card says the same thing in either direction and keeps the buttons
+	   below visibly inside the message that offers them. */
+	border: 1px solid color-mix(
+		in srgb,
+		var(--text-warning, var(--color-orange)) 40%,
+		transparent
+	);
+	border-radius: var(--radius-m);
+	/* A translucent tint of the warning colour rather than a surface token: the
+	   banner sits on the settings tab, and a raised-shade token would be a claim
+	   about what it is sitting on (see tests/modalSurfaces.test.ts). Lighter
+	   than the bar version was — the outline now carries the emphasis. */
+	background: color-mix(
+		in srgb,
+		var(--text-warning, var(--color-orange)) 9%,
+		transparent
+	);
+}
+
+.cs-readonly-banner-header {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+}
+
+/* Fixed to the height of one title line rather than centred on the whole
+   header, so a title that wraps to two lines on a phone still starts level
+   with its icon instead of drifting to the middle of the block. */
+.cs-readonly-banner-icon {
+	display: flex;
+	flex: 0 0 auto;
+	align-items: center;
+	height: calc(var(--font-ui-medium) * 1.4);
+	color: var(--text-warning, var(--color-orange));
+}
+
+.cs-readonly-banner-icon .svg-icon {
+	width: var(--icon-s);
+	height: var(--icon-s);
+}
+
+.cs-readonly-banner-title {
+	color: var(--text-normal);
+	font-size: var(--font-ui-medium);
+	font-weight: var(--font-semibold);
+	line-height: 1.4;
+}
+
+.cs-readonly-banner p {
+	margin: 0;
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+	line-height: 1.5;
+}
+
+/* Actions start at the same edge as the title and the prose, so the card reads
+   as one left-aligned column in an LTR locale and one right-aligned column in
+   an RTL one — `flex-start` is what makes that follow the text direction. */
+.cs-readonly-banner-actions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	gap: 8px;
+	margin-top: 2px;
+}
+
+.cs-readonly-banner-actions button {
+	margin: 0;
+}
+
+/* The specific cause under the general message: quieter, same column. */
+.cs-readonly-banner p.cs-readonly-banner-detail {
+	color: var(--text-muted);
+}
+
+/* Saving is paused: a status bar item that stays up until it resumes. */
+.cs-paused-status {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--size-2-2);
+	color: var(--text-warning);
+}
+
+.cs-paused-status-icon {
+	display: inline-flex;
+}
+
+.cs-paused-status-icon .svg-icon {
+	width: var(--icon-xs);
+	height: var(--icon-xs);
+}
+
+/* Restore an earlier setup. Rows are ordinary setting items; only the prose
+   around them needs spacing, and the paused hint takes the warning colour. */
+.cs-recovery-intro,
+.cs-recovery-paused,
+.cs-recovery-status {
+	margin: 0 0 var(--size-4-3);
+	font-size: var(--font-ui-small);
+	line-height: 1.5;
+}
+
+.cs-recovery-intro,
+.cs-recovery-status {
+	color: var(--text-muted);
+}
+
+.cs-recovery-paused {
+	color: var(--text-warning);
+}
+
+.cs-recovery-list > .setting-item-heading:first-child {
+	padding-top: 0;
+}
+
+/* Saving is paused: whatever would change a setting is inert, and fades to
+   say so. @see src/settings/sections/pausedReadOnly.ts */
+.callout-studio-settings.cs-settings-paused [inert] {
+	opacity: 0.55;
+}
+
+/* First-install migration suggestion. It shares the title-adjacent notice slot
+   with the save-status banner, but uses the active theme's accent so it reads
+   as an opportunity rather than an error. */
+.cs-competitor-import-banner {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto auto;
+	align-items: center;
+	gap: 10px;
+	margin: 4px 0 16px;
+	padding: 10px 10px 10px 14px;
+	border: 1px solid color-mix(
+		in srgb,
+		var(--interactive-accent) 42%,
+		transparent
+	);
+	border-radius: var(--radius-m);
+	background: color-mix(in srgb, var(--interactive-accent) 10%, transparent);
+}
+
+.cs-competitor-import-banner-message {
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+	line-height: 1.5;
+}
+
+/* The independent result scroller keeps the shared header and filters fixed. */
+.cs-occurrences-scroll {
+	flex: 1 1 0;
+	min-block-size: 0;
+	overflow: auto;
+	padding: 0 var(--size-4-4) var(--size-4-3);
+}
+
+.cs-occurrences-scroll > * {
+	box-sizing: border-box;
+	max-inline-size: 1000px;
+	margin-inline: auto;
+}
+
+.cs-occurrences-controls {
+	display: grid;
+	grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+	gap: var(--size-4-2);
+}
+
+@container cs-sidebar (max-width: 440px) {
+	.cs-occurrences-controls {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+.cs-sidebar-filter {
+	min-inline-size: 0;
+}
+
+.cs-occurrences-picker,
+.cs-occurrences-picker .cs-combobox,
+.cs-occurrences-controls .cs-select-dropdown {
+	width: 100%;
+	min-inline-size: 0;
+}
+
+.cs-occurrences-picker .cs-combobox.is-iconless .cs-combobox-lead {
+	display: none;
+}
+
+.cs-occurrences-picker .cs-combobox-iconless-option {
+	padding: 8px 12px;
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+}
+
+.cs-occurrences-status {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+.cs-occurrences-status:empty,
+.cs-occurrences-failures:empty {
+	display: none;
+}
+
+.cs-occurrences-failures {
+	overflow-wrap: anywhere;
+}
+
+.cs-occurrences-results {
+	padding-block-end: var(--size-4-2);
+}
+
+.cs-occurrences-excerpt {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	line-clamp: 2;
+	overflow: hidden;
+	font-size: var(--font-ui-small);
+	white-space: pre-line;
+	unicode-bidi: plaintext;
+}
+
+.cs-occurrences-excerpt-split {
+	display: block;
+}
+
+.cs-occurrences-excerpt-line {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.cs-competitor-import-banner-action,
+.cs-competitor-import-banner-dismiss {
+	margin: 0;
+}
+
+.cs-competitor-import-banner-dismiss {
+	color: var(--text-muted);
+}
+
+/* A short, soft rise into the accent tint followed by the requested 1.5 s
+   fade. Both ends use the row's computed resting paint, captured immediately
+   before the animation, so themes with grey setting rows cannot flash from
+   transparent to grey when the animation class is removed. */
+.callout-studio-settings .cs-import-target.cs-import-target-highlight {
+	animation: cs-import-target-highlight 1.5s ease-in-out both;
+	border-radius: var(--radius-s);
+}
+
+@keyframes cs-import-target-highlight {
+	0% {
+		background-color: var(--cs-import-target-rest-bg, transparent);
+		box-shadow: var(--cs-import-target-rest-shadow, none);
+	}
+	18% {
+		background-color: color-mix(
+			in srgb,
+			var(--interactive-accent) 20%,
+			transparent
+		);
+		box-shadow: 0 0 0 1px color-mix(
+			in srgb,
+			var(--interactive-accent) 48%,
+			transparent
+		);
+	}
+	100% {
+		background-color: var(--cs-import-target-rest-bg, transparent);
+		box-shadow: var(--cs-import-target-rest-shadow, none);
+	}
+}
+
+/* On a phone two side-by-side buttons either overflow the card or shrink their
+   labels to a truncated word, so they stack full width instead. */
+@media (max-width: 600px) {
+	.cs-readonly-banner-actions {
+		flex-direction: column;
+		align-items: stretch;
+		/* `stretch` fills the flex *line*, and a wrapping column sizes its line
+		   to the widest button — so wrapping has to go off here or the stack
+		   comes out as wide as its longest label instead of as wide as the
+		   card. */
+		flex-wrap: nowrap;
+	}
+
+	.cs-competitor-import-banner {
+		grid-template-columns: minmax(0, 1fr) auto;
+	}
+
+	.cs-competitor-import-banner-action {
+		grid-column: 1 / -1;
+		grid-row: 2;
+		width: 100%;
+	}
+
+	.cs-competitor-import-banner-dismiss {
+		grid-column: 2;
+		grid-row: 1;
+	}
+}
+
+/* A field's accessible name must never turn into a hover tooltip. */
+.cs-field-accessible-label {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+	pointer-events: none;
 }

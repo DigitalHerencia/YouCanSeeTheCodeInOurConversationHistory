@@ -1,16 +1,22 @@
 {
   "title": "Digital Herencia",
   "showTitle": true,
-  "logo": "assets/Digital Herencia Logo.jpg",
-  "logoIcon": "terminal-square",
+  "titleIcon": "terminal-square",
   "tabIcon": "layout-dashboard",
   "themeColorTarget": "none",
   "showSearch": true,
   "searchPlaceholder": "Search the vault",
   "showNewNoteButton": false,
   "newNoteButtonMode": "newNote",
+  "newNoteButtonLabel": "",
+  "newNoteTemplate": "",
+  "newNoteFolder": "",
+  "newNoteFilename": "",
   "searchContents": true,
+  "searchInstantAnswers": true,
+  "hiddenInstantAnswers": [],
   "searchEngine": "builtin",
+  "webSearchEngine": "duckduckgo",
   "backgroundKind": "image",
   "backgroundValue": "assets/Digital Herencia Desert BG.jpg",
   "backgroundOpacity": 0.56,
@@ -23,6 +29,7 @@
   "replaceNewTabs": true,
   "focusSearchOnOpen": false,
   "liveRefresh": true,
+  "liveSettingsSync": true,
   "mobileSearchOnly": false,
   "showMobileActionBar": true,
   "mobileActionButtons": [
@@ -34,6 +41,20 @@
       "target": "hearth:new-note"
     },
     {
+      "id": "action-new-drawing",
+      "label": "New drawing",
+      "icon": "pen-tool",
+      "type": "command",
+      "target": "hearth:new-drawing"
+    },
+    {
+      "id": "action-record-voice",
+      "label": "Record voice",
+      "icon": "mic",
+      "type": "command",
+      "target": "hearth:record-voice"
+    },
+    {
       "id": "action-daily-note",
       "label": "Daily note",
       "icon": "calendar",
@@ -41,6 +62,8 @@
       "target": "hearth:open-daily-note"
     }
   ],
+  "stackOnNarrow": true,
+  "narrowWidth": 700,
   "disableExternalCalls": false,
   "openIn": "tab",
   "openInOverrides": {
@@ -50,8 +73,10 @@
     "newNote": "default"
   },
   "openFromOutside": "same",
-  "lowPower": false,
+  "performanceTier": "full",
+  "mobilePerformanceTier": "balanced",
   "lowPowerBackgroundColor": "#4a4459",
+  "pauseWhenUnfocused": true,
   "compact": true,
   "arrangeButtonVisibility": "always",
   "dashboardSwitcherVisibility": "always",
@@ -78,17 +103,17 @@
         "titleScale": 1,
         "showTitle": true,
         "align": "center",
-        "logoIcon": "terminal",
         "title": "DIGITAL HERENCIA",
         "marginTop": 0,
-        "logoScale": 1
+        "logoScale": 1,
+        "titleIcon": "terminal"
       },
       "fitToPage": true,
       "name": "Home"
     },
     {
       "id": "hearth-command-center",
-      "name": "Command Center",
+      "name": "Command",
       "fitToPage": true,
       "showSearch": false,
       "header": {
@@ -107,22 +132,50 @@
       },
       "backgroundLayout": "full",
       "iconLucide": "command",
-      "cards": []
+      "cards": [
+        {
+          "id": "card-musxj3kt-536",
+          "x": 0,
+          "y": 0,
+          "kind": "daily",
+          "w": 6,
+          "h": 4,
+          "fx": 0,
+          "fy": 0,
+          "fw": 0.495,
+          "fh": 264,
+          "accent": "#0f7087"
+        },
+        {
+          "id": "card-musxogtj-966",
+          "x": 0,
+          "y": 1,
+          "kind": "embed",
+          "title": "Note",
+          "target": "",
+          "w": 6,
+          "h": 3,
+          "fx": 0,
+          "fy": 280,
+          "fw": 0.4952481520591341,
+          "fh": 194
+        }
+      ]
     },
     {
       "id": "dash-projects",
-      "name": "Project Command Center",
+      "name": "Projects",
       "fitToPage": true,
       "showSearch": false,
       "header": {
         "showTitle": false,
         "title": "Projects",
-        "logoIcon": "kanban-square",
         "align": "center",
         "titleScale": 1,
         "logoScale": 1,
         "marginTop": 0,
-        "spacingBelow": 10
+        "spacingBelow": 10,
+        "titleIcon": "kanban-square"
       },
       "background": {
         "kind": "image",
@@ -136,7 +189,7 @@
     },
     {
       "id": "hearth-code-lab",
-      "name": "Code Lab",
+      "name": "Code",
       "fitToPage": true,
       "showSearch": false,
       "header": {
@@ -159,7 +212,7 @@
     },
     {
       "iconLucide": "inbox",
-      "name": "Zettelkasten",
+      "name": "ZETTLECASTEN",
       "cards": [],
       "id": "hearth-zettle",
       "header": {
@@ -339,7 +392,7 @@
       "iconLucide": "github"
     }
   ],
-  "activeDashboardId": "dash-home",
+  "activeDashboardId": "hearth-command-center",
   "pinnedCards": [],
   "gridColumns": 12,
   "rowHeight": 54,
@@ -357,7 +410,13 @@
   ],
   "customFileIcons": true,
   "iconizeIconProperty": "icon",
+  "operonIntegration": true,
+  "operonWrites": false,
   "maxWidth": 1600,
-  "lastSeenVersion": "2.1.0",
-  "setupStatus": "done"
+  "fullWidth": false,
+  "lastSeenVersion": "3.3.0",
+  "setupStatus": "done",
+  "authorKey": "",
+  "authorKeySaved": false,
+  "galleryUrl": "https://gallery.o-uhnavy.com"
 }

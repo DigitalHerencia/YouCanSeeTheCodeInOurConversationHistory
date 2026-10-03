@@ -4,18 +4,11 @@
   "interfaceFontFamily": "Terminess Nerd Font Propo",
   "textFontFamily": "CodeNewRoman Nerd Font",
   "monospaceFontFamily": "CodeNewRoman Nerd Font Mono",
-  "cssTheme": "Minimal",
+  "cssTheme": "Obsidianite",
   "baseFontSizeAction": true,
   "showRibbon": false,
   "showViewHeader": false,
   "nativeMenus": false,
   "baseFontSize": 18,
-  "enabledCssSnippets": [
-    "reform-core",
-    "mode-neo-modern",
-    "codex-vercel",
-    "mode-vaporwave",
-    "callouts",
-    "vault-system"
-  ]
+  "enabledCssSnippets": []
 }

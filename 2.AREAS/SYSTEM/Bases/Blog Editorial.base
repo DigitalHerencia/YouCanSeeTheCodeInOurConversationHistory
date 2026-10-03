@@ -1,14 +1,14 @@
 filters:
   and:
-    - 'type == "blog-post"'
-    - 'file.inFolder("2.AREAS/BLOG")'
-    - 'status != "published"'
+    - type == "blog-post"
+    - file.inFolder("2.AREAS/BLOG")
+    - status != "published"
 properties:
   file.name:
     displayName: Title
 views:
   - type: table
-    name: "Blog Editorial"
+    name: Blog Editorial
     order:
       - file.name
       - status

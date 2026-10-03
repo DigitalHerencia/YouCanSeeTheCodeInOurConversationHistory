@@ -28,177 +28,28 @@
   },
   "appIcons": {},
   "tabIcons": {},
-  "fileIcons": {},
+  "fileIcons": {
+    "1.PROJECTS": {
+      "icon": "lucide-square-kanban",
+      "color": "gray"
+    },
+    "2.AREAS": {
+      "icon": "lucide-layers"
+    },
+    "3.RESOURCES": {
+      "icon": "lucide-archive"
+    },
+    "4.ARCHIVE": {
+      "icon": "lucide-database"
+    },
+    "README.md": {
+      "icon": "lucide-notebook-text"
+    }
+  },
   "bookmarkIcons": {},
   "tagIcons": {},
   "propertyIcons": {},
   "ribbonIcons": {},
   "fileRules": [],
-  "folderRules": [
-    {
-      "id": "vault-rule-01",
-      "name": "1.PROJECTS",
-      "icon": "target",
-      "color": "#a78bfa",
-      "match": "all",
-      "conditions": [
-        {
-          "source": "path",
-          "operator": "is",
-          "value": "1.PROJECTS"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "id": "vault-rule-02",
-      "name": "2.AREAS",
-      "icon": "layers",
-      "color": "#60a5fa",
-      "match": "all",
-      "conditions": [
-        {
-          "source": "path",
-          "operator": "is",
-          "value": "2.AREAS"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "id": "vault-rule-03",
-      "name": "3.RESOURCES",
-      "icon": "library",
-      "color": "#2dd4bf",
-      "match": "all",
-      "conditions": [
-        {
-          "source": "path",
-          "operator": "is",
-          "value": "3.RESOURCES"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "id": "vault-rule-04",
-      "name": "4.ARCHIVE",
-      "icon": "archive",
-      "color": "#94a3b8",
-      "match": "all",
-      "conditions": [
-        {
-          "source": "path",
-          "operator": "is",
-          "value": "4.ARCHIVE"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "id": "vault-rule-05",
-      "name": "2.AREAS/DAILY",
-      "icon": "calendar-days",
-      "color": "#facc15",
-      "match": "all",
-      "conditions": [
-        {
-          "source": "path",
-          "operator": "is",
-          "value": "2.AREAS/DAILY"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "id": "vault-rule-06",
-      "name": "2.AREAS/CODE",
-      "icon": "code-2",
-      "color": "#67e8f9",
-      "match": "all",
-      "conditions": [
-        {
-          "source": "path",
-          "operator": "is",
-          "value": "2.AREAS/CODE"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "id": "vault-rule-07",
-      "name": "2.AREAS/ZETTLECASTEN",
-      "icon": "network",
-      "color": "#22d3ee",
-      "match": "all",
-      "conditions": [
-        {
-          "source": "path",
-          "operator": "is",
-          "value": "2.AREAS/ZETTLECASTEN"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "id": "vault-rule-08",
-      "name": "2.AREAS/LIBRARY",
-      "icon": "library-big",
-      "color": "#c4b5fd",
-      "match": "all",
-      "conditions": [
-        {
-          "source": "path",
-          "operator": "is",
-          "value": "2.AREAS/LIBRARY"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "id": "vault-rule-09",
-      "name": "2.AREAS/BLOG",
-      "icon": "pen-line",
-      "color": "#f0abfc",
-      "match": "all",
-      "conditions": [
-        {
-          "source": "path",
-          "operator": "is",
-          "value": "2.AREAS/BLOG"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "id": "vault-rule-10",
-      "name": "2.AREAS/SOCIAL",
-      "icon": "share-2",
-      "color": "#fb7185",
-      "match": "all",
-      "conditions": [
-        {
-          "source": "path",
-          "operator": "is",
-          "value": "2.AREAS/SOCIAL"
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "id": "vault-rule-11",
-      "name": "2.AREAS/SYSTEM",
-      "icon": "settings-2",
-      "color": "#94a3b8",
-      "match": "all",
-      "conditions": [
-        {
-          "source": "path",
-          "operator": "is",
-          "value": "2.AREAS/SYSTEM"
-        }
-      ],
-      "enabled": true
-    }
-  ]
+  "folderRules": []
 }

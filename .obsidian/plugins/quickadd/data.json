@@ -706,10 +706,11 @@
         "name": "New Project",
         "commands": [
           {
-            "name": "New Project",
+            "name": "project-create",
             "type": "UserScript",
-            "id": "ff1bf754-62e5-4e09-987d-7564d5d67978",
-            "path": "project-create"
+            "id": "3ca55c1d-3f7a-471b-b1a9-df3184f0b226",
+            "path": "2.AREAS/SYSTEM/Scripts/quickadd/project-create.js",
+            "settings": {}
           }
         ],
         "id": "94b9bf50-fc23-4a0e-8286-7a0ba9f3a149"
@@ -1221,7 +1222,7 @@
     "2.AREAS/SYSTEM/Templates"
   ],
   "announceUpdates": "major",
-  "version": "2.27.0",
+  "version": "2.30.0",
   "globalVariables": {},
   "onePageInputEnabled": false,
   "disableOnlineFeatures": true,
